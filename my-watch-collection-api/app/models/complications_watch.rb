@@ -1,0 +1,2 @@
+class ComplicationsWatch < ApplicationRecord
+end

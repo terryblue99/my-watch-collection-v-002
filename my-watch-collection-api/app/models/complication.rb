@@ -1,0 +1,2 @@
+class Complication < ApplicationRecord
+end
