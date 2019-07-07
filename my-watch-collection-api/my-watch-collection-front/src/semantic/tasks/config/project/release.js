@@ -21,7 +21,7 @@ catch(error) {}
 
 
 try {
-  npmPackage = require('../../../package.json');
+  npmPackage = require('../../../package.json.js');
 }
 catch(error) {
   // generate fake package
