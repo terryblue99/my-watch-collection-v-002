@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class WatchesHome extends Component {
-    render() {
+const WatchesHome = () => {
         return (
             <div>
                 Watches Home Page
             </div>
         )
-    }
 }
 
 export default WatchesHome
