@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -9,15 +9,14 @@ import WatchesHome from '../components/WatchesHome'
 
 // The following comment is required for @emotion to work
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-class App extends Component {
-  render() {
+const App = () => {
     return (
       <Router>
         <div className="App">
           <div className="navbar" css={css`
-                background-color: LightGray;
+                background-color: Black;
                 height: 30px;
             `}>
             <NavBar />
@@ -26,7 +25,6 @@ class App extends Component {
         </div>
       </Router>
     )
-  }
 }
 
 export default App

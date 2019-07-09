@@ -3,12 +3,15 @@ import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
+    <div style={{ borderBottom: '2px solid black',
+                  paddingTop: '5px',
+                  paddingBottom: '6px', 
+                  marginBottom: '12px' }}>
       <NavLink 
-        style={{ marginRight: '10px' }} 
+        style={{ marginLeft: '10px',marginRight: '10px', color: '#FAEA08' }} 
         to="/"
       >
-        My Watch Collection
+        My Watch Collection 
       </NavLink>
     </div>
   )
