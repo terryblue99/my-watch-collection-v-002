@@ -1,46 +1,44 @@
-module Api
-    module V1
-        class WatchesController < ApplicationController
 
-            before_action :set_watch, only: [:show, :edit, :update, :destroy]
+    class Api::V1::WatchesController < ApplicationController
 
-            def index
-                render json: Watch.all
-            end
+        before_action :set_watch, only: [:show, :edit, :update, :destroy]
 
-            def show
-            end
-            
-            def create
-            end
+        def index
+            render json: Watch.all
+        end
 
-            def update
-            end
+        def show
+        end
+        
+        def create
+        end
 
-            def destroy
-            end
+        def update
+        end
 
-            private
-            def set_watch
-                @watch = Watch.find_watch(params[:id])
-            end
+        def destroy
+        end
 
-            def watch_params
-                # params hash keys (strong params)
-                params.require(:watch).permit(
-                    :watch_name,
-                    :watch_maker,
-                    :movement,
-                    :band,
-                    :model_number,
-                    :water_resistance,
-                    :date_bought,
-                    :cost,
-                    :case_measurement,
-                    :watch_image,
-                    complications_attributes: [:complication_name, :complication_description]
-                )
-            end
+        private
+        def set_watch
+            @watch = Watch.find_watch(params[:id])
+        end
+
+        def watch_params
+            # params hash keys (strong params)
+            params.require(:watch).permit(
+                :watch_name,
+                :watch_maker,
+                :movement,
+                :band,
+                :model_number,
+                :water_resistance,
+                :date_bought,
+                :cost,
+                :case_measurement,
+                :watch_image,
+                complications_attributes: [:complication_name, :complication_description]
+            )
         end
     end
-end
+
