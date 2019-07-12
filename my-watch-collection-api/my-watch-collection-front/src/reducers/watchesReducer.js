@@ -1,6 +1,6 @@
 const initialState = {watches: []}
 
-function watchesReducer(state = initialState, action) {
+function watchesReducer(state = [], action) {
 
 	switch(action.type) {
 
@@ -8,15 +8,12 @@ function watchesReducer(state = initialState, action) {
             alert('Loading watches')
 
 		case 'ADD_WATCHES':
-			// console.log('*** action.payload', action.payload)
+			console.log('*** action.payload 1', action.payload)
 			if (action.payload) {
-				 return {
-					  ...state,
-					  watches: [
-						  ...state.watches,
-						  action.payload
-					  ]
-				  }
+				console.log('*** action.payload 2', ...state.concat(action.payload))
+				return {
+				 ...state, watches: [...state, ...action.payload]  
+				}
 			}
 			else return state
 			

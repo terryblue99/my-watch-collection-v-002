@@ -1,20 +1,14 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import fetchWatches from '../actions/index'
+import React from 'react'
 
-class WatchesHome extends Component {
 
-    componentWillMount = () => {
-        this.props.fetchWatches()
-    }
-
-    render() {
-        return (
-            <div className='container'>
-                Watches Home Page
-            </div>
-        )
-    }
+const WatchesHome = (props) => {
+    console.log('***WatchesHome: ', props)
+    return (
+        <div className='container'>
+            Watches Home Page
+        </div>
+    )
+   
 }
 
-export default connect(null, {fetchWatches: fetchWatches})(WatchesHome)
+export default WatchesHome

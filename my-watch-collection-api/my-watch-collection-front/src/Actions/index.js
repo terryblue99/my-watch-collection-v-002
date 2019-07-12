@@ -12,10 +12,10 @@ const fetchWatches = () => {
         
 		return fetch(`${API_URL}/watches`)
 				.then(response => {
-					// console.log('*** Json: ', response)
 					return response.json()
 				})
 				.then(responseJSON => {
+					console.log('*** Json: ', responseJSON)
 					// Update the app state with the results of the API call
 					dispatch({ type: 'ADD_WATCHES', payload: responseJSON })
 				})
