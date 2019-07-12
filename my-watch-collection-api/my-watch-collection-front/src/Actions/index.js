@@ -17,7 +17,7 @@ const fetchWatches = () => {
 				.then(responseJSON => {
 					console.log('*** Json: ', responseJSON)
 					// Update the app state with the results of the API call
-					dispatch({ type: 'ADD_WATCHES', payload: responseJSON })
+					dispatch({ type: 'FETCH_WATCHES', payload: responseJSON })
 				})
 				.catch(error => {
 					alert('An error occurred: ', error)
