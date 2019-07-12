@@ -1,4 +1,4 @@
-// import React from 'react'
+
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
