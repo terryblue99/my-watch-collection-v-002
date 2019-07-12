@@ -12,7 +12,9 @@ class WatchesFetch extends Component {
     render() {
         console.log('***WatchesFetch: ', this.props.watches)
         return (
-            <WatchesList watches={this.props.watches}/>
+            <div>
+                <WatchesList watches={this.props.watches}/>    
+            </div>
         )
     }
 }
