@@ -8,14 +8,14 @@ const fetchWatches = () => {
 	return dispatch => {
 		// First dispatch: the app state is updated to inform
     	// that data is loading
-        dispatch({type: 'LOADING_WATCHES'})
+        // dispatch({type: 'LOADING_WATCHES'})
         
 		return fetch(`${API_URL}/watches`)
 				.then(response => {
 					return response.json()
 				})
 				.then(responseJSON => {
-					console.log('*** Json: ', responseJSON)
+					// console.log('*** Json: ', responseJSON)
 					// Update the app state with the results of the API call
 					dispatch({ type: 'FETCH_WATCHES', payload: responseJSON })
 				})

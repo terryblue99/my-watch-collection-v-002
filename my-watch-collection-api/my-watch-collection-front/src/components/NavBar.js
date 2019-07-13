@@ -1,14 +1,19 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
+// The following comment is required for @emotion to work
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
 const NavBar = () => {
   return (
-    <div style={{ borderBottom: '2px solid black',
-                  paddingTop: '5px',
-                  paddingBottom: '6px', 
-                  marginBottom: '12px' }}>
+    <div className="navbar" css={css`
+        background-color: Black;
+        height: 50px;
+        paddingTop: '10px';
+        paddingBottom: '10px'; 
+        marginBottom: '12px';
+      `}>
       <NavLink 
-        style={{ marginLeft: '10px',marginRight: '10px', color: '#FAEA08' }} 
+        style={{ paddingTop: '20px', marginLeft: '10px',marginRight: '10px', color: '#FAEA08' }}
         to="/"
       >
         My Watch Collection 
@@ -18,3 +23,4 @@ const NavBar = () => {
 }
 
 export default NavBar
+
