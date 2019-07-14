@@ -15,14 +15,16 @@ const WatchesList = ({ fetched }) => {
     if (fetched.watches) {
        watchList = fetched.watches.map(watch => ( 
             <li key={watch.id} css={css`
-                padding: 20px;
+                padding: 5px;
                 border-bottom: 1px solid black;
                 &:hover {
                     background-color: lightgreen;
                     cursor: pointer;
                 }
             `}>
-                <b>{watch.watch_maker}:</b> {watch.watch_name}
+                <b css={css`
+                    padding-left: 10px;
+                `}>{watch.watch_maker}:</b> {watch.watch_name}
             </li>
         )) 
         
