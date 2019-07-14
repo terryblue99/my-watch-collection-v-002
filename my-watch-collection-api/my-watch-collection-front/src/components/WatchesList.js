@@ -1,12 +1,8 @@
-import { useState } from 'react' // https://reactjs.org/docs/hooks-state.html
+import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html
 
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
-
-const showWatches = () => {
-    alert('Show Watches')
-}
 
 const WatchesList = ({ fetched }) => {  
 //    console.log('***WatchesList: ', fetched.watches)
@@ -30,7 +26,7 @@ const WatchesList = ({ fetched }) => {
             </li>
         )) 
         
-    } else { watchList = fetched.watches }
+    } else null
 
     return (
         <div className='WatchList' css={css`
