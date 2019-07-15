@@ -29,6 +29,7 @@ const WatchList = ({ fetched }) => {
                 }}>
                 <b css={css`
                     padding-left: 10px;
+                    font-size: 18px;
                 `}>{watch.watch_maker}:</b> {watch.watch_name}
             </li>
         )) 
