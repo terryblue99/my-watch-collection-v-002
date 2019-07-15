@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import fetchWatches from '../actions/index'
-import WatchesList from '../components/WatchesList'
+import WatchList from '../components/WatchList'
 
 class WatchesFetch extends Component {
 
@@ -13,7 +13,7 @@ class WatchesFetch extends Component {
         // console.log('***WatchesFetch: ', this.props.watches)
         return (
             <div>
-                <WatchesList fetched={this.props.watches}/>    
+                <WatchList fetched={this.props.watches}/>    
             </div>
         )
     }
