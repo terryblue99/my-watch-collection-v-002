@@ -15,7 +15,8 @@ const fetchWatches = () => {
 					return response.json()
 				})
 				.then(responseJSON => {
-					// console.log('*** Json: ', responseJSON)
+					responseJSON.sort(sortFunc) 
+					console.log('*** jsonSort: ', responseJSON)
 					// Update the app state with the results of the API call
 					dispatch({ type: 'FETCH_WATCHES', payload: responseJSON })
 				})
@@ -23,6 +24,16 @@ const fetchWatches = () => {
 					alert('An error occurred: ', error)
 				})
 	}
+}
+
+const sortFunc = (a, b) => {
+    if (a.watch_maker < b.watch_maker) return -1
+    else if (a.watch_maker > b.watch_maker) return 1
+    else {
+			if (a.watch_name < b.watch_name) return -1
+			else if (a.watch_name > b.watch_name) return 1   
+    	}
+    return 0
 }
 
 export default fetchWatches

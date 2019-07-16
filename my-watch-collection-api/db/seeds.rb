@@ -17,6 +17,19 @@ Watch.delete_all
                       user_id: 1
                     )
 @watch.save
+@watch = Watch.create(watch_name: "Bolt", 
+                      watch_maker: "Invicta", 
+                      movement: "Swiss Ronda 7003.L Quartz", 
+                      band: "Stainless Steel", 
+                      model_number: "M-5678", 
+                      case_measurement: "50mm", 
+                      water_resistance: "200 meters", 
+                      complications: "Date, Stopwatch",
+                      date_bought: "2016-10-03", 
+                      cost: "235.00", 
+                      user_id: 2
+                    )
+@watch.save
 @watch = Watch.create(watch_name: "Aztica", 
                       watch_maker: "Aragon", 
                       movement: "Japanese Miyota Quartz", 
@@ -27,7 +40,7 @@ Watch.delete_all
                       complications: "Date, Day retrograde, Tachymeter",
                       date_bought: "2017-10-10", 
                       cost: "109.90", 
-                      user_id: 2
+                      user_id: 3
                     )
 @watch.save
 
@@ -41,7 +54,7 @@ Watch.delete_all
                       complications: "Date, Dual time zone, Power reserve",
                       date_bought: "2011-08-04", 
                       cost: "199.26", 
-                      user_id: 3
+                      user_id: 4
                     )
 @watch.save
 
