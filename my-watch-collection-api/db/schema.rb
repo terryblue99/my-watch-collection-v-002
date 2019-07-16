@@ -12,25 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2019_07_03_194349) do
 
-  create_table "complications", force: :cascade do |t|
-    t.string "complication_name"
-    t.string "complication_description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["complication_name"], name: "index_complications_on_complication_name"
-  end
-
-  create_table "complications_watches", id: false, force: :cascade do |t|
-    t.integer "watch_id", null: false
-    t.integer "complication_id", null: false
-    t.string "complication_description"
-    t.index ["watch_id", "complication_id"], name: "index_complications_watches_on_watch_id_and_complication_id"
-  end
-
   create_table "watches", force: :cascade do |t|
     t.string "watch_name"
     t.string "watch_maker"
     t.string "movement"
+    t.string "complications"
     t.string "band"
     t.string "model_number"
     t.string "case_measurement"

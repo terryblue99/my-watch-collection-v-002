@@ -27,6 +27,7 @@ const Detail = ({ showWatches, currentWatch }) => {
                     <br /><p><b css={detailCss}>Model number:</b> {currentWatch.model_number}</p>
                     <br /><p><b css={detailCss}>Case measurement:</b> {currentWatch.case_measurement}</p>
                     <br /><p><b css={detailCss}>Water resistance:</b> {currentWatch.water_resistance}</p>
+                    <br /><p><b css={detailCss}>Complications:</b> {currentWatch.complications}</p>
                     <br /><p><b css={detailCss}>Date bought:</b> {currentWatch.date_bought}</p>
                     <br /><p><b css={detailCss}>Cost:</b> {currentWatch.cost}</p>
                     <br /><b><h2 css={css`

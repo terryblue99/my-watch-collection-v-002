@@ -2,45 +2,48 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 
-# Watch.delete_all
+Watch.delete_all
 
-# @watch = Watch.create(watch_name: "Zeus Magnum", 
-#                       watch_maker: "Invicta", 
-#                       movement: "Swiss Ronda 7003.L Quartz", 
-#                       band: "Stainless Steel", 
-#                       model_number: "M-5678", 
-#                       case_measurement: "50mm", 
-#                       water_resistance: "200 meters", 
-#                       date_bought: "2016-10-03", 
-#                       cost: "199.99", 
-#                       user_id: 1
-#                     )
-# @watch.save
-# @watch = Watch.create(watch_name: "Aztica", 
-#                       watch_maker: "Aragon", 
-#                       movement: "Japanese Miyota Quartz", 
-#                       band: "Leather Strap", 
-#                       model_number: "AK7271", 
-#                       case_measurement: "49mm", 
-#                       water_resistance: "50 meters", 
-#                       date_bought: "2017-10-10", 
-#                       cost: "109.90", 
-#                       user_id: 2
-#                     )
-# @watch.save
+@watch = Watch.create(watch_name: "Zeus Magnum", 
+                      watch_maker: "Invicta", 
+                      movement: "Swiss Ronda 7003.L Quartz", 
+                      band: "Stainless Steel", 
+                      model_number: "M-5678", 
+                      case_measurement: "50mm", 
+                      water_resistance: "200 meters", 
+                      complications: "Pointer date, GMT, Stopwatch",
+                      date_bought: "2016-10-03", 
+                      cost: "199.99", 
+                      user_id: 1
+                    )
+@watch.save
+@watch = Watch.create(watch_name: "Aztica", 
+                      watch_maker: "Aragon", 
+                      movement: "Japanese Miyota Quartz", 
+                      band: "Leather Strap", 
+                      model_number: "AK7271", 
+                      case_measurement: "49mm", 
+                      water_resistance: "50 meters", 
+                      complications: "Date, Day retrograde, Tachymeter",
+                      date_bought: "2017-10-10", 
+                      cost: "109.90", 
+                      user_id: 2
+                    )
+@watch.save
 
-# @watch = Watch.create(watch_name: "Juggernaut", 
-#                       watch_maker: "Deep Blue", 
-#                       movement: "Swiss Ronda 715 Quartz", 
-#                       band: "Rubber Strap", 
-#                       model_number: "JGDVRBLK", 
-#                       case_measurement: "46mm", 
-#                       water_resistance: "1000 meters", 
-#                       date_bought: "2011-08-04", 
-#                       cost: "199.26", 
-#                       user_id: 3
-#                     )
-# @watch.save
+@watch = Watch.create(watch_name: "Juggernaut", 
+                      watch_maker: "Deep Blue", 
+                      movement: "Swiss Ronda 715 Quartz", 
+                      band: "Rubber Strap", 
+                      model_number: "JGDVRBLK", 
+                      case_measurement: "46mm", 
+                      water_resistance: "1000 meters", 
+                      complications: "Date, Dual time zone, Power reserve",
+                      date_bought: "2011-08-04", 
+                      cost: "199.26", 
+                      user_id: 3
+                    )
+@watch.save
 
 # Complication.delete_all
 

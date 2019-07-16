@@ -4,6 +4,7 @@ class CreateWatches < ActiveRecord::Migration[5.2]
       t.string     :watch_name
       t.string     :watch_maker
       t.string     :movement
+      t.string     :complications
       t.string     :band
       t.string     :model_number
       t.string     :case_measurement
