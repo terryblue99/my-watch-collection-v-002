@@ -9,20 +9,19 @@ const NavBar = () => {
    
     <div className='Navbar'>
 
-        <Navbar css={{
-                  backgroundColor: 'black',
-                  paddingTop: '10px',
-                  paddingBottom: '10px' 
-        }}>
+        <Navbar css={css`
+                  background-color: black;
+                  padding-top: 10px;
+                  padding-bottom: 10px; 
+        `}>
           <Navbar.Brand>
             <NavLink to="/">
-              <span css={{
-                  display: 'inline-block',
-                  textAlign: 'center',
-                  fontSize: 20,
-                  paddingLeft: 10,
-                  color: 'yellow'
-                }}>My Watch Collection
+              <span css={css`
+                  display: inline-block;
+                  font-size: 20px;
+                  padding-left: 20px;
+                  color: yellow;
+                `}>My Watch Collection
               </span> 
             </NavLink>
           </Navbar.Brand>

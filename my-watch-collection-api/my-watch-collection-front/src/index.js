@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { createLogger } from 'redux-logger' // https://www.npmjs.com/package/redux-logger
 import thunk from 'redux-thunk'
-import rootReducer from './reducers'
+import rootReducer from './reducers/index'
 import App from './containers/App'
 import * as serviceWorker from './serviceWorker'
 

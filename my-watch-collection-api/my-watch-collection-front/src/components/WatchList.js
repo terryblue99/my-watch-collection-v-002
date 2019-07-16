@@ -26,6 +26,7 @@ const WatchList = ({ fetched }) => {
                 }
             `} onClick={() => {
                     setCurrentWatch(watch)
+                    setShowWatches(false) // on mobiles will display watch detail when name is clicked
                 }}>
                 <b css={css`
                     padding-left: 10px;
@@ -34,7 +35,7 @@ const WatchList = ({ fetched }) => {
             </li>
         )) 
         
-    } else null
+    } else return fetched.watches
 
     return (
         <div className='WatchList' css={css`
