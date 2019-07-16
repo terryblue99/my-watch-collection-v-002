@@ -16,7 +16,7 @@ const fetchWatches = () => {
 				})
 				.then(responseJSON => {
 					responseJSON.sort(sortFunc) 
-					console.log('*** jsonSort: ', responseJSON)
+					console.log('*** Sorted responseJSON: ', responseJSON)
 					// Update the app state with the results of the API call
 					dispatch({ type: 'FETCH_WATCHES', payload: responseJSON })
 				})

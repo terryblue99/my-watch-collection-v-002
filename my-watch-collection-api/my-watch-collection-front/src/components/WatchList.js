@@ -21,7 +21,7 @@ const WatchList = ({ fetched }) => {
                 padding: 5px;
                 border-bottom: 1px solid black;
                 &:hover {
-                    background-color: lightgreen;
+                    background-color: lime;
                     cursor: pointer;
                 }
             `} onClick={() => {

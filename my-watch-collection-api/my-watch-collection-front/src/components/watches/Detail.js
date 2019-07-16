@@ -30,10 +30,6 @@ const Detail = ({ showWatches, currentWatch }) => {
                     <br /><p><b css={detailCss}>Complications:</b> {currentWatch.complications}</p>
                     <br /><p><b css={detailCss}>Date bought:</b> {currentWatch.date_bought}</p>
                     <br /><p><b css={detailCss}>Cost:</b> {currentWatch.cost}</p>
-                    <br /><b><h2 css={css`
-                        text-align: center;
-                        paddingTop: 40px;    
-                    `}>Complications</h2></b>
                 </div>
             </div>
         )     

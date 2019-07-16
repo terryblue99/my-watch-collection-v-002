@@ -10,6 +10,37 @@ body, button {
   font-family: 'Fresca', sans-serif;
 }
 
-/* .App {
-  text-align: center;
-} */
+.Homepage-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+
+.Homepage {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black; 
+}
+
+.Homepage .container {
+  display: grid;
+}
+
+.Homepage-button {
+  padding: 20px;
+  background-color: lime;
+  font-size: 3rem; 
+  text-transform: uppercase;
+  color: white;
+  border-color: transparent;
+}
+
+.Homepage button:hover {
+  cursor: pointer;
+}
