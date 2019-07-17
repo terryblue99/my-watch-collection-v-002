@@ -1,26 +1,29 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import './App.css'
+import Homepage from '../components/Homepage'
+import AddWatch from '../containers/AddWatch'
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
 import NavBar from '../components/NavBar'
-import WatchesHome from '../components/WatchesHome'
 import WatchesFetch from '../containers/WatchesFetch'
 
-class App extends Component {
+const App = () => {
 
-  render() {
+  const [screen, setScreen] = useState('addWatch')
+
     return (
-      <Router>
-        <div className="App">
-          <NavBar />
-          <Route exact path="/" component={WatchesHome} />
-          <Route path="/watches" component={WatchesFetch} />
-        </div>
-      </Router>
+      <div className='App'>
+        {screen === 'homepage' && <Homepage setScreen={setScreen}/>}
+        {screen === 'addWatch' && <AddWatch />}
+        {/* <Router>
+            <NavBar />
+            <Route exact path='/' component={Homepage} />
+            <Route path='/watches' component={WatchesFetch} />
+        </Router>  */}
+      </div>
     )
-  }
 }
 
 export default App
