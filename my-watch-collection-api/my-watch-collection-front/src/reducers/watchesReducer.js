@@ -8,7 +8,7 @@ function watchesReducer(state = initialState, action) {
             alert('Loading watches')
 
 		case 'FETCH_WATCHES':
-			// console.log('*** action.payload 1', action.payload)
+			// console.log('*** action.payload', action.payload)
 			
 			if (action.payload) {
 				

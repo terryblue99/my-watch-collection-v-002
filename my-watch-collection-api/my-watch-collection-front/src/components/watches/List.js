@@ -6,9 +6,9 @@ const List = ({ watches,  showWatches }) => {
 
     return (
 
-        <div css={css`
-                grid-area: sidebar-desktop;
+        <div className='List' css={css`
                 border-right: 1px solid black;
+                grid-area: sidebar-desktop;
                 height: 100%;
                 text-align: left;
 
@@ -19,24 +19,18 @@ const List = ({ watches,  showWatches }) => {
                 display: grid;
                 grid-template-rows: auto 95px;
             `}>
-            <ul className='List' css={css`
+            <ul css={css`
                 list-style-type: none;
             `}>
                 {watches}
             </ul>
             <div css={css`
-                text-align: center;
                 border-top: 1px solid;
                 padding-top 10px;
+                text-align: center;
             `}>
-                <button css={css`
-                    text-align: center;
-                    font-size: 1.5rem;
-                    padding-left: 30px;
-                    padding-right: 30px;
-                `}
-                    onClick={() => {
-                    alert('add new watch')
+                <button onClick={() => {
+                        alert('add new watch')
                 }}>Add a watch</button>
             </div>
         </div>

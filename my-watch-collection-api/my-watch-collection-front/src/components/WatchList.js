@@ -18,10 +18,10 @@ const WatchList = ({ fetched }) => {
     if (fetched.watches) {
        watches = fetched.watches.map(watch => ( 
             <li key={watch.id} css={css`
-                padding: 5px;
                 border-bottom: 1px solid black;
+                padding: 5px;
                 &:hover {
-                    background-color: lime;
+                    background-color: #61BD4F;
                     cursor: pointer;
                 }
             `} onClick={() => {
@@ -29,8 +29,8 @@ const WatchList = ({ fetched }) => {
                     setShowWatches(false) // on mobiles will display watch detail when name is clicked
                 }}>
                 <b css={css`
-                    padding-left: 10px;
                     font-size: 18px;
+                    padding-left: 10px;
                 `}>{watch.watch_maker}:</b> {watch.watch_name}
             </li>
         )) 
@@ -40,14 +40,14 @@ const WatchList = ({ fetched }) => {
     return (
         <div className='WatchList' css={css`
             display: grid;
-            grid-template-columns: 300px auto;
             grid-template-areas: 'sidebar-desktop main';
-            width: 100vw;
+            grid-template-columns: 300px auto;
             height: 100vh;
+            width: 100vw;
             
             @media (max-width: 800px) {
-                grid-template-columns: 80px auto;
                 grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
+                grid-template-columns: 80px auto;
             }
         `}>
             <List watches={watches}

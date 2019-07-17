@@ -11,16 +11,16 @@ const NavBar = () => {
 
         <Navbar css={css`
                   background-color: black;
-                  padding-top: 10px;
                   padding-bottom: 10px; 
+                  padding-top: 10px;
         `}>
           <Navbar.Brand>
             <NavLink to="/">
               <span css={css`
+                  color: yellow;
                   display: inline-block;
                   font-size: 20px;
                   padding-left: 20px;
-                  color: yellow;
                 `}>My Watch Collection
               </span> 
             </NavLink>

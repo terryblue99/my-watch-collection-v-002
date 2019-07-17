@@ -18,11 +18,12 @@ const SidebarMobile = ({ showWatches, setShowWatches }) => {
 }
 
 const ulStyle = css`
-    grid-area: sidebar-mobile;
+
     border-right: 1px solid black;
+    grid-area: sidebar-mobile;
     height: 100%;
-    text-align: left;
     list-style-type: none;
+    text-align: left;
 
     @media (min-width: 800px) {
         display: none;
@@ -31,17 +32,17 @@ const ulStyle = css`
 
 const buttonStyle = css`
     display: block;
-    padding-top: 20px;
     padding-left: 20px;
+    padding-top: 20px;
 
     span {
+        background: gray;
+        border-radius: 3px;
         display: block;
-        width: 33px;
         height: 4px;
         margin-bottom: 5px;
         position: relative;
-        background: gray;
-        border-radius: 3px;
+        width: 33px;
         z-index: 1;
     }
 `
