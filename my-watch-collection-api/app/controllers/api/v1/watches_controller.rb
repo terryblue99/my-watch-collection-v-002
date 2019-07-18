@@ -7,21 +7,26 @@
             render json: Watch.all
         end
 
-        def show
-        end
-        
         def create
+            @watch= watch.create(watch_params)
+            if @watch.save
+              render json: @watch, status: 201
+            else
+              render json: { errors: @watch.errors.full_messages }, status: 422
+            end
         end
 
         def update
         end
 
         def destroy
+            @watch.destroy
+            render :show, status: :ok
         end
 
         private
         def set_watch
-            @watch = Watch.find_watch(params[:id])
+            @watch = Watch.find(params[:id])
         end
 
         def watch_params
@@ -30,14 +35,14 @@
                 :watch_name,
                 :watch_maker,
                 :movement,
+                :complications,
                 :band,
                 :model_number,
+                :case_measurement,
                 :water_resistance,
                 :date_bought,
                 :cost,
-                :case_measurement,
-                :watch_image,
-                complications_attributes: [:complication_name, :complication_description]
+                :user_id
             )
         end
     end

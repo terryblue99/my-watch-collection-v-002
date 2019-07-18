@@ -2,18 +2,18 @@ import React from 'react'
 import '../containers/App.css'
 import logo from '../img/logo.jpg'
 
-const Homepage = ({ setScreen }) => {
+const signLogIn = () => {
+    alert('Sign Up or Log In')
+}
 
-    const addWatch = () => {
-        setScreen('addWatch')
-    }
+const Homepage = ({ setScreen }) => {
     
     return (
         <header className='Homepage'>
             <img src={logo} alt='logo' align='middle' className='Homepage-logo'/>
             <div className='container'>
                 <div>
-                    <button onClick={addWatch} className='Homepage-button'>Start</button>
+                    <button onClick={signLogIn} className='Homepage-button'>Start</button>
                 </div>
             </div>
         </header>

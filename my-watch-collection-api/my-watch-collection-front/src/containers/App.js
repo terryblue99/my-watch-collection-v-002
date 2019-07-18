@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+import React from 'react'
 import NavBar from '../components/NavBar'
 import {
   BrowserRouter as Router,
@@ -6,23 +7,24 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import Homepage from '../components/Homepage'
-import WatchesFetch from '../containers/WatchesFetch'
-import AddWatch from '../containers/AddWatch'
+import WatchesFetch from './WatchesFetch'
+import AddWatch from './AddWatch'
 
 const App = () => {
 
-  const [screen, setScreen] = useState('homepage')
+  // const [screen, setScreen] = useState('addWatch')
 
     return (
       <div className='App'>
         <Router>
+            <Route exact path='/' component={Homepage} />
             <NavBar />
-            {/* <Route exact path='/' component={Homepage} />
-            <Route path='/watches' component={WatchesFetch} /> */}
+            <Route exact path='/watches' component={WatchesFetch} />
+            <Route exact path='/watches/new' component={AddWatch} />
         </Router> 
-        {screen === 'homepage' && <Homepage setScreen={setScreen}/>}
-        {screen === 'listWatches' && <WatchesFetch />}
-        {screen === 'addWatch' && <AddWatch />}
+        {/* {screen === 'homepage' && <Homepage setScreen={setScreen}/>}
+        {screen === 'listWatches' && <WatchesFetch setScreen={setScreen} />}
+        {screen === 'addWatch' && <AddWatch setScreen={setScreen} />} */}
       </div>
     )
 }

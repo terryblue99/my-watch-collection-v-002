@@ -3,12 +3,13 @@ class WatchSerializer < ActiveModel::Serializer
     :watch_name, 
     :watch_maker, 
     :movement, 
+    :complications,
     :band, 
     :model_number, 
+    :case_measurement,
     :water_resistance, 
     :date_bought, 
     :cost,
-    :case_measurement
-    
-    has_many :complications
+    :user_id
+
 end

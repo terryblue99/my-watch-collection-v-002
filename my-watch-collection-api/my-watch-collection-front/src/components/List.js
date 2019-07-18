@@ -1,11 +1,18 @@
+import React from 'react'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
+import AddWatch from '../containers/AddWatch'
+
+let flag = false
+
+const handleClick = (e) => {
+    alert('add watch')
+}
 
 const List = ({ watches,  showWatches }) => {  
-
     return (
-
+        
         <div className='List' css={css`
                 border-right: 1px solid black;
                 grid-area: sidebar-desktop;
@@ -29,12 +36,12 @@ const List = ({ watches,  showWatches }) => {
                 padding-top 10px;
                 text-align: center;
             `}>
-                <button onClick={() => {
-                        alert('add new watch')
-                }}>Add a watch</button>
+                <button onClick={handleClick}>Add a watch</button>
             </div>
         </div>
-    )  
+        
+    ) 
+     
 }
 
 export default List

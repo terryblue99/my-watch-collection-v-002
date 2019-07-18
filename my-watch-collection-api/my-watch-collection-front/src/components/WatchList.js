@@ -1,7 +1,7 @@
 import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html
-import Detail from './watches/Detail'
-import List from './watches/List'
-import SidebarMobile from './watches/SidebarMobile'
+import Detail from './Detail'
+import List from './List'
+import SidebarMobile from './SidebarMobile'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion

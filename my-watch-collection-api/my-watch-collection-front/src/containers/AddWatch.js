@@ -1,8 +1,9 @@
 import React from 'react'
 import './App.css'
+import WatchesFetch from './WatchesFetch'
 
-const saveWatch = () => {
-    alert('save watch')
+const addWatch = () => {
+    alert('add watch')
 }
 
 const AddWatch = () => {
@@ -31,7 +32,7 @@ const AddWatch = () => {
             <h2>Cost(e.g. <b style={{color: 'red'}}>199.99</b>)</h2>
             <input />
             <br />
-            <button onClick={saveWatch}>Save watch</button>
+            <button onClick={addWatch}>Save watch</button>
         </div>
     )
 }

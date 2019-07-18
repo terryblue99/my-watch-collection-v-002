@@ -4,7 +4,7 @@ import fetchWatches from '../actions/index'
 import WatchList from '../components/WatchList'
 
 class WatchesFetch extends Component {
-
+    
     componentDidMount = () => {
         this.props.fetchWatches()
     }
