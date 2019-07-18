@@ -1,4 +1,5 @@
 import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html
+import NavBar from '../components/NavBar'
 import Detail from './Detail'
 import List from './List'
 import SidebarMobile from './SidebarMobile'
@@ -38,27 +39,30 @@ const WatchList = ({ fetched }) => {
     } else return fetched.watches
 
     return (
-        <div className='WatchList' css={css`
-            display: grid;
-            grid-template-areas: 'sidebar-desktop main';
-            grid-template-columns: 300px auto;
-            height: 100vh;
-            width: 100vw;
-            
-            @media (max-width: 800px) {
-                grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
-                grid-template-columns: 80px auto;
-            }
-        `}>
-            <List watches={watches}
-                  showWatches={showWatches}
-            />
-            <SidebarMobile showWatches={showWatches}   
-                           setShowWatches={setShowWatches}
-            />
-            <Detail showWatches={showWatches}
-                    currentWatch={currentWatch}
-            />
+        <div>
+            <NavBar />
+            <div className='WatchList' css={css`
+                display: grid;
+                grid-template-areas: 'sidebar-desktop main';
+                grid-template-columns: 300px auto;
+                height: 100vh;
+                width: 100vw;
+                
+                @media (max-width: 800px) {
+                    grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
+                    grid-template-columns: 80px auto;
+                }
+            `}>
+                <List watches={watches}
+                    showWatches={showWatches}
+                />
+                <SidebarMobile showWatches={showWatches}   
+                            setShowWatches={setShowWatches}
+                />
+                <Detail showWatches={showWatches}
+                        currentWatch={currentWatch}
+                />
+            </div>
         </div>
     )
    

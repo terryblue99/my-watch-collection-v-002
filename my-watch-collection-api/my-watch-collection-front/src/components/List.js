@@ -41,7 +41,6 @@ const List = ({ watches,  showWatches }) => {
         </div>
         
     ) 
-     
 }
 
 export default List

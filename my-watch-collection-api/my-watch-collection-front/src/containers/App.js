@@ -1,6 +1,5 @@
 // import React, { useState } from 'react'
 import React from 'react'
-import NavBar from '../components/NavBar'
 import {
   BrowserRouter as Router,
   Route
@@ -18,7 +17,6 @@ const App = () => {
       <div className='App'>
         <Router>
             <Route exact path='/' component={Homepage} />
-            <NavBar />
             <Route exact path='/watches' component={WatchesFetch} />
             <Route exact path='/watches/new' component={AddWatch} />
         </Router> 
