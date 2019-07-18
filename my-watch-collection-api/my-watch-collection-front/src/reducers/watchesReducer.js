@@ -5,11 +5,12 @@ function watchesReducer(state = initialState, action) {
 	switch(action.type) {
 
 		case 'LOADING_WATCHES': 
+
             alert('Loading watches')
+			break
 
 		case 'FETCH_WATCHES':
-			// console.log('*** action.payload', action.payload)
-			
+				
 			if (action.payload) {
 				
 				return {

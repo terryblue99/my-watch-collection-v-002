@@ -1,10 +1,6 @@
-import React from 'react'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
-import AddWatch from '../containers/AddWatch'
-
-let flag = false
 
 const handleClick = (e) => {
     alert('add watch')

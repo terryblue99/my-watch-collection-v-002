@@ -62,7 +62,7 @@ button:hover {
   border-color: transparent;
   color: white;
   font-size: 2rem; 
-  margin-top: 40px;
+  margin-top: 15px;
   padding: 18px;
   text-transform: uppercase;
 }
@@ -74,4 +74,9 @@ button:hover {
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
+}
+
+input:required,
+textarea:required {
+  border-color: red !important;
 }

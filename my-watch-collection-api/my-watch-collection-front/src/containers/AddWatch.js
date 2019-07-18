@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
 import NavBar from '../components/NavBar'
-import WatchesFetch from './WatchesFetch'
 
 const addWatch = () => {
     alert('add watch')
@@ -15,9 +14,9 @@ const AddWatch = () => {
                 <h1 style={{color: 'green'}}>Add a watch</h1>
                 <br />
                 <h2>Watch name</h2>
-                <input />
+                <input required />
                 <h2>Watch maker</h2>
-                <input />
+                <input required />
                 <h2>Movement</h2>
                 <input />
                 <h2>Band</h2>

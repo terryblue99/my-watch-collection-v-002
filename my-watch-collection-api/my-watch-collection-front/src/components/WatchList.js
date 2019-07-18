@@ -8,7 +8,6 @@ import SidebarMobile from './SidebarMobile'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
 const WatchList = ({ fetched }) => {  
-//    console.log('***WatchList: ', fetched.watches)
 
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
