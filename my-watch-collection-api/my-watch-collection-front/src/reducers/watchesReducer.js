@@ -1,23 +1,34 @@
+import { LOADING_WATCHES, GET_WATCHES, ADD_WATCH, EDIT_WATCH, DELETE_WATCH } from '../actions/types'
+
 const initialState = {watches: []}
 
-function watchesReducer(state = initialState, action) {
+function watchesReducer(state = initialState, { type, payload } ) {
 
-	switch(action.type) {
+	switch(type) {
 
-		case 'LOADING_WATCHES': 
+		case LOADING_WATCHES: 
 
             alert('Loading watches')
 			break
 
-		case 'FETCH_WATCHES':
+		case GET_WATCHES:
 				
-			if (action.payload) {
+			if (payload) {
 				
 				return {
-				 	...state, watches: action.payload  
+				 	...state, watches: payload  
 				}
 			}
 			else return state
+
+		case ADD_WATCH:
+				
+			if (payload) {
+				
+				return {
+					...state, watches: payload
+				}
+			}
 			
 		default:
 			return state

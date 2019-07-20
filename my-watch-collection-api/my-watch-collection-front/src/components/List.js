@@ -1,12 +1,11 @@
+import { Link } from 'react-router-dom'
+
 // The following comment is required for @emotion to work
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
-
-const handleClick = (e) => {
-    alert('add watch')
-}
+import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
 const List = ({ watches,  showWatches }) => {  
+    
     return (
         
         <div className='List' css={css`
@@ -32,7 +31,9 @@ const List = ({ watches,  showWatches }) => {
                 padding-top 10px;
                 text-align: center;
             `}>
-                <button onClick={handleClick}>Add a watch</button>
+                <Link to='/watches/new'>
+                    <button>Add a watch</button>
+                </Link>
             </div>
         </div>
         
