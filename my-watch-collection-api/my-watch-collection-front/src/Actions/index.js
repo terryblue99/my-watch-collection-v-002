@@ -38,8 +38,32 @@ export const getWatchesAction = () => {
 }
 
 export const addWatchAction = (watch) => {
-	return {
-		type: ADD_WATCH,
-		payload: watch
+	return (dispatch) => {
+		dispatch({
+			type: ADD_WATCH,
+			watch
+		})
+		
 	}
 }
+
+// export const addWatchAction = ({watch}) => {
+
+// 	const API_URL = 'api/v1'
+
+// 	return dispatch => {
+
+      // dispatch({type: 'LOADING_WATCHES'})
+        
+	// 	return post(`${API_URL}.json`, {watch})
+	// 			.then(response => {
+	// 				return response.json()
+	// 			})
+	// 			.then(responseJSON => {
+	// 				dispatch({ type: ADD_WATCH, payload: responseJSON })
+	// 			})
+	// 			.catch(error => {
+	// 				alert('An error occurred: ', error)
+	// 			})
+	// }
+// }

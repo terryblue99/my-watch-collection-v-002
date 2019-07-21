@@ -27,7 +27,7 @@ class AddWatch extends Component {
 
    handleSubmit = (event) => {
         event.preventDefault()
-        // Destructure addWatchAction and history from the components prop
+        // Destructure addWatchAction the components prop
         const { addWatchAction } = this.props
         // Create the watch with the Redux action
         addWatchAction(this.state)

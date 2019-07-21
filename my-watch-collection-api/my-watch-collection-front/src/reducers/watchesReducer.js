@@ -1,4 +1,6 @@
 import { LOADING_WATCHES, GET_WATCHES, ADD_WATCH, EDIT_WATCH, DELETE_WATCH } from '../actions/types'
+import cuid from 'cuid'
+export const cuidFn = cuid;
 
 export default (state = [], { type, payload } ) => {
 
@@ -18,9 +20,16 @@ export default (state = [], { type, payload } ) => {
 			else return state
 
 		case ADD_WATCH:	
+			console.log('***State: ', state)
 			if (payload) {
-					const watch = Object.assign({}, payload, {id: state.length + 1} )
-					return [...state, watch]
+					// const watch = Object.assign({}, payload, {id: state.length + 1} )
+					// return {...state, watches: payload}
+					const watch = { payload, id: cuidFn() };
+					// return {
+					// 	...state,
+					// 	watches: [ ...state, watch ]
+					// }	
+					return [ ...state, watch ]
 			}
 			else return state
 			
