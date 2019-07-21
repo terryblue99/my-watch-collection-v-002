@@ -35,7 +35,7 @@ const WatchList = ({ fetched }) => {
             </li>
         )) 
         
-    } else return fetched.watches
+    } else return null
 
     return (
         <div>

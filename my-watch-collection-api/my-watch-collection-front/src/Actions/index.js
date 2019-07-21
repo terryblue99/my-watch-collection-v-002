@@ -20,10 +20,11 @@ export const getWatchesAction = () => {
 	return dispatch => {
 		// First dispatch: the app state is updated to inform
     	// that data is loading
-        // dispatch({type: 'LOADING_WATCHES'})
+      // dispatch({type: 'LOADING_WATCHES'})
         
 		return fetch(`${API_URL}/watches`)
 				.then(response => {
+					console.log('####responseJSON ; ', response.JSON)
 					return response.json()
 				})
 				.then(responseJSON => {

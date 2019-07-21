@@ -6,23 +6,23 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import Homepage from '../components/Homepage'
-import WatchesFetch from './WatchesFetch'
-import NewWatch from './NewWatch'
+import FetchWatches from './FetchWatches'
+import AddWatch from './AddWatch'
 
 const App = () => {
 
-  // const [screen, setScreen] = useState('NewWatch')
+  // const [screen, setScreen] = useState('addwatch')
 
     return (
       <div className='App'>
         <Router>
             <Route exact path='/' component={Homepage} />
-            <Route exact path='/watches' component={WatchesFetch} />
-            <Route exact path='/watches/new' component={NewWatch} />
+            <Route exact path='/watches' component={FetchWatches} />
+            <Route exact path='/watches/new' component={AddWatch} />
         </Router> 
         {/* {screen === 'homepage' && <Homepage setScreen={setScreen}/>}
-        {screen === 'listWatches' && <WatchesFetch setScreen={setScreen} />}
-        {screen === 'NewWatch' && <NewWatch setScreen={setScreen} />} */}
+        {screen === 'fetchWatches' && <FetchWatches setScreen={setScreen} />}
+        {screen === 'addwatch' && <AddWatch setScreen={setScreen} />} */}
       </div>
     )
 }
