@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import './App.css'
 import NavBar from '../components/NavBar'
 import { addWatchAction } from '../actions/index'
-import FetchWatches from './FetchWatches';
 
 class AddWatch extends Component {
 
@@ -22,22 +21,22 @@ class AddWatch extends Component {
 
    handleChange = (event) => {
         this.setState({
-                [event.target.name]: event.target.value
+          [event.target.name]: event.target.value
         })                         
    }
 
    handleSubmit = (event) => {
         event.preventDefault()
         // Destructure addWatchAction and history from the components prop
-        const { addWatchAction, history } = this.props
+        const { addWatchAction } = this.props
         // Create the watch with the Redux action
         addWatchAction(this.state)
-        // redirect to /watches route after adding a new watch
-        // history.push('/watches')
    }
 
    handleBack = () => {
-        console.log('****this.props:', this.props)
+          // redirect to /watches route
+          const { history } = this.props
+          history.push('/watches')    
    }
 
    render() {
@@ -52,14 +51,14 @@ class AddWatch extends Component {
                 <div className='AddWatch'>
                    <h1 style={{color: 'green'}}>Add a watch</h1>
                    <br /> 
-                   <input  //required 
+                   <input  required 
                         type='text'
                         name='watch_name'
                         placeholder='Watch name'
                         onChange={this.handleChange}
                    />
                    <br /> 
-                   <input  //required 
+                   <input  required 
                         type='text'
                         name='watch_maker'
                         placeholder='Watch maker'

@@ -2,13 +2,13 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const Detail = ({ showWatches, currentWatch }) => {  
+const WatchDetail = ({ showWatches, currentWatch }) => {  
 
     if (currentWatch.watch_maker) {
 
         return (
 
-            <div className="Detail" css={css`
+            <div className="WatchDetail" css={css`
                     display: ${showWatches ? 'none' : 'block'};
                     grid-area: main;   
             `}>
@@ -47,4 +47,4 @@ const Detail = ({ showWatches, currentWatch }) => {
 
 const detailCss = {fontSize: '20px', color: 'green'}
 
-export default Detail
+export default WatchDetail

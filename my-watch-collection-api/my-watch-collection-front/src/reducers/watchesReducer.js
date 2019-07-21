@@ -5,7 +5,6 @@ export default (state = [], { type, payload } ) => {
 	switch(type) {
 
 		case LOADING_WATCHES: 
-
       alert('Loading watches')
 			break
 
@@ -18,11 +17,8 @@ export default (state = [], { type, payload } ) => {
 			}
 			else return state
 
-		case ADD_WATCH:
-			
+		case ADD_WATCH:	
 			if (payload) {
-					console.log('*@# reducer ADD state: ', state)
-					console.log('*@# reducer ADD payload: ', payload)
 					const watch = Object.assign({}, payload, {id: state.length + 1} )
 					return [...state, watch]
 			}

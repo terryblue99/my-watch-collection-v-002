@@ -24,7 +24,6 @@ export const getWatchesAction = () => {
         
 		return fetch(`${API_URL}/watches`)
 				.then(response => {
-					console.log('####responseJSON ; ', response.JSON)
 					return response.json()
 				})
 				.then(responseJSON => {
