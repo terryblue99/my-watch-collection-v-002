@@ -8,12 +8,12 @@
         end
 
         def create
-            @watch= watch.create(watch_params)
-            if @watch.save
-              render json: @watch, status: 201
-            else
-              render json: { errors: @watch.errors.full_messages }, status: 422
-            end
+            @watch = Watch.create(watch_params)
+            # if @watch.save
+            #   render json: @watch, status: 201
+            # else
+            #   render json: { errors: @watch.errors.full_messages }, status: 422
+            # end
         end
 
         def update
@@ -41,8 +41,7 @@
                 :case_measurement,
                 :water_resistance,
                 :date_bought,
-                :cost,
-                :user_id
+                :cost
             )
         end
     end

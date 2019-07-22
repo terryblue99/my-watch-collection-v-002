@@ -20,16 +20,16 @@ export default (state = [], { type, payload } ) => {
 			else return state
 
 		case ADD_WATCH:	
-			console.log('***State: ', state)
 			if (payload) {
+				console.log('+++++ADD_WATCH payload: ', payload)
 					// const watch = Object.assign({}, payload, {id: state.length + 1} )
 					// return {...state, watches: payload}
-					const watch = { payload, id: cuidFn() };
+					// const watch = { payload, id: cuidFn() };
 					// return {
 					// 	...state,
 					// 	watches: [ ...state, watch ]
 					// }	
-					return [ ...state, watch ]
+					return [...state, payload]
 			}
 			else return state
 			
