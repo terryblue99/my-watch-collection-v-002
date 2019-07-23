@@ -34,7 +34,7 @@ const buttonStyle = css`
     display: block;
     padding-left: 20px;
     padding-top: 20px;
-
+    
     span {
         background: gray;
         border-radius: 3px;

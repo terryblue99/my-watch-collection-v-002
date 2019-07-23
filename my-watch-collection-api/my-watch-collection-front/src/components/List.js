@@ -12,7 +12,7 @@ const List = ({ watches,  showWatches }) => {
                 grid-area: sidebar-desktop;
                 height: 100%;
                 text-align: left;
-
+                
                 @media (max-width: 800px) {
                     display: ${showWatches ? 'block' : 'none'}
                 }

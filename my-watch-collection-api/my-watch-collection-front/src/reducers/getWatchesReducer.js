@@ -8,7 +8,7 @@ export default (state = initialState, { type, payload } ) => {
 
 		case LOADING_WATCHES: 
       alert('Loading watches')
-			break
+			return state
 
 		case GET_WATCHES:		
 			if (payload) {

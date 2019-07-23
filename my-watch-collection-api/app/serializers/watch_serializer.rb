@@ -10,5 +10,5 @@ class WatchSerializer < ActiveModel::Serializer
     :water_resistance, 
     :date_bought, 
     :cost
-    
+
 end
