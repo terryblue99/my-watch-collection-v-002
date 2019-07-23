@@ -21,7 +21,6 @@
 
         def destroy
             @watch.destroy
-            render :show, status: :ok
         end
 
         private

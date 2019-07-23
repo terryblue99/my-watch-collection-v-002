@@ -1,8 +1,6 @@
 import { LOADING_WATCHES, GET_WATCHES } from '../actions/types'
 
-const initialState = {
-	watches: []
-}
+const initialState = []
 
 export default (state = initialState, { type, payload } ) => {
 
@@ -12,15 +10,9 @@ export default (state = initialState, { type, payload } ) => {
       alert('Loading watches')
 			break
 
-		case GET_WATCHES:
-				
+		case GET_WATCHES:		
 			if (payload) {
-				console.log('*** GET_WATCHES: ', payload)
-				return {
-					 ...state, 
-					 watches: payload
-				}
-			}
+				return {watches: payload}}
 			else return state
 
 		default:

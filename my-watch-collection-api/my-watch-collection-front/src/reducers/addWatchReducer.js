@@ -1,8 +1,6 @@
 import { ADD_WATCH } from '../actions/types'
 
-const initialState = {
-	watch: []
-}
+const initialState = []
 
 export default (state = initialState, { type, payload } ) => {
 
@@ -10,17 +8,7 @@ export default (state = initialState, { type, payload } ) => {
 
 		case ADD_WATCH:	
 			if (payload) {
-				console.log('+++++ADD_WATCH payload: ', payload)
-				// const watch = Object.assign({}, payload )
-				// return [{
-				// 	...state,
-				// 	watch: payload
-				// }]
-				return {
-					...state, 
-					watch: payload
-			  }
-				
+				return state.concat(payload)	
 			}
 			else return state
 			

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'

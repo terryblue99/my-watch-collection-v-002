@@ -25,7 +25,7 @@ export const getWatchesAction = () => {
 	return dispatch => {
 		// First dispatch: the app state is updated to inform
 		// that data is loading
-		// dispatch({type: 'LOADING_WATCHES'})
+		dispatch({type: 'LOADING_WATCHES'})
 
 		fetch(`${API_URL}/watches`)
 		.then(response => {
@@ -50,22 +50,19 @@ export const getWatchesAction = () => {
 }
 
 export const addWatchAction = (watch) => {
-	console.log('@@**@@ addWatchAction watch: ', watch)
 	return dispatch => {
 		fetch(`${API_URL}/watches`, {
 			method: 'POST',
 			headers: {
-				'Accept': 'application/json',
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(watch)
 		})
 		.then(response => {
-			console.log('*1* addWatchAction response: ', response)
 			if (response.ok) {
 				return response.json()
 			} else {
-				throw new Error('*2* something went wrong')
+				throw new Error('* addWatchAction * something went wrong')
 			}
 		})
 		.then (
