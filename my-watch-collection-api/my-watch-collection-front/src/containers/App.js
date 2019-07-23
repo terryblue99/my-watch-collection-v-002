@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import Homepage from '../components/Homepage'
-import FetchWatches from './FetchWatches'
+import FetchWatches from './GetWatches'
 import AddWatch from './AddWatch'
 
 const App = () => {
@@ -23,6 +23,7 @@ const App = () => {
         {/* {screen === 'homepage' && <Homepage setScreen={setScreen}/>}
         {screen === 'fetchWatches' && <FetchWatches setScreen={setScreen} />}
         {screen === 'addwatch' && <AddWatch setScreen={setScreen} />} */}
+        
       </div>
     )
 }

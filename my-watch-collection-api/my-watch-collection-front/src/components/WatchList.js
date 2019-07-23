@@ -7,15 +7,15 @@ import SidebarMobile from './SidebarMobile'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const WatchList = ({ fetched }) => {  
+const WatchList = ({ watches }) => {  
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
    const [currentWatch, setCurrentWatch] = useState({}) 
 
-   let watches
+   let watchList
 
-    if (fetched.watches) {
-       watches = fetched.watches.map(watch => ( 
+    if (watches) {
+       watchList = watches.map(watch => ( 
             <li key={watch.id} css={css`
                 border-bottom: 1px solid black;
                 padding: 5px;
@@ -51,7 +51,7 @@ const WatchList = ({ fetched }) => {
                     grid-template-columns: 80px auto;
                 }
             `}>
-                <List watches={watches}
+                <List watches={watchList}
                     showWatches={showWatches}
                 />
                 <SidebarMobile showWatches={showWatches}   

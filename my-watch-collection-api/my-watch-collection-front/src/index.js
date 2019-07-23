@@ -1,12 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { createLogger } from 'redux-logger' // https://www.npmjs.com/package/redux-logger
 import thunk from 'redux-thunk'
-import rootReducer from './reducers/index'
+import addWatchReducer from './reducers/addWatchReducer'
+import getWatchesReducer from './reducers/getWatchesReducer'
 import App from './containers/App'
 import * as serviceWorker from './serviceWorker'
+
+const rootReducer = combineReducers({
+    addWatch: addWatchReducer,
+    getWatches: getWatchesReducer 
+})
 
 const store = createStore(
     rootReducer,

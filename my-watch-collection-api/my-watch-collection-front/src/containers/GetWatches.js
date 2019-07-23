@@ -3,26 +3,27 @@ import { connect } from 'react-redux'
 import { getWatchesAction } from '../actions/index'
 import WatchList from '../components/WatchList'
 
-class FetchWatches extends Component {
+class GetWatches extends Component {
     
     componentDidMount = () => {
         this.props.getWatchesAction()
     }
 
     render() {
+        
         return (
             <div>
-                <WatchList fetched={this.props.watches}/>    
+                <WatchList watches={this.props.watches}/>    
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
-      watches: state.watches
+      watches: state.getWatches.watches
     } 
-  }
+}
 
-export default connect(mapStateToProps, {getWatchesAction})(FetchWatches)
+export default connect(mapStateToProps, {getWatchesAction})(GetWatches)
 
