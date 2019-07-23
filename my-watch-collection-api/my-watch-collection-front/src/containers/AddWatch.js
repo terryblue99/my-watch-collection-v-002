@@ -27,10 +27,12 @@ class AddWatch extends Component {
 
    handleSubmit = (event) => {
         event.preventDefault()
-        // Destructure addWatchAction the components prop
+        // Destructure addWatchAction from the component props
         const { addWatchAction } = this.props
         // Create the watch with the Redux action
         addWatchAction(this.state)
+        // Clear the form
+        document.getElementById('AddWatch-form').reset()
    }
 
    handleBack = () => {
@@ -47,7 +49,7 @@ class AddWatch extends Component {
            <NavBar /> 
            <button onClick={this.handleBack} className='Back-button'>Back</button>
            
-           <form onSubmit={this.handleSubmit}>
+           <form id='AddWatch-form' onSubmit={this.handleSubmit}>
                 <div className='AddWatch'>
                    <h1 style={{color: 'green'}}>Add a watch</h1>
                    <br /> 
