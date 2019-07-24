@@ -1,9 +1,12 @@
+import { connect } from 'react-redux'
+import '../containers/App.css'
+import { deleteWatchAction } from '../actions/index'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
+import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
 const WatchDetail = ({ showWatches, currentWatch }) => {  
-
+    // this.confirmDelete = this.confirmDelete.bind(this)
     if (currentWatch.watch_maker) {
 
         return (
@@ -24,27 +27,37 @@ const WatchDetail = ({ showWatches, currentWatch }) => {
                 `}>
                     <br /><p><b css={detailCss}>Movement</b></p>
                     <h3>{currentWatch.movement}</h3>
-                    <br /><p><b css={detailCss}>Case measurement</b></p>
+                    <p><b css={detailCss}>Case measurement</b></p>
                     <h3>{currentWatch.case_measurement}</h3>
-                    <br /><p><b css={detailCss}>Complications</b></p>
+                    <p><b css={detailCss}>Complications</b></p>
                     <h3>{currentWatch.complications}</h3>
-                    <br /><p><b css={detailCss}>Band</b></p> 
+                    <p><b css={detailCss}>Band</b></p> 
                     <h3>{currentWatch.band}</h3>
-                    <br /><p><b css={detailCss}>Water resistance</b></p>
+                    <p><b css={detailCss}>Water resistance</b></p>
                     <h3>{currentWatch.water_resistance}</h3>
-                    <br /><p><b css={detailCss}>Model number</b></p>
+                    <p><b css={detailCss}>Model number</b></p>
                     <h3>{currentWatch.model_number}</h3>
-                    <br /><p><b css={detailCss}>Date bought</b></p>
+                    <p><b css={detailCss}>Date bought</b></p>
                     <h3>{currentWatch.date_bought}</h3>
-                    <br /><p><b css={detailCss}>Cost</b></p>
+                    <p><b css={detailCss}>Cost</b></p>
                     <h3>{currentWatch.cost}</h3>
+                </div>
+                <div css={css`
+                    border-top: 1px solid;
+                    padding-top 10px;
+                    text-align: center;
+                `}>
+                    <button className='Watchdelete-button' onClick={
+                        () => {if(window.confirm('Delete the watch?')) {deleteWatchAction(currentWatch.id)}
+                        }}>Delete this watch</button>
                 </div>
             </div>
         )     
 
     } else return null
+
 }
 
 const detailCss = {fontSize: '20px', color: 'green'}
 
-export default WatchDetail
+export default connect(null, { deleteWatchAction })(WatchDetail)

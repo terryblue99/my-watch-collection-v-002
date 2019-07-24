@@ -6,12 +6,14 @@ import { createLogger } from 'redux-logger' // https://www.npmjs.com/package/red
 import thunk from 'redux-thunk'
 import addWatchReducer from './reducers/addWatchReducer'
 import getWatchesReducer from './reducers/getWatchesReducer'
+import deleteWatchReducer from './reducers/deleteWatchReducer'
 import App from './containers/App'
 import * as serviceWorker from './serviceWorker'
 
 const rootReducer = combineReducers({
     addWatch: addWatchReducer,
-    getWatches: getWatchesReducer 
+    getWatches: getWatchesReducer,
+    deleteWatch: deleteWatchReducer
 })
 
 const store = createStore(
