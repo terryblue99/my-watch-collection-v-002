@@ -1,4 +1,3 @@
-import { connect } from 'react-redux'
 import '../containers/App.css'
 import { deleteWatchAction } from '../actions/index'
 // The following comment is required for @emotion to work
@@ -6,7 +5,7 @@ import { deleteWatchAction } from '../actions/index'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
 const WatchDetail = ({ showWatches, currentWatch }) => {  
-    // this.confirmDelete = this.confirmDelete.bind(this)
+
     if (currentWatch.watch_maker) {
 
         return (
@@ -48,7 +47,9 @@ const WatchDetail = ({ showWatches, currentWatch }) => {
                     text-align: center;
                 `}>
                     <button className='Watchdelete-button' onClick={
-                        () => {if(window.confirm('Delete the watch?')) {deleteWatchAction(currentWatch.id)}
+                        () => {if(window.confirm('Delete the watch?')) 
+                                {deleteWatchAction(currentWatch.id, currentWatch.watch_name )
+                              }
                         }}>Delete this watch</button>
                 </div>
             </div>
@@ -60,4 +61,4 @@ const WatchDetail = ({ showWatches, currentWatch }) => {
 
 const detailCss = {fontSize: '20px', color: 'green'}
 
-export default connect(null, { deleteWatchAction })(WatchDetail)
+export default WatchDetail

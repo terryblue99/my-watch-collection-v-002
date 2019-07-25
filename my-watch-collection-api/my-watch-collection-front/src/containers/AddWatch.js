@@ -6,7 +6,7 @@ import { addWatchAction } from '../actions/index'
 
 class AddWatch extends Component {
 
-   state = {
+     state = {
         watch_name: '',
         watch_maker: '',
         movement: '',
@@ -17,15 +17,15 @@ class AddWatch extends Component {
         complications: '',
         date_bought: '',
         cost: ''
-   }
+     }
 
-   handleChange = (event) => {
+     handleChange = (event) => {
         this.setState({
           [event.target.name]: event.target.value
         })                         
-   }
+     }
 
-   handleSubmit = (event) => {
+     handleSubmit = (event) => {
         event.preventDefault()
         // Destructure addWatchAction from the component props
         const { addWatchAction } = this.props
@@ -33,21 +33,20 @@ class AddWatch extends Component {
         addWatchAction(this.state)
         // Clear the form
         document.getElementById('AddWatch-form').reset()
-   }
+     }
 
-   handleBack = () => {
+     handleBack = () => {
           // redirect to /watches route
           const { history } = this.props
           history.push('/watches')    
-   }
+     }
 
-   render() {
+     render() {
 
       return (
         <div>
-
            <NavBar /> 
-           <button onClick={this.handleBack} className='Back-button'>Back</button>
+           <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
            
            <form id='AddWatch-form' onSubmit={this.handleSubmit}>
                 <div className='AddWatch'>
@@ -120,7 +119,7 @@ class AddWatch extends Component {
            </form>
         </div>
       )
-   } 
+     } 
 }
 
 const mapStateToProps = (state) => {
