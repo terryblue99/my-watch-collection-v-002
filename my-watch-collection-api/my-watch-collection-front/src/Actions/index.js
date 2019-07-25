@@ -2,7 +2,8 @@ import {
 	LOADING_WATCHES,
 	GET_WATCHES,
 	ADD_WATCH,
-	EDIT_WATCH
+	EDIT_WATCH,
+	DELETE_WATCH
 } from './types'
 
 const API_URL = '/api/v1'
@@ -28,10 +29,10 @@ export const getWatchesAction = () => {
 
 		fetch(`${API_URL}/watches`)
 		.then(response => {
-			if (response.ok) {
-				return response.json()
+			if (response.error) {
+				alert(response.error)
 			} else {
-				throw new Error('* getWatchesAction * something went wrong')
+				return response.json()
 			}
 		})
 		.then(response => {
@@ -40,10 +41,10 @@ export const getWatchesAction = () => {
 			dispatch({
 				type: GET_WATCHES,
 				payload: response
-			})
+			})	
 		})
 		.catch(error => {
-			console.log('An error occurred: ', error)
+			console.log(error)
 		})
 	}
 }
@@ -58,36 +59,37 @@ export const addWatchAction = (watch) => {
 			body: JSON.stringify(watch)
 		})
 		.then(response => {
-			if (response.ok) {
-				return response.json()
+			if (response.error) {
+				alert(response.error)
 			} else {
-				throw new Error('* addWatchAction * something went wrong')
-			}
+					dispatch({
+							type: ADD_WATCH,
+							payload: watch
+					})
+				}
 		})
-		.then (
-			dispatch({
-					type: ADD_WATCH,
-					payload: watch
-			})
-		)
 		.then(alert('The watch has been saved'))
 		.catch(error => {
-			console.log('An error occurred: ' + error)
+			console.log(error)
 		})
 	}
 }
 
 export const deleteWatchAction = (id, watchName) => {
-		
-	return fetch(`${API_URL}/watches/${id}`, {
-		method: 'DELETE'
-	})
-	.then(alert(watchName + ': has been deleted'))
-	.then(
-		// redirect to /watches route	
-		window.location.href = '/watches'  
-	)
-	.catch(error => {
-		console.log('An error occurred: ' + error)
-	})
+	return dispatch => {
+		fetch(`${API_URL}/watches/${id}`, {
+				method: 'DELETE'
+		})
+		.then(alert(watchName + ': has been deleted'))
+		.then(
+			dispatch({
+				type: DELETE_WATCH,
+				payload: id
+			})		
+		)
+		.then(window.location.href = '/watches')
+		.catch(error => {
+			console.log(error)
+		})
+	}
 }

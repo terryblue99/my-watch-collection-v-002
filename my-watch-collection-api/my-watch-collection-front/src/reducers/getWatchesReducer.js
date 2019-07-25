@@ -1,4 +1,4 @@
-import { LOADING_WATCHES, GET_WATCHES } from '../actions/types'
+import { LOADING_WATCHES, GET_WATCHES, DELETE_WATCH } from '../actions/types'
 
 const initialState = []
 
@@ -14,6 +14,12 @@ export default (state = initialState, { type, payload } ) => {
 			if (payload) {
 				return {watches: payload}}
 			else return state
+
+		case DELETE_WATCH:
+				return ({
+					...state,
+					watches: state.watches.filter(watch => watch.id !== payload)
+				})
 
 		default:
 			return state

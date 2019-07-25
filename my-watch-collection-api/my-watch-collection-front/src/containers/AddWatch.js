@@ -122,10 +122,4 @@ class AddWatch extends Component {
      } 
 }
 
-const mapStateToProps = (state) => {
-     return {
-       watch: state.addWatch.watch
-     } 
- }
-
-export default connect(mapStateToProps, { addWatchAction })(AddWatch)
+export default connect(null, { addWatchAction })(AddWatch)
