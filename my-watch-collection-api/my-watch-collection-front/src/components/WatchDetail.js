@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import '../containers/App.css'
 import { deleteWatchAction } from '../actions/index'
@@ -50,7 +50,8 @@ class WatchDetail extends Component {
                         text-align: center;
                     `}>
                         <button className='Watchdelete-button' onClick={
-                            () => {if(window.confirm('Delete the watch?')) 
+                            () => {if(window.confirm('Delete the watch?'))
+                                    // this.props. needed for fetch in deleteWatchAction to work 
                                     {this.props.deleteWatchAction(currentWatch.id, currentWatch.watch_name)}
                                   }
                             }> Delete this watch

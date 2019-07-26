@@ -21,7 +21,7 @@ class GetWatches extends Component {
 
 const mapStateToProps = (state) => {
     return {
-      watches: state.getWatches.watches
+      watches: state.myWatches.watches
     } 
 }
 
