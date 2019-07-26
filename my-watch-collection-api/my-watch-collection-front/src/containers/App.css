@@ -81,6 +81,7 @@ body, button {
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
+  text-transform: uppercase; 
 }
 
 .Watchdelete-button {
@@ -90,6 +91,7 @@ body, button {
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
+  text-transform: uppercase; 
 }
 
 input:required,
