@@ -15,39 +15,41 @@ class WatchDetail extends Component {
             return ( 
                 <div className="WatchDetail" css={css`
                         display: ${showWatches ? 'none' : 'block'};
-                        grid-area: main;   
+                        grid-area: main;  
+                        margin-bottom: 5px;
                 `}>
                     <div> 
-                        <b><h1 css={css`
+                        <b><h2 css={css`
                             text-align: center;
-                            paddingTop: 40px;
+                            margin-top: 15px;
                             
-                        `}>{currentWatch.watch_maker} {currentWatch.watch_name}</h1></b>
+                        `}>{currentWatch.watch_maker} {currentWatch.watch_name}</h2></b>
                     </div>
                     <div css={css`
                         text-align: center;
                     `}>
                         <br /><p><b css={detailCss}>Movement</b></p>
-                        <h3>{currentWatch.movement}</h3>
+                        <h3 className='WatchDetail'>{currentWatch.movement}</h3>
                         <p><b css={detailCss}>Case measurement</b></p>
-                        <h3>{currentWatch.case_measurement}</h3>
+                        <h3 h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
                         <p><b css={detailCss}>Complications</b></p>
-                        <h3>{currentWatch.complications}</h3>
+                        <h3 className='WatchDetail'>{currentWatch.complications}</h3>
                         <p><b css={detailCss}>Band</b></p> 
-                        <h3>{currentWatch.band}</h3>
+                        <h3 className='WatchDetail'>{currentWatch.band}</h3>
                         <p><b css={detailCss}>Water resistance</b></p>
-                        <h3>{currentWatch.water_resistance}</h3>
+                        <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                         <p><b css={detailCss}>Model number</b></p>
-                        <h3>{currentWatch.model_number}</h3>
+                        <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
                         <p><b css={detailCss}>Date bought</b></p>
-                        <h3>{currentWatch.date_bought}</h3>
+                        <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
                         <p><b css={detailCss}>Cost</b></p>
-                        <h3>{currentWatch.cost}</h3>
+                        <h3 className='WatchDetail'>{currentWatch.cost}</h3>
                     </div>
                     <div css={css`
                         border-top: 1px solid;
                         padding-top 10px;
                         text-align: center;
+                        margin-top: 40px;
                     `}>
                         <button className='Watchdelete-button' onClick={
                             () => {if(window.confirm('Do you realy want to delete this watch?'))
@@ -60,10 +62,18 @@ class WatchDetail extends Component {
                 </div>
             )     
 
-        } else return null
+        } else return (
+            <div css={css`
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            `}>
+                Select a watch!
+            </div>       
+        )
     }
 }
 
-const detailCss = {fontSize: '20px', color: 'green'}
+const detailCss = {fontSize: '15px', color: 'green'}
 
 export default connect(null, {deleteWatchAction})(WatchDetail)
