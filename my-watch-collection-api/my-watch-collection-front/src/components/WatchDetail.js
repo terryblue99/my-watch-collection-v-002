@@ -50,7 +50,7 @@ class WatchDetail extends Component {
                         text-align: center;
                     `}>
                         <button className='Watchdelete-button' onClick={
-                            () => {if(window.confirm('Do you realy want to delete the watch?'))
+                            () => {if(window.confirm('Do you realy want to delete this watch?'))
                                     // this.props. needed for fetch in deleteWatchAction to work 
                                     {this.props.deleteWatchAction(currentWatch.id, currentWatch.watch_name)}
                                   }
