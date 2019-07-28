@@ -75,6 +75,32 @@ export const addWatchAction = (watch) => {
 	}
 }
 
+export const editWatchAction = (watch) => {
+	return dispatch => {
+		fetch(`${API_URL}/watches/${watch.id}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(watch)
+		})
+		.then(response => {
+			if (response.error) {
+				alert(response.error)
+			} else {
+					dispatch({
+							type: EDIT_WATCH,
+							payload: watch
+					})
+				}
+		})
+		.then(alert('The watch has been saved'))
+		.catch(error => {
+			console.log(error)
+		})
+	}
+}
+
 export const deleteWatchAction = (id, watchName) => {
 	return dispatch => {
 		fetch(`${API_URL}/watches/${id}`, {

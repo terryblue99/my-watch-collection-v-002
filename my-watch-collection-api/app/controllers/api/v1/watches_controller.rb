@@ -8,14 +8,10 @@ class Api::V1::WatchesController < ApplicationController
 
     def create
         @watch = Watch.create(watch_params)
-        # if @watch.save
-        #   render json: @watch, status: 201
-        # else
-        #   render json: { errors: @watch.errors.full_messages }, status: 422
-        # end
     end
 
     def update
+        @watch.update(watch_params)
     end
 
     def destroy
