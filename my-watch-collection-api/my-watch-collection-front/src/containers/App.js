@@ -8,7 +8,7 @@ import './App.css'
 import Homepage from '../components/Homepage'
 import FetchWatches from './GetWatches'
 import AddWatch from './AddWatch'
-
+import EditWatch from './EditWatch'
 const App = () => {
 
     return (
@@ -17,6 +17,7 @@ const App = () => {
             <Route exact path='/' component={Homepage} />
             <Route exact path='/watches' component={FetchWatches} />
             <Route exact path='/watches/new' component={AddWatch} />
+            <Route exact path='watches/:id' component={EditWatch} />
         </Router>         
       </div>
     )

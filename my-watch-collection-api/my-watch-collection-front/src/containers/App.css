@@ -105,6 +105,17 @@ body, button {
   text-transform: uppercase; 
 }
 
+.Watchedit-button {
+  background-color: #61BD4F;
+  color: white;
+  font-size: 1rem;
+  margin-right: 20px;
+  margin-top: 5px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase; 
+}
+
 input:required,
 textarea:required {
   border-color: red !important;

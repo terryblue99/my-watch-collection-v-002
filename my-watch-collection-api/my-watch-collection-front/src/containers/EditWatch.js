@@ -7,16 +7,17 @@ import { editWatchAction } from '../actions/index'
 class EditWatch extends Component {
 
      state = {
-        watch_name: '',
-        watch_maker: '',
-        movement: '',
-        band: '',
-        model_number: '',
-        case_measurement: '',
-        water_resistance: '',
-        complications: '',
-        date_bought: '',
-        cost: ''
+        watch_id: this.props.id,
+        watch_name: this.props.watch_name,
+        watch_maker: this.props.watch_maker,
+        movement: this.props.movement,
+        band: this.props.band,
+        model_number: this.props.model_number,
+        case_measurement: this.props.case_measurement,
+        water_resistance: this.props.water_resistance,
+        complications: this.props.complications,
+        date_bought: this.props.date_bought,
+        cost: this.props.cost
      }
 
      handleChange = (event) => {
@@ -28,89 +29,89 @@ class EditWatch extends Component {
      handleSubmit = (event) => {
         event.preventDefault()
         // Destructure addWatchAction from the component props
-        const { editWatchAction } = this.props
+        // const { editWatchAction } = this.props
         // Create the watch with the Redux action
         editWatchAction(this.state)
         // Clear the form
-        document.getElementById('EditWatch-form').reset()
+        // document.getElementById('EditWatch-form').reset()
      }
 
      handleBack = () => {
           // redirect to /watches route
-          const { history } = this.props
-          history.push('/watches')    
+          // const { history } = this.props
+          // history.push('/watches')  
+          // window.location.href = '/watches'
      }
 
      render() {
-
+      console.log('*** EditWatch id: ', this.props.id)
       return (
         <div>
            <NavBar /> 
            <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
            
            <form id='EditWatch-form' onSubmit={this.handleSubmit}>
-                <div className='AddWatch'>
-                   <h1 style={{color: 'green'}}>Add a watch</h1>
+                <div className='EditWatch'>
+                   <h1 style={{color: 'green'}}>Edit a watch</h1>
                    <br /> 
                    <input  required 
                         type='text'
                         name='watch_name'
-                        placeholder='Watch name'
+                        value={this.props.watch_name}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  required 
                         type='text'
                         name='watch_maker'
-                        placeholder='Watch maker'
-                        onChange={this.handleChange}
+                        value={this.props.watch_maker}
                    />
                    <br />
                    <input  type='text'
                         name='movement'
-                        placeholder='Movement'
+                        value={this.props.movement}
                         onChange={this.handleChange}
                    />
                    <br />
                    <input  type='text'
                         name='band'
-                        placeholder='Band'
+                        value={this.props.band}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='model_number'
-                        placeholder='Model number'
+                        value={this.props.model_number}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='case_measurement'
-                        placeholder='Case measurement (e.g. 45mm)'
+                        value={this.props.case_measurement}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='water_resistance'
-                        placeholder='Water resistance'
+                        value={this.props.water_resistance}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='complications'
-                        placeholder='Complications'
+                        value={this.props.complicationa}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='date_bought'
-                        placeholder='Date bought'
+                        value={this.props.date_bought}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='cost'
-                        placeholder='Cost (e.g. 199.99)'
+                        value={this.props.cost}
                         onChange={this.handleChange}
                    />
                    <br />
