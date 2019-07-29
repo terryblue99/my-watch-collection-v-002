@@ -29,7 +29,7 @@ class EditWatch extends Component {
      handleSubmit = (event) => {
         event.preventDefault()
         // Destructure addWatchAction from the component props
-        // const { editWatchAction } = this.props
+        const { editWatchAction } = this.props
         // Create the watch with the Redux action
         editWatchAction(this.state)
         // Clear the form
@@ -38,13 +38,13 @@ class EditWatch extends Component {
 
      handleBack = () => {
           // redirect to /watches route
-          // const { history } = this.props
-          // history.push('/watches')  
+          const { history } = this.props
+          history.push('/watches')  
           // window.location.href = '/watches'
      }
 
      render() {
-      console.log('*** EditWatch id: ', this.props.id)
+      console.log('*** EditWatch id: ', this.props)
       return (
         <div>
            <NavBar /> 

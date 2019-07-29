@@ -61,10 +61,56 @@ body, button {
   max-width: 300px;
   /* padding-top: 20px; */
   text-align: center;
-
 }
 
-.AddWatch .Save-button {
+.EditWatch {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 300px;
+  /* padding-top: 20px; */
+  text-align: center;
+}
+
+.List button {
+  background-color: #61BD4F;
+  color: white;
+  font-size: 1.5rem;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase; 
+}
+
+.Watchedit-button {
+  background-color: #61BD4F;
+  color: white;
+  font-size: 1rem;
+  margin-right: 20px;
+  margin-top: 5px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase; 
+}
+
+.Watchdelete-button {
+  background-color: red;
+  color: white;
+  font-size: 1rem;
+  margin-top: 5px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase; 
+}
+
+input:required,
+textarea:required {
+  border-color: red !important;
+}
+
+.Save-button {
   background-color: #61BD4F;
   border-color: transparent;
   color: white;
@@ -83,42 +129,6 @@ body, button {
   margin-top: 10px;
   padding: 10px;
   text-transform: uppercase;  
-}
-
-.List button {
-  background-color: #61BD4F;
-  color: white;
-  font-size: 1.5rem;
-  padding-left: 30px;
-  padding-right: 30px;
-  text-align: center;
-  text-transform: uppercase; 
-}
-
-.Watchdelete-button {
-  background-color: red;
-  color: white;
-  font-size: 1rem;
-  margin-top: 5px;
-  padding: 10px;
-  text-align: center;
-  text-transform: uppercase; 
-}
-
-.Watchedit-button {
-  background-color: #61BD4F;
-  color: white;
-  font-size: 1rem;
-  margin-right: 20px;
-  margin-top: 5px;
-  padding: 10px;
-  text-align: center;
-  text-transform: uppercase; 
-}
-
-input:required,
-textarea:required {
-  border-color: red !important;
 }
 
 button:focus {

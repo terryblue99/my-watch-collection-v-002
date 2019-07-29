@@ -9,12 +9,8 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 
 class WatchDetail extends Component { 
 
-    state = {
-        editClicked: false
-    }
-
     handleEdit = (currentWatch) => {
-        
+        console.log('*** currentWatch: ', currentWatch)
     }
 
     render () {
