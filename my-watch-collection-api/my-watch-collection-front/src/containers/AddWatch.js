@@ -71,6 +71,12 @@ class AddWatch extends Component {
                         placeholder='Movement'
                         onChange={this.handleChange}
                    />
+                   <br /> 
+                   <input  type='text'
+                        name='complications'
+                        placeholder='Complications'
+                        onChange={this.handleChange}
+                   />
                    <br />
                    <input  type='text'
                         name='band'
@@ -93,12 +99,6 @@ class AddWatch extends Component {
                    <input  type='text'
                         name='water_resistance'
                         placeholder='Water resistance'
-                        onChange={this.handleChange}
-                   />
-                   <br /> 
-                   <input  type='text'
-                        name='complications'
-                        placeholder='Complications'
                         onChange={this.handleChange}
                    />
                    <br /> 

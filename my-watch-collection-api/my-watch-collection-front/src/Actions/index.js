@@ -68,7 +68,7 @@ export const addWatchAction = (watch) => {
 					})
 				}
 		})
-		.then(alert('The watch has been saved'))
+		.then(alert('The watch has been added and saved'))
 		.catch(error => {
 			console.log(error)
 		})
@@ -76,6 +76,8 @@ export const addWatchAction = (watch) => {
 }
 
 export const editWatchAction = (watch) => {
+	console.log('***editWatchAction watch: ', watch)
+	console.log('***editWatchAction watch URL: ', `${API_URL}/watches/${watch.id}`)
 	return dispatch => {
 		fetch(`${API_URL}/watches/${watch.id}`, {
 			method: 'PATCH',
@@ -85,6 +87,7 @@ export const editWatchAction = (watch) => {
 			body: JSON.stringify(watch)
 		})
 		.then(response => {
+			console.log('*** editWatch response: ', response)
 			if (response.error) {
 				alert(response.error)
 			} else {
@@ -94,7 +97,8 @@ export const editWatchAction = (watch) => {
 					})
 				}
 		})
-		.then(alert('The watch has been saved'))
+		.then(alert('The watch has been edited and saved'))
+		.then(window.location.href = '/watches')
 		.catch(error => {
 			console.log(error)
 		})

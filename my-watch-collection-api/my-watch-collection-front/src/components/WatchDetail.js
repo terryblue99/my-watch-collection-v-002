@@ -9,13 +9,24 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 
 class WatchDetail extends Component { 
 
+    state = {
+        editClicked: false
+    }
+
     handleEdit = (currentWatch) => {
-        console.log('*** currentWatch: ', currentWatch)
+        console.log('*** WatchDetail handleEdit currentWatch: ', currentWatch)
+        this.setState({
+            editClicked: true
+        })
     }
 
     render () {
         const showWatches = this.props.showWatches
         const currentWatch = this.props.currentWatch
+        console.log('***WatchDetail render state: ', this.state.editClicked)
+        if (this.state.editClicked) {
+            return <EditWatch currentWatch={currentWatch} />
+        }
         if (currentWatch.watch_maker) {
             return ( 
                 <div className="WatchDetail" css={css`
@@ -35,16 +46,16 @@ class WatchDetail extends Component {
                     `}>
                         <br /><p><b css={detailCss}>Movement</b></p>
                         <h3 className='WatchDetail'>{currentWatch.movement}</h3>
-                        <p><b css={detailCss}>Case measurement</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
                         <p><b css={detailCss}>Complications</b></p>
                         <h3 className='WatchDetail'>{currentWatch.complications}</h3>
                         <p><b css={detailCss}>Band</b></p> 
                         <h3 className='WatchDetail'>{currentWatch.band}</h3>
-                        <p><b css={detailCss}>Water resistance</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                         <p><b css={detailCss}>Model number</b></p>
                         <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
+                        <p><b css={detailCss}>Case measurement</b></p>
+                        <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
+                        <p><b css={detailCss}>Water resistance</b></p>
+                        <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                         <p><b css={detailCss}>Date bought</b></p>
                         <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
                         <p><b css={detailCss}>Cost</b></p>
@@ -57,7 +68,7 @@ class WatchDetail extends Component {
                         margin-top: 40px;
                     `}>
                         <button className='Watchedit-button' onClick={ 
-                            this.handleEdit(currentWatch)
+                            (e) => this.handleEdit(e, currentWatch)
                         }> Edit this watch
                         </button>
                         <button className='Watchdelete-button' onClick={

@@ -28,6 +28,7 @@ export default (state = initialState, { type, payload } ) => {
 			else return state
 
 		case EDIT_WATCH:
+			console.log('*** reducer EDIT_WATCH payload: ', payload)
 			if (payload) {
 				return (
 					{ ...state, watches: [...state.watches, payload] }
