@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './App.css'
 import NavBar from '../components/NavBar'
-import { addWatchAction } from '../actions/index'
+import { addWatchAction } from '../actions/watches'
 
 class AddWatch extends Component {
 

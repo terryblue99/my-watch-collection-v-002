@@ -2,20 +2,20 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './App.css'
 import NavBar from '../components/NavBar'
-import { editWatchAction } from '../actions/index'
+import { editWatchAction } from '../actions/watches'
 
 class EditWatch extends Component {
 
      state = {
-        id: this.props.currentWatch.id,
+        id: this.props.currentWatch.id,  
         watch_name: this.props.currentWatch.watch_name,
         watch_maker: this.props.currentWatch.watch_maker,
         movement: this.props.currentWatch.movement,
+        complications: this.props.currentWatch.complications,
         band: this.props.currentWatch.band,
         model_number: this.props.currentWatch.model_number,
         case_measurement: this.props.currentWatch.case_measurement,
         water_resistance: this.props.currentWatch.water_resistance,
-        complications: this.props.currentWatch.complications,
         date_bought: this.props.currentWatch.date_bought,
         cost: this.props.currentWatch.cost
      }
@@ -28,30 +28,20 @@ class EditWatch extends Component {
 
      handleSubmit = (event) => {
         event.preventDefault()
-        // Destructure editWatchAction from the component props
-        console.log('### EditWatch this.props: ', this.props.currentWatch)
-     //    const { editWatchAction } = this.props.currentWatch
-        // Create the watch with the Redux action
-        console.log('### EditWatch this.state: ', this.state)
-        editWatchAction(this.state)
-        // Clear the form
-        // document.getElementById('EditWatch-form').reset()
+        this.props.editWatchAction(this.state)
      }
 
      handleBack = () => {
           // redirect to /watches route
-          const { history } = this.props
-          history.push('/watches')  
-          // window.location.href = '/watches'
+          window.location.href = '/watches'
      }
 
      render() {
-      console.log('*** EditWatch currentWatch: ', this.props.currentWatch)
       const watch = this.props.currentWatch
+      
       return (
         <div>
-           {/* <NavBar />  */}
-           {/* <button onClick={this.handleBack} className='Back-button'>Back to watch list</button> */}
+           <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
            <br />
            <form id='EditWatch-form' onSubmit={this.handleSubmit}>
                 <div className='EditWatch'>

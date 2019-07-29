@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import '../containers/App.css'
 import EditWatch from '../containers/EditWatch'
-import { deleteWatchAction } from '../actions/index'
+import { deleteWatchAction } from '../actions/watches'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
@@ -14,7 +14,6 @@ class WatchDetail extends Component {
     }
 
     handleEdit = (currentWatch) => {
-        console.log('*** WatchDetail handleEdit currentWatch: ', currentWatch)
         this.setState({
             editClicked: true
         })
@@ -23,10 +22,11 @@ class WatchDetail extends Component {
     render () {
         const showWatches = this.props.showWatches
         const currentWatch = this.props.currentWatch
-        console.log('***WatchDetail render state: ', this.state.editClicked)
+
         if (this.state.editClicked) {
             return <EditWatch currentWatch={currentWatch} />
         }
+        
         if (currentWatch.watch_maker) {
             return ( 
                 <div className="WatchDetail" css={css`
