@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import '../containers/App.css'
-import EditWatch from '../containers/EditWatch'
 import { deleteWatchAction } from '../actions/watches'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
@@ -9,24 +9,10 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 
 class WatchDetail extends Component { 
 
-    state = {
-        editClicked: false
-    }
-
-    handleEdit = (currentWatch) => {
-        this.setState({
-            editClicked: true
-        })
-    }
-
     render () {
         const showWatches = this.props.showWatches
         const currentWatch = this.props.currentWatch
 
-        if (this.state.editClicked) {
-            return <EditWatch currentWatch={currentWatch} />
-        }
-        
         if (currentWatch.watch_maker) {
             return ( 
                 <div className="WatchDetail" css={css`
@@ -67,10 +53,16 @@ class WatchDetail extends Component {
                         text-align: center;
                         margin-top: 40px;
                     `}>
-                        <button className='Watchedit-button' onClick={ 
-                            (e) => this.handleEdit(e, currentWatch)
-                        }> Edit this watch
-                        </button>
+                        <Link className='Watchedit-button' to={{
+                            // Link to the edit watch screen and pass the current watch
+                            pathname: `/watches/${currentWatch.id}`,
+                            state: {
+                                fromWatchDetails: true,
+                                watch: this.props.currentWatch
+                            }
+                        }}
+                        > Edit this watch
+                        </Link>
                         <button className='Watchdelete-button' onClick={
                             () => {if(window.confirm('Do you realy want to delete this watch?'))
                                     // this.props. needed for fetch in deleteWatchAction to work 
