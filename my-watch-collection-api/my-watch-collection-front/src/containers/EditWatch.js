@@ -2,21 +2,22 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './App.css'
 import NavBar from '../components/NavBar'
-import { addWatchAction } from '../actions/watches'
+import { editWatchAction } from '../actions/watches'
 
-class AddWatch extends Component {
+class EditWatch extends Component {
 
      state = {
-        watch_name: '',
-        watch_maker: '',
-        movement: '',
-        band: '',
-        model_number: '',
-        case_measurement: '',
-        water_resistance: '',
-        complications: '',
-        date_bought: '',
-        cost: ''
+        id: this.props.currentWatch.id,  
+        watch_name: this.props.currentWatch.watch_name,
+        watch_maker: this.props.currentWatch.watch_maker,
+        movement: this.props.currentWatch.movement,
+        complications: this.props.currentWatch.complications,
+        band: this.props.currentWatch.band,
+        model_number: this.props.currentWatch.model_number,
+        case_measurement: this.props.currentWatch.case_measurement,
+        water_resistance: this.props.currentWatch.water_resistance,
+        date_bought: this.props.currentWatch.date_bought,
+        cost: this.props.currentWatch.cost
      }
 
      handleChange = (event) => {
@@ -27,90 +28,84 @@ class AddWatch extends Component {
 
      handleSubmit = (event) => {
         event.preventDefault()
-        // Destructure addWatchAction from the component props
-        const { addWatchAction } = this.props
-        // Create the watch with the Redux action
-        addWatchAction(this.state)
-        // Clear the form
-        document.getElementById('AddWatch-form').reset()
+        this.props.editWatchAction(this.state)
      }
 
      handleBack = () => {
           // redirect to /watches route
-          const { history } = this.props
-          history.push('/watches')    
+          window.location.href = '/watches'
      }
 
      render() {
-
+      const watch = this.props.currentWatch
+      
       return (
         <div>
-           <NavBar /> 
            <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
-           
-           <form id='AddWatch-form' onSubmit={this.handleSubmit}>
-                <div className='AddWatch'>
-                   <h1 style={{color: 'green'}}>Add a watch</h1>
+           <br />
+           <form id='EditWatch-form' onSubmit={this.handleSubmit}>
+                <div className='EditWatch'>
+                   <h1 style={{color: 'green'}}>Edit this watch</h1>
                    <br /> 
                    <input  required 
                         type='text'
                         name='watch_name'
-                        placeholder='Watch name'
+                        defaultValue={watch.watch_name}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  required 
                         type='text'
                         name='watch_maker'
-                        placeholder='Watch maker'
+                        defaultValue={watch.watch_maker}
                         onChange={this.handleChange}
                    />
                    <br />
                    <input  type='text'
                         name='movement'
-                        placeholder='Movement'
+                        defaultValue={watch.movement}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='complications'
-                        placeholder='Complications'
+                        defaultValue={watch.complications}
                         onChange={this.handleChange}
                    />
                    <br />
                    <input  type='text'
                         name='band'
-                        placeholder='Band'
+                        defaultValue={watch.band}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='model_number'
-                        placeholder='Model number'
+                        defaultValue={watch.model_number}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='case_measurement'
-                        placeholder='Case measurement (e.g. 45mm)'
+                        defaultValue={watch.case_measurement}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='water_resistance'
-                        placeholder='Water resistance'
+                        defaultValue={watch.water_resistance}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='date_bought'
-                        placeholder='Date bought'
+                        defaultValue={watch.date_bought}
                         onChange={this.handleChange}
                    />
                    <br /> 
                    <input  type='text'
                         name='cost'
-                        placeholder='Cost (e.g. 199.99)'
+                        defaultValue={watch.cost}
                         onChange={this.handleChange}
                    />
                    <br />
@@ -122,4 +117,4 @@ class AddWatch extends Component {
      } 
 }
 
-export default connect(null, { addWatchAction })(AddWatch)
+export default connect(null, { editWatchAction })(EditWatch)

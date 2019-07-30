@@ -27,7 +27,7 @@ export const getWatchesAction = () => {
 		// that data is loading
 		// dispatch ({type: LOADING_WATCHES})
 
-		fetch(`${API_URL}/watches`)
+		return fetch(`${API_URL}/watches`)
 		.then(response => {
 			if (response.error) {
 				alert(response.error)
@@ -51,7 +51,7 @@ export const getWatchesAction = () => {
 
 export const addWatchAction = (watch) => {
 	return dispatch => {
-		fetch(`${API_URL}/watches`, {
+		return fetch(`${API_URL}/watches`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -68,7 +68,51 @@ export const addWatchAction = (watch) => {
 					})
 				}
 		})
-		.then(alert('The watch has been saved'))
+		.then(alert('The watch has been added and saved'))
+		.catch(error => {
+			console.log(error)
+		})
+	}
+}
+
+export const editWatchAction = (watch) => {
+	return dispatch => {
+
+		const sendWatchData = {
+			watch_name: watch.watch_name,
+			watch_maker: watch.watch_maker,
+			movement: watch.movement,
+			band: watch.band,
+			model_number: watch.model_number,
+			case_measurement: watch.case_measurement,
+			water_resistance: watch.water_resistance,
+			complications: watch.complications,
+			date_bought: watch.date_bought,
+			cost: watch.cost
+		}
+
+		return fetch(`${API_URL}/watches/${watch.id}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(sendWatchData)
+		})
+		.then(response => {
+			if (response.error) {
+				alert(response.error)
+			} else {
+				return response.json()
+			}
+		})
+		.then(
+			dispatch({
+					type: EDIT_WATCH,
+					payload: watch
+			})
+		)
+		.then(alert('The watch has been edited and saved'))
+		// .then(window.location.href = '/watches')
 		.catch(error => {
 			console.log(error)
 		})
@@ -77,7 +121,7 @@ export const addWatchAction = (watch) => {
 
 export const deleteWatchAction = (id, watchName) => {
 	return dispatch => {
-		fetch(`${API_URL}/watches/${id}`, {
+		return fetch(`${API_URL}/watches/${id}`, {
 				method: 'DELETE'
 		})
 		.then(alert(watchName + ': has been deleted'))

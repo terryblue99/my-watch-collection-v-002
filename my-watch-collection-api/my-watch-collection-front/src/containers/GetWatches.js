@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getWatchesAction } from '../actions/index'
+import { getWatchesAction } from '../actions/watches'
 import WatchList from '../components/WatchList'
 
 class GetWatches extends Component {

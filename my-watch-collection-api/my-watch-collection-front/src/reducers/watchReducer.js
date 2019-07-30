@@ -1,4 +1,10 @@
-import { LOADING_WATCHES, GET_WATCHES, ADD_WATCH, DELETE_WATCH } from '../actions/types'
+import { 
+	LOADING_WATCHES, 
+	GET_WATCHES, 
+	ADD_WATCH, 
+	EDIT_WATCH, 
+	DELETE_WATCH 
+} from '../actions/types'
 
 const initialState = []
 
@@ -18,6 +24,13 @@ export default (state = initialState, { type, payload } ) => {
 		case ADD_WATCH:
 			if (payload) {
 				return state.watches.concat(payload)	
+			}
+			else return state
+
+		case EDIT_WATCH:
+			if (payload) {
+				state.watches.map(watch => watch.id === payload.id ? payload : watch)
+				return state
 			}
 			else return state
 
