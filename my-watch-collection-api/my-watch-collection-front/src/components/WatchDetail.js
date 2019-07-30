@@ -62,15 +62,7 @@ class WatchDetail extends Component {
                 </div>
             )     
 
-        } else return (
-            <div css={css`
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            `}>
-                Select a watch!
-            </div>       
-        )
+        } else return null 
     }
 }
 
