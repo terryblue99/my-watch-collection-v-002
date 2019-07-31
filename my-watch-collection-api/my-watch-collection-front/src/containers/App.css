@@ -92,6 +92,7 @@ body, button {
   margin-top: 5px;
   padding: 8px;
   text-align: center;
+  text-decoration: none;
   text-transform: uppercase; 
 }
 

@@ -20,13 +20,12 @@ class WatchDetail extends Component {
 
         if (currentWatch.watch_maker) {
             return ( 
-               <div>
-                <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
-                <div className="WatchDetail" css={css`
+                <div css={css`
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;  
                         margin-bottom: 5px;
                 `}>
+                    <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
                     <div> 
                         <b><h2 css={css`
                             text-align: center;
@@ -78,8 +77,7 @@ class WatchDetail extends Component {
                             }> Delete this watch
                         </button>
                     </div>
-                </div>
-               </div>
+                </div> 
             )     
 
         } else return null 

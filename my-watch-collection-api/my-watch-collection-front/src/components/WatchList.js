@@ -7,7 +7,7 @@ import SidebarMobile from './SidebarMobile'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const WatchList = ({ watches }) => {  
+const WatchList = ({ watches }) => { 
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
    const [currentWatch, setCurrentWatch] = useState({}) 
@@ -16,14 +16,15 @@ const WatchList = ({ watches }) => {
 
     if (watches) {
        watchList = watches.map(watch => ( 
-            <li key={watch.id} css={css`
+            <li className='watchName' key={watch.id} css={css`
                 border-bottom: 1px solid black;
                 padding: 5px;
                 &:hover {
                     background-color: #61BD4F;
+                    color: white;
                     cursor: pointer;
                 }
-            `} onClick={() => {
+            `} onClick={(event) => {
                     setCurrentWatch(watch)
                     setShowWatches(false) // on mobiles will display watch detail when name is clicked
                 }}>
