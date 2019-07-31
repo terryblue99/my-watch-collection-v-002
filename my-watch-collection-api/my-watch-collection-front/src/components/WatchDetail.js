@@ -80,7 +80,7 @@ class WatchDetail extends Component {
                 </div> 
             )     
 
-        } else return null 
+        } else return null
     }
 }
 
