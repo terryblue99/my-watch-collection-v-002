@@ -112,7 +112,6 @@ export const editWatchAction = (watch) => {
 			})
 		)
 		.then(alert('The watch has been edited and saved'))
-		// .then(window.location.href = '/watches')
 		.catch(error => {
 			console.log(error)
 		})

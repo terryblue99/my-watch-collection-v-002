@@ -9,12 +9,19 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 
 class WatchDetail extends Component { 
 
+    handleBack = () => {
+        // redirect to /watches route
+        window.location.href = '/watches'  
+   }
+
     render () {
         const showWatches = this.props.showWatches
         const currentWatch = this.props.currentWatch
 
         if (currentWatch.watch_maker) {
             return ( 
+               <div>
+                <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
                 <div className="WatchDetail" css={css`
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;  
@@ -72,6 +79,7 @@ class WatchDetail extends Component {
                         </button>
                     </div>
                 </div>
+               </div>
             )     
 
         } else return null 
