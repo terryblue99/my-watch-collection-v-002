@@ -6,7 +6,7 @@ import {
   Switch
 } from 'react-router-dom'
 import './App.css'
-import Login from '../components/Login'
+import LogIn from './LogIn'
 import Homepage from '../components/Homepage'
 import FetchWatches from './GetWatches'
 import AddWatch from './AddWatch'
@@ -20,7 +20,7 @@ const App = () => {
         <BrowserRouter>
           <Switch>
               <Route exact path='/' component={Homepage} />
-              <Route path='/login' component={Login} />
+              <Route path='/login' component={LogIn} />
               <Route exact path='/watches' component={FetchWatches} />
               <Route exact path='/watches/new' component={AddWatch} />
               <Route path='/watches/:id' component={EditWatch} />

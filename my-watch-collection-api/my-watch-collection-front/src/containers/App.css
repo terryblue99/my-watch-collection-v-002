@@ -48,6 +48,11 @@ body, button {
   text-transform: uppercase;
 }
 
+.input-element {
+  font-size: 15px;
+  width: 300px;
+}
+
 .Login {
   align-items: center;
   background-color: white;

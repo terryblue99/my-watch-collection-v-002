@@ -1,6 +1,6 @@
 import React from 'react'
 import '../containers/App.css'
-import logo from '../img/logo.jpg'
+import logo from '../logo.jpg'
 
 const signLogIn = () => {
     alert('Sign Up or Log In')
