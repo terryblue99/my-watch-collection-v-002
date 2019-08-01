@@ -17,7 +17,7 @@ body, button {
                                 supported by Chrome and Opera */
 }
 
-.Homepage-logo {
+.logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -150,7 +150,7 @@ body, button {
   text-transform: uppercase; 
 }
 
-.Watchedit-button {
+.green-button {
   background-color: #61BD4F;
   color: white;
   font-size: 1rem;
@@ -162,13 +162,14 @@ body, button {
   text-transform: uppercase; 
 }
 
-.Watchdelete-button {
+.red-button {
   background-color: red;
   color: white;
   font-size: 1rem;
   margin-top: 5px;
   padding: 8px;
   text-align: center;
+  text-decoration: none;
   text-transform: uppercase; 
 }
 
@@ -205,3 +206,4 @@ button:focus {
 button:hover {
   cursor: pointer;
 }
+

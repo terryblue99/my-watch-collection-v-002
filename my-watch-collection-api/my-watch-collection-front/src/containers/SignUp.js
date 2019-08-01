@@ -26,7 +26,7 @@ class SignUp extends Component {
     render() {
         return (
             <header className='Signup'>
-            <img src={logo} alt='logo' align='middle' className='Homepage-logo'/>
+            <img src={logo} alt='logo' align='middle' className='logo'/>
             <div className='container'>
                 <form id='Signup-form' onSubmit={this.handleSubmit}>
                   <div className='register'>
@@ -56,13 +56,13 @@ class SignUp extends Component {
                     <input className='input-element' required 
                             type='password'
                             name='password'
-                            placeholder='Enter your password'
+                            placeholder='Enter a password'
                             onChange={this.handleChange}
                     />
                     <br />
                     <input className='input-element' required 
                             type='password'
-                            name='password'
+                            name='confirmPassword'
                             placeholder='Confirm your password'
                             onChange={this.handleChange}
                     />

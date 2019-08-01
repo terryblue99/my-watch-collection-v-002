@@ -1,19 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { css } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import '../containers/App.css'
 import logo from '../logo.jpg'
-
-const signLogIn = () => {
-    alert('Sign Up or Log In')
-}
 
 const Homepage = ({ setScreen }) => {
     
     return (
         <header className='Homepage'>
-            <img src={logo} alt='logo' align='middle' className='Homepage-logo'/>
+            <img src={logo} alt='logo' align='middle' className='logo'/>
             <div className='container'>
                 <div>
-                    <button onClick={signLogIn} className='Homepage-button'>Start</button>
+                    <Link className='green-button' to={{
+                        pathname: `/login`
+                    }}
+                    > Log In
+                    </Link>
+                    
+                    <Link className='green-button' to={{
+                        pathname: `/signup`
+                    }}
+                    > Sign Up
+                    </Link>
                 </div>
             </div>
         </header>

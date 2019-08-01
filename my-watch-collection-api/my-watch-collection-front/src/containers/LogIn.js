@@ -23,7 +23,7 @@ class LogIn extends Component {
     render() {
         return (
             <header className='Login'>
-            <img src={logo} alt='logo' align='middle' className='Homepage-logo'/>
+            <img src={logo} alt='logo' align='middle' className='logo'/>
             <div className='container'>
                 <form id='Login-form' onSubmit={this.handleSubmit}>
                   <div className='register'>

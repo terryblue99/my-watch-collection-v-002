@@ -59,7 +59,7 @@ class WatchDetail extends Component {
                         text-align: center;
                         margin-top: 40px;
                     `}>
-                        <Link className='Watchedit-button' to={{
+                        <Link className='green-button' to={{
                             // Link to the edit watch screen and pass the current watch
                             pathname: `/watches/${currentWatch.id}`,
                             state: {
@@ -69,7 +69,7 @@ class WatchDetail extends Component {
                         }}
                         > Edit this watch
                         </Link>
-                        <button className='Watchdelete-button' onClick={
+                        <button className='red-button' onClick={
                             () => {if(window.confirm('Do you realy want to delete this watch?'))
                                     // this.props. needed for fetch in deleteWatchAction to work 
                                     {this.props.deleteWatchAction(currentWatch.id, currentWatch.watch_name)}
