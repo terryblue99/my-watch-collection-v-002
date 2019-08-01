@@ -78,7 +78,32 @@ body, button {
   text-transform: uppercase;
 }
 
-.doLogin {
+.Signup {
+  align-items: center;
+  background-color: white;
+  color: black; 
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.Signup .container {
+  display: grid;
+}
+
+.Signup-button {
+  background-color: #61BD4F;
+  border-color: transparent;
+  color: white;
+  font-size: 2rem; 
+  margin-top: 5px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.register {
   display: flex;
   flex-direction: column;
   font-size: 12px;

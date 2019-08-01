@@ -5,15 +5,19 @@ import logo from '../logo.jpg'
 class LogIn extends Component {
 
     state = {
-
+        email: '',
+        password: ''
     }
 
     handleSubmit = (event) => {
-        console.log('*** handleSubmit')
+        event.preventDefault()
+        console.log('*** state: ', this.state)
     }
 
     handleChange = (event) => {
-        console.log('*** handleChange')
+        this.setState({
+            [event.target.name]: event.target.value
+        })                         
     }
     
     render() {
@@ -22,8 +26,8 @@ class LogIn extends Component {
             <img src={logo} alt='logo' align='middle' className='Homepage-logo'/>
             <div className='container'>
                 <form id='Login-form' onSubmit={this.handleSubmit}>
-                  <div className='doLogin'>
-                    <h1 style={{color: 'green'}}>Log In</h1>
+                  <div className='register'>
+                    {/* <h1 style={{color: 'green'}}>Log In</h1> */}
                     <br /> 
                     <input className='input-element' required 
                             type='email'
