@@ -52,63 +52,63 @@ class AddWatch extends Component {
                 <div className='AddWatch'>
                    <h1 style={{color: 'green'}}>Add a watch</h1>
                    <br /> 
-                   <input  required 
+                   <input className='input-element' required 
                         type='text'
                         name='watch_name'
                         placeholder='Watch name'
                         onChange={this.handleChange}
                    />
                    <br /> 
-                   <input  required 
+                   <input className='input-element' required 
                         type='text'
                         name='watch_maker'
                         placeholder='Watch maker'
                         onChange={this.handleChange}
                    />
                    <br />
-                   <input  type='text'
+                   <input className='input-element'  type='text'
                         name='movement'
                         placeholder='Movement'
                         onChange={this.handleChange}
                    />
                    <br /> 
-                   <input  type='text'
+                   <input className='input-element'  type='text'
                         name='complications'
                         placeholder='Complications'
                         onChange={this.handleChange}
                    />
                    <br />
-                   <input  type='text'
+                   <input className='input-element'  type='text'
                         name='band'
                         placeholder='Band'
                         onChange={this.handleChange}
                    />
                    <br /> 
-                   <input  type='text'
+                   <input className='input-element'  type='text'
                         name='model_number'
                         placeholder='Model number'
                         onChange={this.handleChange}
                    />
                    <br /> 
-                   <input  type='text'
+                   <input className='input-element'  type='text'
                         name='case_measurement'
                         placeholder='Case measurement (e.g. 45mm)'
                         onChange={this.handleChange}
                    />
                    <br /> 
-                   <input  type='text'
+                   <input className='input-element'  type='text'
                         name='water_resistance'
                         placeholder='Water resistance'
                         onChange={this.handleChange}
                    />
                    <br /> 
-                   <input  type='text'
+                   <input className='input-element'  type='text'
                         name='date_bought'
                         placeholder='Date bought'
                         onChange={this.handleChange}
                    />
                    <br /> 
-                   <input  type='text'
+                   <input className='input-element'  type='text'
                         name='cost'
                         placeholder='Cost (e.g. 199.99)'
                         onChange={this.handleChange}
