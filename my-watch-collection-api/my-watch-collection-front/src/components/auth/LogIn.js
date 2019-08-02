@@ -1,12 +1,23 @@
 import React, { Component } from 'react'
-import './App.css'
-import logo from '../logo.jpg'
+import { Redirect } from 'react-router-dom'
+import '../../containers/App.css'
+import logo from '../../logo.jpg'
+import fakeAuth from './fakeAuth'
 
 class LogIn extends Component {
 
     state = {
         email: '',
-        password: ''
+        password: '',
+        redirectToReferrer: false
+    }
+
+    login = () => {
+        fakeAuth.authenticate(() => {
+            this.setState({
+                redirectToReferrer: true
+            })
+        })   
     }
 
     handleSubmit = (event) => {
@@ -21,13 +32,24 @@ class LogIn extends Component {
     }
     
     render() {
+
+        const { redirectToReferrer } = this.state.redirectToReferrer
+        if (redirectToReferrer === true) {
+            return (
+                <Redirect to='/' /> 
+            )
+        }
+
         return (
+           <div>
+            <div className='referToLogin'>
+                <p>You must log in to view your data</p>
+            </div>
             <header className='Login'>
             <img src={logo} alt='logo' align='middle' className='logo'/>
             <div className='container'>
                 <form id='Login-form' onSubmit={this.handleSubmit}>
                   <div className='register'>
-                    {/* <h1 style={{color: 'green'}}>Log In</h1> */}
                     <br /> 
                     <input className='input-element' required 
                             type='email'
@@ -48,6 +70,7 @@ class LogIn extends Component {
                 </form>
             </div>
             </header>
+           </div> 
         )
     }
 }

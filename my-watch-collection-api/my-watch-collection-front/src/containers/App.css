@@ -27,7 +27,6 @@ body, button {
 .Homepage {
   align-items: center;
   background-color: white;
-  color: black; 
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
@@ -39,13 +38,18 @@ body, button {
   display: grid;
 }
 
-.Homepage-button {
+.home-button {
   background-color: #61BD4F;
-  border-color: transparent;
   color: white;
-  font-size: 3rem; 
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+  max-width: 40px;
   padding: 20px;
-  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase; 
 }
 
 .input-element {
@@ -53,35 +57,29 @@ body, button {
   width: 300px;
 }
 
+.referToLogin {
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  margin-top: 35px;
+  max-width: 300px;
+  padding: 15px;
+  text-align: center;
+}
+
 .Login {
-  align-items: center;
   background-color: white;
-  color: black; 
-  display: flex;
+  display: block;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
   justify-content: center;
   min-height: 100vh;
-}
-
-.Login .container {
-  display: grid;
-}
-
-.Login-button {
-  background-color: #61BD4F;
-  border-color: transparent;
-  color: white;
-  font-size: 2rem; 
-  margin-top: 5px;
-  padding: 10px;
-  text-transform: uppercase;
+  padding-top: 20px;
 }
 
 .Signup {
   align-items: center;
   background-color: white;
-  color: black; 
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
@@ -89,11 +87,11 @@ body, button {
   min-height: 100vh;
 }
 
-.Signup .container {
+.Login .container, .signup .container {
   display: grid;
 }
 
-.Signup-button {
+.Login-button, .Signup-button, .Save-button {
   background-color: #61BD4F;
   border-color: transparent;
   color: white;
@@ -110,7 +108,6 @@ body, button {
   justify-content: center;
   margin: 0 auto;
   max-width: 300px;
-  /* padding-top: 20px; */
   text-align: center;
 }
 
@@ -118,25 +115,13 @@ body, button {
   margin-bottom: 5px;
 }
 
-.AddWatch {
+.AddWatch, .EditWatch {
   display: flex;
   flex-direction: column;
   font-size: 12px;
   justify-content: center;
   margin: 0 auto;
   max-width: 300px;
-  /* padding-top: 20px; */
-  text-align: center;
-}
-
-.EditWatch {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 300px;
-  /* padding-top: 20px; */
   text-align: center;
 }
 
@@ -150,7 +135,7 @@ body, button {
   text-transform: uppercase; 
 }
 
-.green-button {
+.edit-button {
   background-color: #61BD4F;
   color: white;
   font-size: 1rem;
@@ -176,16 +161,6 @@ body, button {
 input:required,
 textarea:required {
   border-color: red !important;
-}
-
-.Save-button {
-  background-color: #61BD4F;
-  border-color: transparent;
-  color: white;
-  font-size: 2rem; 
-  margin-top: 5px;
-  padding: 10px;
-  text-transform: uppercase;
 }
 
 .Back-button {

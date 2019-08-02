@@ -1,35 +1,47 @@
-import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html'
-import React from 'react'
+
+import React, { Component } from 'react'
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Route,
+  Redirect,
   Switch
 } from 'react-router-dom'
 import './App.css'
-import LogIn from './LogIn'
-import SignUp from './SignUp'
+import LogIn from '../components/auth/LogIn'
+import SignUp from '../components/auth/SignUp'
 import Homepage from '../components/Homepage'
 import FetchWatches from './GetWatches'
 import AddWatch from './AddWatch'
 import EditWatch from './EditWatch'
-const App = () => {
+import fakeAuth from '../components/auth/fakeAuth'
 
-    const [loggedIn, setLoggedIn] = useState(false)
+const PrivateRoute = ({ component: Component, ...rest}) => ( // rename component with a capital 'C'
+                                                             //  ...rest is rest of arguments; path & component
+  <Route {...rest} render={(props) => (
+      fakeAuth.isAuthenticated === true
+        ? <Component {...props} /> // props are location, match & history
+        : <Redirect to='/login' />
+  )}/>
+)
 
+class App extends Component {
+
+  render() {
     return (
       <div className='App'>
-        <BrowserRouter>
+        <Router>
           <Switch>
               <Route exact path='/' component={Homepage} />
               <Route path='/login' component={LogIn} />
               <Route path='/signup' component={SignUp} />
-              <Route exact path='/watches' component={FetchWatches} />
-              <Route exact path='/watches/new' component={AddWatch} />
-              <Route path='/watches/:id' component={EditWatch} />
+              <PrivateRoute exact path='/watches' component={FetchWatches} />
+              <PrivateRoute exact path='/watches/new' component={AddWatch} />
+              <PrivateRoute path='/watches/:id' component={EditWatch} />
           </Switch> 
-        </BrowserRouter>        
+        </Router>        
       </div>
     )
+  }
 }
 
 export default App

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './App.css'
-import logo from '../logo.jpg'
+import '../../containers/App.css'
+import logo from '../../logo.jpg'
 
 class SignUp extends Component {
 
@@ -30,7 +30,6 @@ class SignUp extends Component {
             <div className='container'>
                 <form id='Signup-form' onSubmit={this.handleSubmit}>
                   <div className='register'>
-                    {/* <h1 style={{color: 'green'}}>Sign Up</h1> */}
                     <br /> 
                     <input className='input-element' required 
                             type='text'

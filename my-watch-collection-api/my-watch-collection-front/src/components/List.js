@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
 const List = ({ watches, showWatches}, loggedIn=false) => {  
-    console.log('*** loggedIn: ', loggedIn)
+
     return (
         
         <div className='List' css={css`
@@ -29,14 +29,10 @@ const List = ({ watches, showWatches}, loggedIn=false) => {
                 border-top: 1px solid;
                 padding-top 10px;
                 text-align: center;
-            `}>
-                {!loggedIn ? 
-                    window.location.href = '/login'
-                :
-                    <Link to='/watches/new'>
-                        <button>Add a watch</button>
-                    </Link>
-                }
+            `}> 
+                <Link to='/watches/new'>
+                    <button>Add a watch</button>
+                </Link>  
             </div>
         </div>  
     ) 
