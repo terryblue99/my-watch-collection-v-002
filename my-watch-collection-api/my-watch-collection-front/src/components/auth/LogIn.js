@@ -9,20 +9,25 @@ class LogIn extends Component {
     state = {
         email: '',
         password: '',
-        redirectToReferrer: false
+        redirectToReferrer: true  // set to false when LogIn.js & SignUp.js completed!
     }
 
-    login = () => {
-        fakeAuth.authenticate(() => {
-            this.setState({
-                redirectToReferrer: true
-            })
-        })   
-    }
+    // login = () => {
+    //     fakeAuth.authenticate(() => {
+    //         this.setState({
+    //             redirectToReferrer: true
+    //         })
+    //     })   
+    // }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log('*** state: ', this.state)
+        fakeAuth.authenticate(() => {
+            console.log('*** handleSubmit this: ', this)
+            this.setState({
+                redirectToReferrer: true
+            })
+        }) 
     }
 
     handleChange = (event) => {
@@ -33,7 +38,7 @@ class LogIn extends Component {
     
     render() {
 
-        // Authenticate the referrer (from) screen
+        // Authenticate the referrer (from) screen and get the path for redirect
         const { redirectToReferrer } = this.state.redirectToReferrer
         const { from } = this.props.location.state || { from: { pathname: '/' } }
         if (redirectToReferrer === true) {
@@ -44,13 +49,14 @@ class LogIn extends Component {
 
         return (
            <div>
-               {console.log('*** redirectToReferrer: ', this.state.redirectToReferrer)}
             {this.state.redirectToReferrer === false ? 
                 <div>
                     <p className='referToLogin'>You must log in to access {from.pathname}</p>
                 </div>
                 :
-                null
+                <div>
+                    <p className='referToLogin'>Log in to access your data</p>
+                </div>
             }    
             <header className='Login'>
             <img src={logo} alt='logo' align='middle' className='logo'/>
