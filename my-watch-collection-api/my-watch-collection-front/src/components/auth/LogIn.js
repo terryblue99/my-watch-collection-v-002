@@ -33,18 +33,25 @@ class LogIn extends Component {
     
     render() {
 
+        // Authenticate the referrer (from) screen
         const { redirectToReferrer } = this.state.redirectToReferrer
+        const { from } = this.props.location.state || { from: { pathname: '/' } }
         if (redirectToReferrer === true) {
             return (
-                <Redirect to='/' /> 
+                <Redirect to={ from } /> 
             )
         }
 
         return (
            <div>
-            <div className='referToLogin'>
-                <p>You must log in to view your data</p>
-            </div>
+               {console.log('*** redirectToReferrer: ', this.state.redirectToReferrer)}
+            {this.state.redirectToReferrer === false ? 
+                <div>
+                    <p className='referToLogin'>You must log in to access {from.pathname}</p>
+                </div>
+                :
+                null
+            }    
             <header className='Login'>
             <img src={logo} alt='logo' align='middle' className='logo'/>
             <div className='container'>
