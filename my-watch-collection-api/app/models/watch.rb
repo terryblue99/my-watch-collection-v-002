@@ -1,4 +1,4 @@
 class Watch < ApplicationRecord
-  validates :watch_name, presence: true
- 	validates :watch_maker, presence: true
+  validates_presence_of :watch_name
+  validates_presence_of :watch_maker
 end
