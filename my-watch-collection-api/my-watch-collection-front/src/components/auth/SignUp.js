@@ -12,7 +12,11 @@ class SignUp extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log('*** state: ', this.state)
+        console.log('*** SignUp handleSubmit state: ', this.state)
+        if (this.state.password !== this.state.confirmPassword) {
+            alert('Password and confirmed password must be the same!')
+            return
+        }
     }
 
     handleChange = (event) => {

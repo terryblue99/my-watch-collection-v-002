@@ -3,36 +3,35 @@ import { Redirect } from 'react-router-dom'
 import '../../containers/App.css'
 import logo from '../../logo.jpg'
 import fakeAuth from './fakeAuth'
+import { login } from "../../actions/currentUser.js"
 
 class LogIn extends Component {
 
     state = {
-        email: '',
-        password: '',
+        loginData: {
+            email: '',
+            password: ''
+        },
         redirectToReferrer: true  // set to false when LogIn.js & SignUp.js completed!
     }
-
-    // login = () => {
-    //     fakeAuth.authenticate(() => {
-    //         this.setState({
-    //             redirectToReferrer: true
-    //         })
-    //     })   
-    // }
 
     handleSubmit = (event) => {
         event.preventDefault()
         fakeAuth.authenticate(() => {
-            console.log('*** handleSubmit this: ', this)
+            console.log('*** LogIn handleSubmit this: ', this)
             this.setState({
                 redirectToReferrer: true
             })
         }) 
+        login(this.state.loginData)
     }
 
     handleChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
+            loginData: {
+                ...this.state.loginData,
+                [event.target.name]: event.target.value
+            }   
         })                         
     }
     
