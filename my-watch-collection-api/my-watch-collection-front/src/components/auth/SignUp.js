@@ -5,8 +5,6 @@ import logo from '../../logo.jpg'
 class SignUp extends Component {
 
     state = {
-        firstName: '',
-        lastName: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -30,21 +28,6 @@ class SignUp extends Component {
             <div className='container'>
                 <form id='Signup-form' onSubmit={this.handleSubmit}>
                   <div className='register'>
-                    <br /> 
-                    <input className='input-element' required 
-                            type='text'
-                            name='firstName'
-                            placeholder='Enter your first name'
-                            onChange={this.handleChange}
-                    />
-                    <br /> 
-                    <input className='input-element' required 
-                            type='text'
-                            name='lastName'
-                            placeholder='Enter your last name'
-                            onChange={this.handleChange}
-                    />
-                    <br /> 
                     <input className='input-element' required 
                             type='email'
                             name='email'
