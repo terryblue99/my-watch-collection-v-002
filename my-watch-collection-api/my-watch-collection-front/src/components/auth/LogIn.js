@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import '../../containers/App.css'
 import logo from '../../logo.jpg'
@@ -87,4 +88,4 @@ class LogIn extends Component {
     }
 }
 
-export default LogIn
+export default connect(null, { login })(LogIn)

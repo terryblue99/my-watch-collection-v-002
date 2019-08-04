@@ -2,8 +2,8 @@ class Api::V1::SessionsController < ApplicationController
   include CurrentUserConcern
   def create
     user = User
-            .find_by(email: params['user']['email'])
-            .try(:authenticate, params['user']['password']) # authenticate is built into rails
+            .find_by(email: params['email'])
+            .try(:authenticate, params['password']) # authenticate is built into rails
 
     if user
       session[:user_id] = user.id
@@ -18,10 +18,10 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def logged_in
-    if @current_user
+    if current_user
       render json: {
         logged_in: true,
-        user: @current_user
+        user: current_user
       }
     else
       render json: {

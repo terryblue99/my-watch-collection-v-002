@@ -16,7 +16,7 @@ export const login = (credentials) => {
       body: JSON.stringify(credentials)
     })
       .then(response => {
-        console.log('*** actions login response.data: ', response.data)
+        console.log('*** actions 1 login response.data: ', response.data)
         if (response.error) {
           alert(response.error)
         } else {
@@ -24,6 +24,7 @@ export const login = (credentials) => {
         }
       })
       .then(response => {
+        console.log('*** actions 2 login response.data: ', response.data)
         if (response.error) {
           alert(response.error)
         } else {

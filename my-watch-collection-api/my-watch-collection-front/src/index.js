@@ -4,12 +4,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { createLogger } from 'redux-logger' // https://www.npmjs.com/package/redux-logger
 import thunk from 'redux-thunk'
+import currentUserReducer from './reducers/currentUserReducer'
 import watchReducer from './reducers/watchReducer'
 import App from './containers/App'
 import * as serviceWorker from './serviceWorker'
 
 const rootReducer = combineReducers({
-    myWatches: watchReducer
+    myWatches: watchReducer,
+    currentUser: currentUserReducer
 })
 
 const store = createStore(

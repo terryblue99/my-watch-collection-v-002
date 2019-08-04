@@ -27,7 +27,7 @@
 #                       complications: "3:00 - 24-hour, 4:30 - Date window, 6:00 - Seconds and 9:00 - 60-minute",
 #                       date_bought: "2016-10-03", 
 #                       cost: "214.99", 
-#                       user_id: 2
+#                       user_id: 1
 #                     )
 # @watch.save
 # @watch = Watch.create(watch_name: "Diamond Dominus Limited Edition Mechanical Tourbillon", 
@@ -40,7 +40,7 @@
 #                       complications: "No",
 #                       date_bought: "2017-10-10", 
 #                       cost: "1149.00", 
-#                       user_id: 3
+#                       user_id: 1
 #                     )
 # @watch.save
 
@@ -54,7 +54,7 @@
 #                       complications: "Date",
 #                       date_bought: "2011-08-04", 
 #                       cost: "149.99", 
-#                       user_id: 4
+#                       user_id: 1
 #                     )
 # @watch.save
 
