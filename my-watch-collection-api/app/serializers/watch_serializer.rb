@@ -9,6 +9,7 @@ class WatchSerializer < ActiveModel::Serializer
     :case_measurement,
     :water_resistance, 
     :date_bought, 
-    :cost
+    :cost,
+    :user_id
 
 end
