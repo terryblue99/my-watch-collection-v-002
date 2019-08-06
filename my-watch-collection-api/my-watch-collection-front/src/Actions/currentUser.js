@@ -2,14 +2,13 @@ import {
   SET_CURRENT_USER
 } from './types'
 
-// import { getWatchesAction } from './watches'
+import { getWatchesAction } from './watches'
 
 const API_URL = '/api/v1'
 
 export const login = (credentials) => {
-  console.log('*** actions login credentials: ', JSON.stringify(credentials))
   return dispatch => {
-    return fetch(`${API_URL}/login`, {
+    return fetch(`${API_URL}/sessions`, {
       credentials: "include",
       method: "POST",
       headers: {
@@ -18,7 +17,6 @@ export const login = (credentials) => {
       body: JSON.stringify(credentials)
     })
       .then(response => {
-        console.log('*** actions 1 login response.data: ', response.data)
         if (response.error) {
           if (response.status === 401) {
             alert('Email not found, please retry!')
@@ -30,16 +28,14 @@ export const login = (credentials) => {
         }
       })
       .then(response => {
-        console.log('*** actions 2 login response.data: ', response.data)
-        if (response.error) {
-          alert(response.error)
-        } else {
+        if (!response.error) {
           dispatch({
             type: SET_CURRENT_USER,
-             Payload: response.data
+            payload: response
           })
-          // dispatch(getWatchesAction(response.data.user.id))
-          // history.push('/')
+          dispatch(getWatchesAction(response.user.id))
+        } else {
+          alert(response.error) 
         }
       })
       .catch(console.log)

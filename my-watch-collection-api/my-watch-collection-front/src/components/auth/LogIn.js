@@ -9,7 +9,7 @@ import { login } from "../../actions/currentUser.js"
 class LogIn extends Component {
 
     state = {
-        user: {
+        loginData: {
             email: '',
             password: ''
         },
@@ -19,19 +19,18 @@ class LogIn extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         fakeAuth.authenticate(() => {
-            console.log('*** LogIn handleSubmit 1 this: ', this)
             this.setState({
                 redirectToReferrer: true
             })
         }) 
-        login({ user: this.state.user })
-        console.log('*** Login handleSubmit 2 props: ', this.props)
+        this.props.login({ user: this.state.loginData })
+        // console.log('*** Login handleSubmit 2 props: ', this.props)
     }
 
     handleChange = (event) => {
         this.setState({
-            user: {
-                ...this.state.user,
+            loginData: {
+                ...this.state.loginData,
                 [event.target.name]: event.target.value
             }   
         })                         

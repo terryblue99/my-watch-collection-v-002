@@ -3,7 +3,7 @@ class Api::V1::WatchesController < ApplicationController
     before_action :set_watch, only: [:show, :edit, :update, :destroy]
 
     def index
-        render json: Watch.all
+        render json: Watch.where(user_id: params[:userId])
     end
 
     def create

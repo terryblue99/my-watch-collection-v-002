@@ -8,7 +8,7 @@ import {
 
 const API_URL = '/api/v1'
 
-export const getWatchesAction = () => {
+export const getWatchesAction = (user_id) => {
 
 	const sortFunc = (a, b) => {
 		if (a.watch_maker < b.watch_maker) return -1
@@ -27,7 +27,7 @@ export const getWatchesAction = () => {
 		// that data is loading
 		// dispatch ({type: LOADING_WATCHES})
 
-		return fetch(`${API_URL}/watches`)
+		return fetch(`${API_URL}/watches/?userId=${user_id}`)
 		.then(response => {
 			if (response.error) {
 				alert(response.error)
