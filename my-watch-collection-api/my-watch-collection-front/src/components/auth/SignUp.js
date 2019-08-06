@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import '../../containers/App.css'
 import logo from '../../logo.jpg'
+import { signup } from "../../actions/currentUser.js"
 
 class SignUp extends Component {
 
     state = {
         email: '',
         password: '',
-        confirmPassword: ''
+        password_confirmation: ''
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
         console.log('*** SignUp handleSubmit state: ', this.state)
-        if (this.state.password !== this.state.confirmPassword) {
-            alert('Password and confirmed password must be the same!')
+        if (this.state.password.length < 8 ) {
+            alert('Password must be a minimum of 8 characters!')
             return
         }
+        if (this.state.password !== this.state.password_confirmation) {
+            alert('Password and password confirmation must be the same!')
+            return
+        }
+        this.props.signup({ user: this.state })
+        this.props.history.push('/watches')
     }
 
     handleChange = (event) => {
@@ -42,13 +50,13 @@ class SignUp extends Component {
                     <input className='input-element' required 
                             type='password'
                             name='password'
-                            placeholder='Enter a password'
+                            placeholder='Enter a password - 8 characters minimum'
                             onChange={this.handleChange}
                     />
                     <br />
                     <input className='input-element' required 
                             type='password'
-                            name='confirmPassword'
+                            name='password_confirmation'
                             placeholder='Confirm your password'
                             onChange={this.handleChange}
                     />
@@ -62,4 +70,4 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp
+export default connect(null, { signup })(SignUp)
