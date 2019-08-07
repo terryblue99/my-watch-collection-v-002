@@ -2,8 +2,6 @@ import {
   SET_CURRENT_USER
 } from './types'
 
-import { getWatchesAction } from './watches'
-
 const API_URL = '/api/v1'
 
 export const login = (credentials) => {
@@ -18,22 +16,23 @@ export const login = (credentials) => {
     })
       .then(response => {
         if (response.error) {
-          if (response.status === 401) {
-            alert('Email not found, please retry!')
-          } else {
             alert(response.error)
-          }
         } else {
           return response.json()
         }
       })
       .then(response => {
         if (!response.error) {
-          dispatch({
-            type: SET_CURRENT_USER,
-            payload: response
-          })
-          dispatch(getWatchesAction(response.user.id))
+          if (response.status === 401) {
+            alert('Account not found, please retry!')
+            return
+          } else {
+            dispatch({
+              type: SET_CURRENT_USER,
+              payload: response
+            })
+            return
+          }   
         } else {
           alert(response.error) 
         }

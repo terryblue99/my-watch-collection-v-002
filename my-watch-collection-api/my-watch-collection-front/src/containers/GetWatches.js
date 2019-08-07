@@ -6,7 +6,7 @@ import WatchList from '../components/WatchList'
 class GetWatches extends Component {
     
     componentDidMount = () => {
-        this.props.getWatchesAction()
+        this.props.getWatchesAction(this.props.user_id)
     }
 
     render() {

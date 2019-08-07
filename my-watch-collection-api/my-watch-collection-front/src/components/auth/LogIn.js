@@ -5,6 +5,7 @@ import '../../containers/App.css'
 import logo from '../../logo.jpg'
 import fakeAuth from './fakeAuth'
 import { login } from "../../actions/currentUser.js"
+import GetWatches from '../../containers/GetWatches'
 
 class LogIn extends Component {
 
@@ -13,7 +14,7 @@ class LogIn extends Component {
             email: '',
             password: ''
         },
-        redirectToReferrer: true  // set to false when LogIn.js & SignUp.js completed!
+        redirectToReferrer: false  // set to false when LogIn.js & SignUp.js completed!
     }
 
     handleSubmit = (event) => {
@@ -37,6 +38,10 @@ class LogIn extends Component {
     }
     
     render() {
+
+        if (this.props.user && this.props.user.logged_in) {
+            return <GetWatches user_id={this.props.user.user.id} />
+        } 
 
         // Authenticate the referrer (from) screen and get the path for redirect
         const { redirectToReferrer } = this.state.redirectToReferrer
@@ -88,4 +93,13 @@ class LogIn extends Component {
     }
 }
 
-export default connect(null, { login })(LogIn)
+const mapStateToProps = (state) => {
+    // if(state) {
+    //     console.log('*** LogIn mapStateToProps state.currentUser user: ', state.currentUser)
+    // }  
+    return {
+      user: state.currentUser
+    } 
+}
+
+export default connect(mapStateToProps, { login })(LogIn)
