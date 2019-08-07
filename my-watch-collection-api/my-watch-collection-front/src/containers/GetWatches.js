@@ -20,7 +20,6 @@ class GetWatches extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('*** GetWatches currentUser: ', state.currentUser)
     return {
       watches: state.myWatches.watches,
       currentUser: state.currentUser

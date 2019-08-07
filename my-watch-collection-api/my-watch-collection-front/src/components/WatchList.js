@@ -10,6 +10,7 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 const WatchList = ({ watches, user_id }) => { 
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
+   
    const [currentWatch, setCurrentWatch] = useState({}) 
 
    let watchList

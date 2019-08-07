@@ -14,7 +14,6 @@ class SignUp extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log('*** SignUp handleSubmit state: ', this.state)
         if (this.state.password.length < 8 ) {
             alert('Password must be a minimum of 8 characters!')
             return

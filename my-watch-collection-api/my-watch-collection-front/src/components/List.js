@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
 const List = ({ watches, showWatches, user_id } ) => {  
-
+    console.log('*** List user_id: ', user_id)
     return (
         
         <div className='List' css={css`

@@ -25,7 +25,6 @@ class LogIn extends Component {
             })
         }) 
         this.props.login({ user: this.state.loginData })
-        // console.log('*** Login handleSubmit 2 props: ', this.props)
     }
 
     handleChange = (event) => {
@@ -93,10 +92,7 @@ class LogIn extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    // if(state) {
-    //     console.log('*** LogIn mapStateToProps state.currentUser user: ', state.currentUser)
-    // }  
+const mapStateToProps = (state) => { 
     return {
       user: state.currentUser
     } 
