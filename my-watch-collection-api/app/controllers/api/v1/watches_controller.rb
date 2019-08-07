@@ -35,7 +35,8 @@ class Api::V1::WatchesController < ApplicationController
             :case_measurement,
             :water_resistance,
             :date_bought,
-            :cost
+            :cost,
+            :user_id
         )
     end
 end

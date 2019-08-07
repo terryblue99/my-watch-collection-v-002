@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
-const List = ({ watches, showWatches}, loggedIn=false) => {  
+const List = ({ watches, showWatches, user_id } ) => {  
 
     return (
         
@@ -30,9 +30,16 @@ const List = ({ watches, showWatches}, loggedIn=false) => {
                 padding-top 10px;
                 text-align: center;
             `}> 
-                <Link to='/watches/new'>
+            <Link to={{
+                        // Link to the new watch screen and pass the user id
+                        pathname: '/watches/new',
+                        state: {
+                            fromList: true,
+                            user_id: user_id
+                        }
+                    }}>
                     <button>Add a watch</button>
-                </Link>  
+            </Link> 
             </div>
         </div>  
     ) 

@@ -16,7 +16,8 @@ class AddWatch extends Component {
         water_resistance: '',
         complications: '',
         date_bought: '',
-        cost: ''
+        cost: '',
+        user_id: this.props.location.state.user_id
      }
 
      handleChange = (event) => {
@@ -25,12 +26,11 @@ class AddWatch extends Component {
         })                         
      }
 
-     handleSubmit = (event) => {
-        event.preventDefault()
-        // Destructure addWatchAction from the component props
-        const { addWatchAction } = this.props
+     handleSubmit = (event) => { 
+        event.preventDefault() 
         // Create the watch with the Redux action
-        addWatchAction(this.state)
+        console.log('*** AddWatch state: ', this.state)
+        this.props.addWatchAction(this.state)
         // Clear the form
         document.getElementById('AddWatch-form').reset()
      }

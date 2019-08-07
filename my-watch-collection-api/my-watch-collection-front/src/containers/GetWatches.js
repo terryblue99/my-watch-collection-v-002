@@ -13,15 +13,17 @@ class GetWatches extends Component {
         
         return (
             <div>
-                <WatchList watches={this.props.watches}/>    
+                <WatchList watches={this.props.watches} user_id={this.props.user_id} />    
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log('*** GetWatches currentUser: ', state.currentUser)
     return {
-      watches: state.myWatches.watches
+      watches: state.myWatches.watches,
+      currentUser: state.currentUser
     } 
 }
 
