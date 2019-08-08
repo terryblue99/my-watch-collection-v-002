@@ -83,13 +83,14 @@ export const editWatchAction = (watch) => {
 			watch_name: watch.watch_name,
 			watch_maker: watch.watch_maker,
 			movement: watch.movement,
+			complications: watch.complications,
 			band: watch.band,
 			model_number: watch.model_number,
 			case_measurement: watch.case_measurement,
 			water_resistance: watch.water_resistance,
-			complications: watch.complications,
 			date_bought: watch.date_bought,
-			cost: watch.cost
+			cost: watch.cost,
+			user_id: watch.user_id
 		}
 
 		return fetch(`${API_URL}/watches/${watch.id}`, {

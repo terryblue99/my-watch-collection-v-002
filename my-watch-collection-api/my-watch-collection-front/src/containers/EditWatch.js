@@ -3,42 +3,69 @@ import { connect } from 'react-redux'
 import './App.css'
 import NavBar from '../components/NavBar'
 import { editWatchAction } from '../actions/watches'
+import GetWatches from './GetWatches'
 
 class EditWatch extends Component {
      
      state = {
-        id: this.props.location.state.watch.id,  
-        watch_name: this.props.location.state.watch.watch_name,
-        watch_maker: this.props.location.state.watch.watch_maker,
-        movement: this.props.location.state.watch.movement,
-        complications: this.props.location.state.watch.complications,
-        band: this.props.location.state.watch.band,
-        model_number: this.props.location.state.watch.model_number,
-        case_measurement: this.props.location.state.watch.case_measurement,
-        water_resistance: this.props.location.state.watch.water_resistance,
-        date_bought: this.props.location.state.watch.date_bought,
-        cost: this.props.location.state.watch.cost
+       watchData: {
+          id: this.props.location.state.watch.id,  
+          watch_name: this.props.location.state.watch.watch_name,
+          watch_maker: this.props.location.state.watch.watch_maker,
+          movement: this.props.location.state.watch.movement,
+          complications: this.props.location.state.watch.complications,
+          band: this.props.location.state.watch.band,
+          model_number: this.props.location.state.watch.model_number,
+          case_measurement: this.props.location.state.watch.case_measurement,
+          water_resistance: this.props.location.state.watch.water_resistance,
+          date_bought: this.props.location.state.watch.date_bought,
+          cost: this.props.location.state.watch.cost,
+          user_id: this.props.location.state.watch.user_id
+       },
+       backToWatchList: false
+     }
+
+     shouldComponentUpdate(nextProps, nextState) {
+          // Prevent component re-render on a true state, but reset to false
+          if(this.state.backToWatchList === true) {
+               this.setState({
+                    backToWatchList: false
+               })
+               return false
+          }
+          return true
      }
 
      handleChange = (event) => {
         this.setState({
-          [event.target.name]: event.target.value
+          watchData: {
+               ...this.state.watchData,
+               [event.target.name]: event.target.value
+           } 
         })                         
      }
 
      handleSubmit = (event) => {
         event.preventDefault()
-        this.props.editWatchAction(this.state)
+        this.props.editWatchAction(this.state.watchData)
      }
 
      handleBack = () => {
-          // redirect to /watches route
-          window.location.href = '/watches'
+          this.setState({
+               backToWatchList: true
+          })
      }
 
      render() {
-      const fromWatchDetails = this.props.location.state.fromWatchDetails
-      const watch = this.props.location.state.watch
+ 
+        if (this.state.backToWatchList) {
+          return <GetWatches user_id={this.props.user.user.id}
+                             logged_in={this.props.user.logged_in}
+                              />
+        } 
+
+        const fromWatchDetails = this.props.location.state.fromWatchDetails
+        const watch = this.props.location.state.watch
       
         if (fromWatchDetails) {
           return (  
@@ -131,4 +158,10 @@ class EditWatch extends Component {
      } 
 }
 
-export default connect(null, { editWatchAction })(EditWatch)
+const mapStateToProps = (state) => { 
+     return {
+       user: state.currentUser
+     } 
+ }
+
+export default connect(mapStateToProps, { editWatchAction })(EditWatch)
