@@ -10,10 +10,12 @@ class GetWatches extends Component {
     }
 
     render() {
-        
+        console.log('*** GetWatches props: ', this.props)
         return (
             <div>
-                <WatchList watches={this.props.watches} user_id={this.props.user_id} />    
+                <WatchList watches={this.props.watches}
+                           user_id={this.props.user_id} 
+                           logged_in={this.props.logged_in} />    
             </div>
         )
     }

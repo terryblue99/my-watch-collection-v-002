@@ -39,7 +39,7 @@ class LogIn extends Component {
     render() {
 
         if (this.props.user && this.props.user.logged_in) {
-            return <GetWatches user_id={this.props.user.user.id} />
+            return <GetWatches user_id={this.props.user.user.id} logged_in={this.props.user.logged_in} />
         } 
 
         // Authenticate the referrer (from) screen and get the path for redirect

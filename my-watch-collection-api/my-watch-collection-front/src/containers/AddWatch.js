@@ -22,7 +22,18 @@ class AddWatch extends Component {
                cost: '',
                user_id: this.props.location.state.user_id
           },
-          backToWatchList: ''
+          backToWatchList: false
+     }
+
+     shouldComponentUpdate(nextProps, nextState) {
+          // Prevent component re-render on a true state, but reset to false
+          if(this.state.backToWatchList === true) {
+               this.setState({
+                    backToWatchList: false
+               })
+               return false
+          }
+          return true
      }
 
      handleChange = (event) => {
@@ -44,14 +55,15 @@ class AddWatch extends Component {
 
      handleBack = () => {
           this.setState({
-               backToWatchList: 'yes'
-          })    
+               backToWatchList: true
+          })
      }
 
      render() {  
-          
-          if (this.state.backToWatchList === 'yes') {
-               return <GetWatches user_id={this.props.user.user.id} />
+          if (this.state.backToWatchList) {
+               return <GetWatches user_id={this.props.user.user.id}
+                                  logged_in={this.props.user.logged_in}
+                                  />
           } 
           
           const fromList = this.props.location.state.fromList
