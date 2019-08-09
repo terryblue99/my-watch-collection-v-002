@@ -1,12 +1,13 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import '../containers/App.css'
 import { deleteWatchAction } from '../actions/watches'
-// import GetWatches from '../containers/GetWatches'
+// import WatchList from '../containers/GetWatches'
 
 class WatchDetail extends Component { 
 
@@ -18,11 +19,17 @@ class WatchDetail extends Component {
     }
 
     handleGoBack = () => {
-        return this.props.listUrl
+        return <Redirect to={{
+            pathname: '/dashboard',
+            state: { 
+                 fromWatchDetail: true,
+                 user_id: this.props.user_id,
+                 logged_in: this.props.logged_in
+            }
+         }} />
     }
 
     render () {
-       console.log('*** WatchDetail listUrl: ', this.props.listUrl)
   
         const currentWatch = this.props.currentWatch
         const showWatches = this.props.showWatches
@@ -92,9 +99,9 @@ class WatchDetail extends Component {
 
 const detailCss = {fontSize: '15px', color: 'green'}
 
-const mapStateToProps = (state) => { 
+const mapStateToProps = (state) => {
     return {
-      user: state.currentUser
+      currentUser: state.currentUser
     } 
 }
 

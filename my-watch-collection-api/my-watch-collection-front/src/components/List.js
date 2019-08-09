@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
-const List = ({ watches, showWatches, user_id, logged_in } ) => {  
+const List = ({ watches, showWatches, user_id, logged_in, listurl } ) => {  
     if (logged_in) {
         return (
             
@@ -35,7 +35,9 @@ const List = ({ watches, showWatches, user_id, logged_in } ) => {
                             pathname: '/watches/new',
                             state: {
                                 fromList: true,
-                                user_id: user_id
+                                user_id: user_id,
+                                logged_in: logged_in,
+                                listurl: listurl
                             }
                         }}>
                         <button>Add a watch</button>

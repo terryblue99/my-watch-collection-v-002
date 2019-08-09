@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import './App.css'
 import NavBar from '../components/NavBar'
 import { addWatchAction } from '../actions/watches'
-import GetWatches from './GetWatches'
-
 
 class AddWatch extends Component {
 
@@ -61,9 +60,14 @@ class AddWatch extends Component {
 
      render() {  
           if (this.state.backToWatchList) {
-               return <GetWatches user_id={this.props.user.user.id}
-                                  logged_in={this.props.user.logged_in}
-                                  />
+               return <Redirect to={{
+                         pathname: '/dashboard',
+                         state: { 
+                              fromAddWatch: true,
+                              user_id: this.props.user.user.id,
+                              logged_in: this.props.user.logged_in
+                         }
+                      }} />
           } 
           
           const fromList = this.props.location.state.fromList

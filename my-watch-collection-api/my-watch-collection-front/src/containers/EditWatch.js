@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import './App.css'
 import NavBar from '../components/NavBar'
 import { editWatchAction } from '../actions/watches'
-import GetWatches from './GetWatches'
 
 class EditWatch extends Component {
      
@@ -59,9 +59,14 @@ class EditWatch extends Component {
      render() {
  
         if (this.state.backToWatchList) {
-          return <GetWatches user_id={this.props.user.user.id}
-                             logged_in={this.props.user.logged_in}
-                              />
+          return <Redirect to={{
+               pathname: '/dashboard',
+               state: { 
+                    fromEditWatch: true,
+                    user_id: this.props.user.user.id,
+                    logged_in: this.props.user.logged_in
+               }
+            }} />
         } 
 
         const fromWatchDetails = this.props.location.state.fromWatchDetails
@@ -162,6 +167,6 @@ const mapStateToProps = (state) => {
      return {
        user: state.currentUser
      } 
- }
+}
 
 export default connect(mapStateToProps, { editWatchAction })(EditWatch)
