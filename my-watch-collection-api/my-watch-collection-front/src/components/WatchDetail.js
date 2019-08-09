@@ -10,26 +10,49 @@ import { deleteWatchAction } from '../actions/watches'
 
 class WatchDetail extends Component { 
 
+    state = {
+        backToWatchList: false
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        // Prevent component re-render on a true state, but reset to false
+        if(this.state.backToWatchList === true) {
+             this.setState({
+                  backToWatchList: false
+             })
+             return false
+        }
+        return true
+   }
+
     handleDelete = () => {
         if (window.confirm('Do you realy want to delete this watch?')) {
                 this.props.deleteWatchAction(this.props.currentWatch.id, 
                                              this.props.currentWatch.watch_name)
-        } 
-        return this.handleGoBack()
+        }
+        this.setState({
+            backToWatchList: true
+       })
     }
 
-    handleGoBack = () => {
-        return <Redirect to={{
-            pathname: '/dashboard',
-            state: { 
-                 fromWatchDetail: true,
-                 user_id: this.props.user_id,
-                 logged_in: this.props.logged_in
-            }
-         }} />
-    }
+    handleBack = () => {
+        this.setState({
+             backToWatchList: true
+        })
+   }
 
     render () {
+
+        if (this.state.backToWatchList) {
+            return <Redirect to={{
+                      pathname: '/dashboard',
+                      state: { 
+                           fromWatchDetail: true,
+                           user_id: this.props.user_id,
+                           logged_in: this.props.logged_in
+                      }
+                   }} />
+        } 
   
         const currentWatch = this.props.currentWatch
         const showWatches = this.props.showWatches
@@ -42,7 +65,7 @@ class WatchDetail extends Component {
                         grid-area: main;  
                         margin-bottom: 5px;
                 `}>
-                    <button onClick={this.handleGoBack} className='Back-button'>Back to watch list</button>
+                    <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
                     <div> 
                         <b><h2 css={css`
                             text-align: center;
