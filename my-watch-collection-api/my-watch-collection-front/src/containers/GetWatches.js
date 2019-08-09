@@ -15,7 +15,6 @@ class GetWatches extends Component {
                 <WatchList watches={this.props.watches}
                            user_id={this.props.user_id} 
                            logged_in={this.props.logged_in} 
-                           listurl={this.props.listurl}
                 /> 
                               
             </div>

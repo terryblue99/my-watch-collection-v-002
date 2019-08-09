@@ -19,7 +19,7 @@ class DashBoard extends Component {
    
     return (
       <div className="dashboard">
-          <GetWatches user_id={user_id} logged_in={logged_in} listurl={window.location.pathname} />
+          <GetWatches user_id={user_id} logged_in={logged_in} />
       </div> 
     )
   }

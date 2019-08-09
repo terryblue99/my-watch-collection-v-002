@@ -7,7 +7,6 @@ import { Redirect } from 'react-router-dom'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import '../containers/App.css'
 import { deleteWatchAction } from '../actions/watches'
-// import WatchList from '../containers/GetWatches'
 
 class WatchDetail extends Component { 
 
@@ -16,6 +15,7 @@ class WatchDetail extends Component {
                 this.props.deleteWatchAction(this.props.currentWatch.id, 
                                              this.props.currentWatch.watch_name)
         } 
+        return this.handleGoBack()
     }
 
     handleGoBack = () => {
