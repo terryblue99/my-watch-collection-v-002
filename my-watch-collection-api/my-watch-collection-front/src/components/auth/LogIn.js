@@ -5,7 +5,6 @@ import '../../containers/App.css'
 import logo from '../../logo.jpg'
 import fakeAuth from './fakeAuth'
 import { login } from "../../actions/currentUser.js"
-import GetWatches from '../../containers/GetWatches'
 
 class LogIn extends Component {
 
@@ -37,10 +36,24 @@ class LogIn extends Component {
     }
     
     render() {
-
+        console.log('*** LogIn this.props.history: ', this.props.history)
         if (this.props.user && this.props.user.logged_in) {
-            return <GetWatches user_id={this.props.user.user.id} logged_in={this.props.user.logged_in} />
-        } 
+            return (
+                <Redirect to={{
+                    pathname: '/dashboard',
+                    state: {
+                        fromLogin: true,
+                        user_id: this.props.user.user.id,
+                        logged_in: this.props.user.logged_in
+                    }
+                }} />
+            )     
+        }
+        // if (this.props.user && this.props.user.logged_in) {
+        //     return <DashBoard  user_id={this.props.user.user.id}
+        //                        logged_in={this.props.user.logged_in}
+        //     />
+        // }
 
         // Authenticate the referrer (from) screen and get the path for redirect
         const { redirectToReferrer } = this.state.redirectToReferrer

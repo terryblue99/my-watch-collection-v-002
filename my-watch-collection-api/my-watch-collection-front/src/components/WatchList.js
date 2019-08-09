@@ -12,6 +12,7 @@ const WatchList = ({ watches, user_id, logged_in }) => {
    const [showWatches, setShowWatches] = useState(false)
 
    const [currentWatch, setCurrentWatch] = useState({}) 
+   const listUrl = window.location.href
 
    let watchList
 
@@ -65,6 +66,7 @@ const WatchList = ({ watches, user_id, logged_in }) => {
                              currentWatch={currentWatch}
                              user_id={user_id}
                              logged_in={logged_in}
+                             listUrl={listUrl}
                 />
             </div>
         </div>

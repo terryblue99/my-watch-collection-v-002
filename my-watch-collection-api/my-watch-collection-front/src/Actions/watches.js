@@ -1,5 +1,4 @@
 import {
-	LOADING_WATCHES,
 	GET_WATCHES,
 	ADD_WATCH,
 	EDIT_WATCH,
@@ -23,9 +22,6 @@ export const getWatchesAction = (user_id) => {
 	// It passes the dispatch method as an argument to the function,
 	// thus making it able to dispatch actions itself.
 	return dispatch => {
-		// First dispatch: the app state is updated to inform
-		// that data is loading
-		// dispatch ({type: LOADING_WATCHES})
 
 		return fetch(`${API_URL}/watches/?userId=${user_id}`)
 		.then(response => {
@@ -132,7 +128,6 @@ export const deleteWatchAction = (id, watchName) => {
 				payload: id
 			})		
 		)
-		.then(window.location.href = '/watches')
 		.catch(error => {
 			console.log(error)
 		})

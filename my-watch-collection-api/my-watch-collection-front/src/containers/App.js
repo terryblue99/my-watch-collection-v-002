@@ -10,7 +10,7 @@ import './App.css'
 import LogIn from '../components/auth/LogIn'
 import SignUp from '../components/auth/SignUp'
 import Homepage from '../components/Homepage'
-import GetWatches from './GetWatches'
+import DashBoard from './DashBoard'
 import AddWatch from './AddWatch'
 import EditWatch from './EditWatch'
 import fakeAuth from '../components/auth/fakeAuth'
@@ -37,7 +37,7 @@ class App extends Component {
               <Route exact path='/' component={Homepage} />
               <Route path='/login' component={LogIn} />
               <Route path='/signup' component={SignUp} />
-              <PrivateRoute exact path='/watches' component={GetWatches} />
+              <PrivateRoute exact path='/dashboard' component={DashBoard} />
               <PrivateRoute exact path='/watches/new' component={AddWatch} />
               <PrivateRoute path='/watches/:id' component={EditWatch} />
           </Switch> 

@@ -10,7 +10,6 @@ class GetWatches extends Component {
     }
 
     render() {
-        console.log('*** GetWatches props: ', this.props)
         return (
             <div>
                 <WatchList watches={this.props.watches}

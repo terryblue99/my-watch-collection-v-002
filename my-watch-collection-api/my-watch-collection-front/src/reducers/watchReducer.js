@@ -1,5 +1,4 @@
 import { 
-	LOADING_WATCHES, 
 	GET_WATCHES, 
 	ADD_WATCH, 
 	EDIT_WATCH, 
@@ -11,10 +10,6 @@ const initialState = []
 export default (state = initialState, { type, payload } ) => {
 
 	switch(type) {
-
-		case LOADING_WATCHES: 
-      alert('Loading watches')
-			return state
 
 		case GET_WATCHES:		
 			if (payload) {

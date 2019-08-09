@@ -1,31 +1,41 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import '../containers/App.css'
-import { deleteWatchAction } from '../actions/watches'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
+import '../containers/App.css'
+import { deleteWatchAction } from '../actions/watches'
+// import GetWatches from '../containers/GetWatches'
 
 class WatchDetail extends Component { 
 
-    handleBack = () => {
-        // redirect to /watches route
-        window.location.href = '/watches'  
-   }
+    handleDelete = () => {
+        if (window.confirm('Do you realy want to delete this watch?')) {
+                this.props.deleteWatchAction(this.props.currentWatch.id, 
+                                             this.props.currentWatch.watch_name)
+        } 
+    }
+
+    handleGoBack = () => {
+        return this.props.listUrl
+    }
 
     render () {
-        const showWatches = this.props.showWatches
+       console.log('*** WatchDetail listUrl: ', this.props.listUrl)
+  
         const currentWatch = this.props.currentWatch
+        const showWatches = this.props.showWatches
 
         if (currentWatch.watch_maker) {
             return ( 
-                <div css={css`
+
+                <div className='watch-detail' css={css`
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;  
                         margin-bottom: 5px;
                 `}>
-                    <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
+                    <button onClick={this.handleGoBack} className='Back-button'>Back to watch list</button>
                     <div> 
                         <b><h2 css={css`
                             text-align: center;
@@ -66,15 +76,11 @@ class WatchDetail extends Component {
                                 fromWatchDetails: true,
                                 watch: this.props.currentWatch
                             }
-                        }}
-                        > Edit this watch
+                        }}>
+                            Edit this watch
                         </Link>
-                        <button className='red-button' onClick={
-                            () => {if(window.confirm('Do you realy want to delete this watch?'))
-                                    // this.props. needed for fetch in deleteWatchAction to work 
-                                    {this.props.deleteWatchAction(currentWatch.id, currentWatch.watch_name)}
-                                  }
-                            }> Delete this watch
+                        <button className='red-button' onClick={this.handleDelete}> 
+                            Delete this watch
                         </button>
                     </div>
                 </div> 
@@ -86,4 +92,10 @@ class WatchDetail extends Component {
 
 const detailCss = {fontSize: '15px', color: 'green'}
 
-export default connect(null, {deleteWatchAction})(WatchDetail)
+const mapStateToProps = (state) => { 
+    return {
+      user: state.currentUser
+    } 
+}
+
+export default connect(mapStateToProps, {deleteWatchAction})(WatchDetail)
