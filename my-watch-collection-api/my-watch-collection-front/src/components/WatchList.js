@@ -25,9 +25,9 @@ const WatchList = ({ watches, user_id, logged_in }) => {
                     color: white;
                     cursor: pointer;
                 }
-            `} onClick={(event) => {
+            `} onClick={() => {
                     setCurrentWatch(watch)
-                    setShowWatches(false) // on mobiles will display watch detail when name is clicked
+                    setShowWatches(false) // on mobiles will display watch detail when name is clicked 
                 }}>
                 <b css={css`
                     font-size: 18px;

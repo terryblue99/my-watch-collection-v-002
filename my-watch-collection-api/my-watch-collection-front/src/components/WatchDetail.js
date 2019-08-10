@@ -23,7 +23,7 @@ class WatchDetail extends Component {
              return false
         }
         return true
-   }
+    }
 
     handleDelete = () => {
         if (window.confirm('Do you realy want to delete this watch?')) {
@@ -59,7 +59,7 @@ class WatchDetail extends Component {
 
         if (currentWatch.watch_maker) {
             return ( 
-
+                
                 <div className='watch-detail' css={css`
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;  
