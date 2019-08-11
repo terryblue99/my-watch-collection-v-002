@@ -19,11 +19,9 @@ class LogIn extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         fakeAuth.authenticate(() => {
-            if (!this.state.redirectToReferrer) {
-                this.setState({
-                    redirectToReferrer: true
-                })
-            }
+            this.setState({
+                redirectToReferrer: true
+            })
         }) 
         this.props.login({ user: this.state.loginData })
     }
@@ -37,7 +35,7 @@ class LogIn extends Component {
         })                         
     }
     
-    render()  {
+    render() {
         if (this.props.user && this.props.user.logged_in) {
             return (
                 <Redirect to={{

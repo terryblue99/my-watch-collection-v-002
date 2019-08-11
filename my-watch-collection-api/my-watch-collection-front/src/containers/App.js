@@ -16,6 +16,7 @@ import AddWatch from './AddWatch'
 import EditWatch from './EditWatch'
 import fakeAuth from '../components/auth/fakeAuth'
 
+// https://www.youtube.com/watch?v=ojYbcon588A&list=PLpFCAP1SnOUzTpoWSXTUXKD8xy6KEuA5i&index=2&t=0s
 const PrivateRoute = ({ component: Component, ...rest}) => ( // rename component with a capital 'C'
                                                              //  ...rest is rest of arguments; path & component
   <Route {...rest} render={(props) => (
