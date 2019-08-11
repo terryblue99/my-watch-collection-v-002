@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import {
   BrowserRouter as Router,
   Route,
@@ -8,30 +9,18 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import LogIn from '../components/auth/LogIn'
+import { loggedIn } from '../actions/currentUser'
 import LogOut from '../components/auth/LogOut'
 import SignUp from '../components/auth/SignUp'
 import Homepage from '../components/Homepage'
 import DashBoard from './DashBoard'
 import AddWatch from './AddWatch'
 import EditWatch from './EditWatch'
-import fakeAuth from '../components/auth/fakeAuth'
-
-// https://www.youtube.com/watch?v=ojYbcon588A&list=PLpFCAP1SnOUzTpoWSXTUXKD8xy6KEuA5i&index=2&t=0s
-const PrivateRoute = ({ component: Component, ...rest}) => ( // rename component with a capital 'C'
-                                                             //  ...rest is rest of arguments; path & component
-  <Route {...rest} render={(props) => (
-      fakeAuth.isAuthenticated === true // set to true for LogIn.js & SignUp.js to work properly!
-        ? <Component {...props} /> // props are location, match & history
-        : <Redirect to={{
-              pathname: '/login',
-              state: { from: props.location }
-          }} />
-  )}/>
-)
 
 class App extends Component {
 
   render() {
+    
     return (
       <div className='App'>
         <Router>
@@ -40,10 +29,16 @@ class App extends Component {
               <Route path='/login' component={LogIn} />
               <Route path='/logout' component={LogOut} />
               <Route path='/signup' component={SignUp} />
-              <PrivateRoute exact path='/dashboard' component={DashBoard} />
-              <PrivateRoute exact path='/watches/new' component={AddWatch} />
-              <PrivateRoute path='/watches/:id' component={EditWatch} />
-              <Redirect from='*' to='DashBoard' />
+              {this.props.user && this.props.user.logged_in 
+                ? <Route exact path='/dashboard' component={DashBoard} /> 
+                : <Redirect to={{pathname: '/login'}} />}
+              {this.props.user && this.props.user.logged_in 
+                ? <Route exact path='/watches/new' component={AddWatch} /> 
+                : <Redirect to={{pathname: '/login'}} />}
+              {this.props.user && this.props.user.logged_in 
+                ? <Route exact path='/watches/:id' component={EditWatch} /> 
+                : <Redirect to={{pathname: '/login'}} />}
+              <Redirect from='*' to={{pathname: '/dashboard'}} />
           </Switch> 
         </Router>        
       </div>
@@ -51,4 +46,10 @@ class App extends Component {
   }
 }
 
-export default App
+const mapStateToProps = (state) => { 
+  return {
+    user: state.currentUser
+  } 
+}
+
+export default connect(mapStateToProps, {loggedIn})(App)

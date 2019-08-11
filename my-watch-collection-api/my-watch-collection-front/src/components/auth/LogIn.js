@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import '../../containers/App.css'
 import logo from '../../logo.jpg'
-import fakeAuth from './fakeAuth'
 import { login } from "../../actions/currentUser.js"
 
 class LogIn extends Component {
@@ -18,11 +17,6 @@ class LogIn extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        fakeAuth.authenticate(() => {
-            this.setState({
-                redirectToReferrer: true
-            })
-        }) 
         this.props.login({ user: this.state.loginData })
     }
 
@@ -48,26 +42,10 @@ class LogIn extends Component {
                 }} />
             )     
         }
-
-        const { redirectToReferrer } = this.state.redirectToReferrer
-        const { from } = this.props.location.state || { from: { pathname: '/' } }
-        if (redirectToReferrer === true) {
-            return (
-                <Redirect to={ from } /> 
-            )
-        }
-
+ 
         return (
            <div>
-            {this.state.redirectToReferrer === true ? 
-                <div>
-                    <p className='referToLogin'>You must log in to access {from.pathname}</p>
-                </div>
-                :
-                <div>
-                    <p className='referToLogin'>Log in to access your data</p>
-                </div>
-            }    
+            <p className='referToLogin'>Log in to access your data</p>
             <header className='Login'>
             <img src={logo} alt='logo' align='middle' className='logo'/>
             <div className='container'>

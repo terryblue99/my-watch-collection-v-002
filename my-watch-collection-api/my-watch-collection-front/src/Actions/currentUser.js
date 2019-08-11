@@ -33,7 +33,7 @@ export const login = (credentials) => {
               type: SET_CURRENT_USER,
               payload: response
             })
-            // return
+            return
           }   
         } else {
           alert(response.error) 
@@ -42,6 +42,27 @@ export const login = (credentials) => {
       .catch(error => {
         console.log('Log In error: ', error)
       })
+  }
+}
+
+export const loggedIn = () => {
+  console.log('*** actions/currentUser.js/loggedIn')
+  return dispatch => {
+    return fetch(`${API_URL}/logged_in`, {
+      credentials: "include",
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+    .then(response => response.json())
+    .then(response => {
+      console.log('*** Logged in?: ', response)
+      return response
+    })
+    .catch(error => {
+      console.log('Logged in error: ', error)
+    })
   }
 }
 

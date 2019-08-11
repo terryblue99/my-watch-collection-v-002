@@ -7,8 +7,8 @@ module CurrentUserConcern
 
   def set_current_user
     if session[:user_id]
-      current_user = User.find(session[:user_id]) # current_user can be used by any method
-                                                  # to check presence for presence of a current user
+      @current_user = User.find_by(id: session[:user_id]) # current_user can be used by any method
+                                                          # to check for presence of a current user
     end
   end
 
