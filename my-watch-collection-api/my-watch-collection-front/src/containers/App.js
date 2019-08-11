@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import LogIn from '../components/auth/LogIn'
+import LogOut from '../components/auth/LogOut'
 import SignUp from '../components/auth/SignUp'
 import Homepage from '../components/Homepage'
 import DashBoard from './DashBoard'
@@ -36,10 +37,12 @@ class App extends Component {
           <Switch>
               <Route exact path='/' component={Homepage} />
               <Route path='/login' component={LogIn} />
+              <Route path='/logout' component={LogOut} />
               <Route path='/signup' component={SignUp} />
               <PrivateRoute exact path='/dashboard' component={DashBoard} />
               <PrivateRoute exact path='/watches/new' component={AddWatch} />
               <PrivateRoute path='/watches/:id' component={EditWatch} />
+              <Redirect from='*' to='DashBoard' />
           </Switch> 
         </Router>        
       </div>

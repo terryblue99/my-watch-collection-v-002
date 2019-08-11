@@ -1,4 +1,5 @@
 import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html
+import { connect } from 'react-redux'
 import NavBar from '../components/NavBar'
 import WatchDetail from './WatchDetail'
 import List from './List'
@@ -72,4 +73,10 @@ const WatchList = ({ watches, user_id, logged_in }) => {
    
 }
 
-export default WatchList
+const mapStateToProps = (state) => { 
+    return {
+      user: state.currentUser
+    } 
+}
+
+export default connect(mapStateToProps)(WatchList)

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { getWatchesAction } from '../actions/watches'
 import WatchList from '../components/WatchList'
 
@@ -10,15 +11,19 @@ class GetWatches extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <WatchList watches={this.props.watches}
-                           user_id={this.props.user_id} 
-                           logged_in={this.props.logged_in} 
-                /> 
-                              
-            </div>
-        )
+        if (this.props.logged_in) {
+            return (
+                <div>
+                    <WatchList watches={this.props.watches}
+                            user_id={this.props.user_id} 
+                            logged_in={this.props.logged_in} 
+                    /> 
+                                
+                </div>
+            )
+        } else {
+            return <Redirect to={{ pathname: '/dashboard' }} />
+        }     
     }
 }
 

@@ -1,5 +1,7 @@
 import {
-  SET_CURRENT_USER
+  SET_CURRENT_USER,
+  CLEAR_CURRENT_USER,
+  CLEAR_WATCHES
 } from './types'
 
 const API_URL = '/api/v1'
@@ -78,5 +80,20 @@ export const signup = (credentials, history) => {
       .catch(error => {
         console.log('Sign Up error: ', error)
       })
+  }
+}
+
+export const logout = () => {
+  console.log('*** actions/currentUser/logout')
+  return dispatch => {
+    return fetch(`${API_URL}/logout`, {
+      credentials: "include",
+      method: "DELETE"
+    })
+    .then(dispatch({type: CLEAR_CURRENT_USER}))
+    .then(dispatch({type: CLEAR_WATCHES}))
+    .catch(error => {
+      console.log('Log out error: ', error)
+    })
   }
 }

@@ -2,7 +2,8 @@ import {
 	GET_WATCHES, 
 	ADD_WATCH, 
 	EDIT_WATCH, 
-	DELETE_WATCH 
+	DELETE_WATCH,
+	CLEAR_WATCHES
 } from '../actions/types'
 
 const initialState = []
@@ -34,6 +35,10 @@ export default (state = initialState, { type, payload } ) => {
 					...state,
 					watches: state.watches.filter(watch => watch.id !== payload)
 				})
+
+		case CLEAR_WATCHES:
+				console.log('*** watchReducer CLEAR_WATCHES')
+				return null
 
 		default:
 			return state
