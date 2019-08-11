@@ -46,7 +46,6 @@ export const getWatchesAction = (user_id) => {
 }
 
 export const addWatchAction = (watch) => {
-	console.log('*** addWatchAction watch: ', watch)
 	return dispatch => {
 		return fetch(`${API_URL}/watches`, {
 			method: 'POST',

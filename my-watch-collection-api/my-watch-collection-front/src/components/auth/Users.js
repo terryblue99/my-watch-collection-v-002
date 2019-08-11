@@ -1,3 +1,0 @@
-#<User id: 1, email: "terry@blue.com", password_digest: "$2a$12$NiZfQA0QmD08oflPIvsx5eHXWkoglwX0XpRcZ74J.if...", created_at: "2019-08-03 00:49:03", updated_at: "2019-08-03 00:49:03">, 
-#<User id: 2, email: "blue@terry.com", password_digest: "$2a$12$9pNKQSu3Ai9KTSVp9l6UguBjf6pCQ0Egj.MFzJMO3gz...", created_at: "2019-08-06 22:58:28", updated_at: "2019-08-06 22:58:28">, 
-#<User id: 3, email: "tania@blue.com", password_digest: "$2a$12$YGGtfpM17dGojpb35X1YAueUT8c9hWJKIo1ZiAC5Xg5...", created_at: "2019-08-06 23:06:42", updated_at: "2019-08-06 23:06:42">]

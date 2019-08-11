@@ -13,15 +13,17 @@ class LogIn extends Component {
             email: '',
             password: ''
         },
-        redirectToReferrer: false  // set to false when LogIn.js & SignUp.js completed!
+        redirectToReferrer: false  // set to false for LogIn.js & SignUp.js to work properly!
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
         fakeAuth.authenticate(() => {
-            this.setState({
-                redirectToReferrer: true
-            })
+            if (!this.state.redirectToReferrer) {
+                this.setState({
+                    redirectToReferrer: true
+                })
+            }
         }) 
         this.props.login({ user: this.state.loginData })
     }
@@ -35,7 +37,7 @@ class LogIn extends Component {
         })                         
     }
     
-    render() {
+    render()  {
         if (this.props.user && this.props.user.logged_in) {
             return (
                 <Redirect to={{
@@ -59,7 +61,7 @@ class LogIn extends Component {
 
         return (
            <div>
-            {this.state.redirectToReferrer === false ? 
+            {this.state.redirectToReferrer === true ? 
                 <div>
                     <p className='referToLogin'>You must log in to access {from.pathname}</p>
                 </div>

@@ -37,7 +37,6 @@ export default (state = initialState, { type, payload } ) => {
 				})
 
 		case CLEAR_WATCHES:
-				console.log('*** watchReducer CLEAR_WATCHES')
 				return null
 
 		default:

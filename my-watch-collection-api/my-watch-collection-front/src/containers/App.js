@@ -19,7 +19,7 @@ import fakeAuth from '../components/auth/fakeAuth'
 const PrivateRoute = ({ component: Component, ...rest}) => ( // rename component with a capital 'C'
                                                              //  ...rest is rest of arguments; path & component
   <Route {...rest} render={(props) => (
-      fakeAuth.isAuthenticated === true // set to false when LogIn.js & SignUp.js completed!
+      fakeAuth.isAuthenticated === true // set to true for LogIn.js & SignUp.js to work properly!
         ? <Component {...props} /> // props are location, match & history
         : <Redirect to={{
               pathname: '/login',

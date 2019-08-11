@@ -1,12 +1,8 @@
 const fakeAuth = {
-  isAuthenticated:false,
+  isAuthenticated:false,  // set to false for LogIn.js & SignUp.js to work properly!
   authenticate(cb) {
     this.isAuthenticated = true
     setTimeout(cb, 100) //fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
   }
 }
 

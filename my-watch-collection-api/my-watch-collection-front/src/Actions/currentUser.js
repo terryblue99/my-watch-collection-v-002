@@ -33,7 +33,7 @@ export const login = (credentials) => {
               type: SET_CURRENT_USER,
               payload: response
             })
-            return
+            // return
           }   
         } else {
           alert(response.error) 
@@ -45,8 +45,7 @@ export const login = (credentials) => {
   }
 }
 
-export const signup = (credentials, history) => {
-  console.log('*** actions/currentUser/signup credentials: ', credentials)
+export const signup = (credentials) => {
   return dispatch => {
     return fetch(`${API_URL}/registrations`, {
       credentials: "include",
@@ -84,7 +83,6 @@ export const signup = (credentials, history) => {
 }
 
 export const logout = () => {
-  console.log('*** actions/currentUser/logout')
   return dispatch => {
     return fetch(`${API_URL}/logout`, {
       credentials: "include",
