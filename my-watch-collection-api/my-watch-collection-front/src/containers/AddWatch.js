@@ -76,7 +76,7 @@ class AddWatch extends Component {
                return (
                     <div>
                          <NavBar /> 
-                         <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
+                         <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
                          <form id='AddWatch-form' onSubmit={this.handleSubmit}>
                               <div className='AddWatch'>
                               <h1 style={{color: 'green'}}>Add a watch</h1>

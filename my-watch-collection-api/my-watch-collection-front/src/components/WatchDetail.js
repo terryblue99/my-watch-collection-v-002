@@ -65,7 +65,7 @@ class WatchDetail extends Component {
                         grid-area: main;  
                         margin-bottom: 5px;
                 `}>
-                    <button onClick={this.handleBack} className='Back-button'>Back to watch list</button>
+                    <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
                     <div> 
                         <b><h2 css={css`
                             text-align: center;
