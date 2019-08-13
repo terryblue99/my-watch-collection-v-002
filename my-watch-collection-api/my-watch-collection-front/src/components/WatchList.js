@@ -27,6 +27,7 @@ const WatchList = ({ watches, user_id, logged_in }) => {
                     cursor: pointer;
                 }
             `} onClick={() => {
+                    setCurrentWatch(false)
                     setCurrentWatch(watch)
                     setShowWatches(false) // on mobiles will display watch detail when name is clicked 
                 }}>

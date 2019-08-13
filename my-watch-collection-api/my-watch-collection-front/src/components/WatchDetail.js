@@ -11,14 +11,14 @@ import { deleteWatchAction } from '../actions/watches'
 class WatchDetail extends Component { 
 
     state = {
-        backToWatchList: false
+        backToDashboard: false
     }
 
     shouldComponentUpdate(nextProps, nextState) {
         // Prevent component re-render on a true state, but reset to false
-        if(this.state.backToWatchList === true) {
+        if(this.state.backToDashboard === true) {
              this.setState({
-                  backToWatchList: false
+                  backToDashboard: false
              })
              return false
         }
@@ -30,20 +30,20 @@ class WatchDetail extends Component {
             this.props.deleteWatchAction(this.props.currentWatch.id, 
                                             this.props.currentWatch.watch_name)
             this.setState({
-                backToWatchList: true
+                backToDashboard: true
             })    
         }
     }
 
     handleBack = () => {
         this.setState({
-             backToWatchList: true
+             backToDashboard: true
         })
    }
 
     render () {
 
-        if (this.state.backToWatchList) {
+        if (this.state.backToDashboard) {
             return <Redirect to={{
                       pathname: '/dashboard',
                       state: { 

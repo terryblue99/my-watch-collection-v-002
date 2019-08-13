@@ -21,14 +21,14 @@ class AddWatch extends Component {
                cost: '',
                user_id: this.props.location.state.user_id
           },
-          backToWatchList: false
+          backToDashboard: false
      }
 
      shouldComponentUpdate(nextProps, nextState) {
           // Prevent component re-render on a true state, but reset to false
-          if(this.state.backToWatchList === true) {
+          if(this.state.backToDashboard === true) {
                this.setState({
-                    backToWatchList: false
+                    backToDashboard: false
                })
                return false
           }
@@ -54,12 +54,12 @@ class AddWatch extends Component {
 
      handleBack = () => {
           this.setState({
-               backToWatchList: true
+               backToDashboard: true
           })
      }
 
      render() {  
-          if (this.state.backToWatchList) {
+          if (this.state.backToDashboard) {
                return <Redirect to={{
                          pathname: '/dashboard',
                          state: { 
