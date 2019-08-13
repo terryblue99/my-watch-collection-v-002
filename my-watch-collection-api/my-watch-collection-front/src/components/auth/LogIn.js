@@ -30,7 +30,6 @@ class LogIn extends Component {
     }
     
     render() {
-        console.log('*** LogIn this.props.location.state: ', this.props.location.state)
         if (this.props.user && this.props.user.logged_in) {
             return (
                 <Redirect to={{
