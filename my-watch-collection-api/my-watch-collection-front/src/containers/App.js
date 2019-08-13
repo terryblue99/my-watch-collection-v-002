@@ -20,11 +20,19 @@ class App extends Component {
 
   render() {
 
+    let a_user_exists
+    let is_logged_in
+
+    if (this.props.user) {
+      a_user_exists = this.props.user
+      is_logged_in = this.props.user.logged_in
+    }
+
     const PrivateRoute = ({ component: Component, ...rest}) => ( // rename component with a capital 'C'
                                                                  // ...rest is rest of arguments; path & component
       <div> 
         <Route {...rest} render={(props) => (
-          this.props.user && this.props.user.logged_in
+          a_user_exists && is_logged_in
           ? <Component {...props} /> 
           : <Redirect to={{
               pathname: '/login',
@@ -47,7 +55,7 @@ class App extends Component {
               <PrivateRoute exact path='/dashboard' component={DashBoard} />
               <PrivateRoute exact path='/watches/new' component={AddWatch} />
               <PrivateRoute path='/watches/:id' component={EditWatch} />
-              <Redirect from='*' to={{pathname: '/login'}} />
+              <PrivateRoute from='*' />
           </Switch> 
         </Router>        
       </div>
