@@ -15,15 +15,14 @@ const NavBar = (props) => {
                 padding-top: 10px;
       `}>
         <Navbar.Brand>
-          <NavLink to="/">
-            <span css={css`
-                color: yellow;
-                display: inline-block;
-                font-size: 20px;
-                padding-left: 20px;
-              `}>My Watch Collection
-            </span> 
-          </NavLink>
+         
+          <span css={css`
+              color: yellow;
+              display: inline-block;
+              font-size: 20px;
+              padding-left: 20px;
+            `}>My Watch Collection
+          </span> 
           
           <span css={css`
               color: white;
