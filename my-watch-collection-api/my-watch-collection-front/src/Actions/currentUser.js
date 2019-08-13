@@ -6,7 +6,7 @@ import {
 
 const API_URL = '/api/v1'
 
-export const login = (credentials) => {
+export const logInAction = (credentials) => {
   return dispatch => {
     return fetch(`${API_URL}/sessions`, {
       credentials: "include",
@@ -45,8 +45,7 @@ export const login = (credentials) => {
   }
 }
 
-export const loggedIn = () => {
-  console.log('*** actions/currentUser.js/loggedIn')
+export const loggedInAction = () => {
   return dispatch => {
     return fetch(`${API_URL}/logged_in`, {
       credentials: "include",
@@ -57,7 +56,6 @@ export const loggedIn = () => {
     })
     .then(response => response.json())
     .then(response => {
-      console.log('*** Logged in?: ', response)
       return response
     })
     .catch(error => {
@@ -66,7 +64,7 @@ export const loggedIn = () => {
   }
 }
 
-export const signup = (credentials) => {
+export const signUpAction = (credentials) => {
   return dispatch => {
     return fetch(`${API_URL}/registrations`, {
       credentials: "include",
@@ -103,7 +101,7 @@ export const signup = (credentials) => {
   }
 }
 
-export const logout = () => {
+export const logOutAction = () => {
   return dispatch => {
     return fetch(`${API_URL}/logout`, {
       credentials: "include",

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import '../../containers/App.css'
 import logo from '../../logo.jpg'
-import { signup } from "../../actions/currentUser.js"
+import { signUpAction } from "../../actions/currentUser.js"
 
 class SignUp extends Component {
 
@@ -22,7 +22,7 @@ class SignUp extends Component {
             alert('Password and password confirmation must be the same!')
             return
         }
-        this.props.signup({ user: this.state })
+        this.props.signUpAction({ user: this.state })
         this.props.history.push('/watches')
     }
 
@@ -69,4 +69,4 @@ class SignUp extends Component {
     }
 }
 
-export default connect(null, { signup })(SignUp)
+export default connect(null, { signUpAction })(SignUp)

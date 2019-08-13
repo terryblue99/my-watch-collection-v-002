@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import '../../containers/App.css'
 import logo from '../../logo.jpg'
-import { login } from "../../actions/currentUser.js"
+import { logInAction } from "../../actions/currentUser.js"
 
 class LogIn extends Component {
 
@@ -17,7 +17,7 @@ class LogIn extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.login({ user: this.state.loginData })
+        this.props.logInAction({ user: this.state.loginData })
     }
 
     handleChange = (event) => {
@@ -30,6 +30,7 @@ class LogIn extends Component {
     }
     
     render() {
+        console.log('*** LogIn this.props.location.state: ', this.props.location.state)
         if (this.props.user && this.props.user.logged_in) {
             return (
                 <Redirect to={{
@@ -82,4 +83,4 @@ const mapStateToProps = (state) => {
     } 
 }
 
-export default connect(mapStateToProps, { login })(LogIn)
+export default connect(mapStateToProps, { logInAction })(LogIn)
