@@ -27,12 +27,12 @@ class WatchDetail extends Component {
 
     handleDelete = () => {
         if (window.confirm('Do you realy want to delete this watch?')) {
-                this.props.deleteWatchAction(this.props.currentWatch.id, 
-                                             this.props.currentWatch.watch_name)
+            this.props.deleteWatchAction(this.props.currentWatch.id, 
+                                            this.props.currentWatch.watch_name)
+            this.setState({
+                backToWatchList: true
+            })    
         }
-        this.setState({
-            backToWatchList: true
-       })
     }
 
     handleBack = () => {
