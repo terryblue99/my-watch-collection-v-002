@@ -25,9 +25,8 @@ class SignUp extends Component {
             alert('Password and password confirmation must be the same!')
             return
         }
-
+ 
         this.props.signUpAction({ user: this.state })
-        return <Redirect to={{pathname: '/login'}} />
     }
 
     handleChange = (event) => {
@@ -37,6 +36,14 @@ class SignUp extends Component {
     }
     
     render() {
+       
+        if (this.props.currentUser) {
+            return (
+                <Redirect to={{
+                    pathname: '/login'
+                }} />
+            )     
+        }
 
         return (
 
@@ -75,4 +82,10 @@ class SignUp extends Component {
     }
 }
 
-export default connect(null, { signUpAction })(SignUp)
+const mapStateToProps = (state) => { 
+    return {
+      currentUser: state.currentUser
+    } 
+}
+
+export default connect(mapStateToProps, { signUpAction })(SignUp)

@@ -43,7 +43,7 @@ class WatchDetail extends Component {
    }
 
     render () {
-       console.log('*** WatchDetails currentWatch: ', this.props.currentWatch)
+ 
         if (this.state.backToDashboard) {
             return  <Redirect to={{
                     pathname: '/dashboard'

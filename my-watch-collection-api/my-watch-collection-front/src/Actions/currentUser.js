@@ -91,8 +91,9 @@ export const signUpAction = (credentials) => {
             type: SET_CURRENT_USER,
             payload: response
           })
+          return
         } else {
-          alert(response.error) 
+          alert('Email has already been taken, please retry!') 
         }
       })
       .catch(error => {
