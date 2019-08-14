@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
-const List = ({ watches, showWatches, user_id, logged_in } ) => {  
+const List = ({ watches, showWatches, user_id, logged_in } ) => { 
+
     if (logged_in) {
+        
         return (
             
             <div className='List' css={css`
@@ -30,17 +32,17 @@ const List = ({ watches, showWatches, user_id, logged_in } ) => {
                     padding-top 10px;
                     text-align: center;
                 `}> 
-                <Link to={{
-                            // Link to the new watch screen and pass the user id
-                            pathname: '/watches/new',
-                            state: {
-                                fromList: true,
-                                user_id: user_id,
-                                logged_in: logged_in
-                            }
-                        }}>
-                        <button>Add a watch</button>
-                </Link> 
+                    <Link to={{
+                                // Link to the new watch screen and pass the user id
+                                pathname: '/watches/new',
+                                state: {
+                                    fromList: true,
+                                    user_id: user_id,
+                                    logged_in: logged_in
+                                }
+                            }}>
+                            <button>Add a watch</button>
+                    </Link> 
                 </div>
             </div>  
         ) 

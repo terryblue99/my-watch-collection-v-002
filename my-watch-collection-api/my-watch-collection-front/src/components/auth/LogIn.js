@@ -35,7 +35,7 @@ class LogIn extends Component {
                 <Redirect to={{
                     pathname: '/dashboard',
                     state: {
-                        fromLogin: true,
+                        from: 'Login',
                         user_id: this.props.user.user.id,
                         logged_in: this.props.user.logged_in
                     }

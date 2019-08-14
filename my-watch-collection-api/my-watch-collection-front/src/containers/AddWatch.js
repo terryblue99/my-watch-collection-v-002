@@ -63,11 +63,12 @@ class AddWatch extends Component {
                return <Redirect to={{
                          pathname: '/dashboard',
                          state: { 
-                              fromAddWatch: true,
+                              from: 'AddWatch',
                               user_id: this.props.user.user.id,
-                              logged_in: this.props.user.logged_in
+                              logged_in: this.props.user.logged_in,
+                              backToDashBoard: this.state.backToDashboard
                          }
-                      }} />
+               }}   />
           } 
           
           const fromList = this.props.location.state.fromList

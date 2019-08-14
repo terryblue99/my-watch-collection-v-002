@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import '../containers/App.css'
 import { deleteWatchAction } from '../actions/watches'
+import DashboardContent from './DashboardContent'
 
 class WatchDetail extends Component { 
 
@@ -16,11 +17,11 @@ class WatchDetail extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         // Prevent component re-render on a true state, but reset to false
-        if(this.state.backToDashboard === true) {
+        if (this.state.backToDashboard) {
              this.setState({
                   backToDashboard: false
              })
-             return false
+             return true
         }
         return true
     }
@@ -42,21 +43,22 @@ class WatchDetail extends Component {
    }
 
     render () {
-
+       
         if (this.state.backToDashboard) {
-            return <Redirect to={{
-                      pathname: '/dashboard',
-                      state: { 
-                           fromWatchDetail: true,
-                           user_id: this.props.user_id,
-                           logged_in: this.props.logged_in
-                      }
-                   }} />
+            return  <Redirect to={{
+                    pathname: '/dashboard',
+                    state: { 
+                        from: 'WatchDetail',
+                        user_id: this.props.user_id,
+                        logged_in: this.props.logged_in,
+                        backToDashBoard: this.state.backToDashboard
+                    }
+            }}  />
         } 
-  
+
         const currentWatch = this.props.currentWatch
         const showWatches = this.props.showWatches
-
+    
         if (currentWatch.watch_maker) {
             return ( 
                 
@@ -116,7 +118,9 @@ class WatchDetail extends Component {
                 </div> 
             )     
 
-        } else return null
+        } else {
+            return <DashboardContent />
+        }
     }
 }
 

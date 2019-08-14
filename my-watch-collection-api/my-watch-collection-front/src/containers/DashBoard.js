@@ -1,30 +1,33 @@
 import React, { Component } from 'react'
-import GetWatches from './GetWatches'
+import { connect } from 'react-redux'
+import { getWatchesAction } from '../actions/watches'
+import WatchList from '../components/WatchList'
 
 class DashBoard extends Component {
-  
-  render() {
-
-    let user_id
-    let logged_in
-
-    if (!this.props.location) {
-      // Not coming from a log in
-      user_id = this.props.user_id
-      logged_in = this.props.logged_in
-      
-    } else {
-       // Coming from a log in
-      user_id = this.props.location.state.user_id
-      logged_in = this.props.location.state.logged_in
+    
+    componentDidMount = () => {
+        this.props.getWatchesAction(this.props.location.state.user_id)
     }
-   
-    return (
-      <div className="dashboard">
-          <GetWatches user_id={user_id} logged_in={logged_in} />
-      </div> 
-    )
-  }
+
+    render() {
+        const user_id = this.props.location.state.user_id
+        const logged_in = this.props.location.state.logged_in
+        return (
+            <div>
+                <WatchList watches={this.props.watches}
+                           user_id={user_id} 
+                           logged_in={logged_in} 
+                />               
+            </div>
+        )     
+    }
 }
 
-export default DashBoard
+const mapStateToProps = (state) => {
+    return {
+      watches: state.myWatches.watches,
+      currentUser: state.currentUser
+    } 
+}
+
+export default connect(mapStateToProps, {getWatchesAction})(DashBoard)

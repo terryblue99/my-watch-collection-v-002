@@ -60,13 +60,14 @@ class EditWatch extends Component {
  
         if (this.state.backToDashboard) {
           return <Redirect to={{
-               pathname: '/dashboard',
-               state: { 
-                    fromEditWatch: true,
-                    user_id: this.props.user.user.id,
-                    logged_in: this.props.user.logged_in
-               }
-            }} />
+                    pathname: '/dashboard',
+                    state: { 
+                         from: 'EditWatch',
+                         user_id: this.props.user.user.id,
+                         logged_in: this.props.user.logged_in,
+                         backToDashBoard: this.state.backToDashboard
+                    }
+          }}   />
         } 
 
         const fromWatchDetails = this.props.location.state.fromWatchDetails
