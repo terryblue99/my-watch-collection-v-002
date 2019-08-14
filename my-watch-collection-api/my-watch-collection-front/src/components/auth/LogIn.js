@@ -8,77 +8,68 @@ import { logInAction } from "../../actions/currentUser.js"
 class LogIn extends Component {
 
     state = {
-        loginData: {
-            email: '',
-            password: ''
-        },
-        redirectToReferrer: false  // set to false for LogIn.js & SignUp.js to work properly!
+        email: '',
+        password: '' 
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.logInAction({ user: this.state.loginData })
+        this.props.logInAction({ user: this.state })
     }
 
     handleChange = (event) => {
         this.setState({
-            loginData: {
-                ...this.state.loginData,
-                [event.target.name]: event.target.value
-            }   
+            [event.target.name]: event.target.value
         })                         
     }
     
     render() {
-        if (this.props.user && this.props.user.logged_in) {
+
+        if (this.props.currentUser && this.props.currentUser.logged_in) {
             return (
                 <Redirect to={{
-                    pathname: '/dashboard',
-                    state: {
-                        from: 'Login',
-                        user_id: this.props.user.user.id,
-                        logged_in: this.props.user.logged_in
-                    }
+                    pathname: '/dashboard'
                 }} />
             )     
         }
  
         return (
-           <div>
-            <p className='referToLogin'>Log in to access your data</p>
-            <header className='Login'>
-            <img src={logo} alt='logo' align='middle' className='logo'/>
-            <div className='container'>
-                <form id='Login-form' onSubmit={this.handleSubmit}>
-                  <div className='register'>
-                    <br /> 
-                    <input className='input-element' required 
-                            type='email'
-                            name='email'
-                            placeholder='Enter your email'
-                            onChange={this.handleChange}
-                    />
-                    <br /> 
-                    <input className='input-element' required 
-                            type='password'
-                            name='password'
-                            placeholder='Enter your password'
-                            onChange={this.handleChange}
-                    />
-                    <br />
-                    <button className='Login-button' type='submit'>Log In</button>
-                  </div>
-                </form>
-            </div>
-            </header>
-           </div> 
+
+            <div>
+                <p className='referToLogin'>Log in to access your data</p>
+                <header className='Login'>
+                    <img src={logo} alt='logo' align='middle' className='logo'/>
+                    <div className='container'>
+                        <form id='Login-form' onSubmit={this.handleSubmit}>
+                        <div className='register'>
+                                <br /> 
+                                <input className='input-element' required 
+                                        type='email'
+                                        name='email'
+                                        placeholder='Enter your email'
+                                        onChange={this.handleChange}
+                                />
+                                <br /> 
+                                <input className='input-element' required 
+                                        type='password'
+                                        name='password'
+                                        placeholder='Enter your password'
+                                        onChange={this.handleChange}
+                                />
+                                <br />
+                                <button className='Login-button' type='submit'>Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                </header>
+            </div> 
         )
     }
 }
 
 const mapStateToProps = (state) => { 
     return {
-      user: state.currentUser
+      currentUser: state.currentUser
     } 
 }
 

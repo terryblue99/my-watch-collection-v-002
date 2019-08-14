@@ -3,7 +3,7 @@
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import logo from '../logo.jpg'
 
-const DashboardContent = (props) => {
+const DashboardContent = () => {
   return (
     <div css={css`
       display: flex;

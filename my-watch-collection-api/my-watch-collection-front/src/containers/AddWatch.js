@@ -19,7 +19,7 @@ class AddWatch extends Component {
                complications: '',
                date_bought: '',
                cost: '',
-               user_id: this.props.location.state.user_id
+               user_id: this.props.currentUser.user.id
           },
           backToDashboard: false
      }
@@ -62,100 +62,91 @@ class AddWatch extends Component {
           if (this.state.backToDashboard) {
                return <Redirect to={{
                          pathname: '/dashboard',
-                         state: { 
-                              from: 'AddWatch',
-                              user_id: this.props.user.user.id,
-                              logged_in: this.props.user.logged_in,
-                              backToDashBoard: this.state.backToDashboard
-                         }
-               }}   />
+                    }}/>
           } 
-          
-          const fromList = this.props.location.state.fromList
-
-          if (fromList) {
-               return (
-                    <div>
-                         <NavBar /> 
-                         <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
-                         <form id='AddWatch-form' onSubmit={this.handleSubmit}>
-                              <div className='AddWatch'>
-                              <h1 style={{color: 'green'}}>Add a watch</h1>
-                              <br /> 
-                              <input className='input-element' required 
-                                   type='text'
-                                   name='watch_name'
-                                   placeholder='Watch name'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='input-element' required 
-                                   type='text'
-                                   name='watch_maker'
-                                   placeholder='Watch maker'
-                                   onChange={this.handleChange}
-                              />
-                              <br />
-                              <input className='input-element'  type='text'
-                                   name='movement'
-                                   placeholder='Movement'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='input-element'  type='text'
-                                   name='complications'
-                                   placeholder='Complications'
-                                   onChange={this.handleChange}
-                              />
-                              <br />
-                              <input className='input-element'  type='text'
-                                   name='band'
-                                   placeholder='Band'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='input-element'  type='text'
-                                   name='model_number'
-                                   placeholder='Model number'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='input-element'  type='text'
-                                   name='case_measurement'
-                                   placeholder='Case measurement (e.g. 45mm)'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='input-element'  type='text'
-                                   name='water_resistance'
-                                   placeholder='Water resistance'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='input-element'  type='text'
-                                   name='date_bought'
-                                   placeholder='Date bought'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='input-element'  type='text'
-                                   name='cost'
-                                   placeholder='Cost (e.g. 199.99)'
-                                   onChange={this.handleChange}
-                              />
-                              <br />
-                              <button className='Save-button' type='submit'>Save watch</button>
-                              </div>
-                         </form>
-                    </div>
-               )   
-          } else return null
+      
+          return (
+               <div>
+                    <NavBar /> 
+                    <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
+                    <form id='AddWatch-form' onSubmit={this.handleSubmit}>
+                         <div className='AddWatch'>
+                         <h1 style={{color: 'green'}}>Add a watch</h1>
+                         <br /> 
+                         <input className='input-element' required 
+                              type='text'
+                              name='watch_name'
+                              placeholder='Watch name'
+                              onChange={this.handleChange}
+                         />
+                         <br /> 
+                         <input className='input-element' required 
+                              type='text'
+                              name='watch_maker'
+                              placeholder='Watch maker'
+                              onChange={this.handleChange}
+                         />
+                         <br />
+                         <input className='input-element'  type='text'
+                              name='movement'
+                              placeholder='Movement'
+                              onChange={this.handleChange}
+                         />
+                         <br /> 
+                         <input className='input-element'  type='text'
+                              name='complications'
+                              placeholder='Complications'
+                              onChange={this.handleChange}
+                         />
+                         <br />
+                         <input className='input-element'  type='text'
+                              name='band'
+                              placeholder='Band'
+                              onChange={this.handleChange}
+                         />
+                         <br /> 
+                         <input className='input-element'  type='text'
+                              name='model_number'
+                              placeholder='Model number'
+                              onChange={this.handleChange}
+                         />
+                         <br /> 
+                         <input className='input-element'  type='text'
+                              name='case_measurement'
+                              placeholder='Case measurement (e.g. 45mm)'
+                              onChange={this.handleChange}
+                         />
+                         <br /> 
+                         <input className='input-element'  type='text'
+                              name='water_resistance'
+                              placeholder='Water resistance'
+                              onChange={this.handleChange}
+                         />
+                         <br /> 
+                         <input className='input-element'  type='text'
+                              name='date_bought'
+                              placeholder='Date bought'
+                              onChange={this.handleChange}
+                         />
+                         <br /> 
+                         <input className='input-element'  type='text'
+                              name='cost'
+                              placeholder='Cost (e.g. 199.99)'
+                              onChange={this.handleChange}
+                         />
+                         <br />
+                         <button className='Save-button' type='submit'>Save watch</button>
+                         </div>
+                    </form>
+               </div>
+          )   
+ 
      } 
 }
 
 const mapStateToProps = (state) => { 
      return {
-       user: state.currentUser
+       currentUser: state.currentUser
      } 
  }
 

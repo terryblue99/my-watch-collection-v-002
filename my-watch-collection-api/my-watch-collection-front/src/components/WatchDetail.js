@@ -29,7 +29,7 @@ class WatchDetail extends Component {
     handleDelete = () => {
         if (window.confirm('Do you realy want to delete this watch?')) {
             this.props.deleteWatchAction(this.props.currentWatch.id, 
-                                            this.props.currentWatch.watch_name)
+                                         this.props.currentWatch.watch_name)
             this.setState({
                 backToDashboard: true
             })    
@@ -43,16 +43,10 @@ class WatchDetail extends Component {
    }
 
     render () {
-       
+       console.log('*** WatchDetails currentWatch: ', this.props.currentWatch)
         if (this.state.backToDashboard) {
             return  <Redirect to={{
-                    pathname: '/dashboard',
-                    state: { 
-                        from: 'WatchDetail',
-                        user_id: this.props.user_id,
-                        logged_in: this.props.logged_in,
-                        backToDashBoard: this.state.backToDashboard
-                    }
+                    pathname: '/dashboard'
             }}  />
         } 
 
@@ -105,8 +99,7 @@ class WatchDetail extends Component {
                             // Link to the edit watch screen and pass the current watch
                             pathname: `/watches/${currentWatch.id}`,
                             state: {
-                                fromWatchDetails: true,
-                                watch: this.props.currentWatch
+                                watch: currentWatch
                             }
                         }}>
                             Edit this watch
@@ -126,10 +119,4 @@ class WatchDetail extends Component {
 
 const detailCss = {fontSize: '15px', color: 'green'}
 
-const mapStateToProps = (state) => {
-    return {
-      currentUser: state.currentUser
-    } 
-}
-
-export default connect(mapStateToProps, {deleteWatchAction})(WatchDetail)
+export default connect(null, {deleteWatchAction})(WatchDetail)

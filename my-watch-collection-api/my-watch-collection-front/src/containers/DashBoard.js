@@ -6,18 +6,15 @@ import WatchList from '../components/WatchList'
 class DashBoard extends Component {
     
     componentDidMount = () => {
-        this.props.getWatchesAction(this.props.location.state.user_id)
+        console.log('*** DashBoard props: ', this.props)
+        this.props.getWatchesAction(this.props.currentUser.user.id)
     }
 
     render() {
-        const user_id = this.props.location.state.user_id
-        const logged_in = this.props.location.state.logged_in
+        console.log('*** DashBoard props: ', this.props)
         return (
             <div>
-                <WatchList watches={this.props.watches}
-                           user_id={user_id} 
-                           logged_in={logged_in} 
-                />               
+                <WatchList watches={this.props.watches}/>               
             </div>
         )     
     }
