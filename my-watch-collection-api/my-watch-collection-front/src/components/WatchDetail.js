@@ -18,9 +18,9 @@ class WatchDetail extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         // Prevent component re-render on a true state, but reset to false
         if (this.state.backToDashboard) {
-             this.setState({
-                  backToDashboard: false
-             })
+            this.setState({
+                backToDashboard: false
+            })
              return true
         }
         return true
@@ -29,10 +29,10 @@ class WatchDetail extends Component {
     handleDelete = () => {
         if (window.confirm('Do you realy want to delete this watch?')) {
             this.props.deleteWatchAction(this.props.currentWatch.id, 
-                                         this.props.currentWatch.watch_name)                          
+                                         this.props.currentWatch.watch_name)                 
             this.setState({
                 backToDashboard: true
-            })    
+            }) 
         }
     }
 
@@ -45,7 +45,8 @@ class WatchDetail extends Component {
     render () {
  
         if (this.state.backToDashboard) {
-            // Clear the current watch screen to allow the dashboard to be displayed there instead
+            // Clear the current watch screen to allow 
+            // the dashboard to be displayed there instead
             this.props.setCurrentWatch(null) 
             return  <Redirect to={{
                     pathname: '/dashboard'
@@ -55,7 +56,7 @@ class WatchDetail extends Component {
         const currentWatch = this.props.currentWatch
         const showWatches = this.props.showWatches
     
-        if (currentWatch) {
+        if (currentWatch && currentWatch.watch_maker) {
             return ( 
                 
                 <div className='watch-detail' css={css`

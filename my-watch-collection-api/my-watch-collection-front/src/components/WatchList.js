@@ -17,7 +17,7 @@ const WatchList = ({ watches }) => {
    let watchList
 
     if (watches) {
-       watchList = watches.map(watch => ( 
+        watchList = watches.map(watch => ( 
             <li className='watchName' key={watch.id} css={css`
                 border-bottom: 1px solid black;
                 padding: 5px;
@@ -55,7 +55,7 @@ const WatchList = ({ watches }) => {
                 }
             `}>
                 <List watches={watchList}
-                    showWatches={showWatches}
+                      showWatches={showWatches}
                 />
                 <SidebarMobile showWatches={showWatches}   
                                setShowWatches={setShowWatches}
