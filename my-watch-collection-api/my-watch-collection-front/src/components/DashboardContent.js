@@ -7,10 +7,12 @@ const DashboardContent = () => {
   return (
     <div css={css`
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
     `}>
       <img src={logo} alt='logo' align='middle' className='logo'/>
+      <h2>Select a watch!</h2>
     </div>
   )
 }
