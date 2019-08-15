@@ -62,6 +62,7 @@ const WatchList = ({ watches }) => {
                 />
                 <WatchDetail showWatches={showWatches}
                              currentWatch={currentWatch}
+                             setCurrentWatch={setCurrentWatch}
                 />
             </div>
         </div>
