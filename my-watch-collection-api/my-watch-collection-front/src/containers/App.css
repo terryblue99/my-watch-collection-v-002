@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+/* Prevent selecting in the app body */
 body, button {
   font-family: 'Fresca', sans-serif;
   -webkit-touch-callout: none; /* iOS Safari */

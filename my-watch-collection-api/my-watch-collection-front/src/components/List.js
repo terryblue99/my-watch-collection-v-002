@@ -30,11 +30,8 @@ const List = ({ watches, showWatches } ) => {
                 padding-top 10px;
                 text-align: center;
             `}> 
-                <Link to={{
-                            // Link to the new watch screen and pass the user id
-                            pathname: '/watches/new'
-                        }}>
-                        <button>Add a watch</button>
+                <Link to={{pathname: '/watches/add_watch'}}>
+                    <button>Add a watch</button>
                 </Link> 
             </div>
         </div>  

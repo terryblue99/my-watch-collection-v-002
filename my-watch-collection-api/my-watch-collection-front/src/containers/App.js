@@ -14,6 +14,7 @@ import SignUp from '../components/auth/SignUp'
 import Homepage from '../components/Homepage'
 import DashBoard from './DashBoard'
 import AddWatch from './AddWatch'
+import WatchDetail from '../components/WatchDetail'
 import EditWatch from './EditWatch'
 
 class App extends Component {
@@ -52,9 +53,11 @@ class App extends Component {
               <Route path='/login' component={LogIn} />
               <Route path='/logout' component={LogOut} />
               <Route path='/signup' component={SignUp} />
+
               <PrivateRoute exact path='/dashboard' component={DashBoard} />
-              <PrivateRoute exact path='/watches/new' component={AddWatch} />
-              <PrivateRoute path='/watches/:id' component={EditWatch} />
+              <PrivateRoute exact path='/watches/add_watch' component={AddWatch} />
+              <PrivateRoute path='/watches/:id/detail' component={WatchDetail} />
+              <PrivateRoute path='/watches/:id/edit' component={EditWatch} />
               <PrivateRoute from='*' />
           </Switch> 
         </Router>        

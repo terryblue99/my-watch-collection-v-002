@@ -12,7 +12,7 @@ const WatchList = ({ watches }) => {
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
 
-   const [currentWatch, setCurrentWatch] = useState({}) 
+   const [currentWatch, setCurrentWatch] = useState(null) 
 
    let watchList
 
