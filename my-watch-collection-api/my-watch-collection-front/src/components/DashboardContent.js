@@ -10,6 +10,10 @@ const DashboardContent = () => {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
+      @media (max-width: 800px) {
+        display: none;
+      }
     `}>
       <img src={logo} alt='logo' align='middle' className='logo'/>
       <h2>Select a watch!</h2>
