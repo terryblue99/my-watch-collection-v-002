@@ -66,6 +66,7 @@ class AddWatch extends Component {
           } 
       
           return (
+               
                <div>
                     <NavBar /> 
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>

@@ -56,8 +56,8 @@ class App extends Component {
 
               <PrivateRoute exact path='/dashboard' component={DashBoard} />
               <PrivateRoute exact path='/watches/add_watch' component={AddWatch} />
-              <PrivateRoute path='/watches/:id/detail' component={WatchDetail} />
-              <PrivateRoute path='/watches/:id/edit' component={EditWatch} />
+              <PrivateRoute path='/watches/:id/watch_detail' component={WatchDetail} />
+              <PrivateRoute path='/watches/:id/edit_watch' component={EditWatch} />
               <PrivateRoute from='*' />
           </Switch> 
         </Router>        

@@ -99,7 +99,7 @@ class WatchDetail extends Component {
                         margin-top: 40px;
                     `}>
                         <Link className='edit-button' to={{
-                            pathname: `/watches/${currentWatch.id}/edit`,
+                            pathname: `/watches/${currentWatch.id}/edit_watch`,
                             state: {
                                 watch: currentWatch
                             }
