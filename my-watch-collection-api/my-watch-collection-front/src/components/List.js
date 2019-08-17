@@ -9,9 +9,6 @@ const List = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) => {
         <div>
             <ul className='List' css={css`
                 border-right: 1px solid black;
-                {/* display: grid;
-                grid-area: sidebar-desktop;
-                grid-template-rows: auto 95px; */}
                 height: 85%;
                 list-style-type: none;
                 text-align: left;
