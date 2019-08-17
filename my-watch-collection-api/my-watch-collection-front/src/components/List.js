@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
-const List = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) => { 
-        
+const List = ({ watches, showWatches, setCurrentWatch, setShowWatches, history } ) => { 
+      
     return (
         <div>
             <ul className='List' css={css`
@@ -28,7 +28,7 @@ const List = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) => {
                                     color: white;
                                     cursor: pointer;
                                 }
-                            `} onClick={() => {
+                            `} onClick={() => { 
                                 setCurrentWatch(watch)
                                 setShowWatches(false) // on mobiles will allow toggling of watch list
                             }}>
@@ -54,3 +54,4 @@ const List = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) => {
 }
 
 export default List
+// history.push(`/watches/${watch.id}/watch_detail`)

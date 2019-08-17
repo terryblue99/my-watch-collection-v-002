@@ -7,7 +7,7 @@ import SidebarMobile from './SidebarMobile'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const WatchList = ({ watches }) => { 
+const WatchList = ({ watches, history }) => { 
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
 
@@ -28,16 +28,18 @@ const WatchList = ({ watches }) => {
             }
         `}>
             <List setShowWatches={setShowWatches}
-                    showWatches={showWatches}
-                    watches={watches}
-                    setCurrentWatch={setCurrentWatch}   
+                  showWatches={showWatches}
+                  watches={watches}
+                  setCurrentWatch={setCurrentWatch}
+                  currentWatch={currentWatch} 
+                  history={history}  
             /> 
             <SidebarMobile showWatches={showWatches}   
-                            setShowWatches={setShowWatches}
+                           setShowWatches={setShowWatches}
             />
             <WatchDetail showWatches={showWatches}
-                            currentWatch={currentWatch}
-                            setCurrentWatch={setCurrentWatch}
+                         currentWatch={currentWatch}
+                         setCurrentWatch={setCurrentWatch}
             />
 
         </div>
