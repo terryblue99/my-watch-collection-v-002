@@ -14,31 +14,6 @@ const WatchList = ({ watches }) => {
 
    const [currentWatch, setCurrentWatch] = useState(null) 
 
-   let watchList
-
-    if (watches) {
-        watchList = watches.map(watch => ( 
-            <li className='watchName' key={watch.id} css={css`
-                border-bottom: 1px solid black;
-                padding: 5px;
-                &:hover {
-                    background-color: #61BD4F;
-                    color: white;
-                    cursor: pointer;
-                }
-            `} onClick={() => {
-                    setCurrentWatch(watch)
-                    setShowWatches(false) // on mobiles will allow toggling of watch list
-                }}>
-                <b css={css`
-                    font-size: 18px;
-                    padding-left: 10px;
-                `}>{watch.watch_maker}:</b> {watch.watch_name}
-            </li>
-        )) 
-        
-    } else return null
-
     return (
         <div>
             <NavBar />
@@ -53,10 +28,12 @@ const WatchList = ({ watches }) => {
                     grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
                     grid-template-columns: 80px auto;
                 }
-            `}>
-                <List watches={watchList}
+            `}> 
+                <List setShowWatches={setShowWatches}
                       showWatches={showWatches}
-                />
+                      watches={watches}
+                      setCurrentWatch={setCurrentWatch}   
+                /> 
                 <SidebarMobile showWatches={showWatches}   
                                setShowWatches={setShowWatches}
                 />
@@ -64,10 +41,10 @@ const WatchList = ({ watches }) => {
                              currentWatch={currentWatch}
                              setCurrentWatch={setCurrentWatch}
                 />
+    
             </div>
         </div>
     )
-   
 }
 
 const mapStateToProps = (state) => { 

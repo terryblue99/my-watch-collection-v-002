@@ -61,7 +61,7 @@ class AddWatch extends Component {
      render() {  
           if (this.state.backToDashboard) { 
                return <Redirect to={{
-                         pathname: '/dashboard',
+                         pathname: '/dashboard'
                     }}/>
           } 
       
