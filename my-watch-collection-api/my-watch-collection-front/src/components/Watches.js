@@ -27,11 +27,11 @@ const Watches = ({ watches, history }) => {
                 grid-template-columns: 80px auto;
             }
         `}>
-            <WatchList setShowWatches={setShowWatches}
-                  showWatches={showWatches}
-                  watches={watches}
-                  setCurrentWatch={setCurrentWatch}
-                  history={history}  
+            <WatchList showWatches={showWatches}
+                       setShowWatches={setShowWatches}
+                       watches={watches}
+                       setCurrentWatch={setCurrentWatch}
+                       history={history}  
             /> 
             <SidebarMobile showWatches={showWatches}   
                            setShowWatches={setShowWatches}

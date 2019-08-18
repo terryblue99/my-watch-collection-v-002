@@ -6,23 +6,28 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches, history } ) => { 
       
     return (
-        <div>
-            <ul className='WatchList' css={css`
-                border-right: 1px solid black;
-                height: 85%;
-                list-style-type: none;
-                text-align: left;
-                
-                @media (max-width: 800px) {
-                    display: ${showWatches ? 'block' : 'none'}
-                }
+        <div css={css`
+            grid-area: sidebar-desktop;
+            border-right: 1px solid black;
+            height: 100%;
+            text-align: left;
+            
+            @media (max-width: 800px) {
+                display: ${showWatches ? 'block' : 'none'}
+            }
 
+            display: grid;
+            grid-template-rows: auto 100px;
+
+        `}>
+            <ul className='List' css={css`
+                list-style-type: none;
             `}>
                 {watches ?
                     watches.map(watch => {
                         return <li key={watch.id} css={css`
                                 border-bottom: 1px solid black;
-                                padding: 20px;
+                                padding: 5px;
                                 &:hover {
                                     background-color: #61BD4F;
                                     color: white;
