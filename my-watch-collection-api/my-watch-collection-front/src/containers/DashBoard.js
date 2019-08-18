@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getWatchesAction } from '../actions/watches'
 import NavBar from '../components/NavBar'
-import WatchList from '../components/WatchList'
+import Watches from '../components/Watches'
 
 class DashBoard extends Component {
     
@@ -15,7 +15,7 @@ class DashBoard extends Component {
         return (
             <div>
                 <NavBar />
-                <WatchList watches={this.props.watches}
+                <Watches watches={this.props.watches}
                            history={history}
                 />               
             </div>

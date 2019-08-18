@@ -1,56 +1,57 @@
-import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html
-import { connect } from 'react-redux'
-import WatchDetail from './WatchDetail'
-import List from './List'
-import SidebarMobile from './SidebarMobile'
+import { Link } from 'react-router-dom'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
+import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
-const WatchList = ({ watches, history }) => { 
-   // used when the layout is a mobile view
-   const [showWatches, setShowWatches] = useState(false)
-
-   const [currentWatch, setCurrentWatch] = useState(null) 
-
+const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches, history } ) => { 
+      
     return (
- 
-        <div className='WatchList' css={css`
-            display: grid;
-            grid-template-areas: 'sidebar-desktop main';
-            grid-template-columns: 300px auto;
-            height: 100vh;
-            width: 100vw;
-            
-            @media (max-width: 800px) {
-                grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
-                grid-template-columns: 80px auto;
-            }
-        `}>
-            <List setShowWatches={setShowWatches}
-                  showWatches={showWatches}
-                  watches={watches}
-                  setCurrentWatch={setCurrentWatch}
-                  currentWatch={currentWatch} 
-                  history={history}  
-            /> 
-            <SidebarMobile showWatches={showWatches}   
-                           setShowWatches={setShowWatches}
-            />
-            <WatchDetail showWatches={showWatches}
-                         currentWatch={currentWatch}
-                         setCurrentWatch={setCurrentWatch}
-            />
+        <div>
+            <ul className='WatchList' css={css`
+                border-right: 1px solid black;
+                height: 85%;
+                list-style-type: none;
+                text-align: left;
+                
+                @media (max-width: 800px) {
+                    display: ${showWatches ? 'block' : 'none'}
+                }
 
-        </div>
-    )
+            `}>
+                {watches ?
+                    watches.map(watch => {
+                        return <li key={watch.id} css={css`
+                                border-bottom: 1px solid black;
+                                padding: 20px;
+                                &:hover {
+                                    background-color: #61BD4F;
+                                    color: white;
+                                    cursor: pointer;
+                                }
+                            `} onClick={() => { 
+                                setCurrentWatch(watch)
+                                setShowWatches(false) // on mobiles will allow toggling of watch list
+                            }}>
+                            <b css={css`
+                                font-size: 18px;
+                                padding-left: 10px;
+                            `}>{watch.watch_maker}:</b> {watch.watch_name}
+                        </li>
+                    })
+                : null}
+            </ul>
+            <div css={css`
+                border-top: 1px solid;
+                padding-top 10px;
+                text-align: center;
+            `}> 
+                <Link to={{pathname: '/watches/add_watch'}}>
+                    <button className='add-button' >Add a watch</button>
+                </Link> 
+            </div>
+        </div> 
+    ) 
 }
 
-const mapStateToProps = (state) => { 
-    return {
-      watches: state.myWatches.watches,
-      currentUser: state.currentUser
-    } 
-}
-
-export default connect(mapStateToProps)(WatchList)
+export default WatchList
+// history.push(`/watches/${watch.id}/watch_detail`)
