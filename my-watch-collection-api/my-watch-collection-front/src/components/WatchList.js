@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { hashHistory } from 'react-router' // Used to change URL without a re-render
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
@@ -34,6 +35,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                     cursor: pointer;
                                 }
                             `} onClick={() => { 
+                                hashHistory.push(`/watches/${watch.id}/watch_detail`)
                                 setCurrentWatch(watch)
                                 setShowWatches(false) // on mobiles will allow toggling of watch list
                             }}>
