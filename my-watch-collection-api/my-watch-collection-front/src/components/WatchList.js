@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 
-const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches, history } ) => { 
+const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) => { 
       
     return (
         <div css={css`
@@ -15,10 +15,10 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches, hist
             @media (max-width: 800px) {
                 display: ${showWatches ? 'block' : 'none'}
             }
-
+            
             display: grid;
             grid-template-rows: auto 100px;
-
+            
         `}>
             <ul className='List' css={css`
                 list-style-type: none;
@@ -59,4 +59,3 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches, hist
 }
 
 export default WatchList
-// history.push(`/watches/${watch.id}/watch_detail`)

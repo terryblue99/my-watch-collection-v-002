@@ -11,12 +11,11 @@ class DashBoard extends Component {
     }
 
     render() {
-       const history = this.props.history
+  
         return (
             <div>
                 <NavBar />
                 <Watches watches={this.props.watches}
-                           history={history}
                 />               
             </div>
         )     

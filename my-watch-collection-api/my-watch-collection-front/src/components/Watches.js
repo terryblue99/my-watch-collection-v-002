@@ -30,8 +30,7 @@ const Watches = ({ watches, history }) => {
             <WatchList showWatches={showWatches}
                        setShowWatches={setShowWatches}
                        watches={watches}
-                       setCurrentWatch={setCurrentWatch}
-                       history={history}  
+                       setCurrentWatch={setCurrentWatch} 
             /> 
             <SidebarMobile showWatches={showWatches}   
                            setShowWatches={setShowWatches}

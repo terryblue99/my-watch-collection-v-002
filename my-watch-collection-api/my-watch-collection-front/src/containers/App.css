@@ -112,10 +112,6 @@ body, button {
   text-align: center;
 }
 
-.WatchDetail {
-  margin-bottom: 5px;
-}
-
 .AddWatch, .EditWatch {
   display: flex;
   flex-direction: column;
