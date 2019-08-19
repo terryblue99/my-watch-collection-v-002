@@ -10,6 +10,7 @@ class WatchSerializer < ActiveModel::Serializer
     :water_resistance, 
     :date_bought, 
     :cost,
-    :user_id
+    :user_id,
+    :image
 
 end

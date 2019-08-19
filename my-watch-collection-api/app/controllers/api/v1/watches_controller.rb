@@ -7,20 +7,21 @@ class Api::V1::WatchesController < ApplicationController
     end
 
     def create
-        @watch = Watch.create(watch_params)
+        watch = Watch.create(watch_params)
+        watch.image.attach(params[:watch][:image])
     end
 
     def update
-        @watch.update(watch_params)
+        watch.update(watch_params)
     end
 
     def destroy
-        @watch.destroy
+        watch.destroy
     end
 
     private
     def set_watch
-        @watch = Watch.find(params[:id])
+        watch = Watch.find(params[:id])
     end
 
     def watch_params
@@ -36,7 +37,8 @@ class Api::V1::WatchesController < ApplicationController
             :water_resistance,
             :date_bought,
             :cost,
-            :user_id
+            :user_id,
+            :image
         )
     end
 end

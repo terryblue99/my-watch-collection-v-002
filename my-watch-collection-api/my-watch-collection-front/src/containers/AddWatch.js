@@ -19,7 +19,8 @@ class AddWatch extends Component {
                complications: '',
                date_bought: '',
                cost: '',
-               user_id: this.props.currentUser.user.id
+               user_id: this.props.currentUser.user.id,
+               image: null
           },
           backToDashboard: false
      }
@@ -44,10 +45,20 @@ class AddWatch extends Component {
           })                          
      }
 
+     handleFile = (event) => {
+          this.setState({
+               watchData: {
+                   ...this.state.watchData,
+                   [event.target.name]: event.target.files[0]
+               }   
+          }) 
+     }
+
      handleSubmit = (event) => { 
+        console.log('*** AddWatch image: ', this.state.watchData.image)
         event.preventDefault() 
         // Create the watch
-        this.props.addWatchAction(this.state.watchData)
+     //    this.props.addWatchAction(this.state.watchData)
         // Clear the form
         document.getElementById('AddWatch-form').reset()
      }
@@ -134,6 +145,11 @@ class AddWatch extends Component {
                               name='cost'
                               placeholder='Cost (e.g. 199.99)'
                               onChange={this.handleChange}
+                         />
+                         <br />
+                         <input className='input-element'  type='file'
+                              name='image'
+                              onChange={this.handleFile}
                          />
                          <br />
                          <button className='Save-button' type='submit'>Save watch</button>
