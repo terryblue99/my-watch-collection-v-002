@@ -147,6 +147,8 @@ class AddWatch extends Component {
                               onChange={this.handleChange}
                          />
                          <br />
+                         <b style={{fontSize: '1rem'}}>Upload watch image</b>
+                         <br />
                          <input className='input-element'  type='file'
                               name='image'
                               onChange={this.handleFile}
