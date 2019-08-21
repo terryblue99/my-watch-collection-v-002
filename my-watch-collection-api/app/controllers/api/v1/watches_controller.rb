@@ -7,8 +7,13 @@ class Api::V1::WatchesController < ApplicationController
     end
 
     def create
-        watch = Watch.create(watch_params)
-        watch.image.attach(params[:watch][:image])
+        watch = Watch.create!(watch_params)
+        
+        if watch
+            render json: {message: 'watch saved!'}
+        else
+            render json: watch.errors.full_messages
+        end
     end
 
     def update
@@ -17,6 +22,7 @@ class Api::V1::WatchesController < ApplicationController
 
     def destroy
         watch.destroy
+        watch.image.purge
     end
 
     private

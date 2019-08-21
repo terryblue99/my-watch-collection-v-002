@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_08_19_183256) do
 
+  # Connects watches with the uploaded files 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_183256) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
+  # Store information about the uploaded files
   create_table "active_storage_blobs", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false

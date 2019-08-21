@@ -18,10 +18,10 @@ class Api::V1::SessionsController < ApplicationController
   end
 
   def logged_in
-    if @current_user # set in concerns/current_user_concern.rb
+    if current_user # set in concerns/current_user_concern.rb
       render json: {
         logged_in: true,
-        user: @current_user
+        user: current_user
       }
     else
       render json: {

@@ -45,16 +45,18 @@ export const getWatchesAction = (user_id) => {
 	}
 }
 
-export const addWatchAction = (watch) => {
+export const addWatchAction = (formData, watch) => {
+	console.log('*** addWatchAction formData watch_name: ', formData.getAll('watch_name'))
 	return dispatch => {
 		return fetch(`${API_URL}/watches`, {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'multipart/form-data'
 			},
-			body: JSON.stringify(watch)
+			body: formData
 		})
 		.then(response => {
+			console.log('*** addWatchAction response: ', response)
 			if (response.error) {
 				alert(response.error)
 			} else {
