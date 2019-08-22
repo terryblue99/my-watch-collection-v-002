@@ -52,7 +52,7 @@ class AddWatch extends Component {
      }
 
      handleSubmit = (event) => { 
-        console.log('*** handleSubmit AddWatch image: ', this.state.image)
+        console.log('*** AddWatch handleSubmit image: ', this.state.image)
         event.preventDefault() 
         // Create the watch
         const formData = new FormData()
@@ -67,8 +67,10 @@ class AddWatch extends Component {
         formData.append('date_bought', this.state.watchData.date_bought)
         formData.append('cost', this.state.watchData.cost)
         formData.append('user_id', this.state.watchData.user_id)
-        formData.append('image', this.state.image)
-        console.log('*** handleSubmit formData watch_name', formData.getAll('watch_name'))
+        if (this.state.image) {
+          formData.append('image', this.state.image)
+        }
+        console.log('*** AddWatch handleSubmit formData watch_name', formData.getAll('watch_name'))
         this.props.addWatchAction(formData, this.state.watchData)
         // Clear the form
         document.getElementById('AddWatch-form').reset()

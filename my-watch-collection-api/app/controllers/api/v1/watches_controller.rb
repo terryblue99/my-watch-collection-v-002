@@ -32,7 +32,7 @@ class Api::V1::WatchesController < ApplicationController
 
     def watch_params
         # params hash keys (strong params)
-        params.require(:watch).permit(
+        params.permit(
             :watch_name,
             :watch_maker,
             :movement,
