@@ -11,8 +11,12 @@ class Watch < ApplicationRecord
     end
   end
 
-  def resized_image
-    return self.image.variant(resize: '250x250!') # ! forces a resize to a square box
+  def thumbnail
+    return self.image.variant(resize: '300x300!').processed # ! & .processed forces a resize if needed
+  end
+
+  def banner
+    return self.image.variant(resize: '1200x300!').processed 
   end
 
 end
