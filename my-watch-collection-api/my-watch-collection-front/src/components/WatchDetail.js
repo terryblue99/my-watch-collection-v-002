@@ -66,21 +66,24 @@ class WatchDetail extends Component {
                         margin-bottom: 5px;
                 `}>
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
-                    <div > 
+                    <div css={css`
+                        position: absolute;
+                    `}> 
                         <img css={css`
-                            margin-left: 20px;
+                            margin-left: 300px;
                             margin-top: 50px;
                         `}
                             src={currentWatch.image}
                             alt='watch'
                         />
-                        <b><h2 css={css`
-                            text-align: center;
-                        `}>{currentWatch.watch_maker} {currentWatch.watch_name}</h2></b>
                     </div>
                     <div css={css`
                         text-align: center;
                     `}>
+                        <b><h2 css={css`
+                            text-align: center;
+                            margin-top: 15px; 
+                        `}>{currentWatch.watch_maker} {currentWatch.watch_name}</h2></b>
                         <br /><p><b css={detailCss}>Movement</b></p>
                         <h3 className='WatchDetail'>{currentWatch.movement}</h3>
                         <p><b css={detailCss}>Complications</b></p>
