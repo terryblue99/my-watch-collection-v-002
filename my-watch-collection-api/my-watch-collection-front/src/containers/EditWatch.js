@@ -56,7 +56,7 @@ class EditWatch extends Component {
         event.preventDefault()
         console.log('*** EditWatch handleSubmit image: ', this.state.image)
         event.preventDefault() 
-        // Create the watch
+        // Edit the watch
         const formData = new FormData()
         formData.append('watch_name', this.state.watchData.watch_name)
         formData.append('watch_maker', this.state.watchData.watch_maker)
@@ -72,7 +72,6 @@ class EditWatch extends Component {
         if (this.state.image) {
           formData.append('image', this.state.image)
         }
-        console.log('*** EditWatch handleSubmit formData watch_name', formData.getAll('watch_name'))
         this.props.editWatchAction(formData, this.state.watchData)
      }
 

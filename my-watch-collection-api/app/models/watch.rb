@@ -11,4 +11,8 @@ class Watch < ApplicationRecord
     end
   end
 
+  def resized_image
+    return self.image.variant(resize: '250x250!') # ! forces a resize to a square box
+  end
+
 end

@@ -70,7 +70,6 @@ class AddWatch extends Component {
         if (this.state.image) {
           formData.append('image', this.state.image)
         }
-        console.log('*** AddWatch handleSubmit formData watch_name', formData.getAll('watch_name'))
         this.props.addWatchAction(formData, this.state.watchData)
         // Clear the form
         document.getElementById('AddWatch-form').reset()
