@@ -57,6 +57,7 @@ class WatchDetail extends Component {
         const showWatches = this.props.showWatches
     
         if (currentWatch && currentWatch.watch_maker) {
+            console.log('*** WatchDetail currentWatch: ', currentWatch)
             return ( 
                 
                 <div className='watch-detail' css={css`
@@ -65,11 +66,16 @@ class WatchDetail extends Component {
                         margin-bottom: 5px;
                 `}>
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
-                    <div> 
+                    <div > 
+                        <img css={css`
+                            margin-left: 20px;
+                            margin-top: 50px;
+                        `}
+                            src={currentWatch.image}
+                            alt='watch'
+                        />
                         <b><h2 css={css`
                             text-align: center;
-                            margin-top: 15px;
-                            
                         `}>{currentWatch.watch_maker} {currentWatch.watch_name}</h2></b>
                     </div>
                     <div css={css`
