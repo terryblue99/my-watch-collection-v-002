@@ -10,27 +10,27 @@ class Api::V1::WatchesController < ApplicationController
     end
 
     def create
-        watch = Watch.create!(watch_params)
+        @watch = Watch.create!(watch_params)
         
-        if watch
+        if @watch
             render json: {message: 'watch saved!'}
         else
-            render json: watch.errors.full_messages
+            render json: @watch.errors.full_messages
         end
     end
 
     def update
-        watch.update(watch_params)
+        @watch.update(watch_params)
     end
 
     def destroy
-        watch.destroy
-        watch.image.purge
+        @watch.image.purge
+        @watch.destroy
     end
 
     private
     def set_watch
-        watch = Watch.find(params[:id])
+        @watch = Watch.find(params[:id])
     end
 
     def watch_params
@@ -51,4 +51,3 @@ class Api::V1::WatchesController < ApplicationController
         )
     end
 end
-
