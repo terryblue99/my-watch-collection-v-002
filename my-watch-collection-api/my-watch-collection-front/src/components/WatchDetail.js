@@ -58,7 +58,7 @@ class WatchDetail extends Component {
         const showWatches = this.props.showWatches
     
         if (currentWatch && currentWatch.watch_maker) {
-            console.log('*** WatchDetail currentWatch: ', currentWatch)
+            // console.log('*** WatchDetail currentWatch: ', currentWatch)
             return ( 
                 
                 <div className='watch-detail' css={css`
@@ -72,7 +72,8 @@ class WatchDetail extends Component {
                         flex-direction: row;
                     `}>   
                         <div css={css`
-                            margin-left: 50px;
+                            margin-left: 40px;
+                            margin-right: 80px
                             margin-top: 50px;
                         `}> 
                             <Image 
@@ -82,7 +83,8 @@ class WatchDetail extends Component {
                             />
                         </div>
                         <div css={css`
-                            margin-left: 150px;
+                            margin-left: 50px;
+                            margin-right: 25px;
                             text-align: center;
                         `}>
                             <b><h2 css={css`
