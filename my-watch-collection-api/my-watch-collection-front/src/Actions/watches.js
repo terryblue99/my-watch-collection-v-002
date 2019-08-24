@@ -70,34 +70,9 @@ export const addWatchAction = (formData, watch) => {
 
 export const editWatchAction = (formData, watch) => {
 	return dispatch => {
-
-		const sendWatchData = {
-			watch_name: watch.watch_name,
-			watch_maker: watch.watch_maker,
-			movement: watch.movement,
-			complications: watch.complications,
-			band: watch.band,
-			model_number: watch.model_number,
-			case_measurement: watch.case_measurement,
-			water_resistance: watch.water_resistance,
-			date_bought: watch.date_bought,
-			cost: watch.cost,
-			user_id: watch.user_id
-		}
-
 		return fetch(`${API_URL}/watches/${watch.id}`, {
 			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(sendWatchData)
-		})
-		.then(response => {
-			if (response.error) {
-				alert(response.error)
-			} else {
-				return response.json()
-			}
+			body: formData
 		})
 		.then(
 			dispatch({
