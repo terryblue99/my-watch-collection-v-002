@@ -44,7 +44,7 @@ class WatchDetail extends Component {
    }
 
     render () {
- 
+       
         if (this.state.backToDashboard) {
             // Clear the current watch screen to allow 
             // the dashboard to be displayed there instead

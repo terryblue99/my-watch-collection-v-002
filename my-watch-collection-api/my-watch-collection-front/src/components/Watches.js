@@ -7,7 +7,7 @@ import SidebarMobile from './SidebarMobile'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const Watches = ({ watches, history }) => { 
+const Watches = ({ watches }) => { 
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
 
