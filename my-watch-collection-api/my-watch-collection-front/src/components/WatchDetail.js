@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import '../containers/App.css'
+import Image from 'react-image-resizer'
 import { deleteWatchAction } from '../actions/watches'
 import DashboardContent from './DashboardContent'
 
@@ -67,39 +68,43 @@ class WatchDetail extends Component {
                 `}>
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
                     <div css={css`
-                        position: absolute;
-                    `}> 
-                        <img css={css`
-                            margin-left: 300px;
+                        display: flex;
+                        flex-direction: row;
+                    `}>   
+                        <div css={css`
+                            margin-left: 50px;
                             margin-top: 50px;
-                        `}
-                            src={currentWatch.image}
-                            alt='watch'
-                        />
-                    </div>
-                    <div css={css`
-                        text-align: center;
-                    `}>
-                        <b><h2 css={css`
+                        `}> 
+                            <Image 
+                                src={currentWatch.image}
+                                width={200}
+                                height={200} 
+                            />
+                        </div>
+                        <div css={css`
                             text-align: center;
-                            margin-top: 15px; 
-                        `}>{currentWatch.watch_maker} {currentWatch.watch_name}</h2></b>
-                        <br /><p><b css={detailCss}>Movement</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.movement}</h3>
-                        <p><b css={detailCss}>Complications</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.complications}</h3>
-                        <p><b css={detailCss}>Band</b></p> 
-                        <h3 className='WatchDetail'>{currentWatch.band}</h3>
-                        <p><b css={detailCss}>Model number</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
-                        <p><b css={detailCss}>Case measurement</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
-                        <p><b css={detailCss}>Water resistance</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
-                        <p><b css={detailCss}>Date bought</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
-                        <p><b css={detailCss}>Cost</b></p>
-                        <h3 className='WatchDetail'>{currentWatch.cost}</h3>
+                        `}>
+                            <b><h2 css={css`
+                                text-align: center;
+                                margin-top: 15px; 
+                            `}>{currentWatch.watch_maker} {currentWatch.watch_name}</h2></b>
+                            <br /><p><b css={detailCss}>Movement</b></p>
+                            <h3 className='WatchDetail'>{currentWatch.movement}</h3>
+                            <p><b css={detailCss}>Complications</b></p>
+                            <h3 className='WatchDetail'>{currentWatch.complications}</h3>
+                            <p><b css={detailCss}>Band</b></p> 
+                            <h3 className='WatchDetail'>{currentWatch.band}</h3>
+                            <p><b css={detailCss}>Model number</b></p>
+                            <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
+                            <p><b css={detailCss}>Case measurement</b></p>
+                            <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
+                            <p><b css={detailCss}>Water resistance</b></p>
+                            <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
+                            <p><b css={detailCss}>Date bought</b></p>
+                            <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
+                            <p><b css={detailCss}>Cost</b></p>
+                            <h3 className='WatchDetail'>{currentWatch.cost}</h3>
+                        </div> 
                     </div>
                     <div css={css`
                         border-top: 1px solid;
@@ -121,7 +126,6 @@ class WatchDetail extends Component {
                     </div>
                 </div> 
             )     
-
         } else {
             return <DashboardContent />
         }
