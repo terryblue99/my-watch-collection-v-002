@@ -82,10 +82,10 @@ class WatchDetail extends Component {
                             />
                         </div>
                         <div css={css`
+                            margin-left: 150px;
                             text-align: center;
                         `}>
                             <b><h2 css={css`
-                                text-align: center;
                                 margin-top: 15px; 
                             `}>{currentWatch.watch_maker} {currentWatch.watch_name}</h2></b>
                             <br /><p><b css={detailCss}>Movement</b></p>

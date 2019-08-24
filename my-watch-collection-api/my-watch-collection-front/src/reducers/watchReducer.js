@@ -37,7 +37,8 @@ export default (state = initialState, { type, payload } ) => {
 				})
 
 		case CLEAR_WATCHES:
-				return null
+				state = initialState
+				return state
 
 		default:
 			return state
