@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 // The following comment is required for @emotion to work
 /** @jsx jsx */

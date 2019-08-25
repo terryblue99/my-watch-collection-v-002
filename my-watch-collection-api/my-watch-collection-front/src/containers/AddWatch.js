@@ -95,7 +95,7 @@ class AddWatch extends Component {
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
                     <form id='AddWatch-form' onSubmit={this.handleSubmit}>
                          <div className='AddWatch'>
-                              <h1 style={{color: 'green'}}>Add a watch</h1>
+                              <h1 style={{color: 'sienna'}}>Add a watch</h1>
                               <br /> 
                               <input className='input-element' required 
                                    type='text'

@@ -17,7 +17,7 @@ const NavBar = (props) => {
         <Navbar.Brand>
          
           <span css={css`
-              color: yellow;
+              color: goldenrod;
               display: inline-block;
               font-size: 20px;
               padding-left: 20px;
@@ -30,7 +30,7 @@ const NavBar = (props) => {
               font-size: 20px;
               padding-left: 20px;
             `}>Logged in as: <p css={css`
-              color: lime;
+              color: khaki;
               display: inline-block;
               font-size: 20px;
               padding-left: 5px;

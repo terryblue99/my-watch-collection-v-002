@@ -40,6 +40,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                 setShowWatches(false) // on mobiles will allow toggling of watch list
                             }}>
                             <b css={css`
+                                color: sienna;
                                 font-size: 18px;
                                 padding-left: 10px;
                             `}>{watch.watch_maker}:</b> {watch.watch_name}
