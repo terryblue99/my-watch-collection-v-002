@@ -45,25 +45,6 @@ export const logInAction = (credentials) => {
   }
 }
 
-export const loggedInAction = () => {
-  return dispatch => {
-    return fetch(`${API_URL}/logged_in`, {
-      credentials: "include",
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      },
-    })
-    .then(response => response.json())
-    .then(response => {
-      return response
-    })
-    .catch(error => {
-      console.log('Logged in error: ', error)
-    })
-  }
-}
-
 export const signUpAction = (credentials) => {
   return dispatch => {
     return fetch(`${API_URL}/registrations`, {

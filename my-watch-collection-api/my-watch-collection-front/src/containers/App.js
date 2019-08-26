@@ -36,10 +36,7 @@ class App extends Component {
           a_user_exists && is_logged_in
           ? <Component {...props} /> 
           : <Redirect to={{
-              pathname: '/login',
-              state: { 
-                from: props.location
-              }
+              pathname: '/login'
             }} />
         )}/>
       </div> 

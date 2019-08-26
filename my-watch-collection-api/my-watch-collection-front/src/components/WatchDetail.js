@@ -89,7 +89,6 @@ class WatchDetail extends Component {
                             padding-bottom: 25px;
                         `}>
                             <h2 css={css`
-                                color: sienna;
                                 fontSize: '20px';
                                 padding-top: 15px; 
                             `}><b>{currentWatch.watch_maker}:</b> {currentWatch.watch_name}</h2>
@@ -137,6 +136,6 @@ class WatchDetail extends Component {
     }
 }
 
-const detailCss = {fontSize: '15px', color: 'green'}
+const detailCss = {fontSize: '15px', color: 'sienna'}
 
 export default connect(null, {deleteWatchAction})(WatchDetail)
