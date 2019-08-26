@@ -92,7 +92,7 @@ class EditWatch extends Component {
         const watch = this.props.location.state.watch
       
           return (  
-               <div>
+               <div className = 'Watch-form'>
                     <NavBar />
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
                     <br />
@@ -103,77 +103,76 @@ class EditWatch extends Component {
                               <input className='input-element' required 
                                    type='text'
                                    name='watch_name'
-                                   defaultValue={watch.watch_name}
-                                   placeholder='Watch Name'
+                                   defaultValue={' ' + watch.watch_name}
+                                   placeholder=' Watch Name'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='input-element' required 
                                    type='text'
                                    name='watch_maker'
-                                   defaultValue={watch.watch_maker}
-                                   placeholder='Watch maker'
+                                   defaultValue={' ' + watch.watch_maker}
+                                   placeholder=' Watch maker'
                                    onChange={this.handleChange}
                               />
                               <br />
                               <input className='input-element'  type='text'
                                    name='movement'
-                                   defaultValue={watch.movement}
-                                   placeholder='Movement'
+                                   defaultValue={' ' + watch.movement}
+                                   placeholder=' Movement'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='input-element'  type='text'
                                    name='complications'
-                                   defaultValue={watch.complications}
-                                   placeholder='Complications'
+                                   defaultValue={' ' + watch.complications}
+                                   placeholder=' Complications'
                                    onChange={this.handleChange}
                               />
                               <br />
                               <input className='input-element'  type='text'
                                    name='band'
-                                   defaultValue={watch.band}
-                                   placeholder='Band'
+                                   defaultValue={' ' + watch.band}
+                                   placeholder=' Band'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='input-element'  type='text'
                                    name='model_number'
-                                   defaultValue={watch.model_number}
-                                   placeholder='Model number'
+                                   defaultValue={' ' + watch.model_number}
+                                   placeholder=' Model number'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='input-element'  type='text'
                                    name='case_measurement'
-                                   defaultValue={watch.case_measurement}
-                                   placeholder='Case measurement'
+                                   defaultValue={' ' + watch.case_measurement}
+                                   placeholder=' Case measurement'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='input-element'  type='text'
                                    name='water_resistance'
-                                   defaultValue={watch.water_resistance}
-                                   placeholder='Water resistance'
+                                   defaultValue={' ' + watch.water_resistance}
+                                   placeholder=' Water resistance'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='input-element'  type='text'
                                    name='date_bought'
-                                   defaultValue={watch.date_bought}
-                                   placeholder='Date bought'
+                                   defaultValue={' ' + watch.date_bought}
+                                   placeholder=' Date bought'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='input-element'  type='text'
                                    name='cost'
-                                   defaultValue={watch.cost}
-                                   placeholder='Cost'
+                                   defaultValue={' ' + watch.cost}
+                                   placeholder=' Cost'
                                    onChange={this.handleChange}
                               />
                               <br />
-                              <b style={{fontSize: '1rem'}}>Upload watch image</b>
-                              <br />
+                              <b style={{fontSize: '1rem', color: 'sienna'}}>Upload watch image</b>
                               <input className='input-element'  type='file'
                                    name='image'
                                    onChange={this.handleFile}

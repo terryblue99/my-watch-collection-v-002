@@ -55,21 +55,21 @@ class SignUp extends Component {
                             <input className='input-element' required 
                                     type='email'
                                     name='email'
-                                    placeholder='Enter your email'
+                                    placeholder=' Enter your email'
                                     onChange={this.handleChange}
                             />
                             <br /> 
                             <input className='input-element' required 
                                     type='password'
                                     name='password'
-                                    placeholder='Enter a password - 8 characters minimum'
+                                    placeholder=' Enter a password - 8 characters minimum'
                                     onChange={this.handleChange}
                             />
                             <br />
                             <input className='input-element' required 
                                     type='password'
                                     name='password_confirmation'
-                                    placeholder='Confirm your password'
+                                    placeholder=' Confirm your password'
                                     onChange={this.handleChange}
                             />
                             <br />

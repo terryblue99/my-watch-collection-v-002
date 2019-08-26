@@ -36,8 +36,8 @@ class LogIn extends Component {
         return (
 
             <div>
-                <p className='referToLogin'>Log in to access your data</p>
                 <header className='Login'>
+                    <p className='referToLogin'>Log in to access your data</p>
                     <img src={logo} alt='logo' align='middle' className='logo'/>
                     <div className='container'>
                         <form id='Login-form' onSubmit={this.handleSubmit}>
@@ -46,14 +46,14 @@ class LogIn extends Component {
                                 <input className='input-element' required 
                                         type='email'
                                         name='email'
-                                        placeholder='Enter your email'
+                                        placeholder=' Enter your email'
                                         onChange={this.handleChange}
                                 />
                                 <br /> 
                                 <input className='input-element' required 
                                         type='password'
                                         name='password'
-                                        placeholder='Enter your password'
+                                        placeholder=' Enter your password'
                                         onChange={this.handleChange}
                                 />
                                 <br />

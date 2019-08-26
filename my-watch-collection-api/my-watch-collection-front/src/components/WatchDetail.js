@@ -62,19 +62,20 @@ class WatchDetail extends Component {
             return ( 
                 
                 <div className='watch-detail' css={css`
+                        background-color: khaki;
                         display: ${showWatches ? 'none' : 'block'};
-                        grid-area: main;  
-                        margin-bottom: 5px;
+                        grid-area: main;
                 `}>
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
+                
                     <div css={css`
                         display: flex;
                         flex-direction: row;
                     `}>   
                         <div css={css`
-                            margin-left: 40px;
-                            margin-right: 80px
-                            margin-top: 50px;
+                            padding-left: 20px;
+                            padding-right: 80px;
+                            padding-top: 20px;
                         `}> 
                             <Image 
                                 src={currentWatch.image}
@@ -83,13 +84,14 @@ class WatchDetail extends Component {
                             />
                         </div>
                         <div css={css`
-                            margin-left: 80px;
-                            margin-right: 25px;
+                            padding-left: 80px;
+                            padding-right: 25px;
+                            padding-bottom: 25px;
                         `}>
                             <h2 css={css`
                                 color: sienna;
                                 fontSize: '20px';
-                                margin-top: 15px; 
+                                padding-top: 15px; 
                             `}><b>{currentWatch.watch_maker}:</b> {currentWatch.watch_name}</h2>
                             <br /><p><b css={detailCss}>Movement</b></p>
                             <h3 className='WatchDetail'>{currentWatch.movement}</h3>
@@ -113,7 +115,7 @@ class WatchDetail extends Component {
                         border-top: 1px solid;
                         padding-top 10px;
                         text-align: center;
-                        margin-top: 40px;
+                        padding-top: 20px;
                     `}>
                         <Link className='edit-button' to={{
                             pathname: `/watches/${currentWatch.id}/edit_watch`,

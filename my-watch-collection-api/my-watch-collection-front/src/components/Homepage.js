@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../containers/App.css'
 import logo from '../logo.jpg'
 
-const Homepage = ({ setScreen }) => {
+const Homepage = () => {
     
     return (
         <header className='Homepage'>
