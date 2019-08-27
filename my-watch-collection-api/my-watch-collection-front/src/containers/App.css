@@ -35,7 +35,7 @@ body, button {
   min-height: 100vh;
 }
 
-.Homepage .container {
+.Homepage .container, .Login .container, .signup .container {
   display: grid;
 }
 
@@ -59,39 +59,24 @@ body, button {
   width: 300px;
 }
 
-.referToLogin {
+.Login-banner {
   background-color: #61BD4F;
   color: white;
   font-size: 18px;
   margin: auto;
-  margin-top: 35px;
   margin-bottom: 20px;
   max-width: 300px;
   padding: 15px;
   text-align: center;
 }
 
-.Login {
+.Login, .Signup {
   background-color: khaki;
   display: block;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding-top: 20px;
-}
-
-.Signup {
-  align-items: center;
-  background-color: khaki;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.Login .container, .signup .container {
-  display: grid;
+  padding-top: 40px;
 }
 
 .Login-button, .Signup-button, .Save-button {

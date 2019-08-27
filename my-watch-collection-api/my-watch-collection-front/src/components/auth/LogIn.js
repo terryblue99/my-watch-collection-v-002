@@ -37,7 +37,7 @@ class LogIn extends Component {
 
             <div>
                 <header className='Login'>
-                    <p className='referToLogin'>Log in to access your data</p>
+                    <p className='Login-banner'>Log in to access your data</p>
                     <img src={logo} alt='logo' className='logo'/>
                     <div className='container'>
                         <form id='Login-form' onSubmit={this.handleSubmit}>
