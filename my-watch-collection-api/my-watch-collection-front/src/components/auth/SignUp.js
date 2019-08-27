@@ -48,7 +48,7 @@ class SignUp extends Component {
         return (
 
             <header className='Signup'>
-                <img src={logo} alt='logo' align='middle' className='logo'/>
+                <img src={logo} alt='logo' className='logo'/>
                 <div className='container'>
                     <form id='Signup-form' onSubmit={this.handleSubmit}>
                         <div className='register'>

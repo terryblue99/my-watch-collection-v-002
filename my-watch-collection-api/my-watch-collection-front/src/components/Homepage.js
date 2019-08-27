@@ -7,7 +7,7 @@ const Homepage = () => {
     
     return (
         <header className='Homepage'>
-            <img src={logo} alt='logo' align='middle' className='logo'/>
+            <img src={logo} alt='logo' className='logo'/>
             <div className='container'>
                 <div>
                     <Link className='home-button' to={{
