@@ -100,7 +100,7 @@ class EditWatch extends Component {
                          <div className='EditWatch'>
                               <h1 style={{color: 'sienna'}}>Edit this watch</h1>
                               <br /> 
-                              <input className='input-element' required 
+                              <input className='Input-element' required 
                                    type='text'
                                    name='watch_name'
                                    defaultValue={watch.watch_name}
@@ -108,7 +108,7 @@ class EditWatch extends Component {
                                    onChange={this.handleChange}
                               />
                               <br /> 
-                              <input className='input-element' required 
+                              <input className='Input-element' required 
                                    type='text'
                                    name='watch_maker'
                                    defaultValue={watch.watch_maker}
@@ -116,56 +116,56 @@ class EditWatch extends Component {
                                    onChange={this.handleChange}
                               />
                               <br />
-                              <input className='input-element'  type='text'
+                              <input className='Input-element'  type='text'
                                    name='movement'
                                    defaultValue={watch.movement}
                                    placeholder=' Movement'
                                    onChange={this.handleChange}
                               />
                               <br /> 
-                              <input className='input-element'  type='text'
+                              <input className='Input-element'  type='text'
                                    name='complications'
                                    defaultValue={watch.complications}
                                    placeholder=' Complications'
                                    onChange={this.handleChange}
                               />
                               <br />
-                              <input className='input-element'  type='text'
+                              <input className='Input-element'  type='text'
                                    name='band'
                                    defaultValue={watch.band}
                                    placeholder=' Band'
                                    onChange={this.handleChange}
                               />
                               <br /> 
-                              <input className='input-element'  type='text'
+                              <input className='Input-element'  type='text'
                                    name='model_number'
                                    defaultValue={watch.model_number}
                                    placeholder=' Model number'
                                    onChange={this.handleChange}
                               />
                               <br /> 
-                              <input className='input-element'  type='text'
+                              <input className='Input-element'  type='text'
                                    name='case_measurement'
                                    defaultValue={watch.case_measurement}
                                    placeholder=' Case measurement'
                                    onChange={this.handleChange}
                               />
                               <br /> 
-                              <input className='input-element'  type='text'
+                              <input className='Input-element'  type='text'
                                    name='water_resistance'
                                    defaultValue={watch.water_resistance}
                                    placeholder=' Water resistance'
                                    onChange={this.handleChange}
                               />
                               <br /> 
-                              <input className='input-element'  type='text'
+                              <input className='Input-element'  type='text'
                                    name='date_bought'
                                    defaultValue={watch.date_bought}
                                    placeholder=' Date bought'
                                    onChange={this.handleChange}
                               />
                               <br /> 
-                              <input className='input-element'  type='text'
+                              <input className='Input-element'  type='text'
                                    name='cost'
                                    defaultValue={watch.cost}
                                    placeholder=' Cost'
@@ -173,7 +173,7 @@ class EditWatch extends Component {
                               />
                               <br />
                               <b style={{fontSize: '1rem', color: 'sienna'}}>Upload watch image</b>
-                              <input className='input-element'  type='file'
+                              <input className='Input-element'  type='file'
                                    name='image'
                                    onChange={this.handleFile}
                               />

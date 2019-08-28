@@ -7,16 +7,16 @@ const Homepage = () => {
     
     return (
         <header className='Homepage'>
-            <img src={logo} alt='logo' className='logo'/>
-            <div className='container'>
+            <img src={logo} alt='logo' className='Logo'/>
+            <div className='Homepage-container'>
                 <div>
-                    <Link className='home-button' to={{
+                    <Link className='Home-button' to={{
                         pathname: `/login`
                     }}
                     > Log In
                     </Link>
                     
-                    <Link className='home-button' to={{
+                    <Link className='Home-button' to={{
                         pathname: `/signup`
                     }}
                     > Sign Up

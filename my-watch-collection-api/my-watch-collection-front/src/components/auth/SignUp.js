@@ -48,25 +48,25 @@ class SignUp extends Component {
         return (
 
             <header className='Signup'>
-                <img src={logo} alt='logo' className='logo'/>
-                <div className='container'>
+                <img src={logo} alt='logo' className='Logo'/>
+                <div className='Signup-container'>
                     <form id='Signup-form' onSubmit={this.handleSubmit}>
-                        <div className='register'>
-                            <input className='input-element' required 
+                        <div className='Register'>
+                            <input className='Input-element' required 
                                     type='email'
                                     name='email'
                                     placeholder=' Enter your email'
                                     onChange={this.handleChange}
                             />
                             <br /> 
-                            <input className='input-element' required 
+                            <input className='Input-element' required 
                                     type='password'
                                     name='password'
                                     placeholder=' Enter a password - 8 characters minimum'
                                     onChange={this.handleChange}
                             />
                             <br />
-                            <input className='input-element' required 
+                            <input className='Input-element' required 
                                     type='password'
                                     name='password_confirmation'
                                     placeholder=' Confirm your password'

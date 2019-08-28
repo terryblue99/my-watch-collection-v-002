@@ -54,7 +54,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 text-align: center;
             `}> 
                 <Link to={{pathname: '/watches/add_watch'}}>
-                    <button className='add-button' >Add a watch</button>
+                    <button className='Add-button' >Add a watch</button>
                 </Link> 
             </div>
         </div> 

@@ -152,7 +152,7 @@ class WatchDetail extends Component {
                         text-align: center;
                         padding-top: 20px;
                     `}>
-                        <Link className='edit-button' to={{
+                        <Link className='Edit-button' to={{
                             pathname: `/watches/${currentWatch.id}/edit_watch`,
                             state: {
                                 watch: currentWatch
@@ -160,7 +160,7 @@ class WatchDetail extends Component {
                         }}>
                             Edit this watch
                         </Link>
-                        <button className='red-button' onClick={this.handleDelete}> 
+                        <button className='Red-button' onClick={this.handleDelete}> 
                             Delete this watch
                         </button>
                     </div>

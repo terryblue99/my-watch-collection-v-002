@@ -26,7 +26,7 @@ class DashboardContent extends Component {
           display: none;
         }
       `}>
-        <img src={logo} alt='logo' className='logo'/>
+        <img src={logo} alt='logo' className='Logo'/>
         <h2>Number of watches: {number_of_watches}</h2>
       </div>
     )

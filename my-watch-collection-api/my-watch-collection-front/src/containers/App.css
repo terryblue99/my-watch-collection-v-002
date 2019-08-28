@@ -19,7 +19,7 @@ button {
                                 supported by Chrome and Opera */
 }
 
-.logo {
+.Logo {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
@@ -38,7 +38,7 @@ button {
   padding: 15px;
 }
 
-.register {
+.Register {
   font-size: 12px;
   margin: 0 auto;
   max-width: 300px;
@@ -49,10 +49,10 @@ button {
   padding-bottom: 15px;
 }
 
-.input-element {
+.Input-element {
   border-color: black;
   font-size: 15px;
-  width: 300px;
+  max-width: 300px;
 }
 
 button:focus {
@@ -63,7 +63,7 @@ button:hover {
   cursor: pointer;
 }
 
-.home-button {
+.Home-button {
   font-size: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -72,7 +72,7 @@ button:hover {
   text-decoration: none;
 }
 
-.red-button {
+.Red-button {
   background-color: red;
   color: white;
   font-size: 1rem;
@@ -91,9 +91,9 @@ button:hover {
   padding: 10px 36px; 
 }
 
-.Homepage .container, 
-.Login .container, 
-.signup .container {
+.Homepage-container, 
+.Login-container, 
+.Signup-container {
   display: grid;
 }
 
@@ -109,7 +109,7 @@ textarea:required {
 }
 
 .Homepage,
-.register,
+.Register,
 .AddWatch, 
 .EditWatch {
   display: flex;
@@ -133,14 +133,14 @@ textarea:required {
 .Login, 
 .Signup,
 .Homepage,
-.register,
+.Register,
 .AddWatch, 
 .EditWatch {
   flex-direction: column;
   justify-content: center;
 }
 
-.logo,
+.Logo,
 .Login, 
 .Signup,
 .Login-button, 
@@ -150,31 +150,31 @@ textarea:required {
 }
 
 .Login-banner,
-.register,
+.Register,
 .AddWatch, 
 .EditWatch
-.home-button,
-.red-button,
-.add-button, 
-.edit-button
+.Home-button,
+.Red-button,
+.Add-button, 
+.Edit-button
  {
   text-align: center;
 }
 
 
 .Login-banner,
-.home-button,
+.Home-button,
 .Login-button, 
 .Signup-button, 
 .Save-button,
-.add-button, 
-.edit-button {
+.Add-button, 
+.Edit-button {
   background-color: #61BD4F;
   color: white;
 }
 
-.add-button, 
-.edit-button {
+.Add-button, 
+.Edit-button {
   font-size: 1rem;
   padding: 8px 16px;
   text-decoration: none;
@@ -189,11 +189,11 @@ textarea:required {
   padding: 10px;
 }
 
-.home-button,
-.red-button,
+.Home-button,
+.Red-button,
 .Back-button,
-.add-button, 
-.edit-button,
+.Add-button, 
+.Edit-button,
 .Login-button, 
 .Signup-button, 
 .Save-button {

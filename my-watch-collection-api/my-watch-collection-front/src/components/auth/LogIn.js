@@ -38,19 +38,19 @@ class LogIn extends Component {
             <div>
                 <header className='Login'>
                     <p className='Login-banner'>Log in to access your data</p>
-                    <img src={logo} alt='logo' className='logo'/>
-                    <div className='container'>
+                    <img src={logo} alt='logo' className='Logo'/>
+                    <div className='Login-container'>
                         <form id='Login-form' onSubmit={this.handleSubmit}>
-                        <div className='register'>
+                        <div className='Register'>
                                 <br /> 
-                                <input className='input-element' required 
+                                <input className='Input-element' required 
                                         type='email'
                                         name='email'
                                         placeholder=' Enter your email'
                                         onChange={this.handleChange}
                                 />
                                 <br /> 
-                                <input className='input-element' required 
+                                <input className='Input-element' required 
                                         type='password'
                                         name='password'
                                         placeholder=' Enter your password'
