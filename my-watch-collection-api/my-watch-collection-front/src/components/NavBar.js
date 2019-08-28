@@ -43,7 +43,10 @@ const NavBar = (props) => {
                   color: white;
                   display: inline-block;
                   font-size: 20px;
-                  padding-left: 20px;
+                  &:hover {
+                      color: red;
+                      cursor: pointer;
+                  }
                 `}>Log Out
               </span> 
             </NavLink>
