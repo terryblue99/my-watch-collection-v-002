@@ -20,144 +20,39 @@ button {
 }
 
 .logo {
-  display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .Homepage {
   align-items: center;
-  background-color: khaki;;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
   min-height: 100vh;
 }
 
-.Homepage .container, 
-.Login .container, 
-.signup .container {
-  display: grid;
+.Login-banner {
+  font-size: 18px;
+  margin: auto;
+  margin-bottom: 20px;
+  max-width: 300px;
+  padding: 15px;
 }
 
-.home-button {
-  background-color: #61BD4F;
-  color: white;
-  font-size: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 5px;
-  max-width: 40px;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase; 
+.register {
+  font-size: 12px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.Watch-form {
+  min-height: 100vh;
+  padding-bottom: 15px;
 }
 
 .input-element {
   border-color: black;
   font-size: 15px;
   width: 300px;
-}
-
-.Login-banner {
-  background-color: #61BD4F;
-  color: white;
-  font-size: 18px;
-  margin: auto;
-  margin-bottom: 20px;
-  max-width: 300px;
-  padding: 15px;
-  text-align: center;
-}
-
-.Login, 
-.Signup {
-  background-color: khaki;
-  display: block;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  padding-top: 40px;
-}
-
-.Login-button, 
-.Signup-button, 
-.Save-button {
-  background-color: #61BD4F;
-  border-color: transparent;
-  color: white;
-  display: inline-block;
-  font-size: 2rem; 
-  margin-top: 5px;
-  padding: 10px;
-  text-transform: uppercase;
-}
-
-.register {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 300px;
-  text-align: center;
-}
-
-.Watch-form {
-  background-color: khaki;
-  min-height: 100vh;
-  padding-bottom: 15px;
-}
-
-.AddWatch, 
-.EditWatch {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 300px;
-  text-align: center;
-}
-
-.add-button, .edit-button {
-  background-color: #61BD4F;
-  color: white;
-  font-size: 1rem;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase; 
-}
-
-.red-button {
-  background-color: red;
-  color: white;
-  font-size: 1rem;
-  margin-left: 20px;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase; 
-}
-
-input:required,
-textarea:required {
-  border-color: red !important;
-}
-
-.Back-button {
-  background-color: lightgray;
-  border-color: transparent;
-  color: black;
-  font-size: 1rem; 
-  margin-left: 20px;
-  margin-top: 10px;
-  padding: 10px 36px;
-  text-transform: uppercase;  
 }
 
 button:focus {
@@ -168,3 +63,136 @@ button:hover {
   cursor: pointer;
 }
 
+.home-button {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 15px;
+  padding: 19px 38px;;
+  text-decoration: none;
+}
+
+.red-button {
+  background-color: red;
+  color: white;
+  font-size: 1rem;
+  margin-left: 20px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.Back-button {
+  background-color: lightgray;
+  border-color: transparent;
+  color: black;
+  font-size: 1rem; 
+  margin-left: 20px;
+  margin-top: 10px;
+  padding: 10px 36px; 
+}
+
+.Homepage .container, 
+.Login .container, 
+.signup .container {
+  display: grid;
+}
+
+.Login, 
+.Signup {
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+input:required,
+textarea:required {
+  border-color: red !important;
+}
+
+.logo,
+.Login, 
+.Signup,
+.Login-button, 
+.Signup-button, 
+.Save-button {
+  display: block;
+}
+
+.Homepage,
+.register,
+.AddWatch, 
+.EditWatch {
+  display: flex;
+}
+
+.Login, 
+.Signup,
+.Homepage,
+.register,
+.AddWatch, 
+.EditWatch {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-button,
+.Login-banner,
+.register,
+.red-button,
+.add-button, 
+.edit-button,
+.AddWatch, 
+.EditWatch {
+  text-align: center;
+}
+
+.home-button,
+.Login-banner,
+.Login-button, 
+.Signup-button, 
+.Save-button,
+.add-button, 
+.edit-button {
+  background-color: #61BD4F;
+  color: white;
+}
+
+.add-button, 
+.edit-button {
+  font-size: 1rem;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.Login-button, 
+.Signup-button, 
+.Save-button {
+  border-color: transparent;
+  font-size: 2rem; 
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.home-button,
+.red-button,
+.Back-button,
+.add-button, 
+.edit-button,
+.Login-button, 
+.Signup-button, 
+.Save-button {
+  text-transform: uppercase;
+}
+
+.AddWatch, 
+.EditWatch {
+  font-size: 12px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.Homepage,
+.Login, 
+.Signup,
+.Watch-form {
+  background-color: khaki;
+}
