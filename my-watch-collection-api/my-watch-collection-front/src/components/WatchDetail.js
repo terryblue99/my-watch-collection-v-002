@@ -102,7 +102,7 @@ class WatchDetail extends Component {
                                     <h3 className='WatchDetail'>{currentWatch.movement}</h3>
                                 </span>
                             : null}
-                            {currentWatch.complications ? 
+                            {currentWatch.complications ?
                                 <span>
                                     <p><em css={detailCss}>Complications</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.complications}</h3>
