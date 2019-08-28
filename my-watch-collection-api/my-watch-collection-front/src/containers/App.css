@@ -108,21 +108,27 @@ textarea:required {
   border-color: red !important;
 }
 
-.logo,
-.Login, 
-.Signup,
-.Login-button, 
-.Signup-button, 
-.Save-button {
-  display: block;
-}
-
 .Homepage,
 .register,
 .AddWatch, 
 .EditWatch {
   display: flex;
 }
+
+.AddWatch, 
+.EditWatch {
+  font-size: 12px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.Homepage,
+.Login, 
+.Signup,
+.Watch-form {
+  background-color: khaki;
+}
+
 
 .Login, 
 .Signup,
@@ -134,19 +140,30 @@ textarea:required {
   justify-content: center;
 }
 
-.home-button,
+.logo,
+.Login, 
+.Signup,
+.Login-button, 
+.Signup-button, 
+.Save-button {
+  display: block;
+}
+
 .Login-banner,
 .register,
+.AddWatch, 
+.EditWatch
+.home-button,
 .red-button,
 .add-button, 
-.edit-button,
-.AddWatch, 
-.EditWatch {
+.edit-button
+ {
   text-align: center;
 }
 
-.home-button,
+
 .Login-banner,
+.home-button,
 .Login-button, 
 .Signup-button, 
 .Save-button,
@@ -181,18 +198,4 @@ textarea:required {
 .Signup-button, 
 .Save-button {
   text-transform: uppercase;
-}
-
-.AddWatch, 
-.EditWatch {
-  font-size: 12px;
-  margin: 0 auto;
-  max-width: 300px;
-}
-
-.Homepage,
-.Login, 
-.Signup,
-.Watch-form {
-  background-color: khaki;
 }
