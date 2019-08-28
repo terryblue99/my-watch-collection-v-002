@@ -52,7 +52,6 @@ class AddWatch extends Component {
      }
 
      handleSubmit = (event) => { 
-        console.log('*** AddWatch handleSubmit image: ', this.state.image)
         event.preventDefault() 
         // Create the watch
         const formData = new FormData()
