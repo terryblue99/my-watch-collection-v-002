@@ -6,10 +6,14 @@
   padding: 0;
 }
 
-/* Prevent selecting in the app body */
+body {
+  background-color: khaki;
+}
+
 body, 
 button {
-  font-family: 'Fresca', sans-serif;
+  font-family: 'Fresca',Helvetica,Arial,sans-serif; /* font stack */
+  /* Prevent copying */
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
@@ -27,11 +31,11 @@ button {
 
 .Homepage {
   align-items: center;
-  min-height: 100vh;
+  min-height: 100vh; /* relative to 1% of the height of the viewport */
 }
 
 .Login-banner {
-  font-size: 18px;
+  font-size: 1.25rem; /* relative to font size of root (html) element, which is defaulted  to 16px */
   margin: auto;
   margin-bottom: 20px;
   max-width: 300px;
@@ -39,7 +43,7 @@ button {
 }
 
 .Register {
-  font-size: 12px;
+  font-size: .25rem;
   margin: 0 auto;
   max-width: 300px;
 }
@@ -51,7 +55,8 @@ button {
 
 .Input-element {
   border-color: black;
-  font-size: 15px;
+  font-size: .75rem;
+  height: 22px;
   max-width: 300px;
 }
 
@@ -64,7 +69,7 @@ button:hover {
 }
 
 .Home-button {
-  font-size: 20px;
+  font-size: 1.25rem;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 15px;
@@ -75,7 +80,7 @@ button:hover {
 .Red-button {
   background-color: red;
   color: white;
-  font-size: 1rem;
+  font-size: 1rem; 
   margin-left: 20px;
   padding: 8px 16px;
   text-decoration: none;
@@ -117,18 +122,10 @@ textarea:required {
 
 .AddWatch, 
 .EditWatch {
-  font-size: 12px;
+  font-size: .75rem;
   margin: 0 auto;
   max-width: 300px;
 }
-
-.Homepage,
-.Login, 
-.Signup,
-.Watch-form {
-  background-color: khaki;
-}
-
 
 .Login, 
 .Signup,
@@ -152,12 +149,11 @@ textarea:required {
 .Login-banner,
 .Register,
 .AddWatch, 
-.EditWatch
+.EditWatch,
 .Home-button,
 .Red-button,
 .Add-button, 
-.Edit-button
- {
+.Edit-button {
   text-align: center;
 }
 
@@ -175,7 +171,7 @@ textarea:required {
 
 .Add-button, 
 .Edit-button {
-  font-size: 1rem;
+  font-size: 1rem; 
   padding: 8px 16px;
   text-decoration: none;
 }
