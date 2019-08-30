@@ -58,29 +58,27 @@ class WatchDetail extends Component {
         const showWatches = this.props.showWatches
     
         if (currentWatch && currentWatch.watch_maker) {
-            // console.log('*** WatchDetail currentWatch: ', currentWatch)
+
             return ( 
                 
-                <div className='watch-detail' css={css`
+                <div className='Watch-detail' css={css`
                         background-color: khaki;
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;
-
-                        @media (max-width: 800px) {
-                            display: none;
-                        }
                 `}>
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
                 
                     <div css={css`
                         display: flex;
-                        flex-direction: row;
+                        @media (max-width: 800px) {
+                            flex-direction: column
+                        }
                     `}>   
                         <div css={css`
+                            margin-bottom: 15px;
                             padding-left: 20px;
                             padding-right: 80px;
                             padding-top: 20px;
-                            margin-bottom: 15px;
                         `}> 
                             <Image 
                                 src={currentWatch.image}

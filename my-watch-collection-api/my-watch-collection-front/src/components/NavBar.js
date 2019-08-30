@@ -10,9 +10,9 @@ const NavBar = (props) => {
     <div className='Navbar'>
 
       <Navbar css={css`
-                background-color: #454140;
-                padding-bottom: 10px; 
-                padding-top: 10px;
+        background-color: #454140;
+        padding-bottom: 10px; 
+        padding-top: 10px;
       `}>
         <Navbar.Brand>
          
@@ -38,15 +38,15 @@ const NavBar = (props) => {
           </span> 
           
           {props.user.logged_in} {
-            <NavLink to="/logout">
+            <NavLink to='/logout'>
               <span css={css`
                 color: white;
                 display: inline-block;
                 font-size: 20px;
                 padding-left: 20px;
                 &:hover {
-                    color: red;
-                    cursor: pointer;
+                  color: red;
+                  cursor: pointer;
                 }
               `}> Log Out
               </span> 
