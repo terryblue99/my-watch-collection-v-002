@@ -87,9 +87,9 @@ button:hover {
 }
 
 .Back-button {
-  background-color: lightgray;
+  background-color: #454140;
   border-color: transparent;
-  color: black;
+  color: khaki;
   font-size: 1rem; 
   margin-left: 20px;
   margin-top: 10px;
@@ -165,8 +165,8 @@ textarea:required {
 .Save-button,
 .Add-button, 
 .Edit-button {
-  background-color: #61BD4F;
-  color: white;
+  background-color: #454140;
+  color: khaki;
 }
 
 .Add-button, 

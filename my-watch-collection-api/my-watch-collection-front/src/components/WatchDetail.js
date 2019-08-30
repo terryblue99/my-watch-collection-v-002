@@ -65,6 +65,10 @@ class WatchDetail extends Component {
                         background-color: khaki;
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;
+
+                        @media (max-width: 800px) {
+                            display: none;
+                        }
                 `}>
                     <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
                 
@@ -147,10 +151,12 @@ class WatchDetail extends Component {
                         </div> 
                     </div>
                     <div css={css`
+                        background-color: goldenrod;
                         border-top: 1px solid;
+                        padding-bottom: 10px;
                         padding-top 10px;
                         text-align: center;
-                        padding-top: 20px;
+                        
                     `}>
                         <Link className='Edit-button' to={{
                             pathname: `/watches/${currentWatch.id}/edit_watch`,

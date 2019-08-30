@@ -27,7 +27,9 @@ class DashboardContent extends Component {
         }
       `}>
         <img src={logo} alt='logo' className='Logo'/>
-        <h2>Number of watches: {number_of_watches}</h2>
+        <h2 css={css`
+          color: #454140;
+        `}>Number of watches: {number_of_watches}</h2>
       </div>
     )
       }

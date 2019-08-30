@@ -10,7 +10,7 @@ const NavBar = (props) => {
     <div className='Navbar'>
 
       <Navbar css={css`
-                background-color: black;
+                background-color: #454140;
                 padding-bottom: 10px; 
                 padding-top: 10px;
       `}>
@@ -29,7 +29,7 @@ const NavBar = (props) => {
               display: inline-block;
               font-size: 20px;
               padding-left: 20px;
-            `}>Logged in as: <p css={css`
+            `}>Logged in as:<p css={css`
               color: khaki;
               display: inline-block;
               font-size: 20px;
@@ -37,17 +37,18 @@ const NavBar = (props) => {
             `}>{props.user.user.email}</p>
           </span> 
           
-          if ({props.user.logged_in}) {
+          {props.user.logged_in} {
             <NavLink to="/logout">
               <span css={css`
-                  color: white;
-                  display: inline-block;
-                  font-size: 20px;
-                  &:hover {
-                      color: red;
-                      cursor: pointer;
-                  }
-                `}>Log Out
+                color: white;
+                display: inline-block;
+                font-size: 20px;
+                padding-left: 20px;
+                &:hover {
+                    color: red;
+                    cursor: pointer;
+                }
+              `}> Log Out
               </span> 
             </NavLink>
           }
