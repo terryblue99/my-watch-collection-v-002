@@ -6,24 +6,26 @@ import logo from '../logo.jpg'
 const Homepage = () => {
     
     return (
-        <header className='Homepage'>
-            <img src={logo} alt='logo' className='Logo'/>
-            <div className='Homepage-container'>
-                <div>
-                    <Link className='Home-button' to={{
-                        pathname: `/login`
-                    }}
-                    > Log In
-                    </Link>
-                    
-                    <Link className='Home-button' to={{
-                        pathname: `/signup`
-                    }}
-                    > Sign Up
-                    </Link>
+        <div className='container'>
+            <header className='Homepage'>
+                <img src={logo} alt='logo' className='Logo'/>
+                <div className='Homepage-container'>
+                    <div>
+                        <Link className='Home-button' to={{
+                            pathname: `/login`
+                        }}
+                        > Log In
+                        </Link>
+                        
+                        <Link className='Home-button' to={{
+                            pathname: `/signup`
+                        }}
+                        > Sign Up
+                        </Link>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
+        </div>
     )
 }
 

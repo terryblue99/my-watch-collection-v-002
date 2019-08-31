@@ -15,8 +15,10 @@ class DashBoard extends Component {
         return (
             <div>
                 <NavBar />
-                <Watches watches={this.props.watches}
-                />               
+                <div className='container Main-container'> 
+                    <Watches watches={this.props.watches}
+                    />               
+                </div> 
             </div>
         )     
     }

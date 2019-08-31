@@ -11,6 +11,7 @@ const NavBar = (props) => {
 
       <Navbar css={css`
         background-color: #454140;
+        display: flex;
         padding-bottom: 10px; 
         padding-top: 10px;
       `}>
@@ -44,6 +45,7 @@ const NavBar = (props) => {
                 font-size: 20px;
                 position: absolute;
                 right: 20px;
+                top: 10px;
                 &:hover {
                   color: red;
                   cursor: pointer;

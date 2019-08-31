@@ -14,32 +14,33 @@ const Watches = ({ watches }) => {
    const [currentWatch, setCurrentWatch] = useState(null) 
 
     return (
- 
-        <div className='Watches' css={css`
-            display: grid;
-            grid-template-areas: 'sidebar-desktop main';
-            grid-template-columns: 300px auto;
-            height: 100vh;
-            width: 100vw;
-            
-            @media (max-width: 800px) {
-                grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
-                grid-template-columns: 80px auto;
-            }
-        `}>
-            <WatchList showWatches={showWatches}
-                       setShowWatches={setShowWatches}
-                       watches={watches}
-                       setCurrentWatch={setCurrentWatch} 
-            /> 
-            <SidebarMobile showWatches={showWatches}   
-                           setShowWatches={setShowWatches}
-            />
-            <WatchDetail showWatches={showWatches}
-                         currentWatch={currentWatch}
-                         setCurrentWatch={setCurrentWatch}
-            />
+        <div className='container List-detail-container'>
+            <div className='Watches' css={css`
+                display: grid;
+                grid-template-areas: 'sidebar-desktop main';
+                grid-template-columns: 300px auto;
+                height: 100vh;
+                width: 100vw;
+                
+                @media (max-width: 800px) {
+                    grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
+                    grid-template-columns: 80px auto;
+                }
+            `}>
+                <WatchList showWatches={showWatches}
+                        setShowWatches={setShowWatches}
+                        watches={watches}
+                        setCurrentWatch={setCurrentWatch} 
+                /> 
+                <SidebarMobile showWatches={showWatches}   
+                            setShowWatches={setShowWatches}
+                />
+                <WatchDetail showWatches={showWatches}
+                            currentWatch={currentWatch}
+                            setCurrentWatch={setCurrentWatch}
+                />
 
+            </div>
         </div>
     )
 }

@@ -23,6 +23,10 @@ button {
                                 supported by Chrome and Opera */
 }
 
+/* .container {
+  max-width: 900px;
+} */
+
 .Logo {
   margin: 0 auto;
   padding-bottom: 30px;
@@ -47,7 +51,7 @@ button {
   max-width: 300px;
 }
 
-.Watch-form {
+.Watch-form-container {
   min-height: 100vh;
   padding-bottom: 15px;
 }
@@ -100,7 +104,7 @@ button:hover {
   .Watch-detail .Back-button {
     margin-left: 80px;
   }  
-  .Watch-form .Back-button {
+  .Watch-form-container .Back-button {
     margin-left: 150px;
   }                    
 }

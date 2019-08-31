@@ -46,38 +46,39 @@ class SignUp extends Component {
         }
 
         return (
-
-            <header className='Signup'>
-                <img src={logo} alt='logo' className='Logo'/>
-                <div className='Signup-container'>
-                    <form id='Signup-form' onSubmit={this.handleSubmit}>
-                        <div className='Register'>
-                            <input className='Input-element' required 
-                                    type='email'
-                                    name='email'
-                                    placeholder=' Enter your email'
-                                    onChange={this.handleChange}
-                            />
-                            <br /> 
-                            <input className='Input-element' required 
-                                    type='password'
-                                    name='password'
-                                    placeholder=' Enter a password - 8 characters minimum'
-                                    onChange={this.handleChange}
-                            />
-                            <br />
-                            <input className='Input-element' required 
-                                    type='password'
-                                    name='password_confirmation'
-                                    placeholder=' Confirm your password'
-                                    onChange={this.handleChange}
-                            />
-                            <br />
-                            <button className='Signup-button' type='submit'>Sign Up</button>
-                        </div>
-                    </form>
-                </div>
-            </header>
+            <div className='container'>
+                <header className='Signup'>
+                    <img src={logo} alt='logo' className='Logo'/>
+                    <div className='Signup-container'>
+                        <form id='Signup-form' onSubmit={this.handleSubmit}>
+                            <div className='Register'>
+                                <input className='Input-element' required 
+                                        type='email'
+                                        name='email'
+                                        placeholder=' Enter your email'
+                                        onChange={this.handleChange}
+                                />
+                                <br /> 
+                                <input className='Input-element' required 
+                                        type='password'
+                                        name='password'
+                                        placeholder=' Enter a password - 8 characters minimum'
+                                        onChange={this.handleChange}
+                                />
+                                <br />
+                                <input className='Input-element' required 
+                                        type='password'
+                                        name='password_confirmation'
+                                        placeholder=' Confirm your password'
+                                        onChange={this.handleChange}
+                                />
+                                <br />
+                                <button className='Signup-button' type='submit'>Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </header>
+            </div>
         )
     }
 }

@@ -35,7 +35,7 @@ class LogIn extends Component {
  
         return (
 
-            <div>
+            <div className='container'>
                 <header className='Login'>
                     <p className='Login-banner'>Log in to access your data</p>
                     <img src={logo} alt='logo' className='Logo'/>
