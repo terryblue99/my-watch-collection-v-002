@@ -11,7 +11,7 @@ const NavBar = (props) => {
 
       <Navbar css={css`
         background-color: #454140;
-        display: flex;
+        margin: 0 auto;
         padding-bottom: 10px; 
         padding-top: 10px;
       `}>

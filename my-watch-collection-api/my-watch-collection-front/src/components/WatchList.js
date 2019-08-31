@@ -10,6 +10,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
         <div css={css`
             grid-area: sidebar-desktop;
             background-color: white;
+            border-left: 1px solid black;
             border-right: 1px solid black;
             height: 100%;
             text-align: left;

@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: khaki;
+  background-color: cornsilk;
 }
 
 body, 
@@ -22,10 +22,6 @@ button {
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome and Opera */
 }
-
-/* .container {
-  max-width: 900px;
-} */
 
 .Logo {
   margin: 0 auto;
