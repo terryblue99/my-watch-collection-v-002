@@ -23,7 +23,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
             
         `}>
             <ul className='List' css={css`
-                list-style-type: none;
+                list-style: none;
             `}>
                 {watches ?
                     watches.map(watch => {

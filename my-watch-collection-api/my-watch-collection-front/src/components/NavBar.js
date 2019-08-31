@@ -20,7 +20,7 @@ const NavBar = (props) => {
               color: goldenrod;
               display: inline-block;
               font-size: 20px;
-              padding-left: 20px;
+              padding-left: 15px;
             `}>My Watch Collection
           </span> 
           
@@ -28,7 +28,7 @@ const NavBar = (props) => {
               color: white;
               display: inline-block;
               font-size: 20px;
-              padding-left: 20px;
+              padding-left: 130px;
             `}>Logged in as:<p css={css`
               color: khaki;
               display: inline-block;
@@ -41,9 +41,9 @@ const NavBar = (props) => {
             <NavLink to='/logout'>
               <span css={css`
                 color: white;
-                display: inline-block;
                 font-size: 20px;
-                padding-left: 20px;
+                position: absolute;
+                right: 20px;
                 &:hover {
                   color: red;
                   cursor: pointer;

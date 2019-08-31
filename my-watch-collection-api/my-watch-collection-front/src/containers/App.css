@@ -96,11 +96,14 @@ button:hover {
   padding: 10px 36px; 
 }
 
-/* @media (max-width: 800px) {
-  .Back-button {
-    display: none;
-  }                       
-} */
+@media (max-width: 800px) {
+  .Watch-detail .Back-button {
+    margin-left: 80px;
+  }  
+  .Watch-form .Back-button {
+    margin-left: 150px;
+  }                    
+}
 
 .Login-container, 
 .Signup-container {

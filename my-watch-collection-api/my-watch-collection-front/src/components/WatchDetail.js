@@ -70,6 +70,7 @@ class WatchDetail extends Component {
                 
                     <div css={css`
                         display: flex;
+                        justify-content: space-between;
                         @media (max-width: 800px) {
                             flex-direction: column
                         }
@@ -79,6 +80,10 @@ class WatchDetail extends Component {
                             padding-left: 20px;
                             padding-right: 80px;
                             padding-top: 20px;
+                            width: 35%;
+                            @media (max-width: 800px) {
+                                padding-left: 80px;
+                            }  
                         `}> 
                             <Image 
                                 src={currentWatch.image}
@@ -90,6 +95,7 @@ class WatchDetail extends Component {
                             padding-left: 80px;
                             padding-right: 25px;
                             padding-bottom: 25px;
+                            width: 65%;
                         `}>
                             <h2 css={css`
                                 fontSize: '20px';
