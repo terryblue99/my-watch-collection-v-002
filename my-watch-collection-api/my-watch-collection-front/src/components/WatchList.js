@@ -9,13 +9,13 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
     return (
         <div css={css`
             grid-area: sidebar-desktop;
-            background-color: white;
+            background-color: cornsilk;
             border-left: 1px solid black;
             border-right: 1px solid black;
             height: 100%;
             text-align: left;
             
-            @media (max-width: 800px) {
+            @media (max-width: 750px) {
                 display: ${showWatches ? 'block' : 'none'}
             }
             

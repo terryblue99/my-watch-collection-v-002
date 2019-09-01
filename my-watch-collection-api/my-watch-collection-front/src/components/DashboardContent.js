@@ -22,7 +22,7 @@ class DashboardContent extends Component {
         align-items: center;
         justify-content: center;
 
-        @media (max-width: 800px) {
+        @media (max-width: 750px) {
           display: none;
         }
       `}>

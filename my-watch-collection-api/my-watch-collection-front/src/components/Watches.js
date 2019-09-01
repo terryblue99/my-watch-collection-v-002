@@ -22,7 +22,7 @@ const Watches = ({ watches }) => {
                 height: 100vh;
                 width: 100vw;
                 
-                @media (max-width: 800px) {
+                @media (max-width: 750px) {
                     grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
                     grid-template-columns: 80px auto;
                 }

@@ -96,13 +96,20 @@ button:hover {
   padding: 10px 36px; 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 750px) {
   .Watch-detail .Back-button {
     margin-left: 80px;
   }  
   .Watch-form-container .Back-button {
-    margin-left: 150px;
+    margin-left: 220px;
+    width: 300px;
   }                    
+}
+
+@media (max-width: 828) {
+  .Navbar {
+    margin: 0 auto;
+  }
 }
 
 .Login-container, 

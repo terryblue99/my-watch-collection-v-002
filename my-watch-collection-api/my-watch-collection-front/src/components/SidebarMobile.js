@@ -25,7 +25,7 @@ const ulStyle = css`
     list-style-type: none;
     text-align: left;
 
-    @media (min-width: 800px) {
+    @media (min-width: 750px) {
         display: none;
     }
 `
