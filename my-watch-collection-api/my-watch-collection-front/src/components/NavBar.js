@@ -20,7 +20,8 @@ const NavBar = (props) => {
           <span css={css`
               color: goldenrod;
               display: inline-block;
-              font-size: 20px;
+              font-family: Signpainter;
+              font-size: 25px;
               padding-left: 15px;
             `}>My Watch Collection
           </span> 
@@ -30,11 +31,19 @@ const NavBar = (props) => {
               display: inline-block;
               font-size: 20px;
               padding-left: 130px;
+
+              @media (max-width: 750px) {
+                padding-top: 15px;
+              }
             `}>Logged in as:<p css={css`
               color: khaki;
               display: inline-block;
               font-size: 20px;
               padding-left: 5px;
+
+              @media (max-width: 750px) {
+                padding-top: 10px;
+              }
             `}>{props.user.user.email}</p>
           </span> 
           
@@ -46,6 +55,7 @@ const NavBar = (props) => {
                 position: absolute;
                 right: 20px;
                 top: 10px;
+
                 &:hover {
                   color: red;
                   cursor: pointer;

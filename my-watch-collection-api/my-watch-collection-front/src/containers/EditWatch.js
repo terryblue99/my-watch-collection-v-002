@@ -95,7 +95,6 @@ class EditWatch extends Component {
                     <NavBar />
                     <div className='container Watch-form-container'>
                          <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
-                         <br />
                          <form id='EditWatch-form' onSubmit={this.handleSubmit}>
                               <div className='EditWatch'>
                                    <h1 style={{color: 'sienna'}}>Edit this watch</h1>

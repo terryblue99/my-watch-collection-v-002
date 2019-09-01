@@ -101,9 +101,10 @@ button:hover {
     margin-left: 80px;
   }  
   .Watch-form-container .Back-button {
-    margin-left: 220px;
+    display:block;
+    margin: 20px auto;
     width: 300px;
-  }                    
+  }                   
 }
 
 @media (max-width: 828) {

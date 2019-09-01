@@ -8,20 +8,18 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
       
     return (
         <div css={css`
-            grid-area: sidebar-desktop;
             background-color: cornsilk;
             border-left: 1px solid black;
             border-right: 1px solid black;
+            display: grid;
+            grid-area: sidebar-desktop;
+            grid-template-rows: auto 100px;
             height: 100%;
             text-align: left;
             
             @media (max-width: 750px) {
                 display: ${showWatches ? 'block' : 'none'}
             }
-            
-            display: grid;
-            grid-template-rows: auto 100px;
-            
         `}>
             <ul className='List' css={css`
                 list-style: none;
@@ -31,6 +29,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                         return <li key={watch.id} css={css`
                                 border-bottom: 1px solid black;
                                 padding: 5px;
+                                
                                 &:hover {
                                     background-color: #61BD4F;
                                     color: white;

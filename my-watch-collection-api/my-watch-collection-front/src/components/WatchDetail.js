@@ -71,6 +71,7 @@ class WatchDetail extends Component {
                     <div css={css`
                         display: flex;
                         justify-content: space-between;
+
                         @media (max-width:750px) {
                             flex-direction: column
                         }
@@ -78,9 +79,9 @@ class WatchDetail extends Component {
                         <div css={css`
                             margin-bottom: 15px;
                             padding-left: 20px;
-                            padding-right: 80px;
                             padding-top: 20px;
                             width: 35%;
+                            
                             @media (max-width: 750px) {
                                 padding-left: 80px;
                             }  
