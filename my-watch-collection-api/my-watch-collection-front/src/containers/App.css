@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Fresca&display=swap');
 
-* {
-  box-sizing: border-box;
+
+html { /* everything will inherit from html */
+  box-sizing: border-box;  /* paddings and borders will be included inside the box  */
+}
+*, *:before, *:after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }

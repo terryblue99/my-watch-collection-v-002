@@ -56,13 +56,19 @@ class WatchDetail extends Component {
 
         const currentWatch = this.props.currentWatch
         const showWatches = this.props.showWatches
+
+        const style = {
+            image: {
+                border: '1px solid'
+            }
+        }
     
         if (currentWatch && currentWatch.watch_maker) {
 
             return ( 
                 
                 <div className='Watch-detail' css={css`
-                        background-color: khaki;
+                        background-color: cornsilk;
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;
                 `}>
@@ -90,6 +96,7 @@ class WatchDetail extends Component {
                                 src={currentWatch.image}
                                 width={200}
                                 height={200} 
+                                style={style.image}
                             />
                         </div>
                         <div css={css`

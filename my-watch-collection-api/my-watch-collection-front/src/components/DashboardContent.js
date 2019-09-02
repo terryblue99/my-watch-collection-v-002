@@ -16,7 +16,7 @@ class DashboardContent extends Component {
     
     return (
       <div css={css`
-        background-color: khaki;
+        background-color: cornsilk;
         display: flex;
         flex-direction: column;
         align-items: center;

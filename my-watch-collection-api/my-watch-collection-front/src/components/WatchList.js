@@ -8,7 +8,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
       
     return (
         <div css={css`
-            background-color: cornsilk;
+            background-color: khaki;
             border-left: 1px solid black;
             border-right: 1px solid black;
             display: grid;
