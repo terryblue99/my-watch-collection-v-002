@@ -42,6 +42,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                             }}>
                             <strong css={css`
                                 color: sienna;
+                                font-family: 'Ubuntu, sans-serif';
                                 font-size: 18px;
                                 padding-left: 10px;
                             `}>{watch.watch_maker}:</strong> {watch.watch_name}

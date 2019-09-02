@@ -97,7 +97,7 @@ class EditWatch extends Component {
                          <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
                          <form id='EditWatch-form' onSubmit={this.handleSubmit}>
                               <div className='EditWatch'>
-                                   <h1 style={{color: 'sienna'}}>Edit this watch</h1>
+                                   <h1 style={{color: 'sienna', fontFamily: 'Ubuntu, sans-serif'}}>Edit this watch</h1>
                                    <br /> 
                                    <input className='Input-element' required 
                                         type='text'

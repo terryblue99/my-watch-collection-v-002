@@ -107,9 +107,10 @@ class WatchDetail extends Component {
                         `}>
                             <h2 css={css`
                                 fontSize: '20px';
-                                padding-top: 15px; 
+                               
                             `}><b css={css`
-                                color: sienna; 
+                                color: sienna;
+                                font-family: 'Ubuntu, sans-serif';
                             `}>{currentWatch.watch_maker}:</b> {currentWatch.watch_name}</h2>
                             <br />
                             {currentWatch.movement ? 

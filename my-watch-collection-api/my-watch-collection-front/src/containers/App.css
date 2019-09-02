@@ -12,11 +12,12 @@ html { /* everything will inherit from html */
 
 body {
   background-color: cornsilk;
+  min-height: 100vh;
 }
 
 body, 
 button {
-  font-family: 'Fresca',Helvetica,Arial,sans-serif; /* font stack */
+  font-family: Fresca,Helvetica,Arial,sans-serif; /* font stack */
   /* Prevent copying */
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -25,6 +26,15 @@ button {
       -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome and Opera */
+}
+
+.Footer {
+  background: goldenrod;
+  border-top: 2px solid black;
+  color: #454140;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
 }
 
 .Logo {

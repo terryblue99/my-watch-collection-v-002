@@ -21,7 +21,7 @@ const NavBar = (props) => {
               color: goldenrod;
               display: inline-block;
               font-family: Signpainter;
-              font-size: 25px;
+              font-size: 30px;
               padding-left: 15px;
             `}>My Watch Collection
           </span> 
