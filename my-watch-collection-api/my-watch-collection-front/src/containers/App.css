@@ -4,7 +4,7 @@
 html { /* everything will inherit from html */
   box-sizing: border-box;  /* paddings and borders will be included inside the box  */
 }
-*, *:before, *:after {
+*, *:before, *:after {  /* :pseudo element; e.g. :hover*/
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -28,7 +28,7 @@ button {
                                 supported by Chrome and Opera */
 }
 
-.Footer {
+footer {
   background: goldenrod;
   border-top: 2px solid black;
   color: #454140;
@@ -163,7 +163,7 @@ textarea:required {
 .Register,
 .AddWatch, 
 .EditWatch {
-  flex-direction: column;
+  flex-direction: column; /* switches the main axis (of display: flex;) */
   justify-content: center; /* space-between (distributes space from right between all columns)
                            /* space-evenly (distributes space on outer & between columns) */
 }

@@ -24,7 +24,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
             <ul className='List' css={css`
                 list-style: none;
             `}>
-                {watches ?
+                {watches ? 
                     watches.map(watch => {
                         return <li key={watch.id} css={css`
                                 border-bottom: 1px solid black;
@@ -44,8 +44,9 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                 color: sienna;
                                 font-family: 'Ubuntu, sans-serif';
                                 font-size: 18px;
-                                padding-left: 10px;
-                            `}>{watch.watch_maker}:</strong> {watch.watch_name}
+                                position: relative;  
+                                padding-left: -10px;
+                            `}>{watch.watch_maker}:</strong> {watch.watch_name} 
                         </li>
                     })
                 : null}
