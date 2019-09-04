@@ -12,9 +12,19 @@ Fork and clone this repository to your computer and run the following commands i
 
 1. bundle install
 
-2. npm install
+    Installs the app gems
 
-3. rake start
+2. rake db:migrate
+
+    Runs the table migrations to create the tables.
+
+3. npm install
+
+    Installs the node_modules directory which contains all of the modules (and their dependencies) in the current project.
+
+4. rake start
+
+    Starts the React app on the 3000 port and the API server on the 3001 port
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/terryblue99/my-watch-collection. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the "Contributor Covenant" code of conduct.
 
