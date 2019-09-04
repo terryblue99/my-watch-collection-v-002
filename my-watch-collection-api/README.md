@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+APP
 
-Things you may want to cover:
+my-watch-collection
 
-* Ruby version
+A React Redux app with a Rails API backend
 
-* System dependencies
+INSTALLATION, USAGE & DEVELOPMENT
 
-* Configuration
+Fork and clone this repository to your computer and run the following commands in your terminal:
 
-* Database creation
+1. bundle install
 
-* Database initialization
+2. npm install
 
-* How to run the test suite
+3. rake start
 
-* Services (job queues, cache servers, search engines, etc.)
+Bug reports and pull requests are welcome on GitHub at https://github.com/terryblue99/my-watch-collection. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the "Contributor Covenant" code of conduct.
 
-* Deployment instructions
+LICENSE
 
-* ...
+This app is available as open source under the terms of the MIT License MIT License.
