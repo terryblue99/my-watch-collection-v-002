@@ -6,7 +6,7 @@ const SidebarMobile = ({ showWatches, setShowWatches }) => {
 
     return (
         <ul css={ulStyle}>
-            <div css={buttonStyle} onClick={() => {
+            <div className='Sidebar-button Button-text' css={buttonStyle} onClick={() => {
                 setShowWatches(!showWatches) // watch list can be toggled on and off in mobile view
             }}>
                 <span></span>     

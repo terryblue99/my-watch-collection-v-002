@@ -92,7 +92,7 @@ class AddWatch extends Component {
                <div>
                     <NavBar /> 
                     <div className='container Watch-form-container'>
-                         <button onClick={this.handleBack} className='Back-button'>Back to dashboard</button>
+                         <button onClick={this.handleBack} className='Back-button Button-text'>Back to dashboard</button>
                          <form id='AddWatch-form' onSubmit={this.handleSubmit}>
                               <div className='AddWatch'>
                                    <h1 style={{color: 'sienna', fontFamily: 'Ubuntu, sans-serif'}}>Add a watch</h1>
@@ -165,7 +165,7 @@ class AddWatch extends Component {
                                         onChange={this.handleFile}
                                    />
                                    <br />
-                                   <button className='Save-button' type='submit'>Save watch</button>
+                                   <button className='Save-button Button-text' type='submit'>Save watch</button>
                               </div>
                          </form>
                     </div>

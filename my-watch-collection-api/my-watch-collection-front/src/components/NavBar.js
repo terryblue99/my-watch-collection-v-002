@@ -12,13 +12,13 @@ const NavBar = (props) => {
       <Navbar css={css`
         background-color: #454140;
         margin: 0 auto;
-        padding-bottom: 10px; 
-        padding-top: 10px;
+        padding-bottom: 5px; 
+        padding-top: 5px;
       `}>
         <Navbar.Brand>
          
           <span css={css`
-              color: goldenrod;
+              color: khaki;
               display: inline-block;
               font-family: Signpainter;
               font-size: 30px;
@@ -27,10 +27,10 @@ const NavBar = (props) => {
           </span> 
           
           <span css={css`
-              color: white;
+              color: cornsilk;
               display: inline-block;
               font-size: 20px;
-              padding-left: 130px;
+              padding-left: 115px;
 
               @media (max-width: 750px) {
                 padding-top: 15px;
@@ -50,7 +50,7 @@ const NavBar = (props) => {
           {props.user.logged_in} {
             <NavLink to='/logout'>
               <span css={css`
-                color: white;
+                color: cornsilk;
                 font-size: 20px;
                 position: absolute;
                 right: 20px;

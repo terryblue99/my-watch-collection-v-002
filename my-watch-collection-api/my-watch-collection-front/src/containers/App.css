@@ -12,6 +12,7 @@ html { /* everything will inherit from html */
 
 body {
   background-color: cornsilk;
+  line-height: 1.25; /* space between lines (times font size) */
   min-height: 95vh;
 }
 
@@ -28,18 +29,18 @@ button {
                                 supported by Chrome and Opera */
 }
 
-footer {
-  background: goldenrod;
-  border-top: 2px solid black;
+/* footer {
+  border-top: 1px solid black;
   color: #454140;
+  margin-top: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
-}
+} */
 
 .Logo {
   margin: 0 auto;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
 }
 
 .Homepage {
@@ -73,11 +74,16 @@ footer {
   max-width: 300px;
 }
 
+.Button-text {
+  letter-spacing: 2px;
+}
+
 button:focus {
   outline:0;
 }
 
-button:hover {
+button:hover,
+.Sidebar-button:hover {
   cursor: pointer;
 }
 
@@ -86,31 +92,36 @@ button:hover {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 15px;
-  padding: 19px 38px;;
+  padding: 15px 30px;;
   text-decoration: none;
 }
 
 .Red-button {
   background-color: red;
   color: white;
-  font-size: 1rem; 
-  margin-left: 20px;
+  font-size: 1rem;
+  margin-left: 20px; 
   padding: 8px 16px;
   text-decoration: none;
 }
 
 .Back-button {
-  background-color: #454140;
-  border-color: transparent;
-  color: khaki;
   font-size: 1rem; 
   margin-bottom: 10px;
   margin-left: 20px;
   margin-top: 10px;
-  padding: 10px 36px; 
+  padding: 10px 20px; 
 }
 
 @media (max-width: 750px) {
+  .Edit-button {
+    margin-bottom: 10px;
+  }
+  .Edit-button,
+  .Red-button {
+    margin-left: 80px;
+    max-width: 200px;
+  }
   .Watch-detail .Back-button {
     margin-left: 80px;
   }  
@@ -119,12 +130,9 @@ button:hover {
     margin: 20px auto;
     width: 300px;
   } 
-}
-
-@media (max-width: 570px) {
-  footer {
+  /* footer {
     display: none;
-  }
+  }  */
 }
 
 @media (max-width: 828) {
@@ -201,9 +209,10 @@ textarea:required {
 .Signup-button, 
 .Save-button,
 .Add-button, 
-.Edit-button {
+.Edit-button,
+.Back-button {
   background-color: #454140;
-  color: khaki;
+  color: cornsilk;
 }
 
 .Add-button, 
@@ -216,7 +225,6 @@ textarea:required {
 .Login-button, 
 .Signup-button, 
 .Save-button {
-  border-color: transparent;
   font-size: 2rem; 
   margin-top: 5px;
   padding: 10px;

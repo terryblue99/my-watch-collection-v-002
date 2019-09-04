@@ -409,8 +409,8 @@ input[type="radio"] {
  * decrement button to change from `default` to `text`.
  */
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button Button-text,
+input[type="number"]::-webkit-outer-spin-button Button-text {
   height: auto;
 }
 
@@ -431,7 +431,7 @@ input[type="search"] {
  * padding (and `textfield` appearance).
  */
 
-input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-cancel-button Button-text,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -17189,7 +17189,7 @@ ol.ui.horizontal.list li:before,
 /* Set max height on unusual input */
 
 .ui.form ::-webkit-datetime-edit,
-.ui.form ::-webkit-inner-spin-button {
+.ui.form ::-webkit-inner-spin-button Button-text {
   height: 1.2142em;
 }
 
@@ -17641,7 +17641,7 @@ ol.ui.horizontal.list li:before,
 /* Preserve Native Select Stylings */
 
 .ui.form .field.error select {
-  -webkit-appearance: menulist-button;
+  -webkit-appearance: menulist-button Button-text;
 }
 
 /*------------------

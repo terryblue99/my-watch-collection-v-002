@@ -15,6 +15,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
             grid-area: sidebar-desktop;
             grid-template-rows: auto 100px;
             height: 100%;
+            padding-top: 5px;
             text-align: left;
             
             @media (max-width: 750px) {
@@ -28,7 +29,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                     watches.map(watch => {
                         return <li key={watch.id} css={css`
                                 border-bottom: 1px solid black;
-                                padding: 5px;
+                                padding-left: 10px;
                                 
                                 &:hover {
                                     background-color: #61BD4F;
@@ -57,7 +58,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 text-align: center;
             `}> 
                 <Link to={{pathname: '/watches/add_watch'}}>
-                    <button className='Add-button' >Add a watch</button>
+                    <button className='Add-button Button-text' >Add a watch</button>
                 </Link> 
             </div>
         </div> 
