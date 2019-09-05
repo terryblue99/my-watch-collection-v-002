@@ -30,7 +30,7 @@ Fork and clone this repository to your computer and run the following commands i
 
     Starts the React app on the 3000 port and the API server on the 3001 port
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/terryblue99/my-watch-collection. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the "Contributor Covenant" code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/terryblue99/my-watch-collection-v-002. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the "Contributor Covenant" code of conduct.
 
 LICENSE
 
