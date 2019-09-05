@@ -29,14 +29,14 @@ button {
                                 supported by Chrome and Opera */
 }
 
-/* footer {
+footer {
   border-top: 1px solid black;
   color: #454140;
   margin-top: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
-} */
+}
 
 .Logo {
   margin: 0 auto;
@@ -130,9 +130,9 @@ button:hover,
     margin: 20px auto;
     width: 300px;
   } 
-  /* footer {
+  footer {
     display: none;
-  }  */
+  } 
 }
 
 @media (max-width: 828) {

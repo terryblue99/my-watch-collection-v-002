@@ -1,4 +1,4 @@
-class Api::V1::RegistrationsController < ApplicationController
+class Api::V2::RegistrationsController < ApplicationController
   def create
     user = User.create!(
       email: params['user']['email'],

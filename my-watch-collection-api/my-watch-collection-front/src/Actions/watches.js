@@ -5,7 +5,7 @@ import {
 	DELETE_WATCH
 } from './types'
 
-const API_URL = '/api/v1'
+const API_URL = '/api/v2'
 
 export const getWatchesAction = (user_id) => {
 

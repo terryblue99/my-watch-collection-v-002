@@ -1,4 +1,4 @@
-class Api::V1::WatchesController < ApplicationController
+class Api::V2::WatchesController < ApplicationController
 
     before_action :set_watch, only: [:show, :edit, :update, :destroy]
 

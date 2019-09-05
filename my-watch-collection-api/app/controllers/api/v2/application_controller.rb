@@ -1,5 +1,5 @@
 module Api
-    module V1
+    module V2
         class ApplicationController < ApplicationController::API
             skip_before_action :verify_authenticity_token
             include ActionConroller::Cookies

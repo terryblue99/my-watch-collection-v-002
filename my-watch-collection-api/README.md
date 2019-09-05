@@ -18,11 +18,15 @@ Fork and clone this repository to your computer and run the following commands i
 
     Runs the table migrations to create the tables.
 
-3. npm install
+3. npm i --save redux-logger
+
+4. npm install -D react-image-resizer
+
+5. npm install
 
     Installs the node_modules directory which contains all of the modules (and their dependencies) in the current project.
 
-4. rake start
+6. rake start
 
     Starts the React app on the 3000 port and the API server on the 3001 port
 

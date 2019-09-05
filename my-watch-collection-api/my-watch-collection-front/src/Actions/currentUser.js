@@ -4,7 +4,7 @@ import {
   CLEAR_WATCHES
 } from './types'
 
-const API_URL = '/api/v1'
+const API_URL = '/api/v2'
 
 export const logInAction = (credentials) => {
   return dispatch => {
