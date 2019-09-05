@@ -2,7 +2,7 @@
 
 APP
 
-my-watch-collection
+my-watch-collection-v-002
 
 A React Redux app with a Rails API backend
 
