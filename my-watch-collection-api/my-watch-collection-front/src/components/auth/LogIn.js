@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import '../../containers/App.css'
-import logo from '../../logo.jpg'
+import logo from '../../images/logo.jpg'
 import { logInAction } from "../../actions/currentUser.js"
 
 class LogIn extends Component {

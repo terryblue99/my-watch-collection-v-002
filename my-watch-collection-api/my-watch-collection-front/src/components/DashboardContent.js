@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
-import logo from '../logo.jpg'
+import logo from '../images/logo.jpg'
 
 
 class DashboardContent extends Component {

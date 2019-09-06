@@ -62,6 +62,14 @@ footer {
   max-width: 300px;
 }
 
+.Homepage,
+.Login,
+.Signup {
+  background-image: url(../images/watch-background-5.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
 .Watch-form-container {
   min-height: 95vh;
   padding-bottom: 15px;
@@ -202,13 +210,16 @@ textarea:required {
   text-align: center;
 }
 
+.Add-button {
+  background-color: #454140;
+  color: khaki;
+}
 
 .Login-banner,
 .Home-button,
 .Login-button, 
 .Signup-button, 
 .Save-button,
-.Add-button, 
 .Edit-button,
 .Back-button {
   background-color: #454140;
