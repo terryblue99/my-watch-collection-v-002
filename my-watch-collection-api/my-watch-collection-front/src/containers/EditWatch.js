@@ -176,7 +176,6 @@ class EditWatch extends Component {
                                         name='image'
                                         onChange={this.handleFile}
                                    />
-                                   <br />
                                    <button className='Save-button Button-text' type='submit'>Save watch</button>
                               </div>
                          </form>
