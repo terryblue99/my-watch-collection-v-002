@@ -57,7 +57,7 @@ const NavBar = (props) => {
                 top: 10px;
 
                 &:hover {
-                  color: red;
+                  color: orange;
                   cursor: pointer;
                 }
               `}> Log Out
