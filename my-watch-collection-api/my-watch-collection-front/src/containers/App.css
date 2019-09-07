@@ -17,7 +17,8 @@ body {
 }
 
 body, 
-button {
+button 
+{
   font-family: Fresca,Helvetica,Arial,sans-serif; /* font stack */
   /* Prevent copying */
   -webkit-touch-callout: none; /* iOS Safari */
@@ -38,28 +39,26 @@ footer {
   text-align: center;
 }
 
-.Logo {
-  margin: 0 auto;
-  padding-bottom: 25px;
-}
-
-.Homepage {
-  align-items: center; /* flex-start - flex-end - baseline */
-  min-height: 95vh; 
-}
-
-.Login-banner {
-  font-size: 1.25rem; /* relative to font size of root (html) element, which is defaulted  to 16px */
-  margin: auto;
-  margin-bottom: 20px;
-  max-width: 300px;
-  padding: 15px;
-}
+/*  ==================
+      homepage/logo
+      log in/sign up
+    ================== */
 
 .Register {
   font-size: .25rem;
   margin: 0 auto;
   max-width: 300px;
+  text-align: center;
+}
+
+.Homepage,
+.Register {
+  display: flex; /* creates columns + margins no longer collapse */
+}
+
+.Homepage {
+  align-items: center; /* flex-start - flex-end - baseline */
+  min-height: 95vh; 
 }
 
 .Homepage,
@@ -71,24 +70,52 @@ footer {
   background-size: cover;
 }
 
-.Watch-form-container {
+.Homepage,
+.Login, 
+.Register, 
+.Signup
+{
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.Logo {
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+.Login, 
+.Logo,
+.Signup 
+{
+  display: block;
+}
+
+.Login, 
+.Signup {
   min-height: 95vh;
-  padding-bottom: 15px;
+  padding-top: 40px;
 }
 
-.Input-element {
-  border-color: black;
-  font-size: .75rem;
-  height: 22px;
-  min-width: 300px;
+.Login-banner {
+  background-color: #454140;
+  color: cornsilk;
+  font-size: 1.25rem; /* relative to font size of root (html) element, which is defaulted  to 16px */
+  margin-bottom: 20px;
+  margin: auto;
+  max-width: 300px;
+  padding: 15px;
+  text-align: center;
 }
 
-.Blue-element {
-  border-color: black;
-  font-size: .75rem;
-  height: 22px;
-  min-width: 300px;
+.Login-container, 
+.Signup-container {
+  display: grid;
 }
+
+/*  =================
+        buttons
+    ================= */
 
 .Button-text {
   letter-spacing: 2px; /* puts spaces between letters */
@@ -101,6 +128,30 @@ button:focus {
 button:hover,
 .Sidebar-button:hover {
   cursor: pointer;
+}
+
+.Login-button, 
+.Save-button,
+.Signup-button 
+{
+  font-size: 2rem; 
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.Login-button, 
+.Save-button,
+.Signup-button 
+{
+  display: block;
+}
+
+.Add-button, 
+.Edit-button,
+.Home-button,
+.Red-button
+{
+  text-align: center;
 }
 
 .Home-button {
@@ -133,6 +184,81 @@ button:hover,
   padding: 10px 20px; 
 }
 
+.Add-button {
+  background-color: #454140;
+  color: khaki;
+}
+
+.Add-button, 
+.Edit-button 
+{
+  font-size: 1rem; 
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.Back-button, 
+.Edit-button,
+.Home-button,
+.Login-button, 
+.Save-button,
+.Signup-button 
+{
+  background-color: #454140;
+  color: cornsilk;
+}
+
+.Add-button, 
+.Back-button,
+.Edit-button,
+.Home-button,
+.Login-button, 
+.Red-button,
+.Save-button, 
+.Signup-button
+{
+  text-transform: uppercase;
+}
+
+/*  =================
+          forms
+    ================= */
+
+.AddWatch, 
+.EditWatch 
+{
+  display: flex;
+  font-size: .75rem;
+  margin: 0 auto;
+  max-width: 300px;
+  text-align: center;
+  flex-direction: column; /* switches the main axis (of display: flex;) */
+  justify-content: center; /* space-between (distributes space from right between all columns)
+                           /* space-evenly (distributes space on outer & between columns) */
+}
+
+.Watch-form-container {
+  min-height: 95vh;
+  padding-bottom: 15px;
+}
+
+.Input-element {
+  border-color: black;
+  font-size: .75rem;
+  height: 22px;
+  min-width: 300px;
+}
+
+input:required,
+textarea:required 
+{
+  border-color: red;
+}
+
+/*  =================
+      media queries
+    ================= */
+
 @media (max-width: 750px) {
   .Edit-button {
     margin-bottom: 10px;
@@ -150,6 +276,9 @@ button:hover,
     margin: 20px auto;
     width: 300px;
   } 
+}
+
+@media (max-width: 950px) {
   footer {
     display: none;
   } 
@@ -159,107 +288,4 @@ button:hover,
   .Navbar {
     margin: 0 auto;
   }
-}
-
-.Login-container, 
-.Signup-container {
-  display: grid;
-}
-
-.Login, 
-.Signup {
-  min-height: 95vh;
-  padding-top: 40px;
-}
-
-input:required,
-textarea:required {
-  border-color: red;
-}
-
-.Homepage,
-.Register,
-.AddWatch, 
-.EditWatch {
-  display: flex; /* creates columns + margins no longer collapse */
-}
-
-.AddWatch, 
-.EditWatch {
-  font-size: .75rem;
-  margin: 0 auto;
-  max-width: 300px;
-}
-
-.Login, 
-.Signup,
-.Homepage,
-.Register,
-.AddWatch, 
-.EditWatch {
-  flex-direction: column; /* switches the main axis (of display: flex;) */
-  justify-content: center; /* space-between (distributes space from right between all columns)
-                           /* space-evenly (distributes space on outer & between columns) */
-}
-
-.Logo,
-.Login, 
-.Signup,
-.Login-button, 
-.Signup-button, 
-.Save-button {
-  display: block;
-}
-
-.Login-banner,
-.Register,
-.AddWatch, 
-.EditWatch,
-.Home-button,
-.Red-button,
-.Add-button, 
-.Edit-button {
-  text-align: center;
-}
-
-.Add-button {
-  background-color: #454140;
-  color: khaki;
-}
-
-.Login-banner,
-.Home-button,
-.Login-button, 
-.Signup-button, 
-.Save-button,
-.Edit-button,
-.Back-button {
-  background-color: #454140;
-  color: cornsilk;
-}
-
-.Add-button, 
-.Edit-button {
-  font-size: 1rem; 
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-.Login-button, 
-.Signup-button, 
-.Save-button {
-  font-size: 2rem; 
-  margin-top: 5px;
-  padding: 10px;
-}
-
-.Home-button,
-.Red-button,
-.Back-button,
-.Add-button, 
-.Edit-button,
-.Login-button, 
-.Signup-button, 
-.Save-button {
-  text-transform: uppercase;
 }

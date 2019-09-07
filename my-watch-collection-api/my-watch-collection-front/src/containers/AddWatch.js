@@ -154,14 +154,14 @@ class AddWatch extends Component {
                                    <input className='Input-element' 
                                         type='text'
                                         name='water_resistance'
-                                        placeholder=' Water resistance'
+                                        placeholder=' Water resistance (e.g. 200 meters)'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
                                    <input className='Input-element' required 
                                         type='text'
                                         name='date_bought'
-                                        placeholder=' Date bought/gifted yyyy-mm-dd (Required)'
+                                        placeholder=' Date bought/gifted (yyyy-mm-dd) (Required)'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
