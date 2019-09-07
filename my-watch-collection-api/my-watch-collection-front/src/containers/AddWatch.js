@@ -52,26 +52,32 @@ class AddWatch extends Component {
      }
 
      handleSubmit = (event) => { 
-        event.preventDefault() 
-        // Create the watch
-        const formData = new FormData()
-        formData.append('watch_name', this.state.watchData.watch_name)
-        formData.append('watch_maker', this.state.watchData.watch_maker)
-        formData.append('movement', this.state.watchData.movement)
-        formData.append('band', this.state.watchData.band)
-        formData.append('model_number', this.state.watchData.model_number)
-        formData.append('case_measurement', this.state.watchData.case_measurement)
-        formData.append('water_resistance', this.state.watchData.water_resistance)
-        formData.append('complications', this.state.watchData.complications)
-        formData.append('date_bought', this.state.watchData.date_bought)
-        formData.append('cost', this.state.watchData.cost)
-        formData.append('user_id', this.state.watchData.user_id)
-        if (this.state.image) {
-          formData.append('image', this.state.image)
-        }
-        this.props.addWatchAction(formData, this.state.watchData)
-        // Clear the form
-        document.getElementById('AddWatch-form').reset()
+          event.preventDefault() 
+          const date = this.state.watchData.date_bought
+          if (!date.match(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/gm)) {
+               alert('Date bought/added must be in the format yyyy-mm-dd;\n e.g. 2019-09-30')
+               return
+          }
+         
+          // Create the watch
+          const formData = new FormData()
+          formData.append('watch_name', this.state.watchData.watch_name)
+          formData.append('watch_maker', this.state.watchData.watch_maker)
+          formData.append('movement', this.state.watchData.movement)
+          formData.append('band', this.state.watchData.band)
+          formData.append('model_number', this.state.watchData.model_number)
+          formData.append('case_measurement', this.state.watchData.case_measurement)
+          formData.append('water_resistance', this.state.watchData.water_resistance)
+          formData.append('complications', this.state.watchData.complications)
+          formData.append('date_bought', this.state.watchData.date_bought)
+          formData.append('cost', this.state.watchData.cost)
+          formData.append('user_id', this.state.watchData.user_id)
+          if (this.state.image) {
+               formData.append('image', this.state.image)
+          }
+          this.props.addWatchAction(formData, this.state.watchData)
+          // Clear the form
+          document.getElementById('AddWatch-form').reset()
      }
 
      handleBack = () => {
@@ -161,7 +167,7 @@ class AddWatch extends Component {
                                    <input className='Input-element' required 
                                         type='text'
                                         name='date_bought'
-                                        placeholder=' Date bought/gifted (yyyy-mm-dd) (Required)'
+                                        placeholder=' Date bought/gifted (yyyymmdd) (Required)'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
