@@ -96,72 +96,87 @@ class AddWatch extends Component {
                         
                          <form id='AddWatch-form' onSubmit={this.handleSubmit}>
                               <div className='AddWatch'>
-                                   <h1 style={{color: 'sienna', fontFamily: 'Ubuntu, sans-serif'}}>Add a watch</h1>
-                                   <br /> 
+                                   <h1 style={{color: 'sienna', 
+                                               fontFamily: 'Ubuntu, sans-serif',
+                                               marginBottom: '5px'}
+                                             }>
+                                        Add a watch
+                                   </h1>
                                    <input className='Input-element' required 
                                         type='text'
                                         name='watch_name'
-                                        placeholder=' Watch name'
+                                        placeholder=' Watch name (Required)'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
                                    <input className='Input-element' required 
                                         type='text'
                                         name='watch_maker'
-                                        placeholder=' Watch maker'
+                                        placeholder=' Watch maker (Required)'
                                         onChange={this.handleChange}
                                    />
                                    <br />
-                                   <input className='Input-element'  type='text'
+                                   <input className='Input-element'  
+                                        type='text'
                                         name='movement'
                                         placeholder=' Movement'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <input className='Input-element'  type='text'
+                                   <input className='Input-element'  
+                                        type='text'
                                         name='complications'
                                         placeholder=' Complications'
                                         onChange={this.handleChange}
                                    />
                                    <br />
-                                   <input className='Input-element'  type='text'
+                                   <input className='Input-element'  
+                                        type='text'
                                         name='band'
                                         placeholder=' Band'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <input className='Input-element'  type='text'
+                                   <input className='Input-element'  
+                                        type='text'
                                         name='model_number'
                                         placeholder=' Model number'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <input className='Input-element'  type='text'
+                                   <input className='Input-element'  
+                                        type='text'
                                         name='case_measurement'
                                         placeholder=' Case measurement (e.g. 45mm)'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <input className='Input-element'  type='text'
+                                   <input className='Input-element' 
+                                        type='text'
                                         name='water_resistance'
                                         placeholder=' Water resistance'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <input className='Input-element'  type='text'
+                                   <input className='Input-element' required 
+                                        type='text'
                                         name='date_bought'
-                                        placeholder=' Date bought'
+                                        placeholder=' Date bought/gifted yyyy-mm-dd (Required)'
                                         onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <input className='Input-element'  type='text'
+                                   <input className='Input-element'  
+                                        type='text'
                                         name='cost'
                                         placeholder=' Cost (e.g. 199.99)'
                                         onChange={this.handleChange}
                                    />
-                                   <br />
-                                   <b style={{fontSize: '1rem', color: 'sienna'}}>Upload watch image</b>
-                                   <input className='Input-element'  type='file'
+                                   <b style={{fontSize: '1rem', 
+                                              color: 'sienna',
+                                              marginTop: '3px'}
+                                             }>Upload watch image</b>
+                                   <input className='Input-element'  
+                                        type='file'
                                         name='image'
                                         onChange={this.handleFile}
                                    />

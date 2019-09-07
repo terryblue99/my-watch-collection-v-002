@@ -100,18 +100,20 @@ class WatchDetail extends Component {
                             />
                         </div>
                         <div css={css`
-                            padding-left: 80px;
+                            padding-bottom: 12px;
+                            padding-left: 105px;
                             padding-right: 25px;
-                            padding-bottom: 25px;
+                            padding-top: 0;
                             width: 65%;
                         `}>
-                            <h2 css={css`
-                                fontSize: '15px';  
-                            `}><b css={css`
+                            <h1><b css={css`
                                 color: sienna;
                                 font-family: 'Ubuntu, sans-serif';
-                            `}>{currentWatch.watch_maker}:</b> {currentWatch.watch_name}</h2>
-                            <br />
+                            `}>{currentWatch.watch_maker}</b></h1> 
+                            <h2 css={css`
+                                font-size: 20px;
+                                margin-bottom: 10px;
+                            `}>{currentWatch.watch_name}</h2>
                             {currentWatch.movement ? 
                                 <span>
                                     <p><em css={detailCss}>Movement</em></p>
@@ -164,9 +166,7 @@ class WatchDetail extends Component {
                     </div>
                     <div css={css`   
                         display:flex;  
-                        justify-content: center;                   
-                        padding-bottom: 10px;
-                        padding-top 10px;
+                        justify-content: center; 
                         text-align: center;   
 
                         @media (max-width: 750px) {

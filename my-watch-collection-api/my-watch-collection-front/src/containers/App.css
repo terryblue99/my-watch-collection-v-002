@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fresca&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fresca:300,400,900&display=swap');
 
 
 html { /* everything will inherit from html */
@@ -13,7 +13,7 @@ html { /* everything will inherit from html */
 body {
   background-color: cornsilk;
   line-height: 1.25; /* space between lines (times font size) */
-  min-height: 95vh;
+  min-height: 95vh; /* relative to 1% of the height of the viewport */
 }
 
 body, 
@@ -45,7 +45,7 @@ footer {
 
 .Homepage {
   align-items: center; /* flex-start - flex-end - baseline */
-  min-height: 95vh; /* relative to 1% of the height of the viewport */
+  min-height: 95vh; 
 }
 
 .Login-banner {
@@ -65,6 +65,7 @@ footer {
 .Homepage,
 .Login,
 .Signup {
+  background-color: cornsilk; /* only displays if the image is delayed or doesn't load */
   background-image: url(../images/watch-background-5.jpg);
   background-position: center;
   background-size: cover;
@@ -79,11 +80,18 @@ footer {
   border-color: black;
   font-size: .75rem;
   height: 22px;
-  max-width: 300px;
+  min-width: 300px;
+}
+
+.Blue-element {
+  border-color: black;
+  font-size: .75rem;
+  height: 22px;
+  min-width: 300px;
 }
 
 .Button-text {
-  letter-spacing: 2px;
+  letter-spacing: 2px; /* puts spaces between letters */
 }
 
 button:focus {
@@ -96,6 +104,9 @@ button:hover,
 }
 
 .Home-button {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
   font-size: 1.25rem;
   margin-left: 20px;
   margin-right: 20px;
@@ -163,14 +174,14 @@ button:hover,
 
 input:required,
 textarea:required {
-  border-color: red !important;
+  border-color: red;
 }
 
 .Homepage,
 .Register,
 .AddWatch, 
 .EditWatch {
-  display: flex; /* creates columns */
+  display: flex; /* creates columns + margins no longer collapse */
 }
 
 .AddWatch, 
