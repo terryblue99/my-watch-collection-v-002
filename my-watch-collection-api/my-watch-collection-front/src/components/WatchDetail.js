@@ -78,7 +78,7 @@ class WatchDetail extends Component {
                         display: flex;
                         justify-content: space-between;
 
-                        @media (max-width:750px) {
+                        @media (max-width: 750px) {
                             flex-direction: column
                         }
                     `}>   
@@ -117,11 +117,11 @@ class WatchDetail extends Component {
                             `}>{currentWatch.watch_maker}</b></h1> 
                             <h2 css={css`
                                 color: midnightblue;
-                                font-size: 19px;
+                                font-size: 22px;
                                 margin-bottom: 10px;
 
                                 @media (min-width: 1500px) {
-                                    font-size: 25px;
+                                    font-size: 30px;
                                 }
                             `}>{currentWatch.watch_name}</h2>
                             {currentWatch.movement ? 
@@ -176,8 +176,7 @@ class WatchDetail extends Component {
                     </div>
                     <div css={css`   
                         display:flex;  
-                        justify-content: center; 
-                        text-align: center;   
+                        justify-content: center;  
 
                         @media (max-width: 750px) {
                             flex-direction: column;
@@ -189,7 +188,7 @@ class WatchDetail extends Component {
                                 watch: currentWatch
                             }
                         }}>
-                            Edit this watch
+                            Edit
                         </Link>
                         <button className='Red-button Button-text' onClick={this.handleDelete}> 
                             Delete

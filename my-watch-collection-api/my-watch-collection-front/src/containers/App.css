@@ -197,12 +197,14 @@ button:hover,
 .Red-button 
 {
   color: cornsilk;
-  margin-left: 20px; 
+  max-height: 40px;
+  min-width: 100px;
+  padding: 10px 20px; 
 }
 
 .Red-button {
   background-color: red;
-  max-width: 100px;
+  margin-left: 10px; 
 }
 
 /*  =================
