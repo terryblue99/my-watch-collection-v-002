@@ -21,7 +21,7 @@ const NavBar = (props) => {
               color: khaki;
               display: inline-block;
               font-family: Signpainter;
-              font-size: 30px;
+              font-size: 1.6rem;
               padding-left: 15px;
             `}>My Watch Collection
           </span> 
@@ -29,7 +29,7 @@ const NavBar = (props) => {
           <span css={css`
               color: cornsilk;
               display: inline-block;
-              font-size: 20px;
+              font-size: 1rem;
               padding-left: 115px;
 
               @media (max-width: 750px) {
@@ -38,7 +38,7 @@ const NavBar = (props) => {
             `}>Logged in as:<p css={css`
               color: khaki;
               display: inline-block;
-              font-size: 20px;
+              font-size: 1rem;
               padding-left: 5px;
 
               @media (max-width: 750px) {
@@ -51,7 +51,7 @@ const NavBar = (props) => {
             <NavLink to='/logout'>
               <span css={css`
                 color: cornsilk;
-                font-size: 20px;
+                font-size: 1rem;
                 position: absolute;
                 right: 20px;
                 top: 10px;
