@@ -240,6 +240,11 @@ textarea:required
   border-color: red;
 }
 
+.Detail-css {
+  font-size: 15px;
+   color: sienna;
+}
+
 /*  =================
       media queries
     ================= */
@@ -269,8 +274,17 @@ textarea:required
   } 
 }
 
-@media (max-width: 828) {
+@media (max-width: 830) {
   .Navbar {
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 1500px) {
+  body {
+    font-size: 20px;
+  }
+  .Detail-css {
+    font-size: 18px;
   }
 }

@@ -110,56 +110,65 @@ class WatchDetail extends Component {
                                 color: sienna;
                                 font-family: 'Ubuntu, sans-serif';
                                 font-size: 24px;
+
+                                @media (min-width: 1500px) {
+                                    font-size: 30px;
+                                }
                             `}>{currentWatch.watch_maker}</b></h1> 
                             <h2 css={css`
+                                color: midnightblue;
                                 font-size: 19px;
                                 margin-bottom: 10px;
+
+                                @media (min-width: 1500px) {
+                                    font-size: 25px;
+                                }
                             `}>{currentWatch.watch_name}</h2>
                             {currentWatch.movement ? 
                                 <span>
-                                    <p><em css={detailCss}>Movement</em></p>
+                                    <p><em className='Detail-css'>Movement</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.movement}</h3>
                                 </span>
                             : null}
                             {currentWatch.complications ?
                                 <span>
-                                    <p><em css={detailCss}>Complications</em></p>
+                                    <p><em className='Detail-css'>Complications</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.complications}</h3>
                                 </span>
                             : null }
                             {currentWatch.band ? 
                                 <span>
-                                    <p><em css={detailCss}>Band</em></p> 
+                                    <p><em className='Detail-css'>Band</em></p> 
                                     <h3 className='WatchDetail'>{currentWatch.band}</h3>
                                 </span>
                             : null }
                             {currentWatch.model_number ? 
                                 <span>
-                                    <p><em css={detailCss}>Model number</em></p>
+                                    <p><em className='Detail-css'>Model number</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
                                 </span>
                             : null }
                             {currentWatch.case_measurement ? 
                                 <span>
-                                    <p><em css={detailCss}>Case measurement</em></p>
+                                    <p><em className='Detail-css'>Case measurement</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
                                 </span>
                             : null }
                             {currentWatch.water_resistance ? 
                                 <span>
-                                    <p><em css={detailCss}>Water resistance</em></p>
+                                    <p><em className='Detail-css'>Water resistance</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                                 </span>
                             : null }
                             {currentWatch.date_bought ? 
                                 <span>
-                                    <p><em css={detailCss}>Date bought</em></p>
+                                    <p><em className='Detail-css'>Date bought</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
                                 </span>
                             : null }
                             {currentWatch.cost ? 
                                 <span>
-                                    <p><em css={detailCss}>Cost</em></p>
+                                    <p><em className='Detail-css'>Cost</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.cost}</h3>
                                 </span>
                             : null }
@@ -193,7 +202,5 @@ class WatchDetail extends Component {
         }
     }
 }
-
-const detailCss = {fontSize: '15px', color: 'sienna'}
 
 export default connect(null, {deleteWatchAction})(WatchDetail)
