@@ -130,30 +130,6 @@ button:hover,
   cursor: pointer;
 }
 
-.Login-button, 
-.Save-button,
-.Signup-button 
-{
-  font-size: 2rem; 
-  margin-top: 5px;
-  padding: 10px;
-}
-
-.Login-button, 
-.Save-button,
-.Signup-button 
-{
-  display: block;
-}
-
-.Add-button, 
-.Edit-button,
-.Home-button,
-.Red-button
-{
-  text-align: center;
-}
-
 .Home-button {
   border-style: solid;
   border-color: white;
@@ -162,17 +138,8 @@ button:hover,
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 15px;
-  padding: 15px 30px;;
-  text-decoration: none;
-}
-
-.Red-button {
-  background-color: red;
-  color: white;
-  font-size: 1rem;
-  margin-left: 20px; 
-  max-width: 100px;
-  padding: 8px 16px;
+  padding: 15px 30px;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -184,21 +151,7 @@ button:hover,
   padding: 10px 20px; 
 }
 
-.Add-button {
-  background-color: #454140;
-  color: khaki;
-}
-
-.Add-button, 
-.Edit-button 
-{
-  font-size: 1rem; 
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
 .Back-button, 
-.Edit-button,
 .Home-button,
 .Login-button, 
 .Save-button,
@@ -206,18 +159,50 @@ button:hover,
 {
   background-color: #454140;
   color: cornsilk;
+  text-transform: uppercase;
 }
 
-.Add-button, 
-.Back-button,
-.Edit-button,
-.Home-button,
 .Login-button, 
-.Red-button,
-.Save-button, 
-.Signup-button
+.Save-button,
+.Signup-button 
 {
+  display: block; 
+  font-size: 2rem; 
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.Add-button {
+  color: khaki;
+}
+
+.Add-button,
+.Edit-button 
+{
+  background-color: #454140;
+}
+
+.Add-button,
+.Edit-button,
+.Red-button 
+{
+  font-size: 1rem;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
+}
+
+.Edit-button,
+.Red-button 
+{
+  color: cornsilk;
+  margin-left: 20px; 
+}
+
+.Red-button {
+  background-color: red;
+  max-width: 100px;
 }
 
 /*  =================
