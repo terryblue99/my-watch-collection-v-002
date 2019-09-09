@@ -32,6 +32,9 @@ const NavBar = (props) => {
               font-size: 1rem;
               padding-left: 115px;
 
+              @media (min-width: 1500px) {
+                  font-size: 1.25rem
+              }
               @media (max-width: 750px) {
                 padding-top: 15px;
               }
@@ -41,6 +44,9 @@ const NavBar = (props) => {
               font-size: 1rem;
               padding-left: 5px;
 
+              @media (min-width: 1500px) {
+                  font-size: 1.25rem
+              }
               @media (max-width: 750px) {
                 padding-top: 10px;
               }
@@ -59,6 +65,9 @@ const NavBar = (props) => {
                 &:hover {
                   color: orange;
                   cursor: pointer;
+                }
+                @media (min-width: 1500px) {
+                    font-size: 1.25rem
                 }
               `}> Log Out
               </span> 

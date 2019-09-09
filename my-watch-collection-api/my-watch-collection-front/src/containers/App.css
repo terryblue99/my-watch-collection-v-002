@@ -208,6 +208,21 @@ button:hover,
   margin-left: 10px; 
 }
 
+/*  ======================
+      file upload button
+    ====================== */
+
+/* Chrome/Safari and web-kit-based browsers 
+   (if it doesn't work, try maybe also on the parent/wrapper)
+*/
+::-webkit-file-upload-button {
+  cursor:pointer;
+}
+/* IE11 (if it doesn't work, try maybe also on the parent/wrapper) */
+input[type=file] {
+  cursor:pointer;
+}
+
 /*  =================
           forms
     ================= */
@@ -232,9 +247,10 @@ button:hover,
 
 .Input-element {
   border-color: black;
+  border-radius: 5px; /* rounds corners */
   font-size: .75rem;
-  height: 22px;
   min-width: 300px;
+  padding: .25em;
 }
 
 input:required,

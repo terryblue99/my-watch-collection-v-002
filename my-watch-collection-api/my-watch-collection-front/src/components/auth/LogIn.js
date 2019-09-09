@@ -46,14 +46,14 @@ class LogIn extends Component {
                                 <input className='Input-element' required 
                                         type='email'
                                         name='email'
-                                        placeholder=' Enter your email'
+                                        placeholder='Enter your email'
                                         onChange={this.handleChange}
                                 />
                                 <br /> 
                                 <input className='Input-element' required 
                                         type='password'
                                         name='password'
-                                        placeholder=' Enter your password'
+                                        placeholder='Enter your password'
                                         onChange={this.handleChange}
                                 />
                                 <br />
