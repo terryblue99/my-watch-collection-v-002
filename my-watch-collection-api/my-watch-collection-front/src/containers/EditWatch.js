@@ -99,7 +99,7 @@ class EditWatch extends Component {
                <div>
                     <NavBar />
                     <div className='container Watch-form-container'>
-                         <button onClick={this.handleBack} className='Back-button Button-text'>Back to dashboard</button>
+                         <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          <form id='EditWatch-form' onSubmit={this.handleSubmit}>
                               <div className='EditWatch'>
                                    <h1  style={{color: 'sienna', 
@@ -196,7 +196,7 @@ class EditWatch extends Component {
                                         name='image'
                                         onChange={this.handleFile}
                                    />
-                                   <button className='Save-button Button-text' type='submit'>Save watch</button>
+                                   <button className='btn Save-button Button-text' type='submit'>Save watch</button>
                               </div>
                          </form>
                     </div>

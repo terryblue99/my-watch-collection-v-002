@@ -57,7 +57,7 @@ class LogIn extends Component {
                                         onChange={this.handleChange}
                                 />
                                 <br />
-                                <button className='Login-button Button-text' type='submit'>Log In</button>
+                                <button className='btn Login-button Button-text' type='submit'>Log In</button>
                             </div>
                         </form>
                     </div>

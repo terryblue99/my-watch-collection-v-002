@@ -72,7 +72,7 @@ class WatchDetail extends Component {
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;
                 `}>
-                    <button onClick={this.handleBack} className='Back-button Button-text'>Back to dashboard</button>
+                    <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                 
                     <div css={css`
                         display: flex;
@@ -186,7 +186,7 @@ class WatchDetail extends Component {
                             flex-direction: column;
                         }
                     `}>
-                        <Link className='Edit-button Button-text' to={{
+                        <Link className='btn Edit-button Button-text' to={{
                             pathname: `/watches/${currentWatch.id}/edit_watch`,
                             state: {
                                 watch: currentWatch
@@ -194,7 +194,7 @@ class WatchDetail extends Component {
                         }}>
                             Edit
                         </Link>
-                        <button className='Red-button Button-text' onClick={this.handleDelete}> 
+                        <button className='btn Red-button Button-text' onClick={this.handleDelete}> 
                             Delete
                         </button>
                     </div>

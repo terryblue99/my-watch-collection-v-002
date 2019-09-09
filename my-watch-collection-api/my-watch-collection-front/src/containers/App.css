@@ -118,6 +118,10 @@ footer {
         buttons
     ================= */
 
+.btn {
+  border-radius: 5px; /* rounds corners */
+}
+
 .Button-text {
   letter-spacing: 2px; /* puts spaces between letters */
 }
@@ -247,7 +251,7 @@ input[type=file] {
 
 .Input-element {
   border-color: black;
-  border-radius: 5px; /* rounds corners */
+  border-radius: 5px; 
   font-size: .75rem;
   min-width: 300px;
   padding: .25em;
