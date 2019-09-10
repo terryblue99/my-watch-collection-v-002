@@ -216,13 +216,11 @@ button:hover,
       file upload button
     ====================== */
 
-/* Chrome/Safari and web-kit-based browsers 
-   (if it doesn't work, try maybe also on the parent/wrapper)
-*/
+/* Chrome/Safari and web-kit-based browsers */
 ::-webkit-file-upload-button {
   cursor:pointer;
 }
-/* IE11 (if it doesn't work, try maybe also on the parent/wrapper) */
+/* IE11 */
 input[type=file] {
   cursor:pointer;
 }
