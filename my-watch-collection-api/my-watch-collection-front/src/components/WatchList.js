@@ -30,6 +30,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                         return <li key={watch.id} css={css`
                                 border-bottom: 1px solid black;
                                 padding-left: 10px;
+                                transition: color 700ms;
                                 
                                 &:hover {
                                     background-color: #61BD4F;

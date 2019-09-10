@@ -136,8 +136,8 @@ button:hover,
 }
 
 .Home-button {
-  border-style: solid;
   border-color: white;
+  border-style: solid;
   border-width: 1px;
   font-size: 1.25rem;
   margin-left: 20px;
@@ -233,13 +233,13 @@ input[type=file] {
 .EditWatch 
 {
   display: flex;
+  flex-direction: column; /* switches the main axis (of display: flex;) */
   font-size: .75rem;
+  justify-content: center; /* space-between; (distributes space from right between all columns)
+                           /* space-evenly; (distributes space on outer & between columns) */
   margin: 0 auto;
   max-width: 300px;
   text-align: center;
-  flex-direction: column; /* switches the main axis (of display: flex;) */
-  justify-content: center; /* space-between; (distributes space from right between all columns)
-                           /* space-evenly; (distributes space on outer & between columns) */
 }
 
 .Watch-form-container {
@@ -263,7 +263,7 @@ textarea:required
 
 .Detail-css {
   font-size: 15px;
-   color: sienna;
+  color: sienna;
 }
 
 /*  =================
