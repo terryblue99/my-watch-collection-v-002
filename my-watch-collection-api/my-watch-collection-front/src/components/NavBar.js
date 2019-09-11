@@ -30,7 +30,7 @@ const NavBar = (props) => {
               color: cornsilk;
               display: inline-block;
               font-size: 1rem;
-              padding-left: 115px;
+              padding-left: 127px;
 
               @media (min-width: 1500px) {
                   font-size: 1.25rem
@@ -59,7 +59,7 @@ const NavBar = (props) => {
                 color: cornsilk;
                 font-size: 1rem;
                 position: absolute;
-                right: 20px;
+                right: 10px;
                 top: 10px;
 
                 &:hover {

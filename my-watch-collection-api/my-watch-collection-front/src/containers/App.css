@@ -64,7 +64,7 @@ footer {
 
 .Register {
   font-size: .25rem;
-  margin: 0 auto;
+  margin: 0 auto; /* centers horizontally & vertically */
   max-width: 300px;
   text-align: center;
 }
@@ -227,6 +227,18 @@ input[type=file] {
           forms
     ================= */
 
+.WatchForm-header {
+  color: sienna; 
+  font-family: Ubuntu,sans-serif;
+  margin-bottom: 7px;
+}
+
+.WatchForm-image {
+  font-size: 1rem; 
+  color: sienna;
+  margin-top: 3px;
+}
+
 #AddWatch-form, 
 .EditWatch-form
 {
@@ -283,7 +295,8 @@ textarea:required
   }  
   .WatchForm-container .Back-button {
     display:block;
-    margin: 20px auto;
+    margin: 35px auto;
+    margin-top: 15px;
     width: 300px;
   } 
 }
@@ -307,7 +320,22 @@ textarea:required
   .Detail-css {
     font-size: 1.25rem;
   }
+  .Input-element {
+    font-size: 1rem;
+    height: 2rem;
+  }
   .WatchDetail {
+    margin-bottom: 10px;
+  }
+  .WatchForm-header {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  .WatchForm-image {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .Choose-image {
     margin-bottom: 10px;
   }
 }

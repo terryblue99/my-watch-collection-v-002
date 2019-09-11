@@ -100,10 +100,7 @@ class AddWatch extends Component {
                     <div className='container WatchForm-container'>
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          <form id='AddWatch-form' onSubmit={this.handleSubmit}>
-                              <h1 style={{color: 'sienna', 
-                                             fontFamily: 'Ubuntu, sans-serif',
-                                             marginBottom: '5px'}
-                                        }>
+                              <h1 className='WatchForm-header'>
                                    Add a watch
                               </h1>
                               <input className='Input-element' required 
@@ -175,11 +172,9 @@ class AddWatch extends Component {
                                    placeholder='Cost (e.g. 199.99)'
                                    onChange={this.handleChange}
                               />
-                              <b style={{fontSize: '1rem', 
-                                             color: 'sienna',
-                                             marginTop: '3px'}
-                                        }>Upload watch image</b>
-                              <input className='Input-element'  
+                              <b className='WatchForm-image'>
+                                   Upload watch image</b>
+                              <input className='Input-element Choose-image'  
                                    type='file'
                                    name='image'
                                    onChange={this.handleFile}
