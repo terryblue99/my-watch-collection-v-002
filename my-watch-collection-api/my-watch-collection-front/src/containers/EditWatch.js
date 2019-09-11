@@ -98,106 +98,104 @@ class EditWatch extends Component {
                
                <div>
                     <NavBar />
-                    <div className='container Watch-form-container'>
+                    <div className='container WatchForm-container'>
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
-                         <form id='EditWatch-form' onSubmit={this.handleSubmit}>
-                              <div className='EditWatch'>
-                                   <h1  style={{color: 'sienna', 
-                                               fontFamily: 'Ubuntu, sans-serif',
-                                               marginBottom: '5px'}
-                                             }>
-                                        Edit this watch
-                                   </h1>
-                                   <input className='Input-element' required 
-                                        type='text'
-                                        name='watch_name'
-                                        defaultValue={watch.watch_name}
-                                        placeholder='Watch Name'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br /> 
-                                   <input className='Input-element' required 
-                                        type='text'
-                                        name='watch_maker'
-                                        defaultValue={watch.watch_maker}
-                                        placeholder='Watch maker'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br />
-                                   <input className='Input-element'  
-                                        type='text'
-                                        name='movement'
-                                        defaultValue={watch.movement}
-                                        placeholder='Movement'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br /> 
-                                   <input className='Input-element'  
-                                        type='text'
-                                        name='complications'
-                                        defaultValue={watch.complications}
-                                        placeholder='Complications'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br />
-                                   <input className='Input-element'  
-                                        type='text'
-                                        name='band'
-                                        defaultValue={watch.band}
-                                        placeholder='Band'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br /> 
-                                   <input className='Input-element'  
-                                        type='text'
-                                        name='model_number'
-                                        defaultValue={watch.model_number}
-                                        placeholder='Model number'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br /> 
-                                   <input className='Input-element'  
-                                        type='text'
-                                        name='case_measurement'
-                                        defaultValue={watch.case_measurement}
-                                        placeholder='Case measurement'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br /> 
-                                   <input className='Input-element'  
-                                        type='text'
-                                        name='water_resistance'
-                                        defaultValue={watch.water_resistance}
-                                        placeholder='Water resistance'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br /> 
-                                   <input className='Input-element' required 
-                                        type='text'
-                                        name='date_bought'
-                                        defaultValue={watch.date_bought}
-                                        placeholder='Date bought/gifted yyyy-mm-dd (Required)'
-                                        onChange={this.handleChange}
-                                   />
-                                   <br /> 
-                                   <input className='Input-element'  
-                                        type='text'
-                                        name='cost'
-                                        defaultValue={watch.cost}
-                                        placeholder='Cost'
-                                        onChange={this.handleChange}
-                                   />
-                                   <b style={{fontSize: '1rem', 
-                                              color: 'sienna',
-                                              marginTop: '3px'}
-                                             }>Upload watch image</b>
-                                   <input className='Input-element'  
-                                        type='file'
-                                        name='image'
-                                        onChange={this.handleFile}
-                                   />
-                                   <button className='btn Save-button Button-text' type='submit'>Save watch</button>
-                              </div>
+                         <form className='EditWatch-form' onSubmit={this.handleSubmit}>
+                              <h1  style={{color: 'sienna', 
+                                             fontFamily: 'Ubuntu, sans-serif',
+                                             marginBottom: '5px'}
+                                        }>
+                                   Edit this watch
+                              </h1>
+                              <input className='Input-element' required 
+                                   type='text'
+                                   name='watch_name'
+                                   defaultValue={watch.watch_name}
+                                   placeholder='Watch Name'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              <input className='Input-element' required 
+                                   type='text'
+                                   name='watch_maker'
+                                   defaultValue={watch.watch_maker}
+                                   placeholder='Watch maker'
+                                   onChange={this.handleChange}
+                              />
+                              <br />
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='movement'
+                                   defaultValue={watch.movement}
+                                   placeholder='Movement'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='complications'
+                                   defaultValue={watch.complications}
+                                   placeholder='Complications'
+                                   onChange={this.handleChange}
+                              />
+                              <br />
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='band'
+                                   defaultValue={watch.band}
+                                   placeholder='Band'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='model_number'
+                                   defaultValue={watch.model_number}
+                                   placeholder='Model number'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='case_measurement'
+                                   defaultValue={watch.case_measurement}
+                                   placeholder='Case measurement'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='water_resistance'
+                                   defaultValue={watch.water_resistance}
+                                   placeholder='Water resistance'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              <input className='Input-element' required 
+                                   type='text'
+                                   name='date_bought'
+                                   defaultValue={watch.date_bought}
+                                   placeholder='Date bought/gifted yyyy-mm-dd (Required)'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='cost'
+                                   defaultValue={watch.cost}
+                                   placeholder='Cost'
+                                   onChange={this.handleChange}
+                              />
+                              <b style={{fontSize: '1rem', 
+                                             color: 'sienna',
+                                             marginTop: '3px'}
+                                        }>Upload watch image</b>
+                              <input className='Input-element'  
+                                   type='file'
+                                   name='image'
+                                   onChange={this.handleFile}
+                              />
+                              <button className='btn Save-button Button-text' type='submit'>Save watch</button>
                          </form>
                     </div>
                </div>

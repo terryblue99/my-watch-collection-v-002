@@ -40,21 +40,33 @@ footer {
 }
 
 /*  ==================
-      homepage/logo
-      log in/sign up
+      Homepage
+      LogIn
+      Login-container 
+      Register
+      SignUp
+      Signup-container
+      logo
     ================== */
 
-.Register {
-  font-size: .25rem;
+.Logo {
   margin: 0 auto;
-  max-width: 300px;
-  text-align: center;
+  padding-bottom: 25px;
 }
 
 .Homepage,
 .Register {
   display: flex; /* creates columns (margins no longer collapse)
                     Default flex-direction is row */
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.Register {
+  font-size: .25rem;
+  margin: 0 auto;
+  max-width: 300px;
+  text-align: center;
 }
 
 .Homepage {
@@ -69,20 +81,6 @@ footer {
   background-image: url(../images/watch-background-5.jpg);
   background-position: center; /* shows center of image in responsive mode */
   background-size: cover; /* Fills the screen with just one image */
-}
-
-.Homepage,
-.Login, 
-.Register, 
-.Signup
-{
-  flex-direction: column;
-  justify-content: center; 
-}
-
-.Logo {
-  margin: 0 auto;
-  padding-bottom: 25px;
 }
 
 .Login, 
@@ -229,8 +227,8 @@ input[type=file] {
           forms
     ================= */
 
-.AddWatch, 
-.EditWatch 
+#AddWatch-form, 
+.EditWatch-form
 {
   display: flex;
   flex-direction: column; /* switches the main axis (of display: flex;) */
@@ -238,11 +236,12 @@ input[type=file] {
   justify-content: center; /* space-between; (distributes space from right between all columns)
                            /* space-evenly; (distributes space on outer & between columns) */
   margin: 0 auto;
+  max-height: 75vh;
   max-width: 300px;
   text-align: center;
 }
 
-.Watch-form-container {
+.WatchForm-container {
   min-height: 95vh;
   padding-bottom: 15px;
 }
@@ -282,7 +281,7 @@ textarea:required
   .Watch-detail .Back-button {
     margin-left: 80px;
   }  
-  .Watch-form-container .Back-button {
+  .WatchForm-container .Back-button {
     display:block;
     margin: 20px auto;
     width: 300px;
