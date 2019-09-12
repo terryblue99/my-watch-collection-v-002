@@ -277,9 +277,10 @@ textarea:required
   color: sienna;
 }
 
-/*  =================
-      media queries
-    ================= */
+/*  ===================================
+      media queries. ALWAYS place last
+      to override any other settings
+    =================================== */
 
 @media (max-width: 750px) {
   .Edit-button {
@@ -326,6 +327,7 @@ textarea:required
   }
   .WatchDetail {
     margin-bottom: 10px;
+    max-width: 500px;
   }
   .WatchForm-header {
     font-size: 2rem;

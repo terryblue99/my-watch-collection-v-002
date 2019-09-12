@@ -122,6 +122,7 @@ class WatchDetail extends Component {
                                 color: midnightblue;
                                 font-size: 1.4rem;
                                 margin-bottom: 10px;
+                                max-width: 500px;
 
                                 @media (min-width: 1500px) {
                                     font-size: 1.75rem;
