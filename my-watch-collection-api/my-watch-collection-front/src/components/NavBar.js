@@ -17,7 +17,7 @@ const NavBar = (props) => {
       `}>
         <Navbar.Brand>
          
-          <img src={logoText} alt='logoText' className='LogoText'/>
+          <img src={logoText} alt='logo text' className='LogoText'/>
        
           <span css={css`
               color: cornsilk;

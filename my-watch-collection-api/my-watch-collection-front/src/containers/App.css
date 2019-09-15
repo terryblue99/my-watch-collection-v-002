@@ -42,19 +42,21 @@ button
 }
 
 .DashboardLogo {
-  align-self: center; /* center vertically */
-  justify-self: center; /* center horizontally */
   grid-row: 2 / 3;
   grid-column: 2 / 3;
 }
 
 .Dashboard h2 {
-  align-self: center;
-  justify-self: center;
-  background: yellow;
   color: #454140;
   grid-row: 3 / 4;
   grid-column: 2 / 3;
+}
+
+.DashboardLogo,
+.Dashboard h2
+{
+  align-self: center; /* center vertically - also: start, end */
+  justify-self: center; /* center horizontally  - also: start, end */
 }
 
 /*  =================
