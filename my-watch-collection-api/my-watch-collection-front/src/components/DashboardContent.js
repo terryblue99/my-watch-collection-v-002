@@ -1,8 +1,5 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// The following comment is required for @emotion to work
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import logo from '../images/logo.jpg'
 
 
@@ -15,24 +12,12 @@ class DashboardContent extends Component {
     }
     
     return (
-      <div css={css`
-        background-color: cornsilk;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        @media (max-width: 750px) {
-          display: none;
-        }
-      `}>
-        <img src={logo} alt='logo' className='Logo'/>
-        <h2 css={css`
-          color: #454140;
-        `}>Number of watches: {number_of_watches}</h2>
+      <div className='Dashboard'>
+        <img src={logo} alt='logo' className='DashboardLogo'/>
+        <h2>Number of watches: {number_of_watches}</h2>
       </div>
     )
-      }
+  }
 }
 
 const mapStateToProps = (state) => { 

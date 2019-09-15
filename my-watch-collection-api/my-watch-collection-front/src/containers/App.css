@@ -30,6 +30,37 @@ button
                                 supported by Chrome and Opera */
 }
 
+/*  =================
+        Dashboard
+        (CSS Grid)
+    ================= */
+
+.Dashboard {
+  background-color: cornsilk;
+  display: grid;
+  grid-template: auto auto 35px auto / auto auto auto;
+}
+
+.DashboardLogo {
+  align-self: center; /* center vertically */
+  justify-self: center; /* center horizontally */
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.Dashboard h2 {
+  align-self: center;
+  justify-self: center;
+  background: yellow;
+  color: #454140;
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+/*  =================
+        footer
+    ================= */
+
 footer {
   color:cornsilk;
   padding: 12px 24px;
@@ -286,6 +317,9 @@ textarea:required
     =================================== */
 
 @media (max-width: 750px) {
+  .Dashboard {
+    display: none;
+  }
   .Edit-button {
     margin-bottom: 10px;
   }
