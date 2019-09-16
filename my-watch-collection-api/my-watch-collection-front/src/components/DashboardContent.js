@@ -13,8 +13,22 @@ class DashboardContent extends Component {
     
     return (
       <div className='Dashboard'>
-        <img src={logo} alt='logo' className='DashboardLogo'/>
-        <h2>Number of watches: {number_of_watches}</h2>
+        <div className='Dashboard-item'>Reserved</div>
+        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'>Reserved</div>
+        <div className='Dashboard-item'>Reserved</div>
+        <div className='Dashboard-item'>
+          <img src={logo} alt='logo' />
+        </div>
+        <div className='Dashboard-item'>Reserved</div>
+        <div className='Dashboard-item'></div>
+        <div>      
+          <h2 className='Dashboard-item TotalWatches'>Number of watches: {number_of_watches}</h2>
+        </div>
+        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'>Reserved</div>
+        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'>Reserved</div>
       </div>
     )
   }

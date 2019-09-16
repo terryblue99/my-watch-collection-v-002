@@ -38,25 +38,36 @@ button
 .Dashboard {
   background-color: cornsilk;
   display: grid;
-  grid-template: auto auto 35px auto / auto auto auto;
+  grid-template: auto auto 43px auto / auto auto auto;
+  grid-template-areas:
+    'reserved reserved reserved'
+    'reserved DashboardLogo reserved'
+    'reserved TotalWatches reserved'
+    'reserved reserved reserved';
+}
+
+.reserved {
+  grid-area: reserved;
 }
 
 .DashboardLogo {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
+  grid-area: DashboardLogo;
 }
 
-.Dashboard h2 {
+.TotalWatches {
+  grid-area: TotalWatches;
+}
+
+.TotalWatches {
   color: #454140;
-  grid-row: 3 / 4;
-  grid-column: 2 / 3;
 }
 
-.DashboardLogo,
-.Dashboard h2
+.Dashboard-item
 {
-  align-self: center; /* center vertically - also: start, end */
-  justify-self: center; /* center horizontally  - also: start, end */
+  border: 2px solid purple;
+  display: flex;
+  align-items: center; /* center vertically - also: start, end */
+  justify-content: center; /* center horizontally  - also: start, end */
 }
 
 /*  =================
