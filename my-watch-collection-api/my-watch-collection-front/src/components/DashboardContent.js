@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import logo from '../images/logo.jpg'
 
-
 class DashboardContent extends Component {
   render() {
 
@@ -16,19 +15,18 @@ class DashboardContent extends Component {
         <div className='Dashboard-item'>Reserved</div>
         <div className='Dashboard-item'></div>
         <div className='Dashboard-item'>Reserved</div>
+        
         <div className='Dashboard-item'>Reserved</div>
         <div className='Dashboard-item'>
           <img src={logo} alt='logo' />
         </div>
         <div className='Dashboard-item'>Reserved</div>
+        
         <div className='Dashboard-item'></div>
         <div>      
           <h2 className='Dashboard-item TotalWatches'>Number of watches: {number_of_watches}</h2>
         </div>
         <div className='Dashboard-item'></div>
-        <div className='Dashboard-item'>Reserved</div>
-        <div className='Dashboard-item'></div>
-        <div className='Dashboard-item'>Reserved</div>
       </div>
     )
   }

@@ -38,12 +38,11 @@ button
 .Dashboard {
   background-color: cornsilk;
   display: grid;
-  grid-template: auto auto 43px auto / auto auto auto;
+  grid-template: auto auto auto auto / auto auto auto;
   grid-template-areas:
     'reserved reserved reserved'
     'reserved DashboardLogo reserved'
-    'reserved TotalWatches reserved'
-    'reserved reserved reserved';
+    '......... TotalWatches ........'; /* dots = blank col (one or more dots) */
 }
 
 .reserved {
@@ -55,19 +54,17 @@ button
 }
 
 .TotalWatches {
-  grid-area: TotalWatches;
-}
-
-.TotalWatches {
   color: #454140;
+  grid-area: TotalWatches;
 }
 
 .Dashboard-item
 {
   border: 2px solid purple;
   display: flex;
-  align-items: center; /* center vertically - also: start, end */
-  justify-content: center; /* center horizontally  - also: start, end */
+  align-items: center; /* flex-start - flex-end - baseline */
+  justify-content: center; /* space-between; (distributes space from right between all columns)
+                           /* space-evenly; (distributes space on outer & between columns) */
 }
 
 /*  =================
@@ -116,7 +113,7 @@ footer {
 }
 
 .Homepage {
-  align-items: center; /* flex-start - flex-end - baseline */
+  align-items: center; 
   min-height: 95vh; 
 }
 
@@ -292,8 +289,7 @@ input[type=file] {
   display: flex;
   flex-direction: column; /* switches the main axis (of display: flex;) */
   font-size: .75rem;
-  justify-content: center; /* space-between; (distributes space from right between all columns)
-                           /* space-evenly; (distributes space on outer & between columns) */
+  justify-content: center; 
   margin: 0 auto;
   max-height: 75vh;
   max-width: 300px;
