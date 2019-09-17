@@ -38,10 +38,10 @@ button
 .Dashboard {
   background-color: cornsilk;
   display: grid;
-  grid-template: auto auto auto auto / auto auto auto;
+  grid-template: repeat(3, auto) / repeat(3, 1fr); 
   grid-template-areas:
     'reserved reserved reserved'
-    'reserved DashboardLogo reserved'
+    'Dashboard-newestWatch DashboardLogo Dashboard-oldestWatch'
     '......... TotalWatches ........'; /* dots = blank col (one or more dots) */
 }
 
@@ -58,13 +58,17 @@ button
   grid-area: TotalWatches;
 }
 
+.Dashboard-newestWatch, 
+.Dashboard-oldestWatch,
 .Dashboard-item
 {
-  border: 2px solid purple;
-  display: flex;
-  align-items: center; /* flex-start - flex-end - baseline */
-  justify-content: center; /* space-between; (distributes space from right between all columns)
-                           /* space-evenly; (distributes space on outer & between columns) */
+  align-self: center;
+  justify-self: center;
+}
+
+.Dashboard-numberOfWatches {
+  align-self: start;
+  justify-self: center;
 }
 
 /*  =================
