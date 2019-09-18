@@ -53,17 +53,20 @@ button
   grid-area: DashboardLogo;
 }
 
+.Dashboard-watchText {
+  text-align: center;
+}
+
 .TotalWatches {
   color: #454140;
   grid-area: TotalWatches;
 }
 
-.Dashboard-newestWatch, 
-.Dashboard-oldestWatch,
 .Dashboard-item
 {
   align-self: center;
   justify-self: center;
+  border: 2px solid purple;
 }
 
 .Dashboard-numberOfWatches {
