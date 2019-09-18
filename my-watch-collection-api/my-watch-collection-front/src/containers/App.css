@@ -41,37 +41,38 @@ button
   grid-template: repeat(3, auto) / repeat(3, 1fr); 
   grid-template-areas:
     'reserved reserved reserved'
-    'Dashboard-newestWatch DashboardLogo Dashboard-oldestWatch'
-    '......... TotalWatches ........'; /* dots = blank col (one or more dots) */
+    'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch'
+    '..................... .............. .....................'; /* dots = blank col (one or more dots) */
 }
 
 .reserved {
   grid-area: reserved;
 }
 
-.DashboardLogo {
-  grid-area: DashboardLogo;
+.Dashboard-newestWatch {
+  grid-area: Dashboard-newestWatch;
 }
 
-.Dashboard-watchText {
+.Dashboard-logo {
+  grid-area: Dashboard-logo;
+}
+
+.Dashboard-oldestWatch {
+  grid-area: Dashboard-oldestWatch;
+}
+
+.Dashboard-totalWatches,
+.Dashboard-watchText
+{
   text-align: center;
 }
 
-.TotalWatches {
-  color: #454140;
-  grid-area: TotalWatches;
-}
-
-.Dashboard-item
+.Dashboard-item,
+.Dashboard-logo
 {
   align-self: center;
   justify-self: center;
-  border: 2px solid purple;
-}
-
-.Dashboard-numberOfWatches {
-  align-self: start;
-  justify-self: center;
+  /* border: 2px solid purple; */
 }
 
 /*  =================
@@ -353,6 +354,12 @@ textarea:required
     margin-top: 15px;
     width: 300px;
   } 
+}
+
+@media (max-width: 1075px) {
+  .Dashboard-item {
+    display: none;
+  }
 }
 
 @media (max-width: 950px) {

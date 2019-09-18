@@ -14,8 +14,9 @@ class DashboardContent extends Component {
     
     return (
       <div className='Dashboard'>
+
         <div className='Dashboard-item'>Reserved</div>
-        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'>Reserved</div>
         <div className='Dashboard-item'>Reserved</div>
         
         <div className='Dashboard-item'>
@@ -26,8 +27,10 @@ class DashboardContent extends Component {
             height={200}
           />
         </div>
-        <div className='Dashboard-item'>
+        <div className='Dashboard-logo'>
           <img src={logo} alt='logo' />
+          <br />
+          <h2 className='Dashboard-totalWatches'>Number of watches: {number_of_watches}</h2>
         </div>
         <div className='Dashboard-item'>
           <h2 className='Dashboard-watchText'>Oldest watch</h2><br />
@@ -39,10 +42,9 @@ class DashboardContent extends Component {
         </div>
 
         <div className='Dashboard-item'></div>
-        <div className='Dashboard-item'>      
-          <h2 className='Dashboard-numberOfWatches'>Number of watches: {number_of_watches}</h2>
-        </div>
         <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'></div>
+        
       </div>
     )
   }
