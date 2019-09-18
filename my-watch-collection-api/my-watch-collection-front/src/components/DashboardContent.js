@@ -2,14 +2,24 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Image from 'react-image-resizer'
 import logo from '../images/logo.jpg'
-import defaultWatchImage from '../images/defaultWatchImage.png'
 
 class DashboardContent extends Component {
   render() {
 
+    let newestWatchImage
+    let oldestWatchImage
     let number_of_watches = 0
+    
+    const style = {
+      image: {
+          border: '1px solid'
+      }
+    }
+
     if (this.props.watches) {
-        number_of_watches = Object.keys(this.props.watches).length
+      newestWatchImage = this.props.newestWatch.image 
+      oldestWatchImage = this.props.oldestWatch.image
+      number_of_watches = Object.keys(this.props.watches).length
     }
     
     return (
@@ -22,9 +32,10 @@ class DashboardContent extends Component {
         <div className='Dashboard-item'>
           <h2 className='Dashboard-watchText'>Newest watch</h2><br />
           <Image
-            src={defaultWatchImage}
+            src={newestWatchImage}
             width={200}
             height={200}
+            style={style.image}
           />
         </div>
         <div className='Dashboard-logo'>
@@ -34,10 +45,11 @@ class DashboardContent extends Component {
         </div>
         <div className='Dashboard-item'>
           <h2 className='Dashboard-watchText'>Oldest watch</h2><br />
-          <Image
-            src={defaultWatchImage}
+          <Image 
+            src={oldestWatchImage}
             width={200}
             height={200}
+            style={style.image}
           />
         </div>
 

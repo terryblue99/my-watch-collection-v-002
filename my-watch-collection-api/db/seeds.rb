@@ -12,8 +12,8 @@
 #                       case_measurement: "52mm", 
 #                       water_resistance: "200 meters", 
 #                       complications: "12:00 - 30-minute, 3:00 - Date, 6:00 - 12-hour and 9:00 - Perpetual seconds",
-#                       date_bought: "2016-10-03", 
-#                       cost: "299.99", 
+#                       date_bought: "2001-01-01", 
+#                       cost: "111.11", 
 #                       user_id: 1
 #                     )
 # @watch.save
@@ -25,8 +25,8 @@
 #                       case_measurement: "54mm", 
 #                       water_resistance: "200 meters", 
 #                       complications: "3:00 - 24-hour, 4:30 - Date window, 6:00 - Seconds and 9:00 - 60-minute",
-#                       date_bought: "2016-10-03", 
-#                       cost: "214.99", 
+#                       date_bought: "2002-02-02", 
+#                       cost: "222.22", 
 #                       user_id: 1
 #                     )
 # @watch.save
@@ -38,8 +38,8 @@
 #                       case_measurement: "45mm", 
 #                       water_resistance: "No", 
 #                       complications: "No",
-#                       date_bought: "2017-10-10", 
-#                       cost: "1149.00", 
+#                       date_bought: "2003-03-03", 
+#                       cost: "333.33", 
 #                       user_id: 1
 #                     )
 # @watch.save
@@ -52,8 +52,8 @@
 #                       case_measurement: "40mm", 
 #                       water_resistance: "30 meters", 
 #                       complications: "Date",
-#                       date_bought: "2011-08-04", 
-#                       cost: "149.99", 
+#                       date_bought: "2004-04-04", 
+#                       cost: "444.44", 
 #                       user_id: 1
 #                     )
 # @watch.save

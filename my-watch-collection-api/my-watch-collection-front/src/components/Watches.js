@@ -8,6 +8,26 @@ import SidebarMobile from './SidebarMobile'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
 const Watches = ({ watches }) => { 
+
+    // Load the underscore library
+    const _ = require('underscore')
+    let oldestWatch
+    let newestWatch
+
+    if(watches) {
+        // Load the watch objects into an array
+        let arrWatches = [];
+        for (let i = 0; i < watches.length; i++) {
+            arrWatches.push(watches[i]);
+        }
+        // Sort the watches using the underscore function -.sortBy
+        const sortedWatches = _.sortBy( arrWatches, 'id' )
+        // console.log('*** sortedWatches: ', sortedWatches)
+        oldestWatch = sortedWatches[0]
+        newestWatch = sortedWatches[sortedWatches.length-1] 
+        // console.log('*** Oldest Watch: ', oldestWatch)
+        // console.log('*** Newest Watch: ', newestWatch)
+    }    
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
 
@@ -28,16 +48,18 @@ const Watches = ({ watches }) => {
                 }
             `}>
                 <WatchList showWatches={showWatches}
-                        setShowWatches={setShowWatches}
-                        watches={watches}
-                        setCurrentWatch={setCurrentWatch} 
+                           setShowWatches={setShowWatches}
+                           watches={watches}
+                           setCurrentWatch={setCurrentWatch} 
                 /> 
                 <SidebarMobile showWatches={showWatches}   
-                            setShowWatches={setShowWatches}
+                               setShowWatches={setShowWatches}
                 />
                 <WatchDetail showWatches={showWatches}
-                            currentWatch={currentWatch}
-                            setCurrentWatch={setCurrentWatch}
+                             currentWatch={currentWatch}
+                             setCurrentWatch={setCurrentWatch}
+                             newestWatch={newestWatch}
+                             oldestWatch={oldestWatch}
                 />
 
             </div>

@@ -61,18 +61,22 @@ button
   grid-area: Dashboard-oldestWatch;
 }
 
-.Dashboard-totalWatches,
-.Dashboard-watchText
-{
-  text-align: center;
-}
-
 .Dashboard-item,
 .Dashboard-logo
 {
   align-self: center;
   justify-self: center;
   /* border: 2px solid purple; */
+}
+
+.Dashboard-image {
+  border: '1px solid';
+}
+
+.Dashboard-totalWatches,
+.Dashboard-watchText
+{
+  text-align: center;
 }
 
 /*  =================

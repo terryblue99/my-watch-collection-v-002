@@ -44,7 +44,7 @@ class WatchDetail extends Component {
    }
 
     render () {
-       
+        
         if (this.state.backToDashboard) {
             // Clear the current watch screen to allow 
             // the dashboard to be displayed there instead
@@ -202,7 +202,8 @@ class WatchDetail extends Component {
                 </div> 
             )     
         } else {
-            return <DashboardContent />
+            return <DashboardContent newestWatch={this.props.newestWatch}
+                                     oldestWatch={this.props.oldestWatch} />
         }
     }
 }
