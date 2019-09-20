@@ -16,7 +16,7 @@ class DashboardContent extends Component {
       }
     }
 
-    if (this.props.watches) {
+    if (this.props.watches && this.props.watches.length > 0) {
       newestWatchImage = this.props.newestWatch.image 
       oldestWatchImage = this.props.oldestWatch.image
       number_of_watches = Object.keys(this.props.watches).length
@@ -25,9 +25,9 @@ class DashboardContent extends Component {
     return (
       <div className='Dashboard'>
 
-        <div className='Dashboard-item'>Reserved</div>
-        <div className='Dashboard-item'>Reserved</div>
-        <div className='Dashboard-item'>Reserved</div>
+        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'></div>
         
         <div className='Dashboard-item'>
           <h2 className='Dashboard-watchText'>Newest watch</h2><br />

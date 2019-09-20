@@ -42,7 +42,7 @@ button
   grid-template-areas:
     'reserved reserved reserved'
     'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch'
-    '..................... .............. .....................'; /* dots = blank col (one or more dots) */
+    '..................... .............. .....................'; /* dots = blank cols (can be one or more dots) */
 }
 
 .reserved {

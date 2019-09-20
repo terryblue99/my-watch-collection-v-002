@@ -2,7 +2,7 @@
 
 APP
 
-my-watch-collection-v-002
+my-watch-collection
 
 A React Redux app with a Rails API backend
 
@@ -18,15 +18,23 @@ Fork and clone this repository to your computer and run the following commands i
 
     Runs the table migrations to create the tables.
 
-3. npm i --save redux-logger
-
-4. npm install -D react-image-resizer
-
-5. npm install
+3. npm install
 
     Installs the node_modules directory which contains all of the modules (and their dependencies) in the current project.
 
-6. rake start
+4. npm i --save redux-logger  (https://github.com/LogRocket/redux-logger)
+
+    LogRocket's redux-logger is a production Redux logging tool that lets you replay problems as if they happened in your own browser. Instead of guessing why errors happen, or asking users for screenshots and log dumps, LogRocket lets you replay Redux actions + state, network requests,console logs, and see a video of what the user saw.
+
+5. npm install -D react-image-resizer  (https://github.com/sottar/react-image-resizer)
+
+    react-image-resizer is a React component that resizes images.
+
+6. npm install underscore  (https://underscorejs.org/)
+
+    Underscore.js is a JavaScript library which provides utility functions for common programming tasks.
+
+7. rake start
 
     Starts the React app on the 3000 port and the API server on the 3001 port
 

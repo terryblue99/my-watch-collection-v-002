@@ -8,19 +8,18 @@ import SidebarMobile from './SidebarMobile'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
 const Watches = ({ watches }) => { 
-
     // Load the underscore library
     const _ = require('underscore')
     let oldestWatch
     let newestWatch
 
-    if(watches) {
+    if(watches && watches.length > 0) {
         // Load the watch objects into an array
         let arrWatches = [];
         for (let i = 0; i < watches.length; i++) {
             arrWatches.push(watches[i]);
         }
-        // Sort the watches using the underscore function -.sortBy
+        // Sort the watches using the underscore function _.sortBy
         const sortedWatches = _.sortBy( arrWatches, 'id' )
         // console.log('*** sortedWatches: ', sortedWatches)
         oldestWatch = sortedWatches[0]
