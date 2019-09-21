@@ -23,7 +23,7 @@ class App extends Component {
 
     let a_user_exists
     let is_logged_in
-
+    
     if (this.props.user) {
       a_user_exists = this.props.user
       is_logged_in = this.props.user.logged_in
@@ -50,11 +50,12 @@ class App extends Component {
               <Route path='/login' component={LogIn} />
               <Route path='/logout' component={LogOut} />
               <Route path='/signup' component={SignUp} />
-
+              {/* The following routes are only accessible from within the app ay a logged in user */}
               <PrivateRoute exact path='/dashboard' component={DashBoard} />
               <PrivateRoute exact path='/watches/add_watch' component={AddWatch} />
               <PrivateRoute path='/watches/:id/watch_detail' component={WatchDetail} />
               <PrivateRoute path='/watches/:id/edit_watch' component={EditWatch} />
+              {/* the following catchall route will divert unknown routes to the Log In/Sign Up screen */}
               <PrivateRoute from='*' />
           </Switch> 
         </Router>        
