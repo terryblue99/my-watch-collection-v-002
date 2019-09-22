@@ -172,7 +172,7 @@ class AddWatch extends Component {
                                    placeholder='Cost (e.g. 199.99)'
                                    onChange={this.handleChange}
                               />
-                              <b className='WatchForm-image'>
+                              <b className='WatchForm-upload-text'>
                                    Upload watch image</b>
                               <input className='Input-element Choose-image'  
                                    type='file'
