@@ -286,7 +286,7 @@ input[type=file] {
   margin-bottom: 7px;
 }
 
-.WatchForm-image {
+.WatchForm-upload-text {
   font-size: 1rem; 
   color: sienna;
   margin-top: 3px;
@@ -394,7 +394,7 @@ textarea:required
     font-size: 2rem;
     margin-bottom: 15px;
   }
-  .WatchForm-image {
+  .WatchForm-upload-text {
     margin-top: 10px;
     margin-bottom: 10px;
   }
