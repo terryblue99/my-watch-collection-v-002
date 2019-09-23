@@ -81,6 +81,7 @@ button
     ================= */
 
 footer {
+  background-color: #454140;
   color:cornsilk;
   padding: 12px 24px;
   text-align: center;
@@ -232,8 +233,7 @@ button:hover,
 }
 
 .Add-button,
-.Edit-button,
-footer
+.Edit-button
 {
   background-color: #454140;
 }
@@ -263,9 +263,7 @@ footer
   margin-left: 10px; 
 }
 
-/*  ======================
-      file upload button
-    ====================== */
+/*  file upload button */
 
 /* Chrome/Safari and web-kit-based browsers */
 ::-webkit-file-upload-button {
@@ -330,7 +328,7 @@ textarea:required
 }
 
 /*  ===================================
-      media queries. ALWAYS place last
+      media queries - placed last
       to override any other settings
     =================================== */
 
@@ -357,9 +355,9 @@ textarea:required
   } 
 }
 
-@media (max-width: 1075px) {
-  .Dashboard-item {
-    display: none;
+@media (max-width: 830) {
+  .Navbar {
+    margin: 0 auto;
   }
 }
 
@@ -369,9 +367,9 @@ textarea:required
   } 
 }
 
-@media (max-width: 830) {
-  .Navbar {
-    margin: 0 auto;
+@media (max-width: 1075px) {
+  .Dashboard-item {
+    display: none;
   }
 }
 
