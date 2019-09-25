@@ -20,12 +20,9 @@ const Watches = ({ watches }) => {
             arrWatches.push(watches[i]);
         }
         // Sort the watches using the underscore function _.sortBy
-        const sortedWatches = _.sortBy( arrWatches, 'id' )
-        // console.log('*** sortedWatches: ', sortedWatches)
+        const sortedWatches = _.sortBy( arrWatches, 'date_bought' )
         oldestWatch = sortedWatches[0]
         newestWatch = sortedWatches[sortedWatches.length-1] 
-        // console.log('*** Oldest Watch: ', oldestWatch)
-        // console.log('*** Newest Watch: ', newestWatch)
     }    
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
