@@ -6,8 +6,11 @@ import logo from '../images/logo.jpg'
 const Homepage = () => {
     
     return (
-        <div className='container'>
+        <div className='container'>    
             <header className='Homepage'>
+            <div>
+            <h2 className='Homepage-title'>Catalog and view your watch collection</h2>
+            </div>
                 <img src={logo} alt='logo' className='Logo'/>
                 <div className='Homepage-container'>
                     <div>

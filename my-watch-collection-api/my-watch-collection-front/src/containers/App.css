@@ -107,6 +107,13 @@ footer {
   margin-left: 15px;
 }
 
+.Homepage-title {
+  background-color: #454140;
+  color: cornsilk;
+  padding: 10px 20px; 
+  margin-bottom: 60px;;
+}
+
 .Homepage,
 .Register {
   display: flex; /* creates columns (margins no longer collapse)
@@ -181,8 +188,8 @@ button:focus {
   outline:0;
 }
 
-button:hover,
-.Sidebar-button:hover {
+.btn:hover {
+  color: goldenrod;
   cursor: pointer;
 }
 

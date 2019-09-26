@@ -59,7 +59,7 @@ const NavBar = (props) => {
                 top: 10px;
 
                 &:hover {
-                  color: orange;
+                  color: goldenrod;
                   cursor: pointer;
                 }
                 @media (min-width: 1500px) {
