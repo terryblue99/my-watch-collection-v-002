@@ -1,5 +1,6 @@
 import {
 	GET_WATCHES,
+	SORT_WATCHES,
 	ADD_WATCH,
 	EDIT_WATCH,
 	DELETE_WATCH
@@ -8,16 +9,6 @@ import {
 const API_URL = '/api/v2'
 
 export const getWatchesAction = (user_id) => {
-
-	const sortFunc = (a, b) => {
-		if (a.watch_maker < b.watch_maker) return -1
-		else if (a.watch_maker > b.watch_maker) return 1
-		else {
-			if (a.watch_name < b.watch_name) return -1
-			else if (a.watch_name > b.watch_name) return 1
-		}
-		return 0
-	}
 	// Thunk middleware knows how to handle functions.
 	// It passes the dispatch method as an argument to the function,
 	// thus making it able to dispatch actions itself.
@@ -32,16 +23,40 @@ export const getWatchesAction = (user_id) => {
 			}
 		})
 		.then(response => {
-			response.sort(sortFunc)
-			// Update the app state with the results of the API call
+			// Load the underscore library
+			const _ = require('underscore')
+			// Load the watch objects into an array
+			let arrWatches = []
+			for (let i = 0; i < response.length; i++) {
+					arrWatches.push(response[i])
+			}
+			// Sort the watches by watch name within watch maker
+			// for the initial display of the dashboard screen
+			const sortedWatches = _.chain(arrWatches)
+				.sortBy('watch_name')
+				.sortBy('watch_maker')
+				.value()
+			// Update app states with the result
 			dispatch({
-				type: GET_WATCHES,
-				payload: response
-			})	
+				type: GET_WATCHES, 
+				payload: sortedWatches
+			})
+			// The below will be used by the user for selecting other sort orders
+			dispatch({
+				type: SORT_WATCHES,
+				payload: sortedWatches
+			})
 		})
 		.catch(error => {
 			console.log(error)
 		})
+	}
+}
+
+export const sortWatchesAction = (sortedWatches) => {
+	return {
+		type: SORT_WATCHES,
+		sortedWatches
 	}
 }
 

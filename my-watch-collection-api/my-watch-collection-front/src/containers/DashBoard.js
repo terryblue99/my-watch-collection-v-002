@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getWatchesAction } from '../actions/watches'
+import { getWatchesAction } from '../actions/watchesActions'
 import NavBar from '../components/NavBar'
 import Watches from '../components/Watches'
 
@@ -11,7 +11,7 @@ class DashBoard extends Component {
     }
 
     render() {
-        
+       console.log('*** DashBoard this.props.watches: ', this.props.watches)
         return (
             <div>
                 <NavBar />

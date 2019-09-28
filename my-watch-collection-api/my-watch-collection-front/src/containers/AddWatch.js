@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import './App.css'
 import NavBar from '../components/NavBar'
-import { addWatchAction } from '../actions/watches'
+import { addWatchAction } from '../actions/watchesActions'
 
 class AddWatch extends Component {
 

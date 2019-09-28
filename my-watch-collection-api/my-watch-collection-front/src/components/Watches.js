@@ -1,5 +1,4 @@
 import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html
-import { connect } from 'react-redux'
 import WatchDetail from './WatchDetail'
 import WatchList from './WatchList'
 import SidebarMobile from './SidebarMobile'
@@ -8,8 +7,10 @@ import SidebarMobile from './SidebarMobile'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
 const Watches = ({ watches }) => { 
+
     // Load the underscore library
     const _ = require('underscore')
+    
     let oldestWatch
     let newestWatch
 
@@ -24,6 +25,7 @@ const Watches = ({ watches }) => {
         oldestWatch = sortedWatches[0]
         newestWatch = sortedWatches[sortedWatches.length-1] 
     }    
+
    // used when the layout is a mobile view
    const [showWatches, setShowWatches] = useState(false)
 
@@ -63,11 +65,4 @@ const Watches = ({ watches }) => {
     )
 }
 
-const mapStateToProps = (state) => { 
-    return {
-      watches: state.myWatches.watches,
-      currentUser: state.currentUser
-    } 
-}
-
-export default connect(mapStateToProps)(Watches)
+export default Watches

@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import '../containers/App.css'
 import Image from 'react-image-resizer'
-import { deleteWatchAction } from '../actions/watches'
+import { deleteWatchAction } from '../actions/watchesActions'
 import DashboardContent from './DashboardContent'
 
 class WatchDetail extends Component { 

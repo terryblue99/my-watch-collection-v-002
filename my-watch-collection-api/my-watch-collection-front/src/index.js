@@ -8,10 +8,13 @@ import currentUserReducer from './reducers/currentUserReducer'
 import watchReducer from './reducers/watchReducer'
 import App from './containers/App'
 import * as serviceWorker from './serviceWorker'
+import sortedWatchesReducer from './reducers/sortedWatchesReducer'
 
 const rootReducer = combineReducers({
-    myWatches: watchReducer,
-    currentUser: currentUserReducer
+    currentUser: currentUserReducer,
+    mySortedWatches: sortedWatchesReducer,
+    myWatches: watchReducer
+    
 })
 
 const store = createStore(
