@@ -5,6 +5,8 @@ import {
 	EDIT_WATCH,
 	DELETE_WATCH
 } from './types'
+// The underscore library
+import _ from 'lodash'
 
 const API_URL = '/api/v2'
 
@@ -23,25 +25,18 @@ export const getWatchesAction = (user_id) => {
 			}
 		})
 		.then(response => {
-			// Load the underscore library
-			const _ = require('underscore')
-			// Load the watch objects into an array
-			let arrWatches = []
-			for (let i = 0; i < response.length; i++) {
-					arrWatches.push(response[i])
-			}
-			// Sort the watches by watch name within watch maker
-			// for the initial display of the dashboard screen
-			const sortedWatches = _.chain(arrWatches)
+			// Sort the watches using the underscore functions _.chain & _.sortBy
+			// Sort by watch name within watch maker for the initial dashboard screen
+			const sortedWatches = _.chain(response)
 				.sortBy('watch_name')
 				.sortBy('watch_maker')
 				.value()
-			// Update app states with the result
+			// Update watch states with the sorted result
 			dispatch({
 				type: GET_WATCHES, 
 				payload: sortedWatches
 			})
-			// The below will be used by the user for selecting other sort orders
+			// The below will be used by the user for other sort orders they may select
 			dispatch({
 				type: SORT_WATCHES,
 				payload: sortedWatches

@@ -1,4 +1,5 @@
 import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html
+import _ from 'lodash'
 import WatchDetail from './WatchDetail'
 import WatchList from './WatchList'
 import SidebarMobile from './SidebarMobile'
@@ -8,20 +9,12 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 
 const Watches = ({ watches }) => { 
 
-    // Load the underscore library
-    const _ = require('underscore')
-    
     let oldestWatch
     let newestWatch
 
     if(watches && watches.length > 0) {
-        // Load the watch objects into an array
-        let arrWatches = [];
-        for (let i = 0; i < watches.length; i++) {
-            arrWatches.push(watches[i]);
-        }
-        // Sort the watches using the underscore function _.sortBy
-        const sortedWatches = _.sortBy( arrWatches, 'date_bought' )
+        // Sort the watches by date bought using the underscore function _.sortBy
+        const sortedWatches = _.sortBy( watches, 'date_bought' )
         oldestWatch = sortedWatches[0]
         newestWatch = sortedWatches[sortedWatches.length-1] 
     }    

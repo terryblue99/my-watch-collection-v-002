@@ -11,13 +11,11 @@ class DashBoard extends Component {
     }
 
     render() {
-       console.log('*** DashBoard this.props.watches: ', this.props.watches)
         return (
             <div>
                 <NavBar />
                 <div className='container Main-container'> 
-                    <Watches watches={this.props.watches}
-                    />               
+                    <Watches watches={this.props.watches}/>               
                 </div> 
             </div>
         )     
