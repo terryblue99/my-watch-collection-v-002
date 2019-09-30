@@ -40,13 +40,27 @@ button
   display: grid;
   grid-template: repeat(3, auto) / repeat(3, 1fr); 
   grid-template-areas:
-    'reserved reserved reserved'
+    'Dashboard-sort reserved reserved'
     'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch'
     '..................... .............. .....................'; /* dots = blank cols (can be one or more dots) */
 }
 
 .reserved {
   grid-area: reserved;
+}
+
+.Dashboard-sort {
+  grid-area: Dashboard-sort;
+}
+
+.Select-sort {
+    font: inherit;
+    border: 1px solid;
+    text-align: center;
+    min-width: 200px;
+    /* border-width: 3px; */
+    /* border-color: rgba(50, 50, 50, 0.14); */
+    /* margin: 10px 10px 10px 0px; */
 }
 
 .Dashboard-newestWatch {
@@ -69,6 +83,7 @@ button
   /* border: 2px solid purple; */
 }
 
+.Sort-header,
 .Dashboard-totalWatches,
 .Dashboard-watchText
 {
@@ -184,7 +199,9 @@ footer {
   letter-spacing: 2px; /* puts spaces between letters */
 }
 
-button:focus {
+button:focus,
+.Select-sort
+{
   outline:0;
 }
 

@@ -4,6 +4,11 @@ import Image from 'react-image-resizer'
 import logo from '../images/logo.jpg'
 
 class DashboardContent extends Component {
+
+  handleSubmit = () => {
+    alert('Sort selected!')
+  }
+
   render() {
 
     let newestWatchImage
@@ -26,7 +31,24 @@ class DashboardContent extends Component {
     return (
       <div className='Dashboard'>
 
-        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'>
+            <h2 className='Sort-header'>
+              Sort By
+            </h2>
+            <br />
+            <select className='Select-sort'
+                    required 
+                    size='1' 
+                    name='sort' 
+                    onchange={this.handleSubmit}>
+              <option value='Watch Maker'>Watch Maker</option>
+              <option value='Watch Name'>Watch Name</option>
+              <option value='Newest to Oldest'>Newest to Oldest</option>
+              <option value='Oldest to Newest'>Oldest to Newest</option>
+              <option value='Cost Low to High'>Cost Low to High</option>
+              <option value='Cost High to Low'>Cost High to Low</option>
+            </select>
+        </div>
         <div className='Dashboard-item'></div>
         <div className='Dashboard-item'></div>
         
