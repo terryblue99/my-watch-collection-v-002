@@ -5,8 +5,9 @@ import logo from '../images/logo.jpg'
 
 class DashboardContent extends Component {
 
-  handleSubmit = () => {
-    alert('Sort selected!')
+  handleSelect = (event) =>  {
+    console.log('*** handleSelect: ', event)
+    event.preventDefault()
   }
 
   render() {
@@ -40,7 +41,7 @@ class DashboardContent extends Component {
                     required 
                     size='1' 
                     name='sort' 
-                    onchange={this.handleSubmit}>
+                    onChange={this.handleSelect}>
               <option value='Watch Maker'>Watch Maker</option>
               <option value='Watch Name'>Watch Name</option>
               <option value='Newest to Oldest'>Newest to Oldest</option>
