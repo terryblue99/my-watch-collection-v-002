@@ -13,20 +13,12 @@ class DashBoard extends Component {
     }
 
     render() {
-        let watches
-        if (!this.props.location.state) {
-            watches = this.props.watches
-        }
-        else if (this.props.location.state.FromDashboardContent &&
-                 this.props.location.state.sortRequired) {
-                    watches = this.props.sortedWatches
-                } 
 
         return (
             <div>
                 <NavBar />
                 <div className='container Main-container'> 
-                    <Watches watches={watches}/>               
+                    <Watches watches={this.props.watches}/>               
                 </div> 
             </div>
         )     
@@ -36,7 +28,6 @@ class DashBoard extends Component {
 const mapStateToProps = (state) => {
     return {
       watches: state.myWatches.watches,
-      sortedWatches: state.mySortedWatches.watches,
       currentUser: state.currentUser
     } 
 }

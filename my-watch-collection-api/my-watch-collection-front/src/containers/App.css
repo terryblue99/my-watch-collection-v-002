@@ -54,13 +54,10 @@ button
 }
 
 .Select-sort {
-    font: inherit;
     border: 1px solid;
-    text-align: center;
+    font: inherit;
     min-width: 200px;
-    /* border-width: 3px; */
-    /* border-color: rgba(50, 50, 50, 0.14); */
-    /* margin: 10px 10px 10px 0px; */
+    text-align: center;
 }
 
 .Dashboard-newestWatch {
@@ -106,11 +103,17 @@ footer {
       Homepage
       LogIn
       Login-container 
+      NavBar
       Register
       SignUp
       Signup-container
       logo
     ================== */
+
+/* .Navbar {
+  position: sticky;
+  top: 0;
+} */
 
 .Logo {
   margin: 0 auto;

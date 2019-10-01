@@ -11,10 +11,9 @@ class DashboardContent extends Component {
     sortRequired: false
   }
 
-  handleSelect = (event) =>  {
+  handleSelectedSortKey = (event) =>  {
     event.preventDefault()
-    const sortKey = event.target.value
-    this.props.sortWatchesAction(this.props.watches, sortKey)
+    this.props.sortWatchesAction(event.target.value)
     this.setState({
       sortRequired: true
     })
@@ -65,13 +64,14 @@ class DashboardContent extends Component {
                     required 
                     size='1' 
                     name='sort' 
-                    onChange={this.handleSelect}>
-              <option value='Watch Maker'>Watch Maker</option>
-              <option value='Watch Name'>Watch Name</option>
-              <option value='Newest to Oldest'>Newest to Oldest</option>
-              <option value='Oldest to Newest'>Oldest to Newest</option>
-              <option value='Cost Low to High'>Cost Low to High</option>
-              <option value='Cost High to Low'>Cost High to Low</option>
+                    onChange={this.handleSelectedSortKey}>
+              <option>Select...</option>
+              <option value='Watch_Maker_sort'>Watch Maker</option>
+              <option value='Watch_Name_sort'>Watch Name</option>
+              <option value='Newest_to_Oldest_sort'>Newest to Oldest</option>
+              <option value='Oldest_to_Newest_sort'>Oldest to Newest</option>
+              <option value='Cost_Low_to_High_sort'>Cost Low to High</option>
+              <option value='Cost_High_to_Low_sort'>Cost High to Low</option>
             </select>
         </div>
         <div className='Dashboard-item'></div>
@@ -112,8 +112,7 @@ class DashboardContent extends Component {
 
 const mapStateToProps = (state) => { 
   return {
-    watches: state.myWatches.watches,
-    sortedWatches: state.mySortedWatches.watches
+    watches: state.myWatches.watches
   } 
 }
 

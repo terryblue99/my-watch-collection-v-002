@@ -3,8 +3,7 @@ import {
 	SORT_WATCHES,
 	ADD_WATCH,
 	EDIT_WATCH,
-	DELETE_WATCH,
-	sortKeyArray
+	DELETE_WATCH
 } from './types'
 // The underscore library
 import _ from 'lodash'
@@ -38,7 +37,7 @@ export const getWatchesAction = (user_id) => {
 				type: GET_WATCHES, 
 				payload: sortedWatches
 			})
-			// The below will be used by the user for other sort orders they may select
+			// The below will be used to select other sort orders
 			dispatch({
 				type: SORT_WATCHES,
 				payload: sortedWatches
@@ -50,24 +49,11 @@ export const getWatchesAction = (user_id) => {
 	}
 }
 
-export const sortWatchesAction = (watches, sortKey) => {
+export const sortWatchesAction = (sortKey) => {
 	return dispatch => {
-		console.log('*** sortWatchesAction sortKey: ', sortKey)
-		if (sortKey === 'Watch Maker') {
-			sortedWatches = _.chain(watches)
-					.sortBy('watch_name')
-					.sortBy('watch_maker')
-					.value()
-					dispatch({
-						type: SORT_WATCHES,
-						payload: sortedWatches
-					})		
-		} else {
-			dispatch({
-				type: SORT_WATCHES,
-				payload: watches
-			})
-		}	
+		dispatch({
+			type: sortKey
+		})
 	}		
 }
 

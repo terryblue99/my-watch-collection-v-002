@@ -6,10 +6,10 @@ export const DELETE_WATCH = 'DELETE_WATCH'
 export const CLEAR_WATCHES = 'CLEAR_WATCHES'
 export const SET_CURRENT_USER = 'SET_CURRENT_USER'
 export const CLEAR_CURRENT_USER = 'CLEAR_CURRENT_USER'
-export const sortKeyArray = ['Watch Maker', 
-                             'Watch Name',
-                             'Newest to Oldest',
-                             'Oldest to Newest',
-                             'Cost Low to High',
-                             'Cost High to Low'
-                            ]
+export const WATCH_MAKER_SORT = 'Watch_Maker_sort'
+export const WATCH_NAME_SORT = 'Watch_Name_sort'
+export const NEWEST_TO_OLDEST_SORT = 'Newest_to_Oldest_sort'
+export const OLDEST_TO_NEWEST_SORT = 'Oldest_to_Newest_sort'
+export const COST_LOW_TO_HIGH_SORT = 'Cost_Low_to_High_sort'
+export const COST_HIGH_TO_LOW_SORT = 'Cost_High_to_Low_sort'
+              
