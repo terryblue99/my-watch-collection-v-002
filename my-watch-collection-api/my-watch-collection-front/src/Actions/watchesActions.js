@@ -3,12 +3,14 @@ import {
 	SORT_WATCHES,
 	ADD_WATCH,
 	EDIT_WATCH,
-	DELETE_WATCH
+	DELETE_WATCH,
+	sortKeyArray
 } from './types'
 // The underscore library
 import _ from 'lodash'
 
 const API_URL = '/api/v2'
+let sortedWatches
 
 export const getWatchesAction = (user_id) => {
 	// Thunk middleware knows how to handle functions.
@@ -27,7 +29,7 @@ export const getWatchesAction = (user_id) => {
 		.then(response => {
 			// Sort the watches using the underscore functions _.chain & _.sortBy
 			// Sort by watch name within watch maker for the initial dashboard screen
-			const sortedWatches = _.chain(response)
+			sortedWatches = _.chain(response)
 				.sortBy('watch_name')
 				.sortBy('watch_maker')
 				.value()
@@ -48,11 +50,25 @@ export const getWatchesAction = (user_id) => {
 	}
 }
 
-export const sortWatchesAction = (sortedWatches) => {
-	return {
-		type: SORT_WATCHES,
-		sortedWatches
-	}
+export const sortWatchesAction = (watches, sortKey) => {
+	return dispatch => {
+		console.log('*** sortWatchesAction sortKey: ', sortKey)
+		if (sortKey === 'Watch Maker') {
+			sortedWatches = _.chain(watches)
+					.sortBy('watch_name')
+					.sortBy('watch_maker')
+					.value()
+					dispatch({
+						type: SORT_WATCHES,
+						payload: sortedWatches
+					})		
+		} else {
+			dispatch({
+				type: SORT_WATCHES,
+				payload: watches
+			})
+		}	
+	}		
 }
 
 export const addWatchAction = (formData, watch) => {

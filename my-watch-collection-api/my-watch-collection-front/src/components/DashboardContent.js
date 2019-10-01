@@ -1,17 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import Image from 'react-image-resizer'
 import logo from '../images/logo.jpg'
+import { sortWatchesAction } from '../actions/watchesActions'
 
 class DashboardContent extends Component {
 
+  state = {
+    sortRequired: false
+  }
+
   handleSelect = (event) =>  {
-    console.log('*** handleSelect: ', event)
     event.preventDefault()
+    const sortKey = event.target.value
+    this.props.sortWatchesAction(this.props.watches, sortKey)
+    this.setState({
+      sortRequired: true
+    })
   }
 
   render() {
-
+  
     let newestWatchImage
     let oldestWatchImage
     let number_of_watches = 0
@@ -28,6 +38,20 @@ class DashboardContent extends Component {
       oldestWatchImage = this.props.oldestWatch.image
       number_of_watches = Object.keys(this.props.watches).length
     }
+
+    if (this.state.sortRequired) {
+      this.setState({
+        sortRequired: false
+      })  
+      // Display the sorted watches on the dashboard
+      return  <Redirect to={{
+              pathname: '/dashboard',
+              state: {
+                FromDashboardContent: true,
+                sortRequired: true 
+              }
+      }}  />
+    } 
     
     return (
       <div className='Dashboard'>
@@ -88,8 +112,9 @@ class DashboardContent extends Component {
 
 const mapStateToProps = (state) => { 
   return {
-    watches: state.myWatches.watches
+    watches: state.myWatches.watches,
+    sortedWatches: state.mySortedWatches.watches
   } 
 }
 
-export default connect(mapStateToProps)(DashboardContent)
+export default connect(mapStateToProps, { sortWatchesAction })(DashboardContent)
