@@ -174,7 +174,7 @@ class WatchDetail extends Component {
                             {currentWatch.cost ? 
                                 <span>
                                     <p><em className='Detail-css'>Cost</em></p>
-                                    <h3 className='WatchDetail'>{currentWatch.cost}</h3>
+                                    <h3 className='WatchDetail'>${currentWatch.cost}</h3>
                                 </span>
                             : null }
                         </div> 

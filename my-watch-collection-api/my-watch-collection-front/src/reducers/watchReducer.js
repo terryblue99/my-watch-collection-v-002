@@ -84,22 +84,28 @@ export default (state = initialState, { type, payload } ) => {
 			})
 
 		case	COST_LOW_TO_HIGH_SORT:
-			sortedWatches = _.sortBy( state.watches, 'cost' )
+			// Execute a custom function to convert cost to a number
+			sortedWatches = _.sortBy( state.watches, costToNumber )
 			return ({
 				...state,
 				watches: sortedWatches
 			})
 
 		case	COST_HIGH_TO_LOW_SORT:
-				sortedWatches = _.sortBy( state.watches, 'cost' )
-				return ({
-					...state,
-					watches: sortedWatches.reverse()
-				})
+				// Execute a custom function to convert cost to a number
+				sortedWatches = _.sortBy( state.watches, costToNumber )
+			return ({
+				...state,
+				watches: sortedWatches.reverse()
+			})
 
 		// DEFAULT STATE
 
 		default:
 			return state
 	}
+}
+// Convert cost into a number with decimal points
+const costToNumber = (value) => {
+	return parseFloat(value.cost)
 }
