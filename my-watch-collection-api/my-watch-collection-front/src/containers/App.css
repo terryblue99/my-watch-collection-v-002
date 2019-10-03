@@ -40,13 +40,10 @@ button
   display: grid;
   grid-template: repeat(3, auto) / repeat(3, 1fr); 
   grid-template-areas:
-    'Dashboard-sort reserved reserved'
+    /* dots = blank cols (can be one or more dots) */
+    '..................... Dashboard-sort .....................' 
     'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch'
-    '..................... .............. .....................'; /* dots = blank cols (can be one or more dots) */
-}
-
-.reserved {
-  grid-area: reserved;
+    '..................... .............. .....................'; 
 }
 
 .Dashboard-sort {
@@ -395,7 +392,7 @@ textarea:required
 }
 
 @media (max-width: 1075px) {
-  .Dashboard-item {
+  .Dashboard-none {
     display: none;
   }
 }

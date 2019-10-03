@@ -55,7 +55,8 @@ class DashboardContent extends Component {
     return (
       <div className='Dashboard'>
 
-        <div className='Dashboard-item'>
+        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item Dashboard-sort'>
             <h2 className='Sort-header'>
               Sort By
             </h2>
@@ -75,9 +76,8 @@ class DashboardContent extends Component {
             </select>
         </div>
         <div className='Dashboard-item'></div>
-        <div className='Dashboard-item'></div>
         
-        <div className='Dashboard-item'>
+        <div className='Dashboard-item Dashboard-newestWatch Dashboard-none'>
           <h2 className='Dashboard-watchText'>Newest watch</h2><br />
           <Image
             src={newestWatchImage}
@@ -91,7 +91,7 @@ class DashboardContent extends Component {
           <br />
           <h2 className='Dashboard-totalWatches'>Number of watches: {number_of_watches}</h2>
         </div>
-        <div className='Dashboard-item'>
+        <div className='Dashboard-item Dashboard-oldestWatch Dashboard-none'>
           <h2 className='Dashboard-watchText'>Oldest watch</h2><br />
           <Image 
             src={oldestWatchImage}
