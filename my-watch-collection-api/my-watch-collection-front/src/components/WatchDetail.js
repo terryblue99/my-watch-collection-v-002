@@ -203,7 +203,9 @@ class WatchDetail extends Component {
             )     
         } else {
             return <DashboardContent newestWatch={this.props.newestWatch}
-                                     oldestWatch={this.props.oldestWatch} />
+                                     oldestWatch={this.props.oldestWatch}
+                                     sortSelected={this.props.sortSelected}                
+                    />
         }
     }
 }

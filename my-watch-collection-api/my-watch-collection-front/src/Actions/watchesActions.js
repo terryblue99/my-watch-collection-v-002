@@ -1,6 +1,5 @@
 import {
 	GET_WATCHES,
-	SORT_WATCHES,
 	ADD_WATCH,
 	EDIT_WATCH,
 	DELETE_WATCH
@@ -35,11 +34,6 @@ export const getWatchesAction = (user_id) => {
 			// Update watch states with the sorted result
 			dispatch({
 				type: GET_WATCHES, 
-				payload: sortedWatches
-			})
-			// The below will be used to select other sort orders
-			dispatch({
-				type: SORT_WATCHES,
 				payload: sortedWatches
 			})
 		})

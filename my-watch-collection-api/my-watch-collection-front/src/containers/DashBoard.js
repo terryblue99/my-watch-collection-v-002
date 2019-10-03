@@ -14,11 +14,19 @@ class DashBoard extends Component {
 
     render() {
 
+        let sortSelected
+
+        if (this.props.location.state) {
+            sortSelected = this.props.location.state.sortSelected
+        } else sortSelected = 'Select...' 
+        
         return (
             <div>
                 <NavBar />
                 <div className='container Main-container'> 
-                    <Watches watches={this.props.watches}/>               
+                    <Watches watches={this.props.watches}
+                             sortSelected={sortSelected}
+                    />               
                 </div> 
             </div>
         )     

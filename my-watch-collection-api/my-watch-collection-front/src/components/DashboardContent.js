@@ -8,19 +8,21 @@ import { sortWatchesAction } from '../actions/watchesActions'
 class DashboardContent extends Component {
 
   state = {
-    sortRequired: false
+    sortRequired: false,
+    sortSelected: ''
   }
 
   handleSelectedSortKey = (event) =>  {
     event.preventDefault()
     this.props.sortWatchesAction(event.target.value)
     this.setState({
-      sortRequired: true
+      sortRequired: true,
+      sortSelected: event.target.value
     })
   }
 
   render() {
-  
+   
     let newestWatchImage
     let oldestWatchImage
     let number_of_watches = 0
@@ -46,8 +48,7 @@ class DashboardContent extends Component {
       return  <Redirect to={{
               pathname: '/dashboard',
               state: {
-                FromDashboardContent: true,
-                sortRequired: true 
+                sortSelected: this.state.sortSelected
               }
       }}  />
     } 
@@ -66,13 +67,13 @@ class DashboardContent extends Component {
                     size='1' 
                     name='sort' 
                     onChange={this.handleSelectedSortKey}>
-              <option>Select...</option>
-              <option value='Watch_Maker_sort'>Watch Maker</option>
-              <option value='Watch_Name_sort'>Watch Name</option>
-              <option value='Newest_to_Oldest_sort'>Newest to Oldest</option>
-              <option value='Oldest_to_Newest_sort'>Oldest to Newest</option>
-              <option value='Cost_Low_to_High_sort'>Cost Low to High</option>
-              <option value='Cost_High_to_Low_sort'>Cost High to Low</option>
+              <option>{this.props.sortSelected}</option>
+              <option value='Watch Maker'>Watch Maker</option>
+              <option value='Watch Name'>Watch Name</option>
+              <option value='Newest to Oldest'>Newest to Oldest</option>
+              <option value='Oldest to Newest'>Oldest to Newest</option>
+              <option value='Cost Low to High'>Cost Low to High</option>
+              <option value='Cost High to Low'>Cost High to Low</option>
             </select>
         </div>
         <div className='Dashboard-item'></div>
