@@ -24,7 +24,7 @@ const NavBar = (props) => {
          
           <img src={logoText} alt='logo text' className='LogoText'/>
        
-          <span css={css`
+          <span className='Nav-media' css={css`
               color: cornsilk;
               display: inline-block;
               font-size: 1rem;
@@ -34,11 +34,12 @@ const NavBar = (props) => {
               @media (min-width: 1500px) {
                 font-size: 1.25rem
               }
+              
               @media (max-width: 750px) {
                 padding-top: 15px;
               }
             `}>Logged in as:
-            <p css={css`
+            <p className='Nav-media' css={css`
               color: khaki;
               display: inline-block;
               font-size: 1rem;
@@ -49,7 +50,7 @@ const NavBar = (props) => {
               }
               
               @media (max-width: 750px) {
-                padding-top: 10px;
+                padding-top: 15px;
               }
             `}>{props.user.user.email}
             </p>
@@ -58,15 +59,11 @@ const NavBar = (props) => {
           <form onSubmit={handleSearch} css={css`
               color: cornsilk;
               display: inline-block;
-              font-size: 1rem;
               padding-left: 40px;
               margin-bottom: 3px;
-
-              @media (min-width: 1500px) {
-                font-size: 1.25rem
-              }
             `}>
-            <input  
+            <input
+                className='Nav-media'
                 type='text'
                 name='watch_search'
                 placeholder='Search for a watch name or character string...'
@@ -78,7 +75,7 @@ const NavBar = (props) => {
                   padding: .25em;
 
                   @media (min-width: 1500px) {
-                    font-size: 1rem
+                    font-size: 1.25rem
                   }
 
                   @media (max-width: 750px) {
@@ -91,7 +88,7 @@ const NavBar = (props) => {
           
           {props.user.logged_in} {
             <NavLink to='/logout'>
-              <span css={css`
+              <span className='Nav-media' css={css`
                 color: cornsilk;
                 font-size: 1rem;
                 position: absolute;

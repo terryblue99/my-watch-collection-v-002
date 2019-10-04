@@ -365,20 +365,25 @@ textarea:required
     =================================== */
 
 @media (max-width: 750px) {
+
   .Dashboard {
     display: none;
   }
+
   .Edit-button {
     margin-bottom: 10px;
   }
+
   .Edit-button,
   .Red-button {
     margin-left: 80px;
     max-width: 200px;
   }
+
   .Watch-detail .Back-button {
     margin-left: 80px;
-  }  
+  } 
+
   .WatchForm-container .Back-button {
     display:block;
     margin: 35px auto;
@@ -406,31 +411,35 @@ textarea:required
 }
 
 @media (min-width: 1500px) {
+
   body {
     font-size: 1.30rem;
   }
-  .Detail-css {
-    font-size: 1.25rem;
-  }
+
   .Input-element {
     font-size: 1rem;
     height: 2rem;
   }
+
   .Search-button {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
+
   .WatchDetail {
     margin-bottom: 10px;
     max-width: 500px;
   }
+
   .WatchForm-header {
     font-size: 2rem;
     margin-bottom: 15px;
   }
+
   .WatchForm-upload-text {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
   .Choose-image {
     margin-bottom: 10px;
   }
