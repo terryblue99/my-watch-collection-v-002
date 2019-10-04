@@ -18,7 +18,7 @@ class DashBoard extends Component {
 
         if (this.props.location.state) {
             sortSelected = this.props.location.state.sortSelected
-        } else sortSelected = 'Select...' 
+        } else sortSelected = 'Select a sort option...' 
         
         return (
             <div>

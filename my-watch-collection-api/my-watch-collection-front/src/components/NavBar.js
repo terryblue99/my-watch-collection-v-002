@@ -7,6 +7,11 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 import logoText from '../images/my-watch-collection-text.png'
 
 const NavBar = (props) => {
+
+  const handleSearch = (e) => {
+    alert(e.target.value)
+  }
+    
   return (
     <div className='Navbar'>
 
@@ -42,12 +47,47 @@ const NavBar = (props) => {
               @media (min-width: 1500px) {
                 font-size: 1.25rem
               }
+              
               @media (max-width: 750px) {
                 padding-top: 10px;
               }
             `}>{props.user.user.email}
             </p>
           </span> 
+
+          <form onSubmit={handleSearch} css={css`
+              color: cornsilk;
+              display: inline-block;
+              font-size: 1rem;
+              padding-left: 40px;
+              margin-bottom: 3px;
+
+              @media (min-width: 1500px) {
+                font-size: 1.25rem
+              }
+            `}>
+            <input  
+                type='text'
+                name='watch_search'
+                placeholder='Search for a watch name or character string...'
+                css={css`
+                  border-radius: 8px;
+                  margin-bottom: 5px;
+                  margin-right: 10px;
+                  min-width: 350px;
+                  padding: .25em;
+
+                  @media (min-width: 1500px) {
+                    font-size: 1rem
+                  }
+
+                  @media (max-width: 750px) {
+                    margin-top: 15px;
+                  }
+                `}
+            />
+            <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          
+          </form>
           
           {props.user.logged_in} {
             <NavLink to='/logout'>
@@ -56,12 +96,13 @@ const NavBar = (props) => {
                 font-size: 1rem;
                 position: absolute;
                 right: 10px;
-                top: 10px;
+                top: 8px;
 
                 &:hover {
                   color: goldenrod;
                   cursor: pointer;
                 }
+
                 @media (min-width: 1500px) {
                   font-size: 1.25rem
                 }

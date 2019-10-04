@@ -53,7 +53,7 @@ button
 .Select-sort {
     border: 1px solid;
     font: inherit;
-    min-width: 200px;
+    min-width: 300px;
     text-align: center;
 }
 
@@ -112,13 +112,17 @@ footer {
   top: 0;
 } */
 
+.Navbar-search {
+  display: inline-block;
+}
+
 .Logo {
   margin: 0 auto;
   padding-bottom: 25px;
 }
 
 .LogoText {
-  margin-top: 5px;
+  margin-top: 15px;
   margin-left: 15px;
 }
 
@@ -203,6 +207,10 @@ button:focus,
 .Select-sort
 {
   outline:0;
+}
+
+.Search-button {
+  padding: 4px 8px;
 }
 
 .btn:hover {
@@ -407,6 +415,9 @@ textarea:required
   .Input-element {
     font-size: 1rem;
     height: 2rem;
+  }
+  .Search-button {
+    font-size: 1rem;
   }
   .WatchDetail {
     margin-bottom: 10px;
