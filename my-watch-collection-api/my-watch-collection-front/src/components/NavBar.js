@@ -82,16 +82,19 @@ class NavBar extends Component {
                 onChange={this.handleChange}
                 css={css`
                   border-radius: 8px;
+                  font: inherit;
                   margin-bottom: 5px;
                   margin-right: 10px;
                   min-width: 350px;
-                  padding: .25em;
+                  padding: 4px 8px;
 
                   @media (min-width: 1500px) {
-                    font-size: 1rem
+                    font-size: 1rem;
+                    min-width: 500px;
                   }
 
                   @media (max-width: 750px) {
+                    padding: 1px 2px;
                     margin-top: 15px;
                   }
                 `}

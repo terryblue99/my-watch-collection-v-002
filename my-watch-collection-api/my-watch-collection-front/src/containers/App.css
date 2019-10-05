@@ -211,7 +211,8 @@ button:focus,
 
 .Search-button {
   background-color: khaki;
-  color: #454140;
+  color: black;
+  font: inherit;
   padding: 4px 8px;
 }
 
@@ -380,6 +381,10 @@ textarea:required
   .Red-button {
     margin-left: 80px;
     max-width: 200px;
+  }
+
+  .Search-button {
+    padding: 1px 2px;
   }
 
   .Watch-detail .Back-button {
