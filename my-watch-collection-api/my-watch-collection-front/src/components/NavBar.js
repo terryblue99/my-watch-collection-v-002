@@ -24,7 +24,7 @@ const NavBar = (props) => {
          
           <img src={logoText} alt='logo text' className='LogoText'/>
        
-          <span className='Nav-media' css={css`
+          <div className='Nav-media' css={css`
               color: cornsilk;
               display: inline-block;
               font-size: 1rem;
@@ -54,60 +54,61 @@ const NavBar = (props) => {
               }
             `}>{props.user.user.email}
             </p>
-          </span> 
-
-          <form onSubmit={handleSearch} css={css`
+          </div> 
+          <div css={css`
               color: cornsilk;
               display: inline-block;
               padding-left: 40px;
               margin-bottom: 3px;
             `}>
-            <input
-                className='Nav-media'
-                type='text'
-                name='watch_search'
-                placeholder='Search for a watch name or character string...'
-                css={css`
-                  border-radius: 8px;
-                  margin-bottom: 5px;
-                  margin-right: 10px;
-                  min-width: 350px;
-                  padding: .25em;
+            <form onSubmit={handleSearch}>
+              <input
+                  className='Nav-media'
+                  type='text'
+                  name='watch_search'
+                  placeholder='Search for a watch name or character string...'
+                  css={css`
+                    border-radius: 8px;
+                    margin-bottom: 5px;
+                    margin-right: 10px;
+                    min-width: 350px;
+                    padding: .25em;
+
+                    @media (min-width: 1500px) {
+                      font-size: 1.25rem
+                    }
+
+                    @media (max-width: 750px) {
+                      margin-top: 15px;
+                    }
+                  `}
+              />
+              <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          
+            </form>
+          </div>
+          <div>
+            {props.user.logged_in} {
+              <NavLink to='/logout'>
+                <span className='Nav-media' css={css`
+                  color: cornsilk;
+                  font-size: 1rem;
+                  position: absolute;
+                  right: 10px;
+                  top: 8px;
+
+                  &:hover {
+                    color: goldenrod;
+                    cursor: pointer;
+                  }
 
                   @media (min-width: 1500px) {
                     font-size: 1.25rem
                   }
-
-                  @media (max-width: 750px) {
-                    margin-top: 15px;
-                  }
-                `}
-            />
-            <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          
-          </form>
-          
-          {props.user.logged_in} {
-            <NavLink to='/logout'>
-              <span className='Nav-media' css={css`
-                color: cornsilk;
-                font-size: 1rem;
-                position: absolute;
-                right: 10px;
-                top: 8px;
-
-                &:hover {
-                  color: goldenrod;
-                  cursor: pointer;
-                }
-
-                @media (min-width: 1500px) {
-                  font-size: 1.25rem
-                }
-              `}> Log Out
-              </span> 
-            </NavLink>
-          }
-            
+                `}> Log Out
+                </span> 
+              </NavLink>
+            }
+        </div>    
         </Navbar.Brand>
       </Navbar>
     </div>
