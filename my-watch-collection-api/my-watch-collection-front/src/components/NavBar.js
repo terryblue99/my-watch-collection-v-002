@@ -6,10 +6,12 @@ import { NavLink } from 'react-router-dom'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 import logoText from '../images/my-watch-collection-text.png'
+import { searchWatchesAction } from '../actions/watchesActions'
 
 class NavBar extends Component {
 
   state = {
+    searchRequested: false,
     searchText: ''
   }
 
@@ -21,11 +23,17 @@ class NavBar extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    alert('Submitting ' + this.state.searchText)
+    this.props.searchWatchesAction(this.state.searchText)
+    this.setState({
+      searchRequested: true,
+      searchText: event.target.value
+    })
+    // Clear the form
+    document.getElementById('Navbar-search-form').reset()
   }
   
   render() {
-
+ 
     return (
       <div className='Navbar'>
 
@@ -74,8 +82,8 @@ class NavBar extends Component {
               padding-left: 40px;
               margin-bottom: 3px;
             `}>
-            <form onSubmit={this.handleSubmit}>
-              <input
+            <form id='Navbar-search-form' onSubmit={this.handleSubmit}>
+              <input required
                 type='text'
                 name='watch_search'
                 placeholder='Search for a watch name or character string...'
@@ -133,8 +141,9 @@ class NavBar extends Component {
 
 const mapStateToProps = (state) => { 
   return {
-    user: state.currentUser
+    user: state.currentUser,
+    searchResult: state.myWatches.searchResult
   } 
 }
 
-export default connect(mapStateToProps)(NavBar)
+export default connect(mapStateToProps, { searchWatchesAction })(NavBar)

@@ -5,6 +5,7 @@ import {
 	EDIT_WATCH, 
 	DELETE_WATCH,
 	CLEAR_WATCHES,
+	SEARCH_WATCHES,
 	WATCH_MAKER_SORT,
 	WATCH_NAME_SORT,
 	NEWEST_TO_OLDEST_SORT,
@@ -13,8 +14,14 @@ import {
 	COST_HIGH_TO_LOW_SORT
 } from '../actions/types'
 
-const initialState = []
+const initialState = {searhResult: []}
 let sortedWatches
+
+// Convert cost into a number with decimal points
+// Used when sorting watches by cost
+const costToNumber = (watch) => {
+	return parseFloat(watch.cost)
+}
 
 export default (state = initialState, { type, payload } ) => {
 
@@ -50,6 +57,18 @@ export default (state = initialState, { type, payload } ) => {
 				state = initialState
 				return state
 
+		// SEARCH WATCHES
+
+		case SEARCH_WATCHES:
+			const searchText = payload.toLowerCase()
+			return ({
+				...state,
+				searchResult: state.watches.filter(watch => {
+					const watchName = watch.watch_name.toLowerCase()
+					return watchName.includes(searchText)
+				})
+			})
+		
 		// SORT WATCHES
 
 		case WATCH_MAKER_SORT:
@@ -104,8 +123,4 @@ export default (state = initialState, { type, payload } ) => {
 		default:
 			return state
 	}
-}
-// Convert cost into a number with decimal points
-const costToNumber = (value) => {
-	return parseFloat(value.cost)
 }
