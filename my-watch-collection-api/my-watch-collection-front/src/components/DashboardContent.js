@@ -91,7 +91,7 @@ class DashboardContent extends Component {
         <div className='Dashboard-logo'>
           <img src={logo} alt='logo' />
           <br />
-          <h2 className='Dashboard-totalWatches'>Number of watches: {number_of_watches}</h2>
+          <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
         </div>
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-none'>
           <h2 className='Dashboard-watchText'>Oldest watch</h2><br />
