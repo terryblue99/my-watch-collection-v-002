@@ -7,24 +7,35 @@ import Watches from '../components/Watches'
 class DashBoard extends Component {
     
     componentDidMount = () => {
-        if (!this.props.location.state) {
+        if (!this.props.location.state) { // not redirected to from another component
             this.props.getWatchesAction(this.props.currentUser.user.id)
         }   
     }
 
     render() {
 
+        let watches
         let sortSelected
 
-        if (this.props.location.state && this.props.location.state.sortSelected) {
+        // Check if redirected to from another component 
+           
+        if (this.props.location.state && 
+            this.props.location.state.from_NavBar &&
+            this.props.location.state.searchRequested) {
+            watches = this.props.searchResult
+        } else watches = this.props.watches
+
+        if (this.props.location.state && 
+            this.props.location.state.from_DashboardContent &&
+            this.props.location.state.sortSelected) {
             sortSelected = this.props.location.state.sortSelected
-        } else sortSelected = 'Select a sort option...' 
+        } else sortSelected = 'Select a sort option...'
         
         return (
             <div>
                 <NavBar />
                 <div className='container Main-container'> 
-                    <Watches watches={this.props.watches}
+                    <Watches watches={watches}
                              sortSelected={sortSelected}
                     />               
                 </div> 
@@ -35,8 +46,9 @@ class DashBoard extends Component {
 
 const mapStateToProps = (state) => {
     return {
+      currentUser: state.currentUser,
       watches: state.myWatches.watches,
-      currentUser: state.currentUser
+      searchResult: state.myWatches.searchResult  
     } 
 }
 

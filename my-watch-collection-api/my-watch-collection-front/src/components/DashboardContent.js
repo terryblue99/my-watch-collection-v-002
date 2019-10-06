@@ -48,6 +48,7 @@ class DashboardContent extends Component {
       return  <Redirect to={{
               pathname: '/dashboard',
               state: {
+                from_DashboardContent: true,
                 sortSelected: this.state.sortSelected
               }
       }}  />

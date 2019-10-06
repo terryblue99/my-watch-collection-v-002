@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Navbar } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
@@ -33,7 +34,21 @@ class NavBar extends Component {
   }
   
   render() {
- 
+    
+    if (this.state.searchRequested) {
+      this.setState({
+        searchRequested: false
+      })  
+      // Display watch/es from the search on the dashboard
+      return  <Redirect to={{
+              pathname: '/dashboard',
+              state: {
+                from_NavBar: true,
+                searchRequested: true
+              }
+      }}  />
+    } 
+
     return (
       <div className='Navbar'>
 

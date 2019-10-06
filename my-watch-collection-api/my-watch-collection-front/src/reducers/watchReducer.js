@@ -111,8 +111,8 @@ export default (state = initialState, { type, payload } ) => {
 			})
 
 		case	COST_HIGH_TO_LOW_SORT:
-				// Execute a custom function to convert cost to a number
-				sortedWatches = _.sortBy( state.watches, costToNumber )
+			// Execute a custom function to convert cost to a number
+			sortedWatches = _.sortBy( state.watches, costToNumber )
 			return ({
 				...state,
 				watches: sortedWatches.reverse()
