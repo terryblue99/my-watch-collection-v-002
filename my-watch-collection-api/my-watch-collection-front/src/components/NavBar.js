@@ -26,28 +26,39 @@ class NavBar extends Component {
     event.preventDefault()
     this.props.searchWatchesAction(this.state.searchText)
     this.setState({
-      searchRequested: true,
-      searchText: event.target.value
+      searchRequested: true
     })
-    // Clear the form
-    document.getElementById('Navbar-search-form').reset()
   }
   
   render() {
     
-    if (this.state.searchRequested) {
-      this.setState({
-        searchRequested: false
-      })  
-      // Display watch/es from the search on the dashboard
-      return  <Redirect to={{
-              pathname: '/dashboard',
-              state: {
-                from_NavBar: true,
-                searchRequested: true
-              }
-      }}  />
-    } 
+    if (this.state.searchRequested &&
+        this.props.searchResult.length > 0) {
+        this.setState({
+          searchRequested: false,
+          searchText: ''
+        })  
+        // Clear the form
+        document.getElementById('Navbar-search-form').reset()
+        // Display watch/es from the search on the dashboard
+        return  <Redirect to={{
+                    pathname: '/dashboard',
+                    state: {
+                      from_NavBar: true,
+                      searchRequested: true
+                    }
+                  }} 
+                />
+    } else if (this.state.searchRequested &&
+                this.props.searchResult.length === 0) {
+                  this.setState({
+                    searchRequested: false,
+                    searchText: ''
+                  }) 
+                  // Clear the form
+                  document.getElementById('Navbar-search-form').reset()
+                  alert('Search not found. Please correct and try again!')
+                }
 
     return (
       <div className='Navbar'>
