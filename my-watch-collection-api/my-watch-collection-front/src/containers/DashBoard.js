@@ -7,9 +7,7 @@ import Watches from '../components/Watches'
 class DashBoard extends Component {
     
     componentDidMount = () => {
-        if (!this.props.location.state) { // not redirected to from another component
-            this.props.getWatchesAction(this.props.currentUser.user.id)
-        }   
+        this.props.getWatchesAction(this.props.currentUser.user.id)
     }
 
     render() {

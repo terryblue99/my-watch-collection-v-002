@@ -78,7 +78,7 @@ class NavBar extends Component {
               font-size: 1rem;
               padding-left: 140px;
               margin-bottom: 3px;
-
+               
               @media (min-width: 1500px) {
                 font-size: 1.25rem
               }
@@ -92,7 +92,7 @@ class NavBar extends Component {
               display: inline-block;
               font-size: 1rem;
               padding-left: 5px;
-
+               
               @media (min-width: 1500px) {
                 font-size: 1.25rem
               }
@@ -121,12 +121,12 @@ class NavBar extends Component {
                   margin-right: 10px;
                   min-width: 350px;
                   padding: 4px 8px;
-
+                   
                   @media (min-width: 1500px) {
                     font-size: 1rem;
                     min-width: 500px;
                   }
-
+                   
                   @media (max-width: 750px) {
                     padding: 1px 2px;
                     margin-top: 15px;
@@ -146,7 +146,7 @@ class NavBar extends Component {
                         position: absolute;
                         right: 10px;
                         top: 8px;
-
+                         
                         &:hover {
                           color: goldenrod;
                           cursor: pointer;
