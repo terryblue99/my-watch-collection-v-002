@@ -122,15 +122,14 @@ footer {
 }
 
 .LogoText {
-  margin-top: 15px;
-  margin-left: 15px;
+  margin: 15px 15px 0px;
 }
 
 .Homepage-title {
   background-color: #454140;
   color: cornsilk;
   padding: 10px 20px; 
-  margin-bottom: 60px;;
+  margin-bottom: 60px;
 }
 
 .Homepage,
@@ -399,11 +398,11 @@ textarea:required
   } 
 }
 
-@media (max-width: 830) {
+/* @media (max-width: 830) {
   .Navbar {
     margin: 0 auto;
   }
-}
+} */
 
 @media (max-width: 950px) {
   footer {
@@ -411,8 +410,8 @@ textarea:required
   } 
 }
 
-@media (max-width: 1075px) {
-  .Dashboard-none {
+@media (max-width: 1056px) {
+  .Dashboard-watch-image {
     display: none;
   }
 }
