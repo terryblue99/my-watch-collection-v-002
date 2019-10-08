@@ -79,7 +79,7 @@ class DashboardContent extends Component {
         </div>
         <div className='Dashboard-item'></div>
         
-        <div className='Dashboard-item Dashboard-newestWatch Dashboard-none'>
+        <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
           <h2 className='Dashboard-watchText'>Newest watch</h2><br />
           <Image
             src={newestWatchImage}
@@ -93,7 +93,7 @@ class DashboardContent extends Component {
           <br />
           <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
         </div>
-        <div className='Dashboard-item Dashboard-oldestWatch Dashboard-none'>
+        <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
           <h2 className='Dashboard-watchText'>Oldest watch</h2><br />
           <Image 
             src={oldestWatchImage}
