@@ -66,16 +66,17 @@ export default (state = initialState, { type, payload } ) => {
 				...state,
 				searchResult: state.watches.filter(watch => {
 					searchArray = []
-					searchArray.push(watch.watch_name.toLowerCase())
-					searchArray.push(watch.watch_maker.toLowerCase())
-					searchArray.push(watch.movement.toLowerCase())
-					searchArray.push(watch.complications.toLowerCase())
-					searchArray.push(watch.band.toLowerCase())
-					searchArray.push(watch.model_number.toLowerCase())
-					searchArray.push(watch.case_measurement.toLowerCase())
-					searchArray.push(watch.water_resistance.toLowerCase())
-					searchArray.push(watch.date_bought.toLowerCase())
-					searchArray.push(watch.cost.toLowerCase())
+					searchArray.push( watch.watch_name.toLowerCase(),
+														watch.watch_maker.toLowerCase(),
+														watch.movement.toLowerCase(),
+														watch.complications.toLowerCase(),
+														watch.band.toLowerCase(),
+														watch.model_number.toLowerCase(),
+														watch.case_measurement.toLowerCase(),
+														watch.water_resistance.toLowerCase(),
+														watch.date_bought.toLowerCase(),
+														watch.cost.toLowerCase()
+													)
 					// check array of watch string fields for searchText string/substring
 					return searchArray.some(watchStringField => watchStringField.includes(searchText))
 				})
