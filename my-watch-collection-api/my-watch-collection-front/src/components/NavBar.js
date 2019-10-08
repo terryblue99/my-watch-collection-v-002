@@ -66,7 +66,6 @@ class NavBar extends Component {
         <Navbar css={css`
           background-color: #454140;
           margin: 0 auto;
-          padding-top: 5px;
         `}>
           <Navbar.Brand> 
             <img src={logoText} alt='logo text' className='LogoText'/>
@@ -76,33 +75,58 @@ class NavBar extends Component {
               color: cornsilk;
               display: inline-block;
               font-size: 1rem;
-              padding-left: 140px;
-              margin-bottom: 3px;
+              padding-left: 120px;
+              margin: 5px 10px 0px;
                
               @media (min-width: 1500px) {
-                font-size: 1.25rem
+                font-size: 1.25rem;
               }
               
-              @media (max-width: 750px) {
+              @media (max-width: 1056px) {
                 padding-top: 15px;
+                padding-left: 40px;
               }
             `}>Logged in as:
             <p css={css`
               color: khaki;
               display: inline-block;
               font-size: 1rem;
-              padding-left: 5px;
+              margin: 5px 10px 0px;
                
               @media (min-width: 1500px) {
-                font-size: 1.25rem
+                font-size: 1.25rem;
               }
               
-              @media (max-width: 750px) {
-                padding-top: 15px;
+              @media (max-width: 1056px) {
+                padding-bottom: 15px;
+                padding-left: 10px;
               }
             `}>{this.props.user.user.email}
             </p>
           </div> 
+          <div css={css`   
+            display: inline-block;
+          `}>
+            {this.props.user.logged_in} {
+              <NavLink  to='/logout' css={css`
+                color: cornsilk;
+                padding-left: 15px;
+                text-decoration: none;
+                font-size: 1rem;
+                  
+                &:hover {
+                  color: goldenrod;
+                  cursor: pointer;
+                }
+
+                @media (min-width: 1500px) {
+                  font-size: 1.25rem;
+                }
+              `}> 
+                Log Out   
+              </NavLink>
+            }
+          </div>
           <div css={css`
               display: inline-block;
               padding-left: 40px;
@@ -117,8 +141,8 @@ class NavBar extends Component {
                 css={css`
                   border-radius: 8px;
                   font: inherit;
-                  margin-bottom: 5px;
                   margin-right: 10px;
+                  margin-bottom: 5px;
                   min-width: 350px;
                   padding: 4px 8px;
                    
@@ -128,36 +152,14 @@ class NavBar extends Component {
                   }
                    
                   @media (max-width: 750px) {
+                    font-size: 1rem;
+                    min-width: 300px;
                     padding: 1px 2px;
-                    margin-top: 15px;
                   }
                 `}
               />
               <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          
             </form>
-          </div>
-          <div>
-            {this.props.user.logged_in} {
-              <NavLink  to='/logout'
-                        css={css`
-                        color: cornsilk;
-                        text-decoration: none;
-                        font-size: 1rem;
-                        position: absolute;
-                        right: 10px;
-                        top: 8px;
-                         
-                        &:hover {
-                          color: goldenrod;
-                          cursor: pointer;
-                        }
-
-                        @media (min-width: 1500px) {
-                          font-size: 1.25rem
-                        }
-                `}> Log Out   
-              </NavLink>
-            }
           </div> 
         </Navbar>
       </div>
