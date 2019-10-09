@@ -136,7 +136,7 @@ class NavBar extends Component {
               <input required
                 type='text'
                 name='watch_search'
-                placeholder='Search all watches for a string or substring...'
+                placeholder='Search for a watch or watches with entered value...'
                 onChange={this.handleChange}
                 css={css`
                   border-radius: 8px;
@@ -152,7 +152,7 @@ class NavBar extends Component {
                   }
                    
                   @media (max-width: 750px) {
-                    font-size: 1rem;
+                    font-size: .75rem;
                     min-width: 300px;
                     padding: 1px 2px;
                   }

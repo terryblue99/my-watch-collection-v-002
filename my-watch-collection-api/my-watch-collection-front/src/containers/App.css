@@ -414,7 +414,9 @@ textarea:required
 }
 
 @media (max-width: 1056px) {
-  .Dashboard-watch-image {
+  .Dashboard-watch-image,
+  .FullList-button 
+  {
     display: none;
   }
 }
