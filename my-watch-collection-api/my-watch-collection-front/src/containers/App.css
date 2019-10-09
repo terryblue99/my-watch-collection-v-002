@@ -233,7 +233,9 @@ button:focus,
   text-decoration: none;
 }
 
-.Back-button {
+.Back-button,
+.FullList-button
+{
   font-size: 1rem; 
   margin-bottom: 10px;
   margin-left: 20px;
@@ -241,7 +243,8 @@ button:focus,
   padding: 10px 20px; 
 }
 
-.Back-button, 
+.Back-button,
+.FullList-button,
 .Home-button,
 .Login-button, 
 .Save-button,

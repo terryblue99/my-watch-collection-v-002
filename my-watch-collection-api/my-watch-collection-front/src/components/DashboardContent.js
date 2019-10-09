@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import Image from 'react-image-resizer'
 import logo from '../images/logo.jpg'
 import { sortWatchesAction } from '../actions/watchesActions'
+import { getWatchesAction } from '../actions/watchesActions'
 
 class DashboardContent extends Component {
 
@@ -57,7 +58,13 @@ class DashboardContent extends Component {
     return (
       <div className='Dashboard'>
 
-        <div className='Dashboard-item'></div>
+        <div className='Dashboard-item'>
+          <button className='btn FullList-button Button-text' 
+                  onClick={() => {this.props.getWatchesAction(this.props.currentUser.user.id)}
+                  }> 
+              Redisplay Full List
+          </button>
+        </div>
         <div className='Dashboard-item Dashboard-sort'>
             <h2 className='Sort-header'>
               Sort By
@@ -114,8 +121,9 @@ class DashboardContent extends Component {
 
 const mapStateToProps = (state) => { 
   return {
+    currentUser: state.currentUser,
     watches: state.myWatches.watches
   } 
 }
 
-export default connect(mapStateToProps, { sortWatchesAction })(DashboardContent)
+export default connect(mapStateToProps, { sortWatchesAction, getWatchesAction })(DashboardContent)
