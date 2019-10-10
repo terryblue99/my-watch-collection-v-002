@@ -70,11 +70,16 @@ button
 }
 
 .Dashboard-item,
-.Dashboard-logo
+.Dashboard-logo,
+.Dashboard-time
 {
   align-self: center;
   justify-self: center;
   /* border: 2px solid purple; */
+}
+
+.Dashboard-time {
+  margin-top: 30px;
 }
 
 .Sort-header,
@@ -233,14 +238,18 @@ button:focus,
   text-decoration: none;
 }
 
-.Back-button,
-.FullList-button
-{
+.Back-button {
   font-size: 1rem; 
   margin-bottom: 10px;
   margin-left: 20px;
   margin-top: 10px;
   padding: 10px 20px; 
+}
+
+.FullList-button {
+  font-size: 1rem;
+  margin-top: 50px;
+  padding: 10px 20px;
 }
 
 .Back-button,
@@ -414,6 +423,7 @@ textarea:required
 }
 
 @media (max-width: 1056px) {
+  .Dashboard-time,
   .Dashboard-watch-image,
   .FullList-button 
   {
