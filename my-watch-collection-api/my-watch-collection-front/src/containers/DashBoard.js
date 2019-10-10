@@ -14,20 +14,10 @@ class DashBoard extends Component {
 
         let watches
         let sortSelected
-        
 
-        // Check if redirected to from another component 
+        watches = this.props.watches
 
-        // SEARCH
-        if (this.props.searchResult &&
-            this.props.location.state &&
-            this.props.location.state.from_NavBar &&
-            this.props.location.state.searchRequested &&
-            this.props.searchResult.length > 0) {
-            watches = this.props.searchResult
-        } else watches = this.props.watches
-
-        // SORT
+        // SORT - Check if redirected to from DashboardContent
         if (this.props.location.state &&
             this.props.location.state.from_DashboardContent &&
             this.props.location.state.sortSelected) {
@@ -51,8 +41,7 @@ class DashBoard extends Component {
 const mapStateToProps = (state) => {
     return {
       currentUser: state.currentUser,
-      watches: state.myWatches.watches,
-      searchResult: state.myWatches.searchResult  
+      watches: state.myWatches.watches
     } 
 }
 

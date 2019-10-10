@@ -6,6 +6,7 @@ import {
 	DELETE_WATCH,
 	CLEAR_WATCHES,
 	SEARCH_WATCHES,
+	RESET_WATCHES,
 	WATCH_MAKER_SORT,
 	WATCH_NAME_SORT,
 	NEWEST_TO_OLDEST_SORT,
@@ -14,7 +15,7 @@ import {
 	COST_HIGH_TO_LOW_SORT
 } from '../actions/types'
 
-const initialState = {searhResult: []}
+const initialState = {savedWatches: []}
 let sortedWatches
 
 // Convert cost into a number with decimal points
@@ -33,8 +34,18 @@ export default (state = initialState, { type, payload } ) => {
 
 		case GET_WATCHES:		
 			if (payload) {
-				return {watches: payload}}
-			else return state
+				return ({
+					...state,
+					watches: payload,
+					savedWatches: payload
+				})
+			} else return state
+
+		case RESET_WATCHES:		
+			return ({
+				...state,
+				watches: state.savedWatches
+			})
 
 		case ADD_WATCH:
 			if (payload) {
@@ -66,7 +77,7 @@ export default (state = initialState, { type, payload } ) => {
 			const searchText = payload.toLowerCase()
 			return ({
 				...state,
-				searchResult: state.watches.filter(watch => {
+				watches: state.watches.filter(watch => {
 					searchArray = []
 					searchArray.push( watch.watch_name.toLowerCase(),
 														watch.watch_maker.toLowerCase(),

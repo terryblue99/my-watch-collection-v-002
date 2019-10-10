@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 import Image from 'react-image-resizer'
 import logo from '../images/logo.jpg'
 import { sortWatchesAction } from '../actions/watchesActions'
-import { getWatchesAction } from '../actions/watchesActions'
+import { resetWatchesAction } from '../actions/watchesActions'
 
 class DashboardContent extends Component {
 
@@ -61,8 +61,9 @@ class DashboardContent extends Component {
 
         <div className='Dashboard-item'>
           <button className='btn FullList-button Button-text' 
-            // Fetch all watches and reset the DashBoard history locatio state
-            onClick={() => {this.props.getWatchesAction(this.props.currentUser.user.id)
+            // Fetch all watches and reset the DashBoard history location state
+            // to display initial sort option text
+            onClick={() => {this.props.resetWatchesAction()
                             const state = { ...this.props.dashBoardHistory.location.state };
                             delete state.sortSelected;
                             this.props.dashBoardHistory.replace(...this.props.dashBoardHistory.location, state)
@@ -132,4 +133,4 @@ const mapStateToProps = (state) => {
   } 
 }
 
-export default connect(mapStateToProps, { sortWatchesAction, getWatchesAction })(DashboardContent)
+export default connect(mapStateToProps, { sortWatchesAction, resetWatchesAction })(DashboardContent)

@@ -33,7 +33,7 @@ class NavBar extends Component {
   render() {
     
     if (this.state.searchRequested &&
-        this.props.searchResult.length > 0) {
+        this.props.watches.length > 0) {
         this.setState({
           searchRequested: false,
           searchText: ''
@@ -42,15 +42,11 @@ class NavBar extends Component {
         document.getElementById('Navbar-search-form').reset()
         // Display watch/es from the search on the dashboard
         return  <Redirect to={{
-                    pathname: '/dashboard',
-                    state: {
-                      from_NavBar: true,
-                      searchRequested: true
-                    }
+                    pathname: '/dashboard'
                   }} 
                 />
     } else if (this.state.searchRequested &&
-                this.props.searchResult.length === 0) {
+                this.props.watches.length === 0) {
                   this.setState({
                     searchRequested: false,
                     searchText: ''
@@ -170,7 +166,7 @@ class NavBar extends Component {
 const mapStateToProps = (state) => { 
   return {
     user: state.currentUser,
-    searchResult: state.myWatches.searchResult
+    watches: state.myWatches.watches
   } 
 }
 

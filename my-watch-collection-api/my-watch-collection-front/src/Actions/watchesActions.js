@@ -3,7 +3,8 @@ import {
 	ADD_WATCH,
 	EDIT_WATCH,
 	DELETE_WATCH,
-	SEARCH_WATCHES
+	SEARCH_WATCHES,
+	RESET_WATCHES
 } from './types'
 // The underscore library
 import _ from 'lodash'
@@ -56,8 +57,20 @@ export const sortWatchesAction = (sortKey) => {
 export const searchWatchesAction = (searchText) => {
 	return dispatch => {
 		dispatch({
+			type: RESET_WATCHES
+		})
+		
+		dispatch({
 			type: SEARCH_WATCHES,
 			payload: searchText
+		})
+	}		
+}
+
+export const resetWatchesAction = () => {
+	return dispatch => {
+		dispatch({
+			type: RESET_WATCHES
 		})
 	}		
 }
