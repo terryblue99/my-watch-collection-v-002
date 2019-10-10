@@ -20,7 +20,9 @@ let sortedWatches
 // Convert cost into a number with decimal points
 // Used when sorting watches by cost
 const costToNumber = (watch) => {
-	return parseFloat(watch.cost)
+	if (watch.cost) {
+		return parseFloat(watch.cost)
+	} else return 0.00
 }
 
 export default (state = initialState, { type, payload } ) => {
@@ -75,7 +77,7 @@ export default (state = initialState, { type, payload } ) => {
 														watch.case_measurement.toLowerCase(),
 														watch.water_resistance.toLowerCase(),
 														watch.date_bought.toLowerCase(),
-														watch.cost.toLowerCase()
+														watch.cost
 													)
 					// check array of watch string fields for searchText string/substring
 					return searchArray.some(watchStringField => watchStringField.includes(searchText))

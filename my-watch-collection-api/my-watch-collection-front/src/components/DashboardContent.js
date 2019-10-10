@@ -61,13 +61,14 @@ class DashboardContent extends Component {
 
         <div className='Dashboard-item'>
           <button className='btn FullList-button Button-text' 
+            // Fetch all watches and reset the DashBoard history locatio state
             onClick={() => {this.props.getWatchesAction(this.props.currentUser.user.id)
                             const state = { ...this.props.dashBoardHistory.location.state };
                             delete state.sortSelected;
                             this.props.dashBoardHistory.replace(...this.props.dashBoardHistory.location, state)
                            } 
           }> 
-            Redisplay Full List
+            Redisplay Initial List
           </button>
         </div>
         <div className='Dashboard-item Dashboard-sort'>
