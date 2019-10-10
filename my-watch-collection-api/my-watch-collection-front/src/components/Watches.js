@@ -7,8 +7,8 @@ import SidebarMobile from './SidebarMobile'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const Watches = ({ watches, sortSelected }) => { 
-    
+const Watches = ({ watches, sortSelected, dashBoardHistory }) => { 
+  
     let oldestWatch
     let newestWatch
 
@@ -52,6 +52,7 @@ const Watches = ({ watches, sortSelected }) => {
                              newestWatch={newestWatch}
                              oldestWatch={oldestWatch}
                              sortSelected={sortSelected}
+                             dashBoardHistory={dashBoardHistory}
                 />
 
             </div>

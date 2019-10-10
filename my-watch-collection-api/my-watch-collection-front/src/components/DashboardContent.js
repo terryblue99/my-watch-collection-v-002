@@ -23,7 +23,7 @@ class DashboardContent extends Component {
   }
 
   render() {
-   
+  
     let newestWatchImage
     let oldestWatchImage
     let number_of_watches = 0
@@ -46,13 +46,14 @@ class DashboardContent extends Component {
         sortRequired: false
       })  
       // Display the sorted watches on the dashboard
-      return  <Redirect to={{
-              pathname: '/dashboard',
-              state: {
-                from_DashboardContent: true,
-                sortSelected: this.state.sortSelected
-              }
-      }}  />
+      return  <Redirect push to={{
+                  pathname: '/dashboard',
+                  state: {
+                    from_DashboardContent: true,
+                    sortSelected: this.state.sortSelected
+                  }
+                }}  
+              />
     } 
     
     return (
@@ -60,9 +61,13 @@ class DashboardContent extends Component {
 
         <div className='Dashboard-item'>
           <button className='btn FullList-button Button-text' 
-                  onClick={() => {this.props.getWatchesAction(this.props.currentUser.user.id)}
-                  }> 
-              Redisplay Full List
+            onClick={() => {this.props.getWatchesAction(this.props.currentUser.user.id)
+                            const state = { ...this.props.dashBoardHistory.location.state };
+                            delete state.sortSelected;
+                            this.props.dashBoardHistory.replace(...this.props.dashBoardHistory.location, state)
+                           } 
+          }> 
+            Redisplay Full List
           </button>
         </div>
         <div className='Dashboard-item Dashboard-sort'>

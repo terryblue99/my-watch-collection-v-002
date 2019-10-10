@@ -14,28 +14,30 @@ class DashBoard extends Component {
 
         let watches
         let sortSelected
+        
 
         // Check if redirected to from another component 
         if (this.props.searchResult &&
-            this.props.location.state && 
+            this.props.location.state &&
             this.props.location.state.from_NavBar &&
             this.props.location.state.searchRequested &&
             this.props.searchResult.length > 0) {
             watches = this.props.searchResult
         } else watches = this.props.watches
 
-        if (this.props.location.state && 
+        if (this.props.location.state &&
             this.props.location.state.from_DashboardContent &&
             this.props.location.state.sortSelected) {
-            sortSelected = this.props.location.state.sortSelected
+                sortSelected = this.props.location.state.sortSelected
         } else sortSelected = 'Select a sort option...'
-        
+    
         return (
             <div>
                 <NavBar />
                 <div className='container Main-container'> 
                     <Watches watches={watches}
                              sortSelected={sortSelected}
+                             dashBoardHistory={this.props.history}
                     />               
                 </div> 
             </div>
