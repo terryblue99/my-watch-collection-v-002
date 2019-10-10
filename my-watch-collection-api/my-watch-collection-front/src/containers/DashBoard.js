@@ -17,6 +17,8 @@ class DashBoard extends Component {
         
 
         // Check if redirected to from another component 
+
+        // SEARCH
         if (this.props.searchResult &&
             this.props.location.state &&
             this.props.location.state.from_NavBar &&
@@ -25,6 +27,7 @@ class DashBoard extends Component {
             watches = this.props.searchResult
         } else watches = this.props.watches
 
+        // SORT
         if (this.props.location.state &&
             this.props.location.state.from_DashboardContent &&
             this.props.location.state.sortSelected) {
