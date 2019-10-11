@@ -132,7 +132,7 @@ class NavBar extends Component {
               <input required
                 type='text'
                 name='watch_search'
-                placeholder='Search for a watch/watches/maker with entered value...'
+                placeholder='Search My Watch Collection'
                 onChange={this.handleChange}
                 css={css`
                   border-radius: 8px;
