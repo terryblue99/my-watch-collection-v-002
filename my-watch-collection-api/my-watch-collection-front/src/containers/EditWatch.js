@@ -23,7 +23,8 @@ class EditWatch extends Component {
           user_id: this.props.location.state.watch.user_id
        },
        image: null,
-       backToDashboard: false
+       backToDashboard: false,
+       formHasInput: false
      }
 
      shouldComponentUpdate(nextProps, nextState) {
@@ -42,7 +43,8 @@ class EditWatch extends Component {
           watchData: {
                ...this.state.watchData,
                [event.target.name]: event.target.value
-           } 
+           },
+           formHasInput: true
         })                         
      }
 
@@ -54,28 +56,29 @@ class EditWatch extends Component {
 
      handleSubmit = (event) => {
         event.preventDefault() 
-        const date = this.state.watchData.date_bought
-          if (!date.match(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/gm)) {
-               alert('Date bought/gifted must be in the format yyyy-mm-dd;\n e.g. 2019-09-30')
-               return
+        if (this.state.formHasInput)
+          {const date = this.state.watchData.date_bought
+               if (!date.match(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/gm)) {
+                    alert('Date bought/gifted must be in the format yyyy-mm-dd;\n e.g. 2019-09-30')
+                    return
+               }
+          // Edit the watch
+          const formData = new FormData()
+          formData.append('watch_name', this.state.watchData.watch_name)
+          formData.append('watch_maker', this.state.watchData.watch_maker)
+          formData.append('movement', this.state.watchData.movement)
+          formData.append('band', this.state.watchData.band)
+          formData.append('model_number', this.state.watchData.model_number)
+          formData.append('case_measurement', this.state.watchData.case_measurement)
+          formData.append('water_resistance', this.state.watchData.water_resistance)
+          formData.append('complications', this.state.watchData.complications)
+          formData.append('date_bought', this.state.watchData.date_bought)
+          formData.append('cost', this.state.watchData.cost)
+          formData.append('user_id', this.state.watchData.user_id)
+          if (this.state.image) {
+               formData.append('image', this.state.image)
           }
-        // Edit the watch
-        const formData = new FormData()
-        formData.append('watch_name', this.state.watchData.watch_name)
-        formData.append('watch_maker', this.state.watchData.watch_maker)
-        formData.append('movement', this.state.watchData.movement)
-        formData.append('band', this.state.watchData.band)
-        formData.append('model_number', this.state.watchData.model_number)
-        formData.append('case_measurement', this.state.watchData.case_measurement)
-        formData.append('water_resistance', this.state.watchData.water_resistance)
-        formData.append('complications', this.state.watchData.complications)
-        formData.append('date_bought', this.state.watchData.date_bought)
-        formData.append('cost', this.state.watchData.cost)
-        formData.append('user_id', this.state.watchData.user_id)
-        if (this.state.image) {
-          formData.append('image', this.state.image)
-        }
-        this.props.editWatchAction(formData, this.state.watchData)
+          this.props.editWatchAction(formData, this.state.watchData)}
      }
 
      handleBack = () => {
@@ -86,11 +89,26 @@ class EditWatch extends Component {
 
      render() {
  
-        if (this.state.backToDashboard) {
+        if (this.state.formHasInput && this.state.backToDashboard) {
+          this.setState({
+               formHasInput: false
+          })  
           return <Redirect to={{
-                    pathname: '/dashboard'
+                    pathname: '/dashboard',
+                    state: {
+                              from_EditWatch: true,
+                              Edits: true
+                         }
                }}/>
-        } 
+        } else if (!this.state.formHasInput && this.state.backToDashboard) {
+                    return <Redirect to={{
+                         pathname: '/dashboard',
+                         state: {
+                              from_EditWatch: true,
+                              Edits: false
+                         }
+                  }}/>
+        }
 
         const watch = this.props.location.state.watch
       

@@ -7,7 +7,15 @@ import Watches from '../components/Watches'
 class DashBoard extends Component {
     
     componentDidMount = () => {
-        this.props.getWatchesAction(this.props.currentUser.user.id)
+        if (!this.props.location.state) { 
+                this.props.getWatchesAction(this.props.currentUser.user.id)
+            }
+              
+        if (this.props.location.state &&
+            this.props.location.state.from_EditWatch &&
+            this.props.location.state.Edits) { 
+                this.props.getWatchesAction(this.props.currentUser.user.id)
+            } 
     }
 
     render() {
