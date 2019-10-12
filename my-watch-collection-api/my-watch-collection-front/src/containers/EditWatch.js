@@ -118,6 +118,10 @@ class EditWatch extends Component {
                               <h1  className='WatchForm-header'>
                                    Edit this watch
                               </h1>
+                              {watch.watch_name  
+                                   ? <label>Watch Name</label>
+                                   : null 
+                              }
                               <input className='Input-element' required 
                                    type='text'
                                    name='watch_name'
@@ -126,14 +130,22 @@ class EditWatch extends Component {
                                    onChange={this.handleChange}
                               />
                               <br /> 
+                              {watch.watch_maker  
+                                   ? <label>Watch Maker</label>
+                                   : null 
+                              }
                               <input className='Input-element' required 
                                    type='text'
                                    name='watch_maker'
                                    defaultValue={watch.watch_maker}
-                                   placeholder='Watch maker'
+                                   placeholder='Watch Maker'
                                    onChange={this.handleChange}
                               />
                               <br />
+                              {watch.movement  
+                                   ? <label>Movement</label>
+                                   : null 
+                              }
                               <input className='Input-element'  
                                    type='text'
                                    name='movement'
@@ -142,6 +154,10 @@ class EditWatch extends Component {
                                    onChange={this.handleChange}
                               />
                               <br /> 
+                              {watch.complications  
+                                   ? <label>Complications</label>
+                                   : null 
+                              }
                               <input className='Input-element'  
                                    type='text'
                                    name='complications'
@@ -150,6 +166,10 @@ class EditWatch extends Component {
                                    onChange={this.handleChange}
                               />
                               <br />
+                              {watch.band  
+                                   ? <label>Band</label>
+                                   : null 
+                              }
                               <input className='Input-element'  
                                    type='text'
                                    name='band'
@@ -158,38 +178,58 @@ class EditWatch extends Component {
                                    onChange={this.handleChange}
                               />
                               <br /> 
+                              {watch.model_number
+                                   ? <label>Model Number</label>
+                                   : null 
+                              }
                               <input className='Input-element'  
                                    type='text'
                                    name='model_number'
                                    defaultValue={watch.model_number}
-                                   placeholder='Model number'
+                                   placeholder='Model Number'
                                    onChange={this.handleChange}
                               />
-                              <br /> 
+                              <br />
+                              {watch.case_measurement  
+                                   ? <label>Case Measurement</label>
+                                   : null 
+                              }
                               <input className='Input-element'  
                                    type='text'
                                    name='case_measurement'
                                    defaultValue={watch.case_measurement}
-                                   placeholder='Case measurement'
+                                   placeholder='Case Measurement'
                                    onChange={this.handleChange}
                               />
                               <br /> 
+                              {watch.water_resistance  
+                                   ? <label>Water Resistance</label>
+                                   : null 
+                              }
                               <input className='Input-element'  
                                    type='text'
                                    name='water_resistance'
                                    defaultValue={watch.water_resistance}
-                                   placeholder='Water resistance'
+                                   placeholder='Water Resistance'
                                    onChange={this.handleChange}
                               />
                               <br /> 
+                              {watch.date_bought  
+                                   ? <label>Date Bought</label>
+                                   : null 
+                              }
                               <input className='Input-element' required 
                                    type='text'
                                    name='date_bought'
                                    defaultValue={watch.date_bought}
-                                   placeholder='Date bought/gifted yyyy-mm-dd (Req)'
+                                   placeholder='Date Bought/Gifted yyyy-mm-dd (Req)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
+                              {watch.cost  
+                                   ? <label>Cost</label>
+                                   : null 
+                              }
                               <input className='Input-element'  
                                    type='text'
                                    name='cost'

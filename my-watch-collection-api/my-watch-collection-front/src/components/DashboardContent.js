@@ -59,7 +59,7 @@ class DashboardContent extends Component {
     return (
       <div className='Dashboard'>
 
-        <div className='Dashboard-item'>
+        <div className='Dashboard-item Dashboard-fullList'>
           <button className='btn FullList-button Button-text' 
             // Fetch all watches and reset the DashBoard history location state
             // to display initial sort option text
@@ -118,7 +118,7 @@ class DashboardContent extends Component {
             style={style.image}
           />
         </div>
-        <div className='Dashboard-logo'>
+        <div className='Dashboard-item Dashboard-logo'>
           <img src={logo} alt='logo' />
           <br />
           <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>

@@ -41,13 +41,21 @@ button
   grid-template: repeat(3, auto) / repeat(3, 1fr); 
   grid-template-areas:
     /* dots = blank cols (can be one or more dots) */
-    '..................... Dashboard-sort .....................' 
+    'Dashboard-fullList Dashboard-sort Dashboard-time' 
     'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch'
     '..................... .............. .....................'; 
 }
 
+.Dashboard-fullList {
+  grid-area: Dashboard-fullList;
+}
+
 .Dashboard-sort {
   grid-area: Dashboard-sort;
+}
+
+.Dashboard-time {
+  grid-area: Dashboard-time;
 }
 
 .Select-sort {
@@ -69,9 +77,7 @@ button
   grid-area: Dashboard-oldestWatch;
 }
 
-.Dashboard-item,
-.Dashboard-logo,
-.Dashboard-time
+.Dashboard-item
 {
   align-self: center;
   justify-self: center;
@@ -327,26 +333,41 @@ input[type=file] {
 .WatchForm-header {
   color: sienna; 
   font-family: Ubuntu,sans-serif;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .WatchForm-upload-text {
   font-size: 1rem; 
   color: sienna;
   margin-top: 3px;
+  text-align: center;
 }
 
-#AddWatch-form, 
+#AddWatch-form,
 .EditWatch-form
 {
-  display: flex;
-  flex-direction: column; /* switches the main axis (of display: flex;) */
+  display: grid;
   font-size: .75rem;
-  justify-content: center; 
-  margin: 0 auto;
-  max-height: 75vh;
-  max-width: 300px;
-  text-align: center;
+  justify-content: center;
+  margin: 0 auto; 
+  max-width: 300px
+}
+
+.AddWatch-form {
+  max-height: 100vh;
+}
+
+.EditWatch-form
+{
+  max-height: 120vh;
+}
+
+.EditWatch-form label {
+  font-size: .85rem;
+  font-weight: 900;
+  margin-bottom: 3px;
+  text-align: left;
 }
 
 .WatchForm-container {
@@ -358,7 +379,7 @@ input[type=file] {
   border-color: black;
   border-radius: 5px; 
   font-size: .75rem;
-  min-width: 300px;
+  min-width: 302px;
   padding: .25em;
 }
 
@@ -410,12 +431,6 @@ textarea:required
   } 
 }
 
-/* @media (max-width: 830) {
-  .Navbar {
-    margin: 0 auto;
-  }
-} */
-
 @media (max-width: 950px) {
   footer {
     display: none;
@@ -435,6 +450,10 @@ textarea:required
 
   body {
     font-size: 1.30rem;
+  }
+
+  .EditWatch-form label {
+    font-size: 1rem;
   }
 
   .Input-element {
