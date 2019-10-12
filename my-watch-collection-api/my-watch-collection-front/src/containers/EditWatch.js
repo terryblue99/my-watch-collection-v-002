@@ -89,28 +89,24 @@ class EditWatch extends Component {
 
      render() {
  
-        if (this.state.formHasInput && this.state.backToDashboard) {
-          this.setState({
-               formHasInput: false
-          })  
-          return <Redirect to={{
+          if (this.state.backToDashboard && this.state.formHasInput) {
+               this.setState({
+                    formHasInput: false
+               })  
+               return <Redirect to={{
                     pathname: '/dashboard',
                     state: {
-                              from_EditWatch: true,
-                              Edits: true
-                         }
+                         from_EditWatch: true,
+                         Edits: true
+                    }
                }}/>
-        } else if (!this.state.formHasInput && this.state.backToDashboard) {
-                    return <Redirect to={{
-                         pathname: '/dashboard',
-                         state: {
-                              from_EditWatch: true,
-                              Edits: false
-                         }
-                  }}/>
-        }
+          } else if (this.state.backToDashboard) {
+                         return <Redirect to={{
+                         pathname: '/dashboard'
+                    }}/>
+          }
 
-        const watch = this.props.location.state.watch
+          const watch = this.props.location.state.watch
       
           return (  
                
