@@ -226,6 +226,10 @@ button:focus,
   padding: 4px 8px;
 }
 
+.Search-button:hover {
+  background-color: #454140;
+}
+
 .btn:hover {
   color: goldenrod;
   cursor: pointer;
