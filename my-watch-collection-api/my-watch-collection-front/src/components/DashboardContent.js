@@ -59,19 +59,7 @@ class DashboardContent extends Component {
     return (
       <div className='Dashboard'>
 
-        <div className='Dashboard-item Dashboard-fullList'>
-          <button className='btn FullList-button Button-text' 
-            // Fetch all watches and reset the DashBoard history location state
-            // to display initial sort option text
-            onClick={() => {this.props.resetWatchesAction()
-                            const state = { ...this.props.dashBoardHistory.location.state };
-                            delete state.sortSelected;
-                            this.props.dashBoardHistory.replace(...this.props.dashBoardHistory.location, state)
-                           } 
-          }> 
-            Redisplay Initial List
-          </button>
-        </div>
+        <div className='Dashboard-item'></div>
         <div className='Dashboard-item Dashboard-sort'>
             <h2 className='Sort-header'>
               Sort By
@@ -118,9 +106,20 @@ class DashboardContent extends Component {
             style={style.image}
           />
         </div>
-        <div className='Dashboard-item Dashboard-logo'>
-          <img src={logo} alt='logo' />
-          <br />
+        <div className='Dashboard-item Dashboard-initialList'>
+          {/* <img src={logo} alt='logo' />
+          <br /> */}
+          <button className='btn FullList-button Button-text' 
+            // Fetch all watches and reset the DashBoard history location state
+            // to display initial sort option text
+            onClick={() => {this.props.resetWatchesAction()
+                            const state = { ...this.props.dashBoardHistory.location.state };
+                            delete state.sortSelected;
+                            this.props.dashBoardHistory.replace(...this.props.dashBoardHistory.location, state)
+                           } 
+            }> 
+              Redisplay Initial List
+          </button>
           <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
         </div>
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>

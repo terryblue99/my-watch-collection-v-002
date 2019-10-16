@@ -41,36 +41,40 @@ button
   grid-template: repeat(3, auto) / repeat(3, 1fr); 
   grid-template-areas:
     /* dots = blank cols (can be one or more dots) */
-    'Dashboard-fullList Dashboard-sort Dashboard-time' 
-    'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch'
-    '..................... .............. .....................'; 
+    'Dashboard-item Dashboard-sort Dashboard-time' 
+    'Dashboard-newestWatch Dashboard-initialList Dashboard-oldestWatch'
+    '..................... ..................... .....................'; 
 }
 
-.Dashboard-fullList {
-  grid-area: Dashboard-fullList;
-}
+/* .Dashboard-logo {
+  grid-area: Dashboard-logo;
+} */
 
 .Dashboard-sort {
   grid-area: Dashboard-sort;
+}
+
+.Select-sort {
+  border: 1px solid;
+  font: inherit;
+  min-width: 300px;
+  text-align: center;
 }
 
 .Dashboard-time {
   grid-area: Dashboard-time;
 }
 
-.Select-sort {
-    border: 1px solid;
-    font: inherit;
-    min-width: 300px;
-    text-align: center;
+.Dashboard-time {
+  margin-top: 30px;
 }
 
 .Dashboard-newestWatch {
   grid-area: Dashboard-newestWatch;
 }
 
-.Dashboard-logo {
-  grid-area: Dashboard-logo;
+.Dashboard-initialList {
+  grid-area: Dashboard-initialList;
 }
 
 .Dashboard-oldestWatch {
@@ -82,10 +86,6 @@ button
   align-self: center;
   justify-self: center;
   /* border: 2px solid purple; */
-}
-
-.Dashboard-time {
-  margin-top: 30px;
 }
 
 .Sort-header,
@@ -401,8 +401,20 @@ textarea:required
 
 @media (max-width: 750px) {
 
-  .Dashboard {
+  .Dashboard-logo {
     display: none;
+  }
+  
+  .Dashboard-sort,
+  .Dashboard-initialList
+  {
+    align-self: center;
+    justify-self: end;
+    margin-left: 170px;
+  }
+
+  .Select-sort {
+    min-width: 230px;
   }
 
   .Edit-button {
@@ -410,7 +422,8 @@ textarea:required
   }
 
   .Edit-button,
-  .Red-button {
+  .Red-button 
+  {
     margin-left: 80px;
     max-width: 200px;
   }
@@ -439,8 +452,7 @@ textarea:required
 
 @media (max-width: 1056px) {
   .Dashboard-time,
-  .Dashboard-watch-image,
-  .FullList-button 
+  .Dashboard-watch-image
   {
     display: none;
   }

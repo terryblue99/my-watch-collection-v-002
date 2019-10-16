@@ -19,7 +19,6 @@ const SidebarMobile = ({ showWatches, setShowWatches }) => {
 
 const ulStyle = css`
 
-    border-right: 1px solid black;
     grid-area: sidebar-mobile;
     height: 100%;
     list-style-type: none;
