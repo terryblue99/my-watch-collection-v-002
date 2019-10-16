@@ -72,7 +72,7 @@ class NavBar extends Component {
               display: inline-block;
               font-size: 1rem;
               padding-left: 120px;
-              margin: 5px 10px 0px;
+              margin: 0px 10px 0px;
                
               @media (min-width: 1500px) {
                 font-size: 1.25rem;

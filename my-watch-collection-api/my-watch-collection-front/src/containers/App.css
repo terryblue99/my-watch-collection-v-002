@@ -123,17 +123,13 @@ footer {
   top: 0;
 } */
 
-.Navbar-search {
-  display: inline-block;
-}
-
 .Logo {
   margin: 0 auto;
   padding-bottom: 25px;
 }
 
 .LogoText {
-  margin: 15px 15px 0px;
+  margin: 10px 10px 0px;
 }
 
 .Homepage-title {
