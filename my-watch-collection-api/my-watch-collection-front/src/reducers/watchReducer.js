@@ -49,14 +49,19 @@ export default (state = initialState, { type, payload } ) => {
 
 		case ADD_WATCH:
 			if (payload) {
-				return state.watches.concat(payload)	
+				return ({
+					...state,
+					state: state.watches.concat(payload)
+				}) 	
 			}
 			else return state
 
 		case EDIT_WATCH:
 			if (payload) {
-				state.watches.map(watch => watch.id === payload.id ? payload : watch)
-				return state
+				return ({
+					...state,
+					state: state.watches.map(watch => watch.id === payload.id ? payload : watch)
+				})
 			}
 			else return state
 
@@ -67,8 +72,10 @@ export default (state = initialState, { type, payload } ) => {
 				})
 
 		case CLEAR_WATCHES:
-				state = initialState
-				return state
+				return ({
+					...state,
+					watches: initialState
+				})
 
 		// SEARCH WATCHES
 
