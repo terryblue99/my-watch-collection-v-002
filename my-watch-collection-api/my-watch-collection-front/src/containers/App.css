@@ -89,6 +89,12 @@ button
 }
 
 .Sort-header,
+.Dashboard-totalWatches
+{
+  margin-top: 10px;
+}
+
+.Sort-header,
 .Dashboard-totalWatches,
 .Dashboard-watchText
 {
@@ -103,6 +109,7 @@ button
 footer {
   background-color: #454140;
   color:cornsilk;
+  max-width: 100vw;
   padding: 12px 24px;
   text-align: center;
 }
@@ -417,6 +424,10 @@ textarea:required
     min-width: 230px;
   }
 
+  footer {
+    display: none;
+  }
+
   .Edit-button {
     margin-bottom: 10px;
   }
@@ -441,12 +452,6 @@ textarea:required
     margin: 35px auto;
     margin-top: 15px;
     width: 300px;
-  } 
-}
-
-@media (max-width: 950px) {
-  footer {
-    display: none;
   } 
 }
 
