@@ -46,10 +46,6 @@ button
     '..................... ..................... .....................'; 
 }
 
-/* .Dashboard-logo {
-  grid-area: Dashboard-logo;
-} */
-
 .Dashboard-sort {
   grid-area: Dashboard-sort;
 }

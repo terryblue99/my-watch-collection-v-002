@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import Image from 'react-image-resizer'
-import logo from '../images/logo.jpg'
 import { sortWatchesAction } from '../actions/watchesActions'
 import { resetWatchesAction } from '../actions/watchesActions'
 
@@ -107,8 +106,6 @@ class DashboardContent extends Component {
           />
         </div>
         <div className='Dashboard-item Dashboard-initialList'>
-          {/* <img src={logo} alt='logo' />
-          <br /> */}
           <button className='btn FullList-button Button-text' 
             // Fetch all watches and reset the DashBoard history location state
             // to display initial sort option text
