@@ -48,7 +48,6 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                 color: sienna;
                                 font-family: 'Ubuntu, sans-serif';
                                 font-size: 1rem;
-                                position: relative;  
                                 padding-left: -10px;
 
                                 @media (min-width: 1500px) {

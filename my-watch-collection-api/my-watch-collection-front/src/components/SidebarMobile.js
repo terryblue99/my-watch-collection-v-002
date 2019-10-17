@@ -40,7 +40,6 @@ const buttonStyle = css`
         display: block;
         height: 4px;
         margin-bottom: 5px;
-        position: relative;
         width: 33px;
         z-index: 1;
     }
