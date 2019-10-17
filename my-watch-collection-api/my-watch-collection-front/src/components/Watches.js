@@ -19,8 +19,8 @@ const Watches = ({ watches, sortSelected, dashBoardHistory }) => {
         newestWatch = sortedWatches[sortedWatches.length-1] 
     }    
 
-   // used when the layout is a mobile view
-   const [showWatches, setShowWatches] = useState(false)
+   const [showWatches, setShowWatches] = useState(false) // used when in a mobile view
+                                                         // to toggle watch list on and off   
 
    const [currentWatch, setCurrentWatch] = useState(null) 
 
