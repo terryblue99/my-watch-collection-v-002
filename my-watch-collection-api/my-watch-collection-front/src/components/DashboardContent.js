@@ -78,8 +78,8 @@ class DashboardContent extends Component {
               <option value='Cost High to Low'>Cost High to Low</option>
             </select>
         </div>
-        <div className='Dashboard-item'>
-          <iframe className='Dashboard-time' 
+        <div className='Dashboard-item Dashboard-time'>
+          <iframe 
                   title='clockFrame' 
                   src="http://free.timeanddate.com/clock/i6z3es2b/n2036/szw110/szh110/hoc9b8578/hbw10/hfc754c29/cf100/hnc432f30/hcw2/fav0/fiv0/mqcfff/mqs4/mql25/mqw12/mqd78/mhcfff/mhs2/mhl5/mhw2/mhd78/mmv0/hwm1/hhcfff/hhs2/hhl50/hhw8/hmcfff/hms2/hml70/hmw8/hmr4/hscfff/hss3/hsl70/hsw3" 
                   frameBorder="0" 

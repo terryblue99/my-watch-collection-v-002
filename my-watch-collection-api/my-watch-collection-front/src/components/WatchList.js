@@ -7,7 +7,7 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) => { 
       
     return (
-        <div>
+        <div className='watchList'>
             <div css={css`
                 background-color: khaki;
                 border-left: 1px solid black;
