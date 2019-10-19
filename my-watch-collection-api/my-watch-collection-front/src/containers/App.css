@@ -40,9 +40,9 @@ button
   grid-template: repeat(3, auto) / repeat(3, 1fr); 
   grid-template-areas:
     /* dots = blank cols (can be one or more dots) */
-    'Dashboard-item Dashboard-sort Dashboard-time' 
-    'Dashboard-newestWatch Dashboard-initialList Dashboard-oldestWatch'
-    '..................... ..................... .....................'; 
+    'Dashboard-initialList Dashboard-sort Dashboard-time' 
+    'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch'
+    '..................... .............. .....................'; 
 }
 
 .Dashboard-sort {
@@ -397,6 +397,7 @@ textarea:required
 
 @media (max-width: 750px) {
 
+  .Dashboard-logo,
   .Dashboard-time {
     display: none;
   }
@@ -467,7 +468,9 @@ textarea:required
 
 @media (min-width: 750px) and (max-width: 1056px) {
 
-  footer {
+  .Dashboard-logo,
+  footer 
+  {
     display: none;
   }
 
