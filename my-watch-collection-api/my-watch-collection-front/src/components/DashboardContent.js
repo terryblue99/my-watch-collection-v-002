@@ -62,7 +62,7 @@ class DashboardContent extends Component {
         <div className='Dashboard-item Dashboard-initialList'>
           <button className='btn FullList-button Button-text' 
             // Fetch all watches and reset the DashBoard history location state
-            // to display initial sort option text
+            // so that the initial sort option text can be displayed
             onClick={() => {this.props.resetWatchesAction()
                             const state = { ...this.props.dashBoardHistory.location.state };
                             delete state.sortSelected;
@@ -71,6 +71,8 @@ class DashboardContent extends Component {
           }> 
             Redisplay Initial List
           </button>
+          <br />
+          <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
         </div>
         <div className='Dashboard-item Dashboard-sort'>
             <h2 className='Sort-header'>
@@ -120,8 +122,6 @@ class DashboardContent extends Component {
         </div>
         <div className='Dashboard-item Dashboard-logo'>
           <img src={logo} alt='logo' />
-          <br />
-          <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
         </div>
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
           <h2 className='Dashboard-watchText'>Oldest watch</h2><br />
