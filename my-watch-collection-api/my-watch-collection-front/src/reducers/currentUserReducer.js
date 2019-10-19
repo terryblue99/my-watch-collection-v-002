@@ -1,16 +1,18 @@
 import { SET_CURRENT_USER, CLEAR_CURRENT_USER } from '../actions/types'
 
-export default (state = null, { type, payload }) => {
+const initialState = {}
+
+export default (state = initialState, { type, payload }) => {
 
   switch (type) { 
 
     case SET_CURRENT_USER:
-      if (payload) {
+      if (payload) {     
         return payload
-      } else return null
+      } else return state
 
     case CLEAR_CURRENT_USER:
-      return null
+      return initialState
       
     default:
       return state
