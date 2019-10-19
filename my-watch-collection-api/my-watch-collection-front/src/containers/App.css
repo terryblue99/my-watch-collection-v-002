@@ -13,7 +13,7 @@ html { /* everything will inherit from html */
 body {
   background-color: cornsilk;
   line-height: 1.25; /* space between lines (times font size) */
-  max-height: 95vh; /* relative to 1% of the height of the viewport */
+  /* max-height: 95vh; relative to 1% of the height of the viewport */
 }
 
 body, 
@@ -37,12 +37,16 @@ button
 .Dashboard {
   background-color: cornsilk;
   display: grid;
-  grid-template: repeat(3, auto) / repeat(3, 1fr); 
+  grid-template: repeat(2, auto) / repeat(3, 1fr); 
   grid-template-areas:
     /* dots = blank cols (can be one or more dots) */
     'Dashboard-initialList Dashboard-sort Dashboard-time' 
     'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch'
-    '..................... .............. .....................'; 
+    /* '..................... .............. .....................';  */
+}
+
+.Dashboard-initialList {
+  grid-area: Dashboard-initialList;
 }
 
 .Dashboard-sort {
@@ -62,14 +66,15 @@ button
 
 .Dashboard-time {
   margin-top: 30px;
+  margin-left: 30px;
 }
 
 .Dashboard-newestWatch {
   grid-area: Dashboard-newestWatch;
 }
 
-.Dashboard-initialList {
-  grid-area: Dashboard-initialList;
+.Dashboard-logo {
+  grid-area: Dashboard-logo;
 }
 
 .Dashboard-oldestWatch {
@@ -83,15 +88,15 @@ button
   /* border: 2px solid purple; */
 }
 
-.Sort-header,
-.Dashboard-totalWatches
+.Dashboard-totalWatches,
+.Sort-header
 {
   margin-top: 10px;
 }
 
-.Sort-header,
 .Dashboard-totalWatches,
-.Dashboard-watchText
+.Dashboard-watchText,
+.Sort-header
 {
   text-align: center;
   text-shadow: 2px 2px 5px orange;
@@ -101,9 +106,14 @@ button
         footer
     ================= */
 
+.content {
+  min-height: calc(100vh - 70px);
+}
+
 footer {
   background-color: #454140;
   color:cornsilk;
+  height: 50px;
   max-width: 100vw;
   padding: 12px 24px;
   text-align: center;
@@ -113,10 +123,10 @@ footer {
       Homepage
       LogIn
       Login-container 
+      logo
       Register
       SignUp
       Signup-container
-      logo
     ================== */
 
 .Logo {
@@ -386,8 +396,8 @@ textarea:required
 }
 
 .Detail-css {
-  font-size: 15px;
   color: sienna;
+  font-size: 15px;
 }
 
 /*  ===================================
@@ -397,8 +407,10 @@ textarea:required
 
 @media (max-width: 750px) {
 
+  .Dashboard-date, 
   .Dashboard-logo,
-  .Dashboard-time {
+  .Dashboard-time
+  {
     display: none;
   }
   
@@ -411,10 +423,10 @@ textarea:required
       'Dashboard-oldestWatch';
   }
 
-  .Dashboard-sort,
   .Dashboard-initialList,
   .Dashboard-newestWatch,
-  .Dashboard-oldestWatch
+  .Dashboard-oldestWatch,
+  .Dashboard-sort
   {
     align-self: center;
     justify-self: center;
