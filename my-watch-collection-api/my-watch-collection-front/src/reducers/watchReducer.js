@@ -72,11 +72,8 @@ export default (state = initialState, { type, payload } ) => {
 				})
 
 		case CLEAR_WATCHES:
-				return ({
-					...state,
-					savedWatches: [],
-					watches: initialState
-				})
+				state = initialState
+				return state
 
 		// SEARCH WATCHES
 
