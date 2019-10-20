@@ -50,7 +50,8 @@ class EditWatch extends Component {
 
      handleFile = (event) => {
           this.setState({
-               image: event.target.files[0]   
+               image: event.target.files[0],
+               formHasInput: true
           }) 
      }
 
@@ -76,6 +77,7 @@ class EditWatch extends Component {
           formData.append('cost', this.state.watchData.cost)
           formData.append('user_id', this.state.watchData.user_id)
           if (this.state.image) {
+               alert('*** found an image!! ***')
                formData.append('image', this.state.image)
           }
           this.props.editWatchAction(formData, this.state.watchData)}
