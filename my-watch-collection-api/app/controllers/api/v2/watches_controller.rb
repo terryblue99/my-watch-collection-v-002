@@ -46,6 +46,7 @@ class Api::V2::WatchesController < ApplicationController
             :water_resistance,
             :date_bought,
             :cost,
+            :location,
             :user_id,
             :image
         )

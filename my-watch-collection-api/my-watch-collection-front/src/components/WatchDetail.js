@@ -177,6 +177,12 @@ class WatchDetail extends Component {
                                     <h3 className='WatchDetail'>${currentWatch.cost}</h3>
                                 </span>
                             : null }
+                            {currentWatch.location ? 
+                                <span>
+                                    <p><em className='Detail-css'>Location</em></p>
+                                    <h3 className='WatchDetail'>{currentWatch.location}</h3>
+                                </span>
+                            : null }
                         </div> 
                     </div>
                     <div css={css`   

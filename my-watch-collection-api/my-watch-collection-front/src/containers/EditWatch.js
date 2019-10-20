@@ -20,6 +20,7 @@ class EditWatch extends Component {
           water_resistance: this.props.location.state.watch.water_resistance,
           date_bought: this.props.location.state.watch.date_bought,
           cost: this.props.location.state.watch.cost,
+          location: this.props.location.state.watch.location,
           user_id: this.props.location.state.watch.user_id
        },
        image: null,
@@ -75,9 +76,9 @@ class EditWatch extends Component {
           formData.append('complications', this.state.watchData.complications)
           formData.append('date_bought', this.state.watchData.date_bought)
           formData.append('cost', this.state.watchData.cost)
+          formData.append('location', this.state.watchData.location)
           formData.append('user_id', this.state.watchData.user_id)
           if (this.state.image) {
-               alert('*** found an image!! ***')
                formData.append('image', this.state.image)
           }
           this.props.editWatchAction(formData, this.state.watchData)}
@@ -237,6 +238,17 @@ class EditWatch extends Component {
                                    name='cost'
                                    defaultValue={watch.cost}
                                    placeholder='Cost'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              {watch.location  
+                                   ? <label>Location</label>
+                                   : null 
+                              }
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='location'
+                                   placeholder='Location (where watch is located)'
                                    onChange={this.handleChange}
                               />
                               <b className='WatchForm-upload-text'>

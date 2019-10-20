@@ -19,6 +19,7 @@ class AddWatch extends Component {
                complications: '',
                date_bought: '',
                cost: '',
+               location: '',
                user_id: this.props.currentUser.user.id
           },
           image: null,
@@ -71,6 +72,7 @@ class AddWatch extends Component {
           formData.append('complications', this.state.watchData.complications)
           formData.append('date_bought', this.state.watchData.date_bought)
           formData.append('cost', this.state.watchData.cost)
+          formData.append('location', this.state.watchData.location)
           formData.append('user_id', this.state.watchData.user_id)
           if (this.state.image) {
                formData.append('image', this.state.image)
@@ -170,6 +172,13 @@ class AddWatch extends Component {
                                    type='text'
                                    name='cost'
                                    placeholder='Cost (e.g. 199.99)'
+                                   onChange={this.handleChange}
+                              />
+                              <br /> 
+                              <input className='Input-element'  
+                                   type='text'
+                                   name='location'
+                                   placeholder='Location (where watch is located)'
                                    onChange={this.handleChange}
                               />
                               <b className='WatchForm-upload-text'>
