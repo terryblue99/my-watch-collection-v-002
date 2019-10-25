@@ -89,9 +89,9 @@ export const addWatchAction = (formData, watch) => {
 							type: ADD_WATCH,
 							payload: watch
 					})
+					alert('The watch has been added and saved')
 				}
 		})
-		.then(alert('The watch has been added and saved'))
 		.catch(error => {
 			console.log(error)
 		})
