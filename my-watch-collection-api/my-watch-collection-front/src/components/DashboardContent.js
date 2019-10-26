@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import Image from 'react-image-resizer'
+import Image from 'react-image-resizer'  // https://github.com/sottar/react-image-resizer
 import logo from '../images/logo.jpg'
 import { sortWatchesAction } from '../actions/watchesActions'
 import { resetWatchesAction } from '../actions/watchesActions'

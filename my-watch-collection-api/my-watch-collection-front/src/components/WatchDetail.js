@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import '../containers/App.css'
-import Image from 'react-image-resizer'
+import Image from 'react-image-resizer'  // https://github.com/sottar/react-image-resizer
 import { deleteWatchAction } from '../actions/watchesActions'
 import DashboardContent from './DashboardContent'
 
