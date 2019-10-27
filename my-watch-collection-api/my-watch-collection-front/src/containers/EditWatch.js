@@ -237,7 +237,7 @@ class EditWatch extends Component {
                                    type='text'
                                    name='cost'
                                    defaultValue={watch.cost}
-                                   placeholder='Cost'
+                                   placeholder='Cost (e.g. 199.99)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
