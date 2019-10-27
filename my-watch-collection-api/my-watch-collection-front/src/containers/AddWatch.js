@@ -169,9 +169,10 @@ class AddWatch extends Component {
                               />
                               <br /> 
                               <input className='Input-element'  
-                                   type='text'
+                                   type='number'
+                                   step='0.01'
                                    name='cost'
-                                   placeholder='Cost (e.g. 199.99)'
+                                   placeholder='0.00'
                                    onChange={this.handleChange}
                               />
                               <br /> 

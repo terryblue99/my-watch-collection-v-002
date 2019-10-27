@@ -18,14 +18,6 @@ import {
 const initialState = {savedWatches: []}
 let sortedWatches
 
-// Convert cost into a number with decimal points
-// Used when sorting watches by cost
-const costToNumber = (watch) => {
-	if (watch.cost) {
-		return parseFloat(watch.cost)
-	} else return 0.00
-}
-
 export default (state = initialState, { type, payload } ) => {
 
 	switch(type) {
@@ -135,16 +127,14 @@ export default (state = initialState, { type, payload } ) => {
 			})
 
 		case	COST_LOW_TO_HIGH_SORT:
-			// Execute a custom function to convert cost to a number
-			sortedWatches = _.sortBy( state.watches, costToNumber )
+			sortedWatches = _.sortBy( state.watches, 'cost' )
 			return ({
 				...state,
 				watches: sortedWatches
 			})
 
 		case	COST_HIGH_TO_LOW_SORT:
-			// Execute a custom function to convert cost to a number
-			sortedWatches = _.sortBy( state.watches, costToNumber )
+			sortedWatches = _.sortBy(state.watches, 'cost')
 			return ({
 				...state,
 				watches: sortedWatches.reverse()

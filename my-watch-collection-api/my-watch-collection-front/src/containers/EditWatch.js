@@ -234,10 +234,11 @@ class EditWatch extends Component {
                                    : null 
                               }
                               <input className='Input-element'  
-                                   type='text'
+                                   type='number'
+                                   step='0.01'
                                    name='cost'
-                                   defaultValue={watch.cost}
-                                   placeholder='Cost (e.g. 199.99)'
+                                   defaultValue={parseFloat(watch.cost).toFixed(2)}
+                                   placeholder='0.00'
                                    onChange={this.handleChange}
                               />
                               <br /> 
