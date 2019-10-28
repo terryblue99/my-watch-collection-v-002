@@ -108,14 +108,14 @@ class AddWatch extends Component {
                               <input className='Input-element' required 
                                    type='text'
                                    name='watch_name'
-                                   placeholder='Watch name (Required)'
+                                   placeholder='Watch Name (Required)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='Input-element' required 
                                    type='text'
                                    name='watch_maker'
-                                   placeholder='Watch maker (Required)'
+                                   placeholder='Watch Maker (Required)'
                                    onChange={this.handleChange}
                               />
                               <br />
@@ -143,28 +143,28 @@ class AddWatch extends Component {
                               <input className='Input-element'  
                                    type='text'
                                    name='model_number'
-                                   placeholder='Model number'
+                                   placeholder='Model Number'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='Input-element'  
                                    type='text'
                                    name='case_measurement'
-                                   placeholder='Case measurement (e.g. 45mm)'
+                                   placeholder='Case Measurement (e.g. 45mm)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='Input-element' 
                                    type='text'
                                    name='water_resistance'
-                                   placeholder='Water resistance (e.g. 200 meters)'
+                                   placeholder='Water Resistance (e.g. 200 meters)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='Input-element' required 
                                    type='text'
                                    name='date_bought'
-                                   placeholder='Date bought/gifted (yyyy-mm-dd) (Req)'
+                                   placeholder='Date Bought/Gifted (yyyy-mm-dd) (Required)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
@@ -172,14 +172,14 @@ class AddWatch extends Component {
                                    type='number'
                                    step='0.01'
                                    name='cost'
-                                   placeholder='0.00'
+                                   placeholder='Cost (e.g. 199.99)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='Input-element'  
                                    type='text'
                                    name='location'
-                                   placeholder='Location (where watch is located)'
+                                   placeholder='Watch Location'
                                    onChange={this.handleChange}
                               />
                               <b className='WatchForm-upload-text'>

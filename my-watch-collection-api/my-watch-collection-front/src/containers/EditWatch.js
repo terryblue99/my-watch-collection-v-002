@@ -218,14 +218,14 @@ class EditWatch extends Component {
                               />
                               <br /> 
                               {watch.date_bought  
-                                   ? <label>Date Bought</label>
+                                   ? <label>Date Bought/Gifted</label>
                                    : null 
                               }
                               <input className='Input-element' required 
                                    type='text'
                                    name='date_bought'
                                    defaultValue={watch.date_bought}
-                                   placeholder='Date Bought/Gifted yyyy-mm-dd (Req)'
+                                   placeholder='Date Bought/Gifted yyyy-mm-dd (Required)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
@@ -238,18 +238,18 @@ class EditWatch extends Component {
                                    step='0.01'
                                    name='cost'
                                    defaultValue={parseFloat(watch.cost).toFixed(2)}
-                                   placeholder='0.00'
+                                   placeholder='Cost (e.g. 199.99)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               {watch.location  
-                                   ? <label>Location</label>
+                                   ? <label>Watch Location</label>
                                    : null 
                               }
                               <input className='Input-element'  
                                    type='text'
                                    name='location'
-                                   placeholder='Location (where watch is located)'
+                                   placeholder='Watch Location'
                                    onChange={this.handleChange}
                               />
                               <b className='WatchForm-upload-text'>
