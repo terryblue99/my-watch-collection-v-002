@@ -150,7 +150,6 @@ class NavBar extends Component {
                   @media (max-width: 750px) {
                     font-size: .75rem;
                     min-width: 300px;
-                    padding: 1px 2px;
                   }
                 `}
               />
