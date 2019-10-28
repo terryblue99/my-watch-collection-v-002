@@ -366,7 +366,7 @@ input[type=file] {
   border-color: black;
   border-radius: 5px; 
   font-size: .75rem;
-  min-width: 302px;
+  min-width: 350px;
   padding: .25em;
 }
 
