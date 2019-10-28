@@ -43,14 +43,14 @@ class LogIn extends Component {
                         <form id='Login-form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
                                 <br /> 
-                                <input className='Input-element' required 
+                                <input className='Login-input-element' required 
                                         type='email'
                                         name='email'
                                         placeholder='Enter your email'
                                         onChange={this.handleChange}
                                 />
                                 <br /> 
-                                <input className='Input-element' required 
+                                <input className='Login-input-element' required 
                                         type='password'
                                         name='password'
                                         placeholder='Enter your password'

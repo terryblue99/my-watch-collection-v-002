@@ -362,12 +362,24 @@ input[type=file] {
   padding-bottom: 15px;
 }
 
-.Input-element {
+.Input-element,
+.Login-input-element,
+.SignUp-input-element
+{
   border-color: black;
   border-radius: 5px; 
   font-size: .75rem;
-  min-width: 350px;
   padding: .25em;
+}
+
+.Input-element {
+  min-width: 350px;
+}
+
+.Login-input-element,
+.SignUp-input-element 
+{
+  min-width: 300px;
 }
 
 input:required,
