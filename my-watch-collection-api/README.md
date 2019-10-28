@@ -22,7 +22,9 @@ Fork and clone this repository to your computer and run the following commands i
 
     Installs the node_modules directory which contains all of the modules (and their dependencies) in the current project.
 
-4. rake start
+4. cd my-watch-collection-api/my-watch-collection-front
+
+5. rake start
 
     Starts the React app on the 3000 port and the API server on the 3001 port
 
