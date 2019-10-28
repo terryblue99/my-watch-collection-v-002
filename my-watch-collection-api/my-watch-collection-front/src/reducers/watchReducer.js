@@ -18,6 +18,14 @@ import {
 const initialState = {savedWatches: []}
 let sortedWatches
 
+// Used when sorting watches by cost,
+// converting it to a floating point number
+const costToNumber = (watch) => {
+	if (watch.cost) {
+		return parseFloat(watch.cost)
+	} else return 0.00
+}
+
 export default (state = initialState, { type, payload } ) => {
 
 	switch(type) {
@@ -95,7 +103,7 @@ export default (state = initialState, { type, payload } ) => {
 		
 		// SORT WATCHES
 
-		case WATCH_MAKER_SORT:
+		case WATCH_MAKER_SORT: // sort by watch_name within watch_maker
 			sortedWatches = _.chain( state.watches )
 			.sortBy('watch_name')
 			.sortBy('watch_maker')
@@ -127,14 +135,14 @@ export default (state = initialState, { type, payload } ) => {
 			})
 
 		case	COST_LOW_TO_HIGH_SORT:
-			sortedWatches = _.sortBy( state.watches, 'cost' )
+			sortedWatches = _.sortBy( state.watches, costToNumber )
 			return ({
 				...state,
 				watches: sortedWatches
 			})
 
 		case	COST_HIGH_TO_LOW_SORT:
-			sortedWatches = _.sortBy(state.watches, 'cost')
+			sortedWatches = _.sortBy( state.watches, costToNumber)
 			return ({
 				...state,
 				watches: sortedWatches.reverse()
