@@ -64,9 +64,9 @@ class DashboardContent extends Component {
             // Fetch all watches and reset the DashBoard history location state
             // so that the initial sort option text can be displayed
             onClick={() => {this.props.resetWatchesAction()
-                            const state = { ...this.props.dashBoardHistory.location.state };
+                            const state = this.props.dashBoardHistory.location.state;
                             delete state.sortSelected;
-                            this.props.dashBoardHistory.replace(...this.props.dashBoardHistory.location, state)
+                            this.props.dashBoardHistory.replace(this.props.dashBoardHistory.location, state)
                            } 
           }> 
             Redisplay Initial List
