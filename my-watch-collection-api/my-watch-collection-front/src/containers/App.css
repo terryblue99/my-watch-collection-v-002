@@ -506,6 +506,12 @@ textarea:required
     font-size: 1rem;
   }
 
+#AddWatch-form input,
+.EditWatch-form input
+{
+ min-width: 390px
+}
+
   .Input-element {
     font-size: 1rem;
     height: 2rem;

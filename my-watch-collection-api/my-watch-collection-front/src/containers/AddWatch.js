@@ -165,7 +165,7 @@ class AddWatch extends Component {
                               <input className='Input-element' required 
                                    type='text'
                                    name='date_bought'
-                                   placeholder='Date Bought/Gifted yyyy-mm-dd or yyyy (Req)'
+                                   placeholder='Date Bought/Gifted yyyy-mm-dd or yyyy (Required)'
                                    onChange={this.handleChange}
                               />
                               <br /> 

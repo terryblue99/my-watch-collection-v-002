@@ -226,7 +226,7 @@ class EditWatch extends Component {
                                    type='text'
                                    name='date_bought'
                                    defaultValue={watch.date_bought}
-                                   placeholder='Date Bought/Gifted yyyy-mm-dd or yyyy (Req)'
+                                   placeholder='Date Bought/Gifted yyyy-mm-dd or yyyy (Required)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
