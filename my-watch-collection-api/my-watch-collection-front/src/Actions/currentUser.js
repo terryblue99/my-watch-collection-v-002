@@ -96,3 +96,7 @@ export const logOutAction = () => {
     })
   }
 }
+
+export const editProfileAction = (credentials) => {
+
+}
