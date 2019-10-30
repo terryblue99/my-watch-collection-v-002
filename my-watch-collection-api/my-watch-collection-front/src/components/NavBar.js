@@ -104,23 +104,42 @@ class NavBar extends Component {
             display: inline-block;
           `}>
             {this.props.user.logged_in} {
-              <NavLink  to='/logout' css={css`
-                color: cornsilk;
-                padding-left: 15px;
-                text-decoration: none;
-                font-size: 1rem;
-                  
-                &:hover {
-                  color: goldenrod;
-                  cursor: pointer;
-                }
+              <div>
+                <NavLink  to='/logout' css={css`
+                  color: cornsilk;
+                  padding-left: 15px;
+                  text-decoration: none;
+                  font-size: 1rem;
+                    
+                  &:hover {
+                    color: goldenrod;
+                    cursor: pointer;
+                  }
 
-                @media (min-width: 1500px) {
-                  font-size: 1.25rem;
-                }
-              `}> 
-                Log Out   
-              </NavLink>
+                  @media (min-width: 1500px) {
+                    font-size: 1.25rem;
+                  }
+                `}> 
+                  Log Out   
+                </NavLink>
+                <NavLink  to='/EditProfile' css={css`
+                  color: cornsilk;
+                  padding-left: 15px;
+                  text-decoration: none;
+                  font-size: 1rem;
+                    
+                  &:hover {
+                    color: goldenrod;
+                    cursor: pointer;
+                  }
+
+                  @media (min-width: 1500px) {
+                    font-size: 1.25rem;
+                  }
+                `}> 
+                  Edit Profile   
+                </NavLink>
+              </div>  
             }
           </div>
           <div css={css`
