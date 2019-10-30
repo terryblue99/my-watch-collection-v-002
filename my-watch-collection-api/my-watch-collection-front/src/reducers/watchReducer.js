@@ -94,7 +94,7 @@ export default (state = initialState, { type, payload } ) => {
 														watch.water_resistance.toLowerCase(),
 														watch.date_bought.toLowerCase(),
 														watch.cost,
-														watch.location.toLowerCase()
+														watch.notes.toLowerCase()
 													)
 					// check array of watch string fields for searchText string/substring
 					return searchArray.some(watchStringField => watchStringField.includes(searchText))

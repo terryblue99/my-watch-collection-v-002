@@ -364,7 +364,8 @@ input[type=file] {
 
 .Input-element,
 .Login-input-element,
-.SignUp-input-element
+.SignUp-input-element,
+.Text-area
 {
   border-color: black;
   border-radius: 5px; 
@@ -374,6 +375,10 @@ input[type=file] {
 
 .Input-element {
   min-width: 350px;
+}
+
+.Text-area {
+  padding-bottom: 40px;
 }
 
 .Login-input-element,
@@ -504,6 +509,10 @@ textarea:required
   .Input-element {
     font-size: 1rem;
     height: 2rem;
+  }
+
+  .Text-area {
+    font-size: 1rem
   }
 
   .Search-button {

@@ -20,7 +20,7 @@ class EditWatch extends Component {
           water_resistance: this.props.location.state.watch.water_resistance,
           date_bought: this.props.location.state.watch.date_bought,
           cost: this.props.location.state.watch.cost,
-          location: this.props.location.state.watch.location,
+          notes: this.props.location.state.watch.notes,
           user_id: this.props.location.state.watch.user_id
        },
        image: null,
@@ -77,7 +77,7 @@ class EditWatch extends Component {
           formData.append('complications', this.state.watchData.complications)
           formData.append('date_bought', this.state.watchData.date_bought)
           formData.append('cost', this.state.watchData.cost)
-          formData.append('location', this.state.watchData.location)
+          formData.append('notes', this.state.watchData.notes)
           formData.append('user_id', this.state.watchData.user_id)
           if (this.state.image) {
                formData.append('image', this.state.image)
@@ -243,14 +243,14 @@ class EditWatch extends Component {
                                    onChange={this.handleChange}
                               />
                               <br /> 
-                              {watch.location  
-                                   ? <label>Watch Location</label>
+                              {watch.notes  
+                                   ? <label>Notes</label>
                                    : null 
                               }
-                              <input className='Input-element'  
-                                   type='text'
-                                   name='location'
-                                   placeholder='Watch Location'
+                              <textarea className='Text-area'  
+                                   name='notes'
+                                   placeholder='Notes'
+                                   defaultValue={watch.notes}
                                    onChange={this.handleChange}
                               />
                               <b className='WatchForm-upload-text'>

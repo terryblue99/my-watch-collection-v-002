@@ -177,10 +177,10 @@ class WatchDetail extends Component {
                                     <h3 className='WatchDetail'>${parseFloat(currentWatch.cost).toFixed(2)}</h3>
                                 </span>
                             : null }
-                            {currentWatch.location ? 
+                            {currentWatch.notes ? 
                                 <span>
-                                    <p><em className='Detail-css'>Location</em></p>
-                                    <h3 className='WatchDetail'>{currentWatch.location}</h3>
+                                    <p><em className='Detail-css'>Notes</em></p>
+                                    <h3 className='WatchDetail'>{currentWatch.notes}</h3>
                                 </span>
                             : null }
                         </div> 
