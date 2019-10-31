@@ -122,7 +122,7 @@ class NavBar extends Component {
                 `}> 
                   Log Out   
                 </NavLink>
-                <NavLink  to='/EditProfile' css={css`
+                <NavLink  to='/edit_profile' css={css`
                   color: cornsilk;
                   padding-left: 15px;
                   text-decoration: none;

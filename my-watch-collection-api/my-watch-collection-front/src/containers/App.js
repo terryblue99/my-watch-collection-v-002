@@ -56,7 +56,7 @@ class App extends Component {
               <PrivateRoute exact path='/watches/add_watch' component={AddWatch} />
               <PrivateRoute path='/watches/:id/watch_detail' component={WatchDetail} />
               <PrivateRoute path='/watches/:id/edit_watch' component={EditWatch} />
-              <PrivateRoute path='/registrations/:id/edit_profile' component={EditProfile} />
+              <PrivateRoute path='/edit_profile' component={EditProfile} />
               {/* the following catchall route will divert unknown routes to the Log In/Sign Up screen */}
               <PrivateRoute from='*' />
           </Switch> 

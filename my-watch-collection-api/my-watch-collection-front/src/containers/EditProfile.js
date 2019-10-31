@@ -9,9 +9,9 @@ class EditProfile extends Component {
      
      state = {
        profileData: {
-          id: this.props.location.state.user.id,  
-          email: this.props.location.state.user.email,
-          password: this.props.location.state.user.password
+          id: this.props.currentUser.user.id,  
+          email: this.props.currentUser.user.email,
+          password: this.props.currentUser.user.password
        },
        backToDashboard: false,
        formHasInput: false
@@ -40,13 +40,14 @@ class EditProfile extends Component {
 
      handleSubmit = (event) => {
         event.preventDefault() 
+        alert('*** Edit Profile if there are edits ***')
         if (this.state.formHasInput)
           { alert('*** Edit Profile ***')
             // Edit the profile
             // const formData = new FormData()
             // formData.append('id', this.state.profileData.id)
             // formData.append('email', this.state.watchData.email)
-            // formData.append('password', this.state.watchData.password)
+            // formData.append('password', this.state.profileData.password)
             // this.props.editProfileAction(formData, this.state.profileData)
           }
      }
@@ -76,7 +77,7 @@ class EditProfile extends Component {
                     }}/>
           }
 
-          const user = this.props.location.state.user
+          const user = this.props.currentUser.user
       
           return (  
                
@@ -87,11 +88,13 @@ class EditProfile extends Component {
                          <form id='EditProfile-form' onSubmit={this.handleSubmit}>
                               <h1  className='WatchForm-header'>
                                    Edit User
-                                   (You can update your email and/or your password here)
                               </h1>
+                              <h2>
+                                   (You can update your email and/or your password here)
+                              </h2>
                               <div className='Profile'>
                                    <label>Email</label>
-                                   <input className='Profile-input-element' required 
+                                   <input className='Profile-input-element' 
                                              type='email'
                                              name='email'
                                              defaultValue={user.email}
@@ -99,14 +102,14 @@ class EditProfile extends Component {
                                    />
                                    <br /> 
                                    <label>New Password (leave blank if you don't want to change it)</label>
-                                   <input className='Profile-input-element' required 
+                                   <input className='Profile-input-element' 
                                              type='password'
                                              name='password'
                                              onChange={this.handleChange}
                                    />
                                    <br />
                                    <label>New Password Confirmation</label>
-                                   <input className='Profile-input-element' required 
+                                   <input className='Profile-input-element' 
                                              type='password'
                                              name='password_confirmation'
                                              placeholder='Confirm your password'
