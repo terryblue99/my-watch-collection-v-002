@@ -13,6 +13,7 @@ class EditProfile extends Component {
           email: this.props.currentUser.user.email,
           password: this.props.currentUser.user.password
        },
+       current_password: '',
        backToDashboard: false,
        formHasInput: false
      }
@@ -86,33 +87,42 @@ class EditProfile extends Component {
                     <div className='Profile-container'>
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>   
                          <form id='EditProfile-form' onSubmit={this.handleSubmit}>
-                              <h1  className='WatchForm-header'>
-                                   Edit User
+                              <h1 className='ProfileForm-header'>
+                                   Edit Profile
                               </h1>
-                              <h2>
+                              <h2 className='ProfileForm-subheader'>
                                    (You can update your email and/or your password here)
                               </h2>
                               <div className='Profile'>
                                    <label>Email</label>
-                                   <input className='Profile-input-element' 
+                                   <input className='Input-element'
                                              type='email'
                                              name='email'
                                              defaultValue={user.email}
                                              onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <label>New Password (leave blank if you don't want to change it)</label>
-                                   <input className='Profile-input-element' 
+                                   <label>New Password (blank if you don't want to change it)</label>
+                                   <input className='Input-element' 
                                              type='password'
                                              name='password'
+                                             placeholder='New password'
                                              onChange={this.handleChange}
                                    />
                                    <br />
                                    <label>New Password Confirmation</label>
-                                   <input className='Profile-input-element' 
+                                   <input className='Input-element' 
                                              type='password'
                                              name='password_confirmation'
-                                             placeholder='Confirm your password'
+                                             placeholder='Confirm your new password'
+                                             onChange={this.handleChange}
+                                   />
+                                   <br />
+                                   <label>Current Password</label>
+                                   <input className='Input-element' required
+                                             type='password'
+                                             name='current_password'
+                                             placeholder='Current password, to confirm changes'
                                              onChange={this.handleChange}
                                    />
                                    <br />

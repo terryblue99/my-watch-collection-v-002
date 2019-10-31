@@ -248,7 +248,8 @@ button:focus,
 .Back-button,
 .FullList-button,
 .Home-button,
-.Login-button, 
+.Login-button,
+.Profile-button, 
 .Save-button,
 .Signup-button 
 {
@@ -257,7 +258,8 @@ button:focus,
   text-transform: uppercase;
 }
 
-.Login-button, 
+.Login-button,
+.Profile-button,
 .Save-button,
 .Signup-button 
 {
@@ -317,11 +319,19 @@ input[type=file] {
           forms
     ================= */
 
-.WatchForm-header {
+.WatchForm-header,
+.ProfileForm-header
+{
   color: sienna; 
   font-family: Ubuntu,sans-serif;
   margin-bottom: 10px;
   text-align: center;
+}
+
+.ProfileForm-subheader {
+  color: black;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .WatchForm-upload-text {
@@ -332,7 +342,8 @@ input[type=file] {
 }
 
 #AddWatch-form,
-.EditWatch-form
+.EditWatch-form,
+.Profile
 {
   display: grid;
   font-size: .75rem;
@@ -350,7 +361,9 @@ input[type=file] {
   max-height: 120vh;
 }
 
-.EditWatch-form label {
+.Profile label,
+.EditWatch-form label
+{
   font-size: .85rem;
   font-weight: 900;
   margin-bottom: 3px;
@@ -456,6 +469,10 @@ textarea:required
     max-width: 200px;
   }
 
+  #Navbar-search-form {
+    margin-top: 10px;
+  }
+
   .Search-button {
     padding: 1px 2px;
   }
@@ -464,7 +481,10 @@ textarea:required
     margin-left: 80px;
   } 
 
-  .WatchForm-container .Back-button {
+  .Profile-container,
+  .WatchForm-container,
+  .Back-button 
+  {
     display:block;
     margin: 35px auto;
     margin-top: 15px;
@@ -502,7 +522,9 @@ textarea:required
     font-size: 1.30rem;
   }
 
-  .EditWatch-form label {
+  .Profile label,  
+  .EditWatch-form label 
+  {
     font-size: 1rem;
   }
 
@@ -530,7 +552,10 @@ textarea:required
     max-width: 500px;
   }
 
-  .WatchForm-header {
+  .WatchForm-header,
+  .ProfileForm-header,
+  .ProfileForm-subheader
+  {
     font-size: 2rem;
     margin-bottom: 15px;
   }
