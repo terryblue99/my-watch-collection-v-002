@@ -13,6 +13,9 @@ class EditProfile extends Component {
           email: this.props.currentUser.user.email,
           password: this.props.currentUser.user.password
        },
+       savedEmail: this.props.currentUser.user.email,
+       new_password: '',
+       password_confirmation: '',
        current_password: '',
        backToDashboard: false,
        formHasInput: false
@@ -31,25 +34,49 @@ class EditProfile extends Component {
 
      handleChange = (event) => {
         this.setState({
+          [event.target.name]: event.target.value,
           profileData: {
                ...this.state.profileData,
-               [event.target.name]: event.target.value
-           },
-           formHasInput: true
+               [event.target.name]: event.target.value  // email
+               },
+          formHasInput: true
         })                         
      }
 
      handleSubmit = (event) => {
         event.preventDefault() 
-        alert('*** Edit Profile if there are edits ***')
-        if (this.state.formHasInput)
-          { alert('*** Edit Profile ***')
-            // Edit the profile
-            // const formData = new FormData()
-            // formData.append('id', this.state.profileData.id)
-            // formData.append('email', this.state.watchData.email)
-            // formData.append('password', this.state.profileData.password)
-            // this.props.editProfileAction(formData, this.state.profileData)
+        
+          if (this.state.formHasInput) {
+
+               if (this.state.new_password && this.state.new_password.length < 8 ) {
+                    alert('Password must be a minimum of 8 characters!')
+                    return
+               } 
+               if (this.state.new_password && this.state.new_password !== this.state.password_confirmation) {
+                    alert('New Password and password confirmation must be the same!')
+                    return
+               }
+               if (this.state.new_password) {
+                    this.setState ({
+                         profileData: {
+                              ...this.state.profileData,
+                              password: this.state.new_password
+                          }
+                    })    
+               }
+               if ((this.state.new_password) ||
+                   (this.state.profileData.email !== this.state.savedEmail)) {
+                    alert(this.state.profileData.email)
+                    alert(this.state.profileData.password)
+                    alert(this.state.new_password)
+                    alert('*** Edit Profile ***')
+                    // Edit the profile
+                    // const formData = new FormData()
+                    // formData.append('id', this.state.profileData.id)
+                    // formData.append('email', this.state.watchData.email)
+                    // formData.append('password', this.state.profileData.password)
+                    // this.props.editProfileAction(formData, this.state.profileData)
+               }
           }
      }
 
@@ -105,7 +132,7 @@ class EditProfile extends Component {
                                    <label>New Password (blank if you don't want to change it)</label>
                                    <input className='Input-element' 
                                              type='password'
-                                             name='password'
+                                             name='new_password'
                                              placeholder='New password'
                                              onChange={this.handleChange}
                                    />
@@ -122,7 +149,7 @@ class EditProfile extends Component {
                                    <input className='Input-element' required
                                              type='password'
                                              name='current_password'
-                                             placeholder='Current password, to confirm changes'
+                                             placeholder='Current password - to confirm changes'
                                              onChange={this.handleChange}
                                    />
                                    <br />
