@@ -195,51 +195,51 @@ class EditWatch extends Component {
                               />
                               <br />
                               {watch.case_measurement  
-                                   ? <label>Case Measurement</label>
+                                   ? <label>Case Measurement (e.g. 45mm)</label>
                                    : null 
                               }
                               <input className='Input-element'  
                                    type='text'
                                    name='case_measurement'
                                    defaultValue={watch.case_measurement}
-                                   placeholder='Case Measurement'
+                                   placeholder='Case Measurement (e.g. 45mm)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               {watch.water_resistance  
-                                   ? <label>Water Resistance</label>
+                                   ? <label>Water Resistance (e.g. 200 meters)</label>
                                    : null 
                               }
                               <input className='Input-element'  
                                    type='text'
                                    name='water_resistance'
                                    defaultValue={watch.water_resistance}
-                                   placeholder='Water Resistance'
+                                   placeholder='Water Resistance (e.g. 200 meters)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               {watch.date_bought  
-                                   ? <label>Date Bought/Gifted</label>
+                                   ? <label>Date Bought/Gifted (yyyy-mm-dd or yyyy)</label>
                                    : null 
                               }
                               <input className='Input-element' required 
                                    type='text'
                                    name='date_bought'
                                    defaultValue={watch.date_bought}
-                                   placeholder='Date Bought/Gifted yyyy-mm-dd or yyyy (Required)'
+                                   placeholder='Date Bought/Gifted (yyyy-mm-dd or yyyy) (Required)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               {watch.cost  
-                                   ? <label>Cost</label>
+                                   ? <label>Cost (e.g. 199.99 or 0)</label>
                                    : null 
                               }
-                              <input className='Input-element'  
+                              <input className='Input-element' required  
                                    type='number'
                                    step='0.01'
                                    name='cost'
                                    defaultValue={parseFloat(watch.cost).toFixed(2)}
-                                   placeholder='Cost (e.g. 199.99)'
+                                   placeholder='Cost (e.g. 199.99 or 0) (Required)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
