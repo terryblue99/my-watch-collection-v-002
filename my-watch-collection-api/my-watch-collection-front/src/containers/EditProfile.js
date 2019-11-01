@@ -48,7 +48,8 @@ class EditProfile extends Component {
         
           if (this.state.formHasInput) {
 
-               if (this.state.new_password && this.state.new_password.length < 8 ) {
+               if ((this.state.new_password && this.state.new_password.length < 8 ) ||
+                   (this.state.current_password && this.state.current_password.length < 8 )) {
                     alert('Password must be a minimum of 8 characters!')
                     return
                } 
@@ -66,6 +67,7 @@ class EditProfile extends Component {
                }
                if ((this.state.new_password) ||
                    (this.state.profileData.email !== this.state.savedEmail)) {
+                    alert(this.state.profileData.id)  
                     alert(this.state.profileData.email)
                     alert(this.state.profileData.password)
                     alert(this.state.new_password)
@@ -118,7 +120,7 @@ class EditProfile extends Component {
                                    Edit Profile
                               </h1>
                               <h2 className='ProfileForm-subheader'>
-                                   (You can update your email and/or your password here)
+                                   (You can change your email and/or your password here)
                               </h2>
                               <div className='Profile'>
                                    <label>Email</label>
