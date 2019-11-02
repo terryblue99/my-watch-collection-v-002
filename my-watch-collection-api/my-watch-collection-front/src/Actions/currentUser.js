@@ -105,11 +105,16 @@ export const editProfileAction = (formData) => {
     })
     .then(response => {
       if (!response.error) {
-        dispatch({
-          type: SET_CURRENT_USER,
-          payload: response
-        })
-        alert('The profile has been updated and saved')
+        if (response.status === 401) {
+          alert('Account not found, please retry!')
+          return
+        } else {
+            dispatch({
+              type: SET_CURRENT_USER,
+              payload: response
+            })
+            alert('The profile has been updated and saved')
+        }
       } else {
         alert(response.error) 
       }
