@@ -104,13 +104,17 @@ export const editWatchAction = (formData, watch) => {
 			method: 'PATCH',
 			body: formData
 		})
-		.then(
-			dispatch({
-					type: EDIT_WATCH,
-					payload: watch
-			})
-		)
-		.then(alert('The watch has been edited and saved'))
+		.then(response => {
+			if (response.error) {
+				alert(response.error)
+			} else {
+				dispatch({
+						type: EDIT_WATCH,
+						payload: watch
+				})
+				alert('The watch has been edited and saved')
+			}
+		})
 		.catch(error => {
 			console.log(error)
 		})
@@ -122,13 +126,17 @@ export const deleteWatchAction = (id, watchName) => {
 		return fetch(`${API_URL}/watches/${id}`, {
 				method: 'DELETE'
 		})
-		.then(alert(watchName + ': has been deleted'))
-		.then(
-			dispatch({
-				type: DELETE_WATCH,
-				payload: id
-			})		
-		)
+		.then(response => {
+			if (response.error) {
+				alert(response.error)
+			} else {
+				dispatch({
+					type: DELETE_WATCH,
+					payload: id
+				})
+				alert(watchName + ': has been deleted')
+			}			
+		})
 		.catch(error => {
 			console.log(error)
 		})

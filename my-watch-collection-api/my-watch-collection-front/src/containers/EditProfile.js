@@ -75,7 +75,7 @@ class EditProfile extends Component {
                     // Edit the profile
                     // const formData = new FormData()
                     // formData.append('id', this.state.profileData.id)
-                    // formData.append('email', this.state.watchData.email)
+                    // formData.append('email', this.state.profileData.email)
                     // formData.append('password', this.state.profileData.password)
                     // this.props.editProfileAction(formData, this.state.profileData)
                }

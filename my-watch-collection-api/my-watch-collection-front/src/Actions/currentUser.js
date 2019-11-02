@@ -97,6 +97,27 @@ export const logOutAction = () => {
   }
 }
 
-export const editProfileAction = (credentials) => {
+export const editProfileAction = (formData) => {
+  return dispatch => {
+    return fetch(`${API_URL}/update`, {
+      method: 'PATCH',
+      body: formData
+    })
+    .then(response => {
+      if (!response.error) {
+        dispatch({
+          type: SET_CURRENT_USER,
+          payload: response
+        })
+        alert('The profile has been updated and saved')
+      } else {
+        alert(response.error) 
+      }
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
 
 }
+
