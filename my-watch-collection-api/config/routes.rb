@@ -6,8 +6,8 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create]
       resources :registrations, only: [:create]
       delete :logout, to: 'sessions#logout'
-      get :logged_in, to: 'sessions#logged_in'
-      patch :update, to: 'registrations#update'
+      # get :logged_in, to: 'sessions#logged_in'
+      patch 'update/:id', to: 'sessions#update'
       resources :watches
     end  
   end
