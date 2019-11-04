@@ -8,18 +8,14 @@ import NavBar from '../components/NavBar'
 class EditProfile extends Component {
      
      state = {
-       profileData: {
+    
           id: this.props.currentUser.user.id,  
-          email: this.props.currentUser.user.email,
-          password: this.props.currentUser.user.password_digest,
-          password_confirmation: ''
-       },
-       savedEmail: this.props.currentUser.user.email,
-       new_password: '',
-       new_password_confirmation: '',
-       current_password_confirmation: '',
-       backToDashboard: false,
-       formHasInput: false
+          email: '',
+          password: '',
+          password_confirmation: '',
+
+          backToDashboard: false,
+          formHasInput: false
      }
 
      shouldComponentUpdate(nextProps, nextState) {
@@ -36,10 +32,6 @@ class EditProfile extends Component {
      handleChange = (event) => {
         this.setState({
           [event.target.name]: event.target.value,
-          profileData: {
-               ...this.state.profileData,
-               [event.target.name]: event.target.value
-               },
           formHasInput: true
         })                         
      }
@@ -49,41 +41,21 @@ class EditProfile extends Component {
         
           if (this.state.formHasInput) {
 
-               if ((this.state.new_password && this.state.new_password.length < 8 ) ||
-                   (this.state.current_password_confirmation && this.state.current_password_confirmation.length < 8 )) {
+               if ((this.state.password && this.state.password.length < 8 ) ||
+                   (this.state.password_confirmation && this.state.password_confirmation.length < 8 )) {
                     alert('Password must be a minimum of 8 characters!')
                     return
                } 
                if (this.state.new_password && this.state.new_password !== this.state.new_password_confirmation) {
-                    alert('New Password and Password Confirmation must be the same!')
+                    alert('New Password and New Password Confirmation must be the same!')
                     return
                }
-               if (this.state.new_password) {
-                    this.setState ({
-                         profileData: {
-                              ...this.state.profileData,
-                              password: this.state.new_password,
-                              password_confirmation: this.state.new_password_confirmation
-                          }
-                    })    
-               }
-               if ((this.state.new_password) ||
-                   (this.state.profileData.email !== this.state.savedEmail)) {
-                    alert(this.state.profileData.id)  
-                    alert(this.state.profileData.email)
-                    alert(this.state.profileData.password)
-                    alert(this.state.new_password)
-                    alert('*** Edit Profile ***')
-                    // Edit the profile
-                    this.setState({
-                         password_confirmation: this.state.current_password_confirmation
-                    })
-                    const formData = new FormData()
-                    formData.append('id', this.state.profileData.id)
-                    formData.append('email', this.state.profileData.email)
-                    formData.append('password', this.state.profileData.password)
-                    this.props.editProfileAction(formData, this.state.profileData)
-               }
+               // Edit the profile
+               const formData = new FormData()
+               formData.append('email', this.state.email)
+               formData.append('password', this.state.password)
+               formData.append('password_confirmation', this.state.password_confirmation)
+               this.props.editProfileAction(formData, this.props.currentUser.user.id)    
           }
      }
 
@@ -139,7 +111,7 @@ class EditProfile extends Component {
                                    <label>New Password (blank if you don't want to change it)</label>
                                    <input className='Input-element' 
                                              type='password'
-                                             name='new_password'
+                                             name='password'
                                              placeholder='New password'
                                              onChange={this.handleChange}
                                    />
@@ -147,19 +119,12 @@ class EditProfile extends Component {
                                    <label>New Password Confirmation</label>
                                    <input className='Input-element' 
                                              type='password'
-                                             name='new_password_confirmation'
+                                             name='password_confirmation'
                                              placeholder='Confirm your new password'
                                              onChange={this.handleChange}
                                    />
                                    <br />
-                                   <label>Current Password</label>
-                                   <input className='Input-element' required
-                                             type='password'
-                                             name='current_password_confirmation'
-                                             placeholder=' Enter current password to confirm changes'
-                                             onChange={this.handleChange}
-                                   />
-                                   <br />
+   
                                    <button className='btn Profile-button Button-text' type='submit'>Update Profile</button>
                               </div>
                          </form>
