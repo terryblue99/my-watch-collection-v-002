@@ -56,11 +56,11 @@ class AddWatch extends Component {
           event.preventDefault() 
           // validate the 'Date Bought/Gifted' input
           const date = this.state.watchData.date_bought
-          if ((!date.match(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/gm)) &&
-              (!date.match(/(19\d{2})|(200\d)|(201[0-3])/))) {
-               alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy;\n e.g. 2019-09-30 or 2019')
-               return
-          }
+          if ((!date.match(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/gm)) &&
+                   (!date.match(/^(19|20)\d{2}$/gm))) {
+                    alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy;\n e.g. 2019-09-30 or 2019')
+                    return
+               }
           // Create the watch
           const formData = new FormData()
           formData.append('watch_name', this.state.watchData.watch_name)
