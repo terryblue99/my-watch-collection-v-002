@@ -334,6 +334,10 @@ input[type=file] {
   margin-bottom: 10px;
 }
 
+.Profile-NewPassword-text {
+  color: red;
+}
+
 .WatchForm-upload-text {
   font-size: 1rem; 
   color: sienna;

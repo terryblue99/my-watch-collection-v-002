@@ -108,7 +108,7 @@ class EditProfile extends Component {
                                              onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <label>New Password (blank if you don't want to change it)</label>
+                                   <label>New Password (<span className='Profile-NewPassword-text'>blank if you don't want to change it</span>)</label>
                                    <input className='Input-element' 
                                              type='password'
                                              name='password'
