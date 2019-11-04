@@ -61,7 +61,7 @@ class EditWatch extends Component {
         if (this.state.formHasInput)
           {const date = this.state.watchData.date_bought
                if ((!date.match(/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/gm)) &&
-                   (!date.match(/(19\d{2})|(200\d)|(201[0-3])/))) {
+                   (!date.match(/^(19|20)\d{2}$/gm))) {
                     alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy;\n e.g. 2019-09-30 or 2019')
                     return
                }
