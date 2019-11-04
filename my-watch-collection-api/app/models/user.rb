@@ -10,6 +10,6 @@ class User < ApplicationRecord
                         :on => :create
   validates :password,  :confirmation => true,
                         :length => {:within => 8..20},
-                        :allow_blank => false,
+                        :allow_blank => true,
                         :on => :update
 end
