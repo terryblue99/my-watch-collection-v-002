@@ -1,5 +1,5 @@
 class Api::V2::SessionsController < ApplicationController
-  # include CurrentUserConcern
+
   def create
     user = User
             .find_by(email: params['user']['email'])
@@ -16,19 +16,6 @@ class Api::V2::SessionsController < ApplicationController
       render json: { status: 401 } # code for unauthorised user
     end
   end
-
-  # def logged_in
-  #   if current_user # set in concerns/current_user_concern.rb
-  #     render json: {
-  #       logged_in: true,
-  #       user: current_user
-  #     }
-  #   else
-  #     render json: {
-  #       logged_in: false
-  #     }
-  #   end  
-  # end
   
   def logout
     reset_session

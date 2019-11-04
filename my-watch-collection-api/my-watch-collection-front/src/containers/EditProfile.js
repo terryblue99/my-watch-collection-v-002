@@ -10,7 +10,7 @@ class EditProfile extends Component {
      state = {
     
           id: this.props.currentUser.user.id,  
-          email: '',
+          email: this.props.currentUser.user.email,
           password: '',
           password_confirmation: '',
 
@@ -46,7 +46,7 @@ class EditProfile extends Component {
                     alert('Password must be a minimum of 8 characters!')
                     return
                } 
-               if (this.state.new_password && this.state.new_password !== this.state.new_password_confirmation) {
+               if (this.state.password && this.state.password !== this.state.password_confirmation) {
                     alert('New Password and New Password Confirmation must be the same!')
                     return
                }
