@@ -25,28 +25,4 @@ class Api::V2::SessionsController < ApplicationController
     }
   end
 
-  def update
-    @user = User.find(params[:id])
-
-    if @user
-      @user.update(user_params)
-        render json: {
-        status: :updated,
-        user: @user
-      }
-    else
-      render json: { status: 401, session_id: session[:user_id] } # code for unauthorised user
-    end
-   
-  end
-
-  def user_params
-    # params hash keys (strong params)
-    params.permit(
-        :email,
-        :password,
-        :password_confirmation
-    )
-  end
-
 end
