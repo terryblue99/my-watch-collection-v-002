@@ -114,7 +114,8 @@ export const editProfileAction = (formData, user_id) => {
               type: SET_CURRENT_USER,
               payload: response
             })
-            alert('The profile has been updated and saved')
+            alert('Your profile has been updated.\nYou will need to log in again.')
+            return
         }
       } else {
         alert('*** Edit Profile Error: ' + response.error) 
