@@ -21,7 +21,7 @@ export const getWatchesAction = (user_id) => {
 		return fetch(`${API_URL}/watches/?userId=${user_id}`)
 		.then(response => {
 			if (response.error) {
-				alert(response.error)
+				alert('*** ERROR: ' + response.error)
 			} else {
 				return response.json()
 			}
@@ -40,7 +40,7 @@ export const getWatchesAction = (user_id) => {
 			})
 		})
 		.catch(error => {
-			console.log(error)
+			console.log('*** ERROR: ' + error)
 		})
 	}
 }
@@ -83,7 +83,7 @@ export const addWatchAction = (formData, watch) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert(response.error)
+				alert('*** ERROR: ' + response.error)
 			} else {
 					dispatch({
 							type: ADD_WATCH,
@@ -93,7 +93,7 @@ export const addWatchAction = (formData, watch) => {
 				}
 		})
 		.catch(error => {
-			console.log(error)
+			console.log('*** ERROR: ' + error)
 		})
 	}
 }
@@ -106,7 +106,7 @@ export const editWatchAction = (formData, watch) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert(response.error)
+				alert('*** ERROR: ' + response.error)
 			} else {
 				dispatch({
 						type: EDIT_WATCH,
@@ -116,7 +116,7 @@ export const editWatchAction = (formData, watch) => {
 			}
 		})
 		.catch(error => {
-			console.log(error)
+			console.log('*** ERROR: ' + error)
 		})
 	}
 }
@@ -128,7 +128,7 @@ export const deleteWatchAction = (id, watchName) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert(response.error)
+				alert('*** ERROR: ' + response.error)
 			} else {
 				dispatch({
 					type: DELETE_WATCH,
@@ -138,7 +138,7 @@ export const deleteWatchAction = (id, watchName) => {
 			}			
 		})
 		.catch(error => {
-			console.log(error)
+			console.log('*** ERROR: ' + error)
 		})
 	}
 }
