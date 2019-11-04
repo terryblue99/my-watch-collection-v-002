@@ -18,7 +18,7 @@ export const logInAction = (credentials) => {
     })
       .then(response => {
         if (response.error) {
-            alert(response.error)
+            alert('*** Log In Error: ' + response.error)
         } else {
           return response.json()
         }
@@ -36,7 +36,7 @@ export const logInAction = (credentials) => {
             return
           }   
         } else {
-          alert(response.error) 
+          alert('*** Log In Error: ' + response.error) 
         }
       })
       .catch(error => {
@@ -60,7 +60,7 @@ export const signUpAction = (credentials) => {
           if (response.status === 500) {
             alert('Account not created, please retry!')
           } else {
-            alert(response.error)
+            alert('*** Sign Up Error: ' + response.error)
           }
         } else {
           return response.json()
@@ -78,7 +78,7 @@ export const signUpAction = (credentials) => {
         }
       })
       .catch(error => {
-        console.log('Sign Up error: ', error)
+        console.log('*** Sign Up Error: ', error)
       })
   }
 }
@@ -92,17 +92,18 @@ export const logOutAction = () => {
     .then(dispatch({type: CLEAR_CURRENT_USER}))
     .then(dispatch({type: CLEAR_WATCHES}))
     .catch(error => {
-      console.log('Log out error: ', error)
+      console.log('*** Log out Error: ', error)
     })
   }
 }
 
-export const editProfileAction = (formData) => {
+export const editProfileAction = (formData, user_id) => {
   return dispatch => {
-    return fetch(`${API_URL}/update`, {
+    return fetch(`${API_URL}/update/${user_id}`, {
       method: 'PATCH',
       body: formData
     })
+    .then(response => response.json())
     .then(response => {
       if (!response.error) {
         if (response.status === 401) {
@@ -116,13 +117,12 @@ export const editProfileAction = (formData) => {
             alert('The profile has been updated and saved')
         }
       } else {
-        alert(response.error) 
+        alert('*** Edit Profile Error: ' + response.error) 
       }
     })
     .catch(error => {
-      console.log(error)
+      console.log('*** Edit Profile Error: ' + error)
     })
   }
-
 }
 
