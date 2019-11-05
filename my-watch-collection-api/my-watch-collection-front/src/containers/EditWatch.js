@@ -58,7 +58,7 @@ class EditWatch extends Component {
 
      handleSubmit = (event) => {
           event.preventDefault() 
-          if (this.state.formHasInput)
+          if (this.state.formHasInput) {
                // validate the 'Date Bought/Gifted' input
                if (this.state.watchData.date_bought) {
                     {const date = this.state.watchData.date_bought
@@ -86,6 +86,9 @@ class EditWatch extends Component {
                     formData.append('image', this.state.image)
                }
                this.props.editWatchAction(formData, this.state.watchData)}
+          } else {
+               alert('Nothing has been edited!')
+          }  
      }
 
      handleBack = () => {

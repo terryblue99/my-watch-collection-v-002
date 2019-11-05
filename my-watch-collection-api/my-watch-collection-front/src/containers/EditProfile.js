@@ -31,7 +31,7 @@ class EditProfile extends Component {
      }
 
      handleDelete = () => {
-          if (window.confirm('Do you realy want to delete your account?')) {
+          if (window.confirm('Do you really want to delete your account?\nAll of your watches will also be deleted!')) {
               this.props.deleteUserAction(this.props.currentUser.user.id)                 
           }
       }
@@ -58,7 +58,7 @@ class EditProfile extends Component {
                     return
                }
 
-               if (window.confirm('Do you realy want to update your account?')) {
+               if (window.confirm('Do you really want to update your account?')) {
                     // Edit the profile
                     const formData = new FormData()
                     formData.append('email', this.state.email)
@@ -66,7 +66,9 @@ class EditProfile extends Component {
                     formData.append('password_confirmation', this.state.password_confirmation)
                     this.props.editProfileAction(formData, this.props.currentUser.user.id)
                }    
-          }    
+          }  else {
+               alert('Nothing has been edited!')
+          }  
      }
 
 
