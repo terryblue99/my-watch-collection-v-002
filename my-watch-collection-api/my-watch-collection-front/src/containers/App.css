@@ -260,7 +260,6 @@ button:focus,
 
 .Login-button,
 .ProfileUpdate-button,
-.ProfileDelete-button,
 .Save-button,
 .Signup-button 
 {
@@ -274,9 +273,17 @@ button:focus,
   margin-bottom: 50px;
 }
 
+.ProfileDelete {
+  display: grid;
+  justify-content: center;
+}
+
 .ProfileDelete-button {
   background-color: red;
   color: cornsilk;
+  font-size: 1rem;  
+  margin-top: 5px;
+  padding: 10px;
 }
 
 .Add-button {

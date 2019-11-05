@@ -45,26 +45,32 @@ class EditProfile extends Component {
 
      handleSubmit = (event) => {
         event.preventDefault() 
-        
+          
           if (this.state.formHasInput) {
 
-               if ((this.state.password && this.state.password.length < 8 ) ||
-                   (this.state.password_confirmation && this.state.password_confirmation.length < 8 )) {
-                    alert('Password must be a minimum of 8 characters!')
-                    return
-               } 
-               if (this.state.password && this.state.password !== this.state.password_confirmation) {
-                    alert('New Password and New Password Confirmation must be the same!')
-                    return
-               }
-               // Edit the profile
-               const formData = new FormData()
-               formData.append('email', this.state.email)
-               formData.append('password', this.state.password)
-               formData.append('password_confirmation', this.state.password_confirmation)
-               this.props.editProfileAction(formData, this.props.currentUser.user.id)    
-          }
+               if (window.confirm('Do you realy want to update your account?')) {
+
+                    if ((this.state.password && this.state.password.length < 8 ) ||
+                        (this.state.password_confirmation && this.state.password_confirmation.length < 8 )) {
+                         alert('Password must be a minimum of 8 characters!')
+                         return
+                    }
+
+                    if (this.state.password && this.state.password !== this.state.password_confirmation) {
+                         alert('New Password and New Password Confirmation must be the same!')
+                         return
+                    }
+
+                    // Edit the profile
+                    const formData = new FormData()
+                    formData.append('email', this.state.email)
+                    formData.append('password', this.state.password)
+                    formData.append('password_confirmation', this.state.password_confirmation)
+                    this.props.editProfileAction(formData, this.props.currentUser.user.id)
+               }    
+          }    
      }
+
 
      handleBack = () => {
           this.setState({
@@ -134,13 +140,13 @@ class EditProfile extends Component {
                                    <button className='btn ProfileUpdate-button Button-text' type='submit'>Update Profile</button>
                                    <br />
                                    <br />
-                                   <button className='btn ProfileDelete-button Button-text' onClick={this.handleDelete}> 
-                                        Delete My Account
-                                   </button>
-   
-                                   
                               </div>
                          </form>
+                         <div className='ProfileDelete'>
+                              <button className='btn ProfileDelete-button Button-text' onClick={this.handleDelete}> 
+                                   Delete My Account
+                              </button>
+                         </div>
                     </div>
                </div>
           )
