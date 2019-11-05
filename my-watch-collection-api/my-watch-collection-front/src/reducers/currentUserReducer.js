@@ -1,4 +1,9 @@
-import { SET_CURRENT_USER, CLEAR_CURRENT_USER } from '../actions/types'
+import { 
+  SET_CURRENT_USER, 
+  CLEAR_CURRENT_USER,
+  DELETE_USER
+ } 
+from '../actions/types'
 
 export default (state = null, { type, payload }) => {
 
@@ -10,6 +15,9 @@ export default (state = null, { type, payload }) => {
       } else return state
 
     case CLEAR_CURRENT_USER:
+      return null
+
+    case DELETE_USER:
       return null
       
     default:

@@ -1,7 +1,8 @@
 import {
   SET_CURRENT_USER,
   CLEAR_CURRENT_USER,
-  CLEAR_WATCHES
+  CLEAR_WATCHES,
+  DELETE_USER
 } from './types'
 
 const API_URL = '/api/v2'
@@ -127,3 +128,23 @@ export const editProfileAction = (formData, user_id) => {
   }
 }
 
+export const deleteUserAction = (user_id) => {
+	return dispatch => {
+		return fetch(`${API_URL}/registrations/${user_id}`, {
+				method: 'DELETE'
+		})
+		.then(response => {
+			if (response.error) {
+				alert('*** ERROR: ' + response.error)
+			} else {
+				dispatch({
+					type: DELETE_USER
+				})
+        alert('Your account has been successfully deleted. Hope to see you again soon.')
+			}			
+		})
+		.catch(error => {
+			console.log('*** ERROR: ' + error)
+		})
+	}
+}

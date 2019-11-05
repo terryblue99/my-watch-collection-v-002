@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     namespace :v2 do
       resources :sessions, only: [:create]
-      resources :registrations, only: [:create]
+      resources :registrations, only: [:create, :destroy]
       delete :logout, to: 'sessions#logout'
-      # get :logged_in, to: 'sessions#logged_in'
       patch 'update/:id', to: 'registrations#update'
       resources :watches
     end  

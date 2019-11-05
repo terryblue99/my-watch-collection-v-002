@@ -14,4 +14,5 @@ export const NEWEST_TO_OLDEST_SORT = 'Newest to Oldest'
 export const OLDEST_TO_NEWEST_SORT = 'Oldest to Newest'
 export const COST_LOW_TO_HIGH_SORT = 'Cost Low to High'
 export const COST_HIGH_TO_LOW_SORT = 'Cost High to Low'
+export const DELETE_USER = 'DELETE_USER'
               

@@ -249,7 +249,7 @@ button:focus,
 .FullList-button,
 .Home-button,
 .Login-button,
-.Profile-button, 
+.ProfileUpdate-button, 
 .Save-button,
 .Signup-button 
 {
@@ -259,7 +259,8 @@ button:focus,
 }
 
 .Login-button,
-.Profile-button,
+.ProfileUpdate-button,
+.ProfileDelete-button,
 .Save-button,
 .Signup-button 
 {
@@ -267,6 +268,15 @@ button:focus,
   font-size: 2rem; 
   margin-top: 5px;
   padding: 10px;
+}
+
+.ProfileUpdate-button {
+  margin-bottom: 50px;
+}
+
+.ProfileDelete-button {
+  background-color: red;
+  color: cornsilk;
 }
 
 .Add-button {
@@ -334,8 +344,13 @@ input[type=file] {
   margin-bottom: 10px;
 }
 
-.Profile-NewPassword-text {
-  color: red;
+.ProfileForm-cancel-header,
+.ProfileForm-NewPassword-text {
+  color: DarkRed;
+}
+
+.ProfileForm-cancel-header {
+  text-align: center;
 }
 
 .WatchForm-upload-text {

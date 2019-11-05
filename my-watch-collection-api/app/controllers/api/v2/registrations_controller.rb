@@ -33,6 +33,11 @@ class Api::V2::RegistrationsController < ApplicationController
    
   end
 
+  def destroy
+    User.find(params[:id]).destroy
+    # Watch.where(:user_id => params[:id]).destroy_all
+  end
+
   def user_params
     # params hash keys (strong params)
     params.permit(

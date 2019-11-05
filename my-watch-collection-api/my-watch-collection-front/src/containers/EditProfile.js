@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import './App.css'
 import { editProfileAction } from '../actions/currentUser'
+import { deleteUserAction } from '../actions/currentUser'
 import NavBar from '../components/NavBar'
 
 class EditProfile extends Component {
@@ -28,6 +29,12 @@ class EditProfile extends Component {
           }
           return true
      }
+
+     handleDelete = () => {
+          if (window.confirm('Do you realy want to delete your account?')) {
+              this.props.deleteUserAction(this.props.currentUser.user.id)                 
+          }
+      }
 
      handleChange = (event) => {
         this.setState({
@@ -108,7 +115,7 @@ class EditProfile extends Component {
                                              onChange={this.handleChange}
                                    />
                                    <br /> 
-                                   <label>New Password (<span className='Profile-NewPassword-text'>blank if you don't want to change it</span>)</label>
+                                   <label>New Password (<span className='ProfileForm-NewPassword-text'>blank if you don't want to change it</span>)</label>
                                    <input className='Input-element' 
                                              type='password'
                                              name='password'
@@ -124,8 +131,14 @@ class EditProfile extends Component {
                                              onChange={this.handleChange}
                                    />
                                    <br />
+                                   <button className='btn ProfileUpdate-button Button-text' type='submit'>Update Profile</button>
+                                   <br />
+                                   <br />
+                                   <button className='btn ProfileDelete-button Button-text' onClick={this.handleDelete}> 
+                                        Delete My Account
+                                   </button>
    
-                                   <button className='btn Profile-button Button-text' type='submit'>Update Profile</button>
+                                   
                               </div>
                          </form>
                     </div>
@@ -140,4 +153,4 @@ const mapStateToProps = (state) => {
   } 
 }
 
-export default connect(mapStateToProps, { editProfileAction })(EditProfile)
+export default connect(mapStateToProps, { editProfileAction, deleteUserAction })(EditProfile)
