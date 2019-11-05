@@ -48,19 +48,17 @@ class EditProfile extends Component {
           
           if (this.state.formHasInput) {
 
+               if (this.state.password && this.state.password.length < 8 ) {
+                    alert('Password must be a minimum of 8 characters!')
+                    return
+               }
+
+               if (this.state.password && this.state.password !== this.state.password_confirmation) {
+                    alert('New Password and New Password Confirmation must be the same!')
+                    return
+               }
+
                if (window.confirm('Do you realy want to update your account?')) {
-
-                    if ((this.state.password && this.state.password.length < 8 ) ||
-                        (this.state.password_confirmation && this.state.password_confirmation.length < 8 )) {
-                         alert('Password must be a minimum of 8 characters!')
-                         return
-                    }
-
-                    if (this.state.password && this.state.password !== this.state.password_confirmation) {
-                         alert('New Password and New Password Confirmation must be the same!')
-                         return
-                    }
-
                     // Edit the profile
                     const formData = new FormData()
                     formData.append('email', this.state.email)
