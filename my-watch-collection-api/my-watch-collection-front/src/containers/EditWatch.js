@@ -163,7 +163,6 @@ class EditWatch extends Component {
                               </div>
                               <div css={css`
                                    padding-bottom: 12px;
-                                   {/* padding-left: 120px; */}
                                    padding-top: 0;
                                    width: 90%;
 
