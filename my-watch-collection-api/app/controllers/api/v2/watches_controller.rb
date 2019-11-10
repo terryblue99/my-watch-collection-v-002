@@ -24,7 +24,7 @@ class Api::V2::WatchesController < ApplicationController
     end
 
     def destroy
-        @watch.image.purge_later
+        @watch.image.purge
         @watch.destroy
     end
 

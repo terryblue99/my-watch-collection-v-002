@@ -1,17 +1,17 @@
 class Api::V2::RegistrationsController < ApplicationController
 
   def create
-    user = User.create!(
+    @user = User.create!(
       email: params['user']['email'],
       password: params['user']['password'],
       password_confirmation: params['user']['password_confirmation']
     )
 
-    if user
-      session[:user_id] = user.id
+    if @user
+      session[:user_id] = @user.id
       render json: {
         status: :created,
-        user: user
+        user: @user
       }
     else
       render json: { status: 500 }
@@ -22,7 +22,7 @@ class Api::V2::RegistrationsController < ApplicationController
     @user = User.find(params[:id])
 
     if @user
-      @user.update(user_params)
+       @user.update(user_params)
         render json: {
         status: :updated,
         user: @user
@@ -34,7 +34,8 @@ class Api::V2::RegistrationsController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    @user = User.find(params[:id])
+    @user.destroy
   end
 
   def user_params
