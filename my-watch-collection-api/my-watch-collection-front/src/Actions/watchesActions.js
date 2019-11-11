@@ -1,7 +1,7 @@
 import {
 	GET_WATCHES,
 	ADD_WATCH,
-	EDIT_WATCH,
+	// EDIT_WATCH,
 	DELETE_WATCH,
 	SEARCH_WATCHES,
 	RESET_WATCHES
@@ -103,20 +103,16 @@ export const editWatchAction = (formData, watch) => {
 		return fetch(`${API_URL}/watches/${watch.id}`, {
 			method: 'PATCH',
 			body: formData
-		})
+	})
 		.then(response => {
 			if (response.error) {
-				alert('*** ERROR: ' + response.error)
+				alert('*** ERROR 1: ' + response.error)
 			} else {
-				dispatch({
-						type: EDIT_WATCH,
-						payload: watch
-				})
 				alert('The watch has been edited and saved')
 			}
 		})
 		.catch(error => {
-			console.log('*** ERROR: ' + error)
+			console.log('*** ERROR 2: ' + error)
 		})
 	}
 }
