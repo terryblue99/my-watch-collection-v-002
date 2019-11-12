@@ -99,6 +99,9 @@ export const addWatchAction = (formData, watch) => {
 }
 
 export const editWatchAction = (formData, watch) => {
+	// for(let [name, value] of formData) {
+	// 	console.log(`${name} = ${value}`)
+	// }
 	return dispatch => {
 		return fetch(`${API_URL}/watches/${watch.id}`, {
 			method: 'PATCH',
