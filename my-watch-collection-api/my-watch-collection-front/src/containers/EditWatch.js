@@ -67,33 +67,30 @@ class EditWatch extends Component {
                     formHasInput: false
                }) 
                // validate the 'Date Bought/Gifted' input
-               if (this.state.watchData.date_bought) {
-                    {const date = this.state.watchData.date_bought
-                         if ((!date.match(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/gm)) &&
-                             (!date.match(/^(19|20)\d{2}$/gm))) {
-                              alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy;\n e.g. 2019-09-30 or 2019')
-                              return
-                         }
-                    }    
-                    // Edit the watch
-                    const formData = new FormData()
-                    formData.append('watch_name', this.state.watchData.watch_name)
-                    formData.append('watch_maker', this.state.watchData.watch_maker)
-                    formData.append('movement', this.state.watchData.movement)
-                    formData.append('band', this.state.watchData.band)
-                    formData.append('model_number', this.state.watchData.model_number)
-                    formData.append('case_measurement', this.state.watchData.case_measurement)
-                    formData.append('water_resistance', this.state.watchData.water_resistance)
-                    formData.append('complications', this.state.watchData.complications)
-                    formData.append('date_bought', this.state.watchData.date_bought)
-                    formData.append('cost', this.state.watchData.cost)
-                    formData.append('notes', this.state.watchData.notes)
-                    formData.append('user_id', this.state.watchData.user_id)   
-                    if (this.state.image) {
-                         formData.append('image', this.state.image)
+               const date = this.state.watchData.date_bought
+                    if ((!date.match(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/gm)) &&
+                         (!date.match(/^(19|20)\d{2}$/gm))) {
+                         alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy;\n e.g. 2019-09-30 or 2019')
+                         return
                     }
-                    this.props.editWatchAction(formData, this.state.watchData, this.state.image)
+               // Edit the watch
+               const formData = new FormData()
+               formData.append('watch_name', this.state.watchData.watch_name)
+               formData.append('watch_maker', this.state.watchData.watch_maker)
+               formData.append('movement', this.state.watchData.movement)
+               formData.append('band', this.state.watchData.band)
+               formData.append('model_number', this.state.watchData.model_number)
+               formData.append('case_measurement', this.state.watchData.case_measurement)
+               formData.append('water_resistance', this.state.watchData.water_resistance)
+               formData.append('complications', this.state.watchData.complications)
+               formData.append('date_bought', this.state.watchData.date_bought)
+               formData.append('cost', this.state.watchData.cost)
+               formData.append('notes', this.state.watchData.notes)
+               formData.append('user_id', this.state.watchData.user_id)   
+               if (this.state.image) {
+                    formData.append('image', this.state.image)
                }
+               this.props.editWatchAction(formData, this.state.watchData, this.state.image)
           } else {
                alert('Nothing has been edited!')
           }  
