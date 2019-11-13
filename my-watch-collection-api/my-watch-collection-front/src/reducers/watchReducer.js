@@ -2,7 +2,6 @@ import _ from 'lodash'
 import { 
 	GET_WATCHES, 
 	ADD_WATCH, 
-	EDIT_WATCH, 
 	DELETE_WATCH,
 	CLEAR_WATCHES,
 	SEARCH_WATCHES,
@@ -53,15 +52,6 @@ export default (state = initialState, { type, payload } ) => {
 					...state,
 					state: state.watches.concat(payload)
 				}) 	
-			}
-			else return state
-
-		case EDIT_WATCH:
-			if (payload) {
-				return ({
-					...state,
-					state: state.watches.map(watch => watch.id === payload.id ? payload : watch)
-				})
 			}
 			else return state
 

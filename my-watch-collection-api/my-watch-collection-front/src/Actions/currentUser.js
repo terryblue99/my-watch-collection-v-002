@@ -19,7 +19,7 @@ export const logInAction = (credentials) => {
     })
       .then(response => {
         if (response.error) {
-            alert('*** Log In Error: ' + response.error)
+            alert('*** logInAction Error 1: ' + response.error)
         } else {
           return response.json()
         }
@@ -37,11 +37,11 @@ export const logInAction = (credentials) => {
             return
           }   
         } else {
-          alert('*** Log In Error: ' + response.error) 
+          alert('*** logInAction Error 2: ' + response.error) 
         }
       })
       .catch(error => {
-        console.log('Log In error: ', error)
+        console.log('logInAction Error 3: ', error)
       })
   }
 }
@@ -61,7 +61,7 @@ export const signUpAction = (credentials) => {
           if (response.status === 500) {
             alert('Account not created, please retry!')
           } else {
-            alert('*** Sign Up Error: ' + response.error)
+            alert('*** signUpAction Error 1: ' + response.error)
           }
         } else {
           return response.json()
@@ -79,7 +79,7 @@ export const signUpAction = (credentials) => {
         }
       })
       .catch(error => {
-        console.log('*** Sign Up Error: ', error)
+        console.log('*** signUpAction Error 2: ', error)
       })
   }
 }
@@ -93,7 +93,7 @@ export const logOutAction = () => {
     .then(dispatch({type: CLEAR_CURRENT_USER}))
     .then(dispatch({type: CLEAR_WATCHES}))
     .catch(error => {
-      console.log('*** Log out Error: ', error)
+      console.log('*** logOutAction Error: ', error)
     })
   }
 }
@@ -119,11 +119,11 @@ export const editProfileAction = (formData, user_id) => {
             return
         }
       } else {
-        alert('*** Edit Profile Error: ' + response.error) 
+        alert('*** editProfileAction Error 1: ' + response.error) 
       }
     })
     .catch(error => {
-      console.log('*** Edit Profile Error: ' + error)
+      console.log('*** editProfileAction Error 2: ' + error)
     })
   }
 }
@@ -135,16 +135,16 @@ export const deleteUserAction = (user_id) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert('*** ERROR: ' + response.error)
+				alert('*** deleteUserAction ERROR 1: ' + response.error)
 			} else {
 				dispatch({
 					type: DELETE_USER
 				})
-        alert('Your account has been successfully deleted. Hope to see you again soon.')
+        alert('Your account has been successfully deleted. Hope to see you again soon :)')
 			}			
 		})
 		.catch(error => {
-			console.log('*** ERROR: ' + error)
+			console.log('*** deleteUserAction ERROR 2: ' + error)
 		})
 	}
 }

@@ -13,12 +13,6 @@ class Api::V2::WatchesController < ApplicationController
         watch = Watch.create!(watch_params)
         
         if watch
-            if params[:image]
-                @watch.image.attach(params[:image]) 
-                @watch.save
-            else
-                @watch.image purge    
-            end
             session[:watch_id] = watch.id
             render json: {
               status: :created,
@@ -30,21 +24,11 @@ class Api::V2::WatchesController < ApplicationController
     end
 
     def update 
-        # if params[:image]
-        #     if @watch.image.attached?
-        #         @watch.image.purge
-        #     end
-        #     @watch.image.attach(params[:image]) 
-        #     @watch.save
-        # end 
-        @watch.update(watch_params)
-        @watch.image.attach(params[:image])
-        @watch.save
-        
+        @watch.update(watch_params)   
     end
 
     def destroy
-        @watch.image.purge
+        @watch.image.purge_later
         @watch.destroy
     end
 
