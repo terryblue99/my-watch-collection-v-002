@@ -1,26 +1,46 @@
 class Api::V2::WatchesController < ApplicationController
 
-    before_action :set_watch, only: [:show, :edit, :update, :destroy]
+    before_action :set_watch, only: [:update, :destroy]
 
     def index
-        watches = Watch.where(user_id: params[:userId]).with_attached_image
+        watches = Watch.where(user_id: params[:user_id]).with_attached_image
         render json: watches.map { |watch|
             watch.as_json.merge({ image: url_for(watch.image) })
         } 
     end
 
     def create
-        @watch = Watch.create!(watch_params)
+        watch = Watch.create!(watch_params)
         
-        if @watch
-            render json: {message: 'watch saved!'}
+        if watch
+            if params[:image]
+                @watch.image.attach(params[:image]) 
+                @watch.save
+            else
+                @watch.image purge    
+            end
+            session[:watch_id] = watch.id
+            render json: {
+              status: :created,
+              watch: watch
+            }
         else
-            render json: @watch.errors.full_messages
+            render json: { status: 500 }
         end
     end
 
-    def update
+    def update 
+        # if params[:image]
+        #     if @watch.image.attached?
+        #         @watch.image.purge
+        #     end
+        #     @watch.image.attach(params[:image]) 
+        #     @watch.save
+        # end 
         @watch.update(watch_params)
+        @watch.image.attach(params[:image])
+        @watch.save
+        
     end
 
     def destroy
@@ -35,19 +55,20 @@ class Api::V2::WatchesController < ApplicationController
 
     def watch_params
         # params hash keys (strong params)
+        # params.require(:watch).permit(
         params.permit(
-            :watch_name,
-            :watch_maker,
-            :movement,
+            :watch_name, 
+            :watch_maker, 
+            :movement, 
             :complications,
-            :band,
-            :model_number,
+            :band, 
+            :model_number, 
             :case_measurement,
-            :water_resistance,
-            :date_bought,
+            :water_resistance, 
+            :date_bought, 
             :cost,
-            :notes,
             :user_id,
+            :notes,
             :image
         )
     end

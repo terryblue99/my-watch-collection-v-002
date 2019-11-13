@@ -18,7 +18,7 @@ export const getWatchesAction = (user_id) => {
 	// thus making it able to dispatch actions itself.
 	return dispatch => {
 
-		return fetch(`${API_URL}/watches/?userId=${user_id}`)
+		return fetch(`${API_URL}/watches/?user_id=${user_id}`)
 		.then(response => {
 			if (response.error) {
 				alert('*** ERROR: ' + response.error)
@@ -98,19 +98,20 @@ export const addWatchAction = (formData, watch) => {
 	}
 }
 
-export const editWatchAction = (formData, watch) => {
+export const editWatchAction = (formData, watch_id) => {
 	// for(let [name, value] of formData) {
 	// 	console.log(`${name} = ${value}`)
 	// }
 	return dispatch => {
-		return fetch(`${API_URL}/watches/${watch.id}`, {
+		return fetch(`${API_URL}/watches/${watch_id}`, {
 			method: 'PATCH',
 			body: formData
-	})
+		})
 		.then(response => {
 			if (response.error) {
 				alert('*** ERROR 1: ' + response.error)
 			} else {
+				console.log('*** editWatchAction response: ', response)
 				alert('The watch has been edited and saved')
 			}
 		})

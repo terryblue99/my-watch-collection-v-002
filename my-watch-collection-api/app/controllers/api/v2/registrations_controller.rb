@@ -34,8 +34,7 @@ class Api::V2::RegistrationsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    User.find(params[:id]).destroy
   end
 
   def user_params
