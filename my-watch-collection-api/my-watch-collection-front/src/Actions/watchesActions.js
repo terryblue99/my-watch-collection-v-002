@@ -1,7 +1,6 @@
 import {
 	GET_WATCHES,
 	ADD_WATCH,
-	// EDIT_WATCH,
 	DELETE_WATCH,
 	SEARCH_WATCHES,
 	RESET_WATCHES
@@ -21,7 +20,7 @@ export const getWatchesAction = (user_id) => {
 		return fetch(`${API_URL}/watches/?user_id=${user_id}`)
 		.then(response => {
 			if (response.error) {
-				alert('*** ERROR: ' + response.error)
+				alert('*** getWatchesAction ERROR 1: ' + response.error)
 			} else {
 				return response.json()
 			}
@@ -40,7 +39,7 @@ export const getWatchesAction = (user_id) => {
 			})
 		})
 		.catch(error => {
-			console.log('*** ERROR: ' + error)
+			console.log('*** getWatchesAction ERROR 2: ' + error)
 		})
 	}
 }
@@ -52,7 +51,6 @@ export const sortWatchesAction = (sortKey) => {
 		})
 	}		
 }
-
 
 export const searchWatchesAction = (searchText) => {
 	return dispatch => {
@@ -83,7 +81,7 @@ export const addWatchAction = (formData, watch) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert('*** ERROR: ' + response.error)
+				alert('*** addWatchAction ERROR 1: ' + response.error)
 			} else {
 					dispatch({
 							type: ADD_WATCH,
@@ -93,7 +91,7 @@ export const addWatchAction = (formData, watch) => {
 				}
 		})
 		.catch(error => {
-			console.log('*** ERROR: ' + error)
+			console.log('*** addWatchAction ERROR 2: ' + error)
 		})
 	}
 }
@@ -109,14 +107,13 @@ export const editWatchAction = (formData, watch_id) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert('*** ERROR 1: ' + response.error)
+				alert('*** editWatchAction ERROR 1: ' + response.error)
 			} else {
-				console.log('*** editWatchAction response: ', response)
 				alert('The watch has been edited and saved')
 			}
 		})
 		.catch(error => {
-			console.log('*** ERROR 2: ' + error)
+			console.log('*** editWatchAction ERROR 2: ' + error)
 		})
 	}
 }
@@ -128,7 +125,7 @@ export const deleteWatchAction = (id, watchName) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert('*** ERROR: ' + response.error)
+				alert('*** deleteWatchAction ERROR 1: ' + response.error)
 			} else {
 				dispatch({
 					type: DELETE_WATCH,
@@ -138,7 +135,7 @@ export const deleteWatchAction = (id, watchName) => {
 			}			
 		})
 		.catch(error => {
-			console.log('*** ERROR: ' + error)
+			console.log('*** deleteWatchAction ERROR 2: ' + error)
 		})
 	}
 }
