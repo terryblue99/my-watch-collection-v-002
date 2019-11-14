@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import './App.css'
-import { editProfileAction } from '../actions/currentUser'
-import { deleteUserAction } from '../actions/currentUser'
+import { editProfileAction } from '../actions/currentUserActions'
+import { deleteUserAction } from '../actions/currentUserActions'
 import NavBar from '../components/NavBar'
 
 class EditProfile extends Component {
