@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import '../../containers/App.css'
 import logo from '../../images/logo.jpg'
-import { logInAction } from "../../actions/currentUser.js"
+import { logInAction } from "../../actions/currentUserActions.js"
 
 class LogIn extends Component {
 
