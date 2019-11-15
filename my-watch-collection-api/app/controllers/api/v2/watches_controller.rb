@@ -23,12 +23,13 @@ class Api::V2::WatchesController < ApplicationController
         end
     end
 
-    def update 
+    def update   
+        ActiveStorage::Attachment.find(@watch.image.id).purge
         @watch.update(watch_params)   
     end
 
     def destroy
-        @watch.image.purge_later
+        ActiveStorage::Attachment.find(@watch.image.id).purge
         @watch.destroy
     end
 
