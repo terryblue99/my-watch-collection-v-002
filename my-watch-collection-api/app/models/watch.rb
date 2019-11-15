@@ -5,14 +5,6 @@ class Watch < ApplicationRecord
   validates :watch_name, :watch_maker, presence: true
   validate :image_attached
 
-  # The following is needed to support deletion
-  # attribute :remove_image, :boolean
-  # after_save -> { image.purge }, if: :remove_image
-
-  # rails_admin do
-  #   field :image, :active_storage
-  # end
-
   def image_attached
     # Checks if a watch image has been selected  
     # and if not, a default image is stored
