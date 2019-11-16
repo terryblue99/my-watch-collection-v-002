@@ -1,8 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :watches , dependent: :destroy # dependent: :destroy causes all the associated watches
-                                          # and attachments to be deleted directly from the database
-                                          # when .destroy is used on the user
+  has_many :watches
 
   validates_presence_of :email
   validates_uniqueness_of :email
