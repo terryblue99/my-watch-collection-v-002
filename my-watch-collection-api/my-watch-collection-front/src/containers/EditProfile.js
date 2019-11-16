@@ -5,6 +5,8 @@ import './App.css'
 import { editProfileAction } from '../actions/currentUserActions'
 import { deleteUserAction } from '../actions/currentUserActions'
 import NavBar from '../components/NavBar'
+import ProcessingIndicator from '../components/ProcessingIndicator'
+import { trackPromise } from 'react-promise-tracker'
 
 class EditProfile extends Component {
      
@@ -16,7 +18,8 @@ class EditProfile extends Component {
           password_confirmation: '',
 
           backToDashboard: false,
-          formHasInput: false
+          formHasInput: false,
+          processing: false
      }
 
      shouldComponentUpdate(nextProps, nextState) {
@@ -32,7 +35,12 @@ class EditProfile extends Component {
 
      handleDelete = () => {
           if (window.confirm('Do you really want to delete your account?\nAll of your watches will also be deleted!')) {
-              this.props.deleteUserAction(this.props.currentUser.user.id)                 
+               this.setState({
+                    processing: true
+               })
+               trackPromise (
+                    this.props.deleteUserAction(this.props.currentUser.user.id)  
+               )                     
           }
       }
 
@@ -79,7 +87,7 @@ class EditProfile extends Component {
      }
 
      render() {
- 
+          
           if (this.state.backToDashboard && this.state.formHasInput) {
                this.setState({
                     formHasInput: false
@@ -100,7 +108,7 @@ class EditProfile extends Component {
           const user = this.props.currentUser.user
       
           return (  
-               
+              
                <div>
                     <NavBar />
                     <div className='Profile-container'>
@@ -142,10 +150,11 @@ class EditProfile extends Component {
                                    <br />
                               </div>
                          </form>
-                         <div className='ProfileDelete'>
-                              <button className='btn ProfileDelete-button Button-text' onClick={this.handleDelete}> 
-                                   Delete My Account
-                              </button>
+                         <div className='ProfileDelete'> 
+                              {this.state.processing ? <ProcessingIndicator /> :
+                                   <button className='btn ProfileDelete-button Button-text' onClick={this.handleDelete}> 
+                                        Delete My Account
+                                   </button>}
                          </div>
                     </div>
                </div>
