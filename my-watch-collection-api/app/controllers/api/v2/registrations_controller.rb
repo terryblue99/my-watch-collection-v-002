@@ -34,8 +34,7 @@ class Api::V2::RegistrationsController < ApplicationController
   end
 
   def destroy
-    @userWatches = Watch.where(user_id: params[:id])
-    @userWatches.destroy_all
+    Watch.where(user_id: params[:id]).destroy_all
     User.find(params[:id]).destroy
   end
 
