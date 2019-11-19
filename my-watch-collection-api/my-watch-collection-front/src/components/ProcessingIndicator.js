@@ -5,7 +5,7 @@ import Loader from 'react-loader-spinner'
 const ProcessingIndicator = props => {
   const { promiseInProgress } = usePromiseTracker()
   return promiseInProgress &&
-    <div className='Processing'>
+    <div>
       <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
       Deleting your account - Please wait!
     </div>
