@@ -54,8 +54,7 @@ class WatchDetail extends Component {
             }}  />
         } 
 
-        const currentWatch = this.props.currentWatch
-        const showWatches = this.props.showWatches
+        const {currentWatch, showWatches} = this.props
 
         const style = {
             image: {
