@@ -27,6 +27,8 @@ class SignUp extends Component {
         }
  
         this.props.signUpAction({ user: this.state })
+        // Clear the form
+        document.getElementById('Signup-form').reset()
     }
 
     handleChange = (event) => {
