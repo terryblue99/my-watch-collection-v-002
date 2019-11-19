@@ -27,8 +27,8 @@ export const logInAction = (credentials) => {
       .then(response => {
         if (!response.error) {
           if (response.status === 401) {
-            alert('Account not found, please retry!')
-            return
+            alert('Account not found, please retry or Sign Up!')
+            window.location.assign('/')
           } else {
             dispatch({
               type: SET_CURRENT_USER,
