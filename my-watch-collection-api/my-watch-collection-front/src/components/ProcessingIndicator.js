@@ -6,7 +6,7 @@ const ProcessingIndicator = props => {
   const { promiseInProgress } = usePromiseTracker()
   return promiseInProgress &&
     <div>
-      <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
+      <Loader type="ThreeDots" color="#2BAD60" height="50" width="50" />
       Deleting your account - Please wait!
     </div>
 }
