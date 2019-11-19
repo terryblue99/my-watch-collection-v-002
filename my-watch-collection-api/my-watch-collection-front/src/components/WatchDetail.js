@@ -71,24 +71,30 @@ class WatchDetail extends Component {
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;
                 `}>
-                    <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
+                    
                 
                     <div css={css`
                         display: flex;
                         justify-content: space-between;
+                        margin-top: 20px;
 
-                        @media (max-width: 750px) {
-                            flex-direction: column
+                        @media (max-width: 945px) {
+                            flex-direction: column;
                         }
                     `}>   
+                        <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                         <div css={css`
                             margin-bottom: 15px;
                             padding-left: 20px;
                             padding-top: 20px;
                             width: 25%;
+
+                            @media (max-width: 945px) {
+                                padding-left: 120px;
+                            } 
                             
                             @media (max-width: 750px) {
-                                padding-left: 80px;
+                                padding-left: 120px;
                             }  
                         `}> 
                             <Image 
@@ -120,7 +126,7 @@ class WatchDetail extends Component {
                             <h2 css={css`
                                 color: midnightblue;
                                 font-size: 1.4rem;
-                                margin-bottom: 10px;
+                                margin-bottom: 3px;
                                 max-width: 500px;
 
                                 @media (min-width: 1500px) {
@@ -128,6 +134,7 @@ class WatchDetail extends Component {
                                     margin-bottom: 15px;
                                 }
                             `}>{currentWatch.watch_name}</h2>
+                            <hr className='WatchDetail'/>
                             {currentWatch.movement ? 
                                 <span>
                                     <p><em className='Detail-css'>Movement</em></p>

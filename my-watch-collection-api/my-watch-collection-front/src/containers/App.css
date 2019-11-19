@@ -276,13 +276,14 @@ button:focus,
 .ProfileDelete {
   display: grid;
   justify-content: center;
+  border-radius: 5px;
 }
 
 .ProfileDelete-button {
   background-color: red;
   color: cornsilk;
   font-size: 1rem;  
-  margin-top: 5px;
+  margin-top: 15px;
   padding: 10px;
 }
 
@@ -335,6 +336,18 @@ input[type=file] {
 /*  =================
           forms
     ================= */
+
+hr.ProfileDelete {
+  border: 10px solid #454140;
+  border-radius: 5px;
+  margin-bottom: 10px
+}
+
+hr.WatchDetail {
+  border: 2px solid #454140;
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
 
 .WatchForm-header,
 .ProfileForm-header
