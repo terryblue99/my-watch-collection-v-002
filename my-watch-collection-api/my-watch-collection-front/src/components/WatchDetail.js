@@ -86,7 +86,7 @@ class WatchDetail extends Component {
                         <div css={css`
                             margin-bottom: 15px;
                             padding-left: 20px;
-                            padding-top: 20px;
+                            padding-top: 10px;
                             width: 25%;
 
                             @media (max-width: 945px) {
