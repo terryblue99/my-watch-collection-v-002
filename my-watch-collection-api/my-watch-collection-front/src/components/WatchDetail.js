@@ -155,25 +155,25 @@ class WatchDetail extends Component {
                             : null }
                             {currentWatch.model_number ? 
                                 <span>
-                                    <p><em className='Detail-css'>Model number</em></p>
+                                    <p><em className='Detail-css'>Model Number</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
                                 </span>
                             : null }
                             {currentWatch.case_measurement ? 
                                 <span>
-                                    <p><em className='Detail-css'>Case measurement</em></p>
+                                    <p><em className='Detail-css'>Case Measurement</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
                                 </span>
                             : null }
                             {currentWatch.water_resistance ? 
                                 <span>
-                                    <p><em className='Detail-css'>Water resistance</em></p>
+                                    <p><em className='Detail-css'>Water Resistance</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                                 </span>
                             : null }
                             {currentWatch.date_bought ? 
                                 <span>
-                                    <p><em className='Detail-css'>Date bought</em></p>
+                                    <p><em className='Detail-css'>Date Bought/Gifted</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
                                 </span>
                             : null }
