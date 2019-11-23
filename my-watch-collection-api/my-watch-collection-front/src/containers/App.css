@@ -556,6 +556,15 @@ textarea:required
   }
 }
 
+@media (max-width: 945px) {
+  .Back-button {
+    display:block;
+    margin: 35px auto;
+    margin-top: 15px;
+    width: 300px;
+  } 
+}
+
 @media (min-width: 1500px) {
 
   body {

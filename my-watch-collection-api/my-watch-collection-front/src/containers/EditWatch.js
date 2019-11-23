@@ -1,9 +1,13 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import './App.css'
+// The following comment is required for @emotion to work
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import NavBar from '../components/NavBar'
 import { editWatchAction } from '../actions/watchesActions'
+
 
 class EditWatch extends Component {
      
@@ -124,7 +128,15 @@ class EditWatch extends Component {
                <div>
                     <NavBar />
 
-                    <div className='container WatchForm-container'>
+                    <div className='container WatchForm-container' css={css`
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 20px;
+
+                        @media (max-width: 945px) {
+                            flex-direction: column;
+                        }
+                    `}>
                     
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          
