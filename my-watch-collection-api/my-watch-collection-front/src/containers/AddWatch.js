@@ -29,17 +29,6 @@ class AddWatch extends Component {
           backToDashboard: false
      }
 
-     shouldComponentUpdate(nextProps, nextState) {
-          if(this.state.backToDashboard) {
-               // Prevent component re-render on a true state and reset to false
-               this.setState({
-                    backToDashboard: false
-               })
-               return false
-          }
-          return true
-     }
-
      handleChange = (event) => {
           this.setState({
                watchData: {
@@ -94,6 +83,9 @@ class AddWatch extends Component {
 
      render() {  
           if (this.state.backToDashboard) { 
+               this.setState({
+                    backToDashboard: false
+                }) 
                return <Redirect to={{
                          pathname: '/dashboard'
                     }}/>

@@ -32,17 +32,6 @@ class EditWatch extends Component {
        formHasInput: false
      }
 
-     shouldComponentUpdate(nextProps, nextState) {
-          if(this.state.backToDashboard) {
-               // Prevent component re-render on a true state and reset to false
-               this.setState({
-                    backToDashboard: false
-               })
-               return false
-          }
-          return true
-     }
-
      handleChange = (event) => {
         this.setState({
           watchData: {
@@ -106,7 +95,8 @@ class EditWatch extends Component {
  
           if (this.state.backToDashboard && this.state.formHasInput) {
                this.setState({
-                    formHasInput: false
+                    formHasInput: false,
+                    backToDashboard: false
                })  
                return <Redirect to={{
                     pathname: '/dashboard',
@@ -116,7 +106,10 @@ class EditWatch extends Component {
                     }
                }}/>
           } else if (this.state.backToDashboard) {
-                         return <Redirect to={{
+                    this.setState({
+                         backToDashboard: false
+                    }) 
+                    return <Redirect to={{
                          pathname: '/dashboard'
                     }}/>
           }

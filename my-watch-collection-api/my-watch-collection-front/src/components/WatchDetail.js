@@ -16,17 +16,6 @@ class WatchDetail extends Component {
         backToDashboard: false
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        if (this.state.backToDashboard) {
-             // Prevent component re-render on a true state and reset to false
-            this.setState({
-                backToDashboard: false
-            })
-             return false
-        }
-        return true
-    }
-
     handleDelete = () => {
         if (window.confirm('Do you realy want to delete this watch?')) {
             this.props.deleteWatchAction(this.props.currentWatch.id, 
@@ -46,6 +35,9 @@ class WatchDetail extends Component {
     render () {
 
         if (this.state.backToDashboard) {
+            this.setState({
+                backToDashboard: false
+            }) 
             // Clear the current watch screen to allow 
             // the dashboard to be displayed there instead
             this.props.setCurrentWatch(null) 

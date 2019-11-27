@@ -22,17 +22,6 @@ class EditProfile extends Component {
           processing: false
      }
 
-     shouldComponentUpdate(nextProps, nextState) {
-          if(this.state.backToDashboard) {
-               // Prevent component re-render on a true state and reset to false
-               this.setState({
-                    backToDashboard: false
-               })
-               return false
-          }
-          return true
-     }
-
      handleDelete = () => {
           if (window.confirm('Do you really want to delete your account?\nAll of your watches will also be deleted!')) {
                this.setState({
@@ -90,7 +79,8 @@ class EditProfile extends Component {
           
           if (this.state.backToDashboard && this.state.formHasInput) {
                this.setState({
-                    formHasInput: false
+                    formHasInput: false,
+                    backToDashboard: false
                })  
                return <Redirect to={{
                     pathname: '/dashboard',
@@ -100,7 +90,10 @@ class EditProfile extends Component {
                     }
                }}/>
           } else if (this.state.backToDashboard) {
-                         return <Redirect to={{
+                    this.setState({
+                         backToDashboard: false
+                    }) 
+                    return <Redirect to={{
                          pathname: '/dashboard'
                     }}/>
           }
