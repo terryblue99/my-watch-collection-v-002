@@ -33,8 +33,8 @@ class EditWatch extends Component {
      }
 
      shouldComponentUpdate(nextProps, nextState) {
-          // Prevent component re-render on a true state, but reset to false
-          if(this.state.backToDashboard === true) {
+          if(this.state.backToDashboard) {
+               // Prevent component re-render on a true state and reset to false
                this.setState({
                     backToDashboard: false
                })
