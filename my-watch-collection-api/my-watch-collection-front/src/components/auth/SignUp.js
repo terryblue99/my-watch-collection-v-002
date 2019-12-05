@@ -29,6 +29,7 @@ class SignUp extends Component {
         this.props.signUpAction({ user: this.state })
         // Clear the form
         document.getElementById('Signup-form').reset()
+        document.getElementById('focus').focus()
     }
 
     handleChange = (event) => {
@@ -54,7 +55,7 @@ class SignUp extends Component {
                     <div className='Signup-container'>
                         <form id='Signup-form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
-                                <input className='SignUp-input-element' required 
+                                <input autoFocus id='focus' className='SignUp-input-element' required 
                                         type='email'
                                         name='email'
                                         placeholder='Enter your email'

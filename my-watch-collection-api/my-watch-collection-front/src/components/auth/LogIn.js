@@ -43,7 +43,7 @@ class LogIn extends Component {
                         <form id='Login-form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
                                 <br /> 
-                                <input className='Login-input-element' required 
+                                <input autoFocus className='Login-input-element' required 
                                         type='email'
                                         name='email'
                                         placeholder='Enter your email'

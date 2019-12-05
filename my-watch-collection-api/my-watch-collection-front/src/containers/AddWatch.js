@@ -73,6 +73,7 @@ class AddWatch extends Component {
           this.props.addWatchAction(formData, this.state.watchData)
           // Clear the form
           document.getElementById('AddWatch-form').reset()
+          document.getElementById('focus').focus()
      }
 
      handleBack = () => {
@@ -109,7 +110,7 @@ class AddWatch extends Component {
                               <h1 className='WatchForm-header'>
                                    Add a watch
                               </h1>
-                              <input className='Input-element' required 
+                              <input autoFocus id='focus' className='Input-element' required 
                                    type='text'
                                    name='watch_name'
                                    placeholder='Watch Name (Required)'
