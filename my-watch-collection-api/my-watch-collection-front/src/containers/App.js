@@ -47,10 +47,10 @@ class App extends Component {
       <div className='App'>
         <Router>
           <Switch>
-              <Route exact path='/' component={Homepage} />
-              <Route exact path='/login' component={LogIn} />
-              <Route exact path='/logout' component={LogOut} />
-              <Route exact path='/signup' component={SignUp} />
+              <Route exact path='/'><Homepage /></Route>
+              <Route exact path='/login'><LogIn /></Route>
+              <Route exact path='/logout'><LogOut /></Route>
+              <Route exact path='/signup'><SignUp /></Route>
               {/* The following routes are only accessible from within the app as a logged in user */}
               <PrivateRoute exact path='/dashboard' component={DashBoard} />
               <PrivateRoute exact path='/watches/add_watch' component={AddWatch} />
