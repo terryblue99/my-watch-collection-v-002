@@ -48,15 +48,15 @@ class App extends Component {
         <Router>
           <Switch>
               <Route exact path='/'><Homepage /></Route>
-              <Route exact path='/login'><LogIn /></Route>
-              <Route exact path='/logout'><LogOut /></Route>
-              <Route exact path='/signup'><SignUp /></Route>
+              <Route path='/login'><LogIn /></Route>
+              <Route path='/logout'><LogOut /></Route>
+              <Route path='/signup'><SignUp /></Route>
               {/* The following routes are only accessible from within the app as a logged in user */}
-              <PrivateRoute exact path='/dashboard' component={DashBoard} />
-              <PrivateRoute exact path='/watches/add_watch' component={AddWatch} />
-              <PrivateRoute exact path='/watches/:id/watch_detail' component={WatchDetail} />
-              <PrivateRoute exact path='/watches/:id/edit_watch' component={EditWatch} />
-              <PrivateRoute exact path='/edit_profile' component={EditProfile} />
+              <PrivateRoute path='/dashboard' component={DashBoard} />
+              <PrivateRoute path='/watches/add_watch' component={AddWatch} />
+              <PrivateRoute path='/watches/:id/watch_detail' component={WatchDetail} />
+              <PrivateRoute path='/watches/:id/edit_watch' component={EditWatch} />
+              <PrivateRoute path='/edit_profile' component={EditProfile} />
               {/* the following catchall route will divert unknown routes to the Log In/Sign Up screen */}
               <PrivateRoute from='*' />
           </Switch> 
