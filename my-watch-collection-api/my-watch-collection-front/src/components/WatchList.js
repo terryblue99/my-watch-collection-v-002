@@ -40,7 +40,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                         cursor: pointer;
                                     }
                                 `} onClick={() => { 
-                                    hashHistory.push(`/watches/${watch.id}/watch_detail`)
+                                    hashHistory.push(`/watches/${watch.id}/watch_detail`) // set the url for the watch
                                     setCurrentWatch(watch)
                                     setShowWatches(false) // on mobiles will allow toggling of watch list
                                 }}>

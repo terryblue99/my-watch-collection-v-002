@@ -17,17 +17,15 @@ class DashBoard extends Component {
 
     render() {
 
-        let watches
-        let sortSelected
-
-        watches = this.props.watches
+        let sortSelected = 'Select a sort option...'
+        const watches = this.props.watches
 
         // SORT - Check if redirected to from DashboardContent
         if (this.props.location.state &&
             this.props.location.state.from_DashboardContent &&
             this.props.location.state.sortSelected) {
                 sortSelected = this.props.location.state.sortSelected
-        } else sortSelected = 'Select a sort option...'
+        }
     
         return (
             <div>

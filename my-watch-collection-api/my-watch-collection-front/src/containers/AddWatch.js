@@ -97,7 +97,7 @@ class AddWatch extends Component {
                
                <div>
                     <NavBar /> 
-                    <div className='container WatchForm-container' css={css`
+                    <div className='WatchForm-container' css={css`
                         display: flex;
                         justify-content: space-between;
                         margin-top: 20px;

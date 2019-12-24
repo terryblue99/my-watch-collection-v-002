@@ -50,7 +50,7 @@ class SignUp extends Component {
         }
 
         return (
-            <div className='container'>
+            <div>
                 <header className='Signup'>
                     <img src={logo} alt='logo' className='Logo'/>
                     <div className='Signup-container'>
