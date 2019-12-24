@@ -7,6 +7,8 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 import '../App.css'
 import NavBar from './NavBar'
 import { addWatchAction } from '../actions/watchesActions'
+import ClearForm from "../components/ClearForm"
+import SetFocus from "../components/SetFocus"
 
 class AddWatch extends Component {
 
@@ -72,9 +74,9 @@ class AddWatch extends Component {
           }
           this.props.addWatchAction(formData, this.state.watchData)
           // Clear the form
-          document.getElementById('AddWatch-form').reset()
+          ClearForm('AddWatch-form')
           // Set focus on the watch name
-          document.getElementById('focus').focus()
+          SetFocus('focus')
      }
 
      handleBack = () => {

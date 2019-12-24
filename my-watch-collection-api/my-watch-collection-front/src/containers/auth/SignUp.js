@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom'
 import '../../App.css'
 import logo from '../../images/logo.jpg'
 import { signUpAction } from "../../actions/currentUserActions.js"
+import ClearForm from "../../components/ClearForm"
+import SetFocus from "../../components/SetFocus"
 
 class SignUp extends Component {
 
@@ -28,9 +30,9 @@ class SignUp extends Component {
  
         this.props.signUpAction({ user: this.state })
         // Clear the form
-        document.getElementById('Signup-form').reset()
+        ClearForm('Signup-form')
         // Set focus on the email address
-        document.getElementById('focus').focus()
+        SetFocus('focus')
     }
 
     handleChange = (event) => {

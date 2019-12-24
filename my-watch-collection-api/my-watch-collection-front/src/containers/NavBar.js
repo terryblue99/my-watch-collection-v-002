@@ -8,6 +8,7 @@ import { Redirect } from 'react-router-dom'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 import logoText from '../images/my-watch-collection-text.png'
 import { searchWatchesAction } from '../actions/watchesActions'
+import ClearForm from "../components/ClearForm"
 
 class NavBar extends Component {
 
@@ -39,7 +40,7 @@ class NavBar extends Component {
           searchText: ''
         })  
         // Clear the form
-        document.getElementById('Navbar-search-form').reset()
+        ClearForm('Navbar-search-form')
         // Display watch/es from the search on the dashboard
         return  <Redirect to={{
                     pathname: '/dashboard'
@@ -52,7 +53,8 @@ class NavBar extends Component {
                     searchText: ''
                   }) 
                   // Clear the form
-                  document.getElementById('Navbar-search-form').reset()
+                  ClearForm('Navbar-search-form')
+
                   alert('Search not found. Please correct and try again!')
                 }
 
