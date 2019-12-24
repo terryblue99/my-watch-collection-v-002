@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getWatchesAction } from '../actions/watchesActions'
 import NavBar from './NavBar'
-import Watches from '../components/Watches'
+import Watches from './Watches'
 
 class DashBoard extends Component {
     
