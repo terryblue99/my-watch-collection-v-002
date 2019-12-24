@@ -1,11 +1,11 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import './App.css'
+import '../App.css'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
-import NavBar from '../components/NavBar'
+import NavBar from './NavBar'
 import { editWatchAction } from '../actions/watchesActions'
 
 

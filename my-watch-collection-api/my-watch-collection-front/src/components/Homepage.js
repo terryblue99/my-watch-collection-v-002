@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../containers/App.css'
+import '../App.css'
 import logo from '../images/logo.jpg'
 
 const Homepage = () => {
     
     return (
-        <div className='container'>    
+        <div>    
             <header className='Homepage'>
             <div>
             <h2 className='Homepage-title'>Catalogue and view your watch collection</h2>

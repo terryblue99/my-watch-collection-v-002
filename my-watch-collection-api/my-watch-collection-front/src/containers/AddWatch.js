@@ -4,8 +4,8 @@ import { Redirect } from 'react-router-dom'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
-import './App.css'
-import NavBar from '../components/NavBar'
+import '../App.css'
+import NavBar from './NavBar'
 import { addWatchAction } from '../actions/watchesActions'
 
 class AddWatch extends Component {
@@ -73,6 +73,7 @@ class AddWatch extends Component {
           this.props.addWatchAction(formData, this.state.watchData)
           // Clear the form
           document.getElementById('AddWatch-form').reset()
+          // Set focus on the watch name
           document.getElementById('focus').focus()
      }
 

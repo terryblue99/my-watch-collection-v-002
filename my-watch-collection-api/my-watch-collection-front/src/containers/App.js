@@ -7,14 +7,14 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom'
-import './App.css'
-import LogIn from '../components/auth/LogIn'
-import LogOut from '../components/auth/LogOut'
-import SignUp from '../components/auth/SignUp'
+import '../App.css'
+import LogIn from '../containers/auth/LogIn'
+import LogOut from '../containers/auth/LogOut'
+import SignUp from '../containers/auth/SignUp'
 import Homepage from '../components/Homepage'
 import DashBoard from './DashBoard'
 import AddWatch from './AddWatch'
-import WatchDetail from '../components/WatchDetail'
+import WatchDetail from './WatchDetail'
 import EditWatch from './EditWatch'
 import EditProfile from './EditProfile'
 

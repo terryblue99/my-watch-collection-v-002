@@ -150,7 +150,7 @@ button
 .Login,
 .Signup {
   background-color: cornsilk; /* only displays if the image is delayed or doesn't load */
-  background-image: url(../images/watch-background-5.jpg);
+  background-image: url(./images/watch-background-5.jpg);
   background-position: center; /* shows center of image in responsive mode */
   background-size: cover; /* Fills the screen with just one image */
 }

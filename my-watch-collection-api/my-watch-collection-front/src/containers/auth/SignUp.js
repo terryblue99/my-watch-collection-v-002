@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import '../../containers/App.css'
+import '../../App.css'
 import logo from '../../images/logo.jpg'
 import { signUpAction } from "../../actions/currentUserActions.js"
 
@@ -29,6 +29,7 @@ class SignUp extends Component {
         this.props.signUpAction({ user: this.state })
         // Clear the form
         document.getElementById('Signup-form').reset()
+        // Set focus on the email address
         document.getElementById('focus').focus()
     }
 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import './App.css'
+import '../App.css'
 import { editProfileAction } from '../actions/currentUserActions'
 import { deleteUserAction } from '../actions/currentUserActions'
-import NavBar from '../components/NavBar'
+import NavBar from './NavBar'
 import ProcessingIndicator from '../components/ProcessingIndicator'
 import { trackPromise } from 'react-promise-tracker'
 
