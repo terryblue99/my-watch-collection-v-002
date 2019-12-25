@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import '../../App.css'
 import logo from '../../images/logo.jpg'
 import { signUpAction } from "../../actions/currentUserActions.js"
 import ClearForm from "../../components/ClearForm"
 import SetFocus from "../../components/SetFocus"
+import RedirectTo from '../../components/RedirectTo'
 
 class SignUp extends Component {
 
@@ -44,11 +44,7 @@ class SignUp extends Component {
     render() {
        
         if (this.props.currentUser) {
-            return (
-                <Redirect to={{
-                    pathname: '/login'
-                }} />
-            )     
+            return RedirectTo('/login')    
         }
 
         return (

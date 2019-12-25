@@ -7,6 +7,7 @@ import '../App.css'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import NavBar from './NavBar'
 import { editWatchAction } from '../actions/watchesActions'
+import RedirectTo from '../components/RedirectTo'
 
 
 class EditWatch extends Component {
@@ -109,9 +110,7 @@ class EditWatch extends Component {
                     this.setState({
                          backToDashboard: false
                     }) 
-                    return <Redirect to={{
-                         pathname: '/dashboard'
-                    }}/>
+                    return RedirectTo('/dashboard')
           }
 
           const watch = this.props.location.state.watch

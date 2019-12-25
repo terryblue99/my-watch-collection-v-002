@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import '../../App.css'
 import logo from '../../images/logo.jpg'
 import { logInAction } from "../../actions/currentUserActions.js"
+import RedirectTo from '../../components/RedirectTo'
 
 class LogIn extends Component {
 
@@ -26,13 +26,9 @@ class LogIn extends Component {
     render() {
 
         if (this.props.currentUser && this.props.currentUser.logged_in) {
-            return (
-                <Redirect to={{
-                    pathname: '/dashboard'
-                }} />
-            )     
+            return RedirectTo('/dashboard')
         }
- 
+        
         return (
 
             <div className='container'>

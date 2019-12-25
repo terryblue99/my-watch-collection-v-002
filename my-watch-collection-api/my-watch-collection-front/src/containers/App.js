@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
   Switch
 } from 'react-router-dom'
 import '../App.css'
@@ -17,6 +16,7 @@ import AddWatch from './AddWatch'
 import WatchDetail from './WatchDetail'
 import EditWatch from './EditWatch'
 import EditProfile from './EditProfile'
+import RedirectTo from '../components/RedirectTo'
 
 class App extends Component {
 
@@ -36,9 +36,7 @@ class App extends Component {
         <Route {...rest} render={(props) => (
           a_user_exists && is_logged_in
           ? <Component {...props} /> 
-          : <Redirect to={{
-              pathname: '/'
-            }} />
+          : RedirectTo('/')
         )}/>
       </div> 
     )

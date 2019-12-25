@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
@@ -9,6 +8,7 @@ import NavBar from './NavBar'
 import { addWatchAction } from '../actions/watchesActions'
 import ClearForm from "../components/ClearForm"
 import SetFocus from "../components/SetFocus"
+import RedirectTo from '../components/RedirectTo'
 
 class AddWatch extends Component {
 
@@ -89,10 +89,8 @@ class AddWatch extends Component {
           if (this.state.backToDashboard) { 
                this.setState({
                     backToDashboard: false
-                }) 
-               return <Redirect to={{
-                         pathname: '/dashboard'
-                    }}/>
+               }) 
+               return RedirectTo('/dashboard')
           } 
       
           return (

@@ -2,13 +2,13 @@ import { Component } from 'react'
 import { Navbar } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { Redirect } from 'react-router-dom'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 import logoText from '../images/my-watch-collection-text.png'
 import { searchWatchesAction } from '../actions/watchesActions'
 import ClearForm from "../components/ClearForm"
+import RedirectTo from '../components/RedirectTo'
 
 class NavBar extends Component {
 
@@ -42,10 +42,8 @@ class NavBar extends Component {
         // Clear the form
         ClearForm('Navbar-Search-Form')
         // Display watch/es from the search on the dashboard
-        return  <Redirect to={{
-                    pathname: '/dashboard'
-                  }} 
-                />
+        return  RedirectTo('/dashboard')
+        
     } else if (this.state.searchRequested &&
                 this.props.watches.length === 0) {
                   this.setState({

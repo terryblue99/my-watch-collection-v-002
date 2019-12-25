@@ -7,6 +7,7 @@ import { deleteUserAction } from '../actions/currentUserActions'
 import NavBar from './NavBar'
 import ProcessingIndicator from '../components/ProcessingIndicator'
 import { trackPromise } from 'react-promise-tracker'
+import RedirectTo from '../components/RedirectTo'
 
 class EditProfile extends Component {
      
@@ -93,9 +94,7 @@ class EditProfile extends Component {
                     this.setState({
                          backToDashboard: false
                     }) 
-                    return <Redirect to={{
-                         pathname: '/dashboard'
-                    }}/>
+                    return RedirectTo('/dashboard')
           }
 
           const user = this.props.currentUser.user
