@@ -30,9 +30,9 @@ class SignUp extends Component {
  
         this.props.signUpAction({ user: this.state })
         // Clear the form
-        ClearForm('Signup-form')
+        ClearForm('Signup-Form')
         // Set focus on the email address
-        SetFocus('focus')
+        SetFocus('Focus-SignUp-Email')
     }
 
     handleChange = (event) => {
@@ -56,9 +56,9 @@ class SignUp extends Component {
                 <header className='Signup'>
                     <img src={logo} alt='logo' className='Logo'/>
                     <div className='Signup-container'>
-                        <form id='Signup-form' onSubmit={this.handleSubmit}>
+                        <form id='Signup-Form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
-                                <input autoFocus id='focus' className='SignUp-input-element' required 
+                                <input autoFocus id='Focus-SignUp-Email' className='SignUp-input-element' required 
                                         type='email'
                                         name='email'
                                         placeholder='Enter your email'

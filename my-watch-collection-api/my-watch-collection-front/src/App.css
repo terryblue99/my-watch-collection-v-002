@@ -381,8 +381,8 @@ hr.WatchDetail {
   text-align: center;
 }
 
-#AddWatch-form,
-.EditWatch-form,
+#AddWatch-Form,
+.EditWatch-Form,
 .Profile
 {
   display: grid;
@@ -392,17 +392,17 @@ hr.WatchDetail {
   max-width: 300px
 }
 
-.AddWatch-form {
+.AddWatch-Form {
   max-height: 100vh;
 }
 
-.EditWatch-form
+.EditWatch-Form
 {
   max-height: 120vh;
 }
 
 .Profile label,
-.EditWatch-form label
+.EditWatch-Form label
 {
   font-size: .85rem;
   font-weight: 900;
@@ -509,7 +509,7 @@ textarea:required
     max-width: 200px;
   }
 
-  #Navbar-search-form {
+  #Navbar-Search-Form {
     margin-top: 10px;
   }
 
@@ -572,13 +572,13 @@ textarea:required
   }
 
   .Profile label,  
-  .EditWatch-form label 
+  .EditWatch-Form label 
   {
     font-size: 1rem;
   }
 
-#AddWatch-form input,
-.EditWatch-form input
+#AddWatch-Form input,
+.EditWatch-Form input
 {
  min-width: 400px
 }

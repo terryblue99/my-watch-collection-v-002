@@ -40,7 +40,7 @@ class LogIn extends Component {
                     <p className='Login-banner'>Log in to access your watches</p>
                     <img src={logo} alt='logo' className='Logo'/>
                     <div className='Login-container'>
-                        <form id='Login-form' onSubmit={this.handleSubmit}>
+                        <form id='Login-Form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
                                 <br /> 
                                 <input autoFocus className='Login-input-element' required 

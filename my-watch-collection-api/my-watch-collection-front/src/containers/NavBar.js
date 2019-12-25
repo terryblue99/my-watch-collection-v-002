@@ -40,7 +40,7 @@ class NavBar extends Component {
           searchText: ''
         })  
         // Clear the form
-        ClearForm('Navbar-search-form')
+        ClearForm('Navbar-Search-Form')
         // Display watch/es from the search on the dashboard
         return  <Redirect to={{
                     pathname: '/dashboard'
@@ -53,7 +53,7 @@ class NavBar extends Component {
                     searchText: ''
                   }) 
                   // Clear the form
-                  ClearForm('Navbar-search-form')
+                  ClearForm('Navbar-Search-Form')
 
                   alert('Search not found. Please correct and try again!')
                 }
@@ -149,7 +149,7 @@ class NavBar extends Component {
               padding-left: 40px;
               margin-bottom: 3px;
             `}>
-            <form id='Navbar-search-form' onSubmit={this.handleSubmit}>
+            <form id='Navbar-Search-Form' onSubmit={this.handleSubmit}>
               <input required
                 type='text'
                 name='watch_search'
