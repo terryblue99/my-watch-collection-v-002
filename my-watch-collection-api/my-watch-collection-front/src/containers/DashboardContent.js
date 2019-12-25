@@ -46,7 +46,7 @@ class DashboardContent extends Component {
         sortRequired: false
       })  
       // Display the sorted watches on the dashboard
-      return  <Redirect push to={{
+      return  <Redirect to={{
                   pathname: '/dashboard',
                   state: {
                     from_DashboardContent: true,
