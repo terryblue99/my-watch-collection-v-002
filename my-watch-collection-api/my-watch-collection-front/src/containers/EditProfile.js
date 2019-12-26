@@ -4,7 +4,7 @@ import '../App.css'
 import NavBar from './NavBar'
 import { editProfileAction } from '../actions/currentUserActions'
 import { deleteUserAction } from '../actions/currentUserActions'
-import { trackPromise } from 'react-promise-tracker' // tracks deleteUserAction, displaying processing spinner
+import { trackPromise } from 'react-promise-tracker' // Tracks deleteUserAction, displaying processing spinner
                                                      // https://lemoncode.github.io/react-promise-tracker/
 import ProcessingIndicator from '../components/ProcessingIndicator' // https://www.basefactor.com/react-how-to-display-a-loading-indicator-on-fetch-calls
 import RedirectTo from '../components/RedirectTo'
