@@ -8,6 +8,7 @@ import NavBar from './NavBar'
 import { editWatchAction } from '../actions/watchesActions'
 import RedirectTo from '../components/RedirectTo'
 import RedirectToWithState from "./RedirectToWithState"
+import DateValidation from "../components/DateValidation"
 
 class EditWatch extends Component {
      
@@ -56,12 +57,11 @@ class EditWatch extends Component {
                     formHasInput: false
                }) 
                // validate the 'Date Bought/Gifted' input
-               const date = this.state.watchData.date_bought
-                    if ((!date.match(/^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/gm)) &&
-                         (!date.match(/^(19|20)\d{2}$/gm))) {
-                         alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy')
-                         return
-                    }
+               const validDate = DateValidation(this.state.watchData.date_bought)
+               if (!validDate) {
+                    alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy')
+                    return
+               }
                // Edit the watch
                const formData = new FormData()
                formData.append('watch_name', this.state.watchData.watch_name)
