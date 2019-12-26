@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import Image from 'react-image-resizer'  // https://github.com/sottar/react-image-resizer
 import logo from '../images/logo.jpg'
 import { sortWatchesAction } from '../actions/watchesActions'
 import { resetWatchesAction } from '../actions/watchesActions'
+import RedirectToWithState from "./RedirectToWithState"
 
 class DashboardContent extends Component {
 
@@ -46,14 +46,13 @@ class DashboardContent extends Component {
         sortRequired: false
       })  
       // Display the sorted watches on the dashboard
-      return  <Redirect to={{
-                  pathname: '/dashboard',
-                  state: {
-                    from_DashboardContent: true,
-                    sortSelected: this.state.sortSelected
-                  }
-                }}  
-              />
+      return  RedirectToWithState(
+                                    '/dashboard',
+                                    {
+                                      from_DashboardContent: true,
+                                      sortSelected: this.state.sortSelected
+                                    } 
+                                  )
     } 
     
     return (

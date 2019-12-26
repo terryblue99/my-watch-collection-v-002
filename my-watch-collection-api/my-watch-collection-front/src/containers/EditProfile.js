@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import '../App.css'
 import { editProfileAction } from '../actions/currentUserActions'
 import { deleteUserAction } from '../actions/currentUserActions'
@@ -77,24 +76,12 @@ class EditProfile extends Component {
      }
 
      render() {
-          
-          if (this.state.backToDashboard && this.state.formHasInput) {
+     
+          if (this.state.backToDashboard) {
                this.setState({
-                    formHasInput: false,
                     backToDashboard: false
-               })  
-               return <Redirect to={{
-                    pathname: '/dashboard',
-                    state: {
-                         from_EditProfile: true,
-                         Edits: true
-                    }
-               }}/>
-          } else if (this.state.backToDashboard) {
-                    this.setState({
-                         backToDashboard: false
-                    }) 
-                    return RedirectTo('/dashboard')
+               }) 
+               return RedirectTo('/dashboard')
           }
 
           const user = this.props.currentUser.user

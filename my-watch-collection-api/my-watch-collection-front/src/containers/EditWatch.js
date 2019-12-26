@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
 import '../App.css'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
@@ -8,7 +7,7 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 import NavBar from './NavBar'
 import { editWatchAction } from '../actions/watchesActions'
 import RedirectTo from '../components/RedirectTo'
-
+import RedirectToWithState from "./RedirectToWithState"
 
 class EditWatch extends Component {
      
@@ -99,13 +98,14 @@ class EditWatch extends Component {
                     formHasInput: false,
                     backToDashboard: false
                })  
-               return <Redirect to={{
-                    pathname: '/dashboard',
-                    state: {
-                         from_EditWatch: true,
-                         Edits: true
-                    }
-               }}/>
+               return RedirectToWithState(
+                                             '/dashboard',
+                                             {
+                                                  from_EditWatch: true,
+                                                  Edits: true
+                                             }
+                                         )
+                    
           } else if (this.state.backToDashboard) {
                     this.setState({
                          backToDashboard: false
