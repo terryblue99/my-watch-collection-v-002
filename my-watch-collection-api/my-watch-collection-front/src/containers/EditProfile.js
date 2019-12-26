@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import '../App.css'
+import NavBar from './NavBar'
 import { editProfileAction } from '../actions/currentUserActions'
 import { deleteUserAction } from '../actions/currentUserActions'
-import NavBar from './NavBar'
-import ProcessingIndicator from '../components/ProcessingIndicator'
-import { trackPromise } from 'react-promise-tracker'
+import { trackPromise } from 'react-promise-tracker' // tracks deleteUserAction, displaying processing spinner
+                                                     // https://lemoncode.github.io/react-promise-tracker/
+import ProcessingIndicator from '../components/ProcessingIndicator' // https://www.basefactor.com/react-how-to-display-a-loading-indicator-on-fetch-calls
 import RedirectTo from '../components/RedirectTo'
 
 class EditProfile extends Component {
