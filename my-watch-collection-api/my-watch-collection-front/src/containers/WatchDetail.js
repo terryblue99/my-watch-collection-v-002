@@ -7,7 +7,7 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 import '../App.css'
 import Image from 'react-image-resizer'  // https://github.com/sottar/react-image-resizer
 import { deleteWatchAction } from '../actions/watchesActions'
-import DashboardContent from './DashboardContent'
+import DashboardMain from './DashboardMain'
 import RedirectTo from '../components/RedirectTo'
 
 class WatchDetail extends Component { 
@@ -204,7 +204,7 @@ class WatchDetail extends Component {
                 </div> 
             )     
         } else {
-            return <DashboardContent newestWatch={this.props.newestWatch}
+            return <DashboardMain newestWatch={this.props.newestWatch}
                                      oldestWatch={this.props.oldestWatch}
                                      sortSelected={this.props.sortSelected} 
                                      dashBoardHistory={this.props.dashBoardHistory}               
