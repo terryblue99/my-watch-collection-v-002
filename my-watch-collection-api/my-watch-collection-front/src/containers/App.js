@@ -11,7 +11,7 @@ import LogIn from '../containers/auth/LogIn'
 import LogOut from '../containers/auth/LogOut'
 import SignUp from '../containers/auth/SignUp'
 import Homepage from '../components/Homepage'
-import DashBoardWatches from './DashBoardWatches'
+import DashboardWatches from './DashboardWatches'
 import AddWatch from './AddWatch'
 import WatchDetail from './WatchDetail'
 import EditWatch from './EditWatch'
@@ -51,7 +51,7 @@ class App extends Component {
               <Route path='/signup'><SignUp /></Route>
               {/* The following routes are only accessible from within the app as a logged in user */}
               {/* Any attempt to access them, other than within the app, will be redirected to the home page */}
-              <PrivateRoute path='/dashboard' component={DashBoardWatches} />
+              <PrivateRoute path='/dashboard' component={DashboardWatches} />
               <PrivateRoute path='/watches/add_watch' component={AddWatch} />
               <PrivateRoute path='/watches/:id/watch_detail' component={WatchDetail} />
               <PrivateRoute path='/watches/:id/edit_watch' component={EditWatch} />
