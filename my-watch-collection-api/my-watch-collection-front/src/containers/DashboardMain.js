@@ -25,7 +25,9 @@ class DashboardContent extends Component {
   render() {
   
     let newestWatchImage
+    let newestWatchDate
     let oldestWatchImage
+    let oldestWatchDate
     let number_of_watches = 0
     
     const style = {
@@ -37,7 +39,9 @@ class DashboardContent extends Component {
 
     if (this.props.watches && this.props.watches.length > 0) {
       newestWatchImage = this.props.newestWatch.image 
+      newestWatchDate = this.props.newestWatch.date_bought
       oldestWatchImage = this.props.oldestWatch.image
+      oldestWatchDate = this.props.oldestWatch.date_bought
       number_of_watches = Object.keys(this.props.watches).length
     }
 
@@ -113,7 +117,17 @@ class DashboardContent extends Component {
         </div>
         
         <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
-          <h2 className='Dashboard-watchText'>Newest watch</h2><br />
+           {number_of_watches > 1
+            ? <span>
+                <h2 className='Dashboard-watchText'>Newest Watch</h2>
+                <h3 className='Dashboard-watchText'>{newestWatchDate}</h3>
+              </span>
+            : null
+          }
+          {number_of_watches === 1
+            ? <h3 className='Dashboard-watchText'>{newestWatchDate}</h3>
+            : null
+          }
           <Image
             src={newestWatchImage}
             width={200}
@@ -125,7 +139,17 @@ class DashboardContent extends Component {
           <img src={logo} alt='logo' />
         </div>
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
-          <h2 className='Dashboard-watchText'>Oldest watch</h2><br />
+          {number_of_watches > 1
+            ? <span>
+                <h2 className='Dashboard-watchText'>Oldest Watch</h2>
+                <h3 className='Dashboard-watchText'>{oldestWatchDate}</h3>
+              </span>
+            : null
+          }
+          {number_of_watches === 1
+            ? <h3 className='Dashboard-watchText'>{oldestWatchDate}</h3>
+            : null
+          }
           <Image 
             src={oldestWatchImage}
             width={200}
