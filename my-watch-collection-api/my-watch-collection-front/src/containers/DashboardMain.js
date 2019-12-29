@@ -79,24 +79,27 @@ class DashboardContent extends Component {
           <br />
           <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
         </div>
-        <div className='Dashboard-item Dashboard-sort'>
-            <h2 className='Sort-header'>
-              Sort By
-            </h2>
-            <br />
-            <select className='Select-sort'
-                    required 
-                    size='1' 
-                    name='sort' 
-                    onChange={this.handleSelectedSortKey}>
-              <option>{this.props.sortSelected}</option>
-              <option value='Watch Maker'>Watch Maker</option>
-              <option value='Watch Name'>Watch Name</option>
-              <option value='Newest to Oldest'>Newest to Oldest</option>
-              <option value='Oldest to Newest'>Oldest to Newest</option>
-              <option value='Cost Low to High'>Cost Low to High</option>
-              <option value='Cost High to Low'>Cost High to Low</option>
-            </select>
+        <div className='Dashboard-item Dashboard-sort'> 
+          { number_of_watches > 1
+            ? <span>
+                <h2 className='Sort-header'>Sort By</h2>
+                <br />
+                <select className='Select-sort'
+                        required 
+                        size='1' 
+                        name='sort' 
+                        onChange={this.handleSelectedSortKey}>
+                  <option>{this.props.sortSelected}</option>
+                  <option value='Watch Maker'>Watch Maker</option>
+                  <option value='Watch Name'>Watch Name</option>
+                  <option value='Newest to Oldest'>Newest to Oldest</option>
+                  <option value='Oldest to Newest'>Oldest to Newest</option>
+                  <option value='Cost Low to High'>Cost Low to High</option>
+                  <option value='Cost High to Low'>Cost High to Low</option>
+                </select>
+              </span>
+            : null
+          }
         </div>
         <div className='Dashboard-item'>
           <iframe className='Dashboard-time' 
@@ -117,7 +120,7 @@ class DashboardContent extends Component {
         </div>
         
         <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
-           {number_of_watches > 1
+          {number_of_watches > 1
             ? <span>
                 <h2 className='Dashboard-watchText'>Newest Watch</h2>
                 <h3 className='Dashboard-watchText'>{newestWatchDate}</h3>
