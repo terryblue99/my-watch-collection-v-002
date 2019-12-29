@@ -9,11 +9,13 @@ import Image from 'react-image-resizer'  // https://github.com/sottar/react-imag
 import { deleteWatchAction } from '../actions/watchesActions'
 import DashboardMain from './DashboardMain'
 import RedirectTo from '../components/RedirectTo'
+import RedirectToWithState from './RedirectToWithState'
 
 class WatchDetail extends Component { 
 
     state = {
-        backToDashboard: false
+        backToDashboard: false,
+        watchDeleted: false
     }
 
     handleDelete = () => {
@@ -21,7 +23,8 @@ class WatchDetail extends Component {
             this.props.deleteWatchAction(this.props.currentWatch.id, 
                                          this.props.currentWatch.watch_name)                 
             this.setState({
-                backToDashboard: true
+                backToDashboard: true,
+                watchDeleted: true
             }) 
         }
     }
@@ -34,7 +37,23 @@ class WatchDetail extends Component {
 
     render () {
 
-        if (this.state.backToDashboard) {
+        if (this.state.backToDashboard && this.state.watchDeleted) {
+            this.setState({
+                backToDashboard: false,
+                watchDeleted: false
+            })
+            // Clear the current watch screen to allow 
+            // the dashboard to be displayed there instead
+            this.props.setCurrentWatch(null) 
+            return  RedirectToWithState(
+                                            '/dashboard',
+                                            {
+                                                from_WatchDetail: true,    
+                                                watchDeleted: true
+                                            } 
+                                        )
+        } 
+        else if (this.state.backToDashboard) {
             this.setState({
                 backToDashboard: false
             }) 

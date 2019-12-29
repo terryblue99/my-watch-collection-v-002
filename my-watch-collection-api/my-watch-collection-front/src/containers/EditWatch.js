@@ -53,9 +53,6 @@ class EditWatch extends Component {
      handleSubmit = (event) => {
           event.preventDefault() 
           if (this.state.formHasInput) {
-               this.setState({
-                    formHasInput: false
-               }) 
                // validate the 'Date Bought/Gifted' input
                const validDate = DateValidation(this.state.watchData.date_bought)
                if (!validDate) {
@@ -106,7 +103,8 @@ class EditWatch extends Component {
                                              }
                                          )
                     
-          } else if (this.state.backToDashboard) {
+          } 
+          else if (this.state.backToDashboard) {
                     this.setState({
                          backToDashboard: false
                     }) 
