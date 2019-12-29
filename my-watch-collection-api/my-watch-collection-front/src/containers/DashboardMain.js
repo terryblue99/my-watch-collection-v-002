@@ -6,7 +6,7 @@ import { sortWatchesAction } from '../actions/watchesActions'
 import { resetWatchesAction } from '../actions/watchesActions'
 import RedirectToWithState from "./RedirectToWithState"
 
-class DashboardContent extends Component {
+class DashboardMain extends Component {
 
   state = {
     sortRequired: false,
@@ -53,7 +53,7 @@ class DashboardContent extends Component {
       return  RedirectToWithState(
                                     '/dashboard',
                                     {
-                                      from_DashboardContent: true,
+                                      from_DashboardMain: true,
                                       sortSelected: this.state.sortSelected
                                     } 
                                   )
@@ -177,4 +177,4 @@ const mapStateToProps = (state) => {
   } 
 }
 
-export default connect(mapStateToProps, { sortWatchesAction, resetWatchesAction })(DashboardContent)
+export default connect(mapStateToProps, { sortWatchesAction, resetWatchesAction })(DashboardMain)

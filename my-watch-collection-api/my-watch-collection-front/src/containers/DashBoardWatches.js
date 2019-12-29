@@ -32,9 +32,9 @@ class DashBoard extends Component {
                 this.props.getWatchesAction(this.props.currentUser.user.id)
             }
 
-        // SORT - Check if redirected to from DashboardContent
+        // SORT - Check if redirected to from DashboardMain
         if (this.props.location.state &&
-            this.props.location.state.from_DashboardContent &&
+            this.props.location.state.from_DashboardMain &&
             this.props.location.state.sortSelected) {
                 sortSelected = this.props.location.state.sortSelected
         }
