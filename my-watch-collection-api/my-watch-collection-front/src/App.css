@@ -94,7 +94,8 @@ button
 
 .Dashboard-totalWatches,
 .Dashboard-watchText,
-.Sort-header
+.Sort-header,
+.Welcome-text
 {
   text-align: center;
   text-shadow: 2px 2px 5px orange;
@@ -370,7 +371,9 @@ hr.WatchDetail {
   color: DarkRed;
 }
 
-.ProfileForm-cancel-header {
+.Center-text,
+.ProfileForm-cancel-header 
+{
   text-align: center;
 }
 

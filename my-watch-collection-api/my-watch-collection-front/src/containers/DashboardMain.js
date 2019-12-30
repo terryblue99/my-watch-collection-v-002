@@ -37,6 +37,30 @@ class DashboardMain extends Component {
       }
     }
 
+    const watchesYes = [<span>
+                        <h2 className='Sort-header'>Sort By</h2>
+                        <br />
+                        <select className='Select-sort'
+                                required 
+                                size='1' 
+                                name='sort' 
+                                onChange={this.handleSelectedSortKey}>
+                          <option>{this.props.sortSelected}</option>
+                          <option value='Watch Maker'>Watch Maker</option>
+                          <option value='Watch Name'>Watch Name</option>
+                          <option value='Newest to Oldest'>Newest to Oldest</option>
+                          <option value='Oldest to Newest'>Oldest to Newest</option>
+                          <option value='Cost Low to High'>Cost Low to High</option>
+                          <option value='Cost High to Low'>Cost High to Low</option>
+                        </select>
+                      </span>]
+
+      const watchesNo = [<span>
+                          <h2 className="Welcome-text">Welcome to My Watch Collection</h2>
+                          <p className="Center-text"><b>You may click on the ADD WATCH button</b></p>
+                          <p className="Center-text"><b>to start cataloguing your watches</b></p>
+                        </span>]
+
     if (this.props.watches && this.props.watches.length > 0) {
       newestWatchImage = this.props.newestWatch.image 
       newestWatchDate = this.props.newestWatch.date_bought
@@ -60,45 +84,35 @@ class DashboardMain extends Component {
     } 
     
     return (
+
       <div className='Dashboard'>
 
         <div className='Dashboard-item Dashboard-initialList'>
-          <button className='btn FullList-button Button-text' 
-            // Fetch all watches and reset the DashBoard history location state
-            // so that the initial sort option text can be displayed
-            onClick={() => {this.props.resetWatchesAction()
-                            if (this.props.dashBoardHistory.location.state) {
-                                const state = this.props.dashBoardHistory.location.state
-                                delete state.sortSelected
-                                this.props.dashBoardHistory.replace(this.props.dashBoardHistory.location, state)
-                              }  
-                           } 
-          }> 
-            Redisplay Initial List
-          </button>
+          { number_of_watches > 0
+            ? <span>
+                <button className='btn FullList-button Button-text' 
+                  // Fetch all watches and reset the DashBoard history location state
+                  // so that the initial sort option text can be displayed
+                  onClick={() => {this.props.resetWatchesAction()
+                                  if (this.props.dashBoardHistory.location.state) {
+                                      const state = this.props.dashBoardHistory.location.state
+                                      delete state.sortSelected
+                                      this.props.dashBoardHistory.replace(this.props.dashBoardHistory.location, state)
+                                    }  
+                                } 
+                }> 
+                  Redisplay Initial List
+                </button>
+              </span>
+            : null
+          }
           <br />
           <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
         </div>
         <div className='Dashboard-item Dashboard-sort'> 
-          { number_of_watches > 1
-            ? <span>
-                <h2 className='Sort-header'>Sort By</h2>
-                <br />
-                <select className='Select-sort'
-                        required 
-                        size='1' 
-                        name='sort' 
-                        onChange={this.handleSelectedSortKey}>
-                  <option>{this.props.sortSelected}</option>
-                  <option value='Watch Maker'>Watch Maker</option>
-                  <option value='Watch Name'>Watch Name</option>
-                  <option value='Newest to Oldest'>Newest to Oldest</option>
-                  <option value='Oldest to Newest'>Oldest to Newest</option>
-                  <option value='Cost Low to High'>Cost Low to High</option>
-                  <option value='Cost High to Low'>Cost High to Low</option>
-                </select>
-              </span>
-            : null
+          { number_of_watches > 0
+            ? watchesYes
+            : watchesNo
           }
         </div>
         <div className='Dashboard-item'>
