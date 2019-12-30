@@ -57,7 +57,7 @@ class DashboardMain extends Component {
 
       const watchesNo = [<span>
                           <h2 className="Welcome-text">Welcome to My Watch Collection</h2>
-                          <p className="Center-text"><b>You may click on the ADD WATCH button</b></p>
+                          <p className="Center-text"><b>You may click on the ADD A WATCH button</b></p>
                           <p className="Center-text"><b>to start cataloguing your watches</b></p>
                         </span>]
 
