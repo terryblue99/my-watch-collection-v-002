@@ -9,6 +9,7 @@ import logoText from '../images/my-watch-collection-text.png'
 import { searchWatchesAction } from '../actions/watchesActions'
 import ClearForm from "../components/ClearForm"
 import RedirectTo from '../components/RedirectTo'
+import RedirectToWithState from "./RedirectToWithState"
 
 class NavBar extends Component {
 
@@ -54,6 +55,14 @@ class NavBar extends Component {
                   ClearForm('Navbar-Search-Form')
 
                   alert('Search not found. Please correct and try again!')
+                  // Display original watch list on the dashboard
+                  return  RedirectToWithState(
+                                                  '/dashboard',
+                                                  {
+                                                      from_NavBar: true,    
+                                                      searchFailed: true
+                                                  } 
+                                              )
                 }
 
     return (

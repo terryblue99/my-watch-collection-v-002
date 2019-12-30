@@ -20,6 +20,18 @@ class DashBoard extends Component {
         let sortSelected = 'Select a sort option...'
         const watches = this.props.watches
 
+        // Check if search failed
+        if (this.props.location.state &&
+            this.props.location.state.from_NavBar &&
+            this.props.location.state.searchFailed) {
+                // Reset the history location state to prevent re-execution
+                // of this code and fetch the original watch list
+                const state = this.props.history.location.state
+                                delete state.searchFailed
+                                this.props.history.replace(this.props.history.location, state)
+                this.props.getWatchesAction(this.props.currentUser.user.id)
+            }
+
         // Check if a watch has been deleted
         if (this.props.location.state &&
             this.props.location.state.from_WatchDetail &&
