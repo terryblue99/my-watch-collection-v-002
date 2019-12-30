@@ -29,6 +29,7 @@ class DashboardMain extends Component {
     let oldestWatchImage
     let oldestWatchDate
     let number_of_watches = 0
+    const number_of_saved_watches = Object.keys(this.props.savedWatches).length
     
     const style = {
       image: {
@@ -88,7 +89,7 @@ class DashboardMain extends Component {
       <div className='Dashboard'>
 
         <div className='Dashboard-item Dashboard-initialList'>
-          { number_of_watches > 0
+          { number_of_saved_watches > 1
             ? <span>
                 <button className='btn FullList-button Button-text' 
                   // Fetch all watches and reset the DashBoard history location state
@@ -110,9 +111,13 @@ class DashboardMain extends Component {
           <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
         </div>
         <div className='Dashboard-item Dashboard-sort'> 
-          { number_of_watches > 0
+          { number_of_watches > 1
             ? watchesYes
-            : watchesNo
+            : null
+          }
+          { number_of_watches === 0 && number_of_saved_watches === 0
+            ? watchesNo
+            : null
           }
         </div>
         <div className='Dashboard-item'>
@@ -187,7 +192,8 @@ class DashboardMain extends Component {
 const mapStateToProps = (state) => { 
   return {
     currentUser: state.currentUser,
-    watches: state.myWatches.watches
+    watches: state.myWatches.watches,
+    savedWatches: state.myWatches.savedWatches
   } 
 }
 
