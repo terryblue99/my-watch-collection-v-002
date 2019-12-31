@@ -92,13 +92,11 @@ class DashboardMain extends Component {
           { number_of_saved_watches > 1
             ? <span>
                 <button className='btn FullList-button Button-text' 
-                  // Fetch all watches and reset the DashBoard history location state
+                  // Fetch all watches and delete the DashBoard history location state
                   // so that the initial sort option text can be displayed
                   onClick={() => {this.props.resetWatchesAction()
-                                  if (this.props.dashBoardHistory.location.state) {
-                                      const state = this.props.dashBoardHistory.location.state
-                                      delete state.sortSelected
-                                      this.props.dashBoardHistory.replace(this.props.dashBoardHistory.location, state)
+                                  if (this.props.DashBoardSortHistory.location.state) {
+                                      delete this.props.DashBoardSortHistory.location.state 
                                     }  
                                 } 
                 }> 
