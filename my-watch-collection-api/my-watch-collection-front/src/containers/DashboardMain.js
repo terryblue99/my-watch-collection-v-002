@@ -58,7 +58,7 @@ class DashboardMain extends Component {
 
       const watchesNo = [<span>
                           <h2 className="Welcome-text">Welcome to My Watch Collection</h2>
-                          <p className="Center-text"><b>You may click on the ADD A WATCH button</b></p>
+                          <p className="Center-text"><b>Click on the ADD A WATCH button</b></p>
                           <p className="Center-text"><b>to start cataloguing your watches</b></p>
                         </span>]
 
@@ -148,12 +148,15 @@ class DashboardMain extends Component {
             ? <h3 className='Dashboard-watchText'>{newestWatchDate}</h3>
             : null
           }
-          <Image
-            src={newestWatchImage}
-            width={200}
-            height={200}
-            style={style.image}
-          />
+          {number_of_watches > 0 
+            ? <Image
+                src={newestWatchImage}
+                width={200}
+                height={200}
+                style={style.image}
+              />
+            : null
+          }
         </div>
         <div className='Dashboard-item Dashboard-logo'>
           <img src={logo} alt='logo' />
@@ -170,12 +173,15 @@ class DashboardMain extends Component {
             ? <h3 className='Dashboard-watchText'>{oldestWatchDate}</h3>
             : null
           }
-          <Image 
-            src={oldestWatchImage}
-            width={200}
-            height={200}
-            style={style.image}
-          />
+          {number_of_watches > 0
+            ? <Image
+                src={oldestWatchImage}
+                width={200}
+                height={200}
+                style={style.image}
+              />
+            : null
+          }
         </div>
 
         <div className='Dashboard-item'></div>
