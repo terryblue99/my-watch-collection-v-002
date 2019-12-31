@@ -226,7 +226,7 @@ class WatchDetail extends Component {
             return <DashboardMain   newestWatch={this.props.newestWatch}
                                     oldestWatch={this.props.oldestWatch}
                                     sortSelected={this.props.sortSelected} 
-                                    dashBoardHistory={this.props.dashBoardHistory}               
+                                    DashBoardSortHistory={this.props.DashBoardSortHistory}               
                     />
         }
     }
