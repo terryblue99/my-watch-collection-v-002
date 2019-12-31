@@ -58,7 +58,8 @@ export default (state = initialState, { type, payload } ) => {
 		case DELETE_WATCH:
 				return ({
 					...state,
-					watches: state.watches.filter(watch => watch.id !== payload)
+					watches: state.watches.filter(watch => watch.id !== payload),
+					savedWatches: state.savedWatches.filter(watch => watch.id !== payload)
 				})
 
 		case CLEAR_WATCHES:
