@@ -56,7 +56,7 @@ class EditWatch extends Component {
                // validate the 'Date Bought/Gifted' input
                const validDate = DateValidation(this.state.watchData.date_bought)
                if (!validDate) {
-                    alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy')
+                    alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
                }
                // Edit the watch
@@ -231,14 +231,14 @@ class EditWatch extends Component {
                               />
                               <br /> 
                               {watch.date_bought  
-                                   ? <label>Date Bought/Gifted (yyyy-mm-dd or yyyy)</label>
+                                   ? <label>Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                    : null 
                               }
                               <input className='Input-element' required 
                                    type='text'
                                    name='date_bought'
                                    defaultValue={watch.date_bought}
-                                   placeholder='Date Bought/Gifted (yyyy-mm-dd or yyyy) (Required)'
+                                   placeholder='Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
@@ -251,7 +251,7 @@ class EditWatch extends Component {
                                    step='0.01'
                                    name='cost'
                                    defaultValue={parseFloat(watch.cost).toFixed(2)}
-                                   placeholder='Cost (e.g. 199.99 or 0) (Required)'
+                                   placeholder='Cost (e.g. 199.99 or 0)'
                                    onChange={this.handleChange}
                               />
                               <br /> 

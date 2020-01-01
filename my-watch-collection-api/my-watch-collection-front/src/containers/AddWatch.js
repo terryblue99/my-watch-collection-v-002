@@ -52,7 +52,7 @@ class AddWatch extends Component {
           // validate the 'Date Bought/Gifted' input
           const validDate = DateValidation(this.state.watchData.date_bought)
           if (!validDate) {
-               alert('Date Bought/Gifted must be in the format yyyy-mm-dd or yyyy')
+               alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                return
           }
           // Create the watch
@@ -114,14 +114,14 @@ class AddWatch extends Component {
                               <input autoFocus id='Focus-AddWatch-Name' className='Input-element' required 
                                    type='text'
                                    name='watch_name'
-                                   placeholder='Watch Name (Required)'
+                                   placeholder='Watch Name'
                                    onChange={this.handleChange}
                               />
                               <br /> 
                               <input className='Input-element' required 
                                    type='text'
                                    name='watch_maker'
-                                   placeholder='Watch Maker (Required)'
+                                   placeholder='Watch Maker'
                                    onChange={this.handleChange}
                               />
                               <br />
@@ -170,7 +170,7 @@ class AddWatch extends Component {
                               <input className='Input-element' required 
                                    type='text'
                                    name='date_bought'
-                                   placeholder='Date Bought/Gifted (yyyy-mm-dd or yyyy) (Required)'
+                                   placeholder='Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
@@ -178,7 +178,7 @@ class AddWatch extends Component {
                                    type='number'
                                    step='0.01'
                                    name='cost'
-                                   placeholder='Cost (e.g. 199.99 or 0) (Required)'
+                                   placeholder='Cost (e.g. 199.99 or 0)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
