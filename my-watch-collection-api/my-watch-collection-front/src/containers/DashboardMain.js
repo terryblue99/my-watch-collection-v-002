@@ -39,7 +39,7 @@ class DashboardMain extends Component {
     }
 
     const watchesYes_Sort = [
-      <span>
+      <>
         <h2 className='Sort-header'>Sort By</h2>
         <br />
         <select className='Select-sort'
@@ -55,15 +55,15 @@ class DashboardMain extends Component {
           <option value='Cost Low to High'>Cost Low to High</option>
           <option value='Cost High to Low'>Cost High to Low</option>
         </select>
-      </span>
+      </>
     ]
 
     const watchesNo_Welcome = [
-      <span>
+      <>
         <h2 className="Welcome-text">Welcome to My Watch Collection</h2>
         <p className="Center-text"><b>Click on the ADD A WATCH button</b></p>
         <p className="Center-text"><b>to start cataloguing your watches</b></p>
-      </span>
+      </>
     ]
 
     if (this.props.watches && this.props.watches.length > 0) {
@@ -94,7 +94,7 @@ class DashboardMain extends Component {
 
         <div className='Dashboard-item Dashboard-initialList'>
           { number_of_saved_watches > 1
-            ? <span>
+            ? <>
                 <button className='btn FullList-button Button-text' 
                   // Fetch all watches and delete the DashBoard history location state
                   // so that the initial sort option text can be displayed
@@ -106,7 +106,7 @@ class DashboardMain extends Component {
                 }> 
                   Redisplay Initial List
                 </button>
-              </span>
+              </>
             : null
           }
           <br />
@@ -146,10 +146,10 @@ class DashboardMain extends Component {
         
         <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
           {number_of_watches > 1
-            ? <span>
+            ? <>
                 <h2 className='Dashboard-watchText'>Newest Watch</h2>
                 <h3 className='Dashboard-watchText'>{newestWatchDate}</h3>
-              </span>
+              </>
             : null
           }
           {number_of_watches === 1
@@ -171,10 +171,10 @@ class DashboardMain extends Component {
         </div>
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
           {number_of_watches > 1
-            ? <span>
+            ? <>
                 <h2 className='Dashboard-watchText'>Oldest Watch</h2>
                 <h3 className='Dashboard-watchText'>{oldestWatchDate}</h3>
-              </span>
+              </>
             : null
           }
           {number_of_watches === 1

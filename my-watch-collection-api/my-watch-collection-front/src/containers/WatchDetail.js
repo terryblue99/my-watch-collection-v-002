@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 // The following comment is required for @emotion to work
@@ -145,58 +145,58 @@ class WatchDetail extends Component {
                             `}>{currentWatch.watch_name}</h2>
                             <hr className='WatchDetail'/>
                             {currentWatch.movement ? 
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Movement</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.movement}</h3>
-                                </span>
+                                </>
                             : null}
                             {currentWatch.complications ?
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Complications</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.complications}</h3>
-                                </span>
+                                </>
                             : null }
                             {currentWatch.band ? 
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Band</em></p> 
                                     <h3 className='WatchDetail'>{currentWatch.band}</h3>
-                                </span>
+                                </>
                             : null }
                             {currentWatch.model_number ? 
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Model Number</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
-                                </span>
+                                </>
                             : null }
                             {currentWatch.case_measurement ? 
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Case Measurement</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
-                                </span>
+                                </>
                             : null }
                             {currentWatch.water_resistance ? 
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Water Resistance</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
-                                </span>
+                                </>
                             : null }
                             {currentWatch.date_bought ? 
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Date Bought/Gifted</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
-                                </span>
+                                </>
                             : null }
                             {currentWatch.cost ?
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Cost</em></p>
                                     <h3 className='WatchDetail'>${parseFloat(currentWatch.cost).toFixed(2)}</h3>
-                                </span>
+                                </>
                             : null }
                             {currentWatch.notes ? 
-                                <span>
+                                <>
                                     <p><em className='Detail-css'>Notes</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.notes}</h3>
-                                </span>
+                                </>
                             : null }
                         </div> 
                     </div>

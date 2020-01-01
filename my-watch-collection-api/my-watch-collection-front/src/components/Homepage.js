@@ -13,7 +13,7 @@ const Homepage = () => {
             </div>
                 <img src={logo} alt='logo' className='Logo'/>
                 <div className='Homepage-container'>
-                    <div>
+                    <>
                         <Link className='btn Home-button Button-text' to={{
                             pathname: `/login`
                         }}
@@ -25,7 +25,7 @@ const Homepage = () => {
                         }}
                         > Sign Up
                         </Link>
-                    </div>
+                    </>
                 </div>
             </header>
         </div>
