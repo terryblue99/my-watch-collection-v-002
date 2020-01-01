@@ -38,36 +38,40 @@ class DashboardMain extends Component {
       }
     }
 
-    const watchesYes = [<span>
-                        <h2 className='Sort-header'>Sort By</h2>
-                        <br />
-                        <select className='Select-sort'
-                                required 
-                                size='1' 
-                                name='sort' 
-                                onChange={this.handleSelectedSortKey}>
-                          <option>{this.props.sortSelected}</option>
-                          <option value='Watch Maker'>Watch Maker</option>
-                          <option value='Watch Name'>Watch Name</option>
-                          <option value='Newest to Oldest'>Newest to Oldest</option>
-                          <option value='Oldest to Newest'>Oldest to Newest</option>
-                          <option value='Cost Low to High'>Cost Low to High</option>
-                          <option value='Cost High to Low'>Cost High to Low</option>
-                        </select>
-                      </span>]
+    const watchesYes_Sort = [
+      <span>
+        <h2 className='Sort-header'>Sort By</h2>
+        <br />
+        <select className='Select-sort'
+                required 
+                size='1' 
+                name='sort' 
+                onChange={this.handleSelectedSortKey}>
+          <option>{this.props.sortSelected}</option>
+          <option value='Watch Maker'>Watch Maker</option>
+          <option value='Watch Name'>Watch Name</option>
+          <option value='Newest to Oldest'>Newest to Oldest</option>
+          <option value='Oldest to Newest'>Oldest to Newest</option>
+          <option value='Cost Low to High'>Cost Low to High</option>
+          <option value='Cost High to Low'>Cost High to Low</option>
+        </select>
+      </span>
+    ]
 
-      const watchesNo = [<span>
-                          <h2 className="Welcome-text">Welcome to My Watch Collection</h2>
-                          <p className="Center-text"><b>Click on the ADD A WATCH button</b></p>
-                          <p className="Center-text"><b>to start cataloguing your watches</b></p>
-                        </span>]
+    const watchesNo_Welcome = [
+      <span>
+        <h2 className="Welcome-text">Welcome to My Watch Collection</h2>
+        <p className="Center-text"><b>Click on the ADD A WATCH button</b></p>
+        <p className="Center-text"><b>to start cataloguing your watches</b></p>
+      </span>
+    ]
 
     if (this.props.watches && this.props.watches.length > 0) {
-      newestWatchImage = this.props.newestWatch.image 
-      newestWatchDate = this.props.newestWatch.date_bought
-      oldestWatchImage = this.props.oldestWatch.image
-      oldestWatchDate = this.props.oldestWatch.date_bought
-      number_of_watches = Object.keys(this.props.watches).length
+        newestWatchImage = this.props.newestWatch.image 
+        newestWatchDate = this.props.newestWatch.date_bought
+        oldestWatchImage = this.props.oldestWatch.image
+        oldestWatchDate = this.props.oldestWatch.date_bought
+        number_of_watches = Object.keys(this.props.watches).length
     }
 
     if (this.state.sortRequired) {
@@ -106,15 +110,19 @@ class DashboardMain extends Component {
             : null
           }
           <br />
-          <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
+          { number_of_watches > 0
+              ? <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
+              : null
+          }
+           
         </div>
         <div className='Dashboard-item Dashboard-sort'> 
           { number_of_watches > 1
-            ? watchesYes
+            ? watchesYes_Sort
             : null
           }
           { number_of_watches === 0 && number_of_saved_watches === 0
-            ? watchesNo
+            ? watchesNo_Welcome
             : null
           }
         </div>
