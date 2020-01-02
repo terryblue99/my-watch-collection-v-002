@@ -38,14 +38,14 @@ const Watches = ({ watches, sortSelected, DashBoardSortHistory }) => {
                     grid-template-columns: 80px auto;
                 }
             `}>
+                <SidebarMobile showWatches={showWatches}   
+                                setShowWatches={setShowWatches}
+                    />
                 <WatchList showWatches={showWatches}
                            setShowWatches={setShowWatches}
                            watches={watches}
                            setCurrentWatch={setCurrentWatch}
                 /> 
-                <SidebarMobile showWatches={showWatches}   
-                               setShowWatches={setShowWatches}
-                />
                 <WatchDetail showWatches={showWatches}
                              currentWatch={currentWatch}
                              setCurrentWatch={setCurrentWatch}
