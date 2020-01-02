@@ -24,7 +24,7 @@ class NavBar extends Component {
     })
   }
 
-  handleSubmit = (event) => {
+  handleSearch = (event) => {
     event.preventDefault()
     this.props.searchWatchesAction(this.state.searchText)
     this.setState({
@@ -156,7 +156,7 @@ class NavBar extends Component {
               padding-left: 40px;
               margin-bottom: 3px;
             `}>
-            <form id='Navbar-Search-Form' onSubmit={this.handleSubmit}>
+            <form id='Navbar-Search-Form' onSubmit={this.handleSearch}>
               <input required
                 type='text'
                 name='watch_search'
