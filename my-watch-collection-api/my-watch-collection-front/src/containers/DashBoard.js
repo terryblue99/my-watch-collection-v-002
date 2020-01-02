@@ -4,7 +4,7 @@ import { getWatchesAction } from '../actions/watchesActions'
 import NavBar from './NavBar'
 import Watches from './Watches'
 
-class DashBoardWatches extends Component {
+class DashBoard extends Component {
     
     componentDidMount = () => {
         if ((!this.props.location.state) || 
@@ -68,4 +68,4 @@ const mapStateToProps = (state) => {
     } 
 }
 
-export default connect(mapStateToProps, {getWatchesAction})(DashBoardWatches)
+export default connect(mapStateToProps, {getWatchesAction})(DashBoard)
