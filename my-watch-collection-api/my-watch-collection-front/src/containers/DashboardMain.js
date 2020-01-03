@@ -120,8 +120,8 @@ class DashboardMain extends Component {
           }
           <br />
           { number_of_watches > 0
-              && this.props.oldestWatch.watch_maker !== 'Watch Cases'
-              && this.props.newestWatch.watch_maker !== 'Watch Cases'
+              && this.props.oldestWatch.watch_maker !== 'Non-Watch'
+              && this.props.newestWatch.watch_maker !== 'Non-Watch'
               ? <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
               : null
           }
@@ -129,8 +129,8 @@ class DashboardMain extends Component {
         </div>
         <div className='Dashboard-item Dashboard-sort'> 
           { number_of_watches > 1 
-            && this.props.oldestWatch.watch_maker !== 'Watch Cases'
-            && this.props.newestWatch.watch_maker !== 'Watch Cases'
+            && this.props.oldestWatch.watch_maker !== 'Non-Watch'
+            && this.props.newestWatch.watch_maker !== 'Non-Watch'
             ? watchesYes_Sort
             : null
           }
@@ -158,7 +158,7 @@ class DashboardMain extends Component {
         </div>
         
         <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
-          {number_of_watches > 1 && this.props.newestWatch.watch_maker !== 'Watch Cases'
+          {number_of_watches > 1 && this.props.newestWatch.watch_maker !== 'Non-Watch'
             ? <>
                 <h2 className='Dashboard-watchText'>Newest Watch</h2>
                 <h3 className='Dashboard-watchText'>{newestWatchMaker}</h3>
@@ -166,14 +166,14 @@ class DashboardMain extends Component {
               </>
             : null
           }
-          {number_of_watches === 1 && this.props.newestWatch.watch_maker !== 'Watch Cases'
+          {number_of_watches === 1 && this.props.newestWatch.watch_maker !== 'Non-Watch'
             ? <>
                 <h3 className='Dashboard-watchText'>{newestWatchMaker}</h3>
                 <h4 className='Dashboard-watchText'>{newestWatchDate}</h4>
               </>
             : null
           }
-          {number_of_watches > 0 && this.props.newestWatch.watch_maker !== 'Watch Cases'
+          {number_of_watches > 0 && this.props.newestWatch.watch_maker !== 'Non-Watch'
               ? <span className='Image-link' onClick={() => { 
                                     hashHistory.push(`/watches/${this.props.newestWatch.id}/watch_detail`) // set the url for the watch
                                     this.props.setCurrentWatch(this.props.newestWatch)
@@ -192,7 +192,7 @@ class DashboardMain extends Component {
           <img src={logo} alt='logo' />
         </div>
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
-          {number_of_watches > 1 && this.props.oldestWatch.watch_maker !== 'Watch Cases'
+          {number_of_watches > 1 && this.props.oldestWatch.watch_maker !== 'Non-Watch'
             ? <>
                 <h2 className='Dashboard-watchText'>Oldest Watch</h2>
                 <h3 className='Dashboard-watchText'>{oldestWatchMaker}</h3>
@@ -200,14 +200,14 @@ class DashboardMain extends Component {
               </>
             : null
           }
-          {number_of_watches === 1 && this.props.oldestWatch.watch_maker !== 'Watch Cases'
+          {number_of_watches === 1 && this.props.oldestWatch.watch_maker !== 'Non-Watch'
             ? <>
                 <h3 className='Dashboard-watchText'>{oldestWatchMaker}</h3>
                 <h4 className='Dashboard-watchText'>{oldestWatchDate}</h4>
               </>
             : null
           }
-          {number_of_watches > 0 && this.props.oldestWatch.watch_maker !== 'Watch Cases'
+          {number_of_watches > 0 && this.props.oldestWatch.watch_maker !== 'Non-Watch'
             ? <span className='Image-link' onClick={() => { 
                                     hashHistory.push(`/watches/${this.props.oldestWatch.id}/watch_detail`) // set the url for the watch
                                     this.props.setCurrentWatch(this.props.oldestWatch)
