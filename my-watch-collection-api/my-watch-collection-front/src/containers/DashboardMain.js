@@ -25,8 +25,10 @@ class DashboardMain extends Component {
   render() {
   
     let newestWatchImage
+    let newestWatchMaker
     let newestWatchDate
     let oldestWatchImage
+    let oldestWatchMaker
     let oldestWatchDate
     let number_of_watches = 0
     const number_of_saved_watches = Object.keys(this.props.savedWatches).length
@@ -68,8 +70,10 @@ class DashboardMain extends Component {
 
     if (this.props.watches && this.props.watches.length > 0) {
         newestWatchImage = this.props.newestWatch.image 
+        newestWatchMaker = this.props.newestWatch.watch_maker
         newestWatchDate = this.props.newestWatch.date_bought
         oldestWatchImage = this.props.oldestWatch.image
+        oldestWatchMaker = this.props.oldestWatch.watch_maker
         oldestWatchDate = this.props.oldestWatch.date_bought
         number_of_watches = Object.keys(this.props.watches).length
     }
@@ -148,12 +152,16 @@ class DashboardMain extends Component {
           {number_of_watches > 1
             ? <>
                 <h2 className='Dashboard-watchText'>Newest Watch</h2>
-                <h3 className='Dashboard-watchText'>{newestWatchDate}</h3>
+                <h3 className='Dashboard-watchText'>{newestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText'>{newestWatchDate}</h4>
               </>
             : null
           }
           {number_of_watches === 1
-            ? <h3 className='Dashboard-watchText'>{newestWatchDate}</h3>
+            ? <>
+                <h3 className='Dashboard-watchText'>{newestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText'>{newestWatchDate}</h4>
+              </>
             : null
           }
           {number_of_watches > 0 
@@ -173,12 +181,16 @@ class DashboardMain extends Component {
           {number_of_watches > 1
             ? <>
                 <h2 className='Dashboard-watchText'>Oldest Watch</h2>
-                <h3 className='Dashboard-watchText'>{oldestWatchDate}</h3>
+                <h3 className='Dashboard-watchText'>{oldestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText'>{oldestWatchDate}</h4>
               </>
             : null
           }
           {number_of_watches === 1
-            ? <h3 className='Dashboard-watchText'>{oldestWatchDate}</h3>
+            ? <>
+                <h3 className='Dashboard-watchText'>{oldestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText'>{oldestWatchDate}</h4>
+              </>
             : null
           }
           {number_of_watches > 0
