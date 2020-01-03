@@ -219,6 +219,10 @@ button:focus,
   cursor: pointer;
 }
 
+.Image-link:hover {
+  cursor: pointer
+}
+
 .Home-button {
   border-color: white;
   border-style: solid;
