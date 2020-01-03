@@ -180,13 +180,16 @@ class WatchDetail extends Component {
                                     <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                                 </>
                             : null }
-                            {currentWatch.date_bought ? 
+                            {currentWatch.date_bought && currentWatch.watch_maker !== 'Watch Cases'? 
                                 <>
-                                    <p><em className='Detail-css'>Date Bought/Gifted</em></p>
+                                    {currentWatch.cost > 0
+                                        ?<p><em className='Detail-css'>Date Bought</em></p>
+                                        :<p><em className='Detail-css'>Date Gifted</em></p>
+                                    }
                                     <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
                                 </>
                             : null }
-                            {currentWatch.cost ?
+                            {currentWatch.cost > 0 ?
                                 <>
                                     <p><em className='Detail-css'>Cost</em></p>
                                     <h3 className='WatchDetail'>${parseFloat(currentWatch.cost).toFixed(2)}</h3>
