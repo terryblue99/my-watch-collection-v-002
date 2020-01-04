@@ -23,19 +23,22 @@ class DashboardMain extends Component {
     })
   }
 
-  imageClick = () => {
-    alert('Click!!!!');
-  } 
-
   render() {
+
+    const nonWatch = 'non-watch' // also in WatchDetail
   
+    let a_newest_watch_exists
     let newestWatchImage
     let newestWatchMaker
     let newestWatchDate
+
+    let an_oldest_watch_exists
     let oldestWatchImage
     let oldestWatchMaker
     let oldestWatchDate
+
     let number_of_watches = 0
+
     const number_of_saved_watches = Object.keys(this.props.savedWatches).length
     
     const style = {
@@ -74,12 +77,16 @@ class DashboardMain extends Component {
     ]
 
     if (this.props.watches && this.props.watches.length > 0) {
+        a_newest_watch_exists = !this.props.newestWatch.notes.includes(nonWatch)
         newestWatchImage = this.props.newestWatch.image 
         newestWatchMaker = this.props.newestWatch.watch_maker
         newestWatchDate = this.props.newestWatch.date_bought
+
+        an_oldest_watch_exists = !this.props.oldestWatch.notes.includes(nonWatch)
         oldestWatchImage = this.props.oldestWatch.image
         oldestWatchMaker = this.props.oldestWatch.watch_maker
         oldestWatchDate = this.props.oldestWatch.date_bought
+
         number_of_watches = Object.keys(this.props.watches).length
     }
 
@@ -120,8 +127,8 @@ class DashboardMain extends Component {
           }
           <br />
           { number_of_watches > 0
-              && this.props.oldestWatch.watch_maker !== 'Non-Watch'
-              && this.props.newestWatch.watch_maker !== 'Non-Watch'
+                && an_oldest_watch_exists
+                && a_newest_watch_exists
               ? <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
               : null
           }
@@ -129,8 +136,8 @@ class DashboardMain extends Component {
         </div>
         <div className='Dashboard-item Dashboard-sort'> 
           { number_of_watches > 1 
-            && this.props.oldestWatch.watch_maker !== 'Non-Watch'
-            && this.props.newestWatch.watch_maker !== 'Non-Watch'
+              && an_oldest_watch_exists
+              && a_newest_watch_exists
             ? watchesYes_Sort
             : null
           }
@@ -158,7 +165,7 @@ class DashboardMain extends Component {
         </div>
         
         <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
-          {number_of_watches > 1 && this.props.newestWatch.watch_maker !== 'Non-Watch'
+          {number_of_watches > 1 && a_newest_watch_exists
             ? <>
                 <h2 className='Dashboard-watchText'>Newest Watch</h2>
                 <h3 className='Dashboard-watchText'>{newestWatchMaker}</h3>
@@ -166,14 +173,14 @@ class DashboardMain extends Component {
               </>
             : null
           }
-          {number_of_watches === 1 && this.props.newestWatch.watch_maker !== 'Non-Watch'
+          {number_of_watches === 1 && a_newest_watch_exists
             ? <>
                 <h3 className='Dashboard-watchText'>{newestWatchMaker}</h3>
                 <h4 className='Dashboard-watchText'>{newestWatchDate}</h4>
               </>
             : null
           }
-          {number_of_watches > 0 && this.props.newestWatch.watch_maker !== 'Non-Watch'
+          {number_of_watches > 0 && a_newest_watch_exists
               ? <span className='Image-link' onClick={() => { 
                                     hashHistory.push(`/watches/${this.props.newestWatch.id}/watch_detail`) // set the url for the watch
                                     this.props.setCurrentWatch(this.props.newestWatch)
@@ -192,7 +199,7 @@ class DashboardMain extends Component {
           <img src={logo} alt='logo' />
         </div>
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
-          {number_of_watches > 1 && this.props.oldestWatch.watch_maker !== 'Non-Watch'
+          {number_of_watches > 1 && an_oldest_watch_exists
             ? <>
                 <h2 className='Dashboard-watchText'>Oldest Watch</h2>
                 <h3 className='Dashboard-watchText'>{oldestWatchMaker}</h3>
@@ -200,14 +207,14 @@ class DashboardMain extends Component {
               </>
             : null
           }
-          {number_of_watches === 1 && this.props.oldestWatch.watch_maker !== 'Non-Watch'
+          {number_of_watches === 1 && an_oldest_watch_exists
             ? <>
                 <h3 className='Dashboard-watchText'>{oldestWatchMaker}</h3>
                 <h4 className='Dashboard-watchText'>{oldestWatchDate}</h4>
               </>
             : null
           }
-          {number_of_watches > 0 && this.props.oldestWatch.watch_maker !== 'Non-Watch'
+          {number_of_watches > 0 && an_oldest_watch_exists
             ? <span className='Image-link' onClick={() => { 
                                     hashHistory.push(`/watches/${this.props.oldestWatch.id}/watch_detail`) // set the url for the watch
                                     this.props.setCurrentWatch(this.props.oldestWatch)

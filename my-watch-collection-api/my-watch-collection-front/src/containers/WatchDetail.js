@@ -37,6 +37,8 @@ class WatchDetail extends Component {
 
     render () {
 
+        const nonWatch = 'non-watch' // also in DashBoardMain
+
         if (this.state.backToDashboard && this.state.watchDeleted) {
             this.setState({
                 backToDashboard: false,
@@ -61,7 +63,7 @@ class WatchDetail extends Component {
             // the dashboard to be displayed there instead
             this.props.setCurrentWatch(null) 
             return  RedirectTo('/dashboard')
-        } 
+        }
 
         const {currentWatch, showWatches} = this.props
 
@@ -72,6 +74,8 @@ class WatchDetail extends Component {
         }
     
         if (currentWatch && currentWatch.watch_maker) {
+
+            const a_watch_exists = !currentWatch.notes.includes(nonWatch)
 
             return ( 
                 
@@ -105,13 +109,15 @@ class WatchDetail extends Component {
                             @media (max-width: 750px) {
                                 padding-left: 120px;
                             }  
-                        `}> 
-                            <Image 
-                                src={currentWatch.image}
-                                width={200}
-                                height={200} 
-                                style={style.image}
-                            />
+                        `}> {a_watch_exists
+                            ?   <Image 
+                                    src={currentWatch.image}
+                                    width={200}
+                                    height={200} 
+                                    style={style.image}
+                                />
+                            : null
+                            }
                         </div>
                         <div css={css`
                             padding-bottom: 12px;
@@ -180,8 +186,8 @@ class WatchDetail extends Component {
                                     <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                                 </>
                             : null }
-                            {currentWatch.date_bought && currentWatch.watch_maker !== 'Watch Cases'? 
-                                <>
+                            {currentWatch.date_bought && a_watch_exists 
+                            ?   <>
                                     {currentWatch.cost > 0
                                         ?<p><em className='Detail-css'>Date Bought</em></p>
                                         :<p><em className='Detail-css'>Date Gifted</em></p>
