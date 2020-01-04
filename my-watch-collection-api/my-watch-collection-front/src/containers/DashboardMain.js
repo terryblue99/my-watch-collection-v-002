@@ -25,7 +25,7 @@ class DashboardMain extends Component {
 
   render() {
 
-    const nonWatch = 'non-watch' // also in WatchDetail
+    const nonWatch = 'non-watch' // also in Watches & WatchDetail
   
     let a_newest_watch_exists
     let newestWatchImage

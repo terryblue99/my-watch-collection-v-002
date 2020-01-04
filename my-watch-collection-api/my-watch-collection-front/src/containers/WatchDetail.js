@@ -37,7 +37,7 @@ class WatchDetail extends Component {
 
     render () {
 
-        const nonWatch = 'non-watch' // also in DashBoardMain
+        const nonWatch = 'non-watch' // also in DashBoardMain & Watches
 
         if (this.state.backToDashboard && this.state.watchDeleted) {
             this.setState({

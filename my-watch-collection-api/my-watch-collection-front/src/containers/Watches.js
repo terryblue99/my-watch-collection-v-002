@@ -9,7 +9,7 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 
 const Watches = ({ watches, sortSelected, DashBoardSortHistory }) => { 
 
-    const nonWatch = 'non-watch'
+    const nonWatch = 'non-watch' // also in DashboardMain & WatchDetail
   
     let oldestWatch
     let newestWatch
