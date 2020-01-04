@@ -8,13 +8,17 @@ import SidebarMobile from './SidebarMobile'
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
 const Watches = ({ watches, sortSelected, DashBoardSortHistory }) => { 
+
+    const nonWatch = 'non-watch'
   
     let oldestWatch
     let newestWatch
 
     if(watches && watches.length > 0) {
-        // Sort the watches by date bought using the underscore function _.sortBy
-        const sortedWatches = _.sortBy( watches, 'date_bought' )
+        // Filter out non-watch records
+        let filteredWatches = watches.filter(watch => !watch.notes.includes(nonWatch))
+        // Sort the filtered watches by date bought using the underscore function _.sortBy
+        const sortedWatches = _.sortBy( filteredWatches, 'date_bought' )
         oldestWatch = sortedWatches[0]
         newestWatch = sortedWatches[sortedWatches.length-1] 
     }    
