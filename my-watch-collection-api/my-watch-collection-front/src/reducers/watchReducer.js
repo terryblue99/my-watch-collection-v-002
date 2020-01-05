@@ -14,7 +14,10 @@ import {
 	COST_HIGH_TO_LOW_SORT
 } from '../actions/types'
 
-const initialState = {savedWatches: []}
+const initialState = {
+	savedWatches: [],
+	nonWatch: ['non-watch']
+}
 let sortedWatches
 
 // Used when sorting watches by cost,
@@ -36,7 +39,8 @@ export default (state = initialState, { type, payload } ) => {
 				return ({
 					...state,
 					watches: payload,
-					savedWatches: payload
+					savedWatches: payload,
+					nonWatch: state.nonWatch
 				})
 			} else return state
 

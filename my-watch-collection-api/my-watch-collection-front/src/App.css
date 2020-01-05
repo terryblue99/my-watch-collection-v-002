@@ -87,17 +87,22 @@ button
 }
 
 .Dashboard-totalWatches,
+.Dashboard-totalNonWatches,
 .Sort-header
 {
   margin-top: 10px;
 }
 
-.Dashboard-totalWatches,
 .Dashboard-watchText,
 .Sort-header,
 .Welcome-text
 {
   text-align: center;
+  text-shadow: 2px 2px 5px orange;
+}
+
+.Dashboard-totalNonWatches,
+.Dashboard-totalWatches {
   text-shadow: 2px 2px 5px orange;
 }
 

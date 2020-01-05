@@ -7,20 +7,23 @@ import SidebarMobile from './SidebarMobile'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const Watches = ({ watches, sortSelected, DashBoardSortHistory }) => { 
-
-    const nonWatch = 'non-watch' // also in DashboardMain & WatchDetail
-  
+const Watches = ({ watches, nonWatch, sortSelected, DashBoardSortHistory }) => { // nonWatch also in DashBoardMain & WatchDetail
+ 
     let oldestWatch
     let newestWatch
+    let filteredWatches
+    let filteredNonWatches
 
     if(watches && watches.length > 0) {
         // Filter out non-watch records
-        let filteredWatches = watches.filter(watch => !watch.notes.includes(nonWatch))
+        filteredNonWatches = watches.filter(watch => watch.notes.includes(nonWatch))
+        // Filter out watch records
+        filteredWatches = watches.filter(watch => !watch.notes.includes(nonWatch))
         // Sort the filtered watches by date bought using the underscore function _.sortBy
         const sortedWatches = _.sortBy( filteredWatches, 'date_bought' )
         oldestWatch = sortedWatches[0]
         newestWatch = sortedWatches[sortedWatches.length-1] 
+        
     }    
 
    const [showWatches, setShowWatches] = useState(false) // used when in a mobile view
@@ -42,7 +45,7 @@ const Watches = ({ watches, sortSelected, DashBoardSortHistory }) => {
                     grid-template-columns: 80px auto;
                 }
             `}>
-                <SidebarMobile showWatches={showWatches}   
+                <SidebarMobile  showWatches={showWatches}   
                                 setShowWatches={setShowWatches}
                     />
                 <WatchList showWatches={showWatches}
@@ -51,10 +54,13 @@ const Watches = ({ watches, sortSelected, DashBoardSortHistory }) => {
                            setCurrentWatch={setCurrentWatch}
                 /> 
                 <WatchDetail showWatches={showWatches}
+                             nonWatch={nonWatch} // also in DashBoardMain & WatchDetail
                              currentWatch={currentWatch}
                              setCurrentWatch={setCurrentWatch}
                              newestWatch={newestWatch}
                              oldestWatch={oldestWatch}
+                             filteredWatches={filteredWatches}
+                             filteredNonWatches={filteredNonWatches}
                              sortSelected={sortSelected}
                              DashBoardSortHistory={DashBoardSortHistory}
                 />

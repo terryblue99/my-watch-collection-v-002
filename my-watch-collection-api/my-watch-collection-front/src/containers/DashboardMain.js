@@ -25,8 +25,6 @@ class DashboardMain extends Component {
 
   render() {
 
-    const nonWatch = 'non-watch' // also in Watches & WatchDetail
-  
     let a_newest_watch_exists
     let newestWatchImage
     let newestWatchMaker
@@ -38,6 +36,7 @@ class DashboardMain extends Component {
     let oldestWatchDate
 
     let number_of_watches = 0
+    let number_of_nonWatches = 0
 
     const number_of_saved_watches = Object.keys(this.props.savedWatches).length
     
@@ -76,7 +75,9 @@ class DashboardMain extends Component {
       </>
     ]
 
-    if (this.props.watches && this.props.watches.length > 0) {
+    if (this.props.newestWatch && this.props.oldestWatch) {
+        const nonWatch = this.props.nonWatch // nonWatch also in Watches & WatchDetail
+
         a_newest_watch_exists = !this.props.newestWatch.notes.includes(nonWatch)
         newestWatchImage = this.props.newestWatch.image 
         newestWatchMaker = this.props.newestWatch.watch_maker
@@ -87,7 +88,11 @@ class DashboardMain extends Component {
         oldestWatchMaker = this.props.oldestWatch.watch_maker
         oldestWatchDate = this.props.oldestWatch.date_bought
 
-        number_of_watches = Object.keys(this.props.watches).length
+        number_of_watches = Object.keys(this.props.filteredWatches).length
+    }
+
+    if (this.props.filteredNonWatches) {
+      number_of_nonWatches = Object.keys(this.props.filteredNonWatches).length
     }
 
     if (this.state.sortRequired) {
@@ -127,9 +132,11 @@ class DashboardMain extends Component {
           }
           <br />
           { number_of_watches > 0
-                && an_oldest_watch_exists
-                && a_newest_watch_exists
               ? <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
+              : null
+          }
+          { number_of_nonWatches > 0
+              ? <h2 className='Dashboard-totalNonWatches'>Total non-watches: {number_of_nonWatches}</h2>
               : null
           }
            
@@ -243,7 +250,8 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.currentUser,
     watches: state.myWatches.watches,
-    savedWatches: state.myWatches.savedWatches
+    savedWatches: state.myWatches.savedWatches,
+    nonWatch: state.myWatches.nonWatch
   } 
 }
 

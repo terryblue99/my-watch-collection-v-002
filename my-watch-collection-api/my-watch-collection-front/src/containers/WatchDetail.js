@@ -37,8 +37,6 @@ class WatchDetail extends Component {
 
     render () {
 
-        const nonWatch = 'non-watch' // also in DashBoardMain & Watches
-
         if (this.state.backToDashboard && this.state.watchDeleted) {
             this.setState({
                 backToDashboard: false,
@@ -66,6 +64,7 @@ class WatchDetail extends Component {
         }
 
         const {currentWatch, showWatches} = this.props
+        const nonWatch = this.props.nonWatch // nonWatch also in DashBoardMain & Watches
 
         const style = {
             image: {
@@ -234,7 +233,10 @@ class WatchDetail extends Component {
         } else {
             return <DashboardMain   newestWatch={this.props.newestWatch}
                                     oldestWatch={this.props.oldestWatch}
+                                    nonWatch={this.props.nonWatch}
                                     setCurrentWatch={this.props.setCurrentWatch}
+                                    filteredWatches={this.props.filteredWatches}
+                                    filteredNonWatches={this.props.filteredNonWatches}
                                     sortSelected={this.props.sortSelected} 
                                     DashBoardSortHistory={this.props.DashBoardSortHistory}               
                     />
