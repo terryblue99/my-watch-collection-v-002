@@ -19,7 +19,7 @@ const Watches = ({ watches, nonWatch, sortSelected, DashBoardSortHistory }) => {
         filteredNonWatches = watches.filter(watch => watch.notes.includes(nonWatch))
         // Filter out watch records
         filteredWatches = watches.filter(watch => !watch.notes.includes(nonWatch))
-        // Sort the filtered watches by date bought using the underscore function _.sortBy
+        // Sort the filtered watch records by date bought using the underscore function _.sortBy
         const sortedWatches = _.sortBy( filteredWatches, 'date_bought' )
         oldestWatch = sortedWatches[0]
         newestWatch = sortedWatches[sortedWatches.length-1] 
@@ -54,7 +54,7 @@ const Watches = ({ watches, nonWatch, sortSelected, DashBoardSortHistory }) => {
                            setCurrentWatch={setCurrentWatch}
                 /> 
                 <WatchDetail showWatches={showWatches}
-                             nonWatch={nonWatch} // also in DashBoardMain & WatchDetail
+                             nonWatch={nonWatch}
                              currentWatch={currentWatch}
                              setCurrentWatch={setCurrentWatch}
                              newestWatch={newestWatch}

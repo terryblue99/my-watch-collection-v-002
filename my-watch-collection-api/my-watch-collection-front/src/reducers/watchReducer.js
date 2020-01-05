@@ -16,7 +16,8 @@ import {
 
 const initialState = {
 	savedWatches: [],
-	nonWatch: ['non-watch']
+	nonWatch: ['non-watch'] // Used when creating records that are not related to a specific watch.
+													// All that is required is to add 'non-watch' anywhere in the notes input.
 }
 let sortedWatches
 
