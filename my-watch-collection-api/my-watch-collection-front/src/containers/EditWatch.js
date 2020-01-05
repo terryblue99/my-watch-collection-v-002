@@ -134,18 +134,6 @@ class EditWatch extends Component {
                               <h1  className='WatchForm-header'>
                                    Edit this watch
                               </h1>
-                              {watch.watch_name  
-                                   ? <label>Watch Name</label>
-                                   : null 
-                              }
-                              <input className='Input-element' required 
-                                   type='text'
-                                   name='watch_name'
-                                   defaultValue={watch.watch_name}
-                                   placeholder='Watch Name'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
                               {watch.watch_maker  
                                    ? <label>Watch Maker</label>
                                    : null 
@@ -155,6 +143,18 @@ class EditWatch extends Component {
                                    name='watch_maker'
                                    defaultValue={watch.watch_maker}
                                    placeholder='Watch Maker'
+                                   onChange={this.handleChange}
+                              />
+                              <br />
+                              {watch.watch_name  
+                                   ? <label>Watch Name</label>
+                                   : null 
+                              }
+                              <input className='Input-element' required 
+                                   type='text'
+                                   name='watch_name'
+                                   defaultValue={watch.watch_name}
+                                   placeholder='Watch Name'
                                    onChange={this.handleChange}
                               />
                               <br />
