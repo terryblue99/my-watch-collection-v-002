@@ -72,7 +72,7 @@ class WatchDetail extends Component {
             }
         }
     
-        if (currentWatch && currentWatch.watch_maker) {
+        if (currentWatch) {
 
             const a_watch_exists = !currentWatch.notes.includes(nonWatch)
 
