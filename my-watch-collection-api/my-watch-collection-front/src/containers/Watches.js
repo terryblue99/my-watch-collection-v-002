@@ -16,9 +16,9 @@ const Watches = ({ watches, nonWatch, sortSelected, DashBoardSortHistory }) => {
 
     if(watches && watches.length > 0) {
         // Filter out non-watch records
-        filteredNonWatches = watches.filter(watch => watch.notes.includes(nonWatch))
+        filteredNonWatches = watches.filter(watch => watch.watch_name.includes(nonWatch))
         // Filter out watch records
-        filteredWatches = watches.filter(watch => !watch.notes.includes(nonWatch))
+        filteredWatches = watches.filter(watch => !watch.watch_name.includes(nonWatch))
         // Sort the filtered watch records by date bought using the underscore function _.sortBy
         const sortedWatches = _.sortBy( filteredWatches, 'date_bought' )
         oldestWatch = sortedWatches[0]
