@@ -65,8 +65,8 @@ const mapStateToProps = (state) => {
     return {
       currentUser: state.currentUser,
       watches: state.myWatches.watches,
-      nonWatch: state.myWatches.nonWatch  // Used when creating records that are not related to a specific watch.
-                                          // For those records user must add 'non-watch' anywhere in the notes input.
+      nonWatch: state.myWatches.nonWatch  // Used when adding records that are not related to a specific watch.
+                                          // For those records user must enter 'non-watch' in the Watch Name input.
     } 
 }
 
