@@ -9,7 +9,7 @@ class Watch < ApplicationRecord
     # Checks if a watch image has been selected  
     # and if not, a default image is stored
     if !self.image.attached?
-      self.image.attach(io: File.open(Rails.root.join('my-watch-collection-front', 'src/images', 'defaultWatchImage.png')), filename: 'defaultWatchImage.png' , content_type: 'image/png')
+      self.image.attach(io: File.open(Rails.root.join('my-watch-collection-front', 'src/images', 'no_image_uploaded.png')), filename: 'no_image_uploaded.png' , content_type: 'image/png')
     end
   end
   
