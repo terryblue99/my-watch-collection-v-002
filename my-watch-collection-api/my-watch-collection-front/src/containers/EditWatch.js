@@ -54,7 +54,7 @@ class EditWatch extends Component {
           event.preventDefault() 
           if (this.state.formHasInput) {
                // validate the 'Date Bought/Gifted' input
-               const validDate = DateValidation(this.state.watchData.date_bought)
+               const validDate = DateValidation(this.state.watchData.date_bought, 'edit')
                if (!validDate) {
                     alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return

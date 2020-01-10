@@ -50,7 +50,7 @@ class AddWatch extends Component {
      handleSubmit = (event) => { 
           event.preventDefault() 
           // validate the 'Date Bought/Gifted' input
-          const validDate = DateValidation(this.state.watchData.date_bought)
+          const validDate = DateValidation(this.state.watchData.date_bought, 'add')
           if (!validDate) {
                alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                return
@@ -170,7 +170,7 @@ class AddWatch extends Component {
                               <input className='Input-element' required 
                                    type='text'
                                    name='date_bought'
-                                   placeholder='Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)'
+                                   placeholder='Date Bought/Gifted (yyyy-mm-dd/yyyy-mm/yyyy/0)'
                                    onChange={this.handleChange}
                               />
                               <br /> 
