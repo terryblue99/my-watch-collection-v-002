@@ -74,8 +74,6 @@ class WatchDetail extends Component {
     
         if (currentWatch) {
 
-            const a_watch_exists = !currentWatch.notes.includes(nonWatch)
-
             return ( 
                 
                 <div className='Watch-detail' css={css`
@@ -108,15 +106,13 @@ class WatchDetail extends Component {
                             @media (max-width: 750px) {
                                 padding-left: 120px;
                             }  
-                        `}> {a_watch_exists
-                            ?   <Image 
-                                    src={currentWatch.image}
-                                    width={200}
-                                    height={200} 
-                                    style={style.image}
-                                />
-                            : null
-                            }
+                        `}> 
+                            <Image 
+                                src={currentWatch.image}
+                                width={200}
+                                height={200} 
+                                style={style.image}
+                            />
                         </div>
                         <div css={css`
                             padding-bottom: 12px;
@@ -148,44 +144,64 @@ class WatchDetail extends Component {
                                     margin-bottom: 15px;
                                 }
                             `}>{currentWatch.watch_name}</h2>
+
                             <hr className='WatchDetail'/>
-                            {currentWatch.movement ? 
-                                <>
-                                    <p><em className='Detail-css'>Movement</em></p>
-                                    <h3 className='WatchDetail'>{currentWatch.movement}</h3>
-                                </>
-                            : null}
-                            {currentWatch.complications ?
-                                <>
-                                    <p><em className='Detail-css'>Complications</em></p>
-                                    <h3 className='WatchDetail'>{currentWatch.complications}</h3>
-                                </>
-                            : null }
-                            {currentWatch.band ? 
-                                <>
-                                    <p><em className='Detail-css'>Band</em></p> 
-                                    <h3 className='WatchDetail'>{currentWatch.band}</h3>
-                                </>
-                            : null }
-                            {currentWatch.model_number ? 
-                                <>
-                                    <p><em className='Detail-css'>Model Number</em></p>
-                                    <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
-                                </>
-                            : null }
-                            {currentWatch.case_measurement ? 
-                                <>
-                                    <p><em className='Detail-css'>Case Measurement</em></p>
-                                    <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
-                                </>
-                            : null }
-                            {currentWatch.water_resistance ? 
-                                <>
-                                    <p><em className='Detail-css'>Water Resistance</em></p>
-                                    <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
-                                </>
-                            : null }
-                            {currentWatch.date_bought && a_watch_exists 
+                            
+                            {currentWatch.movement && !currentWatch.watch_name.includes(nonWatch)
+                                ?   <>  <p><em className='Detail-css'>Movement</em></p>
+                                        <h3 className='WatchDetail'>{currentWatch.movement}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.movement && currentWatch.watch_name.includes(nonWatch) 
+                                ?   <>  <h3 className='WatchDetail'>{currentWatch.movement}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.complications && !currentWatch.watch_name.includes(nonWatch)
+                                ?   <>  <p><em className='Detail-css'>Complications</em></p>
+                                        <h3 className='WatchDetail'>{currentWatch.complications}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.complications && currentWatch.watch_name.includes(nonWatch) 
+                                ?   <>  <h3 className='WatchDetail'>{currentWatch.complications}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.band && !currentWatch.watch_name.includes(nonWatch)
+                                ?   <>  <p><em className='Detail-css'>Band</em></p>
+                                        <h3 className='WatchDetail'>{currentWatch.band}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.band && currentWatch.watch_name.includes(nonWatch) 
+                                ?   <>  <h3 className='WatchDetail'>{currentWatch.band}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.model_number && !currentWatch.watch_name.includes(nonWatch)
+                                ?   <>  <p><em className='Detail-css'>Model Number</em></p>
+                                        <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.model_number && currentWatch.watch_name.includes(nonWatch) 
+                                ?   <>  <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.case_measurement && !currentWatch.watch_name.includes(nonWatch)
+                                ?   <>  <p><em className='Detail-css'>Case Measurement</em></p>
+                                        <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.case_measurement && currentWatch.watch_name.includes(nonWatch) 
+                                ?   <>  <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.water_resistance && !currentWatch.watch_name.includes(nonWatch)
+                                ?   <>  <p><em className='Detail-css'>Water Resistance</em></p>
+                                        <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.water_resistance && currentWatch.watch_name.includes(nonWatch) 
+                                ?   <>  <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
+                                    </>
+                                :   null }
+                            {currentWatch.date_bought && !currentWatch.watch_name.includes(nonWatch) 
                             ?   <>
                                     {currentWatch.cost > 0
                                         ?<p><em className='Detail-css'>Date Bought</em></p>
