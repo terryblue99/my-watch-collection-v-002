@@ -15,8 +15,8 @@ class AddWatch extends Component {
 
      state = {
           watchData: {
-               watch_name: '',
                watch_maker: '',
+               watch_name: '',
                movement: '',
                band: '',
                model_number: '',
@@ -48,17 +48,27 @@ class AddWatch extends Component {
      }
 
      handleSubmit = (event) => { 
-          event.preventDefault() 
+          event.preventDefault()
+          // validate the watch_name/cost/date_bought combination input
+          if ((this.state.watchData.watch_name !== this.props.nonWatch && 
+               Number(this.state.watchData.cost) > 0 &&
+               Number(this.state.watchData.date_bought) === 0) ||
+              (this.state.watchData.watch_name !== this.props.nonWatch && 
+               Number(this.state.watchData.cost) === 0 &&
+               Number(this.state.watchData.date_bought) === 0)) { 
+                    alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
+                    return
+               }
           // validate the 'Date Bought/Gifted' input
-          const validDate = DateValidation(this.state.watchData.date_bought, 'add')
+          const validDate = DateValidation(this.state.watchData.date_bought.toString(), 'add')
           if (!validDate) {
                alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                return
           }
           // Create the watch
           const formData = new FormData()
-          formData.append('watch_name', this.state.watchData.watch_name)
           formData.append('watch_maker', this.state.watchData.watch_maker)
+          formData.append('watch_name', this.state.watchData.watch_name)
           formData.append('movement', this.state.watchData.movement)
           formData.append('band', this.state.watchData.band)
           formData.append('model_number', this.state.watchData.model_number)
@@ -85,13 +95,14 @@ class AddWatch extends Component {
           })
      }
 
-     render() {  
+     render() { 
+
           if (this.state.backToDashboard) { 
                this.setState({
                     backToDashboard: false
                }) 
                return RedirectTo('/dashboard')
-          } 
+          }
       
           return (
                
@@ -177,6 +188,7 @@ class AddWatch extends Component {
                               <input className='Input-element' required
                                    type='number'
                                    step='0.01'
+                                   min='0'
                                    name='cost'
                                    placeholder='Cost (e.g. 199.99 or 0)'
                                    onChange={this.handleChange}
@@ -205,7 +217,9 @@ class AddWatch extends Component {
 
 const mapStateToProps = (state) => { 
      return {
-       currentUser: state.currentUser
+       currentUser: state.currentUser,
+       nonWatch: state.myWatches.nonWatch // Used when adding records that are not related to a specific watch.
+                                       // For those records user must enter 'non-watch' in the Watch Name input.
      } 
  }
 
