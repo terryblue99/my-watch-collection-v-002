@@ -138,8 +138,7 @@ class DashboardMain extends Component {
           { number_of_nonWatches > 0
               ? <h2 className='Dashboard-totalNonWatches'>Total non-watches: {number_of_nonWatches}</h2>
               : null
-          }
-           
+          }   
         </div>
         <div className='Dashboard-item Dashboard-sort'> 
           { number_of_watches > 1 

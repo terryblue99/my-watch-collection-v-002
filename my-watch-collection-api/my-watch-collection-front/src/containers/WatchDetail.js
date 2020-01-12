@@ -238,10 +238,18 @@ class WatchDetail extends Component {
                                 watch: currentWatch
                             }
                         }}>
-                            Edit Watch
+                            {!currentWatch.watch_name.includes(nonWatch)
+                                    ? <>Edit this watch</>
+                    
+                                    : <>Edit this non-watch</>
+                            }    
                         </Link>
                         <button className='btn Red-button Button-text' onClick={this.handleDelete}> 
-                            Delete Watch
+                            {!currentWatch.watch_name.includes(nonWatch)
+                                    ? <>Delete this watch</>
+                    
+                                    : <>Delete this non-watch</>
+                            } 
                         </button>
                     </div>
                 </div> 

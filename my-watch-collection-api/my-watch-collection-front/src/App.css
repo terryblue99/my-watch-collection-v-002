@@ -190,6 +190,12 @@ button
   display: grid;
 }
 
+.NonWatch-container,
+.NonWatch-OL
+{
+  padding-left: 40px;
+}
+
 /*  =================
         buttons
     ================= */
@@ -391,6 +397,10 @@ hr.WatchDetail {
   color: sienna;
   margin-top: 3px;
   text-align: center;
+}
+
+.NonWatch-text {
+  color: sienna;
 }
 
 #AddWatch-Form,
