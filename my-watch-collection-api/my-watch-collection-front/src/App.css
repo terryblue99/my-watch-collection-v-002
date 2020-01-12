@@ -190,10 +190,22 @@ button
   display: grid;
 }
 
-.NonWatch-container,
-.NonWatch-OL
-{
+.NonWatch-container {
+  margin: 0 auto;
+  width: 460px;
+}
+
+.NonWatch-container p {
+  padding-left: 20px;
+}
+
+.NonWatch-OL {
   padding-left: 40px;
+}
+
+.NonWatch-text {
+  color: sienna;
+  text-align: center
 }
 
 /*  =================
@@ -228,6 +240,10 @@ button:focus,
 .btn:hover {
   color: goldenrod;
   cursor: pointer;
+}
+
+.NonWatch-container button {
+  margin-left: 120px;
 }
 
 .Image-link:hover {
@@ -399,10 +415,6 @@ hr.WatchDetail {
   text-align: center;
 }
 
-.NonWatch-text {
-  color: sienna;
-}
-
 #AddWatch-Form,
 .EditWatch-Form,
 .Profile
@@ -552,6 +564,9 @@ textarea:required
     margin-top: 15px;
     width: 300px;
   } 
+  .NonWatch-container button {
+    margin-left: 80px;
+  }
 }
 
 @media (min-width: 750px) and (max-width: 1056px) {
@@ -576,6 +591,9 @@ textarea:required
   {
     margin-top: 15px;
   }
+  .NonWatch-container button {
+    margin-left: 80px;
+  }
 }
 
 @media (max-width: 945px) {
@@ -584,7 +602,7 @@ textarea:required
     margin: 35px auto;
     margin-top: 15px;
     width: 300px;
-  } 
+  }
 }
 
 @media (min-width: 1500px) {
@@ -638,5 +656,13 @@ textarea:required
 
   .Choose-image {
     margin-bottom: 10px;
+  }
+
+  .NonWatch-container {
+    margin: 0 auto;
+    width: 590px;
+  }
+  .NonWatch-container button {
+    margin-left: 180px;
   }
 }

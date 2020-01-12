@@ -20,7 +20,7 @@ const NonWatchInfo = ()  => {
       <p>which contain information related to watches in some way;</p>
       <p>for example, watch winders, watch cases, etc.</p>
       < br/>
-      <h3 className='NonWatch-text'>To add a non-watch record:</h3>
+      <h3 className='NonWatch-text'>To add a non-watch record</h3>
       < br/> 
       <ol className='NonWatch-OL'>
         <li>Click the ADD WATCH button</li> 
