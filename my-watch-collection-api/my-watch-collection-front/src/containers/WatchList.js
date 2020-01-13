@@ -67,12 +67,12 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 @media (max-width: 750px) {
                     display: ${showWatches ? 'block' : 'none'}
                 }
-            `}> 
-                <Link to={{pathname: '/watches/add_watch'}}>
-                    <button className='btn Add-button Button-text' >Add Watch</button>
-                </Link> 
+            `}>   
                 <Link to={{pathname: '/non_watch_info'}}>
                     <button className='btn Add-button Button-text' >Non Watch Info</button>
+                </Link>
+                <Link to={{pathname: '/watches/add_watch'}}>
+                    <button className='btn Add-button Button-text' >Add Watch</button>
                 </Link>
             </div>
         </div>
