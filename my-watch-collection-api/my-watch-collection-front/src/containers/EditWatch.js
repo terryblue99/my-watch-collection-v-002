@@ -344,7 +344,8 @@ class EditWatch extends Component {
 const mapStateToProps = (state) => {
      return {
        nonWatch: state.myWatches.nonWatch  // Used when adding records that are not related to a specific watch.
-                                           // For those records user must enter 'non-watch' in the Watch Name input.
+                                           // For those records user must enter 'non-watch' in the Watch Name input
+                                           // and 0 in the Date Bought/Gifted & Cost inputs.
      } 
 }
 
