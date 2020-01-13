@@ -67,7 +67,7 @@ class DashboardMain extends Component {
       </>
     ]
 
-    const watchesNo_Welcome = [
+    const welcome = [
       <>
         <h2 className="Welcome-text">Welcome</h2>
         <p className="Center-text"><b>Click on the ADD WATCH button</b></p>
@@ -148,7 +148,7 @@ class DashboardMain extends Component {
             : null
           }
           { number_of_watches === 0 && number_of_saved_watches === 0
-            ? watchesNo_Welcome
+            ? welcome
             : null
           }
         </div>
