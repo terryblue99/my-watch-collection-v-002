@@ -30,6 +30,10 @@ button
                                 supported by Chrome and Opera */
 }
 
+.Dark-red-color {
+  color: DarkRed;
+}
+
 /*  =================
         Dashboard
     ================= */
@@ -94,6 +98,7 @@ button
 }
 
 .Dashboard-watchText,
+.NonWatch-text,
 .Sort-header,
 .Welcome-text
 {
@@ -201,11 +206,6 @@ button
 
 .NonWatch-OL {
   padding-left: 40px;
-}
-
-.NonWatch-text {
-  color: sienna;
-  text-align: center
 }
 
 /*  =================
@@ -355,7 +355,9 @@ button:focus,
   margin-left: 10px; 
 }
 
-/*  file upload button */
+/*  ==================
+    file upload button
+    ================== */
 
 /* Chrome/Safari and web-kit-based browsers */
 ::-webkit-file-upload-button {
