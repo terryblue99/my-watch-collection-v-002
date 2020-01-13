@@ -14,9 +14,10 @@ const DateValidation = (date, type) => {
       date.match(/^(19|20)\d{2}$/gm) ||
       Number(date) === 0 // For non-watch records.
                          // Used when adding records that are not related to a specific watch.
-                         // For those records user must enter 'non-watch' in the Watch Name input.
-    )
-  }
+                         // For those records user must enter 'non-watch' in the Watch Name input
+                         // and 0 in the Date Bought/Gifted & Cost inputs
+    ) 
+  } else alert('*** ERROR: ' + type + ' IS NOT add OR edit')
 }
 
 export default DateValidation
