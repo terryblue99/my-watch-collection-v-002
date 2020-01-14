@@ -76,7 +76,7 @@ class DashboardMain extends Component {
     ]
 
     if (this.props.newestWatch && this.props.oldestWatch) {
-        const nonWatch = this.props.nonWatch // nonWatch also in Watches & WatchDetail
+        const nonWatch = this.props.nonWatch
 
         a_newest_watch_exists = !this.props.newestWatch.watch_name.includes(nonWatch)
         newestWatchImage = this.props.newestWatch.image 

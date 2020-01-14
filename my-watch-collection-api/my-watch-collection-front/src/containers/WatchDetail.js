@@ -64,7 +64,7 @@ class WatchDetail extends Component {
         }
 
         const {currentWatch, showWatches} = this.props
-        const nonWatch = this.props.nonWatch // nonWatch also in DashBoardMain & Watches
+        const nonWatch = this.props.nonWatch
 
         const style = {
             image: {
