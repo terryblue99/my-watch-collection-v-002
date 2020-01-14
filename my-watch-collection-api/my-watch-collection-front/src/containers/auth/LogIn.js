@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import '../../App.css'
 import logo from '../../images/logo.jpg'
 import { logInAction } from "../../actions/currentUserActions.js"
@@ -54,6 +55,11 @@ class LogIn extends Component {
                                 />
                                 <br />
                                 <button className='btn Login-button Button-text' type='submit'>Log In</button>
+                                <Link className='btn Home-button Button-text' to={{
+                                    pathname: `/`
+                                }}
+                                > Home
+                                </Link>
                             </div>
                         </form>
                     </div>

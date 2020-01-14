@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import '../../App.css'
 import logo from '../../images/logo.jpg'
 import { signUpAction } from "../../actions/currentUserActions.js"
@@ -40,11 +41,15 @@ class SignUp extends Component {
             [event.target.name]: event.target.value
         })                         
     }
+
+    handleHome = () => {
+        return RedirectTo('/')
+    }
     
     render() {
        
         if (this.props.currentUser) {
-            return RedirectTo('/login')    
+            RedirectTo('/login')    
         }
 
         return (
@@ -76,8 +81,14 @@ class SignUp extends Component {
                                 />
                                 <br />
                                 <button className='btn Signup-button Button-text' type='submit'>Sign Up</button>
-                            </div>
+                                <Link className='btn Home-button Button-text' to={{
+                                    pathname: `/`
+                                }}
+                                > Home
+                                </Link>
+                            </div>  
                         </form>
+                        
                     </div>
                 </header>
             </div>
