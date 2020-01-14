@@ -16,9 +16,10 @@ const NonWatchInfo = ()  => {
       < br/>
       <h2 className='NonWatch-text'>Non-Watch Information</h2>
       < br/>
-      <p>Non-watch records are those that are not about watches but</p>
-      <p>which contain information related to watches in some way;</p>
-      <p>for example, watch winders, watch cases, etc.</p>
+      <p>Non-watch records are those that are not about watches</p>
+      <p>but which contain items related to watches in some way;</p>
+      <p>for example, watch winders, watch cases, watch tools, etc.</p>
+      <p>Or simply just any type of related information.</p>
       < br/>
       <h3 className='NonWatch-text'>To add a non-watch record</h3>
       < br/> 
