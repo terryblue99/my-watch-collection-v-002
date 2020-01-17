@@ -49,7 +49,7 @@ class SignUp extends Component {
     render() {
        
         if (this.props.currentUser) {
-            RedirectTo('/login')    
+            return RedirectTo('/login')    
         }
 
         return (
