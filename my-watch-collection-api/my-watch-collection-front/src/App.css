@@ -338,23 +338,27 @@ button:focus,
   padding: 10px;
 }
 
-.Add-button {
+.Add-button,
+.Non-watch-info-button
+{
   color: khaki;
 }
 
 .Add-button,
-.Edit-button
+.Edit-button,
+.Non-watch-info-button
 {
   background-color: #454140;
 }
 
 .Add-button,
 .Edit-button,
+.Non-watch-info-button,
 .Red-button 
 {
   font-size: 1rem;
   padding: 8px 16px;
-  text-align: center;
+  /* text-align: center; */
   text-decoration: none;
   text-transform: uppercase;
 }
