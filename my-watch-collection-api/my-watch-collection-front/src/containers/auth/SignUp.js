@@ -81,7 +81,7 @@ class SignUp extends Component {
                                 />
                                 <br />
                                 <button className='btn Signup-button Button-text' type='submit'>Sign Up</button>
-                                <Link className='btn Home-button Button-text' to={{pathname: `/`}}> 
+                                <Link className='btn Signup-home-button Button-text' to={{pathname: `/`}}> 
                                     Home
                                 </Link>
                             </div>  

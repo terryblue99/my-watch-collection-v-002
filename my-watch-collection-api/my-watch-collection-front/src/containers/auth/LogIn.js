@@ -39,7 +39,6 @@ class LogIn extends Component {
                     <div className='Login-container'>
                         <form id='Login-Form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
-                                <br /> 
                                 <input autoFocus className='Login-input-element' required 
                                         type='email'
                                         name='email'
@@ -55,7 +54,7 @@ class LogIn extends Component {
                                 />
                                 <br />
                                 <button className='btn Login-button Button-text' type='submit'>Log In</button>
-                                <Link className='btn Home-button Button-text' to={{pathname: `/`}}> 
+                                <Link className='btn Login-home-button Button-text' to={{pathname: `/`}}> 
                                     Home
                                 </Link>
                             </div>
