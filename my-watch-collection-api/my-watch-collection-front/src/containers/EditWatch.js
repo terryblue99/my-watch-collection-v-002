@@ -176,11 +176,10 @@ class EditWatch extends Component {
                                              onChange={this.handleChange}
                                         />
                                         <br /></>
-                                   : <> <input className='Input-element' required
+                                   : <> <input className='Input-element'
                                              type='text'
                                              name='watch_name'
-                                             defaultValue={watch.watch_name}
-                                             onChange={this.handleChange}
+                                             value={this.props.nonWatch}
                                         />
                                         <br /></>
                               }
