@@ -176,7 +176,7 @@ button
 .Login, 
 .Signup {
   min-height: 95vh;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .Login-banner {
@@ -186,7 +186,7 @@ button
   margin: auto;
   margin-bottom: 10px;
   max-width: 300px;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -263,6 +263,18 @@ button:focus,
   text-decoration: none;
 }
 
+.Login-home-button,
+.Signup-home-button
+{
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 1.25rem;
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .Back-button {
   font-size: 1rem; 
   margin-bottom: 10px;
@@ -282,9 +294,11 @@ button:focus,
 .FullList-button,
 .Home-button,
 .Login-button,
+.Login-home-button,
 .ProfileUpdate-button, 
 .Save-button,
-.Signup-button 
+.Signup-button,
+.Signup-home-button 
 {
   background-color: #454140;
   color: cornsilk;

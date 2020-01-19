@@ -55,6 +55,7 @@ class SignUp extends Component {
         return (
             <div>
                 <header className='Signup'>
+                    <br />
                     <img src={logo} alt='logo' className='Logo'/>
                     <div className='Signup-container'>
                         <form id='Signup-Form' onSubmit={this.handleSubmit}>
@@ -81,7 +82,7 @@ class SignUp extends Component {
                                 />
                                 <br />
                                 <button className='btn Signup-button Button-text' type='submit'>Sign Up</button>
-                                <Link className='btn Home-button Button-text' to={{pathname: `/`}}> 
+                                <Link className='btn Signup-home-button Button-text' to={{pathname: `/`}}> 
                                     Home
                                 </Link>
                             </div>  
