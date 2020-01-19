@@ -95,13 +95,17 @@ class AddWatch extends Component {
           })
      }
 
-     render() { 
+     render() {    
 
           if (this.state.backToDashboard) { 
                this.setState({
                     backToDashboard: false
                }) 
                return RedirectTo('/dashboard')
+          }
+
+          if (this.props.location.AddNonWatch) {
+               this.state.watchData.watch_name = this.props.nonWatch
           }
       
           return (
