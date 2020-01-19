@@ -67,7 +67,9 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                     display: ${showWatches ? 'block' : 'none'}
                 }
             `}>   
-                <Link to={{pathname: '/watches/add_watch'}}>
+                <Link to={{pathname: '/watches/add_watch',
+                           AddNonWatch: true
+                          }}>
                     <button className='btn Add-button Button-text' >Add Non-Watch</button>
                 </Link>
                 <Link to={{pathname: '/watches/add_watch'}}>
