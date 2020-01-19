@@ -212,7 +212,7 @@ class EditWatch extends Component {
                                              onChange={this.handleChange}
                                         />
                                         <br /></>
-                                   : <>     <input className='Input-element'
+                                   : <> <input className='Input-element'
                                              type='text'
                                              name='complications'
                                              defaultValue={watch.complications}
@@ -230,7 +230,7 @@ class EditWatch extends Component {
                                              onChange={this.handleChange}
                                         />
                                         <br /></>
-                                   : <>     <input className='Input-element'
+                                   : <> <input className='Input-element'
                                              type='text'
                                              name='band'
                                              defaultValue={watch.band}
@@ -248,7 +248,7 @@ class EditWatch extends Component {
                                              onChange={this.handleChange}
                                         />
                                         <br /></>
-                                   : <>     <input className='Input-element'
+                                   : <> <input className='Input-element'
                                              type='text'
                                              name='model_number'
                                              defaultValue={watch.model_number}
@@ -266,7 +266,7 @@ class EditWatch extends Component {
                                              onChange={this.handleChange}
                                         />
                                         <br /></>
-                                   : <>     <input className='Input-element'
+                                   : <> <input className='Input-element'
                                              type='text'
                                              name='case_measurement'
                                              defaultValue={watch.case_measurement}
@@ -284,7 +284,7 @@ class EditWatch extends Component {
                                              onChange={this.handleChange}
                                         />
                                         <br /></>
-                                   : <>     <input className='Input-element'
+                                   : <> <input className='Input-element'
                                              type='text'
                                              name='water_resistance'
                                              defaultValue={watch.water_resistance}
@@ -307,7 +307,9 @@ class EditWatch extends Component {
                               {!watch.watch_name.includes(nonWatch)
                                    ? <> <label>Cost (e.g. 199.99 or 0)</label>
                                         <input className='Input-element' required
-                                             type='text'
+                                             type='number'
+                                             step='0.01'
+                                             min='0'
                                              name='cost'
                                              defaultValue={watch.cost}
                                              placeholder='Cost (e.g. 199.99 or 0)'
@@ -315,10 +317,6 @@ class EditWatch extends Component {
                                         />
                                         <br /></>
                                    : null
-                              }
-                              {watch.notes  
-                                   ? <label>Notes</label>
-                                   : null 
                               }
                               <textarea className='Text-area'  
                                    name='notes'

@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
@@ -85,8 +85,8 @@ class AddWatch extends Component {
           this.props.addWatchAction(formData, this.state.watchData)
           // Clear the form
           ClearForm('AddWatch-Form')
-          // Set focus on the watch maker
-          SetFocus('Focus-AddWatch-Maker')
+          // Set focus on the first input
+          SetFocus('Focus-first-input')
      }
 
      handleBack = () => {
@@ -123,81 +123,163 @@ class AddWatch extends Component {
                     `}> 
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          <form id='AddWatch-Form' onSubmit={this.handleSubmit}>
-                              <h1 className='WatchForm-header'>
-                                   Add a watch
-                              </h1>
-                              <input autoFocus id='Focus-AddWatch-Maker' className='Input-element' required 
-                                   type='text'
-                                   name='watch_maker'
-                                   placeholder='Watch Maker'
-                                   onChange={this.handleChange}
-                              />
+                              {!this.props.location.AddNonWatch
+                                  ? <>
+                                        <h1  className='WatchForm-header'>
+                                             Add a watch
+                                        </h1>
+                                    </>
+
+                                   : <>   
+                                        <h1  className='WatchForm-header'>
+                                             Add a non-watch
+                                        </h1>
+                                    </>
+                              }
                               <br />
-                              <input className='Input-element' required 
-                                   type='text'
-                                   name='watch_name'
-                                   placeholder='Watch Name'
-                                   onChange={this.handleChange}
-                              />
-                              <br />
-                              <input className='Input-element'  
-                                   type='text'
-                                   name='movement'
-                                   placeholder='Movement'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='Input-element'  
-                                   type='text'
-                                   name='complications'
-                                   placeholder='Complications'
-                                   onChange={this.handleChange}
-                              />
-                              <br />
-                              <input className='Input-element'  
-                                   type='text'
-                                   name='band'
-                                   placeholder='Band'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='Input-element'  
-                                   type='text'
-                                   name='model_number'
-                                   placeholder='Model Number'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='Input-element'  
-                                   type='text'
-                                   name='case_measurement'
-                                   placeholder='Case Measurement (e.g. 45mm)'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='Input-element' 
-                                   type='text'
-                                   name='water_resistance'
-                                   placeholder='Water Resistance (e.g. 200 meters)'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='Input-element' required 
-                                   type='text'
-                                   name='date_bought'
-                                   placeholder='Date Bought/Gifted (yyyy-mm-dd/yyyy-mm/yyyy/0)'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
-                              <input className='Input-element' required
-                                   type='number'
-                                   step='0.01'
-                                   min='0'
-                                   name='cost'
-                                   placeholder='Cost (e.g. 199.99 or 0)'
-                                   onChange={this.handleChange}
-                              />
-                              <br /> 
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input autoFocus id='Focus-first-input' className='Input-element' required 
+                                             type='text'
+                                             name='watch_maker'
+                                             placeholder='Watch Maker'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : <> <input autoFocus id='Focus-first-input' className='Input-element' required 
+                                             type='text'
+                                             name='watch_maker'
+                                             placeholder='Non-Watch Title'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                              }
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element' required 
+                                             type='text'
+                                             name='watch_name'
+                                             placeholder='Watch Name'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : <> <input className='Input-element'
+                                             type='text'
+                                             name='watch_name'
+                                             value={this.props.nonWatch}
+                                        />
+                                        <br /></>
+                              }
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element'
+                                             type='text'
+                                             name='movement'
+                                             placeholder='Movement'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : <> <input className='Input-element'
+                                             type='text'
+                                             name='movement'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                              }
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element'
+                                             type='text'
+                                             name='complications'
+                                             placeholder='Complications'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : <> <input className='Input-element'
+                                             type='text'
+                                             name='complications'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                              } 
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element'
+                                             type='text'
+                                             name='band'
+                                             placeholder='Band'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : <> <input className='Input-element'
+                                             type='text'
+                                             name='band'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                              } 
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element'
+                                             type='text'
+                                             name='model_number'
+                                             placeholder='Model Number'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : <> <input className='Input-element'
+                                             type='text'
+                                             name='model_number'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                              }
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element'
+                                             type='text'
+                                             name='case_measurement'
+                                             placeholder='Case Measurement (e.g. 45mm)'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : <> <input className='Input-element'
+                                             type='text'
+                                             name='case_measurement'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                              }
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element'
+                                             type='text'
+                                             name='water_resistance'
+                                             placeholder='Water Resistance (e.g. 200 meters)'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : <> <input className='Input-element'
+                                             type='text'
+                                             name='water_resistance'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                              }
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element' required
+                                             type='text'
+                                             name='date_bought'
+                                             placeholder='Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : null
+                              }
+                              {!this.props.location.AddNonWatch
+                                   ? <> <input className='Input-element' required
+                                             type='number'
+                                             step='0.01'
+                                             min='0'
+                                             name='cost'
+                                             placeholder='Cost (e.g. 199.99 or 0)'
+                                             onChange={this.handleChange}
+                                        />
+                                        <br /></>
+                                   : null
+                              }
                               <textarea className='Text-area'  
                                    name='notes'
                                    placeholder='Notes'
