@@ -148,7 +148,7 @@ class AddWatch extends Component {
                                    : <> <input autoFocus id='Focus-first-input' className='Input-element' required 
                                              type='text'
                                              name='watch_maker'
-                                             placeholder='Non-Watch Title'
+                                             placeholder='Title'
                                              onChange={this.handleChange}
                                         />
                                         <br /></>
