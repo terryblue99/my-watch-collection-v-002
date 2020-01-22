@@ -116,7 +116,7 @@ export const editProfileAction = (formData, user_id) => {
               payload: response
             })
             alert('Your profile has been updated.\nYou will need to log in again.')
-            return
+            window.location.assign('/login')
         }
       } else {
         alert('*** editProfileAction Error 1: ' + response.error) 
