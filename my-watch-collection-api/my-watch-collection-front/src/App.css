@@ -114,8 +114,8 @@ button
 /*  ==================
       Homepage
       LogIn
-      Login-container 
       logo
+      NonWatch
       Register
       SignUp
       Signup-container
@@ -388,6 +388,7 @@ button:focus,
 ::-webkit-file-upload-button {
   cursor:pointer;
 }
+
 /* IE11 */
 input[type=file] {
   cursor:pointer;
@@ -591,6 +592,7 @@ textarea:required
     margin-top: 15px;
     width: 300px;
   } 
+
   .NonWatch-container button {
     margin-left: 80px;
   }
@@ -618,6 +620,7 @@ textarea:required
   {
     margin-top: 15px;
   }
+
   .NonWatch-container button {
     margin-left: 80px;
   }
@@ -644,11 +647,11 @@ textarea:required
     font-size: 1rem;
   }
 
-#AddWatch-Form input,
-.EditWatch-Form input
-{
- min-width: 400px
-}
+  #AddWatch-Form input,
+  .EditWatch-Form input
+  {
+    min-width: 400px
+  }
 
   .Input-element {
     font-size: 1rem;

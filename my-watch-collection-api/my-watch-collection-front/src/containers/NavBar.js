@@ -40,10 +40,10 @@ class NavBar extends Component {
           searchRequested: false,
           searchText: ''
         })  
-        // Clear the form
-        ClearForm('Navbar-Search-Form')
-        // Display watch/es from the search on the dashboard
-        return  RedirectTo('/dashboard')
+      // Clear the form
+      ClearForm('Navbar-Search-Form')
+      // Display watch/es from the search on the dashboard
+      return  RedirectTo('/dashboard')
         
     } else if (this.state.searchRequested &&
                 this.props.watches.length === 0) {
@@ -57,11 +57,11 @@ class NavBar extends Component {
                   alert('Search not found. Please correct and try again!')
                   // Display original watch list on the dashboard
                   return  RedirectToWithState(
-                                                  '/dashboard',
-                                                  {
-                                                      from_NavBar: true,    
-                                                      searchFailed: true
-                                                  } 
+                                                '/dashboard',
+                                                {
+                                                    from_NavBar: true,    
+                                                    searchFailed: true
+                                                } 
                                               )
                 }
 
@@ -77,21 +77,21 @@ class NavBar extends Component {
           </Navbar.Brand>
 
           <div css={css`
-              color: cornsilk;
-              display: inline-block;
-              font-size: 1rem;
-              padding-left: 120px;
-              margin: 0px 10px 0px;
-               
-              @media (min-width: 1500px) {
-                font-size: 1.25rem;
-              }
+            color: cornsilk;
+            display: inline-block;
+            font-size: 1rem;
+            padding-left: 120px;
+            margin: 0px 10px 0px;
               
-              @media (max-width: 1056px) {
-                padding-top: 15px;
-                padding-left: 40px;
-              }
-            `}>Logged in as:
+            @media (min-width: 1500px) {
+              font-size: 1.25rem;
+            }
+            
+            @media (max-width: 1056px) {
+              padding-top: 15px;
+              padding-left: 40px;
+            }
+          `}>Logged in as:
             <p css={css`
               color: khaki;
               display: inline-block;
@@ -152,10 +152,16 @@ class NavBar extends Component {
             }
           </div>
           <div css={css`
-              display: inline-block;
-              padding-left: 40px;
-              margin-bottom: 3px;
-            `}>
+            display: inline-block;
+            padding-left: 15px;
+            margin-bottom: 3px;
+
+            @media (min-width: 1080px) {
+              margin-top: 5px;
+              position: absolute;
+              right: 15px;
+            }
+          `}>
             <form id='Navbar-Search-Form' onSubmit={this.handleSearch}>
               <input required
                 type='text'
@@ -174,8 +180,8 @@ class NavBar extends Component {
                     font-size: 1rem;
                     min-width: 500px;
                   }
-                   
-                  @media (max-width: 750px) {
+
+                  @media (min-width: 750px) and (max-width: 1150px) {
                     font-size: .75rem;
                     min-width: 300px;
                   }
