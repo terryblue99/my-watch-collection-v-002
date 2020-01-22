@@ -335,12 +335,15 @@ button:focus,
 }
 
 .Add-button,
+.Add-non-watch-button,
 .Non-watch-info-button
 {
   color: khaki;
+  margin-left: 12px;
 }
 
 .Add-button,
+.Add-non-watch-button,
 .Edit-button,
 .Non-watch-info-button
 {
@@ -348,12 +351,13 @@ button:focus,
 }
 
 .Add-button,
+.Add-non-watch-button,
 .Edit-button,
 .Non-watch-info-button,
 .Red-button 
 {
   font-size: 1rem;
-  padding: 8px 16px;
+  padding: 5px 10px;
   text-decoration: none;
   text-transform: uppercase;
 }
