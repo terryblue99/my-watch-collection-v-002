@@ -208,6 +208,10 @@ button
   padding-left: 40px;
 }
 
+.Info-tab {
+  margin-left: 50px;
+}
+
 /*  =================
         buttons
     ================= */
@@ -373,6 +377,7 @@ button:focus,
   max-height: 40px;
   min-width: 100px;
   padding: 10px 20px; 
+  text-align: center;
 }
 
 .Red-button {
@@ -567,8 +572,8 @@ textarea:required
   .Edit-button,
   .Red-button 
   {
-    margin-left: 80px;
-    max-width: 200px;
+    margin-left: 170px;
+    max-width: 100px;
   }
 
   #Navbar-Search-Form {

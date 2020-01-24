@@ -16,13 +16,15 @@ const NonWatchInfo = ()  => {
       < br/>
       <h2 className='NonWatch-text'>Non-Watch Information</h2>
       < br/>
-      <p>Non-watch records are those that are not about actual watches but</p>
-      <p>which contain any type of information related to your watches in</p>
-      <p>some way. For example, winders, cases, tools, straps, bracelets,</p>
-      <p>spare parts, etc.</p>
+      <p>Non-Watch records are not about actual watches but contain any</p>
+      <p>type of information related to watches. For example, winders, </p>
+      <p>cases, tools, straps, bracelets, spare parts, 'how to' info, etc.</p>
       < br/>
-      <h3 className='NonWatch-text'>To add a non-watch record</h3>
-      < br/> 
+      <p><span className='Dark-red-color'>Note:</span> Information about a specific watch can be entered in</p>
+      <p className='Info-tab'>the Notes input field of that watch.</p>
+      < br/>
+      <h3 className='NonWatch-text'>To add a Non-Watch record</h3>
+      < br/>
       <ol className='NonWatch-OL'>
         <li>Click the <span className='Dark-red-color'>ADD NON WATCH</span> button</li> 
         <li>Enter a title for it in the <span className='Dark-red-color'>Title</span> input</li>
