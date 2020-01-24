@@ -89,7 +89,7 @@ class NavBar extends Component {
             
             @media (max-width: 1056px) {
               padding-top: 15px;
-              padding-left: 40px;
+              padding-left: 200px;
             }
           `}>Logged in as:
             <p css={css`
@@ -102,8 +102,8 @@ class NavBar extends Component {
                 font-size: 1.25rem;
               }
               
-              @media (max-width: 1056px) {
-                padding-bottom: 15px;
+              @media (max-width: 1118px) {
+                padding-bottom: 10px;
                 padding-left: 10px;
               }
             `}>{this.props.user.user.email}
@@ -154,12 +154,17 @@ class NavBar extends Component {
           <div css={css`
             display: inline-block;
             padding-left: 15px;
-            margin-bottom: 3px;
+            margin-bottom: 5px;
 
-            @media (min-width: 1080px) {
+            @media (min-width: 1139px) {
               margin-top: 5px;
+              margin-left: 10px;
               position: absolute;
               right: 15px;
+            }
+
+            @media min-width(774) and (max-width: 985px) {
+              margin-top: 10px;
             }
           `}>
             <form id='Navbar-Search-Form' onSubmit={this.handleSearch}>
@@ -171,19 +176,14 @@ class NavBar extends Component {
                 css={css`
                   border-radius: 8px;
                   font: inherit;
+                  font-size: 1rem;
                   margin-right: 10px;
                   margin-bottom: 5px;
-                  min-width: 350px;
-                  padding: 4px 8px;
+                  min-width: 300px;
+                  padding: 3px 6px;
                    
-                  @media (min-width: 1500px) {
-                    font-size: 1rem;
-                    min-width: 500px;
-                  }
-
-                  @media (min-width: 750px) and (max-width: 1150px) {
-                    font-size: .75rem;
-                    min-width: 300px;
+                  @media (min-width: 1059px) {
+                    margin-left: 15px;
                   }
                 `}
               />
