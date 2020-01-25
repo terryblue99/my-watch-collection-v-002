@@ -140,7 +140,7 @@ export const deleteUserAction = (user_id) => {
 				dispatch({
 					type: DELETE_USER
 				})
-        alert('Your account has been successfully deleted. Hope to see you again soon :)')
+        alert('Your account has been successfully deleted!')
 			}			
 		})
 		.catch(error => {
