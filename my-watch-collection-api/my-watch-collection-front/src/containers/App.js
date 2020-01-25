@@ -46,10 +46,10 @@ class App extends Component {
       <div className='App'>
         <Router>
           <Switch>
-              <Route exact path='/'><Homepage /></Route>
-              <Route path='/login'><LogIn /></Route>
-              <Route path='/logout'><LogOut /></Route>
-              <Route path='/signup'><SignUp /></Route>
+              <Route exact path='/' component={Homepage} />
+              <Route path='/login' component={LogIn} />
+              <Route path='/logout' component={LogOut} />
+              <Route path='/signup' component={SignUp} />
               {/* The following routes are only accessible from within the app as a logged in user */}
               {/* Any attempt to access them, other than within the app, will be redirected to the home page */}
               <PrivateRoute path='/dashboard' component={DashBoard} />
