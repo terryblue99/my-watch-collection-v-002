@@ -200,10 +200,12 @@ class DashboardMain extends Component {
                 </span>
             : null
           }
+          <br />
         </div>
         <div className='Dashboard-item Dashboard-logo'>
           <img src={logo} alt='logo' />
         </div>
+        <br />
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
           {number_of_watches > 1 && an_oldest_watch_exists
             ? <>
@@ -234,6 +236,7 @@ class DashboardMain extends Component {
                 </span>
             : null
           }
+          <br />
         </div>
 
         <div className='Dashboard-item'></div>
