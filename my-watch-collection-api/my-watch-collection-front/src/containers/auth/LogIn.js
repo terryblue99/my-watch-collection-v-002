@@ -25,7 +25,7 @@ class LogIn extends Component {
     }
     
     render() {
-
+        
         if (this.props.currentUser && this.props.currentUser.logged_in) {
             return RedirectTo('/dashboard')
         }
@@ -34,7 +34,10 @@ class LogIn extends Component {
 
             <div className='container'>
                 <header className='Login'>
-                    <p className='Login-banner'>Log in to access your watches</p>
+                    { !this.props.location.state
+                        ? <p className='Login-banner'>Log in to access your watches</p>
+                        : <p className='Login-banner'>Log in to add your watches</p>
+                    }
                     <img src={logo} alt='logo' className='Logo'/>
                     <div className='Login-container'>
                         <form id='Login-Form' onSubmit={this.handleSubmit}>

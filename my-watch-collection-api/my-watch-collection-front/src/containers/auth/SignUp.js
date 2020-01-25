@@ -7,6 +7,7 @@ import { signUpAction } from "../../actions/currentUserActions.js"
 import ClearForm from "../../components/ClearForm"
 import SetFocus from "../../components/SetFocus"
 import RedirectTo from '../../components/RedirectTo'
+import RedirectToWithState from '../../containers/RedirectToWithState'
 
 class SignUp extends Component {
 
@@ -49,7 +50,10 @@ class SignUp extends Component {
     render() {
        
         if (this.props.currentUser) {
-            return RedirectTo('/login')    
+            return RedirectToWithState(
+                                        '/login',
+                                        {from_SignUp: true}
+                                      )    
         }
 
         return (
