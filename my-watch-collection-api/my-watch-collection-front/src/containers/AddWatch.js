@@ -123,20 +123,12 @@ class AddWatch extends Component {
                     `}> 
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          <form id='AddWatch-Form' onSubmit={this.handleSubmit}>
-                              {!this.props.location.AddNonWatch
-                                  ? <>
-                                        <h1  className='WatchForm-header'>
-                                             Add a watch
-                                        </h1>
-                                    </>
-
-                                   : <>   
-                                        <h1  className='WatchForm-header'>
-                                             Add a non-watch
-                                        </h1>
-                                    </>
-                              }
-                              <br />
+                              <h1 className='WatchForm-header'>
+                                   {!this.props.location.AddNonWatch
+                                        ? <>Add a watch</>
+                                        : <>Add a non-watch</>
+                                   }
+                              </h1>
                               {!this.props.location.AddNonWatch
                                    ? <> <input autoFocus id='Focus-first-input' className='Input-element' required 
                                              type='text'

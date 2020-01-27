@@ -463,13 +463,13 @@ hr.WatchDetail {
   max-width: 300px
 }
 
-.AddWatch-Form {
+#AddWatch-Form {
   max-height: 100vh;
 }
 
 .EditWatch-Form
 {
-  max-height: 120vh;
+  max-height: 100vh;
 }
 
 .Profile label,
@@ -642,6 +642,7 @@ textarea:required
     margin-top: 15px;
     width: 300px;
   }
+
 }
 
 @media (min-width: 1500px) {
@@ -659,6 +660,7 @@ textarea:required
   #AddWatch-Form input,
   .EditWatch-Form input
   {
+    font-size: 1rem;
     min-width: 400px
   }
 

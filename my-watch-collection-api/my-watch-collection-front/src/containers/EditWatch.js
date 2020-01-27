@@ -133,21 +133,12 @@ class EditWatch extends Component {
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          
                          <form className='EditWatch-Form' onSubmit={this.handleSubmit}>
-
-                              {!watch.watch_name.includes(nonWatch)
-                                  ? <>
-                                        <h1  className='WatchForm-header'>
-                                             Edit this watch
-                                        </h1>
-                                    </>
-
-                                   : <>   
-                                        <h1  className='WatchForm-header'>
-                                             Edit this non-watch
-                                        </h1>
-                                    </>
-
-                              }
+                              <h1 className='WatchForm-header'>
+                                   {!watch.watch_name.includes(nonWatch)
+                                        ? <>Edit this watch</>
+                                        : <>Edit this non-watch</>
+                                   }
+                              </h1>
                               {watch.watch_maker && !watch.watch_name.includes(nonWatch)
                                    ? <> <label>Watch Maker</label>
                                         <input className='Input-element' required 
