@@ -125,8 +125,8 @@ class AddWatch extends Component {
                          <form id='AddWatch-Form' onSubmit={this.handleSubmit}>
                               <h1 className='WatchForm-header'>
                                    {!this.props.location.AddNonWatch
-                                        ? <>Add a watch</>
-                                        : <>Add a non-watch</>
+                                        ? <>Add a Watch</>
+                                        : <>Add a Non-Watch</>
                                    }
                               </h1>
                               {!this.props.location.AddNonWatch
