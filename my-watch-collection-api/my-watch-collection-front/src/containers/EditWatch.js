@@ -135,8 +135,8 @@ class EditWatch extends Component {
                          <form className='EditWatch-Form' onSubmit={this.handleSubmit}>
                               <h1 className='WatchForm-header'>
                                    {!watch.watch_name.includes(nonWatch)
-                                        ? <>Edit this watch</>
-                                        : <>Edit this non-watch</>
+                                        ? <>Edit this Watch</>
+                                        : <>Edit this Non-Watch</>
                                    }
                               </h1>
                               {watch.watch_maker && !watch.watch_name.includes(nonWatch)
