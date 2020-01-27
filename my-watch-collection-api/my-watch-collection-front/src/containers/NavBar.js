@@ -182,7 +182,7 @@ class NavBar extends Component {
                   min-width: 300px;
                   padding: 3px 6px;
                    
-                  @media (min-width: 763px) and (max-width: 1083px) {
+                  @media (min-width: 763px) and (max-width: 1118px) {
                     margin-left: 290px;
                   }
                 `}
