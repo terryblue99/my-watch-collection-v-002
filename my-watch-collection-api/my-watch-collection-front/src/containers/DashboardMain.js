@@ -70,7 +70,7 @@ class DashboardMain extends Component {
     const welcome = [
       <>
         <h2 className="Welcome-text">Welcome</h2>
-        <p className="Center-text"><b>Click on the ADD WATCH button</b></p>
+        <p className="Center-text"><b>Please click on the ADD WATCH button</b></p>
         <p className="Center-text"><b>to start cataloguing your watches</b></p>
       </>
     ]
