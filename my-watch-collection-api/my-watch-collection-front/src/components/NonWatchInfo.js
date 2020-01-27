@@ -34,7 +34,7 @@ const NonWatchInfo = ()  => {
       </ol>
       < br/>
       <p><span className='Dark-red-color'>Note:</span> The <span className='Midnight-blue-color'>non-watch</span> field is fixed and uneditable, as this will</p>
-      <p className='Info-tab'>be used to recognize non-watch records, to be processed accordingly. It would also be good idea to use words that you may want to search on later.</p>
+      <p className='Info-tab'>be used to recognize non-watch records to be processed accordingly. It would also be a good idea to include words that you may want to search on later.</p>
       < br/>
       <button onClick={handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
     </div>  
