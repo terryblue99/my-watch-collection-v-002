@@ -671,13 +671,17 @@ textarea:required
   }
 
   .Input-element,
-  .LogIn-home-button,
   .LogIn-input-element,
-  .SignUp-home-button,
   .SignUp-input-element
   {
     font-size: 1rem;
     height: 2rem;
+  }
+
+  .LogIn-home-button,
+  .SignUp-home-button
+  {
+    font-size: 1.5rem;
   }
 
   .Text-area {
