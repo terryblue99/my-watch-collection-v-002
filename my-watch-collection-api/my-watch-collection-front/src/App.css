@@ -463,10 +463,7 @@ hr.WatchDetail {
   max-width: 300px
 }
 
-#AddWatch-Form {
-  max-height: 100vh;
-}
-
+#AddWatch-Form,
 .EditWatch-Form
 {
   max-height: 100vh;
@@ -635,6 +632,15 @@ textarea:required
   }
 }
 
+@media (max-width: 1184px) {
+  #AddWatch-Form,
+  .EditWatch-Form
+  {
+    display: grid;
+    min-height: 90vh;
+  }
+}
+
 @media (max-width: 945px) {
   .Back-button {
     display:block;
@@ -642,7 +648,6 @@ textarea:required
     margin-top: 15px;
     width: 300px;
   }
-
 }
 
 @media (min-width: 1500px) {
