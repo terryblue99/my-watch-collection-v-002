@@ -122,7 +122,7 @@ button
       NonWatch
       Register
       SignUp
-      Signup-container
+      SignUp-container
     ================== */
 
 .Logo {
@@ -162,28 +162,28 @@ button
 }
 
 .Homepage,
-.Login,
-.Signup {
+.LogIn,
+.SignUp {
   background-color: cornsilk; /* only displays if the image is delayed or doesn't load */
   background-image: url(./images/watch-background-5.jpg);
   background-position: center; /* shows center of image in responsive mode */
   background-size: cover; /* Fills the screen with just one image */
 }
 
-.Login, 
+.LogIn, 
 .Logo,
-.Signup 
+.SignUp 
 {
   display: block;
 }
 
-.Login, 
-.Signup {
+.LogIn, 
+.SignUp {
   min-height: 95vh;
-  padding-top: 20px;
+  padding-top: 15px;
 }
 
-.Login-banner {
+.LogIn-banner {
   background-color: #454140;
   color: cornsilk;
   font-size: 1.25rem; /* relative to font size of root (html) element, which is defaulted  to 16px */
@@ -194,8 +194,8 @@ button
   text-align: center;
 }
 
-.Login-container, 
-.Signup-container {
+.LogIn-container, 
+.SignUp-container {
   display: grid;
 }
 
@@ -271,8 +271,8 @@ button:focus,
   text-decoration: none;
 }
 
-.Login-home-button,
-.Signup-home-button
+.LogIn-home-button,
+.SignUp-home-button
 {
   border-color: white;
   border-style: solid;
@@ -301,22 +301,22 @@ button:focus,
 .Back-button,
 .FullList-button,
 .Home-button,
-.Login-button,
-.Login-home-button,
+.LogIn-button,
+.LogIn-home-button,
 .ProfileUpdate-button, 
 .Save-button,
-.Signup-button,
-.Signup-home-button 
+.SignUp-button,
+.SignUp-home-button 
 {
   background-color: #454140;
   color: cornsilk;
   text-transform: uppercase;
 }
 
-.Login-button,
+.LogIn-button,
 .ProfileUpdate-button,
 .Save-button,
-.Signup-button 
+.SignUp-button 
 {
   display: block; 
   font-size: 2rem; 
@@ -487,7 +487,7 @@ hr.WatchDetail {
 }
 
 .Input-element,
-.Login-input-element,
+.LogIn-input-element,
 .SignUp-input-element,
 .Text-area
 {
@@ -505,7 +505,7 @@ hr.WatchDetail {
   padding-bottom: 40px;
 }
 
-.Login-input-element,
+.LogIn-input-element,
 .SignUp-input-element 
 {
   min-width: 300px;
@@ -662,8 +662,19 @@ textarea:required
     min-width: 400px
   }
 
-  .Input-element {
-    font-size: 1rem;
+  .LogIn, 
+  .SignUp {
+    min-height: 95vh;
+    padding-top: 100px;
+  }
+
+  .Input-element,
+  .LogIn-home-button,
+  .LogIn-input-element,
+  .SignUp-home-button,
+  .SignUp-input-element
+  {
+    font-size: 1.5rem;
     height: 2rem;
   }
 

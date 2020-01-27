@@ -33,31 +33,31 @@ class LogIn extends Component {
         return (
 
             <div className='container'>
-                <header className='Login'>
+                <header className='LogIn'>
                     { !this.props.location.state
-                        ? <p className='Login-banner'>Log in to access your watches</p>
-                        : <p className='Login-banner'>Log in to add your watches</p>
+                        ? <p className='LogIn-banner'>Log in to access your watches</p>
+                        : <p className='LogIn-banner'>Log in to add your watches</p>
                     }
                     <img src={logo} alt='logo' className='Logo'/>
-                    <div className='Login-container'>
-                        <form id='Login-Form' onSubmit={this.handleSubmit}>
+                    <div className='LogIn-container'>
+                        <form id='LogIn-Form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
-                                <input autoFocus className='Login-input-element' required 
+                                <input autoFocus className='LogIn-input-element' required 
                                         type='email'
                                         name='email'
                                         placeholder='Enter your email'
                                         onChange={this.handleChange}
                                 />
                                 <br /> 
-                                <input className='Login-input-element' required 
+                                <input className='LogIn-input-element' required 
                                         type='password'
                                         name='password'
                                         placeholder='Enter your password'
                                         onChange={this.handleChange}
                                 />
                                 <br />
-                                <button className='btn Login-button Button-text' type='submit'>Log In</button>
-                                <Link className='btn Login-home-button Button-text' to={{pathname: `/`}}> 
+                                <button className='btn LogIn-button Button-text' type='submit'>Log In</button>
+                                <Link className='btn LogIn-home-button Button-text' to={{pathname: `/`}}> 
                                     Home
                                 </Link>
                             </div>

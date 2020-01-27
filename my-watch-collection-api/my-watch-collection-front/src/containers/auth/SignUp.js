@@ -32,7 +32,7 @@ class SignUp extends Component {
  
         this.props.signUpAction({ user: this.state })
         // Clear the form
-        ClearForm('Signup-Form')
+        ClearForm('SignUp-Form')
         // Set focus on the email address
         SetFocus('Focus-SignUp-Email')
     }
@@ -58,11 +58,11 @@ class SignUp extends Component {
 
         return (
             <div>
-                <header className='Signup'>
+                <header className='SignUp'>
                     <br />
                     <img src={logo} alt='logo' className='Logo'/>
-                    <div className='Signup-container'>
-                        <form id='Signup-Form' onSubmit={this.handleSubmit}>
+                    <div className='SignUp-container'>
+                        <form id='SignUp-Form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
                                 <input autoFocus id='Focus-SignUp-Email' className='SignUp-input-element' required 
                                         type='email'
@@ -74,7 +74,7 @@ class SignUp extends Component {
                                 <input className='SignUp-input-element' required 
                                         type='password'
                                         name='password'
-                                        placeholder='Enter a password - 8 characters minimum'
+                                        placeholder='Enter password (8+ chars)'
                                         onChange={this.handleChange}
                                 />
                                 <br />
@@ -85,8 +85,8 @@ class SignUp extends Component {
                                         onChange={this.handleChange}
                                 />
                                 <br />
-                                <button className='btn Signup-button Button-text' type='submit'>Sign Up</button>
-                                <Link className='btn Signup-home-button Button-text' to={{pathname: `/`}}> 
+                                <button className='btn SignUp-button Button-text' type='submit'>Sign Up</button>
+                                <Link className='btn SignUp-home-button Button-text' to={{pathname: `/`}}> 
                                     Home
                                 </Link>
                             </div>  
