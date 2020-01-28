@@ -16,9 +16,7 @@ import {
 
 const initialState = {
 	savedWatches: [],
-	nonWatch: 'non-watch' // Used when adding records that are not related to a specific watch.
-												// For those records user must enter 'non-watch' in the Watch Name input
-												// and 0 in the Date Bought/Gifted & Cost inputs.
+	WatchRelated: 'Watch-Related' // For records that are not related to a specific watch.
 }
 let sortedWatches
 
@@ -42,7 +40,7 @@ export default (state = initialState, { type, payload } ) => {
 					...state,
 					watches: payload,
 					savedWatches: payload,
-					nonWatch: state.nonWatch
+					WatchRelated: state.WatchRelated
 				})
 			} else return state
 

@@ -11,7 +11,7 @@ import LogIn from '../containers/auth/LogIn'
 import LogOut from '../containers/auth/LogOut'
 import SignUp from '../containers/auth/SignUp'
 import Homepage from '../components/Homepage'
-import NonWatchInfo from '../components/NonWatchInfo'
+import WatchRelatedInfo from '../components/WatchRelatedInfo'
 import DashBoard from './DashBoard'
 import AddWatch from './AddWatch'
 import WatchDetail from './WatchDetail'
@@ -57,7 +57,7 @@ class App extends Component {
               <PrivateRoute path='/watches/:id/watch_detail' component={WatchDetail} />
               <PrivateRoute path='/watches/:id/edit_watch' component={EditWatch} />
               <PrivateRoute path='/edit_profile' component={EditProfile} />
-              <PrivateRoute path='/non_watch_info' component={NonWatchInfo} />
+              <PrivateRoute path='/watch_related_info' component={WatchRelatedInfo} />
               {/* the following catchall route will redirect unknown routes to the home page */}
               <PrivateRoute from='*' />
           </Switch> 

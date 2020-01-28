@@ -50,19 +50,19 @@ class AddWatch extends Component {
      handleSubmit = (event) => { 
           event.preventDefault()
           // validate the watch_name/cost/date_bought combination input
-          if ((this.state.watchData.watch_name !== this.props.nonWatch && 
+          if ((this.state.watchData.watch_name !== this.props.WatchRelated && 
                Number(this.state.watchData.cost) > 0 &&
                Number(this.state.watchData.date_bought) === 0) ||
-              (this.state.watchData.watch_name !== this.props.nonWatch && 
+              (this.state.watchData.watch_name !== this.props.WatchRelated && 
                Number(this.state.watchData.cost) === 0 &&
                Number(this.state.watchData.date_bought) === 0)) { 
-                    alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
+                    alert('1 Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
                }
           // validate the 'Date Bought/Gifted' input
           const validDate = DateValidation(this.state.watchData.date_bought.toString(), 'add')
           if (!validDate) {
-               alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
+               alert('2 Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                return
           }
           // Create the watch
@@ -104,8 +104,8 @@ class AddWatch extends Component {
                return RedirectTo('/dashboard')
           }
 
-          if (this.props.location.AddNonWatch) {
-               this.state.watchData.watch_name = this.props.nonWatch
+          if (this.props.location.AddWatchRelated) {
+               this.state.watchData.watch_name = this.props.WatchRelated
           }
       
           return (
@@ -124,12 +124,12 @@ class AddWatch extends Component {
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          <form id='AddWatch-Form' onSubmit={this.handleSubmit}>
                               <h1 className='WatchForm-header'>
-                                   {!this.props.location.AddNonWatch
+                                   {!this.props.location.AddWatchRelated
                                         ? <>Add a Watch</>
-                                        : <>Add a Non-Watch</>
+                                        : <>Add Watch-Related</>
                                    }
                               </h1>
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input autoFocus id='Focus-first-input' className='Input-element' required 
                                              type='text'
                                              name='watch_maker'
@@ -144,21 +144,21 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element' required 
                                              type='text'
                                              name='watch_name'
                                              placeholder='Watch Name'
                                              onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input className='Input-element'
+                                   :    <> <input className='Input-element Input-related'
                                              type='text'
                                              name='watch_name'
-                                             value={this.props.nonWatch}/>
+                                             value={this.props.WatchRelated}/>
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element'
                                              type='text'
                                              name='movement'
@@ -172,7 +172,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element'
                                              type='text'
                                              name='complications'
@@ -186,7 +186,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element'
                                              type='text'
                                              name='band'
@@ -200,7 +200,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element'
                                              type='text'
                                              name='model_number'
@@ -214,7 +214,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element'
                                              type='text'
                                              name='case_measurement'
@@ -228,7 +228,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element'
                                              type='text'
                                              name='water_resistance'
@@ -242,7 +242,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element' required
                                              type='text'
                                              name='date_bought'
@@ -252,7 +252,7 @@ class AddWatch extends Component {
                                    : null
                               }
                               <br />
-                              {!this.props.location.AddNonWatch
+                              {!this.props.location.AddWatchRelated
                                    ?    <> <input className='Input-element' required
                                              type='number'
                                              step='0.01'
@@ -288,9 +288,7 @@ class AddWatch extends Component {
 const mapStateToProps = (state) => { 
      return {
        currentUser: state.currentUser,
-       nonWatch: state.myWatches.nonWatch // Used when adding records that are not related to a specific watch.
-                                          // For those records user must enter 'non-watch' in the Watch Name input
-                                          // and 0 in the Date Bought/Gifted & Cost inputs.
+       WatchRelated: state.myWatches.WatchRelated // For records that are not related to a specific watch.
      } 
  }
 

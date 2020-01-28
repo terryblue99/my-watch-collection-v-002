@@ -95,14 +95,14 @@ button
 }
 
 .Dashboard-totalWatches,
-.Dashboard-totalNonWatches,
+.Dashboard-totalWatchRelated,
 .Sort-header
 {
   margin-top: 10px;
 }
 
 .Dashboard-watchText,
-.NonWatch-text,
+.WatchRelated-text,
 .Sort-header,
 .Welcome-text
 {
@@ -110,7 +110,7 @@ button
   text-shadow: 2px 2px 5px orange;
 }
 
-.Dashboard-totalNonWatches,
+.Dashboard-totalWatchRelated,
 .Dashboard-totalWatches {
   text-shadow: 2px 2px 5px orange;
 }
@@ -119,7 +119,7 @@ button
       Homepage
       LogIn
       logo
-      NonWatch
+      WatchRelated
       Register
       SignUp
       SignUp-container
@@ -199,16 +199,16 @@ button
   display: grid;
 }
 
-.NonWatch-container {
+.WatchRelated-container {
   margin: 0 auto;
   width: 460px;
 }
 
-.NonWatch-container p {
+.WatchRelated-container p {
   padding-left: 20px;
 }
 
-.NonWatch-OL {
+.WatchRelated-OL {
   padding-left: 40px;
 }
 
@@ -250,7 +250,7 @@ button:focus,
   cursor: pointer;
 }
 
-.NonWatch-container button {
+.WatchRelated-container button {
   margin-left: 120px;
 }
 
@@ -499,6 +499,10 @@ hr.WatchDetail {
   min-width: 350px;
 }
 
+.Input-related {
+  color: darkred
+}
+
 .Text-area {
   padding-bottom: 40px;
 }
@@ -600,7 +604,7 @@ textarea:required
     width: 300px;
   } 
 
-  .NonWatch-container button {
+  .WatchRelated-container button {
     margin-left: 80px;
   }
 }
@@ -628,7 +632,7 @@ textarea:required
     margin-top: 15px;
   }
 
-  .NonWatch-container button {
+  .WatchRelated-container button {
     margin-left: 80px;
   }
 }
@@ -654,7 +658,7 @@ textarea:required
 @media (min-width: 1500px) {
 
   body {
-    font-size: 1.30rem;
+    font-size: 1rem;
   }
 
   .Profile label,  
@@ -720,11 +724,11 @@ textarea:required
     margin-bottom: 10px;
   }
 
-  .NonWatch-container {
+  .WatchRelated-container {
     margin: 0 auto;
     width: 590px;
   }
-  .NonWatch-container button {
+  .WatchRelated-container button {
     margin-left: 180px;
   }
 }

@@ -64,7 +64,7 @@ class WatchDetail extends Component {
         }
 
         const {currentWatch, showWatches} = this.props
-        const nonWatch = this.props.nonWatch
+        const WatchRelated = this.props.WatchRelated
 
         const style = {
             image: {
@@ -147,61 +147,61 @@ class WatchDetail extends Component {
 
                             <hr className='WatchDetail'/>
                             
-                            {currentWatch.movement && !currentWatch.watch_name.includes(nonWatch)
+                            {currentWatch.movement && !currentWatch.watch_name.includes(WatchRelated)
                                 ?   <>  <p><em className='Detail-css'>Movement</em></p>
                                         <h3 className='WatchDetail'>{currentWatch.movement}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.movement && currentWatch.watch_name.includes(nonWatch) 
+                            {currentWatch.movement && currentWatch.watch_name.includes(WatchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{currentWatch.movement}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.complications && !currentWatch.watch_name.includes(nonWatch)
+                            {currentWatch.complications && !currentWatch.watch_name.includes(WatchRelated)
                                 ?   <>  <p><em className='Detail-css'>Complications</em></p>
                                         <h3 className='WatchDetail'>{currentWatch.complications}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.complications && currentWatch.watch_name.includes(nonWatch) 
+                            {currentWatch.complications && currentWatch.watch_name.includes(WatchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{currentWatch.complications}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.band && !currentWatch.watch_name.includes(nonWatch)
+                            {currentWatch.band && !currentWatch.watch_name.includes(WatchRelated)
                                 ?   <>  <p><em className='Detail-css'>Band</em></p>
                                         <h3 className='WatchDetail'>{currentWatch.band}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.band && currentWatch.watch_name.includes(nonWatch) 
+                            {currentWatch.band && currentWatch.watch_name.includes(WatchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{currentWatch.band}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.model_number && !currentWatch.watch_name.includes(nonWatch)
+                            {currentWatch.model_number && !currentWatch.watch_name.includes(WatchRelated)
                                 ?   <>  <p><em className='Detail-css'>Model Number</em></p>
                                         <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.model_number && currentWatch.watch_name.includes(nonWatch) 
+                            {currentWatch.model_number && currentWatch.watch_name.includes(WatchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.case_measurement && !currentWatch.watch_name.includes(nonWatch)
+                            {currentWatch.case_measurement && !currentWatch.watch_name.includes(WatchRelated)
                                 ?   <>  <p><em className='Detail-css'>Case Measurement</em></p>
                                         <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.case_measurement && currentWatch.watch_name.includes(nonWatch) 
+                            {currentWatch.case_measurement && currentWatch.watch_name.includes(WatchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.water_resistance && !currentWatch.watch_name.includes(nonWatch)
+                            {currentWatch.water_resistance && !currentWatch.watch_name.includes(WatchRelated)
                                 ?   <>  <p><em className='Detail-css'>Water Resistance</em></p>
                                         <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.water_resistance && currentWatch.watch_name.includes(nonWatch) 
+                            {currentWatch.water_resistance && currentWatch.watch_name.includes(WatchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.date_bought && !currentWatch.watch_name.includes(nonWatch) 
+                            {currentWatch.date_bought && !currentWatch.watch_name.includes(WatchRelated) 
                             ?   <>
                                     {currentWatch.cost > 0
                                         ?<p><em className='Detail-css'>Date Bought</em></p>
@@ -249,10 +249,10 @@ class WatchDetail extends Component {
         } else {
             return <DashboardMain   newestWatch={this.props.newestWatch}
                                     oldestWatch={this.props.oldestWatch}
-                                    nonWatch={this.props.nonWatch}
+                                    WatchRelated={this.props.WatchRelated}
                                     setCurrentWatch={this.props.setCurrentWatch}
                                     filteredWatches={this.props.filteredWatches}
-                                    filteredNonWatches={this.props.filteredNonWatches}
+                                    filteredWatchRelated={this.props.filteredWatchRelated}
                                     sortSelected={this.props.sortSelected} 
                                     DashBoardSortHistory={this.props.DashBoardSortHistory}               
                     />

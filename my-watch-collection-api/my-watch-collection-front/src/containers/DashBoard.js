@@ -18,7 +18,7 @@ class DashBoard extends Component {
     render() {
         let sortSelected = 'Select a sort option...'
         const watches = this.props.watches
-        const nonWatch = this.props.nonWatch
+        const WatchRelated = this.props.WatchRelated
         // Check if search failed
         if (this.props.location.state &&
             this.props.location.state.from_NavBar &&
@@ -51,7 +51,7 @@ class DashBoard extends Component {
                 <NavBar />
                 <div className='container Main-container'> 
                     <Watches watches={watches}
-                             nonWatch={nonWatch}
+                             WatchRelated={WatchRelated}
                              sortSelected={sortSelected}
                              DashBoardSortHistory={this.props.history}
                     />               
@@ -65,10 +65,8 @@ const mapStateToProps = (state) => {
     return {
       currentUser: state.currentUser,
       watches: state.myWatches.watches,
-      nonWatch: state.myWatches.nonWatch  // Used when adding records that are not related to a specific watch.
-                                          // For those records user must enter 'non-watch' in the Watch Name input
-                                          // and 0 in the Date Bought/Gifted & Cost inputs.
-    } 
+      WatchRelated: state.myWatches.WatchRelated  // For records that are not related to a specific watch.
+    }
 }
 
 export default connect(mapStateToProps, {getWatchesAction})(DashBoard)

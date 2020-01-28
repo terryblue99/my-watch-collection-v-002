@@ -7,18 +7,18 @@ import SidebarMobile from './SidebarMobile'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const Watches = ({ watches, nonWatch, sortSelected, DashBoardSortHistory }) => {
+const Watches = ({ watches, WatchRelated, sortSelected, DashBoardSortHistory }) => {
  
     let oldestWatch
     let newestWatch
     let filteredWatches
-    let filteredNonWatches
+    let filteredWatchRelated
 
     if(watches && watches.length > 0) {
         // Filter out non-watch records
-        filteredNonWatches = watches.filter(watch => watch.watch_name.includes(nonWatch))
+        filteredWatchRelated = watches.filter(watch => watch.watch_name.includes(WatchRelated))
         // Filter out watch records
-        filteredWatches = watches.filter(watch => !watch.watch_name.includes(nonWatch))
+        filteredWatches = watches.filter(watch => !watch.watch_name.includes(WatchRelated))
         // Sort the filtered watch records by date bought using the underscore function _.sortBy
         const sortedWatches = _.sortBy( filteredWatches, 'date_bought' )
         oldestWatch = sortedWatches[0]
@@ -54,13 +54,13 @@ const Watches = ({ watches, nonWatch, sortSelected, DashBoardSortHistory }) => {
                            setCurrentWatch={setCurrentWatch}
                 /> 
                 <WatchDetail showWatches={showWatches}
-                             nonWatch={nonWatch}
+                             WatchRelated={WatchRelated}
                              currentWatch={currentWatch}
                              setCurrentWatch={setCurrentWatch}
                              newestWatch={newestWatch}
                              oldestWatch={oldestWatch}
                              filteredWatches={filteredWatches}
-                             filteredNonWatches={filteredNonWatches}
+                             filteredWatchRelated={filteredWatchRelated}
                              sortSelected={sortSelected}
                              DashBoardSortHistory={DashBoardSortHistory}
                 />

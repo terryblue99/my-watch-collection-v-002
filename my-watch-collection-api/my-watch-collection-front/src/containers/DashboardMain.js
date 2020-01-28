@@ -36,7 +36,7 @@ class DashboardMain extends Component {
     let oldestWatchDate
 
     let number_of_watches = 0
-    let number_of_nonWatches = 0
+    let number_of_watcheRelated = 0
 
     const number_of_saved_watches = Object.keys(this.props.savedWatches).length
     
@@ -76,14 +76,14 @@ class DashboardMain extends Component {
     ]
 
     if (this.props.newestWatch && this.props.oldestWatch) {
-        const nonWatch = this.props.nonWatch
+        const WatchRelated = this.props.WatchRelated
 
-        a_newest_watch_exists = !this.props.newestWatch.watch_name.includes(nonWatch)
+        a_newest_watch_exists = !this.props.newestWatch.watch_name.includes(WatchRelated)
         newestWatchImage = this.props.newestWatch.image 
         newestWatchMaker = this.props.newestWatch.watch_maker
         newestWatchDate = this.props.newestWatch.date_bought
 
-        an_oldest_watch_exists = !this.props.oldestWatch.watch_name.includes(nonWatch)
+        an_oldest_watch_exists = !this.props.oldestWatch.watch_name.includes(WatchRelated)
         oldestWatchImage = this.props.oldestWatch.image
         oldestWatchMaker = this.props.oldestWatch.watch_maker
         oldestWatchDate = this.props.oldestWatch.date_bought
@@ -91,8 +91,8 @@ class DashboardMain extends Component {
         number_of_watches = Object.keys(this.props.filteredWatches).length
     }
 
-    if (this.props.filteredNonWatches) {
-      number_of_nonWatches = Object.keys(this.props.filteredNonWatches).length
+    if (this.props.filteredWatchRelated) {
+      number_of_watcheRelated = Object.keys(this.props.filteredWatchRelated).length
     }
 
     if (this.state.sortRequired) {
@@ -135,8 +135,8 @@ class DashboardMain extends Component {
               ? <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
               : null
           }
-          { number_of_nonWatches > 0
-              ? <h2 className='Dashboard-totalNonWatches'>Total non-watches: {number_of_nonWatches}</h2>
+          { number_of_watcheRelated > 0
+              ? <h2 className='Dashboard-totalWatchRelated'>Total non-watches: {number_of_watcheRelated}</h2>
               : null
           }   
         </div>
@@ -253,9 +253,7 @@ const mapStateToProps = (state) => {
     currentUser: state.currentUser,
     watches: state.myWatches.watches,
     savedWatches: state.myWatches.savedWatches,
-    nonWatch: state.myWatches.nonWatch // Used when adding records that are not related to a specific watch.
-                                       // For those records user must enter 'non-watch' in the Watch Name input
-                                       // and 0 in the Date Bought/Gifted & Cost inputs.
+    WatchRelated: state.myWatches.WatchRelated // For records that are not related to a specific watch.
   } 
 }
 

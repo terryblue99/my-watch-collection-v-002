@@ -54,7 +54,7 @@ class EditWatch extends Component {
           event.preventDefault() 
           if (this.state.formHasInput) {
                // validate the 'Date Bought/Gifted' input for watch records
-               if (this.state.watchData.watch_name !== this.props.nonWatch) {
+               if (this.state.watchData.watch_name !== this.props.WatchRelated) {
                     const validDate = DateValidation(this.state.watchData.date_bought, 'edit')
                     if (!validDate) {
                          alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
@@ -114,7 +114,7 @@ class EditWatch extends Component {
           }
 
           const watch = this.props.location.state.watch
-          const nonWatch = this.props.nonWatch
+          const WatchRelated = this.props.WatchRelated
       
           return (  
                
@@ -134,12 +134,12 @@ class EditWatch extends Component {
                          
                          <form className='EditWatch-Form' onSubmit={this.handleSubmit}>
                               <h1 className='WatchForm-header'>
-                                   {!watch.watch_name.includes(nonWatch)
+                                   {!watch.watch_name.includes(WatchRelated)
                                         ? <>Edit this Watch</>
-                                        : <>Edit this Non-Watch</>
+                                        : <>Edit this Watch-Related</>
                                    }
                               </h1>
-                              {watch.watch_maker && !watch.watch_name.includes(nonWatch)
+                              {watch.watch_maker && !watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Watch Maker</label>
                                            <input className='Input-element' required 
                                              type='text'
@@ -156,7 +156,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {watch.watch_name && !watch.watch_name.includes(nonWatch)
+                              {watch.watch_name && !watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Watch Name</label>
                                            <input className='Input-element' required 
                                              type='text'
@@ -165,14 +165,14 @@ class EditWatch extends Component {
                                              placeholder='Watch Name'
                                              onChange={this.handleChange}/>
                                         </>
-                                   : <> <input className='Input-element'
+                                   : <> <input className='Input-element Input-related'
                                              type='text'
                                              name='watch_name'
-                                             value={this.props.nonWatch}/>
+                                             value={this.props.WatchRelated}/>
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(nonWatch)
+                              {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Movement</label>
                                            <input className='Input-element'
                                              type='text'
@@ -189,7 +189,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(nonWatch)
+                              {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Complications</label>
                                            <input className='Input-element'
                                              type='text'
@@ -206,7 +206,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!watch.watch_name.includes(nonWatch)
+                              {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Band</label>
                                            <input className='Input-element'
                                              type='text'
@@ -223,7 +223,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(nonWatch)
+                              {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Model Number</label>
                                            <input className='Input-element'
                                              type='text'
@@ -240,7 +240,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!watch.watch_name.includes(nonWatch)
+                              {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Case Measurement</label>
                                            <input className='Input-element'
                                              type='text'
@@ -257,7 +257,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(nonWatch)
+                              {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Water Resistance (e.g. 200 meters)</label>
                                            <input className='Input-element'
                                              type='text'
@@ -274,7 +274,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(nonWatch)
+                              {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
                                              type='text'
@@ -286,7 +286,7 @@ class EditWatch extends Component {
                                    : null
                               }
                               <br />
-                              {!watch.watch_name.includes(nonWatch)
+                              {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Cost (e.g. 199.99 or 0)</label>
                                            <input className='Input-element' required
                                              type='number'
@@ -323,9 +323,7 @@ class EditWatch extends Component {
 
 const mapStateToProps = (state) => {
      return {
-       nonWatch: state.myWatches.nonWatch  // Used when adding records that are not related to a specific watch.
-                                           // For those records user must enter 'non-watch' in the Watch Name input
-                                           // and 0 in the Date Bought/Gifted & Cost inputs.
+       WatchRelated: state.myWatches.WatchRelated  // For records that are not related to a specific watch.
      } 
 }
 
