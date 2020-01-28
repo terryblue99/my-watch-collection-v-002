@@ -762,4 +762,10 @@ textarea:required
   .WatchRelated-container button {
     margin-left: 200px;
   }
+
+  .WatchRelated-container button,
+  .WatchRelated-text {
+    margin-top: 15px;
+  }
+
 }
