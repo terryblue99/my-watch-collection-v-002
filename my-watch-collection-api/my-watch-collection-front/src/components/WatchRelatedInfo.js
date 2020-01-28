@@ -33,8 +33,8 @@ const WatchRelatedInfo = ()  => {
         <li>Click the <span className='Midnight-blue-color'>SAVE</span> button to save the record</li>
       </ol>
       < br/>
-      <p><span className='Dark-red-color'>Note:</span> The <span className='Midnight-blue-color'>Watch-Related</span> field is fixed and uneditable, as this will</p>
-      <p className='Info-tab'>be used to recognize Watch-Related records to be processed accordingly. It would also be a good idea to include words that you may want to search on later.</p>
+      <p><span className='Dark-red-color'>Note:</span> The <span className='Midnight-blue-color'>Watch-Related</span> field is fixed and uneditable, as it will be used</p>
+      <p className='Info-tab'>to recognize and select Watch-Related records to be processed accordingly. Include words you may want to search on in those records.</p>
       < br/>
       <button onClick={handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
     </div>  
