@@ -145,7 +145,7 @@ class WatchDetail extends Component {
                                 }
                             `}>{currentWatch.watch_name}</h2>
 
-                            <hr className='WatchDetail'/>
+                            <hr className='WatchDetail'/><br />
                             
                             {currentWatch.movement && !currentWatch.watch_name.includes(WatchRelated)
                                 ?   <>  <p><em className='Detail-css'>Movement</em></p>

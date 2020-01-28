@@ -51,7 +51,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                     padding-left: -10px;
 
                                     @media (min-width: 1500px) {
-                                        font-size: 1.25rem;
+                                        font-size: 1rem;
                                     }
                                 `}>{watch.watch_maker}:</strong> {watch.watch_name} 
                             </li>

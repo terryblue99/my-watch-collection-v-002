@@ -519,9 +519,13 @@ textarea:required
   border-color: red;
 }
 
+.WatchDetail {
+  margin-bottom: 10px;
+}
+
 .Detail-css {
   color: sienna;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 /*  ===================================
@@ -637,21 +641,21 @@ textarea:required
   }
 }
 
-@media (max-width: 1184px) {
-  #AddWatch-Form,
-  .EditWatch-Form
-  {
-    display: grid;
-    min-height: 90vh;
-  }
-}
-
 @media (max-width: 945px) {
   .Back-button {
     display:block;
     margin: 35px auto;
     margin-top: 15px;
     width: 300px;
+  }
+}
+
+@media (max-width: 1184px) {
+  #AddWatch-Form,
+  .EditWatch-Form
+  {
+    display: grid;
+    min-height: 90vh;
   }
 }
 
@@ -703,6 +707,7 @@ textarea:required
   }
 
   .WatchDetail {
+    font-size: 1.25rem;
     margin-bottom: 10px;
     max-width: 500px;
   }
