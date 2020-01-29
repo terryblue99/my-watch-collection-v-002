@@ -116,6 +116,14 @@ button
   text-shadow: 2px 2px 5px orange;
 }
 
+/*  =================
+      WatchRelated
+    ================= */
+
+.WatchRelated-container {
+  background-color: white;
+}
+
 /*  ==================
       Homepage
       LogIn
@@ -280,7 +288,9 @@ button:focus,
   text-decoration: none;
 }
 
-.Back-button {
+.Back-button,
+.WatchRelated button
+{
   font-size: 1rem; 
   margin-bottom: 10px;
   margin-left: 20px;
@@ -303,7 +313,7 @@ button:focus,
 .ProfileUpdate-button, 
 .Save-button,
 .SignUp-button,
-.SignUp-home-button 
+.SignUp-home-button
 {
   background-color: #454140;
   color: cornsilk;
@@ -388,6 +398,10 @@ button:focus,
 }
 
 .WatchRelated-container button {
+  background-color: #454140;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 20px;
   margin-left: 200px;
   max-width: 300px;
 }
@@ -630,7 +644,8 @@ textarea:required
   }
 
   .WatchRelated-container button {
-    margin-left: 100px;
+    margin-bottom: 20px;
+    margin-left: 145px;
     max-width: 300px;
   }
 
@@ -660,6 +675,7 @@ textarea:required
   }
 
   .WatchRelated-container button {
+    margin-bottom: 20px;
     margin-left: 200px;
     max-width: 300px;
   }
@@ -672,6 +688,7 @@ textarea:required
     margin-top: 15px;
     width: 300px;
   }
+
 }
 
 @media (max-width: 1184px) {
@@ -681,6 +698,7 @@ textarea:required
     display: grid;
     min-height: 90vh;
   }
+  
 }
 
 @media (min-width: 1500px) {
@@ -753,18 +771,19 @@ textarea:required
     margin-bottom: 10px;
   }
 
-  .WatchRelated-container button {
-    margin-left: 250px;
-  }
-
-  .WatchRelated-container button,
-  .WatchRelated-text {
-    margin-top: 15px;
-  }
-
   .WatchRelated-container {
     font-size: 1.25rem;
     width: 660px;
   }  
+
+  .WatchRelated-container button {
+    margin-left: 240px;
+  }
+
+  .WatchRelated-container button,
+  .WatchRelated-text {
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
 
 }
