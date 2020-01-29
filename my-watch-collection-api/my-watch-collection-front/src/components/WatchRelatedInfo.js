@@ -23,7 +23,7 @@ const WatchRelatedInfo = ()  => {
           <p>cases, tools, straps, bracelets, spare parts, 'how to' info, etc.</p>
           < br/>
           <p><span className='Dark-red-color'>Note:</span> Information about a specific saved watch can be entered in</p>
-          <p className='Info-tab'>the <span className='Midnight-blue-color'>Notes</span> input field of that watch.</p>
+          <p className='WatchRelated-info-tab'>the <span className='Midnight-blue-color'>Notes</span> input field of that watch.</p>
           < br/>
           <h3 className='WatchRelated-text'>To add a Watch-Related record</h3>
           < br/>
@@ -36,7 +36,7 @@ const WatchRelatedInfo = ()  => {
           </ol>
           < br/>
           <p><span className='Dark-red-color'>Note:</span> The <span className='Midnight-blue-color'>Watch-Related</span> field is fixed and uneditable, as it will be used</p>
-          <p className='Info-tab'>to recognize and select Watch-Related records to be processed accordingly. Include words you may want to search on in those records.</p>
+          <p className='WatchRelated-info-tab'>to recognize and select Watch-Related records to be processed accordingly. Include words you may want to search on in those records.</p>
           < br/>
           <button onClick={handleBack} className='btn Button-text'>Back to dashboard</button>
         </div>

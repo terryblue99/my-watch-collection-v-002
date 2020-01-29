@@ -221,7 +221,7 @@ button
   padding-left: 120px;
 }
 
-.Info-tab {
+.WatchRelated-info-tab {
   margin-left: 40px;
 }
 
@@ -636,7 +636,7 @@ textarea:required
   }
 
   .WatchRelated-container p {
-    padding-left: 40px;
+    padding-left: 30px;
   }
 
   .WatchRelated-OL {
@@ -773,17 +773,21 @@ textarea:required
 
   .WatchRelated-container {
     font-size: 1.25rem;
-    width: 660px;
+    width: 700px;
   }  
 
   .WatchRelated-container button {
-    margin-left: 240px;
+    margin-left: 250px;
   }
 
   .WatchRelated-container button,
   .WatchRelated-text {
     margin-bottom: 20px;
     margin-top: 15px;
+  }
+
+  .WatchRelated-info-tab {
+    margin-left: 49px;
   }
 
 }
