@@ -111,7 +111,8 @@ button
 }
 
 .Dashboard-totalWatchRelated,
-.Dashboard-totalWatches {
+.Dashboard-totalWatches 
+{
   text-shadow: 2px 2px 5px orange;
 }
 
@@ -615,31 +616,24 @@ textarea:required
     padding: 10px 20px;
   }
 
-  .WatchRelated-container button {
-    margin-left: 100px;
-    max-width: 300px;
-  }
-
   .WatchRelated-container {
     margin-right: 20px;
-  }
-
-}
-
-@media (max-width: 750px) {
-  .WatchRelated-container {
     width: 500px;
   }
+
   .WatchRelated-container p {
     padding-left: 40px;
   }
+
   .WatchRelated-OL {
     padding-left: 60px;
   }
+
   .WatchRelated-container button {
     margin-left: 100px;
     max-width: 300px;
   }
+
 }
 
 @media (min-width: 750px) and (max-width: 1104px) {
@@ -760,12 +754,17 @@ textarea:required
   }
 
   .WatchRelated-container button {
-    margin-left: 200px;
+    margin-left: 250px;
   }
 
   .WatchRelated-container button,
   .WatchRelated-text {
     margin-top: 15px;
   }
+
+  .WatchRelated-container {
+    font-size: 1.25rem;
+    width: 660px;
+  }  
 
 }
