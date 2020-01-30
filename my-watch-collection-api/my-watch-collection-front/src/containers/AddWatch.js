@@ -126,7 +126,7 @@ class AddWatch extends Component {
                               <h1 className='WatchForm-header'>
                                    {!this.props.location.AddWatchRelated
                                         ? <>Add a Watch</>
-                                        : <>Add Watch-Related</>
+                                        : <>Add a Watch-Related</>
                                    }
                               </h1>
                               {!this.props.location.AddWatchRelated

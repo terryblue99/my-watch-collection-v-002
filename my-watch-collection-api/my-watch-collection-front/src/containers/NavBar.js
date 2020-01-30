@@ -82,7 +82,7 @@ class NavBar extends Component {
             font-size: 1rem;
             padding-left: 130px;
             margin: 0px 10px 0px;
-              
+ 
             @media (min-width: 1500px) {
               font-size: 1.25rem;
             }
@@ -90,6 +90,10 @@ class NavBar extends Component {
             @media (max-width: 1056px) {
               padding-top: 15px;
               padding-left: 200px;
+            }
+
+            @media (min-width: 603px) and (max-width: 750px) {
+              padding-left: 150px;
             }
           `}>Logged in as:
             <p css={css`
@@ -127,6 +131,10 @@ class NavBar extends Component {
 
                   @media (min-width: 1500px) {
                     font-size: 1.25rem;
+                  }
+
+                  @media (min-width: 703px) and (max-width: 762px) {
+                    padding-left: 10px;
                   }
                 `}> 
                   Log Out   
@@ -183,6 +191,10 @@ class NavBar extends Component {
                   padding: 3px 6px;
                    
                   @media (min-width: 763px) and (max-width: 1118px) {
+                    margin-left: 360px;
+                  }
+
+                  @media (min-width: 1057px) and (max-width: 1118px) {
                     margin-left: 290px;
                   }
                 `}

@@ -30,6 +30,10 @@ button
                                 supported by Chrome and Opera */
 }
 
+.Crimson-color {
+  color: crimson;
+}
+
 .Dark-red-color {
   color: DarkRed;
 }
@@ -114,14 +118,6 @@ button
 .Dashboard-totalWatches 
 {
   text-shadow: 2px 2px 5px orange;
-}
-
-/*  =================
-      WatchRelated
-    ================= */
-
-.WatchRelated-container {
-  background-color: white;
 }
 
 /*  ==================
@@ -395,6 +391,10 @@ button:focus,
 .Red-button {
   background-color: red;
   margin-left: 10px; 
+}
+
+.WatchRelated-container {
+  background-color: white;
 }
 
 .WatchRelated-container button {
