@@ -11,7 +11,7 @@ html { /* everything will inherit from html */
 }
 
 body {
-  background-color: cornsilk;
+  background-color: #e9ebee;
   line-height: 1.25; /* space between lines (times font size) */
   max-height: 100vh; /* relative to 1% of the height of the viewport */
 }
@@ -43,11 +43,11 @@ button
 }
 
 /*  =================
-        Dashboard
+      DashboardMain
     ================= */
 
-.Dashboard {
-  background-color: cornsilk;
+.DashboardMain {
+  background-color: #e9ebee;
   display: grid;
   grid-template: repeat(2, auto) / repeat(3, 1fr); 
   grid-template-areas:
@@ -163,12 +163,14 @@ button
 
 .Homepage {
   align-items: center; 
-  min-height: 95vh; 
+  min-height: 100vh; 
 }
 
 .Homepage,
 .LogIn,
-.SignUp {
+.SignUp,
+.WatchRelated
+{
   background-color: cornsilk; /* only displays if the image is delayed or doesn't load */
   background-image: url(./images/watch-background-5.jpg);
   background-position: center; /* shows center of image in responsive mode */
@@ -184,7 +186,7 @@ button
 
 .LogIn, 
 .SignUp {
-  min-height: 95vh;
+  min-height: 100vh;
   padding-top: 15px;
 }
 
@@ -394,7 +396,7 @@ button:focus,
 }
 
 .WatchRelated-container {
-  background-color: white;
+  background-color: #e9ebee;
 }
 
 .WatchRelated-container button {
@@ -496,7 +498,7 @@ hr.WatchDetail {
 }
 
 .WatchForm-container {
-  min-height: 95vh;
+  min-height: 100vh;
   padding-bottom: 15px;
 }
 
@@ -558,7 +560,7 @@ textarea:required
     display: none;
   }
   
-  .Dashboard {
+  .DashboardMain {
     grid-template: repeat(4, auto) / repeat(1, 1fr); 
     grid-template-areas:
       'Dashboard-sort' 
@@ -621,7 +623,7 @@ textarea:required
     display:block;
     margin: 35px auto;
     margin-top: 15px;
-    width: 300px;
+    width: 450px;
   } 
 
   .ProfileDelete-button {
@@ -631,7 +633,8 @@ textarea:required
   }
 
   .WatchRelated-container {
-    margin-right: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
     width: 500px;
   }
 
@@ -657,7 +660,7 @@ textarea:required
     display: none;
   }
 
-  .Dashboard {
+  .DashboardMain {
     grid-template: repeat(5, auto) / repeat(1, 1fr); 
     grid-template-areas:
       'Dashboard-sort' 
@@ -722,7 +725,7 @@ textarea:required
 
   .LogIn, 
   .SignUp {
-    min-height: 95vh;
+    min-height: 100vh;
     padding-top: 100px;
   }
 

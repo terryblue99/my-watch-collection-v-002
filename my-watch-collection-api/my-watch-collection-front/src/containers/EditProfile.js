@@ -92,44 +92,46 @@ class EditProfile extends Component {
                <div>
                     <NavBar />
                     <div className='Profile-container'>
-                         <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>   
-                         <form id='EditProfile-Form' onSubmit={this.handleSubmit}>
-                              <h1 className='ProfileForm-header'>
-                                   Edit Profile
-                              </h1>
-                              <h2 className='ProfileForm-subheader'>
-                                   (You can change your email and/or your password here)
-                              </h2>
-                              <div className='Profile'>
-                                   <label>Email</label>
-                                   <input className='Input-element'
-                                             type='email'
-                                             name='email'
-                                             defaultValue={user.email}
-                                             onChange={this.handleChange}
-                                   />
-                                   <br /> 
-                                   <label>New Password (<span className='ProfileForm-NewPassword-text'>blank if you don't want to change it</span>)</label>
-                                   <input className='Input-element' 
-                                             type='password'
-                                             name='password'
-                                             placeholder='New password'
-                                             onChange={this.handleChange}
-                                   />
-                                   <br />
-                                   <label>New Password Confirmation</label>
-                                   <input className='Input-element' 
-                                             type='password'
-                                             name='password_confirmation'
-                                             placeholder='Confirm your new password'
-                                             onChange={this.handleChange}
-                                   />
-                                   <br />
-                                   <button className='btn ProfileUpdate-button Button-text' type='submit'>Update Profile</button>
-                                   <br />
-                                   <br />
-                              </div>
-                         </form>
+                         <div className='Profile-form-container'>
+                              <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>   
+                              <form id='EditProfile-Form' onSubmit={this.handleSubmit}>
+                                   <h1 className='ProfileForm-header'>
+                                        Edit Profile
+                                   </h1>
+                                   <h2 className='ProfileForm-subheader'>
+                                        (You can change your email and/or your password here)
+                                   </h2>
+                                   <div className='Profile'>
+                                        <label>Email</label>
+                                        <input className='Input-element'
+                                                  type='email'
+                                                  name='email'
+                                                  defaultValue={user.email}
+                                                  onChange={this.handleChange}
+                                        />
+                                        <br /> 
+                                        <label>New Password (<span className='ProfileForm-NewPassword-text'>blank if you don't want to change it</span>)</label>
+                                        <input className='Input-element' 
+                                                  type='password'
+                                                  name='password'
+                                                  placeholder='New password'
+                                                  onChange={this.handleChange}
+                                        />
+                                        <br />
+                                        <label>New Password Confirmation</label>
+                                        <input className='Input-element' 
+                                                  type='password'
+                                                  name='password_confirmation'
+                                                  placeholder='Confirm your new password'
+                                                  onChange={this.handleChange}
+                                        />
+                                        <br />
+                                        <button className='btn ProfileUpdate-button Button-text' type='submit'>Update Profile</button>
+                                        <br />
+                                        <br />
+                                   </div>
+                              </form>
+                         </div>
                          <hr className='ProfileDelete' />
                          <div className='ProfileDelete'> 
                               {this.state.processing ? <ProcessingIndicator /> :

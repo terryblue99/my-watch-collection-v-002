@@ -125,6 +125,7 @@ class EditWatch extends Component {
                         display: flex;
                         justify-content: space-between;
                         margin-top: 20px;
+
                         @media (max-width: 945px) {
                             flex-direction: column;
                         }

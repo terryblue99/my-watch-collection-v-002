@@ -77,7 +77,6 @@ class WatchDetail extends Component {
             return ( 
                 
                 <div className='Watch-detail' css={css`
-                        background-color: white;
                         display: ${showWatches ? 'none' : 'block'};
                         grid-area: main;
                 `}>

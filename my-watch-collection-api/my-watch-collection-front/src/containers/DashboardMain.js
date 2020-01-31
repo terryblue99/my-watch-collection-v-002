@@ -111,7 +111,7 @@ class DashboardMain extends Component {
     
     return (
 
-      <div className='Dashboard'>
+      <div className='DashboardMain'>
 
         <div className='Dashboard-item Dashboard-initialList'>
           { number_of_saved_watches > 1
