@@ -113,6 +113,7 @@ button
 .Dashboard-totalWatchRelated,
 .Dashboard-totalWatches 
 {
+  text-align: center;
   text-shadow: 2px 2px 5px orange;
 }
 
