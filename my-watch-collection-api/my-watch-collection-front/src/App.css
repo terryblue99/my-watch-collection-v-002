@@ -793,4 +793,12 @@ textarea:required
     margin-left: 49px;
   }
 
+  .Welcome-text {
+    font-size: 2rem;
+  }
+
+  .Center-text {
+    font-size: 1.5rem;
+  }
+
 }
