@@ -239,7 +239,7 @@ class WatchDetail extends Component {
                         }}>
                             Edit    
                         </Link>
-                        <button className='btn Red-button Button-text' onClick={this.handleDelete}> 
+                        <button className='btn Delete-button Button-text' onClick={this.handleDelete}> 
                             Delete
                         </button>
                     </div>

@@ -35,8 +35,8 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                     transition: color 800ms;
                                     
                                     &:hover {
-                                        background-color: #61BD4F;
-                                        color: white;
+                                        background-color: khaki;
+                                        color: blue;
                                         cursor: pointer;
                                     }
                                 `} onClick={() => { 
@@ -45,7 +45,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                     setShowWatches(false) // on mobiles will allow toggling of watch list
                                 }}>
                                 <strong css={css`
-                                    color: sienna;
+                                    color: darkred;
                                     font-family: 'Ubuntu, sans-serif';
                                     font-size: 1rem;
                                     padding-left: -10px;

@@ -135,7 +135,7 @@ class EditProfile extends Component {
                          <hr className='ProfileDelete' />
                          <div className='ProfileDelete'> 
                               {this.state.processing ? <ProcessingIndicator /> :
-                                   <button className='btn ProfileDelete-button Red-button Button-text' onClick={this.handleDelete}> 
+                                   <button className='btn ProfileDelete-button Delete-button Button-text' onClick={this.handleDelete}> 
                                         Delete My Account
                                    </button>}
                          </div>

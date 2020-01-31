@@ -30,16 +30,12 @@ button
                                 supported by Chrome and Opera */
 }
 
-.Crimson-color {
-  color: crimson;
+.Blue-color {
+  color:  blue;
 }
 
 .Dark-red-color {
   color: DarkRed;
-}
-
-.Midnight-blue-color {
-  color:  Blue;
 }
 
 /*  =================
@@ -223,6 +219,10 @@ button
   margin-left: 40px;
 }
 
+.WatchRelated-note {
+  text-shadow: 2px 2px 5px orange;
+}
+
 /*  =================
         buttons
     ================= */
@@ -340,8 +340,6 @@ button:focus,
 }
 
 .ProfileDelete-button {
-  background-color: red;
-  color: cornsilk;
   font-size: 1rem;  
   margin-top: 15px;
   padding: 10px;
@@ -366,7 +364,7 @@ button:focus,
 .Add-watch-button,
 .Add-watch-related-button,
 .Edit-button,
-.Red-button, 
+.Delete-button, 
 .Watch-related-info-button
 {
   font-size: 1rem;
@@ -381,17 +379,24 @@ button:focus,
 }
 
 .Edit-button,
-.Red-button 
+.Delete-button 
 {
-  color: cornsilk;
   max-height: 40px;
   min-width: 100px;
   padding: 10px 20px; 
   text-align: center;
 }
 
-.Red-button {
-  background-color: red;
+.Edit-button {
+  color: white;
+}
+
+.Delete-button,
+.ProfileDelete-button
+{
+  background-color: khaki;
+  border-color: red;
+  color: darkred;
   margin-left: 10px; 
 }
 
@@ -466,7 +471,7 @@ hr.WatchDetail {
 
 .WatchForm-upload-text {
   font-size: 1rem; 
-  color: sienna;
+  color: darkred;
   margin-top: 3px;
   text-align: center;
 }
@@ -542,7 +547,7 @@ textarea:required
 }
 
 .Detail-css {
-  color: sienna;
+  color: darkred;
   font-size: 20px;
 }
 
@@ -598,7 +603,7 @@ textarea:required
   }
 
   .Edit-button,
-  .Red-button 
+  .Delete-button 
   {
     margin-left: 170px;
     max-width: 100px;
