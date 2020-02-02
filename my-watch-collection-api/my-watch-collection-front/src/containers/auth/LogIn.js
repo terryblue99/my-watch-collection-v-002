@@ -42,19 +42,23 @@ class LogIn extends Component {
                     <div className='LogIn-container'>
                         <form id='LogIn-Form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
-                                <input autoFocus className='LogIn-input-element' required 
+                                <div className='LogIn-element'>
+                                    <label>Email: </label>
+                                    <input autoFocus className='LogIn-input-element' required 
                                         type='email'
                                         name='email'
-                                        placeholder='Enter your email'
                                         onChange={this.handleChange}
-                                />
+                                    />
+                                </div>
                                 <br /> 
+                              <div className='LogIn-element'>
+                                <label>Password:</label>
                                 <input className='LogIn-input-element' required 
-                                        type='password'
-                                        name='password'
-                                        placeholder='Enter your password'
-                                        onChange={this.handleChange}
+                                    type='password'
+                                    name='password'
+                                    onChange={this.handleChange}
                                 />
+                              </div>
                                 <br />
                                 <button className='btn LogIn-button Button-text' type='submit'>Log In</button>
                                 <Link className='btn LogIn-home-button Button-text' to={{pathname: `/`}}> 

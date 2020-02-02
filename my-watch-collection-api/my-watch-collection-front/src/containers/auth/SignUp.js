@@ -64,26 +64,32 @@ class SignUp extends Component {
                     <div className='SignUp-container'>
                         <form id='SignUp-Form' onSubmit={this.handleSubmit}>
                             <div className='Register'>
-                                <input autoFocus id='Focus-SignUp-Email' className='SignUp-input-element' required 
+                                <div className='SignUp-element'>
+                                    <label>Email: </label>
+                                    <input autoFocus id='Focus-SignUp-Email' className='SignUp-input-element' required 
                                         type='email'
                                         name='email'
-                                        placeholder='Enter your email'
                                         onChange={this.handleChange}
-                                />
+                                    />
+                                </div>
                                 <br /> 
-                                <input className='SignUp-input-element' required 
+                                <div className='SignUp-element'>
+                                    <label>Password: </label>
+                                    <input className='SignUp-input-element' required 
                                         type='password'
                                         name='password'
-                                        placeholder='Enter password (8+ chars)'
                                         onChange={this.handleChange}
-                                />
+                                    />
+                                    </div>
                                 <br />
-                                <input className='SignUp-input-element' required 
+                                <div className='SignUp-element'>
+                                    <label>Confirm Password: </label>
+                                    <input className='SignUp-input-element' required 
                                         type='password'
                                         name='password_confirmation'
-                                        placeholder='Confirm your password'
                                         onChange={this.handleChange}
-                                />
+                                    />
+                                </div>
                                 <br />
                                 <button className='btn SignUp-button Button-text' type='submit'>Sign Up</button>
                                 <Link className='btn SignUp-home-button Button-text' to={{pathname: `/`}}> 

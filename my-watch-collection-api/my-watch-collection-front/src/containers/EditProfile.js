@@ -114,7 +114,6 @@ class EditProfile extends Component {
                                         <input className='Input-element' 
                                                   type='password'
                                                   name='password'
-                                                  placeholder='New password'
                                                   onChange={this.handleChange}
                                         />
                                         <br />
@@ -122,7 +121,6 @@ class EditProfile extends Component {
                                         <input className='Input-element' 
                                                   type='password'
                                                   name='password_confirmation'
-                                                  placeholder='Confirm your new password'
                                                   onChange={this.handleChange}
                                         />
                                         <br />
