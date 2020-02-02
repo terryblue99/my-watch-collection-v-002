@@ -231,14 +231,28 @@ class WatchDetail extends Component {
                             flex-direction: column;
                         }
                     `}>
-                        <Link className='btn Edit-button Button-text' to={{
-                            pathname: `/watches/${currentWatch.id}/edit_watch`,
-                            state: {
-                                watch: currentWatch
-                            }
-                        }}>
-                            Edit    
-                        </Link>
+                        {!currentWatch.watch_name.includes(WatchRelated)
+                            ? <>
+                                <Link className='btn Edit-button Button-text' to={{
+                                        pathname: `/watches/${currentWatch.id}/edit_watch`,
+                                        state: {
+                                            watch: currentWatch
+                                        }
+                                    }}>
+                                        Edit
+                                </Link>
+                              </>
+                            : <>
+                                <Link className='btn Edit-button Button-text' to={{
+                                        pathname: `/watches/${currentWatch.id}/edit_watch_related`,
+                                        state: {
+                                            watch: currentWatch
+                                        }
+                                    }}>
+                                        Edit
+                                </Link>
+                              </>
+                        }
                         <button className='btn Delete-button Button-text' onClick={this.handleDelete}> 
                             Delete
                         </button>
