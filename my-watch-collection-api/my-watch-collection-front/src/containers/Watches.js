@@ -15,7 +15,7 @@ const Watches = ({ watches, WatchRelated, sortSelected, DashBoardSortHistory }) 
     let filteredWatchRelated
 
     if(watches && watches.length > 0) {
-        // Filter out non-watch records
+        // Filter out watch-related records
         filteredWatchRelated = watches.filter(watch => watch.watch_name.includes(WatchRelated))
         // Filter out watch records
         filteredWatches = watches.filter(watch => !watch.watch_name.includes(WatchRelated))

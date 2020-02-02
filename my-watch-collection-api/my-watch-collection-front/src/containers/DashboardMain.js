@@ -136,7 +136,7 @@ class DashboardMain extends Component {
               : null
           }
           { number_of_watcheRelated > 0
-              ? <h2 className='Dashboard-totalWatchRelated'>Total non-watches: {number_of_watcheRelated}</h2>
+              ? <h2 className='Dashboard-totalWatchRelated'>Total watch-related: {number_of_watcheRelated}</h2>
               : null
           }   
         </div>
