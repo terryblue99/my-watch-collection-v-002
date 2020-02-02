@@ -95,7 +95,7 @@ class EditProfile extends Component {
                          <div className='Profile-form-container'>
                               <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>   
                               <form id='EditProfile-Form' onSubmit={this.handleSubmit}>
-                                   <h1 className='ProfileForm-header'>
+                                   <h1 className='ProfileForm-header Dark-red-color'>
                                         Edit Profile
                                    </h1>
                                    <h2 className='ProfileForm-subheader'>
