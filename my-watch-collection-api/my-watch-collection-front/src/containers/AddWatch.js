@@ -130,25 +130,25 @@ class AddWatch extends Component {
                                    }
                               </h1>
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input autoFocus id='Focus-first-input' className='Input-element' required 
+                                   ?    <> <label>Watch Maker</label>
+                                           <input autoFocus id='Focus-first-input' className='Input-element' required 
                                              type='text'
                                              name='watch_maker'
-                                             placeholder='Watch Maker'
                                              onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input autoFocus id='Focus-first-input' className='Input-element' required 
+                                   :    <> <label>Title</label>
+                                           <input autoFocus id='Focus-first-input' className='Input-element' required 
                                              type='text'
                                              name='watch_maker'
-                                             placeholder='Title'
                                              onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element' required 
+                                   ?    <> <label>Watch Name</label>
+                                           <input className='Input-element' required 
                                              type='text'
                                              name='watch_name'
-                                             placeholder='Watch Name'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element Input-related'
@@ -159,10 +159,10 @@ class AddWatch extends Component {
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element'
+                                   ?    <> <label>Movement</label>
+                                           <input className='Input-element'
                                              type='text'
                                              name='movement'
-                                             placeholder='Movement'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -173,10 +173,10 @@ class AddWatch extends Component {
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element'
+                                   ?    <> <label>Complications</label>
+                                           <input className='Input-element'
                                              type='text'
                                              name='complications'
-                                             placeholder='Complications'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -187,10 +187,10 @@ class AddWatch extends Component {
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element'
+                                   ?    <> <label>Band</label>
+                                           <input className='Input-element'
                                              type='text'
                                              name='band'
-                                             placeholder='Band'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -201,24 +201,24 @@ class AddWatch extends Component {
                               }
                               <br /> 
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element'
-                                             type='text'
-                                             name='model_number'
-                                             placeholder='Model Number'
-                                             onChange={this.handleChange}/>
-                                        </>
-                                   :    <> <input className='Input-element'
+                                   ?    <> <label>Model Number</label>
+                                           <input className='Input-element'
                                              type='text'
                                              name='model_number'
                                              onChange={this.handleChange}/>
                                         </>
+                                   :    <> <input className='Input-element'
+                                             type='text'
+                                             name='model_number'
+                                             onChange={this.handleChange}/>
+                                        </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element'
+                                   ?    <> <label>Case Measurement (e.g. 45mm)</label>
+                                           <input className='Input-element'
                                              type='text'
                                              name='case_measurement'
-                                             placeholder='Case Measurement (e.g. 45mm)'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -229,10 +229,10 @@ class AddWatch extends Component {
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element'
+                                   ?    <> <label>Water Resistance (e.g. 200 meters)</label>
+                                           <input className='Input-element'
                                              type='text'
                                              name='water_resistance'
-                                             placeholder='Water Resistance (e.g. 200 meters)'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -243,22 +243,22 @@ class AddWatch extends Component {
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element' required
+                                   ?    <> <label>Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)</label>
+                                           <input className='Input-element' required
                                              type='text'
                                              name='date_bought'
-                                             placeholder='Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)'
                                              onChange={this.handleChange}/>
                                         </>
                                    : null
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <input className='Input-element' required
+                                   ?    <> <label>Cost (e.g. 199.99 or 0)</label>
+                                           <input className='Input-element' required
                                              type='number'
                                              step='0.01'
                                              min='0'
                                              name='cost'
-                                             placeholder='Cost (e.g. 199.99 or 0)'
                                              onChange={this.handleChange}/>
                                         </>
                                    : null

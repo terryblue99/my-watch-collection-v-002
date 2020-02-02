@@ -146,7 +146,6 @@ class EditWatch extends Component {
                                              type='text'
                                              name='watch_maker'
                                              defaultValue={watch.watch_maker}
-                                             placeholder='Watch Maker'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element' required 
@@ -163,7 +162,6 @@ class EditWatch extends Component {
                                              type='text'
                                              name='watch_name'
                                              defaultValue={watch.watch_name}
-                                             placeholder='Watch Name'
                                              onChange={this.handleChange}/>
                                         </>
                                    : <> <input className='Input-element Input-related'
@@ -179,7 +177,6 @@ class EditWatch extends Component {
                                              type='text'
                                              name='movement'
                                              defaultValue={watch.movement}
-                                             placeholder='Movement'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -196,7 +193,6 @@ class EditWatch extends Component {
                                              type='text'
                                              name='complications'
                                              defaultValue={watch.complications}
-                                             placeholder='Complications'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -213,7 +209,6 @@ class EditWatch extends Component {
                                              type='text'
                                              name='band'
                                              defaultValue={watch.band}
-                                             placeholder='Band'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -230,7 +225,6 @@ class EditWatch extends Component {
                                              type='text'
                                              name='model_number'
                                              defaultValue={watch.model_number}
-                                             placeholder='Model Number'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -242,12 +236,11 @@ class EditWatch extends Component {
                               }
                               <br /> 
                               {!watch.watch_name.includes(WatchRelated)
-                                   ?    <> <label>Case Measurement</label>
+                                   ?    <> <label>Case Measurement (e.g. 45mm)</label>
                                            <input className='Input-element'
                                              type='text'
                                              name='case_measurement'
                                              defaultValue={watch.case_measurement}
-                                             placeholder='Case Measurement (e.g. 45mm)'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -264,7 +257,6 @@ class EditWatch extends Component {
                                              type='text'
                                              name='water_resistance'
                                              defaultValue={watch.water_resistance}
-                                             placeholder='Water Resistance (e.g. 200 meters)'
                                              onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
@@ -281,7 +273,6 @@ class EditWatch extends Component {
                                              type='text'
                                              name='date_bought'
                                              defaultValue={watch.date_bought}
-                                             placeholder='Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)'
                                              onChange={this.handleChange}/>
                                         </>
                                    : null
@@ -295,7 +286,6 @@ class EditWatch extends Component {
                                              min='0'
                                              name='cost'
                                              defaultValue={watch.cost}
-                                             placeholder='Cost (e.g. 199.99 or 0)'
                                              onChange={this.handleChange}/>
                                         </>
                                    : null

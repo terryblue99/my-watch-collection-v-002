@@ -432,6 +432,12 @@ input[type=file] {
           forms
     ================= */
 
+input::placeholder {
+  color: DarkBlue;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
 hr.ProfileDelete {
   border: 10px solid #454140;
   border-radius: 5px;
@@ -495,6 +501,7 @@ hr.WatchDetail {
 }
 
 .Profile label,
+#AddWatch-Form label,
 .EditWatch-Form label
 {
   font-size: .85rem;
@@ -717,6 +724,7 @@ textarea:required
   }
 
   .Profile label,  
+  #AddWatch-Form label,
   .EditWatch-Form label 
   {
     font-size: 1rem;
