@@ -51,6 +51,12 @@ button
     'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch';
 }
 
+.Dashboard-header {
+  font-size: 2rem;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
 .Dashboard-initialList {
   grid-area: Dashboard-initialList;
 }
@@ -598,6 +604,10 @@ textarea:required
 
 @media (max-width: 750px) {
 
+  .Dashboard-header {
+    padding-top: 30px;
+  }
+
   .Dashboard-date, 
   .Dashboard-logo,
   .Dashboard-time
@@ -701,6 +711,10 @@ textarea:required
 
 @media (min-width: 750px) and (max-width: 1104px) {
 
+  .Dashboard-header {
+    padding-top: 30px;
+  }
+
   .Dashboard-logo{
     display: none;
   }
@@ -753,6 +767,10 @@ textarea:required
 
   body {
     font-size: 1rem;
+  }
+
+  .Dashboard-header {
+    font-size: 3rem;
   }
 
   .Profile label,  

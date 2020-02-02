@@ -141,6 +141,7 @@ class DashboardMain extends Component {
           }   
         </div>
         <div className='Dashboard-item Dashboard-sort'> 
+          <h1 className='Dashboard-header Dark-red-color'>Dashboard</h1>
           { number_of_watches > 1 
               && an_oldest_watch_exists
               && a_newest_watch_exists
