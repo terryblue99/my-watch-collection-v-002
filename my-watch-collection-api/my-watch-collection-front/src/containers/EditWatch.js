@@ -62,6 +62,10 @@ class EditWatch extends Component {
                     }
                }    
                // Edit the watch
+               let watchRelated = false
+               if (this.state.watchData.watch_name === this.props.WatchRelated) {
+                    watchRelated = true
+               } 
                const formData = new FormData()
                formData.append('watch_maker', this.state.watchData.watch_maker)
                formData.append('watch_name', this.state.watchData.watch_name)
@@ -78,7 +82,7 @@ class EditWatch extends Component {
                if (this.state.image) {
                     formData.append('image', this.state.image)
                }
-               this.props.editWatchAction(formData, this.state.watchData.id)
+               this.props.editWatchAction(formData, this.state.watchData.id, watchRelated)
           } else {
                alert('Nothing has been edited!')
           }  

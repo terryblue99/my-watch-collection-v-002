@@ -66,6 +66,10 @@ class AddWatch extends Component {
                return
           }
           // Create the watch
+          let watchRelated = false
+          if (this.state.watchData.watch_name === this.props.WatchRelated) {
+               watchRelated = true
+          }    
           const formData = new FormData()
           formData.append('watch_maker', this.state.watchData.watch_maker)
           formData.append('watch_name', this.state.watchData.watch_name)
@@ -82,7 +86,7 @@ class AddWatch extends Component {
           if (this.state.image) {
                formData.append('image', this.state.image)
           }
-          this.props.addWatchAction(formData, this.state.watchData)
+          this.props.addWatchAction(formData, this.state.watchData, watchRelated)
           // Clear the form
           ClearForm('AddWatch-Form')
           // Set focus on the first input
