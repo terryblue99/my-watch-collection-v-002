@@ -69,7 +69,7 @@ class AddWatch extends Component {
           let watchRelated = false
           if (this.state.watchData.watch_name === this.props.WatchRelated) {
                watchRelated = true
-          }    
+          } 
           const formData = new FormData()
           formData.append('watch_maker', this.state.watchData.watch_maker)
           formData.append('watch_name', this.state.watchData.watch_name)

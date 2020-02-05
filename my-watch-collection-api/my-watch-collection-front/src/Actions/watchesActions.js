@@ -122,7 +122,7 @@ export const editWatchAction = (formData, watch_id, watchRelated) => {
 	}
 }
 
-export const deleteWatchAction = (id, watchName) => {
+export const deleteWatchAction = (id, watchRelated) => {
 	return dispatch => {
 		return fetch(`${API_URL}/watches/${id}`, {
 				method: 'DELETE'
@@ -135,7 +135,9 @@ export const deleteWatchAction = (id, watchName) => {
 					type: DELETE_WATCH,
 					payload: id
 				})
-				alert(watchName + ': has been deleted')
+				if (!watchRelated) {
+					alert('The watch has been deleted')
+				} else alert('The watch-related has been deleted')
 			}			
 		})
 		.catch(error => {

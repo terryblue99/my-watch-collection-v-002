@@ -19,9 +19,16 @@ class WatchDetail extends Component {
     }
 
     handleDelete = () => {
+        let watchRelated = false
+
         if (window.confirm('Do you realy want to delete this watch?')) {
+
+            if (this.props.currentWatch.watch_name === this.props.WatchRelated) {
+                watchRelated = true
+            }
+
             this.props.deleteWatchAction(this.props.currentWatch.id, 
-                                         this.props.currentWatch.watch_name)                 
+                                         watchRelated)                 
             this.setState({
                 backToDashboard: true,
                 watchDeleted: true
@@ -273,4 +280,10 @@ class WatchDetail extends Component {
     }
 }
 
-export default connect(null, {deleteWatchAction})(WatchDetail)
+const mapStateToProps = (state) => {
+    return {
+      WatchRelated: state.myWatches.WatchRelated  // For records that are not related to a specific watch.
+    } 
+}
+
+export default connect(mapStateToProps, {deleteWatchAction})(WatchDetail)
