@@ -9,7 +9,7 @@ import Image from 'react-image-resizer'  // https://github.com/sottar/react-imag
 import { deleteWatchAction } from '../actions/watchesActions'
 import DashboardMain from './DashboardMain'
 import RedirectTo from '../components/RedirectTo'
-import RedirectToWithState from './RedirectToWithState'
+import RedirectToWithState from '../components/RedirectToWithState'
 
 class WatchDetail extends Component { 
 

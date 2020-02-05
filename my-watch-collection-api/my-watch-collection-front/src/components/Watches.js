@@ -1,6 +1,6 @@
 import { useState } from 'react' // https://reactjs.org/docs/hooks-overview.html
 import _ from 'lodash'  // https://underscorejs.org/)
-import WatchDetail from './WatchDetail'
+import WatchDetail from '../containers/WatchDetail'
 import WatchList from './WatchList'
 import SidebarMobile from './SidebarMobile'
 // The following comment is required for @emotion to work

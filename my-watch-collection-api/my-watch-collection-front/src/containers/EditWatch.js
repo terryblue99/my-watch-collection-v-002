@@ -7,7 +7,7 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 import NavBar from './NavBar'
 import { editWatchAction } from '../actions/watchesActions'
 import RedirectTo from '../components/RedirectTo'
-import RedirectToWithState from "./RedirectToWithState"
+import RedirectToWithState from "../components/RedirectToWithState"
 import DateValidation from "../components/DateValidation"
 
 class EditWatch extends Component {

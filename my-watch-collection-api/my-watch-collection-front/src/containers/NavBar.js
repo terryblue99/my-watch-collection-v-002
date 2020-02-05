@@ -9,7 +9,7 @@ import logoText from '../images/my-watch-collection-text.png'
 import { searchWatchesAction } from '../actions/watchesActions'
 import ClearForm from "../components/ClearForm"
 import RedirectTo from '../components/RedirectTo'
-import RedirectToWithState from "./RedirectToWithState"
+import RedirectToWithState from "../components/RedirectToWithState"
 
 class NavBar extends Component {
 

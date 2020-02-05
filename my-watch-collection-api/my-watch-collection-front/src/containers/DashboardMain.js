@@ -5,7 +5,7 @@ import Image from 'react-image-resizer'  // https://github.com/sottar/react-imag
 import logo from '../images/logo.jpg'
 import { sortWatchesAction } from '../actions/watchesActions'
 import { resetWatchesAction } from '../actions/watchesActions'
-import RedirectToWithState from "./RedirectToWithState"
+import RedirectToWithState from "../components/RedirectToWithState"
 
 class DashboardMain extends Component {
 

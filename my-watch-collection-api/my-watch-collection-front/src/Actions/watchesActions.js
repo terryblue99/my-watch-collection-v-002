@@ -74,7 +74,6 @@ export const resetWatchesAction = () => {
 }
 
 export const addWatchAction = (formData, watch, watchRelated) => {
-	alert('watchRelated: ' + watchRelated)
 	return dispatch => {
 		return fetch(`${API_URL}/watches`, {
 			method: 'POST',
