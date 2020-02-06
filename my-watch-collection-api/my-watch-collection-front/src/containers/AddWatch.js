@@ -24,7 +24,7 @@ class AddWatch extends Component {
                water_resistance: '',
                complications: '',
                date_bought: '',
-               cost: '',
+               cost: 0.00,
                notes: '',
                user_id: this.props.currentUser.user.id
           },
@@ -257,8 +257,8 @@ class AddWatch extends Component {
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <label>Cost (e.g. 199.99 or 0)</label>
-                                           <input className='Input-element' required
+                                   ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
+                                           <input className='Input-element'
                                              type='number'
                                              step='0.01'
                                              min='0'

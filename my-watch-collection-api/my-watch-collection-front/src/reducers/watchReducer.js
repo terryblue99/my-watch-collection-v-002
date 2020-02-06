@@ -79,10 +79,6 @@ export default (state = initialState, { type, payload } ) => {
 				...state,
 				watches: state.watches.filter(watch => {
 					searchArray = []
-					let watchCost
-					if (watch.watch_name === state.WatchRelated) {
-						watchCost = '0.00'
-					} else watchCost = watch.cost
 					searchArray.push( watch.watch_name.toLowerCase(),
 														watch.watch_maker.toLowerCase(),
 														watch.movement.toLowerCase(),
@@ -92,7 +88,7 @@ export default (state = initialState, { type, payload } ) => {
 														watch.case_measurement.toLowerCase(),
 														watch.water_resistance.toLowerCase(),
 														watch.date_bought.toLowerCase(),
-														watchCost,
+														watch.cost,
 														watch.notes.toLowerCase()
 													)
 					// check array of watch string fields for searchText string/substring

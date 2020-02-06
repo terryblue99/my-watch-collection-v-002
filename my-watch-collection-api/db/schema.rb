@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_10_30_193510) do
     t.string "case_measurement"
     t.string "water_resistance"
     t.string "date_bought"
-    t.decimal "cost", precision: 8, scale: 2
+    t.decimal "cost", precision: 8, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

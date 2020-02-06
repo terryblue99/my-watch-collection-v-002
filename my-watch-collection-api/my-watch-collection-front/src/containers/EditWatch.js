@@ -283,8 +283,8 @@ class EditWatch extends Component {
                               }
                               <br />
                               {!watch.watch_name.includes(WatchRelated)
-                                   ?    <> <label>Cost (e.g. 199.99 or 0)</label>
-                                           <input className='Input-element' required
+                                   ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
+                                           <input className='Input-element'
                                              type='number'
                                              step='0.01'
                                              min='0'
