@@ -56,13 +56,13 @@ class AddWatch extends Component {
               (this.state.watchData.watch_name !== this.props.WatchRelated && 
                Number(this.state.watchData.cost) === 0 &&
                Number(this.state.watchData.date_bought) === 0)) { 
-                    alert('1 Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
+                    alert('1 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
                }
-          // validate the 'Date Bought/Gifted' input
+          // validate the 'Date Bought/RCVD' input
           const validDate = DateValidation(this.state.watchData.date_bought.toString(), 'add')
           if (!validDate) {
-               alert('2 Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
+               alert('2 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                return
           }
           // Create the watch
@@ -247,7 +247,7 @@ class AddWatch extends Component {
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
-                                   ?    <> <label>Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)</label>
+                                   ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
                                              type='text'
                                              name='date_bought'

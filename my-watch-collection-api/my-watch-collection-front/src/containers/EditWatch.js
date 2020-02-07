@@ -53,11 +53,11 @@ class EditWatch extends Component {
      handleSubmit = (event) => {
           event.preventDefault() 
           if (this.state.formHasInput) {
-               // validate the 'Date Bought/Gifted' input for watch records
+               // validate the 'Date Bought/RCVD' input for watch records
                if (this.state.watchData.watch_name !== this.props.WatchRelated) {
                     const validDate = DateValidation(this.state.watchData.date_bought, 'edit')
                     if (!validDate) {
-                         alert('Date Bought/Gifted must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
+                         alert('Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                          return
                     }
                }    
@@ -272,7 +272,7 @@ class EditWatch extends Component {
                               }
                               <br />
                               {!watch.watch_name.includes(WatchRelated)
-                                   ?    <> <label>Date Bought/Gifted (yyyy-mm-dd, yyyy-mm or yyyy)</label>
+                                   ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
                                              type='text'
                                              name='date_bought'

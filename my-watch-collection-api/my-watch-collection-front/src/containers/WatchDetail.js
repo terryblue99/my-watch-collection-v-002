@@ -210,10 +210,14 @@ class WatchDetail extends Component {
                             {currentWatch.date_bought && !currentWatch.watch_name.includes(WatchRelated) 
                             ?   <>
                                     {currentWatch.cost > 0
-                                        ?<p><em className='Detail-css'>Date Bought</em></p>
-                                        :<p><em className='Detail-css'>Date Gifted</em></p>
+                                        ? <> <p><em className='Detail-css'>Date Bought</em></p>
+                                             <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
+                                          </>
+                                        : <> <p><em className='Detail-css'>Date RCVD</em></p>
+                                             <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
+                                          </>
                                     }
-                                    <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
+                                    
                                 </>
                             : null }
                             {currentWatch.cost > 0 ?
