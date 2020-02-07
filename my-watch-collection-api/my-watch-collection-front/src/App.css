@@ -680,6 +680,10 @@ textarea:required
     width: 450px;
   } 
 
+  .ProfileForm-subheader{
+    font-size: 1.2rem;
+  }
+
   .ProfileDelete-button {
     margin-left: 5px;
     min-width: 300px;
@@ -749,7 +753,6 @@ textarea:required
     margin-top: 15px;
     width: 300px;
   }
-
 }
 
 @media (max-width: 1184px) {
