@@ -16,7 +16,7 @@ class AddWatch extends Component {
      state = {
           watchData: {
                watch_maker: '',
-               watch_name: 'Watch-Related',
+               watch_name: this.props.WatchRelated,
                movement: '',
                band: '',
                model_number: '',
