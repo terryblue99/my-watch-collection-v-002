@@ -154,7 +154,7 @@ class AddWatch extends Component {
                                    :    <> <input className='Input-element Input-related'
                                              type='text'
                                              name='watch_name'
-                                             value={this.props.WatchRelated}/>
+                                             value={this.state.watchData.watch_name}/>
                                         </>
                               }
                               <br />
