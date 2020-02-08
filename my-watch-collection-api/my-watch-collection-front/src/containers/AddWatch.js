@@ -16,7 +16,7 @@ class AddWatch extends Component {
      state = {
           watchData: {
                watch_maker: '',
-               watch_name: '',
+               watch_name: 'Watch-Related',
                movement: '',
                band: '',
                model_number: '',
@@ -106,10 +106,6 @@ class AddWatch extends Component {
                     backToDashboard: false
                }) 
                return RedirectTo('/dashboard')
-          }
-
-          if (this.props.location.AddWatchRelated) {
-               this.state.watchData.watch_name = this.props.WatchRelated
           }
       
           return (
