@@ -56,15 +56,16 @@ export default (state = initialState, { type, payload } ) => {
 					...state,
 					state: state.watches.concat(payload)
 				}) 	
-			}
-			else return state
+			} else return state
 
 		case DELETE_WATCH:
+			if (payload) {
 				return ({
 					...state,
 					watches: state.watches.filter(watch => watch.id !== payload),
 					savedWatches: state.savedWatches.filter(watch => watch.id !== payload)
 				})
+			} else return state		
 
 		case CLEAR_WATCHES:
 				state = initialState
