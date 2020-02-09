@@ -86,7 +86,10 @@ class AddWatch extends Component {
           if (this.state.image) {
                formData.append('image', this.state.image)
           }
-          this.props.addWatchAction(formData, this.state.watchData, watchRelated)
+          this.props.addWatchAction(formData, this.state.watchData)
+          if (!watchRelated) {
+               alert('The watch has been added and saved!')
+          } else alert('The watch-related has been added and saved!')
           // Clear the form
           ClearForm('AddWatch-Form')
           // Set focus on the first input

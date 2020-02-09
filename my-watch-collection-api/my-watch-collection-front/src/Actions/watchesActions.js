@@ -73,7 +73,7 @@ export const resetWatchesAction = () => {
 	}		
 }
 
-export const addWatchAction = (formData, watch, watchRelated) => {
+export const addWatchAction = (formData, watch) => {
 	return dispatch => {
 		return fetch(`${API_URL}/watches`, {
 			method: 'POST',
@@ -87,9 +87,6 @@ export const addWatchAction = (formData, watch, watchRelated) => {
 							type: ADD_WATCH,
 							payload: watch
 					})
-					if (!watchRelated) {
-						alert('The watch has been added and saved')
-					} else alert('The watch-related has been added and saved')
 				}
 		})
 		.catch(error => {
@@ -98,7 +95,7 @@ export const addWatchAction = (formData, watch, watchRelated) => {
 	}
 }
 
-export const editWatchAction = (formData, watch_id, watchRelated) => {
+export const editWatchAction = (formData, watch_id) => {
 	// for(let [name, value] of formData) {
 	// 	console.log(`${name} = ${value}`)
 	// }
@@ -110,10 +107,6 @@ export const editWatchAction = (formData, watch_id, watchRelated) => {
 		.then(response => {
 			if (response.error) {
 				alert('*** editWatchAction ERROR 1: ' + response.error)
-			} else {
-				if (!watchRelated) {
-					alert('The watch has been edited and saved')
-				} else alert('The watch-related has been edited and saved')
 			}
 		})
 		.catch(error => {
@@ -122,7 +115,7 @@ export const editWatchAction = (formData, watch_id, watchRelated) => {
 	}
 }
 
-export const deleteWatchAction = (id, watchRelated) => {
+export const deleteWatchAction = (id) => {
 	return dispatch => {
 		return fetch(`${API_URL}/watches/${id}`, {
 				method: 'DELETE'
@@ -135,9 +128,6 @@ export const deleteWatchAction = (id, watchRelated) => {
 					type: DELETE_WATCH,
 					payload: id
 				})
-				if (!watchRelated) {
-					alert('The watch has been deleted')
-				} else alert('The watch-related has been deleted')
 			}			
 		})
 		.catch(error => {

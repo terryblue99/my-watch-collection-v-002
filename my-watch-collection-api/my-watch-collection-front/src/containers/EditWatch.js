@@ -82,7 +82,10 @@ class EditWatch extends Component {
                if (this.state.image) {
                     formData.append('image', this.state.image)
                }
-               this.props.editWatchAction(formData, this.state.watchData.id, watchRelated)
+               this.props.editWatchAction(formData, this.state.watchData.id)
+               if (!watchRelated) {
+                    alert('The watch has been edited')
+               } else alert('The watch-related has been edited')
           } else {
                alert('Nothing has been edited!')
           }  

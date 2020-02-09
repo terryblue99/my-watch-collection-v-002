@@ -27,8 +27,12 @@ class WatchDetail extends Component {
                 watchRelated = true
             }
 
-            this.props.deleteWatchAction(this.props.currentWatch.id, 
-                                         watchRelated)                 
+            this.props.deleteWatchAction(this.props.currentWatch.id) 
+            
+            if (!watchRelated) {
+                alert('The watch has been deleted!')
+            } else alert('The watch-related has been deleted!')
+
             this.setState({
                 backToDashboard: true,
                 watchDeleted: true
