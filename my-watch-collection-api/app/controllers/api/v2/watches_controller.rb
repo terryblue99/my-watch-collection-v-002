@@ -31,7 +31,7 @@ class Api::V2::WatchesController < ApplicationController
     end
 
     def destroy
-        ActiveStorage::Attachment.find(@watch.image.id).purge
+        # ActiveStorage::Attachment.find(@watch.image.id).purge
         @watch.destroy
     end
 
