@@ -30,7 +30,7 @@ class EditProfile extends Component {
                })
                trackPromise (
                     this.props.deleteUserAction(this.props.currentUser.user.id)  
-               )                     
+               )            
           }
       }
 
@@ -63,6 +63,8 @@ class EditProfile extends Component {
                     formData.append('password', this.state.password)
                     formData.append('password_confirmation', this.state.password_confirmation)
                     this.props.editProfileAction(formData, this.props.currentUser.user.id)
+                    alert('Your profile has been updated.\nYou will need to log in again.')
+                    window.location.assign('/login')
                }    
           }  else {
                alert('Nothing has been edited!')

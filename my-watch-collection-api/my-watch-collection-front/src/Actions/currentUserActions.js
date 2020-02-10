@@ -115,8 +115,6 @@ export const editProfileAction = (formData, user_id) => {
               type: SET_CURRENT_USER,
               payload: response
             })
-            alert('Your profile has been updated.\nYou will need to log in again.')
-            window.location.assign('/login')
         }
       } else {
         alert('*** editProfileAction Error 1: ' + response.error) 
@@ -139,9 +137,10 @@ export const deleteUserAction = (user_id) => {
 			} else {
 				dispatch({
 					type: DELETE_USER
-				})
+        })
         alert('Your account has been successfully deleted!')
-			}			
+        window.location.assign('/homepage') 
+			}
 		})
 		.catch(error => {
 			console.log('*** deleteUserAction ERROR 2: ' + error)
