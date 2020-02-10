@@ -30,7 +30,7 @@ class EditProfile extends Component {
                })
                trackPromise (
                     this.props.deleteUserAction(this.props.currentUser.user.id)  
-               )            
+               )             
           }
       }
 
