@@ -66,7 +66,7 @@ class EditWatch extends Component {
                          return
                     }
                }    
-               // Edit the watch
+               // Edit the record
                const formData = new FormData()
                formData.append('watch_maker', this.state.watchData.watch_maker)
                formData.append('watch_name', this.state.watchData.watch_name)
@@ -151,137 +151,137 @@ class EditWatch extends Component {
                               {watch.watch_maker && !watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Watch Maker</label>
                                            <input className='Input-element' required 
-                                             type='text'
-                                             name='watch_maker'
-                                             defaultValue={watch.watch_maker}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='watch_maker'
+                                                  defaultValue={watch.watch_maker}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element' required 
-                                             type='text'
-                                             name='watch_maker'
-                                             defaultValue={watch.watch_maker}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='watch_maker'
+                                                  defaultValue={watch.watch_maker}
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {watch.watch_name && !watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Watch Name</label>
                                            <input className='Input-element' required 
-                                             type='text'
-                                             name='watch_name'
-                                             defaultValue={watch.watch_name}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='watch_name'
+                                                  defaultValue={watch.watch_name}
+                                                  onChange={this.handleChange}/>
                                         </>
-                                   : <> <input className='Input-element Input-related'
-                                             type='text'
-                                             name='watch_name'
-                                             value={this.props.WatchRelated}/>
+                                   :    <> <input className='Input-element Input-related'
+                                                  type='text'
+                                                  name='watch_name'
+                                                  value={this.props.WatchRelated}/>
                                         </>
                               }
                               <br />
                               {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Movement</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='movement'
-                                             defaultValue={watch.movement}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='movement'
+                                                  defaultValue={watch.movement}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='movement'
-                                             defaultValue={watch.movement}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='movement'
+                                                  defaultValue={watch.movement}
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Complications</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='complications'
-                                             defaultValue={watch.complications}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='complications'
+                                                  defaultValue={watch.complications}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='complications'
-                                             defaultValue={watch.complications}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='complications'
+                                                  defaultValue={watch.complications}
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br /> 
                               {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Band</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='band'
-                                             defaultValue={watch.band}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='band'
+                                                  defaultValue={watch.band}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='band'
-                                             defaultValue={watch.band}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='band'
+                                                  defaultValue={watch.band}
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Model Number</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='model_number'
-                                             defaultValue={watch.model_number}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='model_number'
+                                                  defaultValue={watch.model_number}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='model_number'
-                                             defaultValue={watch.model_number}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='model_number'
+                                                  defaultValue={watch.model_number}
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br /> 
                               {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Case Measurement (e.g. 45mm)</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='case_measurement'
-                                             defaultValue={watch.case_measurement}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='case_measurement'
+                                                  defaultValue={watch.case_measurement}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='case_measurement'
-                                             defaultValue={watch.case_measurement}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='case_measurement'
+                                                  defaultValue={watch.case_measurement}
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Water Resistance (e.g. 200 meters)</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='water_resistance'
-                                             defaultValue={watch.water_resistance}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='water_resistance'
+                                                  defaultValue={watch.water_resistance}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='water_resistance'
-                                             defaultValue={watch.water_resistance}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='water_resistance'
+                                                  defaultValue={watch.water_resistance}
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
-                                             type='text'
-                                             name='date_bought'
-                                             defaultValue={watch.date_bought}
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='date_bought'
+                                                  defaultValue={watch.date_bought}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    : null
                               }
@@ -289,28 +289,28 @@ class EditWatch extends Component {
                               {!watch.watch_name.includes(WatchRelated)
                                    ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
                                            <input className='Input-element'
-                                             type='number'
-                                             step='0.01'
-                                             min='0'
-                                             name='cost'
-                                             defaultValue={watch.cost}
-                                             onChange={this.handleChange}/>
+                                                  type='number'
+                                                  step='0.01'
+                                                  min='0'
+                                                  name='cost'
+                                                  defaultValue={watch.cost}
+                                                  onChange={this.handleChange}/>
                                         </>
                                    : null
                               }
                               <br />
                               <textarea className='Text-area'  
-                                   name='notes'
-                                   placeholder='Notes'
-                                   defaultValue={watch.notes}
-                                   onChange={this.handleChange}
+                                        name='notes'
+                                        placeholder='Notes'
+                                        defaultValue={watch.notes}
+                                        onChange={this.handleChange}
                               />
                               <b className='WatchForm-upload-text'>
                                    Upload image</b>
                               <input className='Input-element Choose-image'  
-                                   type='file'
-                                   name='image'
-                                   onChange={this.handleFile}
+                                     type='file'
+                                     name='image'
+                                     onChange={this.handleFile}
                               />
                               <button className='btn Save-button Button-text' type='submit'>Save</button>
                          </form> 

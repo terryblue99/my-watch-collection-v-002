@@ -42,7 +42,7 @@ class NavBar extends Component {
         })  
       // Clear the form
       ClearForm('Navbar-Search-Form')
-      // Display watch/es from the search on the dashboard
+      // Display list from the search on the dashboard
       return  RedirectTo('/dashboard')
         
     } else if (this.state.searchRequested &&
@@ -55,7 +55,7 @@ class NavBar extends Component {
                   ClearForm('Navbar-Search-Form')
 
                   alert('Search not found. Please correct and try again!')
-                  // Display original watch list on the dashboard
+                  // Display original list on the dashboard
                   return  RedirectToWithState(
                                                 '/dashboard',
                                                 {
@@ -66,6 +66,7 @@ class NavBar extends Component {
                 }
 
     return (
+
       <div className='Navbar'>
 
         <Navbar css={css`
@@ -176,12 +177,13 @@ class NavBar extends Component {
             }
           `}>
             <form id='Navbar-Search-Form' onSubmit={this.handleSearch}>
-              <input required
-                type='text'
-                name='watch_search'
-                placeholder='Search My Watch Collection'
-                onChange={this.handleChange}
-                css={css`
+              <input  required
+                      type='text'
+                      name='watch_search'
+                      placeholder='Search My Watch Collection'
+                      onChange={this.handleChange}
+                      css={css
+                `
                   border-radius: 8px;
                   font: inherit;
                   font-size: 1rem;

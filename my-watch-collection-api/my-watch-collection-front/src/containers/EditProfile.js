@@ -56,7 +56,7 @@ class EditProfile extends Component {
                     return
                }
 
-               if (window.confirm('Do you really want to update your account?')) {
+               if (window.confirm('Do you really want to update your profile?')) {
                     // Edit the profile
                     const formData = new FormData()
                     formData.append('email', this.state.email)
@@ -106,24 +106,24 @@ class EditProfile extends Component {
                                    <div className='Profile'>
                                         <label>Email</label>
                                         <input className='Input-element'
-                                                  type='email'
-                                                  name='email'
-                                                  defaultValue={user.email}
-                                                  onChange={this.handleChange}
+                                               type='email'
+                                               name='email'
+                                               defaultValue={user.email}
+                                               onChange={this.handleChange}
                                         />
                                         <br /> 
                                         <label>New Password (<span className='ProfileForm-NewPassword-text'>Leave blank for no change</span>)</label>
                                         <input className='Input-element' 
-                                                  type='password'
-                                                  name='password'
-                                                  onChange={this.handleChange}
+                                               type='password'
+                                               name='password'
+                                               onChange={this.handleChange}
                                         />
                                         <br />
                                         <label>New Password Confirmation</label>
                                         <input className='Input-element' 
-                                                  type='password'
-                                                  name='password_confirmation'
-                                                  onChange={this.handleChange}
+                                               type='password'
+                                               name='password_confirmation'
+                                               onChange={this.handleChange}
                                         />
                                         <br />
                                         <button className='btn ProfileUpdate-button Button-text' type='submit'>Update Profile</button>

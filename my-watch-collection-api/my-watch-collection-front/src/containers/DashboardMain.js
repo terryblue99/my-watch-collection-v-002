@@ -92,21 +92,21 @@ class DashboardMain extends Component {
     }
 
     if (this.props.filteredWatchRelated) {
-      number_of_watcheRelated = Object.keys(this.props.filteredWatchRelated).length
+        number_of_watcheRelated = Object.keys(this.props.filteredWatchRelated).length
     }
 
     if (this.state.sortRequired) {
-      this.setState({
-        sortRequired: false
-      })  
-      // Display the sorted watches on the dashboard
-      return  RedirectToWithState(
-                                    '/dashboard',
-                                    {
-                                      from_DashboardMain: true,
-                                      sortSelected: this.state.sortSelected
-                                    } 
-                                  )
+        this.setState({
+          sortRequired: false
+        })  
+        // Display the sorted list on the dashboard
+        return  RedirectToWithState(
+                                      '/dashboard',
+                                      {
+                                        from_DashboardMain: true,
+                                        sortSelected: this.state.sortSelected
+                                      } 
+                                    )
     } 
     
     return (
@@ -117,13 +117,13 @@ class DashboardMain extends Component {
           { number_of_saved_watches > 1
             ? <>
                 <button className='btn FullList-button Button-text' 
-                  // Fetch all watches and delete the DashBoard history location state
+                  // Fetch all records and delete the DashBoard history location state
                   // so that the initial sort option text can be displayed
                   onClick={() => {this.props.resetWatchesAction()
-                                  if (this.props.DashBoardSortHistory.location.state) {
-                                      delete this.props.DashBoardSortHistory.location.state 
+                                    if (this.props.DashBoardSortHistory.location.state) {
+                                        delete this.props.DashBoardSortHistory.location.state 
                                     }  
-                                } 
+                                  } 
                 }> 
                   Redisplay Initial List
                 </button>
@@ -188,17 +188,18 @@ class DashboardMain extends Component {
             : null
           }
           {number_of_watches > 0 && a_newest_watch_exists
-              ? <span className='Image-link' onClick={() => { 
-                                    hashHistory.push(`/watches/${this.props.newestWatch.id}/watch_detail`) // set the url for the watch
-                                    this.props.setCurrentWatch(this.props.newestWatch)
-                                }}>
-                  <Image
-                    src={newestWatchImage}
-                    width={200}
-                    height={200}
-                    style={style.image}
-                  />
-                </span>
+            ? <span className='Image-link' 
+                    onClick={() => { 
+                      hashHistory.push(`/watches/${this.props.newestWatch.id}/watch_detail`) // set the url for the watch
+                      this.props.setCurrentWatch(this.props.newestWatch)
+                    }}>
+                <Image
+                  src={newestWatchImage}
+                  width={200}
+                  height={200}
+                  style={style.image}
+                />
+              </span>
             : null
           }
           <br />
@@ -224,10 +225,11 @@ class DashboardMain extends Component {
             : null
           }
           {number_of_watches > 0 && an_oldest_watch_exists
-            ? <span className='Image-link' onClick={() => { 
-                                    hashHistory.push(`/watches/${this.props.oldestWatch.id}/watch_detail`) // set the url for the watch
-                                    this.props.setCurrentWatch(this.props.oldestWatch)
-                                }}>
+            ? <span className='Image-link' 
+                    onClick={() => { 
+                      hashHistory.push(`/watches/${this.props.oldestWatch.id}/watch_detail`) // set the url for the watch
+                      this.props.setCurrentWatch(this.props.oldestWatch)
+                    }}>
                   <Image
                     src={oldestWatchImage}
                     width={200}

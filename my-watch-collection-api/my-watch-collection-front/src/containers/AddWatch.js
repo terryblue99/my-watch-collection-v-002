@@ -54,7 +54,7 @@ class AddWatch extends Component {
           if (this.state.watchData.watch_name === this.props.WatchRelated) {
                watchRelated = true
           } 
-          // validate the watch_name/cost/date_bought combination input
+          // validate the watch_name/cost/date_bought combination input for watch records
           if ((this.state.watchData.watch_name && 
                !watchRelated && 
                Number(this.state.watchData.cost) > 0 &&
@@ -67,7 +67,7 @@ class AddWatch extends Component {
                     alert('1 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
                }
-          // validate the 'Date Bought/RCVD' input
+          // validate the 'Date Bought/RCVD' input for watch records
           if (!watchRelated) {
                const validDate = DateValidation(this.state.watchData.date_bought.toString(), 'add')
                if (!validDate) {
@@ -75,7 +75,7 @@ class AddWatch extends Component {
                     return
                }
           }   
-          // Create the watch
+          // Create the record
           const formData = new FormData()
           formData.append('watch_maker', this.state.watchData.watch_maker)
           formData.append('watch_name', this.state.watchData.watch_name)
@@ -141,122 +141,122 @@ class AddWatch extends Component {
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Watch Maker</label>
                                            <input autoFocus id='Focus-first-input' className='Input-element' required 
-                                             type='text'
-                                             name='watch_maker'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='watch_maker'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <label>Title</label>
                                            <input autoFocus id='Focus-first-input' className='Input-element' required 
-                                             type='text'
-                                             name='watch_maker'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='watch_maker'
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Watch Name</label>
                                            <input className='Input-element' required 
-                                             type='text'
-                                             name='watch_name'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='watch_name'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element Input-related'
-                                             type='text'
-                                             name='watch_name'
-                                             value={this.state.watchData.watch_name}/>
+                                                  type='text'
+                                                  name='watch_name'
+                                                  value={this.state.watchData.watch_name}/>
                                         </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Movement</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='movement'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='movement'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='movement'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='movement'
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Complications</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='complications'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='complications'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='complications'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='complications'
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Band</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='band'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='band'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='band'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='band'
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br /> 
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Model Number</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='model_number'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='model_number'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='model_number'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='model_number'
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Case Measurement (e.g. 45mm)</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='case_measurement'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='case_measurement'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='case_measurement'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='case_measurement'
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Water Resistance (e.g. 200 meters)</label>
                                            <input className='Input-element'
-                                             type='text'
-                                             name='water_resistance'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='water_resistance'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
-                                             type='text'
-                                             name='water_resistance'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='water_resistance'
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
-                                             type='text'
-                                             name='date_bought'
-                                             onChange={this.handleChange}/>
+                                                  type='text'
+                                                  name='date_bought'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    : null
                               }
@@ -264,26 +264,26 @@ class AddWatch extends Component {
                               {!this.props.location.AddWatchRelated
                                    ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
                                            <input className='Input-element'
-                                             type='number'
-                                             step='0.01'
-                                             min='0'
-                                             name='cost'
-                                             onChange={this.handleChange}/>
+                                                  type='number'
+                                                  step='0.01'
+                                                  min='0'
+                                                  name='cost'
+                                                  onChange={this.handleChange}/>
                                         </>
                                    : null
                               }
                               <br />
                               <textarea className='Text-area'  
-                                   name='notes'
-                                   placeholder='Notes'
-                                   onChange={this.handleChange}
+                                        name='notes'
+                                        placeholder='Notes'
+                                        onChange={this.handleChange}
                               />
                               <b className='WatchForm-upload-text'>
                                    Upload image</b>
                               <input className='Input-element Choose-image'  
-                                   type='file'
-                                   name='image'
-                                   onChange={this.handleFile}
+                                     type='file'
+                                     name='image'
+                                     onChange={this.handleFile}
                               />
                               <button className='btn Save-button Button-text' type='submit'>Save</button>
                          </form>

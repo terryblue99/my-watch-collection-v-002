@@ -57,6 +57,7 @@ class SignUp extends Component {
         }
 
         return (
+            
             <div>
                 <header className='SignUp'>
                     <br />

@@ -32,7 +32,7 @@ export default (state = initialState, { type, payload } ) => {
 
 	switch(type) {
 
-		// UPDATE WATCHES
+		// UPDATE WATCHES & WATCH-RELATED
 
 		case GET_WATCHES:		
 			if (payload) {
@@ -71,7 +71,7 @@ export default (state = initialState, { type, payload } ) => {
 				state = initialState
 				return state
 
-		// SEARCH WATCHES
+		// SEARCH WATCHES & WATCH-RELATED
 
 		case SEARCH_WATCHES:
 			let searchArray
@@ -92,14 +92,14 @@ export default (state = initialState, { type, payload } ) => {
 														watch.cost,
 														watch.notes.toLowerCase()
 													)
-					// check array of watch string fields for searchText string/substring
+					// check array of record string fields for searchText string/substring
 					return searchArray.some(watchStringField => watchStringField.includes(searchText))
 				})
 			})
 		
-		// SORT WATCHES
+		// SORT WATCHES & WATCH-RELATED
 
-		case WATCH_MAKER_SORT: // sort by watch_name within watch_maker
+		case WATCH_MAKER_SORT: // sort by name within maker
 			sortedWatches = _.chain( state.watches )
 			.sortBy('watch_name')
 			.sortBy('watch_maker')

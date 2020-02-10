@@ -16,10 +16,12 @@ class DashBoard extends Component {
     }
 
     render() {
+
         let sortSelected = 'Select a sort option...'
         const watches = this.props.watches
         const WatchRelated = this.props.WatchRelated
-        // Check if search failed
+
+        // Check if a search failed
         if (this.props.location.state &&
             this.props.location.state.from_NavBar &&
             this.props.location.state.searchFailed) {
@@ -29,17 +31,17 @@ class DashBoard extends Component {
                 this.props.getWatchesAction(this.props.currentUser.user.id)
             }
 
-        // Check if a watch has been deleted
+        // Check if a record has been deleted
         if (this.props.location.state &&
             this.props.location.state.from_WatchDetail &&
             this.props.location.state.watchDeleted) {
                 // Delete the history location state to prevent re-execution
-                // of this code and fetch the updated watch list
+                // of this code and fetch the updated list
                 delete this.props.history.location.state
                 this.props.getWatchesAction(this.props.currentUser.user.id)
             }
 
-        // SORT - Check if redirected to from DashboardMain
+        // Check if redirected to from DashboardMain & a sort selected
         if (this.props.location.state &&
             this.props.location.state.from_DashboardMain &&
             this.props.location.state.sortSelected) {
@@ -47,6 +49,7 @@ class DashBoard extends Component {
         }
     
         return (
+
             <div>
                 <NavBar />
                 <div className='container Main-container'> 

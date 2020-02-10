@@ -15,10 +15,10 @@ export default (state = null, { type, payload }) => {
       } else return state
 
     case CLEAR_CURRENT_USER:
-      return state
+      return null
 
     case DELETE_USER:
-      return state
+      return null
       
     default:
       return state

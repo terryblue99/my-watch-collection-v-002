@@ -21,7 +21,7 @@ class WatchDetail extends Component {
     handleDelete = () => {
         let watchRelated = false
 
-        if (window.confirm('Do you realy want to delete this watch?')) {
+        if (window.confirm('Do you realy want to delete this record?')) {
 
             if (this.props.currentWatch.watch_name === this.props.WatchRelated) {
                 watchRelated = true
@@ -53,7 +53,7 @@ class WatchDetail extends Component {
                 backToDashboard: false,
                 watchDeleted: false
             })
-            // Clear the current watch screen to allow 
+            // Clear the current detail screen to allow 
             // the dashboard to be displayed there instead
             this.props.setCurrentWatch(null) 
             return  RedirectToWithState(
@@ -68,7 +68,7 @@ class WatchDetail extends Component {
             this.setState({
                 backToDashboard: false
             }) 
-            // Clear the current watch screen to allow 
+            // Clear the current detail screen to allow 
             // the dashboard to be displayed there instead
             this.props.setCurrentWatch(null) 
             return  RedirectTo('/dashboard')
@@ -92,7 +92,6 @@ class WatchDetail extends Component {
                         grid-area: main;
                 `}>
                     
-                
                     <div css={css`
                         display: flex;
                         justify-content: space-between;
@@ -220,18 +219,17 @@ class WatchDetail extends Component {
                                         : <> <p><em className='Detail-css'>Date RCVD</em></p>
                                              <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
                                           </>
-                                    }
-                                    
+                                    }    
                                 </>
                             : null }
-                            {currentWatch.cost > 0 ?
-                                <>
+                            {currentWatch.cost > 0
+                            ?    <>
                                     <p><em className='Detail-css'>Cost</em></p>
                                     <h3 className='WatchDetail'>${parseFloat(currentWatch.cost).toFixed(2)}</h3>
                                 </>
                             : null }
-                            {currentWatch.notes ? 
-                                <>
+                            {currentWatch.notes 
+                            ?    <>
                                     <p><em className='Detail-css'>Notes</em></p>
                                     <h3 className='WatchDetail'>{currentWatch.notes}</h3>
                                 </>
@@ -275,6 +273,7 @@ class WatchDetail extends Component {
                 </div> 
             )     
         } else {
+
             return <DashboardMain   newestWatch={this.props.newestWatch}
                                     oldestWatch={this.props.oldestWatch}
                                     WatchRelated={this.props.WatchRelated}
@@ -283,7 +282,7 @@ class WatchDetail extends Component {
                                     filteredWatchRelated={this.props.filteredWatchRelated}
                                     sortSelected={this.props.sortSelected} 
                                     DashBoardSortHistory={this.props.DashBoardSortHistory}               
-                    />
+            />
         }
     }
 }
