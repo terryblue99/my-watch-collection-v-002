@@ -505,7 +505,9 @@ hr.WatchDetail {
   max-height: 100vh;
 }
 
-.LogIn-element {
+.LogIn-element, 
+.SignUp-element
+{
   align-self: center;
   background-color: #454140;
   color: cornsilk;
@@ -513,27 +515,20 @@ hr.WatchDetail {
   border: solid 1px;
   display: flex;
   font-size: 1.25rem;
+}
+
+.LogIn-element label,
+.SignUp-element label
+{
+  padding: 2px 4px;
+  text-align: right;
 }
 
 .LogIn-element label {
-  padding: 2px 4px;
-  text-align: right;
   width: 90px;
 }
 
-.SignUp-element {
-  align-self: center;
-  background-color: #454140;
-  color: cornsilk;
-  border-radius: 5px; 
-  border: solid 1px;
-  display: flex;
-  font-size: 1.25rem;
-}
-
 .SignUp-element label {
-  padding: 2px 4px;
-  text-align: right;
   width: 160px;
 }
 
