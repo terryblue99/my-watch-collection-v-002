@@ -52,20 +52,21 @@ class EditWatch extends Component {
 
      handleSubmit = (event) => {
           event.preventDefault() 
+
+          let watchRelated = false
+          if (this.state.watchData.watch_name === this.props.WatchRelated) {
+               watchRelated = true
+          } 
           if (this.state.formHasInput) {
                // validate the 'Date Bought/RCVD' input for watch records
-               if (this.state.watchData.watch_name !== this.props.WatchRelated) {
-                    const validDate = DateValidation(this.state.watchData.date_bought, 'edit')
+               if (this.state.watchData.watch_name && !watchRelated) {
+                    const validDate = DateValidation(this.state.watchData.date_bought)
                     if (!validDate) {
                          alert('Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                          return
                     }
                }    
                // Edit the watch
-               let watchRelated = false
-               if (this.state.watchData.watch_name === this.props.WatchRelated) {
-                    watchRelated = true
-               }
                const formData = new FormData()
                formData.append('watch_maker', this.state.watchData.watch_maker)
                formData.append('watch_name', this.state.watchData.watch_name)
