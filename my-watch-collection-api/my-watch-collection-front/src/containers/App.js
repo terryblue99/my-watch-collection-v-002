@@ -37,7 +37,7 @@ class App extends Component {
         <Route {...rest} render={(props) => (
           a_user_exists && is_logged_in
           ? <Component {...props} /> 
-          : RedirectTo('/')
+          : RedirectTo('/home')
         )}/>
       </div> 
     )
@@ -47,7 +47,7 @@ class App extends Component {
       <div className='App'>
         <Router>
           <Switch>
-              <Route exact path='/' component={Homepage} />
+              <Route exact path='/home' component={Homepage} />
               <Route path='/login' component={LogIn} />
               <Route path='/logout' component={LogOut} />
               <Route path='/signup' component={SignUp} />

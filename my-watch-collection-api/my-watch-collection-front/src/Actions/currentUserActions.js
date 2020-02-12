@@ -28,7 +28,7 @@ export const logInAction = (credentials) => {
         if (!response.error) {
           if (response.status === 401) {
             alert('Account not found, please retry or Sign Up!')
-            window.location.assign('/')
+            window.location.assign('/home')
           } else {
             dispatch({
               type: SET_CURRENT_USER,
@@ -139,7 +139,7 @@ export const deleteUserAction = (user_id) => {
 					type: DELETE_USER
         })
         alert('Your account has been successfully deleted!')
-        window.location.assign('/homepage') 
+        window.location.assign('/home') 
 			}
 		})
 		.catch(error => {

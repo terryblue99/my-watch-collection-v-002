@@ -7,7 +7,7 @@ class LogOut extends Component {
   
   render() {
     this.props.logOutAction()
-    return RedirectTo('/')
+    return RedirectTo('/home')
   } 
 }
 

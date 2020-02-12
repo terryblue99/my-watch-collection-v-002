@@ -42,10 +42,6 @@ class SignUp extends Component {
             [event.target.name]: event.target.value
         })                         
     }
-
-    handleHome = () => {
-        return RedirectTo('/')
-    }
     
     render() {
        
@@ -93,7 +89,7 @@ class SignUp extends Component {
                                 </div>
                                 <br />
                                 <button className='btn SignUp-button Button-text' type='submit'>Sign Up</button>
-                                <Link className='btn SignUp-home-button Button-text' to={{pathname: `/`}}> 
+                                <Link className='btn SignUp-home-button Button-text' to={{pathname: '/home'}}> 
                                     Home
                                 </Link>
                             </div>  

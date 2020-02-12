@@ -61,7 +61,7 @@ class LogIn extends Component {
                               </div>
                                 <br />
                                 <button className='btn LogIn-button Button-text' type='submit'>Log In</button>
-                                <Link className='btn LogIn-home-button Button-text' to={{pathname: `/`}}> 
+                                <Link className='btn LogIn-home-button Button-text' to={{pathname: '/home'}}> 
                                     Home
                                 </Link>
                             </div>
