@@ -20,7 +20,7 @@ export const getWatchesAction = (user_id) => {
 		return fetch(`${API_URL}/watches/?user_id=${user_id}`)
 		.then(response => {
 			if (response.error) {
-				alert('*** getWatchesAction ERROR 1: ' + response.error)
+				alert('*** getWatchesAction ERROR 1: ' + response.error.message)
 			} else {
 				return response.json()
 			}
@@ -39,7 +39,7 @@ export const getWatchesAction = (user_id) => {
 			})
 		})
 		.catch(error => {
-			console.log('*** getWatchesAction ERROR 2: ' + error)
+			console.log('*** getWatchesAction ERROR 2: ' + error.message)
 		})
 	}
 }
@@ -81,7 +81,7 @@ export const addWatchAction = (formData, watch) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert('*** addWatchAction ERROR 1: ' + response.error)
+				alert('*** addWatchAction ERROR 1: ' + response.error.message)
 			} else {
 					dispatch({
 							type: ADD_WATCH,
@@ -90,7 +90,7 @@ export const addWatchAction = (formData, watch) => {
 				}
 		})
 		.catch(error => {
-			console.log('*** addWatchAction ERROR 2: ' + error)
+			console.log('*** addWatchAction ERROR 2: ' + error.message)
 		})
 	}
 }
@@ -106,11 +106,11 @@ export const editWatchAction = (formData, watch_id) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert('*** editWatchAction ERROR 1: ' + response.error)
+				alert('*** editWatchAction ERROR 1: ' + response.error.message)
 			}
 		})
 		.catch(error => {
-			console.log('*** editWatchAction ERROR 2: ' + error)
+			console.log('*** editWatchAction ERROR 2: ' + error.message)
 		})
 	}
 }
@@ -122,7 +122,7 @@ export const deleteWatchAction = (id) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert('*** deleteWatchAction ERROR 1: ' + response.error)
+				alert('*** deleteWatchAction ERROR 1: ' + response.error.message)
 			} else {
 				dispatch({
 					type: DELETE_WATCH,
@@ -131,7 +131,7 @@ export const deleteWatchAction = (id) => {
 			}			
 		})
 		.catch(error => {
-			console.log('*** deleteWatchAction ERROR 2: ' + error)
+			console.log('*** deleteWatchAction ERROR 2: ' + error.message)
 		})
 	}
 }

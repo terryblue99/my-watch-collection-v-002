@@ -19,7 +19,7 @@ export const logInAction = (credentials) => {
     })
       .then(response => {
         if (response.error) {
-            alert('*** logInAction Error 1: ' + response.error)
+            alert('*** logInAction Error 1: ' + response.error.message)
         } else {
           return response.json()
         }
@@ -37,7 +37,7 @@ export const logInAction = (credentials) => {
             return
           }   
         } else {
-          alert('*** logInAction Error 2: ' + response.error) 
+          alert('*** logInAction Error 2: ' + response.error.message) 
         }
       })
       .catch(error => {
@@ -61,7 +61,7 @@ export const signUpAction = (credentials) => {
           if (response.status === 500) {
             alert('Account not created, please retry!')
           } else {
-            alert('*** signUpAction Error 1: ' + response.error)
+            alert('*** signUpAction Error 1: ' + response.error.message)
           }
         } else {
           return response.json()
@@ -117,11 +117,11 @@ export const editProfileAction = (formData, user_id) => {
             })
         }
       } else {
-        alert('*** editProfileAction Error 1: ' + response.error) 
+        alert('*** editProfileAction Error 1: ' + response.error.message) 
       }
     })
     .catch(error => {
-      console.log('*** editProfileAction Error 2: ' + error)
+      console.log('*** editProfileAction Error 2: ' + error.message)
     })
   }
 }
@@ -133,7 +133,7 @@ export const deleteUserAction = (user_id) => {
 		})
 		.then(response => {
 			if (response.error) {
-				alert('*** deleteUserAction ERROR 1: ' + response.error)
+				alert('*** deleteUserAction ERROR 1: ' + response.error.message)
 			} else {
 				dispatch({
 					type: DELETE_USER
@@ -143,7 +143,7 @@ export const deleteUserAction = (user_id) => {
 			}
 		})
 		.catch(error => {
-			console.log('*** deleteUserAction ERROR 2: ' + error)
+			console.log('*** deleteUserAction ERROR 2: ' + error.message)
 		})
 	}
 }
