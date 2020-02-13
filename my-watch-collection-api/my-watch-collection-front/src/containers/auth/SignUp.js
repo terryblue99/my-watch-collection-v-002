@@ -6,7 +6,6 @@ import logo from '../../images/logo.jpg'
 import { signUpAction } from "../../actions/currentUserActions.js"
 import ClearForm from "../../components/ClearForm"
 import SetFocus from "../../components/SetFocus"
-import RedirectTo from '../../components/RedirectTo'
 import RedirectToWithState from '../../components/RedirectToWithState'
 
 class SignUp extends Component {
