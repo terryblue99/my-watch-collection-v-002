@@ -19,13 +19,19 @@ class WatchDetail extends Component {
     }
 
     handleDelete = () => {
-        let watchRelated = false
 
-        if (window.confirm('Do you realy want to delete this record?')) {
+        let watchRelated
+        let recordType
 
-            if (this.props.currentWatch.watch_name === this.props.WatchRelated) {
-                watchRelated = true
-            }
+        if (this.props.currentWatch.watch_name === this.props.WatchRelated) {
+            watchRelated = true
+            recordType = 'watch-related'
+        } else {
+                watchRelated = false
+                recordType = 'watch'
+               }
+
+        if (window.confirm(`Do you realy want to delete this ${recordType}?`)) {
 
             this.props.deleteWatchAction(this.props.currentWatch.id) 
             
