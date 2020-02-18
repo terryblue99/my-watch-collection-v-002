@@ -16,7 +16,7 @@ class AddWatch extends Component {
      state = {
           watchData: {
                watch_maker: '',
-               watch_name: this.props.WatchRelated,
+               watch_name: this.props.watchRelated,
                movement: '',
                band: '',
                model_number: '',
@@ -50,25 +50,25 @@ class AddWatch extends Component {
      handleSubmit = (event) => { 
           event.preventDefault()
 
-          let watchRelated = false
-          if (this.state.watchData.watch_name === this.props.WatchRelated) {
-               watchRelated = true
+          let isWatchRelated = false
+          if (this.state.watchData.watch_name === this.props.watchRelated) {
+               isWatchRelated = true
           } 
           // validate the watch_name/cost/date_bought combination input for watch records
           if ((this.state.watchData.watch_name && 
-               !watchRelated && 
+               !isWatchRelated && 
                Number(this.state.watchData.cost) > 0 &&
                Number(this.state.watchData.date_bought) === 0) ||
               
                (this.state.watchData.watch_name && 
-               !watchRelated && 
+               !isWatchRelated && 
                Number(this.state.watchData.cost) === 0 &&
                Number(this.state.watchData.date_bought) === 0)) { 
                     alert('1 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
                }
           // validate the 'Date Bought/RCVD' input for watch records
-          if (!watchRelated) {
+          if (!isWatchRelated) {
                const validDate = DateValidation(this.state.watchData.date_bought.toString(), 'add')
                if (!validDate) {
                     alert('2 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
@@ -93,7 +93,7 @@ class AddWatch extends Component {
                formData.append('image', this.state.image)
           }
           this.props.addWatchAction(formData, this.state.watchData)
-          if (!watchRelated) {
+          if (!isWatchRelated) {
                alert('The watch has been added and saved!')
           } else alert('The watch-related has been added and saved!')
           // Clear the form
@@ -297,7 +297,7 @@ class AddWatch extends Component {
 const mapStateToProps = (state) => { 
      return {
        currentUser: state.currentUser,
-       WatchRelated: state.myWatches.WatchRelated // For records that are not related to a specific watch.
+       watchRelated: state.myWatches.watchRelated // For records that are not related to a specific watch.
      } 
  }
 

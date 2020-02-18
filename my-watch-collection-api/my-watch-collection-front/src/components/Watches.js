@@ -7,7 +7,7 @@ import SidebarMobile from './SidebarMobile'
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
 
-const Watches = ({ watches, WatchRelated, sortSelected, DashBoardSortHistory }) => {
+const Watches = ({ watches, watchRelated, sortSelected, DashBoardSortHistory }) => {
  
     let oldestWatch
     let newestWatch
@@ -16,9 +16,9 @@ const Watches = ({ watches, WatchRelated, sortSelected, DashBoardSortHistory }) 
 
     if(watches && watches.length > 0) {
         // Filter out watch-related records
-        filteredWatchRelated = watches.filter(watch => watch.watch_name.includes(WatchRelated))
+        filteredWatchRelated = watches.filter(watch => watch.watch_name.includes(watchRelated))
         // Filter out watch records
-        filteredWatches = watches.filter(watch => !watch.watch_name.includes(WatchRelated))
+        filteredWatches = watches.filter(watch => !watch.watch_name.includes(watchRelated))
         // Sort the filtered watch records by date bought using the underscore function _.sortBy
         const sortedWatches = _.sortBy( filteredWatches, 'date_bought' )
         oldestWatch = sortedWatches[0]
@@ -54,7 +54,6 @@ const Watches = ({ watches, WatchRelated, sortSelected, DashBoardSortHistory }) 
                            setCurrentWatch={setCurrentWatch}
                 /> 
                 <WatchDetail showWatches={showWatches}
-                             WatchRelated={WatchRelated}
                              currentWatch={currentWatch}
                              setCurrentWatch={setCurrentWatch}
                              newestWatch={newestWatch}

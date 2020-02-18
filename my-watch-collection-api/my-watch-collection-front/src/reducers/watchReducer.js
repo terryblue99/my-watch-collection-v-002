@@ -16,7 +16,7 @@ import {
 
 const initialState = {
 	savedWatches: [],
-	WatchRelated: 'Watch-Related' // For records that are not related to a specific watch.
+	watchRelated: 'Watch-Related' // For records that are not related to a specific watch.
 }
 let sortedWatches
 

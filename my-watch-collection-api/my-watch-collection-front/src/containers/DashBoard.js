@@ -19,7 +19,7 @@ class DashBoard extends Component {
 
         let sortSelected = 'Select a sort option...'
         const watches = this.props.watches
-        const WatchRelated = this.props.WatchRelated
+        const watchRelated = this.props.watchRelated
 
         // Check if a search failed
         if (this.props.location.state &&
@@ -54,7 +54,7 @@ class DashBoard extends Component {
                 <NavBar />
                 <div className='container Main-container'> 
                     <Watches watches={watches}
-                             WatchRelated={WatchRelated}
+                             watchRelated={watchRelated}
                              sortSelected={sortSelected}
                              DashBoardSortHistory={this.props.history}
                     />               
@@ -68,7 +68,7 @@ const mapStateToProps = (state) => {
     return {
       currentUser: state.currentUser,
       watches: state.myWatches.watches,
-      WatchRelated: state.myWatches.WatchRelated  // For records that are not related to a specific watch.
+      watchRelated: state.myWatches.watchRelated  // For records that are not related to a specific watch.
     }
 }
 

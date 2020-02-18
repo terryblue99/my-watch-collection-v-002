@@ -76,14 +76,14 @@ class DashboardMain extends Component {
     ]
 
     if (this.props.newestWatch && this.props.oldestWatch) {
-        const WatchRelated = this.props.WatchRelated
+        const watchRelated = this.props.watchRelated
 
-        a_newest_watch_exists = !this.props.newestWatch.watch_name.includes(WatchRelated)
+        a_newest_watch_exists = !this.props.newestWatch.watch_name.includes(watchRelated)
         newestWatchImage = this.props.newestWatch.image 
         newestWatchMaker = this.props.newestWatch.watch_maker
         newestWatchDate = this.props.newestWatch.date_bought
 
-        an_oldest_watch_exists = !this.props.oldestWatch.watch_name.includes(WatchRelated)
+        an_oldest_watch_exists = !this.props.oldestWatch.watch_name.includes(watchRelated)
         oldestWatchImage = this.props.oldestWatch.image
         oldestWatchMaker = this.props.oldestWatch.watch_maker
         oldestWatchDate = this.props.oldestWatch.date_bought
@@ -256,7 +256,7 @@ const mapStateToProps = (state) => {
     currentUser: state.currentUser,
     watches: state.myWatches.watches,
     savedWatches: state.myWatches.savedWatches,
-    WatchRelated: state.myWatches.WatchRelated // For records that are not related to a specific watch.
+    watchRelated: state.myWatches.watchRelated // For records that are not related to a specific watch.
   } 
 }
 

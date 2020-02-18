@@ -53,13 +53,13 @@ class EditWatch extends Component {
      handleSubmit = (event) => {
           event.preventDefault() 
 
-          let watchRelated = false
+          let isWatchRelated = false
           if (this.state.watchData.watch_name === this.props.WatchRelated) {
-               watchRelated = true
+               isWatchRelated = true
           } 
           if (this.state.formHasInput) {
                // validate the 'Date Bought/RCVD' input for watch records
-               if (this.state.watchData.watch_name && !watchRelated) {
+               if (this.state.watchData.watch_name && !isWatchRelated) {
                     const validDate = DateValidation(this.state.watchData.date_bought)
                     if (!validDate) {
                          alert('Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
@@ -84,7 +84,7 @@ class EditWatch extends Component {
                     formData.append('image', this.state.image)
                }
                this.props.editWatchAction(formData, this.state.watchData.id)
-               if (!watchRelated) {
+               if (!isWatchRelated) {
                     alert('The watch has been edited')
                } else alert('The watch-related has been edited')
           } else {
@@ -122,7 +122,7 @@ class EditWatch extends Component {
           }
 
           const watch = this.props.location.state.watch
-          const WatchRelated = this.props.WatchRelated
+          const watchRelated = this.props.watchRelated
       
           return (  
                
@@ -143,12 +143,12 @@ class EditWatch extends Component {
                          
                          <form className='EditWatch-Form' onSubmit={this.handleSubmit}>
                               <h1 className='WatchForm-header Dark-red-color'>
-                                   {!watch.watch_name.includes(WatchRelated)
+                                   {!watch.watch_name.includes(watchRelated)
                                         ? <>Edit this Watch</>
                                         : <>Edit this Watch-Related</>
                                    }
                               </h1>
-                              {watch.watch_maker && !watch.watch_name.includes(WatchRelated)
+                              {watch.watch_maker && !watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Watch Maker</label>
                                            <input className='Input-element' required 
                                                   type='text'
@@ -164,7 +164,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {watch.watch_name && !watch.watch_name.includes(WatchRelated)
+                              {watch.watch_name && !watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Watch Name</label>
                                            <input className='Input-element' required 
                                                   type='text'
@@ -175,11 +175,11 @@ class EditWatch extends Component {
                                    :    <> <input className='Input-element Input-related'
                                                   type='text'
                                                   name='watch_name'
-                                                  value={this.props.WatchRelated}/>
+                                                  value={watchRelated}/>
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(WatchRelated)
+                              {!watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Movement</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -195,7 +195,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(WatchRelated)
+                              {!watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Complications</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -211,7 +211,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!watch.watch_name.includes(WatchRelated)
+                              {!watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Band</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -227,7 +227,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(WatchRelated)
+                              {!watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Model Number</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -243,7 +243,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!watch.watch_name.includes(WatchRelated)
+                              {!watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Case Measurement (e.g. 45mm)</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -259,7 +259,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(WatchRelated)
+                              {!watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Water Resistance (e.g. 200 meters)</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -275,7 +275,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(WatchRelated)
+                              {!watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
                                                   type='text'
@@ -286,7 +286,7 @@ class EditWatch extends Component {
                                    : null
                               }
                               <br />
-                              {!watch.watch_name.includes(WatchRelated)
+                              {!watch.watch_name.includes(watchRelated)
                                    ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
                                            <input className='Input-element'
                                                   type='number'
@@ -322,7 +322,7 @@ class EditWatch extends Component {
 
 const mapStateToProps = (state) => {
      return {
-       WatchRelated: state.myWatches.WatchRelated  // For records that are not related to a specific watch.
+       watchRelated: state.myWatches.watchRelated  // For records that are not related to a specific watch.
      } 
 }
 
