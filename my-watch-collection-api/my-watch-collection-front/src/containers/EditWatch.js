@@ -54,7 +54,7 @@ class EditWatch extends Component {
           event.preventDefault() 
 
           let isWatchRelated = false
-          if (this.state.watchData.watch_name === this.props.WatchRelated) {
+          if (this.state.watchData.watch_name === this.props.watchRelated) {
                isWatchRelated = true
           } 
           if (this.state.formHasInput) {

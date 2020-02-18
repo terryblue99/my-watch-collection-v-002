@@ -89,7 +89,7 @@ class WatchDetail extends Component {
             }
         }
     
-        if (currentWatch) {
+        if (currentWatch && !this.props.searchList) {
 
             return ( 
                 

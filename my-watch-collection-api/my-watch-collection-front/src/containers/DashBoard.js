@@ -21,6 +21,16 @@ class DashBoard extends Component {
         const watches = this.props.watches
         const watchRelated = this.props.watchRelated
 
+        // Check for successful search
+        let searchList
+        if (this.props.location.state &&
+            this.props.location.state.from_NavBar &&
+            this.props.location.state.searchList) {
+                // Delete the history location state to prevent re-execution
+                delete this.props.history.location.state
+                searchList = true
+            }
+
         // Check if a search failed
         if (this.props.location.state &&
             this.props.location.state.from_NavBar &&
@@ -56,6 +66,7 @@ class DashBoard extends Component {
                     <Watches watches={watches}
                              watchRelated={watchRelated}
                              sortSelected={sortSelected}
+                             searchList={searchList}
                              DashBoardSortHistory={this.props.history}
                     />               
                 </div> 

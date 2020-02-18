@@ -119,7 +119,8 @@ class DashboardMain extends Component {
                 <button className='btn FullList-button Button-text' 
                   // Fetch all records and delete the DashBoard history location state
                   // so that the initial sort option text can be displayed
-                  onClick={() => {this.props.resetWatchesAction()
+                  onClick={() => {  this.props.resetWatchesAction()
+                                    this.props.setCurrentWatch(false)
                                     if (this.props.DashBoardSortHistory.location.state) {
                                         delete this.props.DashBoardSortHistory.location.state 
                                     }  

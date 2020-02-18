@@ -43,7 +43,13 @@ class NavBar extends Component {
       // Clear the form
       ClearForm('Navbar-Search-Form')
       // Display list from the search on the dashboard
-      return  RedirectTo('/dashboard')
+      return  RedirectToWithState(
+        '/dashboard',
+        {
+            from_NavBar: true,    
+            searchList: true
+        } 
+      )
         
     } else if (this.state.searchRequested &&
                 this.props.watches.length === 0) {
