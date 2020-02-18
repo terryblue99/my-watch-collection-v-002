@@ -18,15 +18,15 @@ class EditProfile extends Component {
           password: '',
           password_confirmation: '',
 
-          backToDashboard: false,
-          formHasInput: false,
-          processing: false
+          isBackToDashboard: false,
+          isFormInput: false,
+          isProcessing: false
      }
 
      handleDelete = () => {
           if (window.confirm('Do you really want to delete your account?\nAll of your watches will also be deleted!')) {
                this.setState({
-                    processing: true
+                    isProcessing: true
                })
                trackPromise (
                     this.props.deleteUserAction(this.props.currentUser.user.id)  
@@ -37,14 +37,14 @@ class EditProfile extends Component {
      handleChange = (event) => {
         this.setState({
           [event.target.name]: event.target.value,
-          formHasInput: true
+          isFormInput: true
         })                         
      }
 
      handleSubmit = (event) => {
         event.preventDefault() 
           
-          if (this.state.formHasInput) {
+          if (this.state.isFormInput) {
 
                if (this.state.password && this.state.password.length < 8 ) {
                     alert('Password must be a minimum of 8 characters!')
@@ -74,15 +74,15 @@ class EditProfile extends Component {
 
      handleBack = () => {
           this.setState({
-               backToDashboard: true
+               isBackToDashboard: true
           })
      }
 
      render() {
      
-          if (this.state.backToDashboard) {
+          if (this.state.isBackToDashboard) {
                this.setState({
-                    backToDashboard: false
+                    isBackToDashboard: false
                }) 
                return RedirectTo('/dashboard')
           }
@@ -134,7 +134,7 @@ class EditProfile extends Component {
                          </div>
                          <hr className='ProfileDelete' />
                          <div className='ProfileDelete'> 
-                              {this.state.processing ? <ProcessingIndicator /> :
+                              {this.state.isProcessing ? <ProcessingIndicator /> :
                                    <button className='btn ProfileDelete-button Delete-button Button-text' onClick={this.handleDelete}> 
                                         Delete My Account
                                    </button>}

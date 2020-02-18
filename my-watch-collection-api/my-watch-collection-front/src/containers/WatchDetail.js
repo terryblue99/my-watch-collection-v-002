@@ -14,8 +14,8 @@ import RedirectToWithState from '../components/RedirectToWithState'
 class WatchDetail extends Component { 
 
     state = {
-        backToDashboard: false,
-        watchDeleted: false
+        isBackToDashboard: false,
+        isWatchDeleted: false
     }
 
     handleDelete = () => {
@@ -40,24 +40,24 @@ class WatchDetail extends Component {
             } else alert('The watch-related has been deleted!')
 
             this.setState({
-                backToDashboard: true,
-                watchDeleted: true
+                isBackToDashboard: true,
+                isWatchDeleted: true
             }) 
         }
     }
 
     handleBack = () => {
         this.setState({
-             backToDashboard: true
+             isBackToDashboard: true
         })
    }
 
     render () {
 
-        if (this.state.backToDashboard && this.state.watchDeleted) {
+        if (this.state.isBackToDashboard && this.state.isWatchDeleted) {
             this.setState({
-                backToDashboard: false,
-                watchDeleted: false
+                isBackToDashboard: false,
+                isWatchDeleted: false
             })
             // Clear the current detail screen to allow 
             // the dashboard to be displayed there instead
@@ -66,13 +66,13 @@ class WatchDetail extends Component {
                                             '/dashboard',
                                             {
                                                 from_WatchDetail: true,    
-                                                watchDeleted: true
+                                                isWatchDeleted: true
                                             } 
                                         )
         } 
-        else if (this.state.backToDashboard) {
+        else if (this.state.isBackToDashboard) {
             this.setState({
-                backToDashboard: false
+                isBackToDashboard: false
             }) 
             // Clear the current detail screen to allow 
             // the dashboard to be displayed there instead

@@ -29,7 +29,7 @@ class AddWatch extends Component {
                user_id: this.props.currentUser.user.id
           },
           image: null,
-          backToDashboard: false
+          isBackToDashboard: false
      }
 
      handleChange = (event) => {
@@ -104,15 +104,15 @@ class AddWatch extends Component {
 
      handleBack = () => {
           this.setState({
-               backToDashboard: true
+               isBackToDashboard: true
           })
      }
 
      render() {    
 
-          if (this.state.backToDashboard) { 
+          if (this.state.isBackToDashboard) { 
                this.setState({
-                    backToDashboard: false
+                    isBackToDashboard: false
                }) 
                return RedirectTo('/dashboard')
           }

@@ -14,7 +14,7 @@ import RedirectToWithState from "../components/RedirectToWithState"
 class NavBar extends Component {
 
   state = {
-    searchRequested: false,
+    isSearchRequested: false,
     searchText: ''
   }
 
@@ -28,16 +28,16 @@ class NavBar extends Component {
     event.preventDefault()
     this.props.searchWatchesAction(this.state.searchText)
     this.setState({
-      searchRequested: true
+      isSearchRequested: true
     })
   }
   
   render() {
     
-    if (this.state.searchRequested &&
+    if (this.state.isSearchRequested &&
         this.props.watches.length > 0) {
         this.setState({
-          searchRequested: false,
+          isSearchRequested: false,
           searchText: ''
         })  
       // Clear the form
@@ -51,10 +51,10 @@ class NavBar extends Component {
         } 
       )
         
-    } else if (this.state.searchRequested &&
+    } else if (this.state.isSearchRequested &&
                 this.props.watches.length === 0) {
                   this.setState({
-                    searchRequested: false,
+                    isSearchRequested: false,
                     searchText: ''
                   }) 
                   // Clear the form

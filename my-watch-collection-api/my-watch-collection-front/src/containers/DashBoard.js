@@ -44,7 +44,7 @@ class DashBoard extends Component {
         // Check if a record has been deleted
         if (this.props.location.state &&
             this.props.location.state.from_WatchDetail &&
-            this.props.location.state.watchDeleted) {
+            this.props.location.state.isWatchDeleted) {
                 // Delete the history location state to prevent re-execution
                 // of this code and fetch the updated list
                 delete this.props.history.location.state

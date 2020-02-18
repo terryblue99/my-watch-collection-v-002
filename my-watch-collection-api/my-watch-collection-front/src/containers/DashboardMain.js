@@ -10,7 +10,7 @@ import RedirectToWithState from "../components/RedirectToWithState"
 class DashboardMain extends Component {
 
   state = {
-    sortRequired: false,
+    isSortRequired: false,
     sortSelected: ''
   }
 
@@ -18,7 +18,7 @@ class DashboardMain extends Component {
     event.preventDefault()
     this.props.sortWatchesAction(event.target.value)
     this.setState({
-      sortRequired: true,
+      isSortRequired: true,
       sortSelected: event.target.value
     })
   }
@@ -95,9 +95,9 @@ class DashboardMain extends Component {
         number_of_watcheRelated = Object.keys(this.props.filteredWatchRelated).length
     }
 
-    if (this.state.sortRequired) {
+    if (this.state.isSortRequired) {
         this.setState({
-          sortRequired: false
+          isSortRequired: false
         })  
         // Display the sorted list on the dashboard
         return  RedirectToWithState(

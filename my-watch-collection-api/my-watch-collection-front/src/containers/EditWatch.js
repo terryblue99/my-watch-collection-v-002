@@ -29,8 +29,8 @@ class EditWatch extends Component {
           user_id: this.props.location.state.watch.user_id
        },
        image: null,
-       backToDashboard: false,
-       formHasInput: false
+       isBackToDashboard: false,
+       isFormInput: false
      }
 
      handleChange = (event) => {
@@ -39,14 +39,14 @@ class EditWatch extends Component {
                ...this.state.watchData,
                [event.target.name]: event.target.value
            },
-           formHasInput: true
+           isFormInput: true
         })                         
      }
 
      handleFile = (event) => {
           this.setState({
                image: event.target.files[0],
-               formHasInput: true
+               isFormInput: true
           }) 
      }
 
@@ -57,7 +57,7 @@ class EditWatch extends Component {
           if (this.state.watchData.watch_name === this.props.watchRelated) {
                isWatchRelated = true
           } 
-          if (this.state.formHasInput) {
+          if (this.state.isFormInput) {
                // validate the 'Date Bought/RCVD' input for watch records
                if (this.state.watchData.watch_name && !isWatchRelated) {
                     const validDate = DateValidation(this.state.watchData.date_bought)
@@ -94,16 +94,16 @@ class EditWatch extends Component {
 
      handleBack = () => {
           this.setState({
-               backToDashboard: true
+               isBackToDashboard: true
           })
      }
 
      render() {
  
-          if (this.state.backToDashboard && this.state.formHasInput) {
+          if (this.state.isBackToDashboard && this.state.isFormInput) {
                this.setState({
-                    formHasInput: false,
-                    backToDashboard: false
+                    isFormInput: false,
+                    isBackToDashboard: false
                })  
                return RedirectToWithState(
                                              '/dashboard',
@@ -114,9 +114,9 @@ class EditWatch extends Component {
                                          )
                     
           } 
-          else if (this.state.backToDashboard) {
+          else if (this.state.isBackToDashboard) {
                     this.setState({
-                         backToDashboard: false
+                         isBackToDashboard: false
                     }) 
                     return RedirectTo('/dashboard')
           }
