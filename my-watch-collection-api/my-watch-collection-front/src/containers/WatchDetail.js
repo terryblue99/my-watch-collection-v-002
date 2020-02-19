@@ -65,7 +65,7 @@ class WatchDetail extends Component {
             return  RedirectToWithState(
                                             '/dashboard',
                                             {
-                                                from_WatchDetail: true,    
+                                                isFromWatchDetail: true,    
                                                 isWatchDeleted: true
                                             } 
                                         )
@@ -89,7 +89,7 @@ class WatchDetail extends Component {
             }
         }
     
-        if (currentWatch && !this.props.searchList) {
+        if (currentWatch && !this.props.isSearchSuccessful) {
 
             return ( 
                 
@@ -285,7 +285,7 @@ class WatchDetail extends Component {
                                     setCurrentWatch={this.props.setCurrentWatch}
                                     filteredWatches={this.props.filteredWatches}
                                     filteredWatchRelated={this.props.filteredWatchRelated}
-                                    sortSelected={this.props.sortSelected} 
+                                    sortOptionSelected={this.props.sortOptionSelected} 
                                     DashBoardSortHistory={this.props.DashBoardSortHistory}               
             />
         }

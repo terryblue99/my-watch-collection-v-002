@@ -47,7 +47,7 @@ class SignUp extends Component {
         if (this.props.currentUser) {
             return RedirectToWithState(
                                         '/login',
-                                        {from_SignUp: true}
+                                        {isFromSignUp: true}
                                       )    
         }
 

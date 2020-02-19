@@ -9,41 +9,34 @@ class DashBoard extends Component {
     componentDidMount = () => {
         if ((!this.props.location.state) || 
             (this.props.location.state &&
-             this.props.location.state.from_EditWatch &&
-             this.props.location.state.Edits)) { 
+             this.props.location.state.isFromEditWatch &&
+             this.props.location.state.isEdits)) { 
                 this.props.getWatchesAction(this.props.currentUser.user.id)
             } 
     }
 
     render() {
 
-        let sortSelected = 'Select a sort option...'
+        let sortOptionSelected = 'Select a sort option...'
+        let isSearchSuccessful
         const watches = this.props.watches
         const watchRelated = this.props.watchRelated
 
-        // Check for successful search
-        let searchList
+        // Check for search
         if (this.props.location.state &&
-            this.props.location.state.from_NavBar &&
-            this.props.location.state.searchList) {
-                // Delete the history location state to prevent re-execution
+            this.props.location.state.isFromNavBar) {
+                if (this.props.location.state.isSearchSuccessful) {
+                    isSearchSuccessful = this.props.location.state.isSearchSuccessful
+                } else if (this.props.location.state.isSearchFailed) {
+                    this.props.getWatchesAction(this.props.currentUser.user.id)
+                }
+                // Delete the history location state to prevent re-execution of this code
                 delete this.props.history.location.state
-                searchList = true
             }
 
-        // Check if a search failed
+        // Check if if redirected to from WatchDetail and a record has been deleted
         if (this.props.location.state &&
-            this.props.location.state.from_NavBar &&
-            this.props.location.state.searchFailed) {
-                // Delete the history location state to prevent re-execution
-                // of this code and fetch the original watch list
-                delete this.props.history.location.state
-                this.props.getWatchesAction(this.props.currentUser.user.id)
-            }
-
-        // Check if a record has been deleted
-        if (this.props.location.state &&
-            this.props.location.state.from_WatchDetail &&
+            this.props.location.state.isFromWatchDetail &&
             this.props.location.state.isWatchDeleted) {
                 // Delete the history location state to prevent re-execution
                 // of this code and fetch the updated list
@@ -53,9 +46,9 @@ class DashBoard extends Component {
 
         // Check if redirected to from DashboardMain & a sort selected
         if (this.props.location.state &&
-            this.props.location.state.from_DashboardMain &&
-            this.props.location.state.sortSelected) {
-                sortSelected = this.props.location.state.sortSelected
+            this.props.location.state.isFromDashboardMain &&
+            this.props.location.state.sortOptionSelected) {
+                sortOptionSelected = this.props.location.state.sortOptionSelected
         }
     
         return (
@@ -65,8 +58,8 @@ class DashBoard extends Component {
                 <div className='container Main-container'> 
                     <Watches watches={watches}
                              watchRelated={watchRelated}
-                             sortSelected={sortSelected}
-                             searchList={searchList}
+                             sortOptionSelected={sortOptionSelected}
+                             isSearchSuccessful={isSearchSuccessful}
                              DashBoardSortHistory={this.props.history}
                     />               
                 </div> 

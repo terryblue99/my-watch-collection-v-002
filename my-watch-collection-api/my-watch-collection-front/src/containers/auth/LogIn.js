@@ -29,12 +29,17 @@ class LogIn extends Component {
         if (this.props.currentUser && this.props.currentUser.logged_in) {
             return RedirectTo('/dashboard')
         }
+
+        let isFromSignUp
+        if (this.props.location.state &&
+            this.props.location.state.isFromSignUp
+        ) {isFromSignUp = this.props.location.state.isFromSignUp}
         
         return (
 
             <div className='container'>
                 <header className='LogIn'>
-                    { !this.props.location.state
+                    { !isFromSignUp // not a new user
                         ? <p className='LogIn-banner'>Log in to access your watches</p>
                         : <p className='LogIn-banner'>Log in to add your watches</p>
                     }

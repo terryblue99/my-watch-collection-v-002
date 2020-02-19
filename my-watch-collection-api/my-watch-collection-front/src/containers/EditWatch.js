@@ -108,8 +108,8 @@ class EditWatch extends Component {
                return RedirectToWithState(
                                              '/dashboard',
                                              {
-                                                  from_EditWatch: true,
-                                                  Edits: true
+                                                  isFromEditWatch: true,
+                                                  isEdits: true
                                              }
                                          )
                     

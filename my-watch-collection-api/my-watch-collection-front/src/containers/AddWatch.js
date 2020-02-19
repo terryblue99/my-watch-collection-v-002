@@ -133,12 +133,12 @@ class AddWatch extends Component {
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          <form id='AddWatch-Form' onSubmit={this.handleSubmit}>
                               <h1 className='WatchForm-header Dark-red-color'>
-                                   {!this.props.location.AddWatchRelated
+                                   {!this.props.location.isAddWatchRelated
                                         ? <>Add a Watch</>
                                         : <>Add a Watch-Related</>
                                    }
                               </h1>
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Watch Maker</label>
                                            <input autoFocus id='Focus-first-input' className='Input-element' required 
                                                   type='text'
@@ -153,7 +153,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Watch Name</label>
                                            <input className='Input-element' required 
                                                   type='text'
@@ -167,7 +167,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Movement</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -181,7 +181,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Complications</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -195,7 +195,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Band</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -209,7 +209,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Model Number</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -223,7 +223,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Case Measurement (e.g. 45mm)</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -237,7 +237,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Water Resistance (e.g. 200 meters)</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -251,7 +251,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
                                                   type='text'
@@ -261,7 +261,7 @@ class AddWatch extends Component {
                                    : null
                               }
                               <br />
-                              {!this.props.location.AddWatchRelated
+                              {!this.props.location.isAddWatchRelated
                                    ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
                                            <input className='Input-element'
                                                   type='number'

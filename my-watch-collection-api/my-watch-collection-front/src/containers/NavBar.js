@@ -46,8 +46,8 @@ class NavBar extends Component {
       return  RedirectToWithState(
         '/dashboard',
         {
-            from_NavBar: true,    
-            searchList: true
+            isFromNavBar: true,    
+            isSearchSuccessful: true
         } 
       )
         
@@ -65,8 +65,8 @@ class NavBar extends Component {
                   return  RedirectToWithState(
                                                 '/dashboard',
                                                 {
-                                                    from_NavBar: true,    
-                                                    searchFailed: true
+                                                    isFromNavBar: true,    
+                                                    isSearchFailed: true
                                                 } 
                                               )
                 }

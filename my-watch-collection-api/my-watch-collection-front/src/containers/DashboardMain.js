@@ -11,7 +11,7 @@ class DashboardMain extends Component {
 
   state = {
     isSortRequired: false,
-    sortSelected: ''
+    sortOptionSelected: ''
   }
 
   handleSelectedSortKey = (event) =>  {
@@ -19,7 +19,7 @@ class DashboardMain extends Component {
     this.props.sortWatchesAction(event.target.value)
     this.setState({
       isSortRequired: true,
-      sortSelected: event.target.value
+      sortOptionSelected: event.target.value
     })
   }
 
@@ -56,7 +56,7 @@ class DashboardMain extends Component {
                 size='1' 
                 name='sort' 
                 onChange={this.handleSelectedSortKey}>
-          <option>{this.props.sortSelected}</option>
+          <option>{this.props.sortOptionSelected}</option>
           <option value='Watch Maker'>Watch Maker</option>
           <option value='Watch Name'>Watch Name</option>
           <option value='Newest to Oldest'>Newest to Oldest</option>
@@ -103,8 +103,8 @@ class DashboardMain extends Component {
         return  RedirectToWithState(
                                       '/dashboard',
                                       {
-                                        from_DashboardMain: true,
-                                        sortSelected: this.state.sortSelected
+                                        isFromDashboardMain: true,
+                                        sortOptionSelected: this.state.sortOptionSelected
                                       } 
                                     )
     } 
