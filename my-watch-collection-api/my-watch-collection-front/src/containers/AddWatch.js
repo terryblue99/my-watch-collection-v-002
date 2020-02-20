@@ -131,7 +131,10 @@ class AddWatch extends Component {
                         }
                     `}> 
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
-                         <form id='AddWatch-Form' onSubmit={this.handleSubmit}>
+                         <form id='AddWatch-Form' 
+                               autocomplete='off'
+                               onSubmit={this.handleSubmit}
+                         >
                               <h1 className='WatchForm-header Dark-red-color'>
                                    {!this.props.location.isAddWatchRelated
                                         ? <>Add a Watch</>

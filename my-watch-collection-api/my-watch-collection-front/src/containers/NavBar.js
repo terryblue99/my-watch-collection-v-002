@@ -182,7 +182,10 @@ class NavBar extends Component {
               margin-top: 10px;
             }
           `}>
-            <form id='Navbar-Search-Form' onSubmit={this.handleSearch}>
+            <form id='Navbar-Search-Form'
+                  autocomplete='off'
+                  onSubmit={this.handleSearch}
+            >
               <input  required
                       type='text'
                       name='watch_search'

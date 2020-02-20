@@ -141,7 +141,10 @@ class EditWatch extends Component {
                     
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          
-                         <form className='EditWatch-Form' onSubmit={this.handleSubmit}>
+                         <form className='EditWatch-Form' 
+                               autocomplete='off'
+                               onSubmit={this.handleSubmit}
+                         >
                               <h1 className='WatchForm-header Dark-red-color'>
                                    {!watch.watch_name.includes(watchRelated)
                                         ? <>Edit this Watch</>

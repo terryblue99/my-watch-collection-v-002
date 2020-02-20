@@ -45,7 +45,10 @@ class LogIn extends Component {
                     }
                     <img src={logo} alt='logo' className='Logo'/>
                     <div className='LogIn-container'>
-                        <form id='LogIn-Form' onSubmit={this.handleSubmit}>
+                        <form id='LogIn-Form'
+                              autocomplete='off' 
+                              onSubmit={this.handleSubmit}
+                        >
                             <div className='Register'>
                                 <div className='LogIn-element'>
                                     <label>Email: </label>

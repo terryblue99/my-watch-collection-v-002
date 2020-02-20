@@ -96,7 +96,10 @@ class EditProfile extends Component {
                     <div className='Profile-container'>
                          <div className='Profile-form-container'>
                               <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>   
-                              <form id='EditProfile-Form' onSubmit={this.handleSubmit}>
+                              <form id='EditProfile-Form' 
+                                    autocomplete='off'
+                                    onSubmit={this.handleSubmit}
+                              >
                                    <h1 className='ProfileForm-header Dark-red-color'>
                                         Edit Profile
                                    </h1>
