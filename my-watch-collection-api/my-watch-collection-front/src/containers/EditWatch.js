@@ -141,8 +141,7 @@ class EditWatch extends Component {
                     
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          
-                         <form className='EditWatch-Form' 
-                               autocomplete='off'
+                         <form className='EditWatch-Form'
                                onSubmit={this.handleSubmit}
                          >
                               <h1 className='WatchForm-header Dark-red-color'>
@@ -160,6 +159,7 @@ class EditWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element' required 
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='watch_maker'
                                                   defaultValue={watch.watch_maker}
@@ -191,6 +191,7 @@ class EditWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='movement'
                                                   defaultValue={watch.movement}
@@ -207,6 +208,7 @@ class EditWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='complications'
                                                   defaultValue={watch.complications}
@@ -223,6 +225,7 @@ class EditWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='band'
                                                   defaultValue={watch.band}
@@ -239,6 +242,7 @@ class EditWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='model_number'
                                                   defaultValue={watch.model_number}
@@ -255,6 +259,7 @@ class EditWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='case_measurement'
                                                   defaultValue={watch.case_measurement}
@@ -271,6 +276,7 @@ class EditWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='water_resistance'
                                                   defaultValue={watch.water_resistance}

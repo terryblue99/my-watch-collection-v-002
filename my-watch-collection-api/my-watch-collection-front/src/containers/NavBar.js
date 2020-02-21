@@ -8,7 +8,6 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 import logoText from '../images/my-watch-collection-text.png'
 import { searchWatchesAction } from '../actions/watchesActions'
 import ClearForm from "../components/ClearForm"
-import RedirectTo from '../components/RedirectTo'
 import RedirectToWithState from "../components/RedirectToWithState"
 
 class NavBar extends Component {
@@ -183,7 +182,6 @@ class NavBar extends Component {
             }
           `}>
             <form id='Navbar-Search-Form'
-                  autocomplete='off'
                   onSubmit={this.handleSearch}
             >
               <input  required
@@ -191,8 +189,7 @@ class NavBar extends Component {
                       name='watch_search'
                       placeholder='Search My Watch Collection'
                       onChange={this.handleChange}
-                      css={css
-                `
+                      css={css`
                   border-radius: 8px;
                   font: inherit;
                   font-size: 1rem;

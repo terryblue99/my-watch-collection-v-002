@@ -131,8 +131,7 @@ class AddWatch extends Component {
                         }
                     `}> 
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
-                         <form id='AddWatch-Form' 
-                               autocomplete='off'
+                         <form id='AddWatch-Form'
                                onSubmit={this.handleSubmit}
                          >
                               <h1 className='WatchForm-header Dark-red-color'>
@@ -150,6 +149,7 @@ class AddWatch extends Component {
                                         </>
                                    :    <> <label>Title</label>
                                            <input autoFocus id='Focus-first-input' className='Input-element' required 
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='watch_maker'
                                                   onChange={this.handleChange}/>
@@ -178,6 +178,7 @@ class AddWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='movement'
                                                   onChange={this.handleChange}/>
@@ -192,6 +193,7 @@ class AddWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='complications'
                                                   onChange={this.handleChange}/>
@@ -206,6 +208,7 @@ class AddWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='band'
                                                   onChange={this.handleChange}/>
@@ -220,6 +223,7 @@ class AddWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='model_number'
                                                   onChange={this.handleChange}/>
@@ -234,6 +238,7 @@ class AddWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='case_measurement'
                                                   onChange={this.handleChange}/>
@@ -248,6 +253,7 @@ class AddWatch extends Component {
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='water_resistance'
                                                   onChange={this.handleChange}/>

@@ -59,7 +59,6 @@ class SignUp extends Component {
                     <img src={logo} alt='logo' className='Logo'/>
                     <div className='SignUp-container'>
                         <form id='SignUp-Form' 
-                              autocomplete='off'
                               onSubmit={this.handleSubmit}
                         >
                             <div className='Register'>
