@@ -22,33 +22,34 @@ class DashBoard extends Component {
         const watches = this.props.watches
         const watchRelated = this.props.watchRelated
 
-        // Check for search
-        if (this.props.location.state &&
-            this.props.location.state.isFromNavBar) {
-                if (this.props.location.state.isSearchSuccessful) {
-                    isSearchSuccessful = this.props.location.state.isSearchSuccessful
-                } else if (this.props.location.state.isSearchFailed) {
-                    this.props.getWatchesAction(this.props.currentUser.user.id)
+        // Check if redirected from another screen
+        if (this.props.location.state) {
+
+            // Check if redirected to from a NavBar search
+            if (this.props.location.state.isFromNavBar) {
+                    if (this.props.location.state.isSearchSuccessful) {
+                        isSearchSuccessful = this.props.location.state.isSearchSuccessful
+                    } else if (this.props.location.state.isSearchFailed) {
+                        this.props.getWatchesAction(this.props.currentUser.user.id)
+                    }
+                    // Delete the history location state to prevent re-execution of this code
+                    delete this.props.history.location.state
                 }
-                // Delete the history location state to prevent re-execution of this code
-                delete this.props.history.location.state
-            }
 
-        // Check if if redirected to from WatchDetail and a record has been deleted
-        if (this.props.location.state &&
-            this.props.location.state.isFromWatchDetail &&
-            this.props.location.state.isWatchDeleted) {
-                // Delete the history location state to prevent re-execution
-                // of this code and fetch the updated list
-                delete this.props.history.location.state
-                this.props.getWatchesAction(this.props.currentUser.user.id)
-            }
+            // Check if redirected to from WatchDetail and a record has been deleted
+            else if (this.props.location.state.isFromWatchDetail &&
+                     this.props.location.state.isWatchDeleted) {
+                        this.props.getWatchesAction(this.props.currentUser.user.id)
+                        // Delete the history location state to prevent re-execution of this code
+                        delete this.props.history.location.state
+                        
+                    }
 
-        // Check if redirected to from DashboardMain & a sort selected
-        if (this.props.location.state &&
-            this.props.location.state.isFromDashboardMain &&
-            this.props.location.state.sortOptionSelected) {
-                sortOptionSelected = this.props.location.state.sortOptionSelected
+            // Check if redirected to from DashboardMain and a sort has been selected
+            else if (this.props.location.state.isFromDashboardMain &&
+                     this.props.location.state.sortOptionSelected) {
+                        sortOptionSelected = this.props.location.state.sortOptionSelected
+                    }
         }
     
         return (
