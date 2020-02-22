@@ -110,7 +110,7 @@ class WatchDetail extends Component {
                         <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                         <div css={css`
                             margin-bottom: 15px;
-                            padding-left: 20px;
+                            padding-left: 80px;
                             padding-top: 10px;
                             width: 25%;
 
@@ -144,6 +144,10 @@ class WatchDetail extends Component {
                                 font-family: 'Ubuntu, sans-serif';
                                 font-size: 1.55rem;
 
+                                @media (max-width: 750px) {
+                                    font-size: 1.25rem;
+                                }
+
                                 @media (min-width: 1500px) {
                                     font-size: 1.75rem;
                                 }
@@ -153,6 +157,10 @@ class WatchDetail extends Component {
                                 font-size: 1.4rem;
                                 margin-bottom: 3px;
                                 max-width: 500px;
+
+                                @media (max-width: 750px) {
+                                    font-size: 1rem;
+                                }
 
                                 @media (min-width: 1500px) {
                                     font-size: 1.75rem;

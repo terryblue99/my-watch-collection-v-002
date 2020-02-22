@@ -10,19 +10,18 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
         <div className='watchList'>
             <div css={css`
                 background-color: khaki;
-                border-left: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid;
+                border: 1px solid black;
                 display: grid;
                 grid-area: sidebar-desktop;
                 grid-template-rows: auto 100px;
                 max-height: 80vh;
+                width: 370px;
                 overflow-y: auto; // scrollling
                 padding-top: 3px;
                 text-align: left;
 
                 @media (min-width: 1500px) {
-                    min-width: 350px;
+                    width: 370px;
                 }
                 
                 @media (max-width: 750px) {

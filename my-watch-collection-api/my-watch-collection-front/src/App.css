@@ -685,6 +685,10 @@ textarea:required
     padding: 10px 20px;
   }
 
+  .WatchDetail {
+    font-size: 1rem;
+  }
+
   .WatchRelated-container {
     padding-right: 15px;
     padding-left: 15px;
@@ -796,6 +800,10 @@ textarea:required
   {
     font-size: 1rem;
     height: 2rem;
+  }
+
+  .Back-button {
+    margin-left: 80px;
   }
 
   .LogIn-home-button,

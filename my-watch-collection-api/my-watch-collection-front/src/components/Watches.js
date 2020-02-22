@@ -36,7 +36,7 @@ const Watches = ({ watches, watchRelated, sortOptionSelected, isSearchSuccessful
             <div className='Watches' css={css`
                 display: grid;
                 grid-template-areas: 'sidebar-desktop main';
-                grid-template-columns: 305px auto;
+                grid-template-columns: 370px auto;
                 height: 100vh;
                 width: 100vw;
                 
