@@ -86,11 +86,12 @@ class NavBar extends Component {
             color: cornsilk;
             display: inline-block;
             font-size: 1rem;
-            padding-left: 130px;
+            padding-left: 140px;
             margin: 0px 10px 0px;
  
             @media (min-width: 1500px) {
               font-size: 1.25rem;
+              padding-left: 190px;
             }
             
             @media (max-width: 1056px) {

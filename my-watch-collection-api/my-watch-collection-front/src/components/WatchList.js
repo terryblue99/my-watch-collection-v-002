@@ -12,6 +12,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 background-color: khaki;
                 border-left: 1px solid black;
                 border-right: 1px solid black;
+                border-bottom: 1px solid;
                 display: grid;
                 grid-area: sidebar-desktop;
                 grid-template-rows: auto 100px;
@@ -19,9 +20,14 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 overflow-y: auto; // scrollling
                 padding-top: 3px;
                 text-align: left;
+
+                @media (min-width: 1500px) {
+                    min-width: 350px;
+                }
                 
                 @media (max-width: 750px) {
-                    display: ${showWatches ? 'block' : 'none'}
+                    display: ${showWatches ? 'block' : 'none'};
+                    max-width: 400px;
                 }
             `}>
                 <ul className='List' css={css`
@@ -31,6 +37,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                         watches.map(watch => {
                             return <li key={watch.id} css={css`
                                     border-bottom: 1px solid black;
+                                    font-size: .80rem;
                                     padding-left: 10px;
                                     transition: color 800ms;
                                     
@@ -39,6 +46,11 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                         color: blue;
                                         cursor: pointer;
                                     }
+
+                                    @media (min-width: 1500px) {
+                                        font-size: 1rem;
+                                    }
+                                    
                                 `} onClick={() => { 
                                     hashHistory.push(`/watches/${watch.id}/watch_detail`) // set the url for the watch
                                     setCurrentWatch(watch)
@@ -47,7 +59,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                 <strong css={css`
                                     color: darkred;
                                     font-family: 'Ubuntu, sans-serif';
-                                    font-size: 1rem;
+                                    font-size: .80rem;
                                     padding-left: -10px;
 
                                     @media (min-width: 1500px) {
@@ -60,11 +72,11 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 </ul>  
             </div> 
             <div css={css`
-                border-top: 1px solid;
                 padding-top 5px;
 
                 @media (max-width: 750px) {
-                    display: ${showWatches ? 'block' : 'none'}
+                    display: ${showWatches ? 'block' : 'none'};
+                    max-width: 400px;
                 }
             `}>   
                 <Link to={{pathname: '/watches/add_watch_related',
