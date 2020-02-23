@@ -102,7 +102,6 @@ class WatchDetail extends Component {
                         display: flex;
                         justify-content: space-between;
                         margin-top: 20px;
-
                         @media (max-width: 945px) {
                             flex-direction: column;
                         }
@@ -113,7 +112,6 @@ class WatchDetail extends Component {
                             padding-left: 80px;
                             padding-top: 10px;
                             width: 25%;
-
                             @media (max-width: 945px) {
                                 padding-left: 120px;
                             } 
@@ -134,7 +132,6 @@ class WatchDetail extends Component {
                             padding-left: 120px;
                             padding-top: 0;
                             width: 75%;
-
                             @media (max-width: 1500px) {
                                 margin-right: 35px;
                             }
@@ -143,11 +140,9 @@ class WatchDetail extends Component {
                                 color: sienna;
                                 font-family: 'Ubuntu, sans-serif';
                                 font-size: 1.55rem;
-
                                 @media (max-width: 750px) {
                                     font-size: 1.25rem;
                                 }
-
                                 @media (min-width: 1500px) {
                                     font-size: 1.75rem;
                                 }
@@ -157,11 +152,9 @@ class WatchDetail extends Component {
                                 font-size: 1.4rem;
                                 margin-bottom: 3px;
                                 max-width: 500px;
-
                                 @media (max-width: 750px) {
                                     font-size: 1rem;
                                 }
-
                                 @media (min-width: 1500px) {
                                     font-size: 1.75rem;
                                     margin-bottom: 15px;
@@ -253,7 +246,6 @@ class WatchDetail extends Component {
                     <div css={css`   
                         display:flex;  
                         justify-content: center;  
-
                         @media (max-width: 750px) {
                             flex-direction: column;
                         }
