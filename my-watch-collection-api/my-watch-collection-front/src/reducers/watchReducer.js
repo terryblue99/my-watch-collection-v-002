@@ -6,6 +6,7 @@ import {
 	CLEAR_WATCHES,
 	SEARCH_WATCHES,
 	RESET_WATCHES,
+	RESET_SEARCH_FAILED,
 	WATCH_MAKER_SORT,
 	WATCH_NAME_SORT,
 	NEWEST_TO_OLDEST_SORT,
@@ -16,7 +17,8 @@ import {
 
 const initialState = {
 	savedWatches: [],
-	watchRelated: 'Watch-Related' // For records that are not related to a specific watch.
+	watchRelated: 'Watch-Related', // For records that are not related to a specific watch.
+	isSearchFailed: false
 }
 let sortedWatches
 
@@ -34,13 +36,14 @@ export default (state = initialState, { type, payload } ) => {
 
 		// UPDATE WATCHES & WATCH-RELATED
 
-		case GET_WATCHES:		
+		case GET_WATCHES:
 			if (payload) {
 				return ({
 					...state,
-					watches: payload,
-					savedWatches: payload,
-					WatchRelated: state.WatchRelated
+					watches: payload.sortedWatches,
+					savedWatches: payload.sortedWatches,
+					WatchRelated: state.WatchRelated,
+					isSearchFailed: payload.isSearchFailed
 				})
 			} else return state
 
@@ -48,6 +51,12 @@ export default (state = initialState, { type, payload } ) => {
 			return ({
 				...state,
 				watches: state.savedWatches
+			})
+
+		case RESET_SEARCH_FAILED:
+			return ({
+				...state,
+				isSearchFailed: payload
 			})
 
 		case ADD_WATCH:

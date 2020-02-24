@@ -3,7 +3,8 @@ import {
 	ADD_WATCH,
 	DELETE_WATCH,
 	SEARCH_WATCHES,
-	RESET_WATCHES
+	RESET_WATCHES,
+	RESET_SEARCH_FAILED
 } from './types'
 // The underscore library
 import _ from 'lodash'
@@ -11,7 +12,7 @@ import _ from 'lodash'
 const API_URL = '/api/v2'
 let sortedWatches
 
-export const getWatchesAction = (user_id) => {
+export const getWatchesAction = (user_id, isSearchFailed = false) => {
 	// Thunk middleware knows how to handle functions.
 	// It passes the dispatch method as an argument to the function,
 	// thus making it able to dispatch actions itself.
@@ -35,7 +36,7 @@ export const getWatchesAction = (user_id) => {
 			// Update watch states with the sorted result
 			dispatch({
 				type: GET_WATCHES, 
-				payload: sortedWatches
+				payload: {sortedWatches, isSearchFailed}
 			})
 		})
 		.catch(error => {
@@ -69,6 +70,15 @@ export const resetWatchesAction = () => {
 	return dispatch => {
 		dispatch({
 			type: RESET_WATCHES
+		})
+	}		
+}
+
+export const resetSearchFailedAction = (isSearchFailed = false) => {
+	return dispatch => {
+		dispatch({
+			type: RESET_SEARCH_FAILED,
+			payload: isSearchFailed
 		})
 	}		
 }

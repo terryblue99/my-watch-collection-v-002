@@ -6,6 +6,7 @@ export const ADD_WATCH = 'ADD_WATCH'
 export const GET_WATCHES = 'GET_WATCHES'
 export const SEARCH_WATCHES = 'SEARCH_WATCHES'
 export const RESET_WATCHES = 'RESET_WATCHES'
+export const RESET_SEARCH_FAILED = 'RESET_SEARCH_FAILED'
 export const CLEAR_WATCHES = 'CLEAR_WATCHES'
 export const DELETE_WATCH = 'DELETE_WATCH' 
 

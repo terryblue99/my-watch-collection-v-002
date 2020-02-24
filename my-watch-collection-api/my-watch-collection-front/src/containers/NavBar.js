@@ -39,16 +39,16 @@ class NavBar extends Component {
           isSearchRequested: false,
           searchText: ''
         })  
-      // Clear the form
-      ClearForm('Navbar-Search-Form')
-      // Display list from the search on the dashboard
-      return  RedirectToWithState(
-        '/dashboard',
-        {
-            isFromNavBar: true,    
-            isSearchSuccessful: true
-        } 
-      )
+        // Clear the form
+        ClearForm('Navbar-Search-Form')
+        // Display list from the search on the dashboard
+        return  RedirectToWithState(
+                                      '/dashboard',
+                                      {
+                                          isFromNavBar: true,    
+                                          isSearchSuccessful: true
+                                      } 
+                                    )
         
     } else if (this.state.isSearchRequested &&
                 this.props.watches.length === 0) {

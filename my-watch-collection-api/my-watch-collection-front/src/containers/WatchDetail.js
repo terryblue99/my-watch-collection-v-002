@@ -88,8 +88,8 @@ class WatchDetail extends Component {
                 border: '1px solid'
             }
         }
-    
-        if (currentWatch && !this.props.isSearchSuccessful) {
+   
+        if (currentWatch && !this.props.isSearchSuccessful && !this.props.isSearchFailed) {
 
             return ( 
                 
@@ -279,7 +279,7 @@ class WatchDetail extends Component {
                 </div> 
             )     
         } else {
-
+        
             return <DashboardMain   newestWatch={this.props.newestWatch}
                                     oldestWatch={this.props.oldestWatch}
                                     setCurrentWatch={this.props.setCurrentWatch}
@@ -294,7 +294,8 @@ class WatchDetail extends Component {
 
 const mapStateToProps = (state) => {
     return {
-      watchRelated: state.myWatches.watchRelated  // For records that are not related to a specific watch.
+      watchRelated: state.myWatches.watchRelated,  // For records that are not related to a specific watch.
+      isSearchFailed: state.myWatches.isSearchFailed
     } 
 }
 

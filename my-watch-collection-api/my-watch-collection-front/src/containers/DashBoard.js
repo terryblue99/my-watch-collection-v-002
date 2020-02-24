@@ -30,7 +30,7 @@ class DashBoard extends Component {
                     if (this.props.location.state.isSearchSuccessful) {
                         isSearchSuccessful = this.props.location.state.isSearchSuccessful
                     } else if (this.props.location.state.isSearchFailed) {
-                        this.props.getWatchesAction(this.props.currentUser.user.id)
+                        this.props.getWatchesAction(this.props.currentUser.user.id, this.props.location.state.isSearchFailed)
                     }
                     // Delete the history location state to prevent re-execution of this code
                     delete this.props.history.location.state

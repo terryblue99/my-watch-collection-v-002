@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { hashHistory } from 'react-router' // Used to change URL without a re-render
 import Image from 'react-image-resizer'  // https://github.com/sottar/react-image-resizer
 import logo from '../images/logo.jpg'
-import { sortWatchesAction } from '../actions/watchesActions'
-import { resetWatchesAction } from '../actions/watchesActions'
+import { sortWatchesAction, resetWatchesAction, resetSearchFailedAction } from '../actions/watchesActions'
 import RedirectToWithState from "../components/RedirectToWithState"
 
 class DashboardMain extends Component {
@@ -107,7 +106,15 @@ class DashboardMain extends Component {
                                         sortOptionSelected: this.state.sortOptionSelected
                                       } 
                                     )
-    } 
+    }
+
+    if (this.props.isSearchFailed) {
+      // Clear the current detail screen to allow 
+      // the dashboard to be displayed there instead
+      this.props.setCurrentWatch(null)
+    
+      this.props.resetSearchFailedAction()
+    }
     
     return (
 
@@ -257,8 +264,9 @@ const mapStateToProps = (state) => {
     currentUser: state.currentUser,
     watches: state.myWatches.watches,
     savedWatches: state.myWatches.savedWatches,
-    watchRelated: state.myWatches.watchRelated // For records that are not related to a specific watch.
+    watchRelated: state.myWatches.watchRelated, // For records that are not related to a specific watch.
+    isSearchFailed: state.myWatches.isSearchFailed
   } 
 }
 
-export default connect(mapStateToProps, { sortWatchesAction, resetWatchesAction })(DashboardMain)
+export default connect(mapStateToProps, { sortWatchesAction, resetWatchesAction, resetSearchFailedAction })(DashboardMain)
