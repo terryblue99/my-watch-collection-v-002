@@ -25,7 +25,7 @@ class WatchDetail extends Component {
 
         if (this.props.currentWatch.watch_name === this.props.watchRelated) {
             isWatchRelated = true
-            recordType = 'watch-related'
+            recordType = this.props.watchRelated
         } else {
                 isWatchRelated = false
                 recordType = 'watch'
@@ -79,8 +79,8 @@ class WatchDetail extends Component {
             this.props.setCurrentWatch(null) 
             return  RedirectTo('/dashboard')
         }
-
-        const {currentWatch, showWatches} = this.props
+        console.log('WatchDetail props: ', this.props)
+        const {showWatches, currentWatch} = this.props
         const watchRelated = this.props.watchRelated
 
         const style = {
@@ -90,6 +90,21 @@ class WatchDetail extends Component {
         }
    
         if (currentWatch && !this.props.isSearchSuccessful && !this.props.isSearchFailed) {
+
+            const {
+                id,
+                watch_name,
+                watch_maker,
+                movement,
+                complications,
+                band,
+                model_number,
+                case_measurement,
+                water_resistance,
+                date_bought,
+                cost,
+                notes
+            } = currentWatch
 
             return ( 
                 
@@ -146,7 +161,7 @@ class WatchDetail extends Component {
                                 @media (min-width: 1500px) {
                                     font-size: 1.75rem;
                                 }
-                            `}>{currentWatch.watch_maker}</b></h1> 
+                            `}>{watch_maker}</b></h1> 
                             <h2 css={css`
                                 color: midnightblue;
                                 font-size: 1.4rem;
@@ -159,86 +174,86 @@ class WatchDetail extends Component {
                                     font-size: 1.75rem;
                                     margin-bottom: 15px;
                                 }
-                            `}>{currentWatch.watch_name}</h2>
+                            `}>{watch_name}</h2>
 
                             <hr className='WatchDetail'/><br />
                             
-                            {currentWatch.movement && !currentWatch.watch_name.includes(watchRelated)
+                            {movement && !watch_name.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Movement</em></p>
-                                        <h3 className='WatchDetail'>{currentWatch.movement}</h3>
+                                        <h3 className='WatchDetail'>{movement}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.movement && currentWatch.watch_name.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{currentWatch.movement}</h3>
+                            {movement && watch_name.includes(watchRelated) 
+                                ?   <>  <h3 className='WatchDetail'>{movement}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.complications && !currentWatch.watch_name.includes(watchRelated)
+                            {complications && !watch_name.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Complications</em></p>
-                                        <h3 className='WatchDetail'>{currentWatch.complications}</h3>
+                                        <h3 className='WatchDetail'>{complications}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.complications && currentWatch.watch_name.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{currentWatch.complications}</h3>
+                            {complications && watch_name.includes(watchRelated) 
+                                ?   <>  <h3 className='WatchDetail'>{complications}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.band && !currentWatch.watch_name.includes(watchRelated)
+                            {band && !watch_name.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Band</em></p>
-                                        <h3 className='WatchDetail'>{currentWatch.band}</h3>
+                                        <h3 className='WatchDetail'>{band}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.band && currentWatch.watch_name.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{currentWatch.band}</h3>
+                            {band && watch_name.includes(watchRelated) 
+                                ?   <>  <h3 className='WatchDetail'>{band}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.model_number && !currentWatch.watch_name.includes(watchRelated)
+                            {model_number && !watch_name.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Model Number</em></p>
-                                        <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
+                                        <h3 className='WatchDetail'>{model_number}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.model_number && currentWatch.watch_name.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{currentWatch.model_number}</h3>
+                            {model_number && watch_name.includes(watchRelated) 
+                                ?   <>  <h3 className='WatchDetail'>{model_number}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.case_measurement && !currentWatch.watch_name.includes(watchRelated)
+                            {case_measurement && !watch_name.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Case Measurement</em></p>
-                                        <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
+                                        <h3 className='WatchDetail'>{case_measurement}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.case_measurement && currentWatch.watch_name.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{currentWatch.case_measurement}</h3>
+                            {case_measurement && watch_name.includes(watchRelated) 
+                                ?   <>  <h3 className='WatchDetail'>{case_measurement}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.water_resistance && !currentWatch.watch_name.includes(watchRelated)
+                            {water_resistance && !watch_name.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Water Resistance</em></p>
-                                        <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
+                                        <h3 className='WatchDetail'>{water_resistance}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.water_resistance && currentWatch.watch_name.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{currentWatch.water_resistance}</h3>
+                            {water_resistance && watch_name.includes(watchRelated) 
+                                ?   <>  <h3 className='WatchDetail'>{water_resistance}</h3>
                                     </>
                                 :   null }
-                            {currentWatch.date_bought && !currentWatch.watch_name.includes(watchRelated) 
+                            {date_bought && !watch_name.includes(watchRelated) 
                             ?   <>
-                                    {currentWatch.cost > 0
+                                    {cost > 0
                                         ? <> <p><em className='Detail-css'>Date Bought</em></p>
-                                             <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
+                                             <h3 className='WatchDetail'>{date_bought}</h3>
                                           </>
                                         : <> <p><em className='Detail-css'>Date RCVD</em></p>
-                                             <h3 className='WatchDetail'>{currentWatch.date_bought}</h3>
+                                             <h3 className='WatchDetail'>{date_bought}</h3>
                                           </>
                                     }    
                                 </>
                             : null }
-                            {currentWatch.cost > 0
+                            {cost > 0
                             ?    <>
                                     <p><em className='Detail-css'>Cost</em></p>
-                                    <h3 className='WatchDetail'>${parseFloat(currentWatch.cost).toFixed(2)}</h3>
+                                    <h3 className='WatchDetail'>${parseFloat(cost).toFixed(2)}</h3>
                                 </>
                             : null }
-                            {currentWatch.notes 
+                            {notes 
                             ?    <>
                                     <p><em className='Detail-css'>Notes</em></p>
-                                    <h3 className='WatchDetail'>{currentWatch.notes}</h3>
+                                    <h3 className='WatchDetail'>{notes}</h3>
                                 </>
                             : null }
                         </div> 
@@ -250,10 +265,10 @@ class WatchDetail extends Component {
                             flex-direction: column;
                         }
                     `}>
-                        {!currentWatch.watch_name.includes(watchRelated)
+                        {!watch_name.includes(watchRelated)
                             ? <>
                                 <Link className='btn Edit-button Button-text' to={{
-                                        pathname: `/watches/${currentWatch.id}/edit_watch`,
+                                        pathname: `/watches/${id}/edit_watch`,
                                         state: {
                                             watch: currentWatch
                                         }
@@ -263,7 +278,7 @@ class WatchDetail extends Component {
                               </>
                             : <>
                                 <Link className='btn Edit-button Button-text' to={{
-                                        pathname: `/watches/${currentWatch.id}/edit_watch_related`,
+                                        pathname: `/watches/${id}/edit_watch_related`,
                                         state: {
                                             watch: currentWatch
                                         }

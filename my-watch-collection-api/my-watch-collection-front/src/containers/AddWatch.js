@@ -50,26 +50,41 @@ class AddWatch extends Component {
      handleSubmit = (event) => { 
           event.preventDefault()
 
+          const {
+               watch_maker,
+               watch_name,
+               movement,
+               band,
+               model_number,
+               case_measurement,
+               water_resistance,
+               complications,
+               date_bought,
+               cost,
+               notes,
+               user_id 
+          } = this.state.watchData
+
           let isWatchRelated = false
-          if (this.state.watchData.watch_name === this.props.watchRelated) {
+          if (watch_name === this.props.watchRelated) {
                isWatchRelated = true
           } 
           // validate the watch_name/cost/date_bought combination input for watch records
-          if ((this.state.watchData.watch_name && 
+          if ((watch_name && 
                !isWatchRelated && 
-               Number(this.state.watchData.cost) > 0 &&
-               Number(this.state.watchData.date_bought) === 0) ||
+               Number(cost) > 0 &&
+               Number(date_bought) === 0) ||
               
-               (this.state.watchData.watch_name && 
+               (watch_name && 
                !isWatchRelated && 
-               Number(this.state.watchData.cost) === 0 &&
-               Number(this.state.watchData.date_bought) === 0)) { 
+               Number(cost) === 0 &&
+               Number(date_bought) === 0)) { 
                     alert('1 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
                }
           // validate the 'Date Bought/RCVD' input for watch records
           if (!isWatchRelated) {
-               const validDate = DateValidation(this.state.watchData.date_bought.toString(), 'add')
+               const validDate = DateValidation(date_bought.toString(), 'add')
                if (!validDate) {
                     alert('2 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
@@ -77,18 +92,18 @@ class AddWatch extends Component {
           }   
           // Create the record
           const formData = new FormData()
-          formData.append('watch_maker', this.state.watchData.watch_maker)
-          formData.append('watch_name', this.state.watchData.watch_name)
-          formData.append('movement', this.state.watchData.movement)
-          formData.append('band', this.state.watchData.band)
-          formData.append('model_number', this.state.watchData.model_number)
-          formData.append('case_measurement', this.state.watchData.case_measurement)
-          formData.append('water_resistance', this.state.watchData.water_resistance)
-          formData.append('complications', this.state.watchData.complications)
-          formData.append('date_bought', this.state.watchData.date_bought)
-          formData.append('cost', this.state.watchData.cost)
-          formData.append('notes', this.state.watchData.notes)
-          formData.append('user_id', this.state.watchData.user_id)
+          formData.append('watch_maker', watch_maker)
+          formData.append('watch_name', watch_name)
+          formData.append('movement', movement)
+          formData.append('band', band)
+          formData.append('model_number', model_number)
+          formData.append('case_measurement', case_measurement)
+          formData.append('water_resistance', water_resistance)
+          formData.append('complications', complications)
+          formData.append('date_bought', date_bought)
+          formData.append('cost', cost)
+          formData.append('notes', notes)
+          formData.append('user_id', user_id)
           if (this.state.image) {
                formData.append('image', this.state.image)
           }
@@ -108,7 +123,9 @@ class AddWatch extends Component {
           })
      }
 
-     render() {    
+     render() {  
+          
+          const {watch_name} = this.state.watchData
 
           if (this.state.isBackToDashboard) { 
                this.setState({
@@ -166,7 +183,7 @@ class AddWatch extends Component {
                                    :    <> <input className='Input-element Input-related'
                                                   type='text'
                                                   name='watch_name'
-                                                  value={this.state.watchData.watch_name}/>
+                                                  value={watch_name}/>
                                         </>
                               }
                               <br />

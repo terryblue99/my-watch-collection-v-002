@@ -43,15 +43,22 @@ class EditProfile extends Component {
 
      handleSubmit = (event) => {
         event.preventDefault() 
+
+        const {
+          id,
+          email,
+          password,
+          password_confirmation
+        } = this.state
           
           if (this.state.isFormInput) {
 
-               if (this.state.password && this.state.password.length < 8 ) {
+               if (password && password.length < 8 ) {
                     alert('Password must be a minimum of 8 characters!')
                     return
                }
 
-               if (this.state.password && this.state.password !== this.state.password_confirmation) {
+               if (password && password !== password_confirmation) {
                     alert('New Password and New Password Confirmation must be the same!')
                     return
                }
@@ -59,10 +66,10 @@ class EditProfile extends Component {
                if (window.confirm('Do you really want to update your profile?')) {
                     // Edit the profile
                     const formData = new FormData()
-                    formData.append('email', this.state.email)
-                    formData.append('password', this.state.password)
-                    formData.append('password_confirmation', this.state.password_confirmation)
-                    this.props.editProfileAction(formData, this.props.currentUser.user.id)
+                    formData.append('email', email)
+                    formData.append('password', password)
+                    formData.append('password_confirmation', password_confirmation)
+                    this.props.editProfileAction(formData, id)
                     alert('Your profile has been updated.\nYou will need to log in again.')
                     window.location.assign('/login')
                }    
