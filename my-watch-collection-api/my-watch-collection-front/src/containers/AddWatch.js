@@ -50,20 +50,22 @@ class AddWatch extends Component {
      handleSubmit = (event) => { 
           event.preventDefault()
 
-          const {
-               watch_maker,
-               watch_name,
-               movement,
-               band,
-               model_number,
-               case_measurement,
-               water_resistance,
-               complications,
-               date_bought,
-               cost,
-               notes,
-               user_id 
-          } = this.state.watchData
+          const { watchData: {
+                    watch_maker,
+                    watch_name,
+                    movement,
+                    band,
+                    model_number,
+                    case_measurement,
+                    water_resistance,
+                    complications,
+                    date_bought,
+                    cost,
+                    notes,
+                    user_id 
+                  },
+                  image
+          } = this.state
 
           let isWatchRelated = false
           if (watch_name === this.props.watchRelated) {
@@ -91,8 +93,8 @@ class AddWatch extends Component {
           formData.append('cost', cost)
           formData.append('notes', notes)
           formData.append('user_id', user_id)
-          if (this.state.image) {
-               formData.append('image', this.state.image)
+          if (image) {
+               formData.append('image', image)
           }
           this.props.addWatchAction(formData, this.state.watchData)
           if (!isWatchRelated) {
