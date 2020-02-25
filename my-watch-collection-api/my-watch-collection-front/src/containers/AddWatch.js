@@ -69,23 +69,11 @@ class AddWatch extends Component {
           if (watch_name === this.props.watchRelated) {
                isWatchRelated = true
           } 
-          // validate the watch_name/cost/date_bought combination input for watch records
-          if (watch_name && !isWatchRelated)
-               if ((Number(cost) > 0 &&
-                    Number(date_bought) === 0) ||
-                  
-                   (Number(cost) === 0 &&
-                    Number(date_bought) === 0)
-                  )
-               { 
-                    alert('1 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
-                    return
-               }
           // validate the 'Date Bought/RCVD' input for watch records
           if (!isWatchRelated) {
                const validDate = DateValidation(date_bought.toString(), 'add')
                if (!validDate) {
-                    alert('2 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
+                    alert('Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
                }
           }   
