@@ -102,7 +102,7 @@ class EditWatch extends Component {
                this.props.editWatchAction(formData, id)
                if (!isWatchRelated) {
                     alert('The watch has been edited')
-               } else alert('The watch-related has been edited')
+               } else alert(`The ${this.props.watchRelated} has been edited`)
           } else {
                alert('Nothing has been edited!')
           }  

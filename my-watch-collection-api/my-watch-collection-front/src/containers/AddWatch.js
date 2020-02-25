@@ -70,15 +70,14 @@ class AddWatch extends Component {
                isWatchRelated = true
           } 
           // validate the watch_name/cost/date_bought combination input for watch records
-          if ((watch_name && 
-               !isWatchRelated && 
-               Number(cost) > 0 &&
-               Number(date_bought) === 0) ||
-              
-               (watch_name && 
-               !isWatchRelated && 
-               Number(cost) === 0 &&
-               Number(date_bought) === 0)) { 
+          if (watch_name && !isWatchRelated)
+               if ((Number(cost) > 0 &&
+                    Number(date_bought) === 0) ||
+                  
+                   (Number(cost) === 0 &&
+                    Number(date_bought) === 0)
+                  )
+               { 
                     alert('1 Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
                     return
                }
@@ -110,7 +109,7 @@ class AddWatch extends Component {
           this.props.addWatchAction(formData, this.state.watchData)
           if (!isWatchRelated) {
                alert('The watch has been added and saved!')
-          } else alert('The watch-related has been added and saved!')
+          } else alert(`The ${this.props.watchRelated} has been added and saved!`)
           // Clear the form
           ClearForm('AddWatch-Form')
           // Set focus on the first input

@@ -37,7 +37,7 @@ class WatchDetail extends Component {
             
             if (!isWatchRelated) {
                 alert('The watch has been deleted!')
-            } else alert('The watch-related has been deleted!')
+            } else alert(`The ${this.props.watchRelated} has been deleted!`)
 
             this.setState({
                 isBackToDashboard: true,
