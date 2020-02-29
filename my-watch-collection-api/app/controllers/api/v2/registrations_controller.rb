@@ -1,5 +1,7 @@
 class Api::V2::RegistrationsController < ApplicationController
 
+  before_action :unattached_blobs
+
   def create
     @user = User.create!(
       email: params['user']['email'],
@@ -34,9 +36,20 @@ class Api::V2::RegistrationsController < ApplicationController
   end
 
   def destroy
-    # @userWatches = Watch.where(user_id: params[:id])
-    # @userWatches.destroy_all
+    @userWatches = Watch.where(user_id: params[:id])
+    if @userWatches
+      @userWatches.destroy_all
+    end
+
     User.find(params[:id]).destroy
+  end
+
+  private
+
+  def unattached_blobs
+    if ActiveStorage::Blob.unattached
+      ActiveStorage::Blob.unattached.each(&:purge)
+    end
   end
 
   def user_params

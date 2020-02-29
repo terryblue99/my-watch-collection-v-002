@@ -63,8 +63,7 @@ class AddWatch extends Component {
                     cost,
                     notes,
                     user_id 
-                  },
-                  image
+                  }
           } = this.state
 
           let isWatchRelated = false
@@ -93,8 +92,8 @@ class AddWatch extends Component {
           formData.append('cost', cost)
           formData.append('notes', notes)
           formData.append('user_id', user_id)
-          if (image) {
-               formData.append('image', image)
+          if (this.state.image) {
+               formData.append('image', this.state.image)
           }
           this.props.addWatchAction(formData, this.state.watchData)
           if (!isWatchRelated) {
