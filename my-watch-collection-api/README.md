@@ -4,7 +4,7 @@ APP
 
 my-watch-collection
 
-A React Redux app with a Rails API backend
+A React Redux app with a Rails API backend (SQLite3 DB)
 
 INSTALLATION, USAGE & DEVELOPMENT
 
