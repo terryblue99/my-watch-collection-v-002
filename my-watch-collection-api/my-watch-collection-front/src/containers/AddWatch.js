@@ -74,7 +74,7 @@ class AddWatch extends Component {
           if (!isWatchRelated) {
                const validDate = DateValidation(date_bought.toString(), 'add')
                if (!validDate) {
-                    alert('Date Bought/RCVD must be in the format yyyy-mm-dd, yyyy-mm or yyyy')
+                    alert('Date Bought/RCVD must be in format yyyy-mm-dd, yyyy-mm or yyyy and contain valid day & month numbers!')
                     return
                }
           }   
