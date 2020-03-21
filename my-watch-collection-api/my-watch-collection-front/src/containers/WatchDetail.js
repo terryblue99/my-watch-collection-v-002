@@ -79,7 +79,6 @@ class WatchDetail extends Component {
             this.props.setCurrentWatch(null) 
             return  RedirectTo('/dashboard')
         }
-        console.log('WatchDetail props: ', this.props)
         const {showWatches, currentWatch} = this.props
         const watchRelated = this.props.watchRelated
 
