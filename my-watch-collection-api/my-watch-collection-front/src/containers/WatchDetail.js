@@ -23,7 +23,7 @@ class WatchDetail extends Component {
         let isWatchRelated
         let recordType
 
-        if (this.props.currentWatch.watch_name === this.props.watchRelated) {
+        if (this.props.currentWatch.watch_maker === this.props.watchRelated) {
             isWatchRelated = true
             recordType = this.props.watchRelated
         } else {
@@ -120,26 +120,28 @@ class WatchDetail extends Component {
                             flex-direction: column;
                         }
                     `}>   
-                        <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
-                        <div css={css`
-                            margin-bottom: 15px;
-                            padding-left: 80px;
-                            padding-top: 10px;
-                            width: 25%;
-                            @media (max-width: 945px) {
-                                padding-left: 120px;
-                            } 
-                            
-                            @media (max-width: 750px) {
-                                padding-left: 120px;
-                            }  
-                        `}> 
-                            <Image 
-                                src={currentWatch.image}
-                                width={200}
-                                height={200} 
-                                style={style.image}
-                            />
+                        <div>    
+                            <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
+                            <div css={css`
+                                margin-bottom: 15px;
+                                padding-left: 80px;
+                                padding-top: 10px;
+                                width: 25%;
+                                @media (max-width: 945px) {
+                                    padding-left: 120px;
+                                } 
+                                
+                                @media (max-width: 750px) {
+                                    padding-left: 120px;
+                                }  
+                            `}> 
+                                <Image 
+                                    src={currentWatch.image}
+                                    width={200}
+                                    height={200} 
+                                    style={style.image}
+                                />
+                            </div>
                         </div>
                         <div css={css`
                             padding-bottom: 12px;
@@ -163,75 +165,75 @@ class WatchDetail extends Component {
                             `}>{watch_maker}</b></h1> 
                             <h2 css={css`
                                 color: midnightblue;
-                                font-size: 1.4rem;
+                                font-size: 1.25rem;
                                 margin-bottom: 3px;
                                 max-width: 500px;
                                 @media (max-width: 750px) {
                                     font-size: 1rem;
                                 }
                                 @media (min-width: 1500px) {
-                                    font-size: 1.75rem;
+                                    font-size: 1.25rem;
                                     margin-bottom: 15px;
                                 }
                             `}>{watch_name}</h2>
 
                             <hr className='WatchDetail'/><br />
                             
-                            {movement && !watch_name.includes(watchRelated)
+                            {movement && !watch_maker.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Movement</em></p>
                                         <h3 className='WatchDetail'>{movement}</h3>
                                     </>
                                 :   null }
-                            {movement && watch_name.includes(watchRelated) 
+                            {movement && watch_maker.includes(watchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{movement}</h3>
                                     </>
                                 :   null }
-                            {complications && !watch_name.includes(watchRelated)
+                            {complications && !watch_maker.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Complications</em></p>
                                         <h3 className='WatchDetail'>{complications}</h3>
                                     </>
                                 :   null }
-                            {complications && watch_name.includes(watchRelated) 
+                            {complications && watch_maker.includes(watchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{complications}</h3>
                                     </>
                                 :   null }
-                            {band && !watch_name.includes(watchRelated)
+                            {band && !watch_maker.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Band</em></p>
                                         <h3 className='WatchDetail'>{band}</h3>
                                     </>
                                 :   null }
-                            {band && watch_name.includes(watchRelated) 
+                            {band && watch_maker.includes(watchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{band}</h3>
                                     </>
                                 :   null }
-                            {model_number && !watch_name.includes(watchRelated)
+                            {model_number && !watch_maker.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Model Number</em></p>
                                         <h3 className='WatchDetail'>{model_number}</h3>
                                     </>
                                 :   null }
-                            {model_number && watch_name.includes(watchRelated) 
+                            {model_number && watch_maker.includes(watchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{model_number}</h3>
                                     </>
                                 :   null }
-                            {case_measurement && !watch_name.includes(watchRelated)
+                            {case_measurement && !watch_maker.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Case Measurement</em></p>
                                         <h3 className='WatchDetail'>{case_measurement}</h3>
                                     </>
                                 :   null }
-                            {case_measurement && watch_name.includes(watchRelated) 
+                            {case_measurement && watch_maker.includes(watchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{case_measurement}</h3>
                                     </>
                                 :   null }
-                            {water_resistance && !watch_name.includes(watchRelated)
+                            {water_resistance && !watch_maker.includes(watchRelated)
                                 ?   <>  <p><em className='Detail-css'>Water Resistance</em></p>
                                         <h3 className='WatchDetail'>{water_resistance}</h3>
                                     </>
                                 :   null }
-                            {water_resistance && watch_name.includes(watchRelated) 
+                            {water_resistance && watch_maker.includes(watchRelated) 
                                 ?   <>  <h3 className='WatchDetail'>{water_resistance}</h3>
                                     </>
                                 :   null }
-                            {date_bought && !watch_name.includes(watchRelated) 
+                            {date_bought && !watch_maker.includes(watchRelated) 
                             ?   <>
                                     {cost > 0
                                         ? <> <p><em className='Detail-css'>Date Bought</em></p>
@@ -264,7 +266,7 @@ class WatchDetail extends Component {
                             flex-direction: column;
                         }
                     `}>
-                        {!watch_name.includes(watchRelated)
+                        {!watch_maker.includes(watchRelated)
                             ? <>
                                 <Link className='btn Edit-button Button-text' to={{
                                         pathname: `/watches/${id}/edit_watch`,
@@ -279,7 +281,8 @@ class WatchDetail extends Component {
                                 <Link className='btn Edit-button Button-text' to={{
                                         pathname: `/watches/${id}/edit_watch_related`,
                                         state: {
-                                            watch: currentWatch
+                                            watch: currentWatch,
+                                            isEditWatchRelated: true
                                         }
                                     }}>
                                         Edit

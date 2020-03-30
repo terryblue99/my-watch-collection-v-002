@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fresca:300,400,900&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css?family=Google+Sans:300,400,900&display=swap'); */
 
 html { /* everything will inherit from html */
   box-sizing: border-box;  /* paddings and borders will be included inside the element  */
@@ -459,7 +459,7 @@ hr.WatchDetail {
 .WatchForm-header,
 .ProfileForm-header
 {
-  font-family: Ubuntu,sans-serif;
+  /* font-family: Ubuntu,sans-serif; */
   margin-bottom: 10px;
   text-align: center;
 }
@@ -820,10 +820,14 @@ textarea:required
     font-size: 1rem;
   }
 
+  .Watch-detail {
+    padding-left: 250px;
+  } 
+
   .WatchDetail {
     font-size: 1.25rem;
     margin-bottom: 10px;
-    max-width: 500px;
+    max-width: 450px;
   }
 
   .WatchForm-header,
@@ -870,4 +874,13 @@ textarea:required
     font-size: 1.5rem;
   }
 
+}
+
+@media (max-width: 1944px) {
+  .Back-button {
+    margin-left: 80px;
+  }
+  hr.WatchDetail {
+    max-width: 450px;
+  }
 }
