@@ -253,6 +253,7 @@ button:focus,
   color: black;
   font: inherit;
   padding: 4px 8px;
+  text-transform: uppercase;
 }
 
 .Search-button:hover {
