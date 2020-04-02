@@ -46,7 +46,7 @@ class DashboardMain extends Component {
       }
     }
 
-    const watchesYes_Sort = [
+    const sortElement = [
       <>
         <h2 className='Sort-header'>Sort By</h2>
         <br />
@@ -77,12 +77,12 @@ class DashboardMain extends Component {
     if (this.props.newestWatch && this.props.oldestWatch) {
         const watchRelated = this.props.watchRelated
 
-        a_newest_watch_exists = !this.props.newestWatch.watch_name.includes(watchRelated)
+        a_newest_watch_exists = !this.props.newestWatch.watch_maker.includes(watchRelated)
         newestWatchImage = this.props.newestWatch.image 
         newestWatchMaker = this.props.newestWatch.watch_maker
         newestWatchDate = this.props.newestWatch.date_bought
 
-        an_oldest_watch_exists = !this.props.oldestWatch.watch_name.includes(watchRelated)
+        an_oldest_watch_exists = !this.props.oldestWatch.watch_maker.includes(watchRelated)
         oldestWatchImage = this.props.oldestWatch.image
         oldestWatchMaker = this.props.oldestWatch.watch_maker
         oldestWatchDate = this.props.oldestWatch.date_bought
@@ -153,7 +153,7 @@ class DashboardMain extends Component {
           { number_of_watches > 1 
               && an_oldest_watch_exists
               && a_newest_watch_exists
-            ? watchesYes_Sort
+            ? sortElement
             : null
           }
           { number_of_watches === 0 && number_of_saved_watches === 0
@@ -161,24 +161,26 @@ class DashboardMain extends Component {
             : null
           }
         </div>
-        <div className='Dashboard-item'>
-          <iframe className='Dashboard-time' 
-                  title='clockFrame' 
-                  src="http://free.timeanddate.com/clock/i6z3es2b/n2036/szw110/szh110/hoc9b8578/hbw10/hfc754c29/cf100/hnc432f30/hcw2/fav0/fiv0/mqcfff/mqs4/mql25/mqw12/mqd78/mhcfff/mhs2/mhl5/mhw2/mhd78/mmv0/hwm1/hhcfff/hhs2/hhl50/hhw8/hmcfff/hms2/hml70/hmw8/hmr4/hscfff/hss3/hsl70/hsw3" 
-                  frameBorder="0" 
-                  width="110" 
-                  height="110">
-          </iframe>
-          <br />
-          <iframe className='Dashboard-date' 
-                  title='dateFrame' 
-                  src="http://free.timeanddate.com/clock/i6z3g070/n64/ftb/bo2/pd2/tt1/tw1" 
-                  frameBorder="0" 
-                  width="172" 
-                  height="20">
-          </iframe>
-        </div>
-        
+        { number_of_watches !== 0 && number_of_saved_watches !== 0
+            ? <div className='Dashboard-item'>
+                <iframe className='Dashboard-time' 
+                        title='clockFrame' 
+                        src="http://free.timeanddate.com/clock/i6z3es2b/n2036/szw110/szh110/hoc9b8578/hbw10/hfc754c29/cf100/hnc432f30/hcw2/fav0/fiv0/mqcfff/mqs4/mql25/mqw12/mqd78/mhcfff/mhs2/mhl5/mhw2/mhd78/mmv0/hwm1/hhcfff/hhs2/hhl50/hhw8/hmcfff/hms2/hml70/hmw8/hmr4/hscfff/hss3/hsl70/hsw3" 
+                        frameBorder="0" 
+                        width="110" 
+                        height="110">
+                </iframe>
+                <br />
+                <iframe className='Dashboard-date' 
+                        title='dateFrame' 
+                        src="http://free.timeanddate.com/clock/i6z3g070/n64/ftb/bo2/pd2/tt1/tw1" 
+                        frameBorder="0" 
+                        width="172" 
+                        height="20">
+                </iframe>
+              </div>
+            : null
+        }
         <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
           {number_of_watches > 1 && a_newest_watch_exists
             ? <>
@@ -212,9 +214,13 @@ class DashboardMain extends Component {
           }
           <br />
         </div>
-        <div className='Dashboard-item Dashboard-logo'>
-          <img src={logo} alt='logo' />
-        </div>
+        {number_of_watches !== 0 && number_of_saved_watches !== 0
+          ? <div className='Dashboard-item Dashboard-logo'>
+              <img src={logo} alt='logo' />
+            </div>
+          : null
+        }
+         
         <br />
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
           {number_of_watches > 1 && an_oldest_watch_exists
