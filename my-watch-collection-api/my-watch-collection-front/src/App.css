@@ -107,20 +107,23 @@ button
   margin-top: 10px;
 }
 
-.Dashboard-watchText,
+
 .WatchRelated-text,
-.Sort-header,
 .Welcome-text
 {
   text-align: center;
   text-shadow: 2px 2px 5px orange;
 }
 
+.Dashboard-watchText,
+.Sort-header {
+  text-align: center; 
+}
+
 .Dashboard-totalWatchRelated,
 .Dashboard-totalWatches 
 {
   text-align: center;
-  text-shadow: 2px 2px 5px orange;
 }
 
 /*  ==================
