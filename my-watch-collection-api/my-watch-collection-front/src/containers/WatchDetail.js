@@ -79,7 +79,7 @@ class WatchDetail extends Component {
             this.props.setCurrentWatch(null) 
             return  RedirectTo('/dashboard')
         }
-        const {showWatches, currentWatch} = this.props
+        const {currentWatch} = this.props
         const watchRelated = this.props.watchRelated
 
         const style = {
@@ -107,9 +107,8 @@ class WatchDetail extends Component {
 
             return ( 
                 
-                <div className='Watch-detail' css={css`
-                        display: ${showWatches ? 'none' : 'block'};
-                        grid-area: main;
+                <div className='Watch-detail' css={css`         
+                    grid-area: main;
                 `}>
                     
                     <div css={css`

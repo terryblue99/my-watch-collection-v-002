@@ -53,8 +53,7 @@ const Watches = ({ watches, watchRelated, sortOptionSelected, isSearchSuccessful
                            watches={watches}
                            setCurrentWatch={setCurrentWatch}
                 /> 
-                <WatchDetail showWatches={showWatches}
-                             currentWatch={currentWatch}
+                <WatchDetail currentWatch={currentWatch}
                              setCurrentWatch={setCurrentWatch}
                              newestWatch={newestWatch}
                              oldestWatch={oldestWatch}
