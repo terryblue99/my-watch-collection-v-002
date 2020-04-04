@@ -211,8 +211,14 @@ button
   display: grid;
 }
 
+.WatchRelated {
+  display: grid;
+  min-height: 100vh;
+}
+
 .WatchRelated-container {
-  margin: 0 auto;
+  align-self: center;
+  justify-self: center;
   width: 590px;
 }
 
