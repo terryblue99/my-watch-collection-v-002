@@ -16,9 +16,9 @@ const Watches = ({ watches, watchRelated, sortOptionSelected, isSearchSuccessful
 
     if(watches && watches.length > 0) {
         // Filter out watch-related records
-        filteredWatchRelated = watches.filter(watch => watch.watch_name.includes(watchRelated))
+        filteredWatchRelated = watches.filter(watch => watch.watch_maker.includes(watchRelated))
         // Filter out watch records
-        filteredWatches = watches.filter(watch => !watch.watch_name.includes(watchRelated))
+        filteredWatches = watches.filter(watch => !watch.watch_maker.includes(watchRelated))
         // Sort the filtered watch records by date bought using the underscore function _.sortBy
         const sortedWatches = _.sortBy( filteredWatches, 'date_bought' )
         oldestWatch = sortedWatches[0]

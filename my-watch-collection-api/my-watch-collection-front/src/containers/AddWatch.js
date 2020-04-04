@@ -15,8 +15,8 @@ class AddWatch extends Component {
 
      state = {
           watchData: {
-               watch_maker: '',
-               watch_name: this.props.watchRelated,
+               watch_maker: this.props.watchRelated,
+               watch_name: '',
                movement: '',
                band: '',
                model_number: '',
@@ -67,13 +67,13 @@ class AddWatch extends Component {
           } = this.state
 
           let isWatchRelated = false
-          if (watch_name === this.props.watchRelated) {
+          if (watch_maker === this.props.watchRelated) {
                isWatchRelated = true
           } 
           // validate the 'Date Bought/RCVD' input for watch records
           if (!isWatchRelated) {
-               const validDate = DateValidation(date_bought.toString(), 'add')
-               if (!validDate) {
+               const isValidDate = DateValidation(date_bought)
+               if (!isValidDate) {
                     alert('Date Bought/RCVD must be in format yyyy-mm-dd, yyyy-mm or yyyy and contain valid day & month numbers!')
                     return
                }
@@ -112,8 +112,6 @@ class AddWatch extends Component {
      }
 
      render() {  
-          
-          const {watch_name} = this.state.watchData
 
           if (this.state.isBackToDashboard) { 
                this.setState({
@@ -121,6 +119,10 @@ class AddWatch extends Component {
                }) 
                return RedirectTo('/dashboard')
           }
+
+          const isAddWatchRelated = this.props.location.isAddWatchRelated || false
+
+          const {watch_maker} = this.state.watchData
       
           return (
                
@@ -140,42 +142,44 @@ class AddWatch extends Component {
                                onSubmit={this.handleSubmit}
                          >
                               <h1 className='WatchForm-header Dark-red-color'>
-                                   {!this.props.location.isAddWatchRelated
+                                   {!isAddWatchRelated
                                         ? <>Add a Watch</>
                                         : <>Add a Watch-Related</>
                                    }
                               </h1>
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Watch Maker</label>
-                                           <input autoFocus id='Focus-first-input' className='Input-element' required 
+                                           <input autoFocus id='Focus-first-input' 
+                                                  className='Input-element' required 
                                                   type='text'
                                                   name='watch_maker'
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <label>Title</label>
-                                           <input autoFocus id='Focus-first-input' className='Input-element' required 
+                                   :    <> <input className='Input-element Input-related'
                                                   autoComplete='off'
                                                   type='text'
                                                   name='watch_maker'
-                                                  onChange={this.handleChange}/>
+                                                  value={watch_maker}/>
                                         </>
                               }
                               <br />
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Watch Name</label>
                                            <input className='Input-element' required 
                                                   type='text'
                                                   name='watch_name'
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input className='Input-element Input-related'
+                                   :    <> <label>Title</label>
+                                           <input autoFocus id='Focus-first-input' required
+                                                  className='Input-element'
                                                   type='text'
                                                   name='watch_name'
-                                                  value={watch_name}/>
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Movement</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -190,7 +194,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Complications</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -205,7 +209,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Band</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -220,7 +224,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Model Number</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -235,7 +239,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Case Measurement (e.g. 45mm)</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -250,7 +254,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Water Resistance (e.g. 200 meters)</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -265,7 +269,7 @@ class AddWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
                                                   type='text'
@@ -275,7 +279,7 @@ class AddWatch extends Component {
                                    : null
                               }
                               <br />
-                              {!this.props.location.isAddWatchRelated
+                              {!isAddWatchRelated
                                    ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
                                            <input className='Input-element'
                                                   type='number'
