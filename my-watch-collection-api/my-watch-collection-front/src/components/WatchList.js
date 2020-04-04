@@ -36,7 +36,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                         watches.map(watch => {
                             return <li key={watch.id} css={css`
                                     border-bottom: 1px solid black;
-                                    font-size: .80rem;
+                                    font-size: 1rem;
                                     padding-left: 10px;
                                     transition: color 800ms;
                                     
@@ -47,7 +47,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                                     }
 
                                     @media (min-width: 1500px) {
-                                        font-size: 1rem;
+                                        font-size: 1.25rem;
                                     }
                                     
                                 `} onClick={() => { 
