@@ -11,7 +11,8 @@ html { /* everything will inherit from html */
 }
 
 body {
-  background-color: #e9ebee;
+  /* background-color: #e9ebee; */
+  background-color: gainsboro;
   line-height: 1.25; /* space between lines (times font size) */
   max-height: 100vh; /* relative to 1% of the height of the viewport */
 }
@@ -43,7 +44,8 @@ button
     ================= */
 
 .DashboardMain {
-  background-color: #e9ebee;
+  /* background-color: #e9ebee; */
+  background-color: gainsboro;
   display: grid;
   grid-template: repeat(2, auto) / repeat(3, 1fr); 
   grid-template-areas:
@@ -417,7 +419,8 @@ button:focus,
 }
 
 .WatchRelated-container {
-  background-color: #e9ebee;
+  /* background-color: #e9ebee; */
+  background-color: gainsboro;
 }
 
 .WatchRelated-container button {
