@@ -71,14 +71,14 @@ class EditWatch extends Component {
           } = this.state
 
           let isWatchRelated = false
-          if (watch_name === this.props.watchRelated) {
+          if (watch_maker === this.props.watchRelated) {
                isWatchRelated = true
           } 
           if (this.state.isFormInput) {
                // validate the 'Date Bought/RCVD' input for watch records
-               if (watch_name && !isWatchRelated) {
-                    const validDate = DateValidation(date_bought)
-                    if (!validDate) {
+               if (watch_maker && !isWatchRelated) {
+                    const isValidDate = DateValidation(date_bought)
+                    if (!isValidDate) {
                          alert('Date Bought/RCVD must be in format yyyy-mm-dd, yyyy-mm or yyyy and contain valid day & month numbers!')
                          return
                     }
@@ -139,8 +139,9 @@ class EditWatch extends Component {
           }
 
           const watch = this.props.location.state.watch
-          const watchRelated = this.props.watchRelated
-      
+
+          const isEditWatchRelated = this.props.location.state.isEditWatchRelated || false
+
           return (  
                
                <div>
@@ -162,12 +163,12 @@ class EditWatch extends Component {
                                onSubmit={this.handleSubmit}
                          >
                               <h1 className='WatchForm-header Dark-red-color'>
-                                   {!watch.watch_name.includes(watchRelated)
+                                   {!isEditWatchRelated
                                         ? <>Edit this Watch</>
                                         : <>Edit this Watch-Related</>
                                    }
                               </h1>
-                              {watch.watch_maker && !watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Watch Maker</label>
                                            <input className='Input-element' required 
                                                   type='text'
@@ -175,16 +176,14 @@ class EditWatch extends Component {
                                                   defaultValue={watch.watch_maker}
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input className='Input-element' required 
-                                                  autoComplete='off'
+                                   :    <> <input className='Input-element Input-related'
                                                   type='text'
                                                   name='watch_maker'
-                                                  defaultValue={watch.watch_maker}
-                                                  onChange={this.handleChange}/>
+                                                  value={this.props.watchRelated}/>
                                         </>
                               }
                               <br />
-                              {watch.watch_name && !watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Watch Name</label>
                                            <input className='Input-element' required 
                                                   type='text'
@@ -192,14 +191,17 @@ class EditWatch extends Component {
                                                   defaultValue={watch.watch_name}
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input className='Input-element Input-related'
+                                   :    <> <label>Title</label>
+                                           <input className='Input-element'
+                                                  autoComplete='off'
                                                   type='text'
                                                   name='watch_name'
-                                                  value={watchRelated}/>
+                                                  defaultValue={watch.watch_name}
+                                                  onChange={this.handleChange}/>
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Movement</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -216,7 +218,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Complications</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -233,7 +235,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Band</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -250,7 +252,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Model Number</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -267,7 +269,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br /> 
-                              {!watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Case Measurement (e.g. 45mm)</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -284,7 +286,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Water Resistance (e.g. 200 meters)</label>
                                            <input className='Input-element'
                                                   type='text'
@@ -301,7 +303,7 @@ class EditWatch extends Component {
                                         </>
                               }
                               <br />
-                              {!watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
                                            <input className='Input-element' required
                                                   type='text'
@@ -312,7 +314,7 @@ class EditWatch extends Component {
                                    : null
                               }
                               <br />
-                              {!watch.watch_name.includes(watchRelated)
+                              {!isEditWatchRelated
                                    ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
                                            <input className='Input-element'
                                                   type='number'
@@ -320,17 +322,19 @@ class EditWatch extends Component {
                                                   min='0'
                                                   name='cost'
                                                   defaultValue={watch.cost}
-                                                  onChange={this.handleChange}/>
+                                                  onChange={this.handleChange}
+                                           />
+                                           <br />
                                         </>
                                    : null
                               }
-                              <br />
-                              <textarea className='Text-area'  
+                              <label>Notes</label>
+                                   <textarea className='Text-area'  
                                         name='notes'
-                                        placeholder='Notes'
                                         defaultValue={watch.notes}
                                         onChange={this.handleChange}
-                              />
+                                   />
+                              <br />
                               <b className='WatchForm-upload-text'>
                                    Upload image</b>
                               <input className='Input-element Choose-image'  

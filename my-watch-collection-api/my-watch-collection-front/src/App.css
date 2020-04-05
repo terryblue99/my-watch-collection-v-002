@@ -31,7 +31,7 @@ button
 }
 
 .Blue-color {
-  color:  blue;
+  color:  darkblue;
 }
 
 .Dark-red-color {
@@ -112,7 +112,7 @@ button
 .Welcome-text
 {
   text-align: center;
-  text-shadow: 2px 2px 5px orange;
+  /* text-shadow: 2px 2px 5px orange; */
 }
 
 .Dashboard-watchText,
@@ -222,6 +222,7 @@ button
   justify-self: center;
   width: 590px;
 }
+
 
 .WatchRelated-container p {
   padding-left: 90px;
@@ -597,7 +598,8 @@ textarea:required
 
 .Detail-css {
   color: darkred;
-  font-size: 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 /*  ===================================
@@ -783,9 +785,9 @@ textarea:required
     font-size: 3rem;
   }
 
-  .Profile label,  
   #AddWatch-Form label,
-  .EditWatch-Form label
+  .EditWatch-Form label,
+  .Profile label  
   {
     font-size: 1.1rem;
   }
@@ -833,8 +835,12 @@ textarea:required
     padding-left: 250px;
   } 
 
+  .Detail-css {
+    font-size: 1.1rem;
+  }
+
   .WatchDetail {
-    font-size: 1.25rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
     max-width: 450px;
   }

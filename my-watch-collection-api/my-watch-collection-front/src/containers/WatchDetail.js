@@ -107,7 +107,7 @@ class WatchDetail extends Component {
 
             return ( 
                 
-                <div className='Watch-detail' css={css`         
+                <div className='Watch-detail' css={css`
                     grid-area: main;
                 `}>
                     
@@ -115,6 +115,7 @@ class WatchDetail extends Component {
                         display: flex;
                         justify-content: space-between;
                         margin-top: 20px;
+
                         @media (max-width: 945px) {
                             flex-direction: column;
                         }
@@ -126,6 +127,7 @@ class WatchDetail extends Component {
                                 padding-left: 80px;
                                 padding-top: 10px;
                                 width: 25%;
+
                                 @media (max-width: 945px) {
                                     padding-left: 120px;
                                 } 
@@ -147,17 +149,20 @@ class WatchDetail extends Component {
                             padding-left: 120px;
                             padding-top: 0;
                             width: 75%;
+
                             @media (max-width: 1500px) {
                                 margin-right: 35px;
                             }
                         `}>
-                            <h1><b css={css`
-                                color: sienna;
+                            <h1 className='Dark-red-color'><b css={css`
                                 font-family: 'Ubuntu, sans-serif';
                                 font-size: 1.55rem;
+                                text-transform: uppercase;
+
                                 @media (max-width: 750px) {
                                     font-size: 1.25rem;
                                 }
+
                                 @media (min-width: 1500px) {
                                     font-size: 1.75rem;
                                 }
@@ -167,11 +172,13 @@ class WatchDetail extends Component {
                                 font-size: 1.25rem;
                                 margin-bottom: 3px;
                                 max-width: 500px;
+
                                 @media (max-width: 750px) {
-                                    font-size: 1rem;
+                                    font-size: 1.1rem;
                                 }
+
                                 @media (min-width: 1500px) {
-                                    font-size: 1.25rem;
+                                    font-size: 1.50rem;
                                     margin-bottom: 15px;
                                 }
                             `}>{watch_name}</h2>
@@ -179,7 +186,7 @@ class WatchDetail extends Component {
                             <hr className='WatchDetail'/><br />
                             
                             {movement && !watch_maker.includes(watchRelated)
-                                ?   <>  <p><em className='Detail-css'>Movement</em></p>
+                                ?   <>  <p className='Detail-css'>Movement</p>
                                         <h3 className='WatchDetail'>{movement}</h3>
                                     </>
                                 :   null }
@@ -188,7 +195,7 @@ class WatchDetail extends Component {
                                     </>
                                 :   null }
                             {complications && !watch_maker.includes(watchRelated)
-                                ?   <>  <p><em className='Detail-css'>Complications</em></p>
+                                ?   <>  <p className='Detail-css'>Complications</p>
                                         <h3 className='WatchDetail'>{complications}</h3>
                                     </>
                                 :   null }
@@ -197,7 +204,7 @@ class WatchDetail extends Component {
                                     </>
                                 :   null }
                             {band && !watch_maker.includes(watchRelated)
-                                ?   <>  <p><em className='Detail-css'>Band</em></p>
+                                ?   <>  <p className='Detail-css'>Band</p>
                                         <h3 className='WatchDetail'>{band}</h3>
                                     </>
                                 :   null }
@@ -206,7 +213,7 @@ class WatchDetail extends Component {
                                     </>
                                 :   null }
                             {model_number && !watch_maker.includes(watchRelated)
-                                ?   <>  <p><em className='Detail-css'>Model Number</em></p>
+                                ?   <>  <p className='Detail-css'>Model Number</p>
                                         <h3 className='WatchDetail'>{model_number}</h3>
                                     </>
                                 :   null }
@@ -215,7 +222,7 @@ class WatchDetail extends Component {
                                     </>
                                 :   null }
                             {case_measurement && !watch_maker.includes(watchRelated)
-                                ?   <>  <p><em className='Detail-css'>Case Measurement</em></p>
+                                ?   <>  <p className='Detail-css'>Case Measurement</p>
                                         <h3 className='WatchDetail'>{case_measurement}</h3>
                                     </>
                                 :   null }
@@ -224,7 +231,7 @@ class WatchDetail extends Component {
                                     </>
                                 :   null }
                             {water_resistance && !watch_maker.includes(watchRelated)
-                                ?   <>  <p><em className='Detail-css'>Water Resistance</em></p>
+                                ?   <>  <p className='Detail-css'>Water Resistance</p>
                                         <h3 className='WatchDetail'>{water_resistance}</h3>
                                     </>
                                 :   null }
@@ -235,10 +242,10 @@ class WatchDetail extends Component {
                             {date_bought && !watch_maker.includes(watchRelated) 
                             ?   <>
                                     {cost > 0
-                                        ? <> <p><em className='Detail-css'>Date Bought</em></p>
+                                        ? <> <p className='Detail-css'>Date Bought</p>
                                              <h3 className='WatchDetail'>{date_bought}</h3>
                                           </>
-                                        : <> <p><em className='Detail-css'>Date RCVD</em></p>
+                                        : <> <p className='Detail-css'>Date RCVD</p>
                                              <h3 className='WatchDetail'>{date_bought}</h3>
                                           </>
                                     }    
@@ -246,13 +253,13 @@ class WatchDetail extends Component {
                             : null }
                             {cost > 0
                             ?    <>
-                                    <p><em className='Detail-css'>Cost</em></p>
+                                    <p className='Detail-css'>Cost</p>
                                     <h3 className='WatchDetail'>${parseFloat(cost).toFixed(2)}</h3>
                                 </>
                             : null }
                             {notes 
                             ?    <>
-                                    <p><em className='Detail-css'>Notes</em></p>
+                                    <p className='Detail-css'>Notes</p>
                                     <h3 className='WatchDetail'>{notes}</h3>
                                 </>
                             : null }

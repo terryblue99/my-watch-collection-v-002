@@ -286,16 +286,18 @@ class AddWatch extends Component {
                                                   step='0.01'
                                                   min='0'
                                                   name='cost'
-                                                  onChange={this.handleChange}/>
+                                                  onChange={this.handleChange}
+                                           /> 
+                                           <br />    
                                         </>
                                    : null
                               }
-                              <br />
-                              <textarea className='Text-area'  
+                              <label>Notes</label>
+                                   <textarea className='Text-area'  
                                         name='notes'
-                                        placeholder='Notes'
                                         onChange={this.handleChange}
-                              />
+                                   />
+                              <br /> 
                               <b className='WatchForm-upload-text'>
                                    Upload image</b>
                               <input className='Input-element Choose-image'  
