@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Fresca:300,400,900&display=swap');
-/* @import url('https://fonts.googleapis.com/css?family=Google+Sans:300,400,900&display=swap'); */
 
 html { /* everything will inherit from html */
   box-sizing: border-box;  /* paddings and borders will be included inside the element  */
