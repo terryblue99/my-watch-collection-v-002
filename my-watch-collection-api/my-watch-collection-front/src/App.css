@@ -78,7 +78,7 @@ button
 }
 
 .Dashboard-time {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 30px;
 }
 
@@ -783,6 +783,10 @@ textarea:required
 
   .Dashboard-header {
     font-size: 3rem;
+  }
+
+  .Dashboard-time {
+    margin-top: 40px;
   }
 
   #AddWatch-Form label,
