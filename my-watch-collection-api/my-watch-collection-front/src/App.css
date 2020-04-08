@@ -13,7 +13,7 @@ body {
   /* background-color: #e9ebee; */
   background-color: gainsboro;
   line-height: 1.25; /* space between lines (times font size) */
-  max-height: 100vh; /* relative to 1% of the height of the viewport */
+  height: 100vh; /* relative to 1% of the height of the viewport */
 }
 
 body, 
@@ -169,7 +169,7 @@ button
 
 .Homepage {
   align-items: center; 
-  min-height: 100vh; 
+  height: 100vh; 
 }
 
 .Homepage,
@@ -192,7 +192,7 @@ button
 
 .LogIn, 
 .SignUp {
-  min-height: 100vh;
+  height: 100vh;
   padding-top: 15px;
 }
 
@@ -214,7 +214,7 @@ button
 
 .WatchRelated {
   display: grid;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .WatchRelated-container {
@@ -512,7 +512,7 @@ hr.WatchDetail {
 #AddWatch-Form,
 .EditWatch-Form
 {
-  max-height: 100vh;
+  height: 100vh;
 }
 
 .LogIn-element, 
@@ -553,7 +553,7 @@ hr.WatchDetail {
 }
 
 .WatchForm-container {
-  min-height: 100vh;
+  height: 100vh;
   padding-bottom: 15px;
 }
 
@@ -805,7 +805,7 @@ textarea:required
 
   .LogIn, 
   .SignUp {
-    min-height: 100vh;
+    height: 100vh;
     padding-top: 100px;
   }
 
