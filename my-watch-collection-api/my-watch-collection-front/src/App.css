@@ -432,6 +432,39 @@ button:focus,
   max-width: 300px;
 }
 
+.List-icon {
+  margin: 1em;
+  width: 40px;
+}
+
+.List-icon:hover {
+  cursor: pointer;
+}
+
+.List-icon:after, 
+.List-icon:before, 
+.List-icon div {
+  background-color: DarkRed;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all .2s ease-in-out;
+}
+
+.List-icon:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+
+.List-icon:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+.List-icon:hover div {
+  transform: scale(0);
+}
+
 /*  ==================
     file upload button
     ================== */

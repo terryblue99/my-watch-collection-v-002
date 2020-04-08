@@ -5,19 +5,17 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 const SidebarMobile = ({ showWatches, setShowWatches }) => {  
 
     return (
-        <ul css={ulStyle}>
-            <div className='btn Button-text' css={buttonStyle} onClick={() => {
+        <div css={ListStyle}>
+            <div className='List-icon' onClick={() => {
                 setShowWatches(!showWatches) // watch list can be toggled on and off in mobile view
             }}>
-                <span></span>     
-                <span></span>     
-                <span></span>     
+                <div></div>     
             </div>
-        </ul>
+        </div>
     )  
 }
 
-const ulStyle = css`
+const ListStyle = css`
 
     grid-area: sidebar-mobile;
     height: 100%;
@@ -26,22 +24,6 @@ const ulStyle = css`
 
     @media (min-width: 750px) {
         display: none;
-    }
-`
-
-const buttonStyle = css`
-    display: block;
-    padding-left: 20px;
-    padding-top: 20px;
-    
-    span {
-        background: gray;
-        border-radius: 3px;
-        display: block;
-        height: 4px;
-        margin-bottom: 5px;
-        width: 33px;
-        z-index: 1;
     }
 `
 
