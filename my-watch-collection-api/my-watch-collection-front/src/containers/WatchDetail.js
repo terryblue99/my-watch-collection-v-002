@@ -84,7 +84,8 @@ class WatchDetail extends Component {
 
         const style = {
             image: {
-                border: '1px solid'
+                border: '1px solid',
+                boxShadow: '10px 10px 5px darkgray'
             }
         }
    
