@@ -15,7 +15,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 grid-area: sidebar-desktop;
                 grid-template-rows: auto 100px;
                 height: 80vh;
-                width: 370px;
+                width: 322px;
                 overflow-y: auto; // scrollling
                 padding-top: 3px;
                 text-align: left;
@@ -26,7 +26,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 
                 @media (max-width: 750px) {
                     display: ${showWatches ? 'block' : 'none'};
-                    max-width: 400px;
+                    width: 400px;
                 }
             `}>
                 <ul className='List' css={css`
