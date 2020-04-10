@@ -93,14 +93,21 @@ class NavBar extends Component {
               font-size: 1.25rem;
               padding-left: 190px;
             }
-            
-            @media (max-width: 1056px) {
-              padding-top: 15px;
-              padding-left: 200px;
+
+            @media (max-width: 1126px) {
+              padding-bottom: 10px;
             }
 
-            @media (min-width: 603px) and (max-width: 750px) {
-              padding-left: 150px;
+            @media (max-width: 745px) {
+              padding-left: 140px;
+            }
+
+            @media (max-width: 692px) {
+              padding-left: 79px;
+            }
+
+            @media (max-width: 529px) {
+              padding-left: 130px;
             }
           `}>Logged in as:
             <p css={css`
@@ -114,7 +121,7 @@ class NavBar extends Component {
               }
               
               @media (max-width: 1118px) {
-                padding-bottom: 10px;
+                {/* padding-bottom: 10px; */}
                 padding-left: 10px;
               }
             `}>{this.props.user.user.email}
@@ -142,6 +149,18 @@ class NavBar extends Component {
 
                   @media (min-width: 703px) and (max-width: 762px) {
                     padding-left: 10px;
+                  }
+
+                  @media (max-width: 745px) {
+                    padding-left: 320px;
+                  }
+
+                  @media (max-width: 692px) {
+                    padding-left: 259px;
+                  }
+
+                  @media (max-width: 529px) {
+                    padding-left: 140px;
                   }
                 `}> 
                   Log Out   
@@ -203,8 +222,24 @@ class NavBar extends Component {
                     margin-left: 360px;
                   }
 
-                  @media (min-width: 1057px) and (max-width: 1118px) {
-                    margin-left: 290px;
+                  @media (min-width: 693px) and (max-width: 1126px) {
+                    margin-left: 300px;
+                  }
+
+                  @media (max-width: 692px) {
+                    margin-left: 240px;
+                  }
+
+                  @media (max-width: 632px) {
+                    margin-left: 180px;
+                  }
+
+                  @media (max-width: 570px) {
+                    margin-left: 120px;
+                  }
+
+                  @media (max-width: 510px) {
+                    margin-left: 65px;
                   }
                 `}
               />
