@@ -116,8 +116,15 @@ button
 }
 
 .Dashboard-watchText,
+.Dashboard-watchText-new,
+.Dashboard-watchText-old,
 .Sort-header {
   text-align: center; 
+}
+
+.Dashboard-watchText-new,
+.Dashboard-watchText-old {
+  color: #404040; 
 }
 
 .Dashboard-totalWatchRelated,
@@ -311,7 +318,7 @@ button:focus,
   margin-bottom: 10px;
   margin-left: 20px;
   margin-top: 10px;
-  max-height: 60px;
+  height: 60px;
   padding: 10px 20px; 
 }
 
@@ -348,7 +355,7 @@ button:focus,
 }
 
 .ProfileUpdate-button {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .ProfileDelete {
@@ -359,7 +366,7 @@ button:focus,
 
 .ProfileDelete-button {
   font-size: 1rem;  
-  margin-top: 15px;
+  margin-top: 5px;
   padding: 10px;
 }
 
@@ -399,7 +406,7 @@ button:focus,
 .Edit-button,
 .Delete-button 
 {
-  max-height: 40px;
+  height: 40px;
   min-width: 100px;
   padding: 10px 20px; 
   text-align: center;
@@ -676,9 +683,7 @@ textarea:required
     margin-bottom: 15px;
   }
 
-  .Dashboard-totalText,
-  .Dashboard-watchText
-  {
+  .Dashboard-watchText {
     margin-top: 20px;
   }
 
@@ -803,7 +808,7 @@ textarea:required
   .EditWatch-Form
   {
     display: grid;
-    min-height: 90vh;
+    height: 90vh;
   }
   
 }

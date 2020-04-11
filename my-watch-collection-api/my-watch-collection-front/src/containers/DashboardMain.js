@@ -185,15 +185,15 @@ class DashboardMain extends Component {
           {number_of_watches > 1 && a_newest_watch_exists
             ? <>
                 <h2 className='Dashboard-watchText'>Newest Watch</h2>
-                <h3 className='Dashboard-watchText'>{newestWatchMaker}</h3>
-                <h4 className='Dashboard-watchText'>{newestWatchDate}</h4>
+                <h3 className='Dashboard-watchText-new'>{newestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText-new'>{newestWatchDate}</h4>
               </>
             : null
           }
           {number_of_watches === 1 && a_newest_watch_exists
             ? <>
-                <h3 className='Dashboard-watchText'>{newestWatchMaker}</h3>
-                <h4 className='Dashboard-watchText'>{newestWatchDate}</h4>
+                <h3 className='Dashboard-watchText-new'>{newestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText-new'>{newestWatchDate}</h4>
               </>
             : null
           }
@@ -226,15 +226,15 @@ class DashboardMain extends Component {
           {number_of_watches > 1 && an_oldest_watch_exists
             ? <>
                 <h2 className='Dashboard-watchText'>Oldest Watch</h2>
-                <h3 className='Dashboard-watchText'>{oldestWatchMaker}</h3>
-                <h4 className='Dashboard-watchText'>{oldestWatchDate}</h4>
+                <h3 className='Dashboard-watchText-old'>{oldestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText-old'>{oldestWatchDate}</h4>
               </>
             : null
           }
           {number_of_watches === 1 && an_oldest_watch_exists
             ? <>
-                <h3 className='Dashboard-watchText'>{oldestWatchMaker}</h3>
-                <h4 className='Dashboard-watchText'>{oldestWatchDate}</h4>
+                <h3 className='Dashboard-watchText-old'>{oldestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText-old'>{oldestWatchDate}</h4>
               </>
             : null
           }
