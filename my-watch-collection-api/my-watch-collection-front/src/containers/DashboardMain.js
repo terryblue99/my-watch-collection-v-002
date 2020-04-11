@@ -140,11 +140,11 @@ class DashboardMain extends Component {
           }
           <br />
           { number_of_watches > 0
-              ? <h2 className='Dashboard-totalWatches'>Total watches: {number_of_watches}</h2>
+              ? <p className='Dashboard-totalWatches'>Total watches: <span className='Watch-num'>{number_of_watches}</span></p>
               : null
           }
           { number_of_watcheRelated > 0
-              ? <h2 className='Dashboard-totalWatchRelated'>Total watch-related: {number_of_watcheRelated}</h2>
+              ? <p className='Dashboard-totalWatchRelated'>Total watch-related: <span className='Related-num'>{number_of_watcheRelated}</span></p>
               : null
           }   
         </div>
@@ -184,7 +184,7 @@ class DashboardMain extends Component {
         <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
           {number_of_watches > 1 && a_newest_watch_exists
             ? <>
-                <h2 className='Dashboard-watchText'>Newest Watch</h2>
+                <h2 className='Dashboard-watchText Newest-watch'>Newest Watch</h2>
                 <h3 className='Dashboard-watchText-new'>{newestWatchMaker}</h3>
                 <h4 className='Dashboard-watchText-new'>{newestWatchDate}</h4>
               </>
@@ -225,7 +225,7 @@ class DashboardMain extends Component {
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
           {number_of_watches > 1 && an_oldest_watch_exists
             ? <>
-                <h2 className='Dashboard-watchText'>Oldest Watch</h2>
+                <h2 className='Dashboard-watchText Oldest-watch'>Oldest Watch</h2>
                 <h3 className='Dashboard-watchText-old'>{oldestWatchMaker}</h3>
                 <h4 className='Dashboard-watchText-old'>{oldestWatchDate}</h4>
               </>

@@ -118,12 +118,14 @@ button
 .Dashboard-watchText,
 .Dashboard-watchText-new,
 .Dashboard-watchText-old,
-.Sort-header {
+.Sort-header 
+{
   text-align: center; 
 }
 
 .Dashboard-watchText-new,
-.Dashboard-watchText-old {
+.Dashboard-watchText-old 
+{
   color: #404040; 
 }
 
@@ -131,6 +133,21 @@ button
 .Dashboard-totalWatches 
 {
   text-align: center;
+  font-size: 1.25em; 
+}
+
+.Watch-num {
+  font-size: 1.2em;
+}
+
+.Related-num {
+  font-size: 1.2em;
+}
+
+.Oldest-watch,
+.Newest-watch 
+{
+  font-size: 1.25em;
 }
 
 /*  ==================
@@ -160,7 +177,8 @@ button
 }
 
 .Homepage,
-.Register {
+.Register 
+{
   display: flex; /* creates columns (margins no longer collapse)
                     Default flex-direction is row */
   flex-direction: column;
@@ -198,7 +216,8 @@ button
 }
 
 .LogIn, 
-.SignUp {
+.SignUp 
+{
   height: 100vh;
   padding-top: 15px;
 }
@@ -215,7 +234,8 @@ button
 }
 
 .LogIn-container, 
-.SignUp-container {
+.SignUp-container 
+{
   display: grid;
 }
 
@@ -450,7 +470,8 @@ button:focus,
 
 .List-icon:after, 
 .List-icon:before, 
-.List-icon div {
+.List-icon div 
+{
   background-color: DarkRed;
   border-radius: 3px;
   content: '';
@@ -521,7 +542,8 @@ hr.WatchDetail {
 }
 
 .ProfileForm-cancel-header,
-.ProfileForm-NewPassword-text {
+.ProfileForm-NewPassword-text 
+{
   color: DarkRed;
 }
 
@@ -914,7 +936,8 @@ textarea:required
   }
 
   .WatchRelated-container button,
-  .WatchRelated-text {
+  .WatchRelated-text 
+  {
     margin-bottom: 20px;
     margin-top: 15px;
   }
@@ -929,6 +952,19 @@ textarea:required
 
   .Center-text {
     font-size: 1.5rem;
+  }
+
+  .Oldest-watch,
+  .Newest-watch 
+  {
+    font-size: 1.5em;
+  }
+
+  .Dashboard-totalWatchRelated,
+  .Dashboard-totalWatches 
+  {
+    text-align: center;
+    font-size: 1.5em; 
   }
 
 }
