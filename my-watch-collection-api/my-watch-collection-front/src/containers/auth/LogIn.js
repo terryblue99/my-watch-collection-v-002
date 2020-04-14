@@ -58,14 +58,14 @@ class LogIn extends Component {
                                     />
                                 </div>
                                 <br /> 
-                              <div className='LogIn-element'>
-                                <label>Password:</label>
-                                <input className='LogIn-input-element' required 
-                                    type='password'
-                                    name='password'
-                                    onChange={this.handleChange}
-                                />
-                              </div>
+                                <div className='LogIn-element'>
+                                    <label>Password:</label>
+                                    <input className='LogIn-input-element' required 
+                                        type='password'
+                                        name='password'
+                                        onChange={this.handleChange}
+                                    />
+                                </div>
                                 <br />
                                 <button className='btn LogIn-button Button-text' type='submit'>Log In</button>
                                 <Link className='btn LogIn-home-button Button-text' to={{pathname: '/home'}}> 
