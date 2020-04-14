@@ -177,12 +177,22 @@ button
 }
 
 .Homepage,
-.Register 
+.LogIn, 
+.SignUp 
+{
+  height: 100vh;
+}
+
+.Homepage,
+.LogIn, 
+.Logo,
+.Register, 
+.SignUp 
 {
   display: flex; /* creates columns (margins no longer collapse)
                     Default flex-direction is row */
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .Register {
@@ -194,7 +204,6 @@ button
 
 .Homepage {
   align-items: center; 
-  height: 100vh; 
 }
 
 .Homepage,
@@ -208,35 +217,15 @@ button
   background-size: cover; /* Fills the screen with the whole image */
 }
 
-.LogIn, 
-.Logo,
-.SignUp 
-{
-  display: block;
-}
-
-.LogIn, 
-.SignUp 
-{
-  height: 100vh;
-  padding-top: 15px;
-}
-
 .LogIn-banner {
   background-color: #454140;
   color: cornsilk;
   font-size: 1.25rem; /* relative to font size of root (html) element, which is defaulted  to 16px */
-  margin: auto;
   margin-bottom: 10px;
-  max-width: 300px;
+  min-width: 300px;
   padding: 10px;
   text-align: center;
-}
-
-.LogIn-container, 
-.SignUp-container 
-{
-  display: grid;
+  align-self:center;
 }
 
 .WatchRelated {
@@ -853,11 +842,6 @@ textarea:required
   {
     font-size: 1rem;
     min-width: 400px
-  }
-
-  .LogIn, 
-  .SignUp {
-    padding-top: 100px;
   }
 
   .Input-element,
