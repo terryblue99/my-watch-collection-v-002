@@ -380,6 +380,12 @@ button:focus,
 }
 
 .Add-watch-button,
+.Add-watch-related-button
+{
+  margin-top: .5em;
+}
+
+.Add-watch-button,
 .Add-watch-related-button,
 .Watch-related-info-button
 {
