@@ -698,7 +698,7 @@ textarea:required
   }
 
   .Select-sort {
-    min-width: 230px;
+    min-width: 222px;
   }
 
   .Edit-button {
@@ -795,6 +795,10 @@ textarea:required
   .Dashboard-watchText
   {
     margin-top: 15px;
+  }
+
+  .Select-sort {
+    min-width: 220px;
   }
 
   .WatchRelated-container button {
