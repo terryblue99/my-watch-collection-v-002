@@ -3,8 +3,8 @@ import moment from 'moment' // https://flaviocopes.com/momentjs/
 const DateValidation = (date) => {
   // date validated for: format yyyy-mm-dd, yyyy-mm or yyyy,
   //                     Feb 29 in leap years,
-  //                     year starting with 19 or 20
-  //                     month not greater than 12
+  //                     year starting with 19 or 20,
+  //                     month not greater than 12,
   //                     day correct for the month & not greater than 31
 
   const yyyymmdd = moment(date, 'YYYY-MM-DD', true)
