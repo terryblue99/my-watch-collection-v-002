@@ -8,9 +8,7 @@ class DashBoard extends Component {
     
     componentDidMount = () => {
         if ((!this.props.location.state) || 
-            (this.props.location.state &&
-             this.props.location.state.isFromEditWatch &&
-             this.props.location.state.isEdits)) { 
+            (this.props.location.state.isEdits)) { 
                 this.props.getWatchesAction(this.props.currentUser.user.id)
             } 
     }
