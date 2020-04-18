@@ -34,11 +34,15 @@ class EditProfile extends Component {
           }
       }
 
-     handleChange = (event) => {
-        this.setState({
-          [event.target.name]: event.target.value,
-          isFormInput: true
-        })                         
+      handleChange = (event) => {
+          if(event.target.name === 'password' && event.target.value === '')
+               {this.setState({
+                    isFormInput: false
+               })} 
+          else  {this.setState({
+                    [event.target.name]: event.target.value,
+                    isFormInput: true
+               })}                            
      }
 
      handleSubmit = (event) => {
