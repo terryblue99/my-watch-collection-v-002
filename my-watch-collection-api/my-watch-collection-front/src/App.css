@@ -133,21 +133,21 @@ button
 .Dashboard-totalWatches 
 {
   text-align: center;
-  font-size: 1.25em; 
+  font-size: 1.2rem; 
 }
 
 .Watch-num {
-  font-size: 1.2em;
+  font-size: 1.4rem;
 }
 
 .Related-num {
-  font-size: 1.2em;
+  font-size: 1.4rem;
 }
 
 .Oldest-watch,
 .Newest-watch 
 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 /*  ==================
@@ -506,8 +506,8 @@ input[type=file] {
           forms
     ================= */
 
-input::placeholder {
-  font-size: 1.2em;
+form input::placeholder {
+  font-size: 1.25rem;
 }
 
 hr.ProfileDelete {
@@ -832,6 +832,10 @@ textarea:required
     font-size: 1rem;
   }
 
+  form input::placeholder {
+    font-size: 1.3rem;
+  }
+
   .Dashboard-header {
     font-size: 3rem;
   }
@@ -942,14 +946,22 @@ textarea:required
   .Oldest-watch,
   .Newest-watch 
   {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   .Dashboard-totalWatchRelated,
   .Dashboard-totalWatches 
   {
     text-align: center;
-    font-size: 1.5em; 
+    font-size: 1.5rem; 
+  }
+
+  .Watch-num {
+    font-size: 1.6rem;
+  }
+
+  .Related-num {
+    font-size: 1.6rem;
   }
 
 }
