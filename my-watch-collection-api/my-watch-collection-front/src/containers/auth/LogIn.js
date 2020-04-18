@@ -26,14 +26,13 @@ class LogIn extends Component {
     
     render() {
         
-        if (this.props.currentUser && this.props.currentUser.logged_in) {
+        if (this.props.currentUser?.logged_in) {
             return RedirectTo('/dashboard')
         }
 
         let isFromSignUp
-        if (this.props.location.state &&
-            this.props.location.state.isFromSignUp
-        ) {isFromSignUp = this.props.location.state.isFromSignUp}
+        if (this.props.location.state?.isFromSignUp) 
+            {isFromSignUp = this.props.location.state.isFromSignUp}
         
         return (
 

@@ -14,7 +14,7 @@ const Watches = ({ watches, watchRelated, sortOptionSelected, isSearchSuccessful
     let filteredWatches
     let filteredWatchRelated
 
-    if(watches && watches.length > 0) {
+    if(watches?.length > 0) {
         // Filter out watch-related records
         filteredWatchRelated = watches.filter(watch => watch.watch_maker.includes(watchRelated))
         // Filter out watch records
