@@ -216,7 +216,7 @@ class NavBar extends Component {
                   margin-right: 10px;
                   margin-bottom: 5px;
                   min-width: 300px;
-                  padding: 3px 6px;
+                  padding: .25em 2em;
                    
                   @media (min-width: 763px) and (max-width: 1118px) {
                     margin-left: 360px;
