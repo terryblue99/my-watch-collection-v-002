@@ -14,7 +14,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 display: grid;
                 grid-area: sidebar-desktop;
                 grid-template-rows: auto 100px;
-                height: 80vh;
+                max-height: 80vh;
                 width: 322px;
                 overflow-y: auto; // scrollling
                 padding-top: 3px;
