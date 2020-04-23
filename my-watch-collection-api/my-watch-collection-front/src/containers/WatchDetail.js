@@ -186,93 +186,96 @@ class WatchDetail extends Component {
 
                             <hr className='WatchDetail'/><br />
                             
-                            {movement && !watch_maker.includes(watchRelated)
-                                ?   <>  <p className='Detail-css'>Movement</p>
-                                        <h3 className='WatchDetail'>{movement}</h3>
+                            <div css={css`
+                                background-color: ghostwhite;
+                                border: 1px solid black;
+                                max-height: 63vh;
+                                max-width: 450px;
+                                overflow-y: auto; // scrollling
+                                padding-left: 15px;
+                            `}>
+                                {movement && !watch_maker.includes(watchRelated)
+                                    ?   <>  <p className='Detail-css'>Movement</p>
+                                            <h3 className='WatchDetail'>{movement}</h3>
+                                        </>
+                                    :   null }
+                                {movement && watch_maker.includes(watchRelated) 
+                                    ?   <>  <h3 className='WatchDetail'>{movement}</h3>
+                                        </>
+                                    :   null }
+                                {complications && !watch_maker.includes(watchRelated)
+                                    ?   <>  <p className='Detail-css'>Complications</p>
+                                            <h3 className='WatchDetail'>{complications}</h3>
+                                        </>
+                                    :   null }
+                                {complications && watch_maker.includes(watchRelated) 
+                                    ?   <>  <h3 className='WatchDetail'>{complications}</h3>
+                                        </>
+                                    :   null }
+                                {band && !watch_maker.includes(watchRelated)
+                                    ?   <>  <p className='Detail-css'>Band</p>
+                                            <h3 className='WatchDetail'>{band}</h3>
+                                        </>
+                                    :   null }
+                                {band && watch_maker.includes(watchRelated) 
+                                    ?   <>  <h3 className='WatchDetail'>{band}</h3>
+                                        </>
+                                    :   null }
+                                {model_number && !watch_maker.includes(watchRelated)
+                                    ?   <>  <p className='Detail-css'>Model Number</p>
+                                            <h3 className='WatchDetail'>{model_number}</h3>
+                                        </>
+                                    :   null }
+                                {model_number && watch_maker.includes(watchRelated) 
+                                    ?   <>  <h3 className='WatchDetail'>{model_number}</h3>
+                                        </>
+                                    :   null }
+                                {case_measurement && !watch_maker.includes(watchRelated)
+                                    ?   <>  <p className='Detail-css'>Case Measurement</p>
+                                            <h3 className='WatchDetail'>{case_measurement}</h3>
+                                        </>
+                                    :   null }
+                                {case_measurement && watch_maker.includes(watchRelated) 
+                                    ?   <>  <h3 className='WatchDetail'>{case_measurement}</h3>
+                                        </>
+                                    :   null }
+                                {water_resistance && !watch_maker.includes(watchRelated)
+                                    ?   <>  <p className='Detail-css'>Water Resistance</p>
+                                            <h3 className='WatchDetail'>{water_resistance}</h3>
+                                        </>
+                                    :   null }
+                                {water_resistance && watch_maker.includes(watchRelated) 
+                                    ?   <>  <h3 className='WatchDetail'>{water_resistance}</h3>
+                                        </>
+                                    :   null }
+                                {date_bought && !watch_maker.includes(watchRelated) 
+                                ?   <>
+                                        {cost > 0
+                                            ? <> <p className='Detail-css'>Date Bought</p>
+                                                <h3 className='WatchDetail'>{date_bought}</h3>
+                                            </>
+                                            : <> <p className='Detail-css'>Date RCVD</p>
+                                                <h3 className='WatchDetail'>{date_bought}</h3>
+                                            </>
+                                        }    
                                     </>
-                                :   null }
-                            {movement && watch_maker.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{movement}</h3>
+                                : null }
+                                {cost > 0
+                                ?    <>
+                                        <p className='Detail-css'>Cost</p>
+                                        <h3 className='WatchDetail'>${parseFloat(cost).toFixed(2)}</h3>
                                     </>
-                                :   null }
-                            {complications && !watch_maker.includes(watchRelated)
-                                ?   <>  <p className='Detail-css'>Complications</p>
-                                        <h3 className='WatchDetail'>{complications}</h3>
+                                : null }
+                                {notes 
+                                ?    <>
+                                        <p className='Detail-css'>Notes</p>
+                                        <h3 className='WatchDetail'>{notes}</h3>
                                     </>
-                                :   null }
-                            {complications && watch_maker.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{complications}</h3>
-                                    </>
-                                :   null }
-                            {band && !watch_maker.includes(watchRelated)
-                                ?   <>  <p className='Detail-css'>Band</p>
-                                        <h3 className='WatchDetail'>{band}</h3>
-                                    </>
-                                :   null }
-                            {band && watch_maker.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{band}</h3>
-                                    </>
-                                :   null }
-                            {model_number && !watch_maker.includes(watchRelated)
-                                ?   <>  <p className='Detail-css'>Model Number</p>
-                                        <h3 className='WatchDetail'>{model_number}</h3>
-                                    </>
-                                :   null }
-                            {model_number && watch_maker.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{model_number}</h3>
-                                    </>
-                                :   null }
-                            {case_measurement && !watch_maker.includes(watchRelated)
-                                ?   <>  <p className='Detail-css'>Case Measurement</p>
-                                        <h3 className='WatchDetail'>{case_measurement}</h3>
-                                    </>
-                                :   null }
-                            {case_measurement && watch_maker.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{case_measurement}</h3>
-                                    </>
-                                :   null }
-                            {water_resistance && !watch_maker.includes(watchRelated)
-                                ?   <>  <p className='Detail-css'>Water Resistance</p>
-                                        <h3 className='WatchDetail'>{water_resistance}</h3>
-                                    </>
-                                :   null }
-                            {water_resistance && watch_maker.includes(watchRelated) 
-                                ?   <>  <h3 className='WatchDetail'>{water_resistance}</h3>
-                                    </>
-                                :   null }
-                            {date_bought && !watch_maker.includes(watchRelated) 
-                            ?   <>
-                                    {cost > 0
-                                        ? <> <p className='Detail-css'>Date Bought</p>
-                                             <h3 className='WatchDetail'>{date_bought}</h3>
-                                          </>
-                                        : <> <p className='Detail-css'>Date RCVD</p>
-                                             <h3 className='WatchDetail'>{date_bought}</h3>
-                                          </>
-                                    }    
-                                </>
-                            : null }
-                            {cost > 0
-                            ?    <>
-                                    <p className='Detail-css'>Cost</p>
-                                    <h3 className='WatchDetail'>${parseFloat(cost).toFixed(2)}</h3>
-                                </>
-                            : null }
-                            {notes 
-                            ?    <>
-                                    <p className='Detail-css'>Notes</p>
-                                    <h3 className='WatchDetail'>{notes}</h3>
-                                </>
-                            : null }
+                                : null }
+                            </div>        
                         </div> 
                     </div>
-                    <div css={css`   
-                        display:flex;  
-                        justify-content: center;  
-                        @media (max-width: 750px) {
-                            flex-direction: column;
-                        }
-                    `}>
+                    <div className="Edit-Delete-buttons">
                         {!watch_maker.includes(watchRelated)
                             ? <>
                                 <Link className='btn Edit-button Button-text' to={{

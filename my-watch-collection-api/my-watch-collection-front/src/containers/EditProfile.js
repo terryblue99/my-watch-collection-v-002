@@ -34,7 +34,7 @@ class EditProfile extends Component {
           }
       }
 
-      handleChange = (event) => {
+     handleChange = (event) => {
           if(event.target.name === 'password' && event.target.value === '')
                {this.setState({
                     isFormInput: false
@@ -145,10 +145,10 @@ class EditProfile extends Component {
                                    </div>
                               </form>
                          </div>
-                         <hr className='ProfileDelete' />
+                         <hr className='ProfileDelete-hr' />
                          <div className='ProfileDelete'> 
                               {this.state.isProcessing ? <ProcessingIndicator /> :
-                                   <button className='btn ProfileDelete-button Delete-button Button-text' onClick={this.handleDelete}> 
+                                   <button className='btn ProfileDelete-button Button-text' onClick={this.handleDelete}> 
                                         Delete My Account
                                    </button>}
                          </div>
