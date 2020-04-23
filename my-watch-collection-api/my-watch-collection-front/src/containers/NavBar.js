@@ -83,7 +83,7 @@ class NavBar extends Component {
           </Navbar.Brand>
 
           <div css={css`
-            color: cornsilk;
+            color: khaki;
             display: inline-block;
             font-size: 1rem;
             padding-left: 140px;
