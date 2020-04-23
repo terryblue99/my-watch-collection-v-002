@@ -340,7 +340,7 @@ button:focus,
   font-size: 1rem; 
   margin-bottom: 10px;
   margin-left: 20px;
-  margin-top: 10px;
+  margin-top: 15px;
   height: 60px;
   padding: 10px 20px; 
 }
@@ -725,17 +725,7 @@ textarea:required
 
   .Watch-detail .Back-button {
     margin-left: 80px;
-  } 
-
-  .Profile-container,
-  .WatchForm-container,
-  .Back-button 
-  {
-    display:block;
-    margin: 35px auto;
-    margin-top: 15px;
-    width: 450px;
-  } 
+  }
 
   .ProfileForm-subheader{
     font-size: 1.2rem;
@@ -811,10 +801,19 @@ textarea:required
 }
 
 @media (max-width: 945px) {
-  .Back-button {
+  .Profile-container,
+  .WatchForm-container
+  {
     display:block;
     margin: 35px auto;
     margin-top: 15px;
+    width: 450px;
+  }
+
+  .Back-button {
+    display:block;
+    margin-bottom: 20px;
+    margin-top: 30px;
     width: 300px;
   }
 
