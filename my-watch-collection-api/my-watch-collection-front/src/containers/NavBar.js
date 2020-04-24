@@ -86,8 +86,8 @@ class NavBar extends Component {
             color: khaki;
             display: inline-block;
             font-size: 1rem;
-            padding-left: 140px;
             margin: 0px 10px 0px;
+            padding-left: 140px;
  
             @media (min-width: 1500px) {
               font-size: 1.25rem;
@@ -121,7 +121,6 @@ class NavBar extends Component {
               }
               
               @media (max-width: 1118px) {
-                {/* padding-bottom: 10px; */}
                 padding-left: 10px;
               }
             `}>{this.props.user.user.email}
@@ -134,9 +133,9 @@ class NavBar extends Component {
               <div>
                 <NavLink  to='/logout' css={css`
                   color: cornsilk;
+                  font-size: 1rem;
                   padding-left: 15px;
                   text-decoration: none;
-                  font-size: 1rem;
                     
                   &:hover {
                     color: goldenrod;
@@ -167,9 +166,9 @@ class NavBar extends Component {
                 </NavLink>
                 <NavLink  to='/edit_profile' css={css`
                   color: cornsilk;
+                  font-size: 1rem;
                   padding-left: 15px;
                   text-decoration: none;
-                  font-size: 1rem;
                     
                   &:hover {
                     color: goldenrod;
@@ -187,8 +186,8 @@ class NavBar extends Component {
           </div>
           <div css={css`
             display: inline-block;
-            padding-left: 15px;
             margin-bottom: 5px;
+            padding-left: 15px;
 
             @media (min-width: 1139px) {
               margin-top: 5px;
@@ -211,36 +210,13 @@ class NavBar extends Component {
                       onChange={this.handleChange}
                       css={css`
                   border-radius: 8px;
-                  font: inherit;
                   font-size: 1rem;
-                  margin-right: 10px;
+                  font: inherit;
                   margin-bottom: 5px;
+                  margin-left: auto;
+                  margin-right: 10px;
                   min-width: 300px;
                   padding: .25em 2em;
-                   
-                  @media (min-width: 763px) and (max-width: 1118px) {
-                    margin-left: 360px;
-                  }
-
-                  @media (min-width: 693px) and (max-width: 1126px) {
-                    margin-left: 300px;
-                  }
-
-                  @media (max-width: 692px) {
-                    margin-left: 240px;
-                  }
-
-                  @media (max-width: 632px) {
-                    margin-left: 180px;
-                  }
-
-                  @media (max-width: 570px) {
-                    margin-left: 120px;
-                  }
-
-                  @media (max-width: 510px) {
-                    margin-left: 65px;
-                  }
                 `}
               />
               <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          

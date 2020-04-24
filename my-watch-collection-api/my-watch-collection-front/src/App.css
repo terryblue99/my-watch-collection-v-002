@@ -12,8 +12,8 @@ html { /* everything will inherit from html */
 body {
   /* background-color: #e9ebee; */
   background-color: gainsboro;
-  line-height: 1.25; /* space between lines (times font size) */
   height: 100vh; /* relative to 1% of the height of the viewport */
+  line-height: 1.25; /* space between lines (times font size) */
   overflow-x: hidden;
 }
 
@@ -39,8 +39,8 @@ button
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
   background-color: rgba(0, 0, 0, .5);
+  border-radius: 4px;
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
@@ -92,8 +92,8 @@ button
 }
 
 .Dashboard-time {
-  margin-top: 20px;
   margin-left: 30px;
+  margin-top: 20px;
 }
 
 .Dashboard-newestWatch {
@@ -186,8 +186,8 @@ button
 .Homepage-title {
   background-color: #454140;
   color: cornsilk;
-  padding: 10px 20px; 
   margin-bottom: 60px;
+  padding: 10px 20px; 
 }
 
 .Homepage,
@@ -232,6 +232,7 @@ button
 }
 
 .LogIn-banner {
+  align-self:center;
   background-color: #454140;
   color: cornsilk;
   font-size: 1.25rem; /* relative to font size of root (html) element, which is defaulted  to 16px */
@@ -239,7 +240,6 @@ button
   min-width: 300px;
   padding: 10px;
   text-align: center;
-  align-self:center;
 }
 
 .WatchRelated {
@@ -382,9 +382,9 @@ button:focus,
 }
 
 .ProfileDelete {
+  border-radius: 5px;
   display: grid;
   justify-content: center;
-  border-radius: 5px;
 }
 
 .ProfileDelete-button {
@@ -418,8 +418,8 @@ button:focus,
 
 .Add-watch-button,
 .Add-watch-related-button,
-.Edit-button,
 .Delete-button, 
+.Edit-button,
 .Watch-related-info-button
 {
   font-size: 1rem;
@@ -433,8 +433,8 @@ button:focus,
   padding: 5px 8px;
 }
 
-.Edit-button,
-.Delete-button 
+.Delete-button,
+.Edit-button
 {
   height: 40px;
   min-width: 100px;
@@ -462,10 +462,10 @@ button:focus,
 .WatchRelated-container button {
   background-color: #454140;
   color: white;
-  text-transform: uppercase;
   margin-bottom: 20px;
   margin-left: 200px;
   max-width: 300px;
+  text-transform: uppercase;
 }
 
 .List-icon {
@@ -536,8 +536,8 @@ hr.WatchDetail {
   margin-bottom: 3px;
 }
 
-.WatchForm-header,
-.ProfileForm-header
+.ProfileForm-header,
+.WatchForm-header
 {
   /* font-family: Ubuntu,sans-serif; */
   margin-bottom: 10px;
@@ -546,8 +546,8 @@ hr.WatchDetail {
 
 .ProfileForm-subheader {
   color: black;
-  text-align: center;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .ProfileForm-cancel-header,
@@ -563,8 +563,8 @@ hr.WatchDetail {
 }
 
 .WatchForm-upload-text {
-  font-size: 1rem; 
   color: darkred;
+  font-size: 1rem; 
   margin-top: 3px;
   text-align: center;
 }
@@ -585,9 +585,9 @@ hr.WatchDetail {
 {
   align-self: center;
   background-color: #454140;
-  color: cornsilk;
   border-radius: 5px; 
   border: solid 1px;
+  color: cornsilk;
   display: flex;
   font-size: 1.25rem;
 }
@@ -607,9 +607,9 @@ hr.WatchDetail {
   width: 160px;
 }
 
-.Profile label,
 #AddWatch-Form label,
-.EditWatch-Form label
+.EditWatch-Form label,
+.Profile label
 {
   font-size: 1rem;
   font-weight: 900;
@@ -801,6 +801,7 @@ textarea:required
 }
 
 @media (max-width: 945px) {
+
   .Profile-container,
   .WatchForm-container
   {
@@ -835,6 +836,7 @@ textarea:required
 }
 
 @media (min-width: 946px) {
+
   .Edit-button {
     margin-left: 81px;
     padding: 10px 30px;
@@ -842,6 +844,7 @@ textarea:required
 }
 
 @media (max-width: 1184px) {
+
   #AddWatch-Form,
   .EditWatch-Form
   {
@@ -922,17 +925,17 @@ textarea:required
     max-width: 450px;
   }
 
-  .WatchForm-header,
   .ProfileForm-header,
-  .ProfileForm-subheader
+  .ProfileForm-subheader,
+  .WatchForm-header
   {
     font-size: 2rem;
     margin-bottom: 15px;
   }
 
   .WatchForm-upload-text {
-    margin-top: 10px;
     margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .Choose-image {
@@ -976,8 +979,8 @@ textarea:required
   .Dashboard-totalWatchRelated,
   .Dashboard-totalWatches 
   {
-    text-align: center;
     font-size: 1.5rem; 
+    text-align: center;
   }
 
   .Watch-num {
@@ -991,6 +994,7 @@ textarea:required
 }
 
 @media (max-width: 1944px) {
+
   .Back-button {
     margin-left: 80px;
   }

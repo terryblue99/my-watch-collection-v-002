@@ -1,24 +1,24 @@
 import _ from 'lodash'
 import { 
-	GET_WATCHES, 
 	ADD_WATCH, 
-	DELETE_WATCH,
 	CLEAR_WATCHES,
-	SEARCH_WATCHES,
-	RESET_WATCHES,
-	RESET_SEARCH_FAILED,
-	WATCH_MAKER_SORT,
-	WATCH_NAME_SORT,
+	COST_HIGH_TO_LOW_SORT,
+	COST_LOW_TO_HIGH_SORT,
+	DELETE_WATCH,
+	GET_WATCHES, 
 	NEWEST_TO_OLDEST_SORT,
 	OLDEST_TO_NEWEST_SORT,
-	COST_LOW_TO_HIGH_SORT,
-	COST_HIGH_TO_LOW_SORT
+	RESET_SEARCH_FAILED,
+	RESET_WATCHES,
+	SEARCH_WATCHES,
+	WATCH_MAKER_SORT,
+	WATCH_NAME_SORT
 } from '../actions/types'
 
 const initialState = {
+	isSearchFailed: false,
 	savedWatches: [],
-	watchRelated: 'Watch-Related', // For records that are not related to a specific watch.
-	isSearchFailed: false
+	watchRelated: 'Watch-Related' // For records that are not related to a specific watch.
 }
 let sortedWatches
 
@@ -40,10 +40,10 @@ export default (state = initialState, { type, payload } ) => {
 			if (payload) {
 				return ({
 					...state,
-					watches: payload.sortedWatches,
-					savedWatches: payload.sortedWatches,
 					WatchRelated: state.WatchRelated,
-					isSearchFailed: payload.isSearchFailed
+					isSearchFailed: payload.isSearchFailed,
+					savedWatches: payload.sortedWatches,
+					watches: payload.sortedWatches
 				})
 			} else return state
 
@@ -71,8 +71,8 @@ export default (state = initialState, { type, payload } ) => {
 			if (payload) {
 				return ({
 					...state,
-					watches: state.watches.filter(watch => watch.id !== payload),
-					savedWatches: state.savedWatches.filter(watch => watch.id !== payload)
+					savedWatches: state.savedWatches.filter(watch => watch.id !== payload),
+					watches: state.watches.filter(watch => watch.id !== payload)
 				})
 			} else return state		
 
