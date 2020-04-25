@@ -72,166 +72,158 @@ class NavBar extends Component {
 
     return (
 
-      <div className='Navbar'>
+      <Navbar className='Navbar'>
+        
+        <Navbar.Brand> 
+          <NavLink to='/dashboard'>
+            <img src={LogoLink} alt='logo link' 
+              className='LogoLink'
+            />
+          </NavLink>
+        </Navbar.Brand>
 
-        <Navbar css={css`
-          background-color: #454140;
-          margin: 0 auto;
-        `}>
-          <Navbar.Brand> 
-           
-            <NavLink to={{pathname: '/dashboard', 
-                          state: {isFromNavBar: true}
-                        }}
-            >                                        
-              <img src={LogoLink} alt='logo link' 
-                className='LogoLink'
-              />
-            </NavLink>
-          </Navbar.Brand>
+        <div css={css`
+          color: khaki;
+          display: inline-block;
+          font-size: 1rem;
+          margin: 0px 10px 0px;
+          padding-left: 140px;
 
-          <div css={css`
+          @media (min-width: 1500px) {
+            font-size: 1.25rem;
+            padding-left: 190px;
+          }
+
+          @media (max-width: 1126px) {
+            padding-bottom: 10px;
+          }
+
+          @media (max-width: 745px) {
+            padding-left: 140px;
+          }
+
+          @media (max-width: 692px) {
+            padding-left: 79px;
+          }
+
+          @media (max-width: 529px) {
+            padding-left: 130px;
+          }
+        `}>Logged in as:
+          <p css={css`
             color: khaki;
             display: inline-block;
             font-size: 1rem;
-            margin: 0px 10px 0px;
-            padding-left: 140px;
- 
+            margin: 5px 10px 0px;
+              
             @media (min-width: 1500px) {
               font-size: 1.25rem;
-              padding-left: 190px;
             }
-
-            @media (max-width: 1126px) {
-              padding-bottom: 10px;
+            
+            @media (max-width: 1118px) {
+              padding-left: 10px;
             }
+          `}>{this.props.user.user.email}
+          </p>
+        </div> 
+        <div css={css`   
+          display: inline-block;
+        `}>
+          {this.props.user.logged_in} {
+            <div>
+              <NavLink  to='/logout' css={css`
+                color: cornsilk;
+                font-size: 1rem;
+                padding-left: 15px;
+                text-decoration: none;
+                  
+                &:hover {
+                  color: goldenrod;
+                  cursor: pointer;
+                }
 
-            @media (max-width: 745px) {
-              padding-left: 140px;
-            }
+                @media (min-width: 1500px) {
+                  font-size: 1.25rem;
+                }
 
-            @media (max-width: 692px) {
-              padding-left: 79px;
-            }
+                @media (min-width: 703px) and (max-width: 762px) {
+                  padding-left: 10px;
+                }
 
-            @media (max-width: 529px) {
-              padding-left: 130px;
-            }
-          `}>Logged in as:
-            <p css={css`
-              color: khaki;
-              display: inline-block;
-              font-size: 1rem;
-              margin: 5px 10px 0px;
-               
-              @media (min-width: 1500px) {
-                font-size: 1.25rem;
-              }
-              
-              @media (max-width: 1118px) {
-                padding-left: 10px;
-              }
-            `}>{this.props.user.user.email}
-            </p>
-          </div> 
-          <div css={css`   
-            display: inline-block;
-          `}>
-            {this.props.user.logged_in} {
-              <div>
-                <NavLink  to='/logout' css={css`
-                  color: cornsilk;
-                  font-size: 1rem;
-                  padding-left: 15px;
-                  text-decoration: none;
-                    
-                  &:hover {
-                    color: goldenrod;
-                    cursor: pointer;
-                  }
+                @media (max-width: 745px) {
+                  padding-left: 320px;
+                }
 
-                  @media (min-width: 1500px) {
-                    font-size: 1.25rem;
-                  }
+                @media (max-width: 692px) {
+                  padding-left: 259px;
+                }
 
-                  @media (min-width: 703px) and (max-width: 762px) {
-                    padding-left: 10px;
-                  }
+                @media (max-width: 529px) {
+                  padding-left: 140px;
+                }
+              `}> 
+                Log Out   
+              </NavLink>
+              <NavLink  to='/edit_profile' css={css`
+                color: cornsilk;
+                font-size: 1rem;
+                padding-left: 15px;
+                text-decoration: none;
+                  
+                &:hover {
+                  color: goldenrod;
+                  cursor: pointer;
+                }
 
-                  @media (max-width: 745px) {
-                    padding-left: 320px;
-                  }
+                @media (min-width: 1500px) {
+                  font-size: 1.25rem;
+                }
+              `}> 
+                Edit Profile   
+              </NavLink>
+            </div>  
+          }
+        </div>
+        <div css={css`
+          display: inline-block;
+          margin-bottom: 5px;
+          padding-left: 15px;
 
-                  @media (max-width: 692px) {
-                    padding-left: 259px;
-                  }
+          @media (min-width: 1139px) {
+            margin-top: 5px;
+            margin-left: 10px;
+            position: absolute;
+            right: 15px;
+          }
 
-                  @media (max-width: 529px) {
-                    padding-left: 140px;
-                  }
-                `}> 
-                  Log Out   
-                </NavLink>
-                <NavLink  to='/edit_profile' css={css`
-                  color: cornsilk;
-                  font-size: 1rem;
-                  padding-left: 15px;
-                  text-decoration: none;
-                    
-                  &:hover {
-                    color: goldenrod;
-                    cursor: pointer;
-                  }
-
-                  @media (min-width: 1500px) {
-                    font-size: 1.25rem;
-                  }
-                `}> 
-                  Edit Profile   
-                </NavLink>
-              </div>  
-            }
-          </div>
-          <div css={css`
-            display: inline-block;
-            margin-bottom: 5px;
-            padding-left: 15px;
-
-            @media (min-width: 1139px) {
-              margin-top: 5px;
-              margin-left: 10px;
-              position: absolute;
-              right: 15px;
-            }
-
-            @media min-width(774) and (max-width: 985px) {
-              margin-top: 10px;
-            }
-          `}>
-            <form id='Navbar-Search-Form'
-                  onSubmit={this.handleSearch}
-            >
-              <input  required
-                      type='text'
-                      name='watch_search'
-                      placeholder='Search My Watch Collection'
-                      onChange={this.handleChange}
-                      css={css`
-                  border-radius: 8px;
-                  font-size: 1rem;
-                  font: inherit;
-                  margin-bottom: 5px;
-                  margin-left: auto;
-                  margin-right: 10px;
-                  min-width: 300px;
-                  padding: .25em 2em;
-                `}
-              />
-              <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          
-            </form>
-          </div> 
-        </Navbar>
-      </div>
+          @media min-width(774) and (max-width: 985px) {
+            margin-top: 10px;
+          }
+        `}>
+          <form id='Navbar-Search-Form'
+                onSubmit={this.handleSearch}
+          >
+            <input  required
+                    type='text'
+                    name='watch_search'
+                    placeholder='Search My Watch Collection'
+                    onChange={this.handleChange}
+                    css={css`
+                border-radius: 8px;
+                font-size: 1rem;
+                font: inherit;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: 10px;
+                min-width: 300px;
+                padding: .25em 2em;
+              `}
+            />
+            <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          
+          </form>
+        </div> 
+      </Navbar>
+  
     )  
   }
 }

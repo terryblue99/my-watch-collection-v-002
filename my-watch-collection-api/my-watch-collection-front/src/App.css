@@ -165,26 +165,22 @@ button
 }
 
 /*  ==================
+      DashboardMain
       Homepage
       LogIn
-      logo
-      WatchRelated
+      Logo
+      LogoLink
+      Profile-container
       Register
       SignUp
       SignUp-container
+      WatchRelated
+      watchList
     ================== */
 
 .Logo {
   margin: 0 auto;
   padding-bottom: 25px;
-}
-
-.LogoLink {
-  margin: 10px 10px 0px;
-}
-
-.LogoLink:hover {
-  cursor: pointer
 }
 
 .Homepage-title {
@@ -244,6 +240,30 @@ button
   min-width: 300px;
   padding: 10px;
   text-align: center;
+}
+
+.Navbar {
+  background-color: #454140;
+  margin-bottom: 20px;;
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+}
+
+.LogoLink {
+  margin: 10px 10px 0px;
+}
+
+.LogoLink:hover {
+  cursor: pointer
+}
+
+.DashboardMain,
+.Profile-container,
+.Watch-detail,
+.watchList {
+  padding-top:40px;
 }
 
 .WatchRelated {
@@ -623,6 +643,7 @@ hr.WatchDetail {
 
 .WatchForm-container {
   padding-bottom: 15px;
+  padding-top:50px;
 }
 
 .Input-element,
