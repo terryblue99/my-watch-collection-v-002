@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion
-import logoText from '../images/my-watch-collection-text.png'
+import LogoLink from '../images/my-watch-collection-link.png'
 import { searchWatchesAction } from '../actions/watchesActions'
 import ClearForm from "../components/ClearForm"
 import RedirectToWithState from "../components/RedirectToWithState"
@@ -79,7 +79,15 @@ class NavBar extends Component {
           margin: 0 auto;
         `}>
           <Navbar.Brand> 
-            <img src={logoText} alt='logo text' className='LogoText'/>
+           
+            <NavLink to={{pathname: '/dashboard', 
+                          state: {isFromNavBar: true}
+                        }}
+            >                                        
+              <img src={LogoLink} alt='logo link' 
+                className='LogoLink'
+              />
+            </NavLink>
           </Navbar.Brand>
 
           <div css={css`

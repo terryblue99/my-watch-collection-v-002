@@ -179,8 +179,12 @@ button
   padding-bottom: 25px;
 }
 
-.LogoText {
+.LogoLink {
   margin: 10px 10px 0px;
+}
+
+.LogoLink:hover {
+  cursor: pointer
 }
 
 .Homepage-title {
