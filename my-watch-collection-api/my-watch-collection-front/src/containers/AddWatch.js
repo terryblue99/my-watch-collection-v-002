@@ -159,7 +159,8 @@ class AddWatch extends Component {
                                                   autoComplete='off'
                                                   type='text'
                                                   name='watch_maker'
-                                                  value={watch_maker}/>
+                                                  value={watch_maker}
+                                                  readonly/>
                                         </>
                               }
                               <br />
