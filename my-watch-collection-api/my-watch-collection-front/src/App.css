@@ -14,7 +14,6 @@ body {
   background-color: gainsboro;
   height: 100vh; /* relative to 1% of the height of the viewport */
   line-height: 1.25; /* space between lines (times font size) */
-  overflow-x: hidden;
 }
 
 body, 
@@ -33,7 +32,7 @@ button
 
 /* always show scrollbars */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px;
 }
@@ -42,7 +41,7 @@ button
   background-color: rgba(0, 0, 0, .5);
   border-radius: 4px;
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-}
+} */
 
 .Blue-color {
   color:  darkblue;
@@ -170,6 +169,7 @@ button
       LogIn
       Logo
       LogoLink
+      Navbar
       Profile-container
       Register
       SignUp
@@ -244,10 +244,11 @@ button
 
 .Navbar {
   background-color: #454140;
-  top: 0;
-  z-index: 100;
+  padding-bottom: 4px;
   position: sticky;
+  top: 0;
   width: 100%;
+  z-index: 100;
 }
 
 .LogoLink {
@@ -593,7 +594,17 @@ hr.WatchDetail {
   font-size: .75rem;
   justify-content: center;
   margin: 0 auto; 
-  max-width: 300px
+  min-width: 450px;
+}
+
+#AddWatch-Form,
+.EditWatch-Form
+{
+  background-color: ghostwhite;
+  border: 1px solid black;
+  overflow-y: auto;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 .LogIn-element, 
@@ -635,7 +646,7 @@ hr.WatchDetail {
 
 .WatchForm-container {
   padding-bottom: 15px;
-  padding-top:50px;
+  padding-top:20px;
 }
 
 .Input-element,
