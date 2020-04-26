@@ -244,10 +244,9 @@ button
 
 .Navbar {
   background-color: #454140;
-  margin-bottom: 20px;;
   top: 0;
   z-index: 100;
-  position: fixed;
+  position: sticky;
   width: 100%;
 }
 
@@ -257,13 +256,6 @@ button
 
 .LogoLink:hover {
   cursor: pointer
-}
-
-.DashboardMain,
-.Profile-container,
-.Watch-detail,
-.watchList {
-  padding-top:40px;
 }
 
 .WatchRelated {
