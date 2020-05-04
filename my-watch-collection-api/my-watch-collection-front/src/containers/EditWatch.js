@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import '../App.css'
-// The following comment is required for @emotion to work
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import NavBar from './NavBar'
 import { editWatchAction } from '../actions/watchesActions'
 import RedirectTo from '../components/RedirectTo'
 import RedirectToWithState from "../components/RedirectToWithState"
 import DateValidation from "../components/DateValidation"
 
-class EditWatch extends Component {
+class EditWatch extends React.Component {
      
      state = {
        watchData: {
@@ -142,41 +139,40 @@ class EditWatch extends Component {
 
           const isEditWatchRelated = this.props.location.state.isEditWatchRelated || false
 
-          return (  
-               
+          return ( 
+
                <div>
-                    <NavBar />
+                    <div>
+                         <NavBar /> 
+                    </div> 
 
-                    <div className='container WatchForm-container' css={css`
-                        display: flex;
-                        justify-content: space-between;
-                        margin-top: 20px;
+                    <h1 className='WatchForm-header Dark-red-color'>
+                         {!isEditWatchRelated
+                              ? <>Edit this Watch</>
+                              : <>Edit this Watch-Related</>
+                         }
+                    </h1>
 
-                        @media (max-width: 945px) {
-                            flex-direction: column;
-                        }
-                    `}>
+                    <div className='container WatchForm-container'>
                     
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          
                          <form className='EditWatch-Form'
                                onSubmit={this.handleSubmit}
                          >
-                              <h1 className='WatchForm-header Dark-red-color'>
-                                   {!isEditWatchRelated
-                                        ? <>Edit this Watch</>
-                                        : <>Edit this Watch-Related</>
-                                   }
-                              </h1>
                               {!isEditWatchRelated
-                                   ?    <> <label>Watch Maker</label>
+                                   ?    <> <p  className='WatchForm-container-Top Dark-red-color'>---- TOP ----</p>
+                                           <br />
+                                           <label>Watch Maker</label>
                                            <input className='Input-element' required 
                                                   type='text'
                                                   name='watch_maker'
                                                   defaultValue={watch.watch_maker}
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input className='Input-element Input-related'
+                                   :    <> <p  className='WatchForm-container-Top Dark-red-color'>---- TOP ----</p>
+                                           <br />
+                                           <input className='Input-element Input-related'
                                                   type='text'
                                                   name='watch_maker'
                                                   value={this.props.watchRelated}/>
@@ -357,4 +353,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { editWatchAction })(EditWatch)
-

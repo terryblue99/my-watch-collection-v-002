@@ -7,24 +7,10 @@ import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotio
 const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) => { 
       
     return (
-        <div className='watchList'>
-            <div css={css`
-                background-color: khaki;
-                border: 1px solid black;
-                display: grid;
-                grid-area: sidebar-desktop;
-                grid-template-rows: auto 100px;
-                max-height: 80vh;
-                overflow-y: auto; // scrollling
-                padding-top: 3px;
-                text-align: left;
-                width: 322px;
-
-                @media (min-width: 1500px) {
-                    width: 370px;
-                }
+        <div>
+            <div className='watchList' css={css`
                 
-                @media (max-width: 750px) {
+                @media (max-width: 600px) {
                     display: ${showWatches ? 'block' : 'none'};
                     width: 400px;
                 }
@@ -34,46 +20,22 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
                 `}>
                     {watches ? 
                         watches.map(watch => {
-                            return <li key={watch.id} css={css`
-                                    border-bottom: 1px solid black;
-                                    font-size: 1rem;
-                                    padding-left: 10px;
-                                    transition: color 800ms;
-                                    
-                                    &:hover {
-                                        background-color: khaki;
-                                        color: blue;
-                                        cursor: pointer;
-                                    }
-
-                                    @media (min-width: 1500px) {
-                                        font-size: 1.25rem;
-                                    }
-                                    
-                                `} onClick={() => { 
+                            return <li className='Watch-maker-and-name' key={watch.id} 
+                                onClick={() => { 
                                     hashHistory.push(`/watches/${watch.id}/watch_detail`) // set the url for the watch
                                     setCurrentWatch(watch)
                                     setShowWatches(false) // on mobiles will allow toggling of watch list
                                 }}>
-                                <strong css={css`
-                                    color: darkred;
-                                    font-family: 'Ubuntu, sans-serif';
-                                    font-size: .80rem;
-                                    padding-left: -10px;
-
-                                    @media (min-width: 1500px) {
-                                        font-size: 1rem;
-                                    }
-                                `}>{watch.watch_maker}:</strong> {watch.watch_name} 
+                                <b className='Watch-maker Dark-red-color'>
+                                    {watch.watch_maker}:</b> {watch.watch_name} 
                             </li>
                         })
                     : null}
                 </ul>  
             </div> 
-            <div css={css`
-                padding-top 5px;
-
-                @media (max-width: 750px) {
+            <div className='WatchList-buttons' css={css`
+            
+                @media (max-width: 600px) { {
                     display: ${showWatches ? 'block' : 'none'};
                     max-width: 400px;
                 }

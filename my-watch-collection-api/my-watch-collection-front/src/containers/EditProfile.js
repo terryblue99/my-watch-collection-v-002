@@ -104,7 +104,7 @@ class EditProfile extends Component {
               
                <div>
                     <NavBar />
-                    <div className='Profile-container'>
+                    <div className='container Profile-container'>
                          <div className='Profile-form-container'>
                               <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>   
                               <form id='EditProfile-Form'

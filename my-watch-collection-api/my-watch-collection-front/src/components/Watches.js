@@ -32,15 +32,10 @@ const Watches = ({ watches, watchRelated, sortOptionSelected, isSearchSuccessful
    const [currentWatch, setCurrentWatch] = useState(null) 
 
     return (
-        <div className='container List-detail-container'>
-            <div className='Watches' css={css`
-                display: grid;
-                grid-template-areas: 'sidebar-desktop main';
-                grid-template-columns: 370px auto;
-                height: 100vh;
-                width: 100vw;
+        <div className='Sidebar-list-detail-container'>
+            <div className='Watches-Sidebar-list-detail' css={css`
                 
-                @media (max-width: 750px) {
+                @media (max-width: 600px) {
                     grid-template-areas: 'sidebar-mobile ${showWatches ? 'sidebar-desktop' : 'main'}';
                     grid-template-columns: 80px auto;
                 }

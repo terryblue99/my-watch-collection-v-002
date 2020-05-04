@@ -1,8 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-// The following comment is required for @emotion to work
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
 import '../App.css'
 import NavBar from './NavBar'
 import { addWatchAction } from '../actions/watchesActions'
@@ -11,7 +8,7 @@ import SetFocus from "../components/SetFocus"
 import RedirectTo from '../components/RedirectTo'
 import DateValidation from "../components/DateValidation"
 
-class AddWatch extends Component {
+class AddWatch extends React.Component {
 
      state = {
           watchData: {
@@ -125,37 +122,37 @@ class AddWatch extends Component {
           const {watch_maker} = this.state.watchData
       
           return (
-               
                <div>
-                    <NavBar /> 
-                    <div className='WatchForm-container' css={css`
-                        display: flex;
-                        justify-content: space-between;
-                        margin-top: 20px;
+                    <div>
+                         <NavBar /> 
+                    </div>
 
-                        @media (max-width: 945px) {
-                            flex-direction: column;
-                        }
-                    `}> 
+                    <h1 className='WatchForm-header Dark-red-color'>
+                         {!isAddWatchRelated
+                              ? <>Add a Watch</>
+                              : <>Add a Watch-Related</>
+                         }
+                    </h1> 
+
+                    <div className='container WatchForm-container'> 
+
                          <button onClick={this.handleBack} className='btn Back-button Button-text'>Back to dashboard</button>
                          <form id='AddWatch-Form'
-                               onSubmit={this.handleSubmit}
+                              onSubmit={this.handleSubmit}
                          >
-                              <h1 className='WatchForm-header Dark-red-color'>
-                                   {!isAddWatchRelated
-                                        ? <>Add a Watch</>
-                                        : <>Add a Watch-Related</>
-                                   }
-                              </h1>
                               {!isAddWatchRelated
-                                   ?    <> <label>Watch Maker</label>
+                                   ?    <> <p  className='WatchForm-container-Top Dark-red-color'>---- TOP ----</p>
+                                           <br />
+                                           <label>Watch Maker</label>
                                            <input autoFocus id='Focus-first-input' 
                                                   className='Input-element' required 
                                                   type='text'
                                                   name='watch_maker'
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input className='Input-element Input-related'
+                                   :    <> <p  className='WatchForm-container-Top Dark-red-color'>---- TOP ----</p>
+                                           <br />
+                                           <input className='Input-element Input-related'
                                                   autoComplete='off'
                                                   type='text'
                                                   name='watch_maker'
@@ -166,13 +163,13 @@ class AddWatch extends Component {
                               <br />
                               {!isAddWatchRelated
                                    ?    <> <label>Watch Name</label>
-                                           <input className='Input-element' required 
+                                        <input className='Input-element' required 
                                                   type='text'
                                                   name='watch_name'
                                                   onChange={this.handleChange}/>
                                         </>
                                    :    <> <label>Title</label>
-                                           <input autoFocus id='Focus-first-input' required
+                                        <input autoFocus id='Focus-first-input' required
                                                   className='Input-element'
                                                   type='text'
                                                   name='watch_name'
@@ -182,7 +179,7 @@ class AddWatch extends Component {
                               <br />
                               {!isAddWatchRelated
                                    ?    <> <label>Movement</label>
-                                           <input className='Input-element'
+                                        <input className='Input-element'
                                                   type='text'
                                                   name='movement'
                                                   onChange={this.handleChange}/>
@@ -197,7 +194,7 @@ class AddWatch extends Component {
                               <br />
                               {!isAddWatchRelated
                                    ?    <> <label>Complications</label>
-                                           <input className='Input-element'
+                                        <input className='Input-element'
                                                   type='text'
                                                   name='complications'
                                                   onChange={this.handleChange}/>
@@ -212,7 +209,7 @@ class AddWatch extends Component {
                               <br />
                               {!isAddWatchRelated
                                    ?    <> <label>Band</label>
-                                           <input className='Input-element'
+                                        <input className='Input-element'
                                                   type='text'
                                                   name='band'
                                                   onChange={this.handleChange}/>
@@ -227,7 +224,7 @@ class AddWatch extends Component {
                               <br /> 
                               {!isAddWatchRelated
                                    ?    <> <label>Model Number</label>
-                                           <input className='Input-element'
+                                        <input className='Input-element'
                                                   type='text'
                                                   name='model_number'
                                                   onChange={this.handleChange}/>
@@ -242,7 +239,7 @@ class AddWatch extends Component {
                               <br />
                               {!isAddWatchRelated
                                    ?    <> <label>Case Measurement (e.g. 45mm)</label>
-                                           <input className='Input-element'
+                                        <input className='Input-element'
                                                   type='text'
                                                   name='case_measurement'
                                                   onChange={this.handleChange}/>
@@ -257,7 +254,7 @@ class AddWatch extends Component {
                               <br />
                               {!isAddWatchRelated
                                    ?    <> <label>Water Resistance (e.g. 200 meters)</label>
-                                           <input className='Input-element'
+                                        <input className='Input-element'
                                                   type='text'
                                                   name='water_resistance'
                                                   onChange={this.handleChange}/>
@@ -272,7 +269,7 @@ class AddWatch extends Component {
                               <br />
                               {!isAddWatchRelated
                                    ?    <> <label>Date Bought/RCVD (yyyy-mm-dd, yyyy-mm or yyyy)</label>
-                                           <input className='Input-element' required
+                                        <input className='Input-element' required
                                                   type='text'
                                                   name='date_bought'
                                                   onChange={this.handleChange}/>
@@ -282,14 +279,14 @@ class AddWatch extends Component {
                               <br />
                               {!isAddWatchRelated
                                    ?    <> <label>Cost (e.g. 199.99 | defaults to 0)</label>
-                                           <input className='Input-element'
+                                        <input className='Input-element'
                                                   type='number'
                                                   step='0.01'
                                                   min='0'
                                                   name='cost'
                                                   onChange={this.handleChange}
-                                           /> 
-                                           <br />    
+                                        /> 
+                                        <br />    
                                         </>
                                    : null
                               }
@@ -302,16 +299,17 @@ class AddWatch extends Component {
                               <b className='WatchForm-upload-text'>
                                    Upload image</b>
                               <input className='Input-element Choose-image'  
-                                     type='file'
-                                     name='image'
-                                     onChange={this.handleFile}
+                                   type='file'
+                                   name='image'
+                                   onChange={this.handleFile}
                               />
                               <button className='btn Save-button Button-text' type='submit'>Save</button>
                          </form>
                     </div>
+                   
                </div>
           )   
- 
+                                   
      } 
 }
 
