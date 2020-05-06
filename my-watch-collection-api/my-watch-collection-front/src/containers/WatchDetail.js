@@ -120,8 +120,8 @@ class WatchDetail extends Component {
                     <div className='Watch-detail-text'>
                         <h1 className='WatchDetail-watch-maker Dark-red-color'><b>{watch_maker}</b></h1> 
                         <h2 className='Watch-name'>{watch_name}</h2>
-                        <div className='Watch-detail-complications'>
-                            <p  className='WatchForm-container-Top Dark-red-color'>---- TOP ----</p>
+                        <div className='Watch-detail-complications Center-text'>
+                            <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- TOP ----</p>
                             <br />
                             {movement && !watch_maker.includes(watchRelated)
                                 ?   <>  <p className='Detail-css'>Movement</p>
@@ -205,7 +205,7 @@ class WatchDetail extends Component {
                         <div className="Edit-Delete-buttons">
                             {!watch_maker.includes(watchRelated)
                                 ? <>
-                                    <Link className='btn Edit-button Button-text' to={{
+                                    <Link className='btn Edit-button Button-text Center-text' to={{
                                             pathname: `/watches/${id}/edit_watch`,
                                             state: {
                                                 watch: currentWatch
@@ -215,7 +215,7 @@ class WatchDetail extends Component {
                                     </Link>
                                 </>
                                 : <>
-                                    <Link className='btn Edit-button Button-text' to={{
+                                    <Link className='btn Edit-button Button-text Center-text' to={{
                                             pathname: `/watches/${id}/edit_watch_related`,
                                             state: {
                                                 watch: currentWatch,
@@ -226,7 +226,7 @@ class WatchDetail extends Component {
                                     </Link>
                                 </>
                             }
-                            <button className='btn Delete-button Button-text' onClick={this.handleDelete}> 
+                            <button className='btn Delete-button Button-text Center-text' onClick={this.handleDelete}> 
                                 Delete
                             </button>
                         </div>    

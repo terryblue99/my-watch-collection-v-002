@@ -110,10 +110,10 @@ class EditProfile extends Component {
                               <form id='EditProfile-Form'
                                     onSubmit={this.handleSubmit}
                               >
-                                   <h1 className='ProfileForm-header Dark-red-color'>
+                                   <h1 className='ProfileForm-header Dark-red-color Center-text'>
                                         Edit Profile
                                    </h1>
-                                   <h2 className='ProfileForm-subheader'>
+                                   <h2 className='ProfileForm-subheader Center-text'>
                                         (You can change your email and/or your password here)
                                    </h2>
                                    <div className='Profile'>
@@ -125,7 +125,7 @@ class EditProfile extends Component {
                                                onChange={this.handleChange}
                                         />
                                         <br /> 
-                                        <label>New Password (<span className='ProfileForm-NewPassword-text'>Leave blank for no change</span>)</label>
+                                        <label>New Password (<span className='ProfileForm-NewPassword-text Dark-red-color'>Leave blank for no change</span>)</label>
                                         <input className='Input-element' 
                                                type='password'
                                                name='password'

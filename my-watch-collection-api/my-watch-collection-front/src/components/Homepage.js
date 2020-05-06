@@ -14,13 +14,13 @@ const Homepage = () => {
                 <img src={logo} alt='logo' className='Logo'/>
                 <div className='Homepage-container'>
                     <>
-                        <Link className='btn Home-button Button-text' to={{
+                        <Link className='btn Home-button Button-text Center-text' to={{
                             pathname: `/login`
                         }}
                         > Log In
                         </Link>
                         
-                        <Link className='btn Home-button Button-text' to={{
+                        <Link className='btn Home-button Button-text Center-text' to={{
                             pathname: `/signup`
                         }}
                         > Sign Up

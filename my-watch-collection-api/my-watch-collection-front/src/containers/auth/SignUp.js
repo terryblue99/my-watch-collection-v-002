@@ -61,7 +61,7 @@ class SignUp extends Component {
                         <form id='SignUp-Form' 
                               onSubmit={this.handleSubmit}
                         >
-                            <div className='Register'>
+                            <div className='Register Center-text'>
                                 <div className='SignUp-element'>
                                     <label>Email: </label>
                                     <input autoFocus id='Focus-SignUp-Email' className='SignUp-input-element' required 
@@ -90,7 +90,7 @@ class SignUp extends Component {
                                 </div>
                                 <br />
                                 <button className='btn SignUp-button Button-text' type='submit'>Sign Up</button>
-                                <Link className='btn SignUp-home-button Button-text' to={{pathname: '/home'}}> 
+                                <Link className='btn SignUp-home-button Button-text Center-text' to={{pathname: '/home'}}> 
                                     Home
                                 </Link>
                             </div>  

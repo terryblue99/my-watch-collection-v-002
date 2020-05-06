@@ -48,7 +48,7 @@ class DashboardMain extends Component {
 
     const sortElement = [
       <>
-        <h2 className='Sort-header'>Sort By</h2>
+        <h2 className=' Center-text'>Sort By</h2>
         <br />
         <select className='Select-sort'
                 required 
@@ -68,7 +68,7 @@ class DashboardMain extends Component {
 
     const welcome = [
       <>
-        <h2 className="Welcome-text">Welcome</h2>
+        <h2 className="Welcome-text Center-text">Welcome</h2>
         <p className="Center-text"><b>Please click on the ADD WATCH button</b></p>
         <p className="Center-text"><b>to start cataloguing your watches</b></p>
       </>
@@ -140,16 +140,16 @@ class DashboardMain extends Component {
           }
           <br />
           { number_of_watches > 0
-              ? <p className='Dashboard-totalWatches'>Total watches: <span className='Watch-num'>{number_of_watches}</span></p>
+              ? <p className='Dashboard-totalWatches Center-text'>Total watches: <span className='Watch-num'>{number_of_watches}</span></p>
               : null
           }
           { number_of_watcheRelated > 0
-              ? <p className='Dashboard-totalWatchRelated'>Total watch-related: <span className='Related-num'>{number_of_watcheRelated}</span></p>
+              ? <p className='Dashboard-totalWatchRelated Center-text'>Total watch-related: <span className='Related-num'>{number_of_watcheRelated}</span></p>
               : null
           }   
         </div>
         <div className='Dashboard-item Dashboard-sort'> 
-          <h1 className='Dashboard-header Dark-red-color'>Dashboard</h1>
+          <h1 className='Dashboard-header Dark-red-color Center-text'>Dashboard</h1>
           { number_of_watches > 1 
               && an_oldest_watch_exists
               && a_newest_watch_exists
@@ -184,16 +184,16 @@ class DashboardMain extends Component {
         <div className='Dashboard-item Dashboard-newestWatch Dashboard-watch-image'>
           {number_of_watches > 1 && a_newest_watch_exists
             ? <>
-                <h2 className='Dashboard-watchText Newest-watch'>Newest Watch</h2>
-                <h3 className='Dashboard-watchText-new'>{newestWatchMaker}</h3>
-                <h4 className='Dashboard-watchText-new'>{newestWatchDate}</h4>
+                <h2 className='Dashboard-watchText Newest-watch Center-text'>Newest Watch</h2>
+                <h3 className='Dashboard-watchText-new Center-text'>{newestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText-new Center-text'>{newestWatchDate}</h4>
               </>
             : null
           }
           {number_of_watches === 1 && a_newest_watch_exists
             ? <>
-                <h3 className='Dashboard-watchText-new'>{newestWatchMaker}</h3>
-                <h4 className='Dashboard-watchText-new'>{newestWatchDate}</h4>
+                <h3 className='Dashboard-watchText-new Center-text'>{newestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText-new Center-text'>{newestWatchDate}</h4>
               </>
             : null
           }
@@ -225,16 +225,16 @@ class DashboardMain extends Component {
         <div className='Dashboard-item Dashboard-oldestWatch Dashboard-watch-image'>
           {number_of_watches > 1 && an_oldest_watch_exists
             ? <>
-                <h2 className='Dashboard-watchText Oldest-watch'>Oldest Watch</h2>
-                <h3 className='Dashboard-watchText-old'>{oldestWatchMaker}</h3>
-                <h4 className='Dashboard-watchText-old'>{oldestWatchDate}</h4>
+                <h2 className='Dashboard-watchText Oldest-watch Center-text'>Oldest Watch</h2>
+                <h3 className='Dashboard-watchText-old Center-text'>{oldestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText-old Center-text'>{oldestWatchDate}</h4>
               </>
             : null
           }
           {number_of_watches === 1 && an_oldest_watch_exists
             ? <>
-                <h3 className='Dashboard-watchText-old'>{oldestWatchMaker}</h3>
-                <h4 className='Dashboard-watchText-old'>{oldestWatchDate}</h4>
+                <h3 className='Dashboard-watchText-old Center-text'>{oldestWatchMaker}</h3>
+                <h4 className='Dashboard-watchText-old Center-text'>{oldestWatchDate}</h4>
               </>
             : null
           }

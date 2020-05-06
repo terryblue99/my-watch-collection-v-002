@@ -42,13 +42,14 @@ class NavBar extends Component {
         return  RedirectToWithState(
                                       '/dashboard',
                                       {
-                                          isFromNavBar: true,    
-                                          isSearchSuccessful: true
+                                        isFromNavBar: true,    
+                                        isSearchSuccessful: true
                                       } 
                                     )
         
     } else if (this.state.isSearchRequested &&
-                this.props.watches.length === 0) {
+                this.props.watches.length === 0) 
+                {
                   this.setState({
                     isSearchRequested: false,
                     searchText: ''
@@ -58,11 +59,11 @@ class NavBar extends Component {
 
                   alert('Search not found. Please correct and try again!')
                   // Display original list on the dashboard
-                  return  RedirectToWithState(
+                  return  RedirectToWithState (
                                                 '/dashboard',
                                                 {
-                                                    isFromNavBar: true,    
-                                                    isSearchFailed: true
+                                                  isFromNavBar: true,    
+                                                  isSearchFailed: true
                                                 } 
                                               )
                 }
@@ -74,7 +75,7 @@ class NavBar extends Component {
         <Navbar.Brand> 
           <NavLink to='/dashboard'>
             <img src={LogoLink} alt='logo link' 
-              className='LogoLink'
+                 className='Logo-link'
             />
           </NavLink>
         </Navbar.Brand>
@@ -85,6 +86,7 @@ class NavBar extends Component {
             {this.props.user.user.email}
           </p>
         </div> 
+
         <div className='Navbar-logout-profile-links'>
           {this.props.user.logged_in} {
             <div>
@@ -97,20 +99,23 @@ class NavBar extends Component {
             </div>  
           }
         </div>
+
         <div className='Navbar-search'>
           <form id='Navbar-search-form'
-                onSubmit={this.handleSearch}
+            onSubmit={this.handleSearch}
           >
-            <input className='Navbar-search-input' 
-                required
-                type='text'
-                name='watch_search'
-                placeholder='Search My Watch Collection'
-                onChange={this.handleChange}
+            <input className='Navbar-search-input Center-text' 
+              required
+              type='text'
+              name='watch_search'
+              placeholder='Search My Watch Collection'
+              onChange={this.handleChange}
             />
             <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          
           </form>
+
         </div> 
+
       </Navbar>
   
     )  

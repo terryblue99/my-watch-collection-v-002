@@ -146,7 +146,7 @@ class EditWatch extends React.Component {
                          <NavBar /> 
                     </div> 
 
-                    <h1 className='WatchForm-header Dark-red-color'>
+                    <h1 className='WatchForm-header Dark-red-color Center-text'>
                          {!isEditWatchRelated
                               ? <>Edit this Watch</>
                               : <>Edit this Watch-Related</>
@@ -161,7 +161,7 @@ class EditWatch extends React.Component {
                                onSubmit={this.handleSubmit}
                          >
                               {!isEditWatchRelated
-                                   ?    <> <p  className='WatchForm-container-Top Dark-red-color'>---- TOP ----</p>
+                                   ?    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- TOP ----</p>
                                            <br />
                                            <label>Watch Maker</label>
                                            <input className='Input-element' required 
@@ -170,7 +170,7 @@ class EditWatch extends React.Component {
                                                   defaultValue={watch.watch_maker}
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <p  className='WatchForm-container-Top Dark-red-color'>---- TOP ----</p>
+                                   :    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- TOP ----</p>
                                            <br />
                                            <input className='Input-element Input-related'
                                                   type='text'
@@ -331,7 +331,7 @@ class EditWatch extends React.Component {
                                         onChange={this.handleChange}
                                    />
                               <br />
-                              <b className='WatchForm-upload-text'>
+                              <b className='WatchForm-upload-text Dark-red-color Center-text'>
                                    Upload image</b>
                               <input className='Input-element Choose-image'  
                                      type='file'

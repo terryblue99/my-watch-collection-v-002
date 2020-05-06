@@ -8,7 +8,7 @@ const WatchList = ({ watches, showWatches, setCurrentWatch, setShowWatches } ) =
       
     return (
         <div>
-            <div className='watchList' css={css`
+            <div className='Watch-list' css={css`
                 
                 @media (max-width: 600px) {
                     display: ${showWatches ? 'block' : 'none'};

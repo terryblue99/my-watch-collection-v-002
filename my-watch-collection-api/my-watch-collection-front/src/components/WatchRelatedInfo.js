@@ -16,7 +16,7 @@ const WatchRelatedInfo = ()  => {
       <div className='WatchRelated-container'>
         < br/>
         < br/>
-        <h2 className='WatchRelated-text Dark-red-color'>Watch-Related Information</h2>
+        <h2 className='WatchRelated-text Dark-red-color Center-text'>Watch-Related Information</h2>
         < br/>
         <p>Watch-Related records are not about watches but can contain</p>
         <p>any type of information related to watches. For example, winders, </p>
@@ -25,7 +25,7 @@ const WatchRelatedInfo = ()  => {
         <p><span className='WatchRelated-note'>Note:</span> Information about a specific saved watch can be entered in</p>
         <p className='WatchRelated-info-tab'>the <span className='Blue-color'>Notes</span> input field of that watch.</p>
         < br/>
-        <h3 className='WatchRelated-text Dark-red-color'>To add a Watch-Related record</h3>
+        <h3 className='WatchRelated-text Dark-red-color Center-text'>To add a Watch-Related record</h3>
         < br/>
         <ol className='WatchRelated-OL'>
           <li>Click the <span className='Blue-color'>ADD WATCH-RELATED</span> button</li>
