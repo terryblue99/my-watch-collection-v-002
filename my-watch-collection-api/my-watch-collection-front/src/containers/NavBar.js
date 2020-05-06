@@ -70,7 +70,7 @@ class NavBar extends Component {
 
     return (
 
-      <Navbar className='Navbar'>
+      <Navbar className='Nav-bar'>
         
         <Navbar.Brand> 
           <NavLink to='/dashboard'>
