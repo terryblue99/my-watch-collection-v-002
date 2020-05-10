@@ -1,8 +1,6 @@
-import React, { Component } from 'react' 
-import { Navbar } from 'react-bootstrap'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import LogoLink from '../images/my-watch-collection-link.png'
 import { searchWatchesAction } from '../actions/watchesActions'
 import ClearForm from "../components/ClearForm"
 import RedirectToWithState from "../components/RedirectToWithState"
@@ -37,7 +35,7 @@ class NavBar extends Component {
           searchText: ''
         })  
         // Clear the form
-        ClearForm('Navbar-search-form')
+        ClearForm('Nav-search-form')
         // Display list from the search on the dashboard
         return  RedirectToWithState(
                                       '/dashboard',
@@ -55,7 +53,7 @@ class NavBar extends Component {
                     searchText: ''
                   }) 
                   // Clear the form
-                  ClearForm('Navbar-search-form')
+                  ClearForm('Nav-search-form')
 
                   alert('Search not found. Please correct and try again!')
                   // Display original list on the dashboard
@@ -70,53 +68,48 @@ class NavBar extends Component {
 
     return (
 
-      <Navbar className='Nav-bar'>
-        
-        <Navbar.Brand> 
-          <NavLink to='/dashboard'>
-            <img src={LogoLink} alt='logo link' 
-                 className='Logo-link'
-            />
+      <div className='Nav-header'>
+
+        <div className='Nav-container'>   
+
+          <NavLink className='Nav-logo-link' to='/dashboard'>
+            My Watch Collection
           </NavLink>
-        </Navbar.Brand>
+        
+          <nav className='Nav'>
 
-        <div className='Navbar-Logged-in-as'>
-            Logged in as:
-          <p className='Navbar-user'>
-            {this.props.user.user.email}
-          </p>
-        </div> 
+            <div className='Nav-item Nav-logged_in-logout-profile'> 
+              {this.props.user.logged_in} {
+                <>
+                  <div  className='Nav-item Nav-logged_in-as'>
+                    Logged in as: {this.props.user.user.email}
+                  </div>
+                  <NavLink  className='Nav-log_out-link' to='/logout'> 
+                    Log Out   
+                  </NavLink>
+                  <NavLink  className='Nav-edit-profile-link' to='/edit_profile'> 
+                    Edit Profile   
+                  </NavLink>
+                </>
+              }
+            </div>
+          </nav>
 
-        <div className='Navbar-logout-profile-links'>
-          {this.props.user.logged_in} {
-            <div>
-              <NavLink  className='Navbar-logout-link' to='/logout'> 
-                Log Out   
-              </NavLink>
-              <NavLink  className='Navbar-edit-profile-link' to='/edit_profile'> 
-                Edit Profile   
-              </NavLink>
-            </div>  
-          }
-        </div>
-
-        <div className='Navbar-search'>
-          <form id='Navbar-search-form'
+          <form id='Nav-search-form'
             onSubmit={this.handleSearch}
           >
-            <input className='Navbar-search-input Center-text' 
-              required
+            <input className='Nav-search-input Center-text'
               type='text'
               name='watch_search'
               placeholder='Search My Watch Collection'
               onChange={this.handleChange}
-            />
-            <button className='btn Search-button Button-text' type='submit'><b>Search</b></button>          
+            /> 
+            <button className='Nav-item Search-button Button-text' type='submit'><b>Search</b></button>         
           </form>
 
-        </div> 
-
-      </Navbar>
+        </div>
+        
+      </div>   
   
     )  
   }
