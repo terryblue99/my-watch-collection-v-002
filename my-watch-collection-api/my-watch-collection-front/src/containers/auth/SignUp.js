@@ -62,7 +62,7 @@ class SignUp extends Component {
                               onSubmit={this.handleSubmit}
                         >
                             <div className='Register Center-text'>
-                                <div className='SignUp-element'>
+                                <div className='SignUp-element Cornsilk-color'>
                                     <label>Email: </label>
                                     <input autoFocus id='Focus-SignUp-Email' className='SignUp-input-element' required 
                                         type='email'
@@ -71,7 +71,7 @@ class SignUp extends Component {
                                     />
                                 </div>
                                 <br /> 
-                                <div className='SignUp-element'>
+                                <div className='SignUp-element Cornsilk-color'>
                                     <label>Password: </label>
                                     <input className='SignUp-input-element' required 
                                         type='password'
@@ -80,7 +80,7 @@ class SignUp extends Component {
                                     />
                                     </div>
                                 <br />
-                                <div className='SignUp-element'>
+                                <div className='SignUp-element Cornsilk-color'>
                                     <label>Confirm Password: </label>
                                     <input className='SignUp-input-element' required 
                                         type='password'

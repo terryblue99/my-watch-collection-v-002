@@ -72,7 +72,7 @@ class NavBar extends Component {
 
         <div className='Nav-container'>   
 
-          <NavLink className='Nav-logo-link' to='/dashboard'>
+          <NavLink className='Nav-logo-link Gold-color' to='/dashboard'>
             My Watch Collection
           </NavLink>
         
@@ -84,10 +84,10 @@ class NavBar extends Component {
                   <div  className='Nav-item Nav-logged_in-as'>
                     Logged in as: {this.props.user.user.email}
                   </div>
-                  <NavLink  className='Nav-log_out-link' to='/logout'> 
+                  <NavLink  className='Nav-log_out-link Cornsilk-color' to='/logout'> 
                     Log Out   
                   </NavLink>
-                  <NavLink  className='Nav-edit-profile-link' to='/edit_profile'> 
+                  <NavLink  className='Nav-edit-profile-link Cornsilk-color' to='/edit_profile'> 
                     Edit Profile   
                   </NavLink>
                 </>

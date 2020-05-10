@@ -39,8 +39,8 @@ class LogIn extends Component {
             <div className='container'>
                 <header className='LogIn'>
                     { !isFromSignUp // not a new user
-                        ? <p className='LogIn-banner Center-text'>Log in to access your watches</p>
-                        : <p className='LogIn-banner Center-text'>Log in to add your watches</p>
+                        ? <p className='LogIn-banner Cornsilk-color Center-text'>Log in to access your watches</p>
+                        : <p className='LogIn-banner Cornsilk-color Center-text'>Log in to add your watches</p>
                     }
                     <img src={logo} alt='logo' className='Logo'/>
                     <div className='LogIn-container'>
@@ -48,7 +48,7 @@ class LogIn extends Component {
                               onSubmit={this.handleSubmit}
                         >
                             <div className='Register Center-text'>
-                                <div className='LogIn-element'>
+                                <div className='LogIn-element Cornsilk-color'>
                                     <label>Email: </label>
                                     <input autoFocus className='LogIn-input-element' required 
                                         type='email'
@@ -57,7 +57,7 @@ class LogIn extends Component {
                                     />
                                 </div>
                                 <br /> 
-                                <div className='LogIn-element'>
+                                <div className='LogIn-element Cornsilk-color'>
                                     <label>Password:</label>
                                     <input className='LogIn-input-element' required 
                                         type='password'

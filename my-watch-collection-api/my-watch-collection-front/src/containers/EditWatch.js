@@ -172,7 +172,7 @@ class EditWatch extends React.Component {
                                         </>
                                    :    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- TOP ----</p>
                                            <br />
-                                           <input className='Input-element Input-related'
+                                           <input className='Input-element Dark-red-color'
                                                   type='text'
                                                   name='watch_maker'
                                                   value={this.props.watchRelated}/>

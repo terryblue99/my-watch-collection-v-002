@@ -50,11 +50,19 @@ img {
 }
 
 .Blue-color {
-  color:  darkblue;
+  color: darkblue;
 }
 
 .Dark-red-color {
   color: DarkRed;
+}
+
+.Cornsilk-color {
+  color: cornsilk;
+}
+
+.Gold-color {
+  color: gold;
 }
 
 .Center-text {
@@ -164,7 +172,6 @@ img {
 
 .Homepage-title {
   background-color: #454140;
-  color: cornsilk;
   margin-bottom: 60px;
   padding: 10px 20px; 
 }
@@ -212,7 +219,6 @@ img {
 .LogIn-banner {
   align-self:center;
   background-color: #454140;
-  color: cornsilk;
   font-size: 1.25rem; /* relative to font size of root (html) element, which is defaulted  to 16px */
   margin-bottom: 10px;
   min-width: 300px;
@@ -232,9 +238,9 @@ img {
 
 .Nav-logo-link {
   align-self: center;
-  color: goldenrod;
   font-size: 1.25em;
   text-decoration: none;
+  color: gold;
 }
 
 .Nav-logo-link:hover {
@@ -289,7 +295,6 @@ img {
 
 .Nav-edit-profile-link,
 .Nav-log_out-link {
-  color: cornsilk;
   font-size: 1rem;
   text-decoration: none;
 }
@@ -739,7 +744,6 @@ form input::placeholder {
   background-color: #454140;
   border-radius: 5px; 
   border: solid 1px;
-  color: cornsilk;
   display: flex;
   font-size: 1.25rem;
 }
@@ -794,10 +798,6 @@ form input::placeholder {
 
 .Input-element {
   min-width: 350px;
-}
-
-.Input-related {
-  color: darkred
 }
 
 .Text-area {
