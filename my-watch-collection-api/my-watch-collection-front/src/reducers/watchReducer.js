@@ -83,6 +83,12 @@ export default (state = initialState, { type, payload } ) => {
 		// SEARCH WATCHES & WATCH-RELATED
 
 		case SEARCH_WATCHES:
+
+			if (payload === '') {
+				alert('Please enter a search value!')
+				return state
+			}
+
 			let searchArray
 			const searchText = payload.toLowerCase()
 			return ({

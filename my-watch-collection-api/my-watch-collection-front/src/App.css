@@ -161,10 +161,6 @@ img {
   font-size: 1.25rem;
 }
 
-/*  ====================
-     Miscellaneous
-    ==================== */
-
 .Logo {
   margin: 0 auto;
   padding-bottom: 25px;
@@ -225,7 +221,7 @@ img {
   padding: 10px;
 }
 
-/* Nav-bar top */
+/* Nav start */
 
 .Nav-header {
   background-color: #454140;
@@ -238,9 +234,8 @@ img {
 
 .Nav-logo-link {
   align-self: center;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   text-decoration: none;
-  color: gold;
 }
 
 .Nav-logo-link:hover {
@@ -284,7 +279,7 @@ img {
 
 .Nav-search-input {
   border: none;
-  font-size: 1em;
+  font-size: 1rem;
   min-width: 300px;
   padding: .2em .2em;
 }
@@ -305,7 +300,7 @@ img {
   cursor: pointer;
 }
 
-/* Nav-bar bottom */
+/* Nav end */
 
 .Watches-Sidebar-list-detail {
   display: grid;
@@ -343,7 +338,6 @@ img {
   font-family: 'Ubuntu, sans-serif';
   font-weight: bold;
   margin-top: 0;
-  padding-left: -10px; 
   text-transform: uppercase;   
 }
 
@@ -431,10 +425,10 @@ button:focus,
 }
 
 .Search-button {
-  background:goldenrod;
+  background:gold;
   color:black;
   font: inherit;
-  font-size: 1em;
+  font-size: 1rem;
   padding: 2px;
   text-transform: uppercase;
 }
@@ -487,11 +481,10 @@ button:focus,
   padding: 10px 20px; 
 }
 
-.Watch-detail-back-button
-{
+.Watch-detail-back-button {
   font-size: 1rem; 
-  margin-bottom: 20px;
   height: 60px;
+  margin-bottom: 20px;
   padding: 10px 20px; 
 }
 
@@ -630,6 +623,10 @@ button:focus,
   text-align: left;
 }
 
+/*  ==================
+      hamburger icon
+    ================== */
+
 .SidebarMobile-list-icon {
   margin: 1em;
   width: 40px;
@@ -691,15 +688,13 @@ form input::placeholder {
   margin-bottom: 10px
 }
 
-.WatchForm-header
-{
+.WatchForm-header {
   margin-bottom: 10px;
   margin-top: 15px;
   margin-left: 280px;
 }
 
-.ProfileForm-header
-{
+.ProfileForm-header {
   margin-bottom: 10px;
   margin-top: 15px;
 }
@@ -730,9 +725,9 @@ form input::placeholder {
 {
   background-color: ghostwhite;
   border: 1px solid black;
-  overflow-y: auto;
   margin-bottom: 15px;
   margin-top: 15px;
+  overflow-y: auto;
   padding-bottom: 15px;
   padding-top: 15px;
 }
@@ -782,7 +777,6 @@ form input::placeholder {
   display: flex;
   max-height: 80vh;
   padding-bottom: 15px;
-  padding-top: .18%;
 }
 
 .Input-element,
@@ -873,7 +867,7 @@ textarea:required
     width: 300px;
   }
 
-  .ProfileForm-subheader{
+  .ProfileForm-subheader {
     font-size: 1.2rem;
   }
 
@@ -907,7 +901,8 @@ textarea:required
 @media (max-width: 739px) {
 
   .Nav-edit-profile-link,
-  .Nav-log_out-link {
+  .Nav-log_out-link 
+  {
     margin-right: .7em;  
   }
 
@@ -926,7 +921,6 @@ textarea:required
 
   .Nav-search-input {
     min-width: 250px;
-
   }
 
 }
@@ -942,7 +936,7 @@ textarea:required
 @media (max-width: 1008px) {
 
   .Nav-logo-link {
-    font-size: 1.1em;
+    font-size: 1.1rem;
   }
 
 }
@@ -1025,9 +1019,11 @@ textarea:required
 }
 
 @media (max-width: 791px) {
+
   .Nav-logged_in-as {
     display: none;
   }
+
 }
 
 @media (max-width: 1259px) {
@@ -1070,13 +1066,13 @@ textarea:required
     margin-right: 30px;
   }
 
-  .WatchForm-container{
+  .WatchForm-container {
     flex-direction: column;
     margin: 25px auto;
     width: 450px;
   }
 
-  .WatchForm-header{
+  .WatchForm-header {
     margin-left: 5px;
   }
 
@@ -1088,6 +1084,7 @@ textarea:required
 }
 
 @media (min-width: 1281px) {
+  
   body {
     font-size: 1rem;
   }
