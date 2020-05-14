@@ -48,7 +48,7 @@ class DashboardMain extends Component {
 
     const sortElement = [
       <>
-        <h2 className=' Center-text'>Sort By</h2>
+        <h2 className='Center-text'>Sort By</h2>
         <br />
         <select className='Select-sort'
                 required 
