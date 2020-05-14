@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { hashHistory } from 'react-router' // Used to change URL without a re-render
 import Image from 'react-image-resizer'  // https://github.com/sottar/react-image-resizer
 import logo from '../images/logo.jpg'
-import { sortWatchesAction, resetWatchesAction, resetSearchFailedAction } from '../actions/watchesActions'
+import { sortWatchesAction, resetWatchesAction, resetSearchFailedAction, resetSortAction } from '../actions/watchesActions'
 import RedirectToWithState from "../components/RedirectToWithState"
 
 class DashboardMain extends Component {
@@ -200,6 +200,7 @@ class DashboardMain extends Component {
           {number_of_watches > 0 && a_newest_watch_exists
             ? <span className='Image-link' 
                     onClick={() => { 
+                      this.props.resetSortAction()
                       hashHistory.push(`/watches/${this.props.newestWatch.id}/watch_detail`) // set the url for the watch
                       this.props.setCurrentWatch(this.props.newestWatch)
                     }}>
@@ -240,17 +241,18 @@ class DashboardMain extends Component {
           }
           {number_of_watches > 0 && an_oldest_watch_exists
             ? <span className='Image-link' 
-                    onClick={() => { 
-                      hashHistory.push(`/watches/${this.props.oldestWatch.id}/watch_detail`) // set the url for the watch
-                      this.props.setCurrentWatch(this.props.oldestWatch)
-                    }}>
-                  <Image
-                    src={oldestWatchImage}
-                    width={200}
-                    height={200}
-                    style={style.image}
-                  />
-                </span>
+                  onClick={() => { 
+                    this.props.resetSortAction()
+                    hashHistory.push(`/watches/${this.props.oldestWatch.id}/watch_detail`) // set the url for the watch
+                    this.props.setCurrentWatch(this.props.oldestWatch)
+                  }}>
+                <Image
+                  src={oldestWatchImage}
+                  width={200}
+                  height={200}
+                  style={style.image}
+                />
+              </span>
             : null
           }
           <br />
@@ -275,4 +277,4 @@ const mapStateToProps = (state) => {
   } 
 }
 
-export default connect(mapStateToProps, { sortWatchesAction, resetWatchesAction, resetSearchFailedAction })(DashboardMain)
+export default connect(mapStateToProps, { sortWatchesAction, resetWatchesAction, resetSearchFailedAction, resetSortAction })(DashboardMain)

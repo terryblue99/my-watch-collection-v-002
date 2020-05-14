@@ -76,7 +76,9 @@ class WatchDetail extends Component {
             this.props.setCurrentWatch(null) 
             return  RedirectTo('/dashboard')
         }
+
         const {currentWatch} = this.props
+        const isSort = this.props.isSort
         const watchRelated = this.props.watchRelated
 
         const style = {
@@ -85,9 +87,12 @@ class WatchDetail extends Component {
                 boxShadow: '10px 10px 5px darkgray'
             }
         }
-   
-        if (currentWatch && !this.props.isSearchSuccessful && !this.props.isSearchFailed) {
-
+     
+        if (currentWatch && 
+            !this.props.isSearchSuccessful && 
+            !this.props.isSearchFailed &&
+            !isSort) 
+        {
             const {
                 id,
                 watch_name,
@@ -241,7 +246,7 @@ class WatchDetail extends Component {
                                     filteredWatches={this.props.filteredWatches}
                                     filteredWatchRelated={this.props.filteredWatchRelated}
                                     sortOptionSelected={this.props.sortOptionSelected} 
-                                    DashBoardSortHistory={this.props.DashBoardSortHistory}               
+                                    DashBoardSortHistory={this.props.DashBoardSortHistory}              
             />
         }
     }
@@ -249,6 +254,7 @@ class WatchDetail extends Component {
 
 const mapStateToProps = (state) => {
     return {
+      isSort: state.myWatches.isSort,
       watchRelated: state.myWatches.watchRelated,  // For records that are not related to a specific watch.
       isSearchFailed: state.myWatches.isSearchFailed
     } 

@@ -3,13 +3,14 @@ import {
 	ADD_WATCH,
 	DELETE_WATCH,
 	SEARCH_WATCHES,
+	RESET_SORT,
 	RESET_WATCHES,
 	RESET_SEARCH_FAILED
 } from './types'
 // The underscore library
 import _ from 'lodash'
 
-const API_URL = '/api/v2'
+const API_URL = '/api/v3'
 let sortedWatches
 
 export const getWatchesAction = (user_id, isSearchFailed = false) => {
@@ -70,6 +71,14 @@ export const resetWatchesAction = () => {
 	return dispatch => {
 		dispatch({
 			type: RESET_WATCHES
+		})
+	}		
+}
+
+export const resetSortAction = () => {
+	return dispatch => {
+		dispatch({
+			type: RESET_SORT
 		})
 	}		
 }

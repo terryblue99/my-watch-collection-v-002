@@ -9,6 +9,7 @@ import {
 	NEWEST_TO_OLDEST_SORT,
 	OLDEST_TO_NEWEST_SORT,
 	RESET_SEARCH_FAILED,
+	RESET_SORT,
 	RESET_WATCHES,
 	SEARCH_WATCHES,
 	WATCH_MAKER_SORT,
@@ -17,6 +18,7 @@ import {
 
 const initialState = {
 	isSearchFailed: false,
+	isSort: false,
 	savedWatches: [],
 	watchRelated: 'Watch-Related' // For records that are not related to a specific watch.
 }
@@ -121,6 +123,7 @@ export default (state = initialState, { type, payload } ) => {
 			.value()
 			return ({
 				...state,
+				isSort: true,
 				watches: sortedWatches
 			})
 	
@@ -128,6 +131,7 @@ export default (state = initialState, { type, payload } ) => {
 			sortedWatches = _.sortBy( state.watches, 'watch_name' )
 			return ({
 				...state,
+				isSort: true,
 				watches: sortedWatches
 			})
 
@@ -135,6 +139,7 @@ export default (state = initialState, { type, payload } ) => {
 			sortedWatches = _.sortBy( state.watches, 'date_bought' )
 			return ({
 				...state,
+				isSort: true,
 				watches: sortedWatches.reverse()
 			})
 
@@ -142,6 +147,7 @@ export default (state = initialState, { type, payload } ) => {
 			sortedWatches = _.sortBy( state.watches, 'date_bought' )
 			return ({
 				...state,
+				isSort: true,
 				watches: sortedWatches
 			})
 
@@ -149,6 +155,7 @@ export default (state = initialState, { type, payload } ) => {
 			sortedWatches = _.sortBy( state.watches, costToNumber )
 			return ({
 				...state,
+				isSort: true,
 				watches: sortedWatches
 			})
 
@@ -156,7 +163,14 @@ export default (state = initialState, { type, payload } ) => {
 			sortedWatches = _.sortBy( state.watches, costToNumber)
 			return ({
 				...state,
+				isSort: true,
 				watches: sortedWatches.reverse()
+			})
+
+		case RESET_SORT:
+			return ({
+				...state,
+				isSort: false
 			})
 
 		// DEFAULT STATE
