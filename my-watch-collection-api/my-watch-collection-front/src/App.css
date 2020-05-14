@@ -472,11 +472,10 @@ button:focus,
 .WatchRelated button
 {
   font-size: 1rem; 
-  margin-bottom: 10px;
+  height: 1%;
   margin-left: 20px;
   margin-top: 15px;
-  height: 60px;
-  padding: 10px 20px; 
+  padding: 5px 10px; 
 }
 
 .Watch-detail-back-button {
@@ -535,8 +534,6 @@ button:focus,
 
 .ProfileDelete-button {
   font-size: 1rem; 
-  justify-content: center; 
-  margin-top: 5px;
   padding: 10px 20px;
 }
 
@@ -689,7 +686,8 @@ form input::placeholder {
 .WatchForm-header {
   margin-bottom: 10px;
   margin-top: 15px;
-  margin-left: 280px;
+  align-self: center;
+  margin-left: 200px;
 }
 
 .ProfileForm-header {
@@ -871,7 +869,7 @@ textarea:required
 
   .ProfileDelete-button {
     min-width: 300px;
-    padding: 10px 20px;
+    padding: 5px 10px;
   }
 
   .WatchRelated-container {
@@ -1158,6 +1156,11 @@ textarea:required
   .WatchForm-header
   {
     font-size: 2rem;
+  }
+
+  .WatchForm-header
+  {
+    margin-left: 260px;
   }
 
   .WatchForm-upload-text {
