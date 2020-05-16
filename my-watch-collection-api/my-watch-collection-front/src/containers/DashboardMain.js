@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { hashHistory } from 'react-router' // Used to change URL without a re-render
-import Image from 'react-image-resizer'  // https://github.com/sottar/react-image-resizer
 import logo from '../images/logo.jpg'
 import { sortWatchesAction, resetWatchesAction, resetSearchFailedAction, resetSortAction } from '../actions/watchesActions'
 import RedirectToWithState from "../components/RedirectToWithState"
@@ -38,13 +37,6 @@ class DashboardMain extends Component {
     let number_of_watcheRelated = 0
 
     const number_of_saved_watches = Object.keys(this.props.savedWatches).length
-    
-    const style = {
-      image: {
-        border: '1px solid',
-        boxShadow: '10px 10px 5px rgba(0,0,0,0.1)'
-      }
-    }
 
     const sortElement = [
       <>
@@ -140,7 +132,7 @@ class DashboardMain extends Component {
           }
           <br />
           { number_of_watches > 0
-              ? <p className='Dashboard-totalWatches Center-text'>Total watches: <span className='Watch-num'>{number_of_watches}</span></p>
+              ? <p className='Dashboard-totalWatches Center-text'>Total watches: <span className='Watch-total'>{number_of_watches}</span></p>
               : null
           }
           { number_of_watcheRelated > 0
@@ -170,14 +162,6 @@ class DashboardMain extends Component {
                         width="110" 
                         height="110">
                 </iframe>
-                <br />
-                <iframe className='Dashboard-date' 
-                        title='dateFrame' 
-                        src="http://free.timeanddate.com/clock/i6z3g070/n64/ftb/bo2/pd2/tt1/tw1" 
-                        frameBorder="0" 
-                        width="172" 
-                        height="20">
-                </iframe>
               </div>
             : null
         }
@@ -204,12 +188,7 @@ class DashboardMain extends Component {
                       hashHistory.push(`/watches/${this.props.newestWatch.id}/watch_detail`) // set the url for the watch
                       this.props.setCurrentWatch(this.props.newestWatch)
                     }}>
-                <Image
-                  src={newestWatchImage}
-                  width={200}
-                  height={200}
-                  style={style.image}
-                />
+                    <img src={newestWatchImage} alt='oldest watch' className='Watch-image'/>
               </span>
             : null
           }
@@ -246,12 +225,7 @@ class DashboardMain extends Component {
                     hashHistory.push(`/watches/${this.props.oldestWatch.id}/watch_detail`) // set the url for the watch
                     this.props.setCurrentWatch(this.props.oldestWatch)
                   }}>
-                <Image
-                  src={oldestWatchImage}
-                  width={200}
-                  height={200}
-                  style={style.image}
-                />
+                <img src={oldestWatchImage} alt='oldest watch' className='Watch-image'/>
               </span>
             : null
           }

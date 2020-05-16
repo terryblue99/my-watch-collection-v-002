@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import '../App.css'
-import Image from 'react-image-resizer'  // https://github.com/sottar/react-image-resizer
 import { deleteWatchAction } from '../actions/watchesActions'
 import DashboardMain from './DashboardMain'
 import RedirectTo from '../components/RedirectTo'
@@ -80,13 +79,6 @@ class WatchDetail extends Component {
         const {currentWatch} = this.props
         const isSort = this.props.isSort
         const watchRelated = this.props.watchRelated
-
-        const style = {
-            image: {
-                border: '1px solid',
-                boxShadow: '10px 10px 5px rgba(0,0,0,0.1)'
-            }
-        }
      
         if (currentWatch && 
             !this.props.isSearchSuccessful && 
@@ -114,12 +106,7 @@ class WatchDetail extends Component {
                     <div className='Back-button_and_Image'>    
                         <button onClick={this.handleBack} className='Watch-detail-back-button btn Button-text'>Back to dashboard</button>
                         <div className='Watch-detail-image'> 
-                            <Image 
-                                src={currentWatch.image}
-                                width={200}
-                                height={200} 
-                                style={style.image}
-                            />
+                            <img src={currentWatch.image} alt='current watch' className='Watch-image'/>
                         </div>
                     </div>
                     <div className='Watch-detail-text'>

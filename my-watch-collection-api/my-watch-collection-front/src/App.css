@@ -48,9 +48,20 @@ button
   text-align: center;
 }
 
+/* Images */
+
 img {
   max-width: 100%;
 }
+
+.Watch-image {
+  border-radius: .5em;
+  box-shadow: 10px 10px 5px rgba(0,0,0,0.1);
+  height: 200px;
+  min-width: 200px;
+}
+
+/* Colors */
 
 .Blue-color {
   color: darkblue;
@@ -68,102 +79,10 @@ img {
   color: gold;
 }
 
-/*  =================
-      DashboardMain
-    ================= */
-
-.DashboardMain {
-  background-color: gainsboro;
-  display: grid;
-  grid-template: repeat(2, auto) / repeat(3, 1fr); 
-  grid-template-areas:
-    'Dashboard-initialList Dashboard-sort Dashboard-time' 
-    'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch';
-}
-
-.Dashboard-header {
-  font-size: 2rem;
-  padding-bottom: 30px;
-}
-
-.Dashboard-initialList {
-  grid-area: Dashboard-initialList;
-}
-
-.Dashboard-sort {
-  grid-area: Dashboard-sort;
-}
-
-.Select-sort {
-  border: 1px solid;
-  font: inherit;
-  min-width: 300px;
-}
-
-.Dashboard-time {
-  grid-area: Dashboard-time;
-}
-
-.Dashboard-time {
-  margin-left: 30px;
-  margin-top: 20px;
-}
-
-.Dashboard-newestWatch {
-  grid-area: Dashboard-newestWatch;
-}
-
-.Dashboard-logo {
-  grid-area: Dashboard-logo;
-}
-
-.Dashboard-oldestWatch {
-  grid-area: Dashboard-oldestWatch;
-}
-
-.Dashboard-item
-{
-  align-self: center;
-  justify-self: center;
-}
-
-.Dashboard-totalWatches,
-.Dashboard-totalWatchRelated,
-.Sort-header
-{
-  margin-top: 10px;
-}
-
-.Dashboard-watchText-new,
-.Dashboard-watchText-old 
-{
-  color: #404040; 
-}
-
-.Dashboard-totalWatchRelated,
-.Dashboard-totalWatches 
-{
-  font-size: 1.2rem; 
-}
-
-.Watch-num {
-  font-size: 1.4rem;
-}
-
-.Related-num {
-  font-size: 1.4rem;
-}
-
-.Oldest-watch,
-.Newest-watch 
-{
-  font-size: 1.25rem;
-}
-
-.Logo {
-  margin: 0 auto;
-  padding-bottom: 25px;
-}
+/* Home Page */
+/* Log In */
+/* Sign Up */
+/* Watch Related */
 
 .Homepage-title {
   background-color: #454140;
@@ -220,7 +139,7 @@ img {
   padding: 10px;
 }
 
-/* Nav start */
+/* Nav */
 
 .Nav-header {
   background-color: #454140;
@@ -299,7 +218,106 @@ img {
   cursor: pointer;
 }
 
-/* Nav end */
+/* Dashboard */
+
+.DashboardMain {
+  background-color: gainsboro;
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(3, 1fr); 
+  grid-template-areas:
+    'Dashboard-initialList Dashboard-sort Dashboard-time' 
+    'Dashboard-newestWatch Dashboard-logo Dashboard-oldestWatch';
+}
+
+.Dashboard-header {
+  font-size: 2rem;
+  padding-bottom: 30px;
+}
+
+.Dashboard-initialList {
+  grid-area: Dashboard-initialList;
+}
+
+.Dashboard-sort {
+  grid-area: Dashboard-sort;
+}
+
+.Select-sort {
+  font: inherit;
+  min-width: 300px;
+}
+
+.Dashboard-time {
+  grid-area: Dashboard-time;
+}
+
+.Dashboard-time {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.Dashboard-newestWatch {
+  grid-area: Dashboard-newestWatch;
+}
+
+.Dashboard-logo {
+  grid-area: Dashboard-logo;
+}
+
+.Dashboard-oldestWatch {
+  grid-area: Dashboard-oldestWatch;
+}
+
+.Dashboard-item
+{
+  align-self: center;
+  justify-self: center;
+}
+
+.Dashboard-totalWatches,
+.Dashboard-totalWatchRelated,
+.Sort-header
+{
+  margin-top: 10px;
+}
+
+.Dashboard-watchText-new,
+.Dashboard-watchText-old 
+{
+  color: #404040; 
+}
+
+.Dashboard-totalWatchRelated,
+.Dashboard-totalWatches 
+{
+  font-size: 1.2rem; 
+}
+
+.Watch-total {
+  font-size: 1.4rem;
+}
+
+.Related-num {
+  font-size: 1.4rem;
+}
+
+.Oldest-watch,
+.Newest-watch 
+{
+  font-size: 1.25rem;
+}
+
+.Logo {
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+.Sidebar-mobile-list {
+  grid-area: sidebar-mobile;
+  height: 100%;
+  list-style-type: none;
+  text-align: left;
+}
 
 .Watches-Sidebar-list-detail {
   display: grid;
@@ -326,6 +344,8 @@ img {
   justify-self: center;
   margin-top: 20px;
 }
+
+/* Watch Detail */
 
 .Back-button_and_Image {
   margin-bottom: 25px;
@@ -377,6 +397,8 @@ img {
   padding: 12px 12px;
 }
 
+/* Watch Related */
+
 .WatchRelated {
   display: grid;
   height: 100vh;
@@ -404,9 +426,7 @@ img {
   text-shadow: 2px 2px 5px orange;
 }
 
-/*  =================
-        buttons
-    ================= */
+/* buttons */
 
 .btn {
   border-radius: 5px; /* rounds corners */
@@ -611,11 +631,18 @@ button:focus,
   text-transform: uppercase;
 }
 
-.Sidebar-mobile-list {
-  grid-area: sidebar-mobile;
-  height: 100%;
-  list-style-type: none;
-  text-align: left;
+/*  ==================
+    file upload button
+    ================== */
+
+/* Chrome/Safari and web-kit-based browsers */
+::-webkit-file-upload-button {
+  cursor:pointer;
+}
+
+/* IE11 */
+input[type=file] {
+  cursor:pointer;
 }
 
 /*  ==================
@@ -654,20 +681,6 @@ button:focus,
 
 .SidebarMobile-list-icon:hover div {
   transform: scale(0);
-}
-
-/*  ==================
-    file upload button
-    ================== */
-
-/* Chrome/Safari and web-kit-based browsers */
-::-webkit-file-upload-button {
-  cursor:pointer;
-}
-
-/* IE11 */
-input[type=file] {
-  cursor:pointer;
 }
 
 /*  =================
@@ -857,12 +870,6 @@ textarea:required
     margin-left: 630px;
   }
 
-  .Profile-container .Back-button {
-    display:block;
-    margin: 30px auto;
-    width: 300px;
-  }
-
   .ProfileForm-subheader {
     font-size: 1.2rem;
   }
@@ -1027,8 +1034,7 @@ textarea:required
   .Dashboard-header {
     padding-top: 30px;
   }
-
-  .Dashboard-date, 
+ 
   .Dashboard-logo,
   .Dashboard-time
   {
@@ -1057,6 +1063,12 @@ textarea:required
 }
 
 @media (max-width: 1200px) {
+
+  .Profile-container .Back-button {
+    display:block;
+    margin: 30px auto;
+    width: 300px;
+  }
 
   .Watch-detail {
     margin-right: 30px;
@@ -1209,7 +1221,7 @@ textarea:required
     font-size: 1.5rem;
   }
 
-  .Watch-num {
+  .Watch-total {
     font-size: 1.6rem;
   }
 

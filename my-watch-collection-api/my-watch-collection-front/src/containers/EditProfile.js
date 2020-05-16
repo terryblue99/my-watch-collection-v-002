@@ -114,7 +114,7 @@ class EditProfile extends Component {
                                         Edit Profile
                                    </h1>
                                    <h2 className='ProfileForm-subheader Center-text'>
-                                        (You can change your email and/or your password here)
+                                        (You can change your email and/or password here)
                                    </h2>
                                    <div className='Profile'>
                                         <label>Email</label>
