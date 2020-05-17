@@ -113,7 +113,7 @@ class WatchDetail extends Component {
                         <h1 className='WatchDetail-watch-maker Dark-red-color'><b>{watch_maker}</b></h1> 
                         <h2 className='Watch-name'>{watch_name}</h2>
                         <div className='Watch-detail-complications Center-text'>
-                            <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- TOP ----</p>
+                            <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- MAY BE SCROLLABLE ----</p>
                             <br />
                             {movement && !watch_maker.includes(watchRelated)
                                 ?   <>  <p className='Detail-css'>Movement</p>

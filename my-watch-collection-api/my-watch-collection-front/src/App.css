@@ -389,6 +389,7 @@ img {
 .Watch-detail-complications {
   background-color: ghostwhite;
   border: 1px solid black;
+  border-radius: .5em;
   margin-bottom: 15px;
   margin-top: 5px;
   max-height: 63vh;
@@ -686,6 +687,10 @@ input[type=file] {
 /*  =================
           forms
     ================= */
+
+form {
+  border-radius: .5em;
+}
 
 form input::placeholder {
   font-size: 1.25rem;

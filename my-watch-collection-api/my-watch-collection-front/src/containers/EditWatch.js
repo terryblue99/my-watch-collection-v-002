@@ -161,7 +161,7 @@ class EditWatch extends React.Component {
                                onSubmit={this.handleSubmit}
                          >
                               {!isEditWatchRelated
-                                   ?    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- TOP ----</p>
+                                   ?    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- MAY BE SCROLLABLE ----</p>
                                            <br />
                                            <label>Watch Maker</label>
                                            <input className='Input-element' required 
@@ -170,7 +170,7 @@ class EditWatch extends React.Component {
                                                   defaultValue={watch.watch_maker}
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- TOP ----</p>
+                                   :    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- MAY BE SCROLLABLE ----</p>
                                            <br />
                                            <input className='Input-element Dark-red-color'
                                                   type='text'
