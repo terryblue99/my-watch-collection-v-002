@@ -44,6 +44,24 @@ button
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
+select {
+  /* small down-arrow icon for drop-down list */
+  appearance:none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	background:url('http://www.free-icons-download.net/images/small-down-arrow-icon-15593.png');
+	background-repeat: no-repeat;
+	background-size:16px 17px;
+	background-position: right;
+  background-origin: content-box;
+  /* drop-down list styling */
+  background-color: white;
+  font: inherit;
+  min-width: 300px;
+  padding: .2em;
+}
+
 /* Center text */
 
 .Center-text {
@@ -244,10 +262,12 @@ img {
   grid-area: Dashboard-sort;
 }
 
-.Select-sort {
+/* .Select-sort {
+  background-color: white;
   font: inherit;
   min-width: 300px;
-}
+  padding: .2em;
+} */
 
 .Dashboard-time {
   grid-area: Dashboard-time;
