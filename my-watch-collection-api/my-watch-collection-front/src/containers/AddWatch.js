@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import '../App.css'
 import NavBar from './NavBar'
 import { addWatchAction } from '../actions/watchesActions'
-import ClearForm from "../components/ClearForm"
-import SetFocus from "../components/SetFocus"
+import ClearForm from '../components/ClearForm'
+import SetFocus from '../components/SetFocus'
 import RedirectTo from '../components/RedirectTo'
-import DateValidation from "../components/DateValidation"
+import DateValidation from '../components/DateValidation'
 
 class AddWatch extends React.Component {
 
@@ -108,7 +108,7 @@ class AddWatch extends React.Component {
           })
      }
 
-     render() {  
+     render() {      
 
           if (this.state.isBackToDashboard) { 
                this.setState({
@@ -118,7 +118,6 @@ class AddWatch extends React.Component {
           }
 
           const isAddWatchRelated = this.props.location.isAddWatchRelated || false
-
           const {watch_maker} = this.state.watchData
       
           return (
@@ -141,18 +140,14 @@ class AddWatch extends React.Component {
                               onSubmit={this.handleSubmit}
                          >
                               {!isAddWatchRelated
-                                   ?    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- MAY BE SCROLLABLE ----</p>
-                                           <br />
-                                           <label>Watch Maker</label>
+                                   ?    <> <label>Watch Maker</label>
                                            <input autoFocus id='Focus-first-input' 
                                                   className='Input-element' required 
                                                   type='text'
                                                   name='watch_maker'
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- MAY BE SCROLLABLE ----</p>
-                                           <br />
-                                           <input className='Input-element Dark-red-color'
+                                   :    <> <input className='Input-element Dark-red-color'
                                                   autoComplete='off'
                                                   type='text'
                                                   name='watch_maker'

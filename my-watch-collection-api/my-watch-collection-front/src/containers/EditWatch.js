@@ -161,9 +161,7 @@ class EditWatch extends React.Component {
                                onSubmit={this.handleSubmit}
                          >
                               {!isEditWatchRelated
-                                   ?    <> <p  className='WatchForm-container-Top Dark-red-color Center-text'>---- MAY BE SCROLLABLE ----</p>
-                                           <br />
-                                           <label>Watch Maker</label>
+                                   ?    <> <label>Watch Maker</label>
                                            <input className='Input-element' required 
                                                   type='text'
                                                   name='watch_maker'

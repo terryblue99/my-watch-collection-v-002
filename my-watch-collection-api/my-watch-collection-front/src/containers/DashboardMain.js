@@ -229,13 +229,8 @@ class DashboardMain extends Component {
               </span>
             : null
           }
-          <br />
-        </div>
 
-        <div className='Dashboard-item'></div>
-        <div className='Dashboard-item'></div>
-        <div className='Dashboard-item'></div>
-        
+        </div>       
       </div>
     )
   }

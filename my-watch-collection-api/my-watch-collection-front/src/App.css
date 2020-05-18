@@ -23,18 +23,18 @@ button
 {
   font-family: Fresca,Helvetica,Arial,sans-serif; /* font stack */
   /* Prevent copying */
-  /* -webkit-touch-callout: none; iOS Safari */
-  /* -webkit-user-select: none; Safari */
-   /* -khtml-user-select: none; Konqueror HTML */
-     /* -moz-user-select: none; Firefox */
-      /* -ms-user-select: none; Internet Explorer/Edge */
-          /*user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome and Opera */
+  /* -webkit-touch-callout: none; */ /* iOS Safari */
+  /* -webkit-user-select: none; */ /* Safari */
+  /* -khtml-user-select: none; */  /* Konqueror HTML */
+  /* -moz-user-select: none; */ /*Firefox */
+  /* -ms-user-select: none; */ /*Internet Explorer/Edge */
+  /* user-select: none; */ /* Non-prefixed version, currently
+                              supported by Chrome and Opera */
 }
 
 /* always show scrollbars */
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px;
 }
@@ -42,7 +42,9 @@ button
   background-color: rgba(0, 0, 0, .5);
   border-radius: 4px;
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-} */
+}
+
+/* Center text */
 
 .Center-text {
   text-align: center;
@@ -323,7 +325,7 @@ img {
   display: grid;
   grid-template-areas: 'sidebar-desktop main';
   grid-template-columns: 370px auto;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
 }
 
