@@ -81,6 +81,19 @@ img {
   min-width: 200px;
 }
 
+.Choose-image {
+  border: 1px solid;
+  background: gainsboro;
+}
+
+.Choose-image:hover {
+  opacity: .8;
+}
+
+.Dashboard-watch-image {
+  margin-top: .75em;
+}
+
 /* Colors */
 
 .Blue-color {
@@ -234,7 +247,7 @@ img {
 
 .Nav-edit-profile-link:hover,
 .Nav-log_out-link:hover  {
-  color: goldenrod;
+  color: khaki;
   cursor: pointer;
 }
 
@@ -480,7 +493,7 @@ button:focus,
 }
 
 .btn:hover {
-  color: goldenrod;
+  color: khaki;
   cursor: pointer;
 }
 
