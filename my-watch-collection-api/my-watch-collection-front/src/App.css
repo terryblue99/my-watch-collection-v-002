@@ -275,13 +275,6 @@ img {
   grid-area: Dashboard-sort;
 }
 
-/* .Select-sort {
-  background-color: white;
-  font: inherit;
-  min-width: 300px;
-  padding: .2em;
-} */
-
 .Dashboard-time {
   grid-area: Dashboard-time;
 }
@@ -319,7 +312,8 @@ img {
 .Dashboard-watchText-new,
 .Dashboard-watchText-old 
 {
-  color: #404040; 
+  color: #323232; 
+  font-size: 1em;
 }
 
 .Dashboard-totalWatchRelated,
@@ -332,7 +326,7 @@ img {
   font-size: 1.4rem;
 }
 
-.Related-num {
+.Watch-related-total {
   font-size: 1.4rem;
 }
 
@@ -1265,8 +1259,14 @@ textarea:required
     font-size: 1.6rem;
   }
 
-  .Related-num {
+  .Watch-related-total {
     font-size: 1.6rem;
+  }
+
+  .Dashboard-watchText-new,
+  .Dashboard-watchText-old 
+  {
+    font-size: 1.2em;
   }
 
 }
