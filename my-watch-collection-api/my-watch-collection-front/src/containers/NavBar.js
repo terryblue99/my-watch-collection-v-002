@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { searchWatchesAction } from '../actions/watchesActions'
-import ClearForm from "../components/ClearForm"
-import RedirectToWithState from "../components/RedirectToWithState"
+import ClearForm from '../components/ClearForm'
+import RedirectToWithState from '../components/RedirectToWithState'
 
 class NavBar extends Component {
 
@@ -67,27 +67,28 @@ class NavBar extends Component {
                 }
 
     return (
-
+      
       <div className='Nav-header'>
 
         <div className='Nav-container'>   
 
-          <NavLink className='Nav-logo-link Gold-color' to='/dashboard'>
+          <div className='Nav-logo Gold-color' to='/dashboard'>
             My Watch Collection
-          </NavLink>
+          </div>
         
           <nav className='Nav'>
 
-            <div className='Nav-item Nav-logged_in-logout-profile'> 
+            <div className='Nav-links'> 
               {this.props.user.logged_in} {
                 <>
-                  <div  className='Nav-item Nav-logged_in-as'>
+                  <div  className='Nav-logged_in-as'>
                     Logged in as: {this.props.user.user.email}
                   </div>
                   <NavLink  className='Nav-log_out-link Cornsilk-color' to='/logout'> 
                     Log Out   
                   </NavLink>
-                  <NavLink  className='Nav-edit-profile-link Cornsilk-color' to='/edit_profile'> 
+                  <NavLink  className='Nav-link Nav-edit-profile-link Cornsilk-color' to='/edit_profile'
+                            onClick={() => {this.className=' active'}}>
                     Edit Profile   
                   </NavLink>
                 </>
@@ -104,9 +105,8 @@ class NavBar extends Component {
               placeholder='Search My Watch Collection'
               onChange={this.handleChange}
             /> 
-            <button className='Nav-item Search-button Button-text' type='submit'><b>Search</b></button>         
+            <button className='Search-button Button-text' type='submit'><b>Search</b></button> 
           </form>
-
         </div>
         
       </div>   
