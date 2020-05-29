@@ -476,8 +476,9 @@ button:focus,
   color:black;
   font: inherit;
   font-size: 1rem;
-  padding: 2px;
+  padding:  2px 5px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .Search-button:hover {
@@ -828,7 +829,7 @@ form input::placeholder {
 {
   border-color: black;
   border-radius: 5px; 
-  font-size: .75rem;
+  font-size: 1rem;
   padding: .25em;
 }
 
@@ -1179,7 +1180,7 @@ textarea:required
   }
 
   .Text-area {
-    font-size: 1rem
+    font-size: 1.25rem
   }
   
   .Detail-css {
