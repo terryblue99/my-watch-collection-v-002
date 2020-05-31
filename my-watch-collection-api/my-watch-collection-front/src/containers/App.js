@@ -5,7 +5,6 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import '../App.css'
 import LogIn from '../containers/auth/LogIn'
 import LogOut from '../containers/auth/LogOut'
 import SignUp from '../containers/auth/SignUp'

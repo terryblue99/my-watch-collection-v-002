@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import '../App.css'
 import NavBar from './NavBar'
 import { editWatchAction } from '../actions/watchesActions'
 import RedirectTo from '../components/RedirectTo'

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import '../../App.css'
 import logo from '../../images/logo.jpg'
 import { logInAction } from "../../actions/currentUserActions.js"
 import RedirectTo from '../../components/RedirectTo'
