@@ -30,8 +30,6 @@ class DashBoard extends Component {
                     } else if (this.props.location.state.isSearchFailed) {
                         this.props.getWatchesAction(this.props.currentUser.user.id, this.props.location.state.isSearchFailed)
                     }
-                    // Delete the history location state to prevent re-execution of this code
-                    delete this.props.history.location.state
                 }
 
             // Check if redirected to from WatchDetail and a record has been deleted
