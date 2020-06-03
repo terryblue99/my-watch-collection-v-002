@@ -181,7 +181,7 @@ class WatchDetail extends Component {
                             {cost > 0
                             ?    <>
                                     <p className='Detail-css'>Cost</p>
-                                    <h3 className='WatchDetail'>${parseFloat(cost).toFixed(2)}</h3>
+                                    <h3 className='WatchDetail'>{parseFloat(cost).toLocaleString('en-US', {style: 'currency', currency: 'USD'})}</h3>
                                 </>
                             : null }
                             {notes 
