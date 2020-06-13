@@ -62,10 +62,4 @@ class WatchList extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-      isSort: state.myWatches.isSort
-    } 
-}
-
-export default connect(mapStateToProps, {resetSortAction})(WatchList)
+export default connect(null, {resetSortAction})(WatchList)
