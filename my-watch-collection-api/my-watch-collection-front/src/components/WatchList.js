@@ -1,6 +1,6 @@
 import { Component } from 'react'
-import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { hashHistory } from 'react-router' // Used to change URL without a re-render
 // The following comment is required for @emotion to work
 /** @jsx jsx */
