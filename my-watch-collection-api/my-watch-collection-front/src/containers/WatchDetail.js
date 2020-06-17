@@ -230,7 +230,7 @@ class WatchDetail extends Component {
                                     filteredWatches={this.props.filteredWatches}
                                     filteredWatchRelated={this.props.filteredWatchRelated}
                                     sortOptionSelected={this.props.sortOptionSelected} 
-                                    DashBoardSortHistory={this.props.DashBoardSortHistory}              
+                                    DashBoardHistory={this.props.DashBoardHistory}              
             />
         }
     }

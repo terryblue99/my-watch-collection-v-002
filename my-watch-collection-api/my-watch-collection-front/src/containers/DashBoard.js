@@ -57,7 +57,7 @@ class DashBoard extends Component {
                              watchRelated={watchRelated}
                              sortOptionSelected={sortOptionSelected}
                              isSearchSuccessful={isSearchSuccessful}
-                             DashBoardSortHistory={this.props.history}
+                             DashBoardHistory={this.props.history}
                     />               
                 </div> 
             </div>

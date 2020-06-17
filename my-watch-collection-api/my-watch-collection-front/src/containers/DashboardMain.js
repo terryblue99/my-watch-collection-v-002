@@ -120,8 +120,8 @@ class DashboardMain extends Component {
                   // so that the initial sort option text can be displayed
                   onClick={() => {  this.props.resetWatchesAction()
                                     this.props.setCurrentWatch(false)
-                                    if (this.props.DashBoardSortHistory.location.state) {
-                                        delete this.props.DashBoardSortHistory.location.state 
+                                    if (this.props.DashBoardHistory.location.state) {
+                                        delete this.props.DashBoardHistory.location.state 
                                     }  
                                   } 
                 }> 
