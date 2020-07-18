@@ -91,7 +91,7 @@ class AddWatch extends React.Component {
           if (this.state.image) {
                formData.append('image', this.state.image)
           }
-          this.props.addWatchAction(formData, this.state.watchData)
+          this.props.addWatchAction(formData)
           if (!isWatchRelated) {
                alert('The watch has been added and saved!')
           } else alert(`The ${this.props.watchRelated} has been added and saved!`)
