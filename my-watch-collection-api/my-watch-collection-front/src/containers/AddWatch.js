@@ -146,12 +146,11 @@ class AddWatch extends React.Component {
                                                   name='watch_maker'
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input className='Input-element Dark-red-color'
-                                                  autoComplete='off'
-                                                  type='text'
+                                   :    <> <input className='Input-element'
+                                                  type='hidden'
                                                   name='watch_maker'
                                                   value={watch_maker}
-                                                  readonly/>
+                                             />
                                         </>
                               }
                               <br />

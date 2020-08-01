@@ -167,8 +167,8 @@ class EditWatch extends React.Component {
                                                   defaultValue={watch.watch_maker}
                                                   onChange={this.handleChange}/>
                                         </>
-                                   :    <> <input className='Input-element Dark-red-color'
-                                                  type='text'
+                                   :    <> <input className='Input-element'
+                                                  type='hidden'
                                                   name='watch_maker'
                                                   value={this.props.watchRelated}/>
                                         </>
