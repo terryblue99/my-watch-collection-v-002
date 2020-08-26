@@ -103,7 +103,7 @@ class NavBar extends Component {
               type='text'
               name='watch_search'
               placeholder='Search My Watch Collection'
-              onChange={this.handleChange}
+              onInput={this.handleChange}
             /> 
             <button className='Search-button Button-text' type='submit'><b>Search</b></button> 
           </form>
