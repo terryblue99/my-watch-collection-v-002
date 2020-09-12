@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { hashHistory } from 'react-router' // Used to change URL without a re-render
+import { createHashHistory } from 'history' // Used to change URL without a re-render
 import logo from '../images/logo.jpg'
 import { sortWatchesAction, resetWatchesAction, resetSearchFailedAction, resetSortAction } from '../actions/watchesActions'
 import RedirectToWithState from "../components/RedirectToWithState"
@@ -23,6 +23,7 @@ class DashboardMain extends Component {
 
   render() {
 
+    const hashHistory = createHashHistory() // Used to change URL without a re-render  
     let a_newest_watch_exists
     let newestWatchImage
     let newestWatchMaker

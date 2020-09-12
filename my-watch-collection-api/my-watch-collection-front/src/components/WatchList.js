@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { hashHistory } from 'react-router' // Used to change URL without a re-render
+import { createHashHistory } from 'history' // Used to change URL without a re-render
 // The following comment is required for @emotion to work
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core' // https://github.com/emotion-js/emotion'
@@ -10,6 +10,7 @@ import { resetSortAction } from '../actions/watchesActions'
 class WatchList extends Component { 
 
     render() {  
+        const hashHistory = createHashHistory() // Used to change URL without a re-render
         return (
             <div>
                 <div className='Watch-list' css={css`
