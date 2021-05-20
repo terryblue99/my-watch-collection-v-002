@@ -24,7 +24,7 @@ gem "foreman", "~> 0.82.0"
 gem "pry-byebug"
 gem "bcrypt"
 gem "rake", "~> 12.3.3"
-gem "nokogiri", "~> 1.10.4"
+gem "nokogiri", "~> 1.11.4"
 gem "loofah", ">= 2.3.1"
 gem "actionview", ">= 5.2.4.4"
 
